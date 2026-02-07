@@ -116,16 +116,159 @@ def _save_index_map():
 _index_map: Dict[str, str] = _load_index_map()
 
 
+def _fetch_jbgk_info(fund_code: str) -> dict:
+    """
+    从天天基金 jbgk（基本概况）页面解析关键信息。
+    返回 {"tracking_index_code": "930838", "parent_etf_code": "159880"} 等。
+    jbgk 页面比 tsdata 页面更完整，对 ETF联接基金尤其可靠。
+    """
+    result = {}
+    try:
+        url = f"https://fundf10.eastmoney.com/jbgk_{fund_code}.html"
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            "Referer": f"https://fundf10.eastmoney.com/{fund_code}.html",
+        }
+        req = Request(url, headers=headers)
+        with urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
+            raw = resp.read()
+
+        # 尝试多种编码
+        content = None
+        for enc in ("utf-8", "gbk", "gb2312"):
+            try:
+                content = raw.decode(enc)
+                break
+            except (UnicodeDecodeError, LookupError):
+                continue
+        if not content:
+            return result
+
+        # --- 提取跟踪标的代码 ---
+        # 模式1: <th>跟踪标的代码</th><td>930838</td>  (独立列)
+        m = re.search(r'跟踪标的代码\s*</th>\s*<td[^>]*>\s*(\d{6})', content, re.DOTALL)
+        if m:
+            result["tracking_index_code"] = m.group(1)
+            print(f"[jbgk] {fund_code} 跟踪标的代码={m.group(1)}")
+        else:
+            # 模式2: 跟踪标的 ... 6位数字 (同一行或邻近行)
+            m2 = re.search(r'跟踪标的.*?(\d{6})', content, re.DOTALL)
+            if m2:
+                result["tracking_index_code"] = m2.group(1)
+                print(f"[jbgk] {fund_code} 跟踪标的(宽泛匹配)={m2.group(1)}")
+
+        # --- 提取关联基金中的母 ETF 代码 ---
+        related_match = re.search(r'关联基金(.*?)</tr>', content, re.DOTALL | re.IGNORECASE)
+        if related_match:
+            section = related_match.group(1)
+            # 提取所有6位代码
+            codes_in_section = re.findall(r'(\d{6})', section)
+            for code in codes_in_section:
+                if code == fund_code:
+                    continue
+                # ETF代码通常以 1 或 5 开头 (159xxx, 510xxx, 512xxx, 515xxx, 516xxx, 560xxx, 588xxx)
+                if code[0] in ('1', '5'):
+                    result["parent_etf_code"] = code
+                    print(f"[jbgk] {fund_code} 关联ETF={code}")
+                    break
+            # 兜底: 取第一个非自身的代码
+            if "parent_etf_code" not in result:
+                for code in codes_in_section:
+                    if code != fund_code:
+                        result["parent_etf_code"] = code
+                        print(f"[jbgk] {fund_code} 关联基金={code}")
+                        break
+
+        # --- 也尝试从页面链接中找 ETF 代码 ---
+        if "parent_etf_code" not in result:
+            etf_link_codes = re.findall(r'jbgk_(\d{6})\.html', content)
+            for code in etf_link_codes:
+                if code == fund_code:
+                    continue
+                if code[0] in ('1', '5'):
+                    result["parent_etf_code"] = code
+                    print(f"[jbgk] {fund_code} 链接中发现ETF={code}")
+                    break
+
+    except Exception as e:
+        print(f"[jbgk] 页面解析失败 {fund_code}: {e}")
+
+    return result
+
+
+def _detect_parent_etf(fund_code: str, fund_name: Optional[str] = None) -> Optional[str]:
+    """
+    自动检测 ETF联接基金的母 ETF 代码。
+    方法1: jbgk 页面 "关联基金"
+    方法2: FundMNNBasicInformation API 扫描所有字段
+    """
+    # 1. jbgk 页面
+    info = _fetch_jbgk_info(fund_code)
+    if info.get("parent_etf_code"):
+        return info["parent_etf_code"]
+
+    # 2. API 全字段扫描
+    try:
+        url = (
+            f"https://fundmobapi.eastmoney.com/FundMNewApi/"
+            f"FundMNNBasicInformation?FCODE={fund_code}"
+            f"&deviceid=&plat=Iphone&product=EFund&Version=1"
+        )
+        headers = {
+            "User-Agent": "Mozilla/5.0",
+            "Referer": "https://fund.eastmoney.com/",
+        }
+        req = Request(url, headers=headers)
+        with urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
+            content = resp.read().decode("utf-8")
+        data = json.loads(content)
+        datas = data.get("Datas") or {}
+
+        # 检查可能包含母ETF代码的字段
+        for field in ("RLATEDFUND", "ETFCODE", "TARGETFUND"):
+            val = datas.get(field, "")
+            if val and val != "--":
+                codes = re.findall(r'(\d{6})', str(val))
+                for c in codes:
+                    if c != fund_code and c[0] in ('1', '5'):
+                        print(f"[ETFLink] 从API {field}={c}: {fund_code} -> {c}")
+                        return c
+
+        # 打印非空字段辅助排查
+        non_empty = {k: str(v)[:80] for k, v in datas.items()
+                     if v and str(v).strip() and str(v) != "--"}
+        print(f"[ETFLink] API字段概览 {fund_code}: {list(non_empty.keys())}")
+
+    except Exception as e:
+        print(f"[ETFLink] API解析失败 {fund_code}: {e}")
+
+    print(f"[ETFLink] 未能自动检测母ETF {fund_code}")
+    return None
+
+
 def _detect_tracking_index(fund_code: str, fund_name: Optional[str] = None) -> Optional[str]:
     """
     自动检测基金跟踪的指数代码。
-    优先从缓存映射读取，否则从天天基金详情页/API解析。
+    优先从缓存映射读取，否则依次尝试:
+    0. jbgk 页面（最可靠，对 ETF联接也有效）
+    1. tsdata 页面
+    2. FundMNNBasicInformation API (INDEXCODE)
+    3. API BENCH/PERFCMP 字段
     """
-    # 1. 缓存命中
+    # 缓存命中
     if fund_code in _index_map:
         return _index_map[fund_code]
 
-    # 2. 从天天基金 tsdata 页面解析跟踪指数
+    # 0. 从 jbgk 页面获取跟踪标的代码
+    jbgk_info = _fetch_jbgk_info(fund_code)
+    if jbgk_info.get("tracking_index_code"):
+        index_code = jbgk_info["tracking_index_code"]
+        _index_map[fund_code] = index_code
+        _save_index_map()
+        print(f"[IndexMap] 从jbgk检测跟踪指数: {fund_code} -> {index_code}")
+        return index_code
+
+    # 1. 从天天基金 tsdata 页面解析跟踪指数
     try:
         url = f"https://fundf10.eastmoney.com/tsdata_{fund_code}.html"
         headers = {
@@ -420,10 +563,12 @@ def get_fund_name(fund_code: str) -> Optional[str]:
 
 
 def _is_etf_link_fund(fund_name: Optional[str]) -> bool:
-    """根据基金名称判断是否为ETF联接基金"""
+    """根据基金名称判断是否为ETF联接基金
+    覆盖所有命名变体: ETF联接、ETF发起联接、ETF发起式联接 等
+    """
     if not fund_name:
         return False
-    return "ETF联接" in fund_name or "ETF发起式联接" in fund_name
+    return "联接" in fund_name
 
 
 def _is_index_fund(fund_name: Optional[str]) -> bool:
@@ -540,7 +685,7 @@ def _fetch_eastmoney_holdings(fund_code: str, headers: dict) -> Tuple[Optional[L
 def _fetch_holdings_combined(fund_code: str, depth: int = 0) -> Optional[dict]:
     """
     组合数据源获取持仓，优先级：
-    1. ETF联接基金穿透（用户映射）
+    1. ETF联接基金穿透（用户映射 + 自动检测母ETF）
     2. 指数基金/ETF -> 中证指数权重下载（全部成分股+精确权重）
     3. 普通基金 -> 天天基金持仓
     """
@@ -575,8 +720,11 @@ def _fetch_holdings_combined(fund_code: str, depth: int = 0) -> Optional[dict]:
     except Exception as e:
         print(f"[Holdings] 获取仓位比例失败: {e}")
 
+    is_link = _is_etf_link_fund(fund_name)
+    is_idx = _is_index_fund(fund_name)
+
     if fund_name:
-        print(f"[Holdings] {fund_code} fund_name={fund_name}, is_index={_is_index_fund(fund_name)}")
+        print(f"[Holdings] {fund_code} fund_name={fund_name}, is_index={is_idx}, is_etf_link={is_link}")
     else:
         print(f"[Holdings] {fund_code} fund_name=None (获取名称失败)")
 
@@ -593,9 +741,27 @@ def _fetch_holdings_combined(fund_code: str, depth: int = 0) -> Optional[dict]:
             etf_holdings["is_etf_link"] = True
             return etf_holdings
 
+    # === 第二步B：ETF联接基金 自动检测母ETF并穿透 ===
+    if is_link and depth == 0:
+        print(f"[Holdings] {fund_code} 检测为ETF联接基金, 尝试自动发现母ETF...")
+        parent_etf = _detect_parent_etf(fund_code, fund_name)
+        if parent_etf:
+            print(f"[Holdings] 自动发现母ETF: {fund_code} -> {parent_etf}")
+            # 持久化映射，下次直接命中
+            set_etf_link_target(fund_code, parent_etf)
+            etf_holdings = _fetch_holdings_combined(parent_etf, depth + 1)
+            if etf_holdings and etf_holdings.get("positions"):
+                etf_holdings["original_fund_code"] = fund_code
+                etf_holdings["fund_code"] = fund_code
+                etf_holdings["fund_name"] = fund_name
+                etf_holdings["etf_target"] = parent_etf
+                etf_holdings["is_etf_link"] = True
+                return etf_holdings
+        else:
+            print(f"[Holdings] {fund_code} 未能自动发现母ETF, 继续常规路径...")
+
     # === 第三步：指数基金/ETF -> 尝试中证指数权重 ===
     csindex_result = None
-    is_idx = _is_index_fund(fund_name)
     if is_idx:
         print(f"[Holdings] {fund_code} 识别为指数基金({fund_name}), 尝试获取中证指数权重...")
         index_code = _detect_tracking_index(fund_code, fund_name)
