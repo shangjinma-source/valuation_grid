@@ -254,10 +254,9 @@ def _detect_parent_etf(fund_code: str, fund_name: Optional[str] = None) -> Optio
 def _search_csindex_code(index_name: str) -> Optional[str]:
     """
     通过指数名称在中证指数官网搜索指数代码。
-    仅适用于中证系列指数。
+    名称不含"中证"时自动补前缀尝试。
     """
-    if not index_name or '中证' not in index_name:
-        print(f"[CSIndex] 非中证指数, 跳过搜索: '{index_name}'")
+    if not index_name:
         return None
 
     from urllib.parse import quote
@@ -269,6 +268,10 @@ def _search_csindex_code(index_name: str) -> Optional[str]:
             keyword = keyword[:-len(suffix)]
             break
     keyword = keyword.strip()
+
+    # 名称不含"中证"时补前缀（如 jbgk 缩写 "细分有色" -> "中证细分有色"）
+    if '中证' not in keyword and len(keyword) >= 2:
+        keyword = '中证' + keyword
 
     if len(keyword) < 4:
         return None
@@ -288,6 +291,9 @@ def _search_csindex_code(index_name: str) -> Optional[str]:
         })
         with urlopen(req, timeout=10) as resp:
             result = json.loads(resp.read().decode("utf-8"))
+
+        # 调试: 打印响应结构
+        print(f"[CSIndex] API响应: {str(result)[:500]}")
 
         # 适配多种返回格式
         items = []
@@ -336,9 +342,20 @@ def _detect_tracking_index(fund_code: str, fund_name: Optional[str] = None) -> O
         else:
             print(f"[IndexMap] jbgk返回的指数代码无效 {fund_code}: '{index_code}'")
 
-    # 0.5 jbgk获取了指数名称但没有代码 -> 通过中证指数官网按名称搜索
+    # 0.5 通过中证指数官网按名称搜索
+    # 来源1: jbgk 跟踪标的名称; 来源2: 基金名称去掉公司前缀和ETF后缀
+    search_names = []
     if jbgk_info.get("tracking_index_name"):
-        index_code = _search_csindex_code(jbgk_info["tracking_index_name"])
+        search_names.append(jbgk_info["tracking_index_name"])
+    if fund_name:
+        # "华夏细分有色金属产业主题ETF" -> "细分有色金属产业主题"
+        cleaned = re.sub(r'(ETF|LOF).*$', '', fund_name).strip()
+        # 去掉常见2~4字基金公司前缀 (天弘/华夏/易方达/中信保诚 等)
+        cleaned = re.sub(r'^[\u4e00-\u9fa5]{2,4}?(?=中证|上证|深证|国证|细分|恒生)', '', cleaned)
+        if cleaned and cleaned not in search_names:
+            search_names.append(cleaned)
+    for name in search_names:
+        index_code = _search_csindex_code(name)
         if index_code:
             _index_map[fund_code] = index_code
             _save_index_map()
