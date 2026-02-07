@@ -2,68 +2,61 @@
   "fund_code": "017470",
   "fund_name": "嘉实上证科创板芯片ETF发起联接C",
   "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.79,
-  "parsed_weight": 57.57,
-  "missing_weight": 42.22,
+  "stock_total_weight": 2.79,
+  "parsed_weight": 1.62,
+  "missing_weight": 1.17,
   "positions": [
     {
       "stock_code": "688981",
       "stock_name": "中芯国际",
-      "weight": 10.36
+      "weight": 0.29
     },
     {
       "stock_code": "688041",
       "stock_name": "海光信息",
-      "weight": 10.05
+      "weight": 0.28
     },
     {
       "stock_code": "688256",
       "stock_name": "寒武纪",
-      "weight": 9.45
+      "weight": 0.26
     },
     {
       "stock_code": "688008",
       "stock_name": "澜起科技",
-      "weight": 7.73
+      "weight": 0.22
     },
     {
       "stock_code": "688012",
       "stock_name": "中微公司",
-      "weight": 6.67
+      "weight": 0.2
     },
     {
       "stock_code": "688072",
       "stock_name": "拓荆科技",
-      "weight": 3.19
+      "weight": 0.09
     },
     {
       "stock_code": "688521",
       "stock_name": "芯原股份",
-      "weight": 2.89
+      "weight": 0.08
     },
     {
       "stock_code": "688347",
       "stock_name": "华虹公司",
-      "weight": 2.52
+      "weight": 0.07
     },
     {
       "stock_code": "688126",
       "stock_name": "沪硅产业",
-      "weight": 2.37
+      "weight": 0.07
     },
     {
       "stock_code": "688110",
       "stock_name": "东芯股份",
-      "weight": 2.33
-    },
-    {
-      "stock_code": "688795",
-      "stock_name": "摩尔线程",
-      "weight": 0.01
+      "weight": 0.06
     }
   ],
-  "fetched_at": "2026-02-01 15:21:40",
-  "original_fund_code": "017470",
-  "etf_target": "588200",
-  "is_etf_link": true
+  "fetched_at": "2026-02-07 19:05:32",
+  "data_source": "eastmoney"
 }

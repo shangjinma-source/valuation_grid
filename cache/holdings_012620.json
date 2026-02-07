@@ -2,68 +2,61 @@
   "fund_code": "012620",
   "fund_name": "嘉实中证软件服务ETF联接C",
   "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.69,
-  "parsed_weight": 60.7,
-  "missing_weight": 38.99,
+  "stock_total_weight": 0.8,
+  "parsed_weight": 0.5,
+  "missing_weight": 0.3,
   "positions": [
     {
       "stock_code": "002230",
       "stock_name": "科大讯飞",
-      "weight": 13.26
+      "weight": 0.11
     },
     {
       "stock_code": "688111",
       "stock_name": "金山办公",
-      "weight": 8.14
+      "weight": 0.07
     },
     {
       "stock_code": "300033",
       "stock_name": "同花顺",
-      "weight": 7.93
+      "weight": 0.06
     },
     {
       "stock_code": "300803",
       "stock_name": "指南针",
-      "weight": 5.37
+      "weight": 0.04
     },
     {
       "stock_code": "600570",
       "stock_name": "恒生电子",
-      "weight": 5.23
+      "weight": 0.04
     },
     {
       "stock_code": "002261",
       "stock_name": "拓维信息",
-      "weight": 4.78
+      "weight": 0.04
     },
     {
       "stock_code": "300339",
       "stock_name": "润和软件",
-      "weight": 4.51
+      "weight": 0.04
     },
     {
       "stock_code": "601360",
       "stock_name": "三六零",
-      "weight": 4.48
+      "weight": 0.04
     },
     {
       "stock_code": "301236",
       "stock_name": "软通动力",
-      "weight": 3.62
+      "weight": 0.03
     },
     {
       "stock_code": "300454",
       "stock_name": "深信服",
-      "weight": 3.31
-    },
-    {
-      "stock_code": "688795",
-      "stock_name": "摩尔线程",
-      "weight": 0.07
+      "weight": 0.03
     }
   ],
-  "fetched_at": "2026-02-02 02:11:39",
-  "original_fund_code": "012620",
-  "etf_target": "159852",
-  "is_etf_link": true
+  "fetched_at": "2026-02-07 19:05:55",
+  "data_source": "eastmoney"
 }

@@ -77,7 +77,8 @@
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-01 01:38:33",
+  "fetched_at": "2026-02-07 18:55:13",
+  "data_source": "eastmoney",
   "original_fund_code": "024975",
   "etf_target": "588710",
   "is_etf_link": true

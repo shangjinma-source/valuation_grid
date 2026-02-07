@@ -2,83 +2,61 @@
   "fund_code": "016708",
   "fund_name": "华夏有色金属ETF联接C",
   "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.04,
-  "parsed_weight": 47.33,
-  "missing_weight": 51.71,
+  "stock_total_weight": 4.22,
+  "parsed_weight": 2.26,
+  "missing_weight": 1.96,
   "positions": [
     {
       "stock_code": "601899",
       "stock_name": "紫金矿业",
-      "weight": 10.16
+      "weight": 0.65
     },
     {
       "stock_code": "603993",
       "stock_name": "洛阳钼业",
-      "weight": 7.83
+      "weight": 0.34
     },
     {
       "stock_code": "600111",
       "stock_name": "北方稀土",
-      "weight": 5.22
+      "weight": 0.23
     },
     {
       "stock_code": "603799",
       "stock_name": "华友钴业",
-      "weight": 4.66
+      "weight": 0.2
     },
     {
       "stock_code": "601600",
       "stock_name": "中国铝业",
-      "weight": 4.36
+      "weight": 0.19
     },
     {
       "stock_code": "002460",
       "stock_name": "赣锋锂业",
-      "weight": 3.16
+      "weight": 0.14
     },
     {
       "stock_code": "600547",
       "stock_name": "山东黄金",
-      "weight": 3.1
+      "weight": 0.14
     },
     {
       "stock_code": "000807",
       "stock_name": "云铝股份",
-      "weight": 3.06
+      "weight": 0.13
     },
     {
       "stock_code": "600489",
       "stock_name": "中金黄金",
-      "weight": 3.03
+      "weight": 0.13
     },
     {
-      "stock_code": "600362",
-      "stock_name": "江西铜业",
-      "weight": 2.57
-    },
-    {
-      "stock_code": "688795",
-      "stock_name": "摩尔线程",
-      "weight": 0.09
-    },
-    {
-      "stock_code": "688802",
-      "stock_name": "沐曦股份",
-      "weight": 0.06
-    },
-    {
-      "stock_code": "688790",
-      "stock_name": "昂瑞微",
-      "weight": 0.02
-    },
-    {
-      "stock_code": "001280",
-      "stock_name": "中国铀业",
-      "weight": 0.01
+      "stock_code": "002466",
+      "stock_name": "天齐锂业",
+      "weight": 0.11
     }
   ],
-  "fetched_at": "2026-01-31 23:53:14",
-  "original_fund_code": "016708",
-  "etf_target": "159876",
-  "is_etf_link": true
+  "fetched_at": "2026-02-07 19:05:29",
+  "data_source": "eastmoney"
 }

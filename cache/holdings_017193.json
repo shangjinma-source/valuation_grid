@@ -1,5 +1,6 @@
 {
   "fund_code": "017193",
+  "fund_name": "天弘中证工业有色金属主题ETF发起联接C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 95.05,
   "parsed_weight": 54.87,
@@ -66,5 +67,6 @@
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-01-31 14:02:02"
+  "fetched_at": "2026-02-07 18:53:53",
+  "data_source": "eastmoney"
 }

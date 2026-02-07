@@ -1,64 +1,22 @@
 {
   "fund_code": "013180",
   "fund_name": "广发国证新能源车电池ETF联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.65,
-  "parsed_weight": 67.26,
-  "missing_weight": 32.39,
+  "holdings_asof_date": "2024-09-30",
+  "stock_total_weight": 0.0,
+  "parsed_weight": 0.02,
+  "missing_weight": 0,
   "positions": [
     {
-      "stock_code": "002594",
-      "stock_name": "比亚迪",
-      "weight": 14.87
+      "stock_code": "002812",
+      "stock_name": "恩捷股份",
+      "weight": 0.01
     },
     {
-      "stock_code": "300750",
-      "stock_name": "宁德时代",
-      "weight": 13.75
-    },
-    {
-      "stock_code": "002050",
-      "stock_name": "三花智控",
-      "weight": 7.82
-    },
-    {
-      "stock_code": "603799",
-      "stock_name": "华友钴业",
-      "weight": 7.02
-    },
-    {
-      "stock_code": "300014",
-      "stock_name": "亿纬锂能",
-      "weight": 5.82
-    },
-    {
-      "stock_code": "002460",
-      "stock_name": "赣锋锂业",
-      "weight": 4.68
-    },
-    {
-      "stock_code": "002709",
-      "stock_name": "天赐材料",
-      "weight": 4.07
-    },
-    {
-      "stock_code": "300450",
-      "stock_name": "先导智能",
-      "weight": 3.64
-    },
-    {
-      "stock_code": "002074",
-      "stock_name": "国轩高科",
-      "weight": 2.82
-    },
-    {
-      "stock_code": "600549",
-      "stock_name": "厦门钨业",
-      "weight": 2.77
+      "stock_code": "300568",
+      "stock_name": "星源材质",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-02 01:46:33",
-  "original_fund_code": "013180",
-  "etf_target": "159755",
-  "is_etf_link": true
+  "fetched_at": "2026-02-07 19:05:59",
+  "data_source": "eastmoney"
 }

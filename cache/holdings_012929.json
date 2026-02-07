@@ -1,64 +1,62 @@
 {
   "fund_code": "012929",
   "fund_name": "银华中证光伏ETF发起式联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 98.78,
-  "parsed_weight": 54.42,
-  "missing_weight": 44.36,
+  "holdings_asof_date": "2025-03-31",
+  "stock_total_weight": 0.0,
+  "parsed_weight": 0.26,
+  "missing_weight": 0,
   "positions": [
     {
       "stock_code": "600089",
       "stock_name": "特变电工",
-      "weight": 9.73
+      "weight": 0.06
     },
     {
       "stock_code": "601012",
       "stock_name": "隆基绿能",
-      "weight": 9.57
-    },
-    {
-      "stock_code": "300274",
-      "stock_name": "阳光电源",
-      "weight": 9.12
-    },
-    {
-      "stock_code": "000100",
-      "stock_name": "TCL科技",
-      "weight": 8.19
+      "weight": 0.04
     },
     {
       "stock_code": "600438",
       "stock_name": "通威股份",
-      "weight": 4.8
-    },
-    {
-      "stock_code": "300751",
-      "stock_name": "迈为股份",
-      "weight": 2.99
+      "weight": 0.04
     },
     {
       "stock_code": "605117",
       "stock_name": "德业股份",
-      "weight": 2.71
+      "weight": 0.03
+    },
+    {
+      "stock_code": "688223",
+      "stock_name": "晶科能源",
+      "weight": 0.03
     },
     {
       "stock_code": "601877",
       "stock_name": "正泰电器",
-      "weight": 2.6
+      "weight": 0.02
     },
     {
-      "stock_code": "002129",
-      "stock_name": "TCL中环",
-      "weight": 2.4
+      "stock_code": "688303",
+      "stock_name": "大全能源",
+      "weight": 0.01
     },
     {
-      "stock_code": "300724",
-      "stock_name": "捷佳伟创",
-      "weight": 2.31
+      "stock_code": "601137",
+      "stock_name": "博威合金",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "600821",
+      "stock_name": "金开新能",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "603688",
+      "stock_name": "石英股份",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-02 02:19:32",
-  "original_fund_code": "012929",
-  "etf_target": "516880",
-  "is_etf_link": true
+  "fetched_at": "2026-02-07 19:06:08",
+  "data_source": "eastmoney"
 }

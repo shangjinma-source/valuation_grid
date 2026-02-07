@@ -2,9 +2,9 @@
   "fund_code": "024246",
   "fund_name": "广发上证科创板人工智能ETF发起式联接C",
   "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 95.0,
+  "stock_total_weight": 99.71,
   "parsed_weight": 66.9,
-  "missing_weight": 28.1,
+  "missing_weight": 32.81,
   "positions": [
     {
       "stock_code": "688111",
@@ -57,7 +57,8 @@
       "weight": 3.52
     }
   ],
-  "fetched_at": "2026-02-05 00:10:25",
+  "fetched_at": "2026-02-07 19:02:58",
+  "data_source": "eastmoney",
   "original_fund_code": "024246",
   "etf_target": "588760",
   "is_etf_link": true

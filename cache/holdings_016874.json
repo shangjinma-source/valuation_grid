@@ -1,5 +1,6 @@
 {
   "fund_code": "016874",
+  "fund_name": "广发远见智选混合C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 92.35,
   "parsed_weight": 74.86,
@@ -56,5 +57,6 @@
       "weight": 5.21
     }
   ],
-  "fetched_at": "2026-01-31 15:42:32"
+  "fetched_at": "2026-02-07 18:55:50",
+  "data_source": "eastmoney"
 }

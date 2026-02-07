@@ -2,78 +2,46 @@
   "fund_code": "008021",
   "fund_name": "华富中证人工智能产业ETF联接C",
   "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.68,
-  "parsed_weight": 65.04,
-  "missing_weight": 34.64,
+  "stock_total_weight": 0.08,
+  "parsed_weight": 0.09,
+  "missing_weight": 0,
   "positions": [
     {
-      "stock_code": "300308",
-      "stock_name": "中际旭创",
-      "weight": 10.48
-    },
-    {
-      "stock_code": "300502",
-      "stock_name": "新易盛",
-      "weight": 10.43
-    },
-    {
-      "stock_code": "002230",
-      "stock_name": "科大讯飞",
-      "weight": 9.98
-    },
-    {
-      "stock_code": "688256",
-      "stock_name": "寒武纪",
-      "weight": 9.35
-    },
-    {
-      "stock_code": "688111",
-      "stock_name": "金山办公",
-      "weight": 6.13
-    },
-    {
-      "stock_code": "688008",
-      "stock_name": "澜起科技",
-      "weight": 4.79
-    },
-    {
-      "stock_code": "300442",
-      "stock_name": "润泽科技",
-      "weight": 4.24
-    },
-    {
-      "stock_code": "002261",
-      "stock_name": "拓维信息",
-      "weight": 4.18
-    },
-    {
-      "stock_code": "300454",
-      "stock_name": "深信服",
-      "weight": 2.93
-    },
-    {
-      "stock_code": "688521",
-      "stock_name": "芯原股份",
-      "weight": 2.44
-    },
-    {
-      "stock_code": "688795",
-      "stock_name": "摩尔线程",
-      "weight": 0.06
-    },
-    {
-      "stock_code": "688802",
-      "stock_name": "沐曦股份",
+      "stock_code": "688608",
+      "stock_name": "恒玄科技",
       "weight": 0.02
     },
     {
-      "stock_code": "688783",
-      "stock_name": "西安奕材",
+      "stock_code": "688568",
+      "stock_name": "中科星图",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "600699",
+      "stock_name": "均胜电子",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "688400",
+      "stock_name": "凌云光",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "688088",
+      "stock_name": "虹软科技",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "600850",
+      "stock_name": "电科数字",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "688003",
+      "stock_name": "天准科技",
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-05 00:11:16",
-  "original_fund_code": "008021",
-  "etf_target": "515980",
-  "is_etf_link": true
+  "fetched_at": "2026-02-07 19:06:14",
+  "data_source": "eastmoney"
 }
