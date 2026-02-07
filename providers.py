@@ -151,11 +151,18 @@ def _fetch_jbgk_info(fund_code: str) -> dict:
             result["tracking_index_code"] = m.group(1)
             print(f"[jbgk] {fund_code} 跟踪标的代码={m.group(1)}")
         else:
-            # 模式2: 跟踪标的 ... 6位数字 (同一行或邻近行)
-            m2 = re.search(r'跟踪标的.*?(\d{6})', content, re.DOTALL)
+            # 模式2: 从跟踪标的所在行的<td>单元格内提取代码
+            m2 = re.search(r'跟踪标的[^<]*</[^>]+>\s*<td[^>]*>(.*?)</td>', content, re.DOTALL)
             if m2:
-                result["tracking_index_code"] = m2.group(1)
-                print(f"[jbgk] {fund_code} 跟踪标的(宽泛匹配)={m2.group(1)}")
+                cell_text = re.sub(r'<[^>]+>', '', m2.group(1)).strip()
+                code_in_cell = re.search(r'(\d{6})', cell_text)
+                if code_in_cell:
+                    result["tracking_index_code"] = code_in_cell.group(1)
+                    print(f"[jbgk] {fund_code} 跟踪标的(单元格)={code_in_cell.group(1)}")
+                else:
+                    print(f"[jbgk] {fund_code} 跟踪标的单元格无代码: '{cell_text[:80]}'")
+            else:
+                print(f"[jbgk] {fund_code} 未找到跟踪标的行")
 
         # --- 提取关联基金中的母 ETF 代码 ---
         related_match = re.search(r'关联基金(.*?)</tr>', content, re.DOTALL | re.IGNORECASE)
@@ -178,17 +185,6 @@ def _fetch_jbgk_info(fund_code: str) -> dict:
                         result["parent_etf_code"] = code
                         print(f"[jbgk] {fund_code} 关联基金={code}")
                         break
-
-        # --- 也尝试从页面链接中找 ETF 代码 ---
-        if "parent_etf_code" not in result:
-            etf_link_codes = re.findall(r'jbgk_(\d{6})\.html', content)
-            for code in etf_link_codes:
-                if code == fund_code:
-                    continue
-                if code[0] in ('1', '5'):
-                    result["parent_etf_code"] = code
-                    print(f"[jbgk] {fund_code} 链接中发现ETF={code}")
-                    break
 
     except Exception as e:
         print(f"[jbgk] 页面解析失败 {fund_code}: {e}")
@@ -263,10 +259,14 @@ def _detect_tracking_index(fund_code: str, fund_name: Optional[str] = None) -> O
     jbgk_info = _fetch_jbgk_info(fund_code)
     if jbgk_info.get("tracking_index_code"):
         index_code = jbgk_info["tracking_index_code"]
-        _index_map[fund_code] = index_code
-        _save_index_map()
-        print(f"[IndexMap] 从jbgk检测跟踪指数: {fund_code} -> {index_code}")
-        return index_code
+        # 验证：有效中国指数代码以0/3/9开头，且非全同数字(如999999)
+        if index_code[0] in ('0', '3', '9') and len(set(index_code)) > 1:
+            _index_map[fund_code] = index_code
+            _save_index_map()
+            print(f"[IndexMap] 从jbgk检测跟踪指数: {fund_code} -> {index_code}")
+            return index_code
+        else:
+            print(f"[IndexMap] jbgk返回的指数代码无效 {fund_code}: '{index_code}'")
 
     # 1. 从天天基金 tsdata 页面解析跟踪指数
     try:
@@ -283,14 +283,15 @@ def _detect_tracking_index(fund_code: str, fund_name: Optional[str] = None) -> O
         idx_match = re.search(r'跟踪标的.*?(\d{6})', content, re.DOTALL)
         if idx_match:
             index_code = idx_match.group(1)
-            _index_map[fund_code] = index_code
-            _save_index_map()
-            print(f"[IndexMap] 检测到跟踪指数: {fund_code} -> {index_code}")
-            return index_code
+            if index_code[0] in ('0', '3', '9') and len(set(index_code)) > 1:
+                _index_map[fund_code] = index_code
+                _save_index_map()
+                print(f"[IndexMap] tsdata检测跟踪指数: {fund_code} -> {index_code}")
+                return index_code
+            else:
+                print(f"[IndexMap] tsdata匹配到无效指数代码 {fund_code}: '{index_code}'")
         else:
-            # 页面获取成功但正则未匹配，打印片段辅助排查
-            snippet = content[:500].replace('\n', ' ')
-            print(f"[IndexMap] tsdata未匹配到指数代码 {fund_code}, 页面片段: {snippet[:200]}")
+            print(f"[IndexMap] tsdata未匹配到指数代码 {fund_code}")
     except Exception as e:
         print(f"[IndexMap] tsdata页面解析失败 {fund_code}: {e}")
 
