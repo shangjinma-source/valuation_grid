@@ -1,0 +1,19 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+
+# Crash logs
+hs_err_pid*.log
+
+# OS
+.DS_Store
+Thumbs.db
