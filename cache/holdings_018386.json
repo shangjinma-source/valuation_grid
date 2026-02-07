@@ -2,88 +2,16 @@
   "fund_code": "018386",
   "fund_name": "招商中证全指软件ETF发起式联接C",
   "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.51,
-  "parsed_weight": 52.6,
-  "missing_weight": 46.91,
+  "stock_total_weight": 0.01,
+  "parsed_weight": 0.01,
+  "missing_weight": 0,
   "positions": [
     {
-      "stock_code": "002230",
-      "stock_name": "科大讯飞",
-      "weight": 11.6
-    },
-    {
-      "stock_code": "688111",
-      "stock_name": "金山办公",
-      "weight": 7.1
-    },
-    {
-      "stock_code": "300033",
-      "stock_name": "同花顺",
-      "weight": 6.91
-    },
-    {
-      "stock_code": "300803",
-      "stock_name": "指南针",
-      "weight": 4.7
-    },
-    {
-      "stock_code": "600570",
-      "stock_name": "恒生电子",
-      "weight": 4.56
-    },
-    {
-      "stock_code": "002261",
-      "stock_name": "拓维信息",
-      "weight": 4.16
-    },
-    {
-      "stock_code": "300339",
-      "stock_name": "润和软件",
-      "weight": 3.94
-    },
-    {
-      "stock_code": "601360",
-      "stock_name": "三六零",
-      "weight": 3.9
-    },
-    {
-      "stock_code": "300454",
-      "stock_name": "深信服",
-      "weight": 2.91
-    },
-    {
-      "stock_code": "600588",
-      "stock_name": "用友网络",
-      "weight": 2.71
-    },
-    {
-      "stock_code": "600930",
-      "stock_name": "华电新能",
-      "weight": 0.05
-    },
-    {
-      "stock_code": "688765",
-      "stock_name": "禾元生物",
-      "weight": 0.02
-    },
-    {
-      "stock_code": "001280",
-      "stock_name": "中国铀业",
-      "weight": 0.02
-    },
-    {
-      "stock_code": "301656",
-      "stock_name": "联合动力",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "688729",
-      "stock_name": "屹唐股份",
+      "stock_code": "300624",
+      "stock_name": "万兴科技",
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-02 02:10:38",
-  "original_fund_code": "018386",
-  "etf_target": "159899",
-  "is_etf_link": true
+  "fetched_at": "2026-02-07 19:05:54",
+  "data_source": "eastmoney"
 }

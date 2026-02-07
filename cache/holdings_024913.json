@@ -2,63 +2,61 @@
   "fund_code": "024913",
   "fund_name": "华夏国证通用航空产业ETF发起式联接C",
   "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 98.88,
-  "parsed_weight": 33.5,
-  "missing_weight": 65.38,
+  "stock_total_weight": 1.33,
+  "parsed_weight": 0.46,
+  "missing_weight": 0.87,
   "positions": [
     {
       "stock_code": "002085",
       "stock_name": "万丰奥威",
-      "weight": 5.29
+      "weight": 0.07
     },
     {
       "stock_code": "002389",
       "stock_name": "航天彩虹",
-      "weight": 3.73
+      "weight": 0.05
     },
     {
       "stock_code": "600038",
       "stock_name": "中直股份",
-      "weight": 3.58
+      "weight": 0.05
     },
     {
       "stock_code": "300045",
       "stock_name": "华力创通",
-      "weight": 3.49
+      "weight": 0.05
     },
     {
       "stock_code": "600316",
       "stock_name": "洪都航空",
-      "weight": 3.4
+      "weight": 0.04
     },
     {
-      "stock_code": "600118",
-      "stock_name": "中国卫星",
-      "weight": 3.39
-    },
-    {
-      "stock_code": "600879",
-      "stock_name": "航天电子",
-      "weight": 2.83
+      "stock_code": "688002",
+      "stock_name": "睿创微纳",
+      "weight": 0.04
     },
     {
       "stock_code": "688297",
       "stock_name": "中无人机",
-      "weight": 2.7
+      "weight": 0.04
     },
     {
-      "stock_code": "300342",
-      "stock_name": "天银机电",
-      "weight": 2.6
+      "stock_code": "600879",
+      "stock_name": "航天电子",
+      "weight": 0.04
+    },
+    {
+      "stock_code": "600118",
+      "stock_name": "中国卫星",
+      "weight": 0.04
     },
     {
       "stock_code": "002151",
       "stock_name": "北斗星通",
-      "weight": 2.49
+      "weight": 0.04
     }
   ],
-  "fetched_at": "2026-02-01 20:17:07",
-  "original_fund_code": "024913",
-  "etf_target": "159230",
-  "is_etf_link": true
+  "fetched_at": "2026-02-07 19:05:46",
+  "data_source": "eastmoney"
 }

@@ -2,63 +2,61 @@
   "fund_code": "008888",
   "fund_name": "华夏国证半导体芯片ETF联接C",
   "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 100.33,
-  "parsed_weight": 69.13,
-  "missing_weight": 31.2,
+  "stock_total_weight": 0.15,
+  "parsed_weight": 0.12,
+  "missing_weight": 0.03,
   "positions": [
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 0.03
+    },
+    {
+      "stock_code": "600930",
+      "stock_name": "华电新能",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "002049",
+      "stock_name": "紫光国微",
+      "weight": 0.01
+    },
     {
       "stock_code": "688981",
       "stock_name": "中芯国际",
-      "weight": 10.43
+      "weight": 0.01
     },
     {
       "stock_code": "688041",
       "stock_name": "海光信息",
-      "weight": 10.11
+      "weight": 0.01
     },
     {
       "stock_code": "688256",
       "stock_name": "寒武纪",
-      "weight": 9.37
+      "weight": 0.01
     },
     {
       "stock_code": "002371",
       "stock_name": "北方华创",
-      "weight": 8.73
+      "weight": 0.01
     },
     {
       "stock_code": "603986",
       "stock_name": "兆易创新",
-      "weight": 6.77
-    },
-    {
-      "stock_code": "688012",
-      "stock_name": "中微公司",
-      "weight": 6.58
+      "weight": 0.01
     },
     {
       "stock_code": "688008",
       "stock_name": "澜起科技",
-      "weight": 6.43
+      "weight": 0.01
     },
     {
       "stock_code": "603501",
       "stock_name": "豪威集团",
-      "weight": 5.2
-    },
-    {
-      "stock_code": "688072",
-      "stock_name": "拓荆科技",
-      "weight": 2.87
-    },
-    {
-      "stock_code": "600584",
-      "stock_name": "长电科技",
-      "weight": 2.64
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-01 15:20:12",
-  "original_fund_code": "008888",
-  "etf_target": "159995",
-  "is_etf_link": true
+  "fetched_at": "2026-02-07 19:05:40",
+  "data_source": "eastmoney"
 }

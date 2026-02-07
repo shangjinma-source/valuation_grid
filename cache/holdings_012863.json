@@ -1,64 +1,62 @@
 {
   "fund_code": "012863",
   "fund_name": "汇添富中证电池主题ETF发起式联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.24,
-  "parsed_weight": 51.37,
-  "missing_weight": 47.87,
+  "holdings_asof_date": "2024-09-30",
+  "stock_total_weight": 0.0,
+  "parsed_weight": 0.52,
+  "missing_weight": 0,
   "positions": [
-    {
-      "stock_code": "300750",
-      "stock_name": "宁德时代",
-      "weight": 9.21
-    },
     {
       "stock_code": "300274",
       "stock_name": "阳光电源",
-      "weight": 9.13
+      "weight": 0.12
     },
     {
-      "stock_code": "002050",
-      "stock_name": "三花智控",
-      "weight": 8.33
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "weight": 0.11
     },
     {
       "stock_code": "300014",
       "stock_name": "亿纬锂能",
-      "weight": 5.52
+      "weight": 0.06
     },
     {
-      "stock_code": "002709",
-      "stock_name": "天赐材料",
-      "weight": 4.45
-    },
-    {
-      "stock_code": "300450",
-      "stock_name": "先导智能",
-      "weight": 3.7
+      "stock_code": "002050",
+      "stock_name": "三花智控",
+      "weight": 0.06
     },
     {
       "stock_code": "002340",
       "stock_name": "格林美",
-      "weight": 2.87
-    },
-    {
-      "stock_code": "002074",
-      "stock_name": "国轩高科",
-      "weight": 2.85
-    },
-    {
-      "stock_code": "002407",
-      "stock_name": "多氟多",
-      "weight": 2.71
+      "weight": 0.04
     },
     {
       "stock_code": "300207",
       "stock_name": "欣旺达",
-      "weight": 2.6
+      "weight": 0.03
+    },
+    {
+      "stock_code": "002074",
+      "stock_name": "国轩高科",
+      "weight": 0.03
+    },
+    {
+      "stock_code": "605117",
+      "stock_name": "德业股份",
+      "weight": 0.03
+    },
+    {
+      "stock_code": "300037",
+      "stock_name": "新宙邦",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "002709",
+      "stock_name": "天赐材料",
+      "weight": 0.02
     }
   ],
-  "fetched_at": "2026-02-02 01:42:09",
-  "original_fund_code": "012863",
-  "etf_target": "159796",
-  "is_etf_link": true
+  "fetched_at": "2026-02-07 19:05:57",
+  "data_source": "eastmoney"
 }

@@ -1,5 +1,6 @@
 {
   "fund_code": "017992",
+  "fund_name": "华泰柏瑞致远混合C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 85.31,
   "parsed_weight": 34.38,
@@ -36,5 +37,6 @@
       "weight": 3.36
     }
   ],
-  "fetched_at": "2026-01-31 15:43:24"
+  "fetched_at": "2026-02-07 18:53:58",
+  "data_source": "eastmoney"
 }

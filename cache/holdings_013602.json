@@ -1,89 +1,132 @@
 {
   "fund_code": "013602",
   "fund_name": "国泰中证光伏产业ETF发起联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.5,
-  "parsed_weight": 54.92,
-  "missing_weight": 44.58,
+  "holdings_asof_date": "2022-06-30",
+  "stock_total_weight": 0.0,
+  "parsed_weight": 2.21,
+  "missing_weight": 0,
   "positions": [
     {
-      "stock_code": "600089",
-      "stock_name": "特变电工",
-      "weight": 9.76
-    },
-    {
-      "stock_code": "601012",
-      "stock_name": "隆基绿能",
-      "weight": 9.59
+      "stock_code": "002129",
+      "stock_name": "TCL中环",
+      "weight": 0.41
     },
     {
       "stock_code": "300274",
       "stock_name": "阳光电源",
-      "weight": 9.15
+      "weight": 0.31
     },
     {
-      "stock_code": "000100",
-      "stock_name": "TCL科技",
-      "weight": 8.21
+      "stock_code": "002459",
+      "stock_name": "晶澳科技",
+      "weight": 0.23
     },
     {
-      "stock_code": "600438",
-      "stock_name": "通威股份",
-      "weight": 4.82
+      "stock_code": "300450",
+      "stock_name": "先导智能",
+      "weight": 0.21
+    },
+    {
+      "stock_code": "300316",
+      "stock_name": "晶盛机电",
+      "weight": 0.14
     },
     {
       "stock_code": "300751",
       "stock_name": "迈为股份",
-      "weight": 3.0
+      "weight": 0.11
     },
     {
-      "stock_code": "605117",
-      "stock_name": "德业股份",
-      "weight": 2.72
+      "stock_code": "300763",
+      "stock_name": "锦浪科技",
+      "weight": 0.1
     },
     {
-      "stock_code": "601877",
-      "stock_name": "正泰电器",
-      "weight": 2.61
+      "stock_code": "300118",
+      "stock_name": "东方日升",
+      "weight": 0.07
     },
     {
-      "stock_code": "002129",
-      "stock_name": "TCL中环",
-      "weight": 2.41
+      "stock_code": "002056",
+      "stock_name": "横店东磁",
+      "weight": 0.07
     },
     {
       "stock_code": "300724",
       "stock_name": "捷佳伟创",
-      "weight": 2.31
+      "weight": 0.06
     },
     {
-      "stock_code": "688765",
-      "stock_name": "禾元生物",
-      "weight": 0.1
+      "stock_code": "002610",
+      "stock_name": "ST爱康",
+      "weight": 0.06
     },
     {
-      "stock_code": "688783",
-      "stock_name": "西安奕材",
-      "weight": 0.09
+      "stock_code": "000591",
+      "stock_name": "太阳能",
+      "weight": 0.05
     },
     {
-      "stock_code": "688809",
-      "stock_name": "强一股份",
-      "weight": 0.08
+      "stock_code": "002506",
+      "stock_name": "协鑫集成",
+      "weight": 0.05
     },
     {
-      "stock_code": "688795",
-      "stock_name": "摩尔线程",
+      "stock_code": "300393",
+      "stock_name": "中来股份",
+      "weight": 0.05
+    },
+    {
+      "stock_code": "000875",
+      "stock_name": "吉电股份",
       "weight": 0.04
     },
     {
-      "stock_code": "001369",
-      "stock_name": "双欣环保",
+      "stock_code": "300776",
+      "stock_name": "帝尔激光",
+      "weight": 0.04
+    },
+    {
+      "stock_code": "002617",
+      "stock_name": "露笑科技",
+      "weight": 0.04
+    },
+    {
+      "stock_code": "003022",
+      "stock_name": "联泓新科",
+      "weight": 0.04
+    },
+    {
+      "stock_code": "000012",
+      "stock_name": "南玻A",
       "weight": 0.03
+    },
+    {
+      "stock_code": "002335",
+      "stock_name": "科华数据",
+      "weight": 0.03
+    },
+    {
+      "stock_code": "300827",
+      "stock_name": "上能电气",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "003035",
+      "stock_name": "南网能源",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "002518",
+      "stock_name": "科士达",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "300080",
+      "stock_name": "易成新能",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-02 02:16:33",
-  "original_fund_code": "013602",
-  "etf_target": "159864",
-  "is_etf_link": true
+  "fetched_at": "2026-02-07 19:06:06",
+  "data_source": "eastmoney"
 }

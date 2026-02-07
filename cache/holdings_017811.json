@@ -1,5 +1,6 @@
 {
   "fund_code": "017811",
+  "fund_name": "东方人工智能主题混合C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 94.45,
   "parsed_weight": 84.41,
@@ -56,5 +57,6 @@
       "weight": 4.72
     }
   ],
-  "fetched_at": "2026-01-31 15:36:01"
+  "fetched_at": "2026-02-07 18:54:33",
+  "data_source": "eastmoney"
 }

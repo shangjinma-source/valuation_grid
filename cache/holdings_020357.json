@@ -1,64 +1,62 @@
 {
   "fund_code": "020357",
   "fund_name": "华夏半导体材料设备ETF联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 98.28,
-  "parsed_weight": 63.46,
-  "missing_weight": 34.82,
+  "holdings_asof_date": "2025-09-30",
+  "stock_total_weight": 0.0,
+  "parsed_weight": 1.42,
+  "missing_weight": 0,
   "positions": [
-    {
-      "stock_code": "002371",
-      "stock_name": "北方华创",
-      "weight": 14.18
-    },
     {
       "stock_code": "688012",
       "stock_name": "中微公司",
-      "weight": 12.67
+      "weight": 0.37
     },
     {
-      "stock_code": "688072",
-      "stock_name": "拓荆科技",
-      "weight": 7.0
-    },
-    {
-      "stock_code": "300604",
-      "stock_name": "长川科技",
-      "weight": 5.67
+      "stock_code": "002371",
+      "stock_name": "北方华创",
+      "weight": 0.31
     },
     {
       "stock_code": "688126",
       "stock_name": "沪硅产业",
-      "weight": 5.22
+      "weight": 0.12
+    },
+    {
+      "stock_code": "300604",
+      "stock_name": "长川科技",
+      "weight": 0.12
     },
     {
       "stock_code": "688120",
       "stock_name": "华海清科",
-      "weight": 4.68
+      "weight": 0.11
     },
     {
-      "stock_code": "688361",
-      "stock_name": "中科飞测",
-      "weight": 4.05
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 0.11
     },
     {
       "stock_code": "300346",
       "stock_name": "南大光电",
-      "weight": 3.73
+      "weight": 0.08
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 0.08
     },
     {
       "stock_code": "688019",
       "stock_name": "安集科技",
-      "weight": 3.24
+      "weight": 0.06
     },
     {
       "stock_code": "688037",
       "stock_name": "芯源微",
-      "weight": 3.02
+      "weight": 0.06
     }
   ],
-  "fetched_at": "2026-02-01 01:34:28",
-  "original_fund_code": "020357",
-  "etf_target": "562590",
-  "is_etf_link": true
+  "fetched_at": "2026-02-07 19:05:35",
+  "data_source": "eastmoney"
 }

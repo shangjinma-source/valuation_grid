@@ -67,7 +67,8 @@
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-02 01:41:39",
+  "fetched_at": "2026-02-07 18:59:32",
+  "data_source": "eastmoney",
   "original_fund_code": "016020",
   "etf_target": "561910",
   "is_etf_link": true

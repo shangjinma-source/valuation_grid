@@ -1,79 +1,17 @@
 {
   "fund_code": "021654",
   "fund_name": "南方中证全指计算机ETF发起联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.93,
-  "parsed_weight": 28.79,
-  "missing_weight": 71.14,
+  "holdings_asof_date": "2025-03-31",
+  "stock_total_weight": 0.0,
+  "parsed_weight": 0.01,
+  "missing_weight": 0,
   "positions": [
     {
-      "stock_code": "002230",
-      "stock_name": "科大讯飞",
-      "weight": 6.31
-    },
-    {
-      "stock_code": "688111",
-      "stock_name": "金山办公",
-      "weight": 3.84
-    },
-    {
-      "stock_code": "300033",
-      "stock_name": "同花顺",
-      "weight": 3.76
-    },
-    {
-      "stock_code": "300803",
-      "stock_name": "指南针",
-      "weight": 2.55
-    },
-    {
-      "stock_code": "600570",
-      "stock_name": "恒生电子",
-      "weight": 2.48
-    },
-    {
-      "stock_code": "002261",
-      "stock_name": "拓维信息",
-      "weight": 2.26
-    },
-    {
-      "stock_code": "300339",
-      "stock_name": "润和软件",
-      "weight": 2.14
-    },
-    {
-      "stock_code": "601360",
-      "stock_name": "三六零",
-      "weight": 2.12
-    },
-    {
-      "stock_code": "301236",
-      "stock_name": "软通动力",
-      "weight": 1.72
-    },
-    {
-      "stock_code": "300454",
-      "stock_name": "深信服",
-      "weight": 1.58
-    },
-    {
-      "stock_code": "688729",
-      "stock_name": "屹唐股份",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "301632",
-      "stock_name": "广东建科",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "301563",
-      "stock_name": "云汉芯城",
+      "stock_code": "300561",
+      "stock_name": "汇金科技",
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-02 01:33:52",
-  "original_fund_code": "021654",
-  "etf_target": "159586",
-  "is_etf_link": true
+  "fetched_at": "2026-02-07 19:05:53",
+  "data_source": "eastmoney"
 }
