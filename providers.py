@@ -15,10 +15,9 @@ from typing import Dict, List, Optional, Tuple
 
 # === 配置常量 ===
 CACHE_DIR = Path(__file__).parent / "cache"
-CACHE_MAX_AGE = timedelta(seconds=10)
 QUOTES_TTL_SECONDS = 8
 REQUEST_TIMEOUT = 15
-HOLDINGS_CACHE_DAYS = 30  # 持仓缓存天数
+HOLDINGS_CACHE_DAYS = 30  # 持仓缓存天数（唯一控制持仓缓存有效期的常量）
 
 # === 内存缓存 ===
 _quotes_cache: Dict[str, dict] = {}
@@ -145,6 +144,10 @@ def _detect_tracking_index(fund_code: str, fund_name: Optional[str] = None) -> O
             _save_index_map()
             print(f"[IndexMap] 检测到跟踪指数: {fund_code} -> {index_code}")
             return index_code
+        else:
+            # 页面获取成功但正则未匹配，打印片段辅助排查
+            snippet = content[:500].replace('\n', ' ')
+            print(f"[IndexMap] tsdata未匹配到指数代码 {fund_code}, 页面片段: {snippet[:200]}")
     except Exception as e:
         print(f"[IndexMap] tsdata页面解析失败 {fund_code}: {e}")
 
@@ -170,6 +173,8 @@ def _detect_tracking_index(fund_code: str, fund_name: Optional[str] = None) -> O
             _save_index_map()
             print(f"[IndexMap] 从API检测跟踪指数: {fund_code} -> {index_code}")
             return index_code
+        else:
+            print(f"[IndexMap] API INDEXCODE无效 {fund_code}: INDEXCODE='{index_code}'")
 
         # 4. 从业绩比较基准(BENCH/PERFCMP)中提取指数代码
         bench = datas.get("BENCH", "") or datas.get("PERFCMP", "")
@@ -182,9 +187,13 @@ def _detect_tracking_index(fund_code: str, fund_name: Optional[str] = None) -> O
                     _save_index_map()
                     print(f"[IndexMap] 从BENCH提取跟踪指数: {fund_code} -> {idx}")
                     return idx
+            print(f"[IndexMap] BENCH未找到有效指数代码 {fund_code}: BENCH='{bench}', 提取到的代码={all_codes}")
+        else:
+            print(f"[IndexMap] BENCH字段为空 {fund_code}")
     except Exception as e:
         print(f"[IndexMap] API解析失败 {fund_code}: {e}")
 
+    print(f"[IndexMap] 所有检测方法均失败 {fund_code}")
     return None
 
 
@@ -209,25 +218,36 @@ def _fetch_csindex_weights(index_code: str) -> Optional[List[dict]]:
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
     }
 
+    print(f"[CSIndex] 正在下载 {index_code} 权重文件: {url}")
+
     try:
         req = Request(url, headers=headers)
         with urlopen(req, timeout=30) as resp:
             if resp.status != 200:
+                print(f"[CSIndex] {index_code} 非200响应: {resp.status}")
                 return None
             raw = resp.read()
+            print(f"[CSIndex] {index_code} 下载成功, 大小={len(raw)} bytes")
 
         # 尝试用 xlrd 解析真正的 .xls
         try:
             import xlrd
             wb = xlrd.open_workbook(file_contents=raw)
-            return _parse_xls_with_xlrd(wb, index_code)
+            result = _parse_xls_with_xlrd(wb, index_code)
+            if result is None:
+                print(f"[CSIndex] {index_code} xlrd解析返回空, 尝试HTML回退")
+            else:
+                return result
         except ImportError:
-            pass
-        except Exception:
-            pass
+            print(f"[CSIndex] xlrd未安装, 回退到HTML解析")
+        except Exception as e:
+            print(f"[CSIndex] {index_code} xlrd解析异常: {e}, 回退到HTML解析")
 
         # 回退: 很多 .xls 实际上是 HTML 表格格式
-        return _parse_xls_as_html(raw, index_code)
+        result = _parse_xls_as_html(raw, index_code)
+        if result is None:
+            print(f"[CSIndex] {index_code} HTML回退解析也返回空")
+        return result
 
     except HTTPError as e:
         if e.code == 404:
