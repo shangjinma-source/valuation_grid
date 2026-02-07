@@ -478,3 +478,91 @@ def get_fund_5day_changes_batch(fund_codes: List[str]) -> Dict[str, Optional[flo
     for code in fund_codes:
         result[code] = get_fund_5day_change(code)
     return result
+
+
+# ============================================================
+# 持仓缓存定期自动刷新
+# ============================================================
+
+# 缓存剩余天数 <= 此值时视为"即将过期"，提前刷新
+_REFRESH_AHEAD_DAYS = 3
+# 每只基金刷新间隔（秒），避免请求过密
+_REFRESH_INTERVAL_SEC = 2
+
+def _get_tracked_fund_codes() -> List[str]:
+    """从 state.json 读取用户跟踪的全部基金代码"""
+    state_file = Path(__file__).parent / "data" / "state.json"
+    if not state_file.exists():
+        return []
+    try:
+        with open(state_file, "r", encoding="utf-8") as f:
+            state = json.load(f)
+        codes = []
+        for sector in state.get("sectors", []):
+            for fund in sector.get("funds", []):
+                code = fund.get("code", "")
+                if code and code not in codes:
+                    codes.append(code)
+        return codes
+    except Exception:
+        return []
+
+
+def _holdings_cache_remaining_days(fund_code: str) -> Optional[float]:
+    """返回缓存剩余有效天数，文件不存在返回 None"""
+    cache_path = _get_holdings_cache_path(fund_code)
+    if not cache_path.exists():
+        return None
+    try:
+        mtime = datetime.fromtimestamp(cache_path.stat().st_mtime)
+        elapsed = datetime.now() - mtime
+        return HOLDINGS_CACHE_DAYS - elapsed.total_seconds() / 86400
+    except Exception:
+        return None
+
+
+def refresh_stale_holdings() -> dict:
+    """
+    扫描用户跟踪的全部基金，刷新已过期或即将过期的持仓缓存。
+    返回 {"refreshed": [...], "failed": [...], "skipped": int}
+    """
+    _ensure_cache_dir()
+    fund_codes = _get_tracked_fund_codes()
+
+    refreshed = []
+    failed = []
+    skipped = 0
+
+    for code in fund_codes:
+        remaining = _holdings_cache_remaining_days(code)
+
+        # 缓存仍然充裕，跳过
+        if remaining is not None and remaining > _REFRESH_AHEAD_DAYS:
+            skipped += 1
+            continue
+
+        label = "expired" if remaining is None or remaining <= 0 else f"{remaining:.1f}d left"
+        print(f"[AutoRefresh] {code} ({label}) -> refreshing...")
+
+        try:
+            data = _fetch_holdings_combined(code)
+            if data and data.get("positions"):
+                cache_path = _get_holdings_cache_path(code)
+                with open(cache_path, "w", encoding="utf-8") as f:
+                    json.dump(data, f, ensure_ascii=False, indent=2)
+                refreshed.append(code)
+                print(f"[AutoRefresh] {code} OK, {len(data['positions'])} positions")
+            else:
+                failed.append(code)
+                print(f"[AutoRefresh] {code} FAILED: no positions returned")
+        except Exception as e:
+            failed.append(code)
+            print(f"[AutoRefresh] {code} ERROR: {e}")
+
+        # 请求间隔
+        if code != fund_codes[-1]:
+            time.sleep(_REFRESH_INTERVAL_SEC)
+
+    summary = {"refreshed": refreshed, "failed": failed, "skipped": skipped}
+    print(f"[AutoRefresh] Done: {len(refreshed)} refreshed, {len(failed)} failed, {skipped} skipped")
+    return summary

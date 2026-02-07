@@ -1,6 +1,9 @@
 """
 app.py - API入口：/state + /valuation + /fund/name
 """
+import threading
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -11,12 +14,38 @@ from core import (
     load_state, save_state, validate_state,
     calculate_valuation, calculate_valuation_batch, calculate_valuation_by_state
 )
-from providers import get_fund_name, set_etf_link_target, get_etf_link_target, clear_etf_link_target
+from providers import get_fund_name, set_etf_link_target, get_etf_link_target, clear_etf_link_target, refresh_stale_holdings
+
+# ============================================================
+# 后台定时刷新持仓缓存
+# ============================================================
+
+_REFRESH_INTERVAL_HOURS = 6  # 每隔6小时执行一轮扫描
+
+def _holdings_refresh_loop(stop_event: threading.Event):
+    """后台线程：定期刷新即将过期的持仓缓存"""
+    while not stop_event.is_set():
+        try:
+            print(f"[Scheduler] Holdings refresh started")
+            refresh_stale_holdings()
+        except Exception as e:
+            print(f"[Scheduler] Holdings refresh error: {e}")
+        stop_event.wait(_REFRESH_INTERVAL_HOURS * 3600)
+
+@asynccontextmanager
+async def lifespan(app):
+    stop = threading.Event()
+    t = threading.Thread(target=_holdings_refresh_loop, args=(stop,), daemon=True)
+    t.start()
+    print(f"[Scheduler] Holdings auto-refresh enabled (interval={_REFRESH_INTERVAL_HOURS}h)")
+    yield
+    stop.set()
 
 app = FastAPI(
     title="盘中估值工具",
     description="基金盘中估值 + 本地自选板块管理",
-    version="2.0.0"
+    version="2.0.0",
+    lifespan=lifespan,
 )
 
 # CORS
@@ -137,6 +166,16 @@ def post_valuation_batch(req: BatchRequest):
 def get_valuation_state():
     """按当前state返回所有基金估值（板块分组）"""
     return calculate_valuation_by_state()
+
+# ============================================================
+# 持仓缓存刷新 API
+# ============================================================
+
+@app.post("/v1/holdings/refresh")
+def post_holdings_refresh():
+    """手动触发持仓缓存刷新（刷新所有即将过期的基金）"""
+    summary = refresh_stale_holdings()
+    return summary
 
 # ============================================================
 # 健康检查

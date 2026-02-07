@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盘中估值工具</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif; 
+            background: #f0f2f5; 
+            color: #1a1a2e; 
+            min-height: 100vh;
+            font-size: 13px;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 12px; }
+        h1 { 
+            text-align: center; 
+            margin-bottom: 12px; 
+            color: #1a1a2e; 
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        /* 顶部操作栏 */
+        .toolbar { 
+            display: flex; 
+            gap: 8px; 
+            margin-bottom: 12px; 
+            align-items: center;
+        }
+        .toolbar button { 
+            padding: 6px 14px; 
+            border: none; 
+            border-radius: 6px; 
+            cursor: pointer; 
+            font-size: 12px; 
+            font-weight: 500;
+            transition: all .15s; 
+        }
+        .btn-primary { background: #4f46e5; color: #fff; }
+        .btn-primary:hover { background: #4338ca; }
+        .btn-primary:disabled { background: #a5b4fc; cursor: not-allowed; }
+        .btn-success { background: #10b981; color: #fff; }
+        .btn-success:hover { background: #059669; }
+        
+        .refresh-status {
+            margin-left: auto;
+            font-size: 11px;
+            color: #6b7280;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .refresh-status .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #10b981;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        
+        /* 状态提示 */
+        .status { 
+            padding: 8px 12px; 
+            border-radius: 6px; 
+            margin-bottom: 10px; 
+            font-size: 12px; 
+            display: none; 
+        }
+        .status.show { display: block; }
+        .status.success { background: #d1fae5; color: #065f46; }
+        .status.error { background: #fee2e2; color: #991b1b; }
+        .status.info { background: #dbeafe; color: #1e40af; }
+        
+        /* 板块 */
+        .sector { 
+            background: #fff; 
+            border-radius: 8px; 
+            margin-bottom: 10px; 
+            box-shadow: 0 1px 3px rgba(0,0,0,.08); 
+            overflow: hidden; 
+        }
+        .sector-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 10px 14px; 
+            background: #f8fafc; 
+            border-bottom: 1px solid #e5e7eb; 
+        }
+        .sector-name { 
+            font-weight: 600; 
+            font-size: 14px; 
+            color: #1e293b; 
+        }
+        .btn-export {
+            background: none;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            padding: 4px 8px;
+            cursor: pointer;
+            font-size: 12px;
+            color: #6b7280;
+            transition: all .15s;
+        }
+        .btn-export:hover {
+            background: #f3f4f6;
+            border-color: #9ca3af;
+        }
+        
+        /* 紧凑表格 */
+        .fund-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+        }
+        .fund-table th { 
+            background: #f1f5f9; 
+            padding: 6px 10px; 
+            text-align: left; 
+            font-weight: 500; 
+            font-size: 11px; 
+            color: #64748b;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .fund-table td { 
+            padding: 8px 10px; 
+            border-bottom: 1px solid #f1f5f9; 
+            vertical-align: middle;
+        }
+        .fund-table tr:last-child td { border-bottom: none; }
+        .fund-table tr:hover { background: #f8fafc; }
+        
+        .td-code { 
+            font-family: "SF Mono", Monaco, monospace; 
+            font-weight: 600; 
+            color: #4f46e5; 
+            font-size: 12px;
+            width: 70px;
+        }
+        .td-name { 
+            color: #374151; 
+            font-size: 12px;
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .td-change { 
+            font-weight: 700; 
+            font-size: 14px; 
+            text-align: right;
+            width: 80px;
+        }
+        .td-change.up { color: #dc2626; }
+        .td-change.down { color: #16a34a; }
+        .td-change.flat { color: #6b7280; }
+        
+        .td-confidence { 
+            font-size: 11px; 
+            color: #9ca3af; 
+            text-align: right;
+            width: 60px;
+        }
+        .td-action { 
+            width: 30px; 
+            text-align: center; 
+        }
+        .td-action button { 
+            background: none; 
+            border: none; 
+            color: #d1d5db; 
+            cursor: pointer; 
+            font-size: 14px;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .td-action button:hover { 
+            color: #ef4444; 
+            background: #fef2f2;
+        }
+        
+        /* 添加表单 */
+        .add-row { 
+            display: flex; 
+            gap: 8px; 
+            padding: 8px 10px; 
+            background: #fafafa; 
+            border-top: 1px solid #f1f5f9;
+        }
+        .add-row input { 
+            padding: 6px 10px; 
+            border: 1px solid #e5e7eb; 
+            border-radius: 4px; 
+            font-size: 12px; 
+            outline: none;
+            transition: border-color .15s;
+        }
+        .add-row input:focus { border-color: #4f46e5; }
+        .add-row input[name="code"] { width: 80px; }
+        .add-row input[name="alias"] { flex: 1; min-width: 0; }
+        .add-row button { 
+            padding: 6px 12px; 
+            font-size: 12px;
+            white-space: nowrap;
+        }
+        
+        /* 弹窗 */
+        .modal { 
+            display: none; 
+            position: fixed; 
+            top: 0; left: 0; right: 0; bottom: 0; 
+            background: rgba(0,0,0,.4); 
+            justify-content: center; 
+            align-items: center; 
+            z-index: 100; 
+        }
+        .modal.show { display: flex; }
+        .modal-content { 
+            background: #fff; 
+            padding: 20px; 
+            border-radius: 10px; 
+            width: 90%; 
+            max-width: 360px; 
+        }
+        .modal-content h3 { margin-bottom: 12px; font-size: 15px; }
+        .modal-content input { 
+            width: 100%; 
+            padding: 10px; 
+            border: 1px solid #d1d5db; 
+            border-radius: 6px; 
+            font-size: 13px; 
+            margin-bottom: 12px; 
+        }
+        .modal-actions { display: flex; gap: 8px; justify-content: flex-end; }
+        .modal-actions button { padding: 8px 16px; font-size: 13px; border-radius: 6px; }
+        .btn-secondary { background: #e5e7eb; color: #374151; border: none; cursor: pointer; }
+        .btn-secondary:hover { background: #d1d5db; }
+        
+        /* 空状态 */
+        .empty { text-align: center; padding: 40px 20px; color: #9ca3af; }
+        .empty-icon { font-size: 36px; margin-bottom: 10px; }
+        
+        /* 加载 */
+        .loading { 
+            display: inline-block; 
+            width: 12px; height: 12px; 
+            border: 2px solid #e5e7eb; 
+            border-top-color: #4f46e5; 
+            border-radius: 50%; 
+            animation: spin .6s linear infinite; 
+            margin-right: 6px; 
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        /* 更新时间 */
+        .update-time { 
+            text-align: center; 
+            color: #9ca3af; 
+            font-size: 11px; 
+            margin-top: 12px; 
+        }
+
+        /* 更新时间 */
+        .update-time { 
+            text-align: center; 
+            color: #9ca3af; 
+            font-size: 11px; 
+            margin-top: 12px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 盘中估值</h1>
+        
+        <div class="toolbar">
+            <button class="btn-primary" onclick="refreshAll()" id="refreshBtn">🔄 刷新</button>
+            <button class="btn-success" onclick="showAddSectorModal()">➕ 新建板块</button>
+            <div class="refresh-status">
+                <span class="dot"></span>
+                <span id="refreshTimer">自动刷新中</span>
+            </div>
+        </div>
+        
+        <div class="status" id="status"></div>
+        
+        <div id="sectors"></div>
+        
+        <div class="update-time" id="updateTime"></div>
+    </div>
+    
+    <!-- 新建板块弹窗 -->
+    <div class="modal" id="addSectorModal">
+        <div class="modal-content">
+            <h3>新建板块</h3>
+            <input type="text" id="newSectorName" placeholder="输入板块名称，如：有色金属">
+            <div class="modal-actions">
+                <button class="btn-secondary" onclick="closeModal('addSectorModal')">取消</button>
+                <button class="btn-primary" onclick="addSector()">确定</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ETF映射弹窗 -->
+    <div class="modal" id="etfLinkModal">
+        <div class="modal-content">
+            <h3>设置ETF联接穿透</h3>
+            <p style="font-size:12px;color:#666;margin-bottom:12px;">
+                对于ETF联接基金，可指定目标ETF以获取准确持仓
+            </p>
+            <input type="text" id="etfLinkCode" placeholder="联接基金代码（如016708）" maxlength="6" readonly>
+            <input type="text" id="etfTargetCode" placeholder="目标ETF代码（如516650）" maxlength="6">
+            <div class="modal-actions">
+                <button class="btn-secondary" onclick="closeModal('etfLinkModal')">取消</button>
+                <button class="btn-secondary" onclick="clearEtfLink()" style="color:#ef4444;">清除映射</button>
+                <button class="btn-primary" onclick="saveEtfLink()">保存</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8000';
+        let state = { version: 1, sectors: [] };
+        let valuations = {};
+        let autoRefreshTimer = null;
+        let isRefreshing = false;
+        let lastRefreshTime = null;
+
+        // ============ 状态提示 ============
+        function showStatus(msg, type = 'info') {
+            const el = document.getElementById('status');
+            el.textContent = msg;
+            el.className = `status show ${type}`;
+            setTimeout(() => el.classList.remove('show'), 2500);
+        }
+
+        // ============ 弹窗控制 ============
+        function showAddSectorModal() {
+            document.getElementById('newSectorName').value = '';
+            document.getElementById('addSectorModal').classList.add('show');
+            document.getElementById('newSectorName').focus();
+        }
+        
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('show');
+        }
+
+        // ============ API 调用 ============
+        async function loadState() {
+            try {
+                const res = await fetch(`${API_BASE}/v1/state`);
+                state = await res.json();
+                render();
+            } catch (e) {
+                showStatus('加载失败: ' + e.message, 'error');
+            }
+        }
+
+        async function saveState() {
+            try {
+                await fetch(`${API_BASE}/v1/state`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(state)
+                });
+            } catch (e) {
+                showStatus('保存失败', 'error');
+            }
+        }
+
+        async function getFundName(code) {
+            try {
+                const res = await fetch(`${API_BASE}/v1/fund/${code}/name`);
+                const data = await res.json();
+                return data.name || '';
+            } catch {
+                return '';
+            }
+        }
+
+        async function refreshAll() {
+            if (isRefreshing) return;
+            if (state.sectors.length === 0) return;
+
+            const allCodes = [];
+            state.sectors.forEach(s => s.funds.forEach(f => { if (f.code) allCodes.push(f.code); }));
+            if (allCodes.length === 0) return;
+
+            isRefreshing = true;
+            const btn = document.getElementById('refreshBtn');
+            btn.innerHTML = '<span class="loading"></span>刷新中';
+            btn.disabled = true;
+
+            try {
+                const res = await fetch(`${API_BASE}/v1/valuation/batch`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ fund_codes: allCodes })
+                });
+
+                if (!res.ok) throw new Error('请求失败');
+
+                const data = await res.json();
+                valuations = {};
+                (data.items || []).forEach(item => {
+                    if (item?.fund_code) valuations[item.fund_code] = item;
+                });
+
+                render();
+                lastRefreshTime = new Date();
+                document.getElementById('updateTime').textContent = 
+                    `更新于 ${lastRefreshTime.toLocaleTimeString()}`;
+            } catch (e) {
+                showStatus('刷新失败: ' + e.message, 'error');
+            } finally {
+                isRefreshing = false;
+                btn.innerHTML = '🔄 刷新';
+                btn.disabled = false;
+            }
+        }
+
+        // ============ 板块操作 ============
+        function addSector() {
+            const name = document.getElementById('newSectorName').value.trim();
+            if (!name) return;
+            
+            state.sectors.push({ name, funds: [] });
+            saveState();
+            render();
+            closeModal('addSectorModal');
+        }
+
+        // ============ 基金操作 ============
+        async function addFund(sectorIndex) {
+            const form = document.querySelector(`#sector-${sectorIndex} .add-row`);
+            const codeInput = form.querySelector('input[name="code"]');
+            const aliasInput = form.querySelector('input[name="alias"]');
+            const code = codeInput.value.trim();
+            let alias = aliasInput.value.trim();
+            
+            if (!code || !/^\d{6}$/.test(code)) {
+                showStatus('请输入6位基金代码', 'error');
+                return;
+            }
+            
+            // 检查重复
+            const exists = state.sectors[sectorIndex].funds.some(f => f.code === code);
+            if (exists) {
+                showStatus('该基金已存在', 'error');
+                return;
+            }
+            
+            // 自动获取基金名称
+            if (!alias) {
+                const btn = form.querySelector('button');
+                btn.innerHTML = '<span class="loading"></span>';
+                btn.disabled = true;
+                alias = await getFundName(code);
+                btn.innerHTML = '添加';
+                btn.disabled = false;
+            }
+            
+            state.sectors[sectorIndex].funds.push({ code, alias });
+            saveState();
+            render();
+            
+            codeInput.value = '';
+            aliasInput.value = '';
+            
+            // 添加后立即刷新估值
+            refreshAll();
+        }
+
+        function deleteFund(sectorIndex, fundIndex) {
+            state.sectors[sectorIndex].funds.splice(fundIndex, 1);
+            saveState();
+            render();
+        }
+
+        async function deleteSector(sectorIndex) {
+            const sector = state.sectors[sectorIndex];
+            if (!confirm(`确定删除板块「${sector.name}」及其所有基金？`)) return;
+            state.sectors.splice(sectorIndex, 1);
+            saveState();
+            render();
+        }
+
+        // ============ 自动刷新 ============
+        function startAutoRefresh() {
+            if (autoRefreshTimer) return;
+            autoRefreshTimer = setInterval(() => {
+                if (state.sectors.some(s => s.funds.length > 0)) {
+                    refreshAll();
+                }
+            }, 30000);
+            updateRefreshTimer();
+        }
+
+        function updateRefreshTimer() {
+            const el = document.getElementById('refreshTimer');
+            if (lastRefreshTime) {
+                const ago = Math.floor((Date.now() - lastRefreshTime) / 1000);
+                el.textContent = `${ago}s前更新 · 30s刷新`;
+            }
+            setTimeout(updateRefreshTimer, 1000);
+        }
+
+        // ============ 渲染界面 ============
+        function render() {
+            const container = document.getElementById('sectors');
+
+            if (state.sectors.length === 0) {
+                container.innerHTML = `
+                    <div class="empty">
+                        <div class="empty-icon">📁</div>
+                        <p>点击"新建板块"开始</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = state.sectors.map((sector, si) => {
+                // 按涨跌幅排序（由高到低）
+                const sortedFunds = [...sector.funds].sort((a, b) => {
+                    const valA = valuations[a.code];
+                    const valB = valuations[b.code];
+                    const changeA = valA?.estimation_change ?? -999;
+                    const changeB = valB?.estimation_change ?? -999;
+                    return changeB - changeA;
+                });
+
+                return `
+                <div class="sector" id="sector-${si}">
+                    <div class="sector-header">
+                        <span class="sector-name">${sector.name}</span>
+                        <div style="display:flex;gap:4px;">
+                            <button class="btn-export" onclick="exportSectorImage(${si})" title="导出图片">📷</button>
+                            <button class="btn-export" onclick="deleteSector(${si})" title="删除板块" style="color:#ef4444;">🗑</button>
+                        </div>
+                    </div>
+                    ${sector.funds.length === 0 ?
+                        '<div style="padding:20px;text-align:center;color:#9ca3af;font-size:12px;">暂无基金</div>' :
+                        `<table class="fund-table">
+                            <thead>
+                                <tr>
+                                    <th>代码</th>
+                                    <th>名称</th>
+                                    <th style="text-align:right">估值涨幅</th>
+                                    <th style="text-align:right">近5日</th>
+                                    <th style="text-align:right">置信度</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${sortedFunds.map((fund) => {
+                                    const fi = sector.funds.findIndex(f => f.code === fund.code);
+                                    return renderFundRow(fund, si, fi);
+                                }).join('')}
+                            </tbody>
+                        </table>`
+                    }
+                    <div class="add-row">
+                        <input type="text" name="code" placeholder="代码" maxlength="6">
+                        <input type="text" name="alias" placeholder="名称（自动获取）">
+                        <button class="btn-primary" onclick="addFund(${si})">添加</button>
+                    </div>
+                </div>
+            `}).join('');
+        }
+
+        function renderFundRow(fund, sectorIndex, fundIndex) {
+            const val = valuations[fund.code];
+            let changeText = '--';
+            let changeClass = 'flat';
+            let confidence = '--';
+            let weekText = '--';
+            let weekClass = 'flat';
+            let displayName = fund.alias || '';
+            let needsEtfLink = false;
+
+            if (val) {
+                if (val.estimation_change !== null && val.estimation_change !== undefined) {
+                    const change = val.estimation_change;
+                    changeText = (change >= 0 ? '+' : '') + change.toFixed(2) + '%';
+                    changeClass = change > 0 ? 'up' : change < 0 ? 'down' : 'flat';
+                }
+                if (val.week_change !== null && val.week_change !== undefined) {
+                    const wc = val.week_change;
+                    weekText = (wc >= 0 ? '+' : '') + wc.toFixed(2) + '%';
+                    weekClass = wc > 0 ? 'up' : wc < 0 ? 'down' : 'flat';
+                }
+                confidence = (val.confidence * 100).toFixed(0) + '%';
+                if (!displayName && val.fund_name) {
+                    displayName = val.fund_name;
+                }
+                // ETF联接基金始终显示⚙️（除非已穿透且置信度高）
+                const isEtfLink = displayName && (displayName.includes('ETF联接') ||
+                    (displayName.includes('ETF') && displayName.includes('联接')));
+                if (isEtfLink) {
+                    // ETF联接基金：已穿透（notes里有"ETF联接穿透"）且置信度>40%才不显示
+                    const hasPenetrated = val.notes && val.notes.some(n => n.includes('ETF联接穿透'));
+                    if (!hasPenetrated || val.confidence < 0.4) {
+                        needsEtfLink = true;
+                    }
+                } else if (val.confidence < 0.15 && val.estimation_change === null) {
+                    // 非ETF联接：完全没数据时也显示
+                    needsEtfLink = true;
+                }
+            }
+
+            const etfBtn = needsEtfLink ?
+                `<button onclick="showEtfLinkModal('${fund.code}')" title="设置ETF穿透" style="color:#f59e0b;">⚙</button>` : '';
+
+            return `
+                <tr>
+                    <td class="td-code">${fund.code}</td>
+                    <td class="td-name" title="${displayName}">${displayName}</td>
+                    <td class="td-change ${changeClass}">${changeText}</td>
+                    <td class="td-change ${weekClass}">${weekText}</td>
+                    <td class="td-confidence">${confidence}</td>
+                    <td class="td-action">
+                        ${etfBtn}
+                        <button onclick="deleteFund(${sectorIndex}, ${fundIndex})" title="删除">×</button>
+                    </td>
+                </tr>
+            `;
+        }
+
+        // ============ ETF映射设置 ============
+        function showEtfLinkModal(linkCode) {
+            document.getElementById('etfLinkCode').value = linkCode;
+            document.getElementById('etfTargetCode').value = '';
+            document.getElementById('etfLinkModal').classList.add('show');
+            document.getElementById('etfTargetCode').focus();
+        }
+
+        async function saveEtfLink() {
+            const linkCode = document.getElementById('etfLinkCode').value.trim();
+            const etfCode = document.getElementById('etfTargetCode').value.trim();
+
+            if (!etfCode || !/^\d{6}$/.test(etfCode)) {
+                showStatus('请输入6位ETF代码', 'error');
+                return;
+            }
+
+            try {
+                const res = await fetch(`${API_BASE}/v1/etf-link`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ link_code: linkCode, etf_code: etfCode })
+                });
+
+                if (!res.ok) throw new Error('设置失败');
+
+                showStatus(`已设置 ${linkCode} -> ${etfCode}`, 'success');
+                closeModal('etfLinkModal');
+
+                // 刷新估值
+                await refreshAll();
+            } catch (e) {
+                showStatus('设置失败: ' + e.message, 'error');
+            }
+        }
+
+        async function clearEtfLink() {
+            const linkCode = document.getElementById('etfLinkCode').value.trim();
+
+            try {
+                await fetch(`${API_BASE}/v1/etf-link/${linkCode}`, { method: 'DELETE' });
+                showStatus(`已清除 ${linkCode} 的映射`, 'success');
+                closeModal('etfLinkModal');
+                await refreshAll();
+            } catch (e) {
+                showStatus('清除失败', 'error');
+            }
+        }
+
+        // ============ 导出图片 ============
+        async function exportSectorImage(sectorIndex) {
+            const sector = state.sectors[sectorIndex];
+            if (!sector || sector.funds.length === 0) {
+                showStatus('板块为空，无法导出', 'error');
+                return;
+            }
+
+            const sortedFunds = [...sector.funds].sort((a, b) => {
+                const valA = valuations[a.code];
+                const valB = valuations[b.code];
+                return (valB?.estimation_change ?? -999) - (valA?.estimation_change ?? -999);
+            });
+
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+
+            const P = 16, rowH = 26, headH = 36, thH = 22, W = 480;
+            const H = headH + thH + sortedFunds.length * rowH + P;
+
+            // 列位置（右对齐基准点）
+            const colCodeL = P;
+            const colNameL = P + 58;
+            const colChangeR = W - P - 75;   // 估值涨幅右边界
+            const col5dayR = W - P;           // 近5日右边界
+
+            canvas.width = W * 2;
+            canvas.height = H * 2;
+            ctx.scale(2, 2);
+
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, W, H);
+
+            // 标题
+            ctx.fillStyle = '#1e293b';
+            ctx.font = 'bold 14px -apple-system, BlinkMacSystemFont, sans-serif';
+            ctx.fillText(sector.name, P, P + 14);
+
+            ctx.fillStyle = '#9ca3af';
+            ctx.font = '11px -apple-system, BlinkMacSystemFont, sans-serif';
+            const timeStr = new Date().toLocaleString('zh-CN', {month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit'});
+            ctx.fillText(timeStr, W - P - ctx.measureText(timeStr).width, P + 14);
+
+            // 表头
+            ctx.fillStyle = '#f1f5f9';
+            ctx.fillRect(0, headH, W, thH);
+            ctx.fillStyle = '#64748b';
+            ctx.font = '10px -apple-system, BlinkMacSystemFont, sans-serif';
+            ctx.fillText('代码', colCodeL, headH + 15);
+            ctx.fillText('基金名称', colNameL, headH + 15);
+            let tw;
+            tw = ctx.measureText('估值涨幅').width;
+            ctx.fillText('估值涨幅', colChangeR - tw, headH + 15);
+            tw = ctx.measureText('近5日').width;
+            ctx.fillText('近5日', col5dayR - tw, headH + 15);
+
+            // 数据行
+            sortedFunds.forEach((fund, i) => {
+                const y = headH + thH + i * rowH;
+                const val = valuations[fund.code];
+                const textY = y + 17;
+
+                if (i % 2 === 1) { ctx.fillStyle = '#f8fafc'; ctx.fillRect(0, y, W, rowH); }
+
+                // 代码
+                ctx.fillStyle = '#6366f1';
+                ctx.font = '11px -apple-system, BlinkMacSystemFont, sans-serif';
+                ctx.fillText(fund.code, colCodeL, textY);
+
+                // 名称
+                ctx.fillStyle = '#334155';
+                ctx.font = '11px -apple-system, BlinkMacSystemFont, sans-serif';
+                let name = fund.alias || val?.fund_name || '';
+                if (name.length > 14) name = name.slice(0, 14) + '...';
+                ctx.fillText(name, colNameL, textY);
+
+                // 估值涨幅（右对齐）
+                let chgTxt = '--', chgClr = '#64748b';
+                if (val?.estimation_change != null) {
+                    const c = val.estimation_change;
+                    chgTxt = (c >= 0 ? '+' : '') + c.toFixed(2) + '%';
+                    chgClr = c > 0 ? '#ef4444' : c < 0 ? '#22c55e' : '#64748b';
+                }
+                ctx.fillStyle = chgClr;
+                ctx.font = 'bold 12px -apple-system, BlinkMacSystemFont, sans-serif';
+                ctx.fillText(chgTxt, colChangeR - ctx.measureText(chgTxt).width, textY);
+
+                // 近5日（右对齐）
+                let wTxt = '--', wClr = '#64748b';
+                if (val?.week_change != null) {
+                    const w = val.week_change;
+                    wTxt = (w >= 0 ? '+' : '') + w.toFixed(2) + '%';
+                    wClr = w > 0 ? '#ef4444' : w < 0 ? '#22c55e' : '#64748b';
+                }
+                ctx.fillStyle = wClr;
+                ctx.font = 'bold 12px -apple-system, BlinkMacSystemFont, sans-serif';
+                ctx.fillText(wTxt, col5dayR - ctx.measureText(wTxt).width, textY);
+            });
+
+            const link = document.createElement('a');
+            link.download = `${sector.name}_${timeStr.replace(/[\/\s:]/g, '')}.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            showStatus('图片已导出', 'success');
+        }
+
+        // ============ 初始化 ============
+        window.onload = async () => {
+            await loadState();
+            if (state.sectors.some(s => s.funds.length > 0)) {
+                await refreshAll();
+            }
+            startAutoRefresh();
+        };
+        
+        // 回车提交
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Enter' && document.getElementById('addSectorModal').classList.contains('show')) {
+                addSector();
+            }
+            if (e.key === 'Enter' && document.getElementById('etfLinkModal').classList.contains('show')) {
+                saveEtfLink();
+            }
+            if (e.key === 'Escape') {
+                closeModal('addSectorModal');
+                closeModal('etfLinkModal');
+            }
+        });
+    </script>
+</body>
+</html>
