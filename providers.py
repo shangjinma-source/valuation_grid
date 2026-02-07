@@ -154,13 +154,22 @@ def _fetch_jbgk_info(fund_code: str) -> dict:
             # 模式2: 从跟踪标的所在行的<td>单元格内提取代码
             m2 = re.search(r'跟踪标的[^<]*</[^>]+>\s*<td[^>]*>(.*?)</td>', content, re.DOTALL)
             if m2:
-                cell_text = re.sub(r'<[^>]+>', '', m2.group(1)).strip()
-                code_in_cell = re.search(r'(\d{6})', cell_text)
-                if code_in_cell:
-                    result["tracking_index_code"] = code_in_cell.group(1)
-                    print(f"[jbgk] {fund_code} 跟踪标的(单元格)={code_in_cell.group(1)}")
+                raw_cell = m2.group(1)
+                # 先检查链接中是否藏有指数代码
+                link_code = re.search(r'href="[^"]*?(\d{6})', raw_cell)
+                if link_code:
+                    result["tracking_index_code"] = link_code.group(1)
+                    print(f"[jbgk] {fund_code} 跟踪标的链接代码={link_code.group(1)}")
                 else:
-                    print(f"[jbgk] {fund_code} 跟踪标的单元格无代码: '{cell_text[:80]}'")
+                    cell_text = re.sub(r'<[^>]+>', '', raw_cell).strip()
+                    code_in_cell = re.search(r'(\d{6})', cell_text)
+                    if code_in_cell:
+                        result["tracking_index_code"] = code_in_cell.group(1)
+                        print(f"[jbgk] {fund_code} 跟踪标的(单元格)={code_in_cell.group(1)}")
+                    else:
+                        # 存储指数名称，供后续按名称搜索
+                        result["tracking_index_name"] = cell_text
+                        print(f"[jbgk] {fund_code} 跟踪标的名称='{cell_text[:80]}' (无代码)")
             else:
                 print(f"[jbgk] {fund_code} 未找到跟踪标的行")
 
@@ -242,6 +251,65 @@ def _detect_parent_etf(fund_code: str, fund_name: Optional[str] = None) -> Optio
     return None
 
 
+def _search_csindex_code(index_name: str) -> Optional[str]:
+    """
+    通过指数名称在中证指数官网搜索指数代码。
+    仅适用于中证系列指数。
+    """
+    if not index_name or '中证' not in index_name:
+        print(f"[CSIndex] 非中证指数, 跳过搜索: '{index_name}'")
+        return None
+
+    from urllib.parse import quote
+
+    # 清理关键词: "中证电网设备主题指数" -> "中证电网设备"
+    keyword = index_name
+    for suffix in ('主题指数', '产业主题指数', '产业指数', '指数'):
+        if keyword.endswith(suffix):
+            keyword = keyword[:-len(suffix)]
+            break
+    keyword = keyword.strip()
+
+    if len(keyword) < 4:
+        return None
+
+    print(f"[CSIndex] 搜索指数代码: '{keyword}'")
+
+    try:
+        search_url = (
+            f"https://www.csindex.com.cn/csindex-home/index-list/query-index-item"
+            f"?searchInput={quote(keyword)}"
+            f"&pageNum=1&pageSize=10&sortField=&sortOrder=&indexType="
+        )
+        req = Request(search_url, headers={
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            "Accept": "application/json, text/plain, */*",
+            "Referer": "https://www.csindex.com.cn/",
+        })
+        with urlopen(req, timeout=10) as resp:
+            result = json.loads(resp.read().decode("utf-8"))
+
+        # 适配多种返回格式
+        items = []
+        if isinstance(result.get("data"), list):
+            items = result["data"]
+        elif isinstance(result.get("data"), dict):
+            items = result["data"].get("content", [])
+
+        for item in items:
+            code = str(item.get("indexCode", "") or item.get("tradeCode", "")).strip()
+            name = str(item.get("indexName", "") or item.get("indxFullCName", "")).strip()
+            if code and len(code) == 6 and code[0] in ('0', '3', '9') and len(set(code)) > 1:
+                print(f"[CSIndex] 搜索命中: '{name}' -> {code}")
+                return code
+
+        print(f"[CSIndex] 搜索无匹配结果: '{keyword}'")
+    except Exception as e:
+        print(f"[CSIndex] 搜索失败 '{keyword}': {e}")
+
+    return None
+
+
 def _detect_tracking_index(fund_code: str, fund_name: Optional[str] = None) -> Optional[str]:
     """
     自动检测基金跟踪的指数代码。
@@ -267,6 +335,15 @@ def _detect_tracking_index(fund_code: str, fund_name: Optional[str] = None) -> O
             return index_code
         else:
             print(f"[IndexMap] jbgk返回的指数代码无效 {fund_code}: '{index_code}'")
+
+    # 0.5 jbgk获取了指数名称但没有代码 -> 通过中证指数官网按名称搜索
+    if jbgk_info.get("tracking_index_name"):
+        index_code = _search_csindex_code(jbgk_info["tracking_index_name"])
+        if index_code:
+            _index_map[fund_code] = index_code
+            _save_index_map()
+            print(f"[IndexMap] 通过名称搜索到跟踪指数: {fund_code} -> {index_code}")
+            return index_code
 
     # 1. 从天天基金 tsdata 页面解析跟踪指数
     try:
