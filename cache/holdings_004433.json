@@ -1,17 +1,70 @@
 {
   "fund_code": "004433",
   "fund_name": "南方有色金属ETF联接C",
-  "holdings_asof_date": "2024-09-30",
-  "stock_total_weight": 0.0,
-  "parsed_weight": 0.01,
-  "missing_weight": 0,
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 99.88,
+  "parsed_weight": 51.05,
+  "missing_weight": 48.83,
   "positions": [
     {
       "stock_code": "601899",
       "stock_name": "紫金矿业",
-      "weight": 0.01
+      "weight": 10.23
+    },
+    {
+      "stock_code": "603993",
+      "stock_name": "洛阳钼业",
+      "weight": 8.17
+    },
+    {
+      "stock_code": "600111",
+      "stock_name": "北方稀土",
+      "weight": 5.46
+    },
+    {
+      "stock_code": "603799",
+      "stock_name": "华友钴业",
+      "weight": 4.84
+    },
+    {
+      "stock_code": "601600",
+      "stock_name": "中国铝业",
+      "weight": 4.53
+    },
+    {
+      "stock_code": "002460",
+      "stock_name": "赣锋锂业",
+      "weight": 3.32
+    },
+    {
+      "stock_code": "600547",
+      "stock_name": "山东黄金",
+      "weight": 3.27
+    },
+    {
+      "stock_code": "000807",
+      "stock_name": "云铝股份",
+      "weight": 3.2
+    },
+    {
+      "stock_code": "600489",
+      "stock_name": "中金黄金",
+      "weight": 3.18
+    },
+    {
+      "stock_code": "000408",
+      "stock_name": "藏格矿业",
+      "weight": 3.1
+    },
+    {
+      "stock_code": "600219",
+      "stock_name": "南山铝业",
+      "weight": 1.75
     }
   ],
-  "fetched_at": "2026-02-07 19:05:30",
-  "data_source": "eastmoney"
+  "fetched_at": "2026-02-08 12:54:34",
+  "data_source": "eastmoney",
+  "original_fund_code": "004433",
+  "etf_target": "512400",
+  "is_etf_link": true
 }

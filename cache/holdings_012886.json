@@ -2,91 +2,74 @@
   "fund_code": "012886",
   "fund_name": "华夏中证光伏产业ETF发起式联接C",
   "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 0.12,
-  "parsed_weight": 57.8,
-  "missing_weight": 0,
+  "stock_total_weight": 99.34,
+  "parsed_weight": 56.46,
+  "missing_weight": 42.88,
   "positions": [
-    {
-      "stock_code": "300274",
-      "stock_name": "阳光电源",
-      "weight": 18.73
-    },
     {
       "stock_code": "600089",
       "stock_name": "特变电工",
-      "weight": 8.61
+      "weight": 9.67
     },
     {
       "stock_code": "601012",
       "stock_name": "隆基绿能",
-      "weight": 8.21
+      "weight": 9.51
+    },
+    {
+      "stock_code": "300274",
+      "stock_name": "阳光电源",
+      "weight": 9.28
     },
     {
       "stock_code": "000100",
       "stock_name": "TCL科技",
-      "weight": 6.79
+      "weight": 8.17
     },
     {
       "stock_code": "600438",
       "stock_name": "通威股份",
-      "weight": 4.73
+      "weight": 4.83
+    },
+    {
+      "stock_code": "300751",
+      "stock_name": "迈为股份",
+      "weight": 3.25
     },
     {
       "stock_code": "605117",
       "stock_name": "德业股份",
-      "weight": 2.34
+      "weight": 2.79
     },
     {
       "stock_code": "601877",
       "stock_name": "正泰电器",
-      "weight": 2.33
+      "weight": 2.6
     },
     {
       "stock_code": "002129",
       "stock_name": "TCL中环",
-      "weight": 2.27
+      "weight": 2.4
+    },
+    {
+      "stock_code": "300757",
+      "stock_name": "罗博特科",
+      "weight": 2.37
     },
     {
       "stock_code": "688472",
       "stock_name": "阿特斯",
-      "weight": 1.86
+      "weight": 0.86
     },
     {
-      "stock_code": "300316",
-      "stock_name": "晶盛机电",
-      "weight": 1.84
-    },
-    {
-      "stock_code": "688795",
-      "stock_name": "摩尔线程",
-      "weight": 0.03
-    },
-    {
-      "stock_code": "688783",
-      "stock_name": "西安奕材",
-      "weight": 0.02
-    },
-    {
-      "stock_code": "688765",
-      "stock_name": "禾元生物",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "301656",
-      "stock_name": "联合动力",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "001280",
-      "stock_name": "中国铀业",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "688759",
-      "stock_name": "必贝特",
-      "weight": 0.01
+      "stock_code": "002459",
+      "stock_name": "晶澳科技",
+      "weight": 0.73
     }
   ],
-  "fetched_at": "2026-02-07 19:01:53",
-  "data_source": "eastmoney"
+  "fetched_at": "2026-02-08 12:55:55",
+  "data_source": "eastmoney",
+  "original_fund_code": "012886",
+  "etf_target": "515370",
+  "is_etf_link": true
 }

@@ -2,61 +2,64 @@
   "fund_code": "024418",
   "fund_name": "华夏上证科创板半导体材料设备主题ETF发起式联接C",
   "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 2.56,
-  "parsed_weight": 1.9,
-  "missing_weight": 0.66,
+  "stock_total_weight": 98.83,
+  "parsed_weight": 72.98,
+  "missing_weight": 25.85,
   "positions": [
     {
       "stock_code": "688072",
       "stock_name": "拓荆科技",
-      "weight": 0.26
-    },
-    {
-      "stock_code": "688012",
-      "stock_name": "中微公司",
-      "weight": 0.25
+      "weight": 10.08
     },
     {
       "stock_code": "688120",
       "stock_name": "华海清科",
-      "weight": 0.25
+      "weight": 9.64
     },
     {
       "stock_code": "688126",
       "stock_name": "沪硅产业",
-      "weight": 0.24
+      "weight": 9.4
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 8.61
     },
     {
       "stock_code": "688361",
       "stock_name": "中科飞测",
-      "weight": 0.21
+      "weight": 8.35
     },
     {
       "stock_code": "688019",
       "stock_name": "安集科技",
-      "weight": 0.17
+      "weight": 6.66
     },
     {
       "stock_code": "688037",
       "stock_name": "芯源微",
-      "weight": 0.16
+      "weight": 6.22
     },
     {
       "stock_code": "688234",
       "stock_name": "天岳先进",
-      "weight": 0.13
+      "weight": 4.95
     },
     {
       "stock_code": "688200",
       "stock_name": "华峰测控",
-      "weight": 0.12
+      "weight": 4.68
     },
     {
       "stock_code": "688082",
       "stock_name": "盛美上海",
-      "weight": 0.11
+      "weight": 4.39
     }
   ],
-  "fetched_at": "2026-02-07 19:05:36",
-  "data_source": "eastmoney"
+  "fetched_at": "2026-02-08 12:54:58",
+  "data_source": "eastmoney",
+  "original_fund_code": "024418",
+  "etf_target": "588170",
+  "is_etf_link": true
 }

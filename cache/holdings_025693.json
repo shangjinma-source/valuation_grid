@@ -2,61 +2,79 @@
   "fund_code": "025693",
   "fund_name": "南方中证通用航空主题ETF发起联接C",
   "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 1.03,
-  "parsed_weight": 0.66,
-  "missing_weight": 0.37,
+  "stock_total_weight": 98.86,
+  "parsed_weight": 42.31,
+  "missing_weight": 56.55,
   "positions": [
     {
-      "stock_code": "300627",
-      "stock_name": "华测导航",
-      "weight": 0.09
-    },
-    {
-      "stock_code": "002151",
-      "stock_name": "北斗星通",
-      "weight": 0.09
-    },
-    {
-      "stock_code": "002389",
-      "stock_name": "航天彩虹",
-      "weight": 0.08
-    },
-    {
-      "stock_code": "002625",
-      "stock_name": "光启技术",
-      "weight": 0.07
-    },
-    {
-      "stock_code": "300045",
-      "stock_name": "华力创通",
-      "weight": 0.07
+      "stock_code": "600879",
+      "stock_name": "航天电子",
+      "weight": 9.56
     },
     {
       "stock_code": "002465",
       "stock_name": "海格通信",
-      "weight": 0.06
+      "weight": 5.55
     },
     {
-      "stock_code": "000099",
-      "stock_name": "中信海直",
-      "weight": 0.05
+      "stock_code": "601698",
+      "stock_name": "中国卫通",
+      "weight": 5.14
     },
     {
-      "stock_code": "002179",
-      "stock_name": "中航光电",
-      "weight": 0.05
+      "stock_code": "688568",
+      "stock_name": "中科星图",
+      "weight": 4.23
     },
     {
-      "stock_code": "302132",
-      "stock_name": "中航成飞",
-      "weight": 0.05
+      "stock_code": "300627",
+      "stock_name": "华测导航",
+      "weight": 3.41
     },
     {
-      "stock_code": "300699",
-      "stock_name": "光威复材",
-      "weight": 0.05
+      "stock_code": "002151",
+      "stock_name": "北斗星通",
+      "weight": 3.37
+    },
+    {
+      "stock_code": "002389",
+      "stock_name": "航天彩虹",
+      "weight": 2.93
+    },
+    {
+      "stock_code": "300045",
+      "stock_name": "华力创通",
+      "weight": 2.72
+    },
+    {
+      "stock_code": "688122",
+      "stock_name": "西部超导",
+      "weight": 2.7
+    },
+    {
+      "stock_code": "600316",
+      "stock_name": "洪都航空",
+      "weight": 2.67
+    },
+    {
+      "stock_code": "301563",
+      "stock_name": "云汉芯城",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301584",
+      "stock_name": "建发致新",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "688809",
+      "stock_name": "强一股份",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-07 19:05:44",
-  "data_source": "eastmoney"
+  "fetched_at": "2026-02-08 12:55:12",
+  "data_source": "eastmoney",
+  "original_fund_code": "025693",
+  "etf_target": "159283",
+  "is_etf_link": true
 }

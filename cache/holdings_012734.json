@@ -2,61 +2,64 @@
   "fund_code": "012734",
   "fund_name": "易方达中证人工智能主题ETF联接C",
   "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 1.45,
-  "parsed_weight": 0.8,
-  "missing_weight": 0.65,
+  "stock_total_weight": 99.83,
+  "parsed_weight": 57.97,
+  "missing_weight": 41.86,
   "positions": [
     {
-      "stock_code": "688256",
-      "stock_name": "寒武纪",
-      "weight": 0.15
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 10.57
     },
     {
       "stock_code": "300502",
       "stock_name": "新易盛",
-      "weight": 0.13
+      "weight": 10.52
     },
     {
-      "stock_code": "300308",
-      "stock_name": "中际旭创",
-      "weight": 0.12
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 9.44
     },
     {
       "stock_code": "688008",
       "stock_name": "澜起科技",
-      "weight": 0.08
+      "weight": 5.06
     },
     {
       "stock_code": "603019",
       "stock_name": "中科曙光",
-      "weight": 0.07
-    },
-    {
-      "stock_code": "603501",
-      "stock_name": "豪威集团",
-      "weight": 0.06
+      "weight": 4.7
     },
     {
       "stock_code": "002230",
       "stock_name": "科大讯飞",
-      "weight": 0.05
+      "weight": 4.36
     },
     {
       "stock_code": "002415",
       "stock_name": "海康威视",
-      "weight": 0.05
+      "weight": 4.1
     },
     {
-      "stock_code": "688795",
-      "stock_name": "摩尔线程",
-      "weight": 0.05
+      "stock_code": "603501",
+      "stock_name": "豪威集团",
+      "weight": 3.99
     },
     {
       "stock_code": "688111",
       "stock_name": "金山办公",
-      "weight": 0.04
+      "weight": 2.67
+    },
+    {
+      "stock_code": "000977",
+      "stock_name": "浪潮信息",
+      "weight": 2.56
     }
   ],
-  "fetched_at": "2026-02-07 19:06:10",
-  "data_source": "eastmoney"
+  "fetched_at": "2026-02-08 12:56:00",
+  "data_source": "eastmoney",
+  "original_fund_code": "012734",
+  "etf_target": "159819",
+  "is_etf_link": true
 }

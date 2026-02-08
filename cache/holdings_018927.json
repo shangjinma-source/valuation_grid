@@ -1,67 +1,65 @@
 {
   "fund_code": "018927",
   "fund_name": "南方中证电池主题ETF发起联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.98,
-  "parsed_weight": 49.17,
-  "missing_weight": 45.81,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 19.92,
+  "parsed_weight": 10.25,
+  "missing_weight": 9.67,
   "positions": [
-    {
-      "stock_code": "300750",
-      "stock_name": "宁德时代",
-      "weight": 8.79
-    },
     {
       "stock_code": "300274",
       "stock_name": "阳光电源",
-      "weight": 8.72
+      "weight": 1.79
+    },
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "weight": 1.73
     },
     {
       "stock_code": "002050",
       "stock_name": "三花智控",
-      "weight": 7.99
+      "weight": 1.7
     },
     {
       "stock_code": "300014",
       "stock_name": "亿纬锂能",
-      "weight": 5.28
-    },
-    {
-      "stock_code": "002709",
-      "stock_name": "天赐材料",
-      "weight": 4.26
+      "weight": 1.13
     },
     {
       "stock_code": "300450",
       "stock_name": "先导智能",
-      "weight": 3.54
+      "weight": 0.88
+    },
+    {
+      "stock_code": "002709",
+      "stock_name": "天赐材料",
+      "weight": 0.83
     },
     {
       "stock_code": "002340",
       "stock_name": "格林美",
-      "weight": 2.76
+      "weight": 0.61
     },
     {
       "stock_code": "002074",
       "stock_name": "国轩高科",
-      "weight": 2.73
+      "weight": 0.59
     },
     {
       "stock_code": "002407",
       "stock_name": "多氟多",
-      "weight": 2.6
+      "weight": 0.5
     },
     {
       "stock_code": "300207",
       "stock_name": "欣旺达",
-      "weight": 2.49
-    },
-    {
-      "stock_code": "001280",
-      "stock_name": "中国铀业",
-      "weight": 0.01
+      "weight": 0.49
     }
   ],
-  "fetched_at": "2026-02-07 18:59:43",
-  "data_source": "eastmoney"
+  "fetched_at": "2026-02-08 12:55:36",
+  "data_source": "eastmoney",
+  "original_fund_code": "018927",
+  "etf_target": "159147",
+  "is_etf_link": true
 }

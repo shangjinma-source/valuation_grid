@@ -2,21 +2,64 @@
   "fund_code": "025506",
   "fund_name": "华夏创业板人工智能ETF发起式联接C",
   "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 0.02,
-  "parsed_weight": 0.02,
-  "missing_weight": 0,
+  "stock_total_weight": 98.99,
+  "parsed_weight": 57.52,
+  "missing_weight": 41.47,
   "positions": [
     {
-      "stock_code": "300231",
-      "stock_name": "银信科技",
-      "weight": 0.01
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 15.46
     },
     {
-      "stock_code": "300081",
-      "stock_name": "恒信东方",
-      "weight": 0.01
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 15.39
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 6.79
+    },
+    {
+      "stock_code": "300058",
+      "stock_name": "蓝色光标",
+      "weight": 3.11
+    },
+    {
+      "stock_code": "300857",
+      "stock_name": "协创数据",
+      "weight": 2.88
+    },
+    {
+      "stock_code": "300033",
+      "stock_name": "同花顺",
+      "weight": 2.84
+    },
+    {
+      "stock_code": "300339",
+      "stock_name": "润和软件",
+      "weight": 2.83
+    },
+    {
+      "stock_code": "300223",
+      "stock_name": "北京君正",
+      "weight": 2.78
+    },
+    {
+      "stock_code": "300442",
+      "stock_name": "润泽科技",
+      "weight": 2.76
+    },
+    {
+      "stock_code": "300418",
+      "stock_name": "昆仑万维",
+      "weight": 2.68
     }
   ],
-  "fetched_at": "2026-02-07 19:06:13",
-  "data_source": "eastmoney"
+  "fetched_at": "2026-02-08 12:56:05",
+  "data_source": "eastmoney",
+  "original_fund_code": "025506",
+  "etf_target": "159381",
+  "is_etf_link": true
 }

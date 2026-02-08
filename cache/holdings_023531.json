@@ -1,62 +1,80 @@
 {
   "fund_code": "023531",
   "fund_name": "永赢国证通用航空产业ETF发起联接C",
-  "holdings_asof_date": "2025-09-30",
-  "stock_total_weight": 0.0,
-  "parsed_weight": 0.15,
-  "missing_weight": 0,
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 99.71,
+  "parsed_weight": 33.83,
+  "missing_weight": 65.88,
   "positions": [
-    {
-      "stock_code": "300542",
-      "stock_name": "新晨科技",
-      "weight": 0.03
-    },
     {
       "stock_code": "002085",
       "stock_name": "万丰奥威",
-      "weight": 0.03
+      "weight": 5.37
     },
     {
       "stock_code": "002389",
       "stock_name": "航天彩虹",
-      "weight": 0.02
+      "weight": 3.79
+    },
+    {
+      "stock_code": "600038",
+      "stock_name": "中直股份",
+      "weight": 3.57
     },
     {
       "stock_code": "300045",
       "stock_name": "华力创通",
+      "weight": 3.55
+    },
+    {
+      "stock_code": "600118",
+      "stock_name": "中国卫星",
+      "weight": 3.43
+    },
+    {
+      "stock_code": "600316",
+      "stock_name": "洪都航空",
+      "weight": 3.39
+    },
+    {
+      "stock_code": "600879",
+      "stock_name": "航天电子",
+      "weight": 2.82
+    },
+    {
+      "stock_code": "688297",
+      "stock_name": "中无人机",
+      "weight": 2.69
+    },
+    {
+      "stock_code": "300342",
+      "stock_name": "天银机电",
+      "weight": 2.64
+    },
+    {
+      "stock_code": "002151",
+      "stock_name": "北斗星通",
+      "weight": 2.54
+    },
+    {
+      "stock_code": "301656",
+      "stock_name": "联合动力",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "688729",
+      "stock_name": "屹唐股份",
       "weight": 0.01
     },
     {
-      "stock_code": "300101",
-      "stock_name": "振芯科技",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "300627",
-      "stock_name": "华测导航",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "002023",
-      "stock_name": "海特高新",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "001696",
-      "stock_name": "宗申动力",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "300699",
-      "stock_name": "光威复材",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "000738",
-      "stock_name": "航发控制",
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-07 19:05:45",
-  "data_source": "eastmoney"
+  "fetched_at": "2026-02-08 12:55:14",
+  "data_source": "eastmoney",
+  "original_fund_code": "023531",
+  "etf_target": "159378",
+  "is_etf_link": true
 }

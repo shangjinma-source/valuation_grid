@@ -2,61 +2,64 @@
   "fund_code": "008586",
   "fund_name": "华夏人工智能ETF联接C",
   "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 2.5,
-  "parsed_weight": 1.43,
-  "missing_weight": 1.07,
+  "stock_total_weight": 99.73,
+  "parsed_weight": 57.83,
+  "missing_weight": 41.9,
   "positions": [
     {
       "stock_code": "300308",
       "stock_name": "中际旭创",
-      "weight": 0.26
+      "weight": 10.55
     },
     {
       "stock_code": "300502",
       "stock_name": "新易盛",
-      "weight": 0.26
+      "weight": 10.48
     },
     {
       "stock_code": "688256",
       "stock_name": "寒武纪",
-      "weight": 0.23
+      "weight": 9.43
     },
     {
       "stock_code": "688008",
       "stock_name": "澜起科技",
-      "weight": 0.12
+      "weight": 5.04
     },
     {
       "stock_code": "603019",
       "stock_name": "中科曙光",
-      "weight": 0.12
+      "weight": 4.69
     },
     {
       "stock_code": "002230",
       "stock_name": "科大讯飞",
-      "weight": 0.11
+      "weight": 4.35
     },
     {
       "stock_code": "002415",
       "stock_name": "海康威视",
-      "weight": 0.1
+      "weight": 4.09
     },
     {
       "stock_code": "603501",
       "stock_name": "豪威集团",
-      "weight": 0.1
+      "weight": 3.99
     },
     {
       "stock_code": "688111",
       "stock_name": "金山办公",
-      "weight": 0.07
+      "weight": 2.65
     },
     {
       "stock_code": "000977",
       "stock_name": "浪潮信息",
-      "weight": 0.06
+      "weight": 2.56
     }
   ],
-  "fetched_at": "2026-02-07 19:06:11",
-  "data_source": "eastmoney"
+  "fetched_at": "2026-02-08 12:56:01",
+  "data_source": "eastmoney",
+  "original_fund_code": "008586",
+  "etf_target": "515070",
+  "is_etf_link": true
 }

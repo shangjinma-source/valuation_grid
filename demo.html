@@ -598,17 +598,8 @@
                 if (!displayName && val.fund_name) {
                     displayName = val.fund_name;
                 }
-                // ETF联接基金始终显示⚙️（除非已穿透且置信度高）
-                const isEtfLink = displayName && (displayName.includes('ETF联接') ||
-                    (displayName.includes('ETF') && displayName.includes('联接')));
-                if (isEtfLink) {
-                    // ETF联接基金：已穿透（notes里有"ETF联接穿透"）且置信度>40%才不显示
-                    const hasPenetrated = val.notes && val.notes.some(n => n.includes('ETF联接穿透'));
-                    if (!hasPenetrated || val.confidence < 0.4) {
-                        needsEtfLink = true;
-                    }
-                } else if (val.confidence < 0.15 && val.estimation_change === null) {
-                    // 非ETF联接：完全没数据时也显示
+                // 只在置信度很低时显示⚙️按钮（提示用户可手动设置ETF映射）
+                if (val.confidence < 0.15) {
                     needsEtfLink = true;
                 }
             }
@@ -688,11 +679,21 @@
                 return;
             }
 
-            const sortedFunds = [...sector.funds].sort((a, b) => {
+            const sortedFunds = [...sector.funds]
+                .filter(f => {
+                    const v = valuations[f.code];
+                    return v && v.confidence >= 0.15;
+                })
+                .sort((a, b) => {
                 const valA = valuations[a.code];
                 const valB = valuations[b.code];
                 return (valB?.estimation_change ?? -999) - (valA?.estimation_change ?? -999);
             });
+
+            if (sortedFunds.length === 0) {
+                showStatus('没有置信度足够的基金可导出', 'error');
+                return;
+            }
 
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');

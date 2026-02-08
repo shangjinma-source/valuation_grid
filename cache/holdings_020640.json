@@ -1,62 +1,65 @@
 {
   "fund_code": "020640",
   "fund_name": "广发半导体设备ETF联接C",
-  "holdings_asof_date": "2025-09-30",
-  "stock_total_weight": 0.0,
-  "parsed_weight": 10.33,
-  "missing_weight": 0,
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 98.18,
+  "parsed_weight": 63.54,
+  "missing_weight": 34.64,
   "positions": [
-    {
-      "stock_code": "688012",
-      "stock_name": "中微公司",
-      "weight": 2.75
-    },
     {
       "stock_code": "002371",
       "stock_name": "北方华创",
-      "weight": 1.77
+      "weight": 13.97
     },
     {
-      "stock_code": "688126",
-      "stock_name": "沪硅产业",
-      "weight": 0.94
-    },
-    {
-      "stock_code": "688120",
-      "stock_name": "华海清科",
-      "weight": 0.85
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 13.49
     },
     {
       "stock_code": "688072",
       "stock_name": "拓荆科技",
-      "weight": 0.81
+      "weight": 6.98
     },
     {
       "stock_code": "300604",
       "stock_name": "长川科技",
-      "weight": 0.78
+      "weight": 5.63
     },
     {
-      "stock_code": "688019",
-      "stock_name": "安集科技",
-      "weight": 0.71
+      "stock_code": "688126",
+      "stock_name": "沪硅产业",
+      "weight": 5.19
     },
     {
-      "stock_code": "688037",
-      "stock_name": "芯源微",
-      "weight": 0.62
+      "stock_code": "688120",
+      "stock_name": "华海清科",
+      "weight": 4.59
     },
     {
       "stock_code": "688361",
       "stock_name": "中科飞测",
-      "weight": 0.6
+      "weight": 3.95
     },
     {
       "stock_code": "300346",
       "stock_name": "南大光电",
-      "weight": 0.5
+      "weight": 3.7
+    },
+    {
+      "stock_code": "688019",
+      "stock_name": "安集科技",
+      "weight": 3.11
+    },
+    {
+      "stock_code": "688037",
+      "stock_name": "芯源微",
+      "weight": 2.93
     }
   ],
-  "fetched_at": "2026-02-07 19:05:35",
-  "data_source": "eastmoney"
+  "fetched_at": "2026-02-08 12:54:57",
+  "data_source": "eastmoney",
+  "original_fund_code": "020640",
+  "etf_target": "560780",
+  "is_etf_link": true
 }

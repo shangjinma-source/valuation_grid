@@ -1,62 +1,65 @@
 {
   "fund_code": "021894",
   "fund_name": "易方达半导体设备ETF联接C",
-  "holdings_asof_date": "2025-09-30",
-  "stock_total_weight": 0.0,
-  "parsed_weight": 3.66,
-  "missing_weight": 0,
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 98.75,
+  "parsed_weight": 63.97,
+  "missing_weight": 34.78,
   "positions": [
     {
       "stock_code": "002371",
       "stock_name": "北方华创",
-      "weight": 1.55
+      "weight": 14.1
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 13.42
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 6.98
     },
     {
       "stock_code": "300604",
       "stock_name": "长川科技",
-      "weight": 0.57
+      "weight": 5.63
+    },
+    {
+      "stock_code": "688126",
+      "stock_name": "沪硅产业",
+      "weight": 5.2
+    },
+    {
+      "stock_code": "688120",
+      "stock_name": "华海清科",
+      "weight": 4.66
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 4.03
     },
     {
       "stock_code": "300346",
       "stock_name": "南大光电",
-      "weight": 0.4
+      "weight": 3.72
     },
     {
-      "stock_code": "002409",
-      "stock_name": "雅克科技",
-      "weight": 0.29
+      "stock_code": "688019",
+      "stock_name": "安集科技",
+      "weight": 3.23
     },
     {
-      "stock_code": "300666",
-      "stock_name": "江丰电子",
-      "weight": 0.29
-    },
-    {
-      "stock_code": "300236",
-      "stock_name": "上海新阳",
-      "weight": 0.18
-    },
-    {
-      "stock_code": "300655",
-      "stock_name": "晶瑞电材",
-      "weight": 0.17
-    },
-    {
-      "stock_code": "301095",
-      "stock_name": "广立微",
-      "weight": 0.1
-    },
-    {
-      "stock_code": "002119",
-      "stock_name": "康强电子",
-      "weight": 0.06
-    },
-    {
-      "stock_code": "301369",
-      "stock_name": "联动科技",
-      "weight": 0.05
+      "stock_code": "688037",
+      "stock_name": "芯源微",
+      "weight": 3.0
     }
   ],
-  "fetched_at": "2026-02-07 19:05:37",
-  "data_source": "eastmoney"
+  "fetched_at": "2026-02-08 12:54:59",
+  "data_source": "eastmoney",
+  "original_fund_code": "021894",
+  "etf_target": "159558",
+  "is_etf_link": true
 }

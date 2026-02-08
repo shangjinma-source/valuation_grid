@@ -2,61 +2,64 @@
   "fund_code": "018345",
   "fund_name": "华夏中证机器人ETF发起式联接C",
   "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 3.36,
-  "parsed_weight": 1.78,
-  "missing_weight": 1.58,
+  "stock_total_weight": 99.81,
+  "parsed_weight": 52.71,
+  "missing_weight": 47.1,
   "positions": [
     {
       "stock_code": "002230",
       "stock_name": "科大讯飞",
-      "weight": 0.33
+      "weight": 9.78
     },
     {
       "stock_code": "300124",
       "stock_name": "汇川技术",
-      "weight": 0.33
+      "weight": 9.73
     },
     {
       "stock_code": "601689",
       "stock_name": "拓普集团",
-      "weight": 0.27
+      "weight": 7.93
     },
     {
       "stock_code": "002236",
       "stock_name": "大华股份",
-      "weight": 0.15
+      "weight": 4.42
     },
     {
       "stock_code": "002008",
       "stock_name": "大族激光",
-      "weight": 0.13
+      "weight": 4.01
     },
     {
       "stock_code": "002472",
       "stock_name": "双环传动",
-      "weight": 0.13
+      "weight": 3.81
     },
     {
       "stock_code": "688169",
       "stock_name": "石头科技",
-      "weight": 0.13
+      "weight": 3.73
     },
     {
       "stock_code": "688777",
       "stock_name": "中控技术",
-      "weight": 0.12
+      "weight": 3.69
     },
     {
       "stock_code": "688017",
       "stock_name": "绿的谐波",
-      "weight": 0.1
+      "weight": 2.92
     },
     {
       "stock_code": "300024",
       "stock_name": "机器人",
-      "weight": 0.09
+      "weight": 2.69
     }
   ],
-  "fetched_at": "2026-02-07 19:06:05",
-  "data_source": "eastmoney"
+  "fetched_at": "2026-02-08 12:55:50",
+  "data_source": "eastmoney",
+  "original_fund_code": "018345",
+  "etf_target": "562500",
+  "is_etf_link": true
 }

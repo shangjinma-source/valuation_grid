@@ -1,12 +1,11 @@
 """
 providers.py - 持仓抓取 + 行情拉取（含缓存/超时/批量）
-支持：普通基金、ETF联接基金穿透、用户截图导入
-增强：中证指数成分股权重下载（ETF/指数基金全覆盖）、年报全持仓解析
+支持：普通基金、ETF联接基金穿透
+数据源：天天基金季报持仓（自动定期刷新）
 """
 import json
 import time
 import re
-import io
 from datetime import datetime, timedelta
 from pathlib import Path
 from urllib.request import urlopen, Request
@@ -87,555 +86,8 @@ def clear_etf_link_target(link_code: str):
         del _user_etf_map[link_code]
         _save_etf_map()
 
-# ============================================================
-# 指数代码映射：ETF/指数基金 -> 跟踪指数代码（持久化）
-# ============================================================
 
-_INDEX_MAP_FILE = CACHE_DIR / "index_map.json"
 
-def _load_index_map() -> Dict[str, str]:
-    """从文件加载 基金代码 -> 跟踪指数代码 映射"""
-    if _INDEX_MAP_FILE.exists():
-        try:
-            with open(_INDEX_MAP_FILE, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                if isinstance(data, dict):
-                    return data
-        except Exception:
-            pass
-    return {}
-
-def _save_index_map():
-    _ensure_cache_dir()
-    try:
-        with open(_INDEX_MAP_FILE, "w", encoding="utf-8") as f:
-            json.dump(_index_map, f, ensure_ascii=False, indent=2)
-    except Exception:
-        pass
-
-_index_map: Dict[str, str] = _load_index_map()
-
-
-def _fetch_jbgk_info(fund_code: str) -> dict:
-    """
-    从天天基金 jbgk（基本概况）页面解析关键信息。
-    返回 {"tracking_index_code": "930838", "parent_etf_code": "159880"} 等。
-    jbgk 页面比 tsdata 页面更完整，对 ETF联接基金尤其可靠。
-    """
-    result = {}
-    try:
-        url = f"https://fundf10.eastmoney.com/jbgk_{fund_code}.html"
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-            "Referer": f"https://fundf10.eastmoney.com/{fund_code}.html",
-        }
-        req = Request(url, headers=headers)
-        with urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
-            raw = resp.read()
-
-        # 尝试多种编码
-        content = None
-        for enc in ("utf-8", "gbk", "gb2312"):
-            try:
-                content = raw.decode(enc)
-                break
-            except (UnicodeDecodeError, LookupError):
-                continue
-        if not content:
-            return result
-
-        # --- 提取跟踪标的代码 ---
-        # 模式1: <th>跟踪标的代码</th><td>930838</td>  (独立列)
-        m = re.search(r'跟踪标的代码\s*</th>\s*<td[^>]*>\s*(\d{6})', content, re.DOTALL)
-        if m:
-            result["tracking_index_code"] = m.group(1)
-            print(f"[jbgk] {fund_code} 跟踪标的代码={m.group(1)}")
-        else:
-            # 模式2: 从跟踪标的所在行的<td>单元格内提取代码
-            m2 = re.search(r'跟踪标的[^<]*</[^>]+>\s*<td[^>]*>(.*?)</td>', content, re.DOTALL)
-            if m2:
-                raw_cell = m2.group(1)
-                # 先检查链接中是否藏有指数代码
-                link_code = re.search(r'href="[^"]*?(\d{6})', raw_cell)
-                if link_code:
-                    result["tracking_index_code"] = link_code.group(1)
-                    print(f"[jbgk] {fund_code} 跟踪标的链接代码={link_code.group(1)}")
-                else:
-                    cell_text = re.sub(r'<[^>]+>', '', raw_cell).strip()
-                    code_in_cell = re.search(r'(\d{6})', cell_text)
-                    if code_in_cell:
-                        result["tracking_index_code"] = code_in_cell.group(1)
-                        print(f"[jbgk] {fund_code} 跟踪标的(单元格)={code_in_cell.group(1)}")
-                    else:
-                        # 存储指数名称，供后续按名称搜索
-                        result["tracking_index_name"] = cell_text
-                        print(f"[jbgk] {fund_code} 跟踪标的名称='{cell_text[:80]}' (无代码)")
-            else:
-                print(f"[jbgk] {fund_code} 未找到跟踪标的行")
-
-        # --- 提取关联基金中的母 ETF 代码 ---
-        related_match = re.search(r'关联基金(.*?)</tr>', content, re.DOTALL | re.IGNORECASE)
-        if related_match:
-            section = related_match.group(1)
-            # 提取所有6位代码
-            codes_in_section = re.findall(r'(\d{6})', section)
-            for code in codes_in_section:
-                if code == fund_code:
-                    continue
-                # ETF代码通常以 1 或 5 开头 (159xxx, 510xxx, 512xxx, 515xxx, 516xxx, 560xxx, 588xxx)
-                if code[0] in ('1', '5'):
-                    result["parent_etf_code"] = code
-                    print(f"[jbgk] {fund_code} 关联ETF={code}")
-                    break
-            # 兜底: 取第一个非自身的代码
-            if "parent_etf_code" not in result:
-                for code in codes_in_section:
-                    if code != fund_code:
-                        result["parent_etf_code"] = code
-                        print(f"[jbgk] {fund_code} 关联基金={code}")
-                        break
-
-    except Exception as e:
-        print(f"[jbgk] 页面解析失败 {fund_code}: {e}")
-
-    return result
-
-
-def _detect_parent_etf(fund_code: str, fund_name: Optional[str] = None) -> Optional[str]:
-    """
-    自动检测 ETF联接基金的母 ETF 代码。
-    方法1: jbgk 页面 "关联基金"
-    方法2: FundMNNBasicInformation API 扫描所有字段
-    """
-    # 1. jbgk 页面
-    info = _fetch_jbgk_info(fund_code)
-    if info.get("parent_etf_code"):
-        return info["parent_etf_code"]
-
-    # 2. API 全字段扫描
-    try:
-        url = (
-            f"https://fundmobapi.eastmoney.com/FundMNewApi/"
-            f"FundMNNBasicInformation?FCODE={fund_code}"
-            f"&deviceid=&plat=Iphone&product=EFund&Version=1"
-        )
-        headers = {
-            "User-Agent": "Mozilla/5.0",
-            "Referer": "https://fund.eastmoney.com/",
-        }
-        req = Request(url, headers=headers)
-        with urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
-            content = resp.read().decode("utf-8")
-        data = json.loads(content)
-        datas = data.get("Datas") or {}
-
-        # 检查可能包含母ETF代码的字段
-        for field in ("RLATEDFUND", "ETFCODE", "TARGETFUND"):
-            val = datas.get(field, "")
-            if val and val != "--":
-                codes = re.findall(r'(\d{6})', str(val))
-                for c in codes:
-                    if c != fund_code and c[0] in ('1', '5'):
-                        print(f"[ETFLink] 从API {field}={c}: {fund_code} -> {c}")
-                        return c
-
-        # 打印非空字段辅助排查
-        non_empty = {k: str(v)[:80] for k, v in datas.items()
-                     if v and str(v).strip() and str(v) != "--"}
-        print(f"[ETFLink] API字段概览 {fund_code}: {list(non_empty.keys())}")
-
-    except Exception as e:
-        print(f"[ETFLink] API解析失败 {fund_code}: {e}")
-
-    print(f"[ETFLink] 未能自动检测母ETF {fund_code}")
-    return None
-
-
-def _search_csindex_code(index_name: str) -> Optional[str]:
-    """
-    通过指数名称在中证指数官网搜索指数代码。
-    名称不含"中证"时自动补前缀尝试。
-    """
-    if not index_name:
-        return None
-
-    from urllib.parse import quote
-
-    # 清理关键词: "中证电网设备主题指数" -> "中证电网设备"
-    keyword = index_name
-    for suffix in ('主题指数', '产业主题指数', '产业指数', '指数'):
-        if keyword.endswith(suffix):
-            keyword = keyword[:-len(suffix)]
-            break
-    keyword = keyword.strip()
-
-    # 名称不含"中证"时补前缀（如 jbgk 缩写 "细分有色" -> "中证细分有色"）
-    if '中证' not in keyword and len(keyword) >= 2:
-        keyword = '中证' + keyword
-
-    if len(keyword) < 4:
-        return None
-
-    print(f"[CSIndex] 搜索指数代码: '{keyword}'")
-
-    try:
-        search_url = (
-            f"https://www.csindex.com.cn/csindex-home/index-list/query-index-item"
-            f"?searchInput={quote(keyword)}"
-            f"&pageNum=1&pageSize=10&sortField=&sortOrder=&indexType="
-        )
-        req = Request(search_url, headers={
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-            "Accept": "application/json, text/plain, */*",
-            "Referer": "https://www.csindex.com.cn/",
-        })
-        with urlopen(req, timeout=10) as resp:
-            result = json.loads(resp.read().decode("utf-8"))
-
-        # 调试: 打印响应结构
-        print(f"[CSIndex] API响应: {str(result)[:500]}")
-
-        # 适配多种返回格式
-        items = []
-        if isinstance(result.get("data"), list):
-            items = result["data"]
-        elif isinstance(result.get("data"), dict):
-            items = result["data"].get("content", [])
-
-        for item in items:
-            code = str(item.get("indexCode", "") or item.get("tradeCode", "")).strip()
-            name = str(item.get("indexName", "") or item.get("indxFullCName", "")).strip()
-            if code and len(code) == 6 and code[0] in ('0', '3', '9') and len(set(code)) > 1:
-                print(f"[CSIndex] 搜索命中: '{name}' -> {code}")
-                return code
-
-        print(f"[CSIndex] 搜索无匹配结果: '{keyword}'")
-    except Exception as e:
-        print(f"[CSIndex] 搜索失败 '{keyword}': {e}")
-
-    return None
-
-
-def _detect_tracking_index(fund_code: str, fund_name: Optional[str] = None) -> Optional[str]:
-    """
-    自动检测基金跟踪的指数代码。
-    优先从缓存映射读取，否则依次尝试:
-    0. jbgk 页面（最可靠，对 ETF联接也有效）
-    1. tsdata 页面
-    2. FundMNNBasicInformation API (INDEXCODE)
-    3. API BENCH/PERFCMP 字段
-    """
-    # 缓存命中
-    if fund_code in _index_map:
-        return _index_map[fund_code]
-
-    # 0. 从 jbgk 页面获取跟踪标的代码
-    jbgk_info = _fetch_jbgk_info(fund_code)
-    if jbgk_info.get("tracking_index_code"):
-        index_code = jbgk_info["tracking_index_code"]
-        # 验证：有效中国指数代码以0/3/9开头，且非全同数字(如999999)
-        if index_code[0] in ('0', '3', '9') and len(set(index_code)) > 1:
-            _index_map[fund_code] = index_code
-            _save_index_map()
-            print(f"[IndexMap] 从jbgk检测跟踪指数: {fund_code} -> {index_code}")
-            return index_code
-        else:
-            print(f"[IndexMap] jbgk返回的指数代码无效 {fund_code}: '{index_code}'")
-
-    # 0.5 通过中证指数官网按名称搜索
-    # 来源1: jbgk 跟踪标的名称; 来源2: 基金名称去掉公司前缀和ETF后缀
-    search_names = []
-    if jbgk_info.get("tracking_index_name"):
-        search_names.append(jbgk_info["tracking_index_name"])
-    if fund_name:
-        # "华夏细分有色金属产业主题ETF" -> "细分有色金属产业主题"
-        cleaned = re.sub(r'(ETF|LOF).*$', '', fund_name).strip()
-        # 去掉常见2~4字基金公司前缀 (天弘/华夏/易方达/中信保诚 等)
-        cleaned = re.sub(r'^[\u4e00-\u9fa5]{2,4}?(?=中证|上证|深证|国证|细分|恒生)', '', cleaned)
-        if cleaned and cleaned not in search_names:
-            search_names.append(cleaned)
-    for name in search_names:
-        index_code = _search_csindex_code(name)
-        if index_code:
-            _index_map[fund_code] = index_code
-            _save_index_map()
-            print(f"[IndexMap] 通过名称搜索到跟踪指数: {fund_code} -> {index_code}")
-            return index_code
-
-    # 1. 从天天基金 tsdata 页面解析跟踪指数
-    try:
-        url = f"https://fundf10.eastmoney.com/tsdata_{fund_code}.html"
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-            "Referer": f"https://fundf10.eastmoney.com/{fund_code}.html",
-        }
-        req = Request(url, headers=headers)
-        with urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
-            content = resp.read().decode("utf-8")
-
-        # 页面中"跟踪标的"后面通常有指数代码链接
-        idx_match = re.search(r'跟踪标的.*?(\d{6})', content, re.DOTALL)
-        if idx_match:
-            index_code = idx_match.group(1)
-            if index_code[0] in ('0', '3', '9') and len(set(index_code)) > 1:
-                _index_map[fund_code] = index_code
-                _save_index_map()
-                print(f"[IndexMap] tsdata检测跟踪指数: {fund_code} -> {index_code}")
-                return index_code
-            else:
-                print(f"[IndexMap] tsdata匹配到无效指数代码 {fund_code}: '{index_code}'")
-        else:
-            print(f"[IndexMap] tsdata未匹配到指数代码 {fund_code}")
-    except Exception as e:
-        print(f"[IndexMap] tsdata页面解析失败 {fund_code}: {e}")
-
-    # 3. 从基金详情API解析 INDEXCODE
-    try:
-        url = (
-            f"https://fundmobapi.eastmoney.com/FundMNewApi/"
-            f"FundMNNBasicInformation?FCODE={fund_code}"
-            f"&deviceid=&plat=Iphone&product=EFund&Version=1"
-        )
-        headers = {
-            "User-Agent": "Mozilla/5.0",
-            "Referer": "https://fund.eastmoney.com/",
-        }
-        req = Request(url, headers=headers)
-        with urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
-            content = resp.read().decode("utf-8")
-        data = json.loads(content)
-        datas = data.get("Datas") or {}
-        index_code = datas.get("INDEXCODE", "")
-        if index_code and index_code != "--" and len(index_code) == 6:
-            _index_map[fund_code] = index_code
-            _save_index_map()
-            print(f"[IndexMap] 从API检测跟踪指数: {fund_code} -> {index_code}")
-            return index_code
-        else:
-            print(f"[IndexMap] API INDEXCODE无效 {fund_code}: INDEXCODE='{index_code}'")
-
-        # 4. 从业绩比较基准(BENCH/PERFCMP)中提取指数代码
-        bench = datas.get("BENCH", "") or datas.get("PERFCMP", "")
-        if bench:
-            # 提取所有6位数字，取第一个看起来像指数代码的
-            all_codes = re.findall(r'(\d{6})', bench)
-            for idx in all_codes:
-                if idx[0] in ('0', '3', '9'):
-                    _index_map[fund_code] = idx
-                    _save_index_map()
-                    print(f"[IndexMap] 从BENCH提取跟踪指数: {fund_code} -> {idx}")
-                    return idx
-            print(f"[IndexMap] BENCH未找到有效指数代码 {fund_code}: BENCH='{bench}', 提取到的代码={all_codes}")
-        else:
-            print(f"[IndexMap] BENCH字段为空 {fund_code}")
-    except Exception as e:
-        print(f"[IndexMap] API解析失败 {fund_code}: {e}")
-
-    print(f"[IndexMap] 所有检测方法均失败 {fund_code}")
-    return None
-
-
-# ============================================================
-# 中证指数成分股权重下载
-# ============================================================
-
-def _fetch_csindex_weights(index_code: str) -> Optional[List[dict]]:
-    """
-    从中证指数官网下载完整的成分股权重数据(xls文件)。
-    URL: https://csi-web-dev.oss-cn-shanghai-finance-1-pub.aliyuncs.com/
-         static/html/csindex/public/uploads/file/autofile/closeweight/
-         {index_code}closeweight.xls
-    返回: [{"stock_code": "601899", "stock_name": "紫金矿业", "weight": 15.3}, ...]
-    """
-    url = (
-        f"https://csi-web-dev.oss-cn-shanghai-finance-1-pub.aliyuncs.com/"
-        f"static/html/csindex/public/uploads/file/autofile/closeweight/"
-        f"{index_code}closeweight.xls"
-    )
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-    }
-
-    print(f"[CSIndex] 正在下载 {index_code} 权重文件: {url}")
-
-    try:
-        req = Request(url, headers=headers)
-        with urlopen(req, timeout=30) as resp:
-            if resp.status != 200:
-                print(f"[CSIndex] {index_code} 非200响应: {resp.status}")
-                return None
-            raw = resp.read()
-            print(f"[CSIndex] {index_code} 下载成功, 大小={len(raw)} bytes")
-
-        # 尝试用 xlrd 解析真正的 .xls
-        try:
-            import xlrd
-            wb = xlrd.open_workbook(file_contents=raw)
-            result = _parse_xls_with_xlrd(wb, index_code)
-            if result is None:
-                print(f"[CSIndex] {index_code} xlrd解析返回空, 尝试HTML回退")
-            else:
-                return result
-        except ImportError:
-            print(f"[CSIndex] xlrd未安装, 回退到HTML解析")
-        except Exception as e:
-            print(f"[CSIndex] {index_code} xlrd解析异常: {e}, 回退到HTML解析")
-
-        # 回退: 很多 .xls 实际上是 HTML 表格格式
-        result = _parse_xls_as_html(raw, index_code)
-        if result is None:
-            print(f"[CSIndex] {index_code} HTML回退解析也返回空")
-        return result
-
-    except HTTPError as e:
-        if e.code == 404:
-            print(f"[CSIndex] {index_code} 权重文件不存在(404)")
-        else:
-            print(f"[CSIndex] {index_code} HTTP错误: {e.code}")
-    except Exception as e:
-        print(f"[CSIndex] {index_code} 下载失败: {e}")
-
-    return None
-
-
-def _parse_xls_with_xlrd(wb, index_code: str) -> Optional[List[dict]]:
-    """用 xlrd 解析真正的 xls 二进制文件"""
-    sheet = wb.sheet_by_index(0)
-    if sheet.nrows < 2:
-        return None
-
-    header_row = [str(sheet.cell_value(0, c)).strip() for c in range(sheet.ncols)]
-    code_col = name_col = weight_col = -1
-    for i, h in enumerate(header_row):
-        h_lower = h.lower()
-        if '代码' in h or 'code' in h_lower:
-            code_col = i
-        elif '名称' in h or 'name' in h_lower:
-            name_col = i
-        elif '权重' in h or 'weight' in h_lower:
-            weight_col = i
-
-    if code_col == -1 or weight_col == -1:
-        print(f"[CSIndex] 无法识别列头: {header_row}")
-        return None
-
-    holdings = []
-    for r in range(1, sheet.nrows):
-        try:
-            raw_code = sheet.cell_value(r, code_col)
-            if isinstance(raw_code, float):
-                raw_code = str(int(raw_code))
-            else:
-                raw_code = str(raw_code).strip()
-            stock_code = raw_code.zfill(6)
-
-            stock_name = ""
-            if name_col >= 0:
-                stock_name = str(sheet.cell_value(r, name_col)).strip()
-
-            weight_val = sheet.cell_value(r, weight_col)
-            if isinstance(weight_val, str):
-                weight_val = weight_val.replace('%', '').strip()
-            weight = float(weight_val)
-
-            if weight <= 0 or len(stock_code) != 6:
-                continue
-
-            holdings.append({
-                "stock_code": stock_code,
-                "stock_name": stock_name or stock_code,
-                "weight": round(weight, 4)
-            })
-        except (ValueError, TypeError):
-            continue
-
-    if holdings:
-        holdings.sort(key=lambda x: x["weight"], reverse=True)
-        total = sum(h["weight"] for h in holdings)
-        print(f"[CSIndex] {index_code} xlrd解析: {len(holdings)} 只, 总权重 {total:.2f}%")
-        return holdings
-    return None
-
-
-def _parse_xls_as_html(raw: bytes, index_code: str) -> Optional[List[dict]]:
-    """有些 .xls 文件实际上是 HTML 格式的表格"""
-    try:
-        content = None
-        for encoding in ('utf-8', 'gbk', 'gb2312', 'latin-1'):
-            try:
-                content = raw.decode(encoding)
-                break
-            except (UnicodeDecodeError, LookupError):
-                continue
-        if not content:
-            return None
-
-        if '<table' not in content.lower() and '<tr' not in content.lower():
-            return None
-
-        rows = re.findall(r'<tr[^>]*>(.*?)</tr>', content, re.DOTALL | re.IGNORECASE)
-        if len(rows) < 2:
-            return None
-
-        header_cells = re.findall(r'<t[dh][^>]*>(.*?)</t[dh]>', rows[0], re.DOTALL | re.IGNORECASE)
-        header_cells = [re.sub(r'<[^>]+>', '', c).strip() for c in header_cells]
-
-        code_col = name_col = weight_col = -1
-        for i, h in enumerate(header_cells):
-            if '代码' in h:
-                code_col = i
-            elif '名称' in h:
-                name_col = i
-            elif '权重' in h:
-                weight_col = i
-
-        if code_col == -1 or weight_col == -1:
-            return None
-
-        holdings = []
-        for row in rows[1:]:
-            cells = re.findall(r'<td[^>]*>(.*?)</td>', row, re.DOTALL | re.IGNORECASE)
-            cells = [re.sub(r'<[^>]+>', '', c).strip() for c in cells]
-            if len(cells) <= max(code_col, weight_col):
-                continue
-
-            code_match = re.search(r'(\d{5,6})', cells[code_col])
-            if not code_match:
-                continue
-            stock_code = code_match.group(1).zfill(6)
-
-            stock_name = ""
-            if 0 <= name_col < len(cells):
-                stock_name = cells[name_col].strip()
-
-            try:
-                weight = float(cells[weight_col].replace('%', '').strip())
-            except (ValueError, TypeError):
-                continue
-
-            if weight <= 0:
-                continue
-
-            holdings.append({
-                "stock_code": stock_code,
-                "stock_name": stock_name or stock_code,
-                "weight": round(weight, 4)
-            })
-
-        if holdings:
-            holdings.sort(key=lambda x: x["weight"], reverse=True)
-            total = sum(h["weight"] for h in holdings)
-            print(f"[CSIndex] {index_code} HTML解析: {len(holdings)} 只, 总权重 {total:.2f}%")
-            return holdings
-
-    except Exception as e:
-        print(f"[CSIndex] HTML解析失败 {index_code}: {e}")
-    return None
-
-
-# ============================================================
-# 基金名称获取
-# ============================================================
 
 def get_fund_name(fund_code: str) -> Optional[str]:
     """从天天基金获取基金名称"""
@@ -666,17 +118,6 @@ def _is_etf_link_fund(fund_name: Optional[str]) -> bool:
     return "联接" in fund_name
 
 
-def _is_index_fund(fund_name: Optional[str]) -> bool:
-    """判断是否为指数基金(ETF/指数增强/被动跟踪等)"""
-    if not fund_name:
-        return False
-    keywords = ["ETF", "指数"]
-    return any(kw in fund_name for kw in keywords)
-
-
-# ============================================================
-# 持仓 Provider
-# ============================================================
 
 def _get_holdings_cache_path(fund_code: str) -> Path:
     return CACHE_DIR / f"holdings_{fund_code}.json"
@@ -781,8 +222,7 @@ def _fetch_holdings_combined(fund_code: str, depth: int = 0) -> Optional[dict]:
     """
     组合数据源获取持仓，优先级：
     1. ETF联接基金穿透（用户映射 + 自动检测母ETF）
-    2. 指数基金/ETF -> 中证指数权重下载（全部成分股+精确权重）
-    3. 普通基金 -> 天天基金持仓
+    2. 天天基金季报持仓
     """
     if depth > 2:
         return None
@@ -816,10 +256,9 @@ def _fetch_holdings_combined(fund_code: str, depth: int = 0) -> Optional[dict]:
         print(f"[Holdings] 获取仓位比例失败: {e}")
 
     is_link = _is_etf_link_fund(fund_name)
-    is_idx = _is_index_fund(fund_name)
 
     if fund_name:
-        print(f"[Holdings] {fund_code} fund_name={fund_name}, is_index={is_idx}, is_etf_link={is_link}")
+        print(f"[Holdings] {fund_code} fund_name={fund_name}, is_etf_link={is_link}")
     else:
         print(f"[Holdings] {fund_code} fund_name=None (获取名称失败)")
 
@@ -836,64 +275,13 @@ def _fetch_holdings_combined(fund_code: str, depth: int = 0) -> Optional[dict]:
             etf_holdings["is_etf_link"] = True
             return etf_holdings
 
-    # === 第二步B：ETF联接基金 自动检测母ETF并穿透 ===
+    # === 未配映射的联接基金，直接走天天基金 ===
     if is_link and depth == 0:
-        print(f"[Holdings] {fund_code} 检测为ETF联接基金, 尝试自动发现母ETF...")
-        parent_etf = _detect_parent_etf(fund_code, fund_name)
-        if parent_etf:
-            print(f"[Holdings] 自动发现母ETF: {fund_code} -> {parent_etf}")
-            # 持久化映射，下次直接命中
-            set_etf_link_target(fund_code, parent_etf)
-            etf_holdings = _fetch_holdings_combined(parent_etf, depth + 1)
-            if etf_holdings and etf_holdings.get("positions"):
-                etf_holdings["original_fund_code"] = fund_code
-                etf_holdings["fund_code"] = fund_code
-                etf_holdings["fund_name"] = fund_name
-                etf_holdings["etf_target"] = parent_etf
-                etf_holdings["is_etf_link"] = True
-                return etf_holdings
-        else:
-            print(f"[Holdings] {fund_code} 未能自动发现母ETF, 继续常规路径...")
+        print(f"[Holdings] {fund_code} 是ETF联接基金但未配置etf_links映射, 使用天天基金持仓")
 
-    # === 第三步：指数基金/ETF -> 尝试中证指数权重 ===
-    csindex_result = None
-    if is_idx:
-        print(f"[Holdings] {fund_code} 识别为指数基金({fund_name}), 尝试获取中证指数权重...")
-        index_code = _detect_tracking_index(fund_code, fund_name)
-        if index_code:
-            csindex_holdings = _fetch_csindex_weights(index_code)
-            if csindex_holdings and len(csindex_holdings) > 0:
-                total_weight = sum(h["weight"] for h in csindex_holdings)
-                csindex_result = {
-                    "fund_code": fund_code,
-                    "fund_name": fund_name,
-                    "holdings_asof_date": datetime.now().strftime("%Y-%m-%d"),
-                    "stock_total_weight": round(stock_position_ratio, 2),
-                    "parsed_weight": round(total_weight, 2),
-                    "missing_weight": round(max(0, stock_position_ratio - total_weight), 2),
-                    "positions": csindex_holdings,
-                    "fetched_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                    "data_source": "csindex",
-                    "tracking_index": index_code,
-                }
-
-    # === 第四步：天天基金持仓（始终获取，作为对比/回退） ===
+    # === 第三步：天天基金持仓 ===
     em_holdings, report_date, em_parsed_weight = _fetch_eastmoney_holdings(fund_code, headers)
 
-    # === 第五步：选择最优数据源 ===
-    if csindex_result:
-        cs_weight = csindex_result["parsed_weight"]
-        if cs_weight > em_parsed_weight:
-            print(
-                f"[Holdings] {fund_code} 使用中证指数 "
-                f"({len(csindex_result['positions'])}只, {cs_weight:.1f}%) "
-                f"> 天天基金 ({len(em_holdings or [])}只, {em_parsed_weight:.1f}%)"
-            )
-            if report_date:
-                csindex_result["holdings_asof_date"] = report_date
-            return csindex_result
-
-    # 回退到天天基金
     if em_holdings:
         missing_weight = max(0, stock_position_ratio - em_parsed_weight)
         return {
@@ -1057,8 +445,6 @@ if __name__ == "__main__":
 
     if h.get("is_etf_link"):
         print(f"ETF联接穿透: {h.get('etf_target')}")
-    if h.get("tracking_index"):
-        print(f"跟踪指数: {h.get('tracking_index')}")
 
     if h.get("positions"):
         print("\n前10大:")
@@ -1240,6 +626,26 @@ def refresh_stale_holdings() -> dict:
         if code != fund_codes[-1]:
             time.sleep(_REFRESH_INTERVAL_SEC)
 
-    summary = {"refreshed": refreshed, "failed": failed, "skipped": skipped}
+    # 打印未配映射的ETF联接基金（方便用户补充etf_links.json）
+    unmapped = []
+    for code in fund_codes:
+        cache_path = _get_holdings_cache_path(code)
+        if cache_path.exists():
+            try:
+                with open(cache_path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                fn = data.get("fund_name", "")
+                if "联接" in fn and not data.get("is_etf_link"):
+                    unmapped.append(f"{code} {fn}")
+            except Exception:
+                pass
+
+    if unmapped:
+        print(f"\n[AutoRefresh] === 以下{len(unmapped)}只ETF联接基金未配置etf_links映射 ===")
+        for item in unmapped:
+            print(f"  {item}")
+        print("[AutoRefresh] 请在 cache/etf_links.json 中添加映射以提高估值覆盖率")
+
+    summary = {"refreshed": refreshed, "failed": failed, "skipped": skipped, "unmapped_etf_links": unmapped}
     print(f"[AutoRefresh] Done: {len(refreshed)} refreshed, {len(failed)} failed, {skipped} skipped")
     return summary

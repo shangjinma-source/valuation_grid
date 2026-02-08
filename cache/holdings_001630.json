@@ -2,61 +2,89 @@
   "fund_code": "001630",
   "fund_name": "天弘中证计算机ETF联接C",
   "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 1.78,
-  "parsed_weight": 0.78,
-  "missing_weight": 1.0,
+  "stock_total_weight": 99.82,
+  "parsed_weight": 45.23,
+  "missing_weight": 54.59,
   "positions": [
     {
       "stock_code": "603019",
       "stock_name": "中科曙光",
-      "weight": 0.13
+      "weight": 7.58
     },
     {
       "stock_code": "002230",
       "stock_name": "科大讯飞",
-      "weight": 0.12
+      "weight": 7.03
     },
     {
       "stock_code": "002415",
       "stock_name": "海康威视",
-      "weight": 0.12
-    },
-    {
-      "stock_code": "000977",
-      "stock_name": "浪潮信息",
-      "weight": 0.08
+      "weight": 6.62
     },
     {
       "stock_code": "688111",
       "stock_name": "金山办公",
-      "weight": 0.07
+      "weight": 4.31
     },
     {
       "stock_code": "300033",
       "stock_name": "同花顺",
-      "weight": 0.06
+      "weight": 4.21
+    },
+    {
+      "stock_code": "000977",
+      "stock_name": "浪潮信息",
+      "weight": 4.15
     },
     {
       "stock_code": "000938",
       "stock_name": "紫光股份",
-      "weight": 0.05
+      "weight": 2.98
     },
     {
-      "stock_code": "301308",
-      "stock_name": "江波龙",
-      "weight": 0.05
+      "stock_code": "300803",
+      "stock_name": "指南针",
+      "weight": 2.84
     },
     {
       "stock_code": "600570",
       "stock_name": "恒生电子",
-      "weight": 0.05
+      "weight": 2.76
     },
     {
       "stock_code": "300442",
       "stock_name": "润泽科技",
-      "weight": 0.05
+      "weight": 2.62
+    },
+    {
+      "stock_code": "600930",
+      "stock_name": "华电新能",
+      "weight": 0.07
+    },
+    {
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
+      "weight": 0.03
+    },
+    {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "688783",
+      "stock_name": "西安奕材",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301656",
+      "stock_name": "联合动力",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-07 19:05:51",
-  "data_source": "eastmoney"
+  "fetched_at": "2026-02-08 12:55:25",
+  "data_source": "eastmoney",
+  "original_fund_code": "001630",
+  "etf_target": "159998",
+  "is_etf_link": true
 }

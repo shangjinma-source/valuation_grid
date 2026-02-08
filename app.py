@@ -14,7 +14,10 @@ from core import (
     load_state, save_state, validate_state,
     calculate_valuation, calculate_valuation_batch, calculate_valuation_by_state
 )
-from providers import get_fund_name, set_etf_link_target, get_etf_link_target, clear_etf_link_target, refresh_stale_holdings
+from providers import (
+    get_fund_name, set_etf_link_target, get_etf_link_target, clear_etf_link_target,
+    refresh_stale_holdings
+)
 
 # ============================================================
 # 启动时刷新持仓缓存（后台线程，不阻塞服务就绪）
@@ -128,6 +131,7 @@ def delete_etf_link(link_code: str):
     """删除ETF联接基金映射"""
     clear_etf_link_target(link_code)
     return {"success": True, "message": f"已清除 {link_code} 的映射"}
+
 
 # ============================================================
 # 估值 API

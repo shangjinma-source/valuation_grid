@@ -1,52 +1,65 @@
 {
   "fund_code": "020629",
   "fund_name": "汇添富上证科创板芯片ETF发起式联接C",
-  "holdings_asof_date": "2024-12-31",
-  "stock_total_weight": 0.0,
-  "parsed_weight": 2.97,
-  "missing_weight": 0,
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 99.57,
+  "parsed_weight": 57.5,
+  "missing_weight": 42.07,
   "positions": [
     {
-      "stock_code": "688608",
-      "stock_name": "恒玄科技",
-      "weight": 2.13
-    },
-    {
-      "stock_code": "688279",
-      "stock_name": "峰岹科技",
-      "weight": 0.67
-    },
-    {
-      "stock_code": "688584",
-      "stock_name": "上海合晶",
-      "weight": 0.11
-    },
-    {
-      "stock_code": "688256",
-      "stock_name": "寒武纪",
-      "weight": 0.02
+      "stock_code": "688981",
+      "stock_name": "中芯国际",
+      "weight": 10.32
     },
     {
       "stock_code": "688041",
       "stock_name": "海光信息",
-      "weight": 0.01
+      "weight": 10.01
     },
     {
-      "stock_code": "688981",
-      "stock_name": "中芯国际",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "688012",
-      "stock_name": "中微公司",
-      "weight": 0.01
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 9.41
     },
     {
       "stock_code": "688008",
       "stock_name": "澜起科技",
-      "weight": 0.01
+      "weight": 7.7
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 6.8
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 3.18
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 2.88
+    },
+    {
+      "stock_code": "688347",
+      "stock_name": "华虹公司",
+      "weight": 2.51
+    },
+    {
+      "stock_code": "688126",
+      "stock_name": "沪硅产业",
+      "weight": 2.37
+    },
+    {
+      "stock_code": "688110",
+      "stock_name": "东芯股份",
+      "weight": 2.32
     }
   ],
-  "fetched_at": "2026-02-07 19:05:39",
-  "data_source": "eastmoney"
+  "fetched_at": "2026-02-08 12:55:02",
+  "data_source": "eastmoney",
+  "original_fund_code": "020629",
+  "etf_target": "588750",
+  "is_etf_link": true
 }
