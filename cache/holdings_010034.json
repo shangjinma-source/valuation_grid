@@ -3,8 +3,8 @@
   "fund_name": "安信成长精选混合C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 94.78,
-  "parsed_weight": 59.04,
-  "missing_weight": 35.74,
+  "parsed_weight": 65.18,
+  "missing_weight": 29.6,
   "positions": [
     {
       "stock_code": "300502",
@@ -32,6 +32,11 @@
       "weight": 6.43
     },
     {
+      "stock_code": "06166",
+      "stock_name": "剑桥科技",
+      "weight": 6.14
+    },
+    {
       "stock_code": "002475",
       "stock_name": "立讯精密",
       "weight": 5.89
@@ -52,6 +57,6 @@
       "weight": 3.71
     }
   ],
-  "fetched_at": "2026-02-08 12:55:23",
+  "fetched_at": "2026-02-11 10:07:35",
   "data_source": "eastmoney"
 }

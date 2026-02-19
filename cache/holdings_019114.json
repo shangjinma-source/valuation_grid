@@ -3,9 +3,19 @@
   "fund_name": "东财慧心优选C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 92.23,
-  "parsed_weight": 55.12,
-  "missing_weight": 37.11,
+  "parsed_weight": 72.36,
+  "missing_weight": 19.87,
   "positions": [
+    {
+      "stock_code": "01347",
+      "stock_name": "华虹半导体",
+      "weight": 8.67
+    },
+    {
+      "stock_code": "00981",
+      "stock_name": "中芯国际",
+      "weight": 8.57
+    },
     {
       "stock_code": "300661",
       "stock_name": "圣邦股份",
@@ -47,6 +57,6 @@
       "weight": 6.32
     }
   ],
-  "fetched_at": "2026-02-08 12:55:07",
+  "fetched_at": "2026-02-11 10:05:39",
   "data_source": "eastmoney"
 }

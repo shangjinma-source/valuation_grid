@@ -1,6 +1,6 @@
 {
   "fund_code": "002067",
-  "fund_name": "诺安精选回报混合",
+  "fund_name": "诺安精选回报混合A",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 92.07,
   "parsed_weight": 50.5,
@@ -57,6 +57,6 @@
       "weight": 4.29
     }
   ],
-  "fetched_at": "2026-02-08 12:55:10",
+  "fetched_at": "2026-02-11 10:05:58",
   "data_source": "eastmoney"
 }

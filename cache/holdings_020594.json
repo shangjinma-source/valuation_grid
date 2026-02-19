@@ -3,8 +3,8 @@
   "fund_name": "华夏软件龙头混合发起式C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 86.94,
-  "parsed_weight": 51.45,
-  "missing_weight": 35.49,
+  "parsed_weight": 69.1,
+  "missing_weight": 17.84,
   "positions": [
     {
       "stock_code": "688095",
@@ -27,9 +27,19 @@
       "weight": 8.36
     },
     {
+      "stock_code": "01860",
+      "stock_name": "汇量科技",
+      "weight": 6.9
+    },
+    {
       "stock_code": "000977",
       "stock_name": "浪潮信息",
       "weight": 6.28
+    },
+    {
+      "stock_code": "00268",
+      "stock_name": "金蝶国际",
+      "weight": 6.2
     },
     {
       "stock_code": "688258",
@@ -37,11 +47,16 @@
       "weight": 5.89
     },
     {
+      "stock_code": "01024",
+      "stock_name": "快手-W",
+      "weight": 4.55
+    },
+    {
       "stock_code": "688369",
       "stock_name": "致远互联",
       "weight": 4.27
     }
   ],
-  "fetched_at": "2026-02-08 12:55:29",
+  "fetched_at": "2026-02-11 10:08:18",
   "data_source": "eastmoney"
 }

@@ -3,13 +3,18 @@
   "fund_name": "宝盈人工智能股票C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 86.45,
-  "parsed_weight": 33.9,
-  "missing_weight": 52.55,
+  "parsed_weight": 43.15,
+  "missing_weight": 43.3,
   "positions": [
     {
       "stock_code": "603228",
       "stock_name": "景旺电子",
       "weight": 8.07
+    },
+    {
+      "stock_code": "00700",
+      "stock_name": "腾讯控股",
+      "weight": 6.44
     },
     {
       "stock_code": "002080",
@@ -45,8 +50,13 @@
       "stock_code": "301165",
       "stock_name": "锐捷网络",
       "weight": 3.09
+    },
+    {
+      "stock_code": "09988",
+      "stock_name": "阿里巴巴-W",
+      "weight": 2.81
     }
   ],
-  "fetched_at": "2026-02-08 12:55:59",
+  "fetched_at": "2026-02-11 10:11:37",
   "data_source": "eastmoney"
 }

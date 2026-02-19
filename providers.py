@@ -135,19 +135,23 @@ def _is_holdings_cache_valid(cache_path: Path) -> bool:
 def _fetch_eastmoney_holdings(fund_code: str, headers: dict) -> Tuple[Optional[List[dict]], Optional[str], float]:
     """
     从天天基金 FundArchivesDatas 获取持仓列表。
+    策略：先用 topline=1000 尝试获取年报/半年报全量持仓，
+         解析最新一期报告中所有表格，合并去重。
+         季报只有前10大，年报/半年报可拿到全部持仓。
     返回 (holdings_list, report_date, parsed_weight)
     """
     try:
         url = (
             f"https://fundf10.eastmoney.com/FundArchivesDatas.aspx?"
-            f"type=jjcc&code={fund_code}&topline=100&year=&month=&rt={int(time.time()*1000)}"
+            f"type=jjcc&code={fund_code}&topline=1000&year=&month=&rt={int(time.time()*1000)}"
         )
         req = Request(url, headers=headers)
         with urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
             content = resp.read().decode("utf-8")
 
-        # 解析报告日期
+        # === 解析报告日期 ===
         report_date = None
+        # 优先匹配季度格式："2025年4季度"
         quarter_match = re.search(r'(\d{4})年(\d)季度', content)
         if quarter_match:
             year = quarter_match.group(1)
@@ -155,61 +159,76 @@ def _fetch_eastmoney_holdings(fund_code: str, headers: dict) -> Tuple[Optional[L
             quarter_end = {1: "03-31", 2: "06-30", 3: "09-30", 4: "12-31"}
             report_date = f"{year}-{quarter_end.get(quarter, '12-31')}"
 
-        # 解析第一个表格（最新一期持仓）
-        first_table = re.search(
-            r'<table[^>]*class="w782 comm tzxq"[^>]*>(.*?)</table>',
-            content, re.DOTALL
-        )
-        if not first_table:
-            first_table = re.search(r'<table[^>]*>(.*?)</table>', content, re.DOTALL)
+        # === 定位最新一期报告的内容边界 ===
+        # 页面按时间倒序排列多期报告，用季度标题分割
+        first_period_end = None
+        quarter_markers = list(re.finditer(r'\d{4}年\d季度', content))
+        if len(quarter_markers) >= 2:
+            first_period_end = quarter_markers[1].start()
 
-        if not first_table:
+        first_period_content = content[:first_period_end] if first_period_end else content
+
+        # === 从最新一期内容中提取所有表格 ===
+        all_tables = re.findall(
+            r'<table[^>]*class="w782 comm tzxq"[^>]*>(.*?)</table>',
+            first_period_content, re.DOTALL
+        )
+        if not all_tables:
+            all_tables = re.findall(r'<table[^>]*>(.*?)</table>', first_period_content, re.DOTALL)
+
+        if not all_tables:
             return None, report_date, 0.0
 
-        table_content = first_table.group(1)
+        # === 解析所有表格中的持仓行，合并去重 ===
         holdings = []
         parsed_weight = 0.0
         seen_codes = set()
 
-        rows = re.findall(r'<tr[^>]*>(.*?)</tr>', table_content, re.DOTALL)
-        for row in rows:
-            cells = re.findall(r'<td[^>]*>(.*?)</td>', row, re.DOTALL)
-            if len(cells) < 8:
-                continue
+        for table_content in all_tables:
+            rows = re.findall(r'<tr[^>]*>(.*?)</tr>', table_content, re.DOTALL)
+            for row in rows:
+                cells = re.findall(r'<td[^>]*>(.*?)</td>', row, re.DOTALL)
+                if len(cells) < 8:
+                    continue
 
-            code_match = re.search(r'>(\d{6})<', cells[1])
-            if not code_match:
-                code_match = re.search(r'(\d{6})', cells[1])
-            if not code_match:
-                continue
-            stock_code = code_match.group(1)
+                # 支持5~6位股票代码（兼容港股5位代码如09896）
+                code_match = re.search(r'>(\d{5,6})<', cells[1])
+                if not code_match:
+                    code_match = re.search(r'(\d{5,6})', cells[1])
+                if not code_match:
+                    continue
+                stock_code = code_match.group(1)
 
-            if stock_code in seen_codes:
-                continue
-            seen_codes.add(stock_code)
+                if stock_code in seen_codes:
+                    continue
+                seen_codes.add(stock_code)
 
-            name_match = re.search(r'>([^<]+)<', cells[2])
-            stock_name = name_match.group(1).strip() if name_match else stock_code
+                name_match = re.search(r'>([^<]+)<', cells[2])
+                stock_name = name_match.group(1).strip() if name_match else stock_code
 
-            weight_text = re.sub(r'<[^>]+>', '', cells[6]).strip()
-            weight_text = weight_text.replace('%', '').replace('％', '')
-            try:
-                weight = float(weight_text)
-            except:
-                continue
+                weight_text = re.sub(r'<[^>]+>', '', cells[6]).strip()
+                weight_text = weight_text.replace('%', '').replace('％', '')
+                try:
+                    weight = float(weight_text)
+                except:
+                    continue
 
-            if weight <= 0:
-                continue
+                if weight <= 0:
+                    continue
 
-            holdings.append({
-                "stock_code": stock_code,
-                "stock_name": stock_name,
-                "weight": weight
-            })
-            parsed_weight += weight
+                holdings.append({
+                    "stock_code": stock_code,
+                    "stock_name": stock_name,
+                    "weight": weight
+                })
+                parsed_weight += weight
 
         if holdings:
             holdings.sort(key=lambda x: x["weight"], reverse=True)
+
+        n = len(holdings)
+        print(f"[Holdings] {fund_code} 解析到 {n} 只持仓, 权重合计 {parsed_weight:.2f}%"
+              f" (report_date={report_date})")
 
         return holdings, report_date, parsed_weight
 
@@ -347,6 +366,9 @@ def get_holdings(fund_code: str, force_refresh: bool = False) -> dict:
 # ============================================================
 
 def _convert_to_sina_symbol(stock_code: str) -> str:
+    if len(stock_code) == 5:
+        # 港股代码（5位），新浪格式为 hk + 5位代码
+        return f"hk{stock_code}"
     if stock_code.startswith(("6", "5", "9")):
         return f"sh{stock_code}"
     return f"sz{stock_code}"
@@ -371,28 +393,47 @@ def _fetch_quotes_batch_sina(tickers: List[str]) -> Dict[str, dict]:
         try:
             req = Request(url, headers=headers)
             with urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
-                content = resp.read().decode("gbk")
+                raw = resp.read()
+                try:
+                    content = raw.decode("gbk")
+                except (UnicodeDecodeError, LookupError):
+                    content = raw.decode("utf-8", errors="replace")
 
             now = datetime.now()
             for line in content.strip().split("\n"):
-                match = re.match(r'var hq_str_(s[hz]\d{6})="([^"]*)"', line)
+                # A股: var hq_str_sh600000="..." 或 var hq_str_sz000001="..."
+                # 港股: var hq_str_hk09896="..."
+                match = re.match(r'var hq_str_((?:s[hz]\d{6})|(?:hk\d{5}))="([^"]*)"', line)
                 if not match:
                     continue
                 symbol, data_str = match.groups()
                 if not data_str:
                     continue
                 data = data_str.split(",")
-                if len(data) < 4:
-                    continue
 
+                is_hk = symbol.startswith("hk")
                 stock_code = symbol[2:]
+
                 try:
-                    current = float(data[3]) if data[3] else 0
-                    yesterday = float(data[2]) if data[2] else 0
+                    if is_hk:
+                        # 港股新浪格式: 名称,开盘价,昨收,最高,最低,现价,...
+                        if len(data) < 6:
+                            continue
+                        current = float(data[6]) if data[6] else 0
+                        yesterday = float(data[3]) if data[3] else 0
+                        name = data[1]
+                    else:
+                        # A股格式: 名称,今开,昨收,现价,...
+                        if len(data) < 4:
+                            continue
+                        current = float(data[3]) if data[3] else 0
+                        yesterday = float(data[2]) if data[2] else 0
+                        name = data[0]
+
                     pct = round((current - yesterday) / yesterday * 100, 2) if yesterday > 0 and current > 0 else 0.0
                     all_results[stock_code] = {
                         "stock_code": stock_code,
-                        "name": data[0],
+                        "name": name,
                         "pct_change": pct,
                         "asof_time": now.strftime("%Y-%m-%d %H:%M:%S")
                     }

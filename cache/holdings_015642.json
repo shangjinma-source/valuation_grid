@@ -3,9 +3,14 @@
   "fund_name": "银华数字经济股票发起式C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 92.81,
-  "parsed_weight": 46.56,
-  "missing_weight": 46.25,
+  "parsed_weight": 61.83,
+  "missing_weight": 30.98,
   "positions": [
+    {
+      "stock_code": "09992",
+      "stock_name": "泡泡玛特",
+      "weight": 8.85
+    },
     {
       "stock_code": "689009",
       "stock_name": "九号公司",
@@ -20,6 +25,11 @@
       "stock_code": "300475",
       "stock_name": "香农芯创",
       "weight": 6.45
+    },
+    {
+      "stock_code": "09636",
+      "stock_name": "九方智投控股",
+      "weight": 6.42
     },
     {
       "stock_code": "688233",
@@ -47,6 +57,6 @@
       "weight": 3.74
     }
   ],
-  "fetched_at": "2026-02-08 12:55:26",
+  "fetched_at": "2026-02-11 10:07:54",
   "data_source": "eastmoney"
 }

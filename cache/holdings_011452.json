@@ -3,8 +3,8 @@
   "fund_name": "华泰柏瑞质量成长C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 88.32,
-  "parsed_weight": 64.98,
-  "missing_weight": 23.34,
+  "parsed_weight": 71.5,
+  "missing_weight": 16.82,
   "positions": [
     {
       "stock_code": "300502",
@@ -32,6 +32,11 @@
       "weight": 7.3
     },
     {
+      "stock_code": "06869",
+      "stock_name": "长飞光纤光缆",
+      "weight": 6.52
+    },
+    {
       "stock_code": "002916",
       "stock_name": "深南电路",
       "weight": 6.13
@@ -57,6 +62,6 @@
       "weight": 1.39
     }
   ],
-  "fetched_at": "2026-02-08 12:55:17",
+  "fetched_at": "2026-02-11 10:06:50",
   "data_source": "eastmoney"
 }

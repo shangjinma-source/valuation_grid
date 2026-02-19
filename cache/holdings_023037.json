@@ -3,8 +3,8 @@
   "fund_name": "中欧资源精选混合发起C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 93.95,
-  "parsed_weight": 37.16,
-  "missing_weight": 56.79,
+  "parsed_weight": 55.49,
+  "missing_weight": 38.46,
   "positions": [
     {
       "stock_code": "601899",
@@ -17,14 +17,34 @@
       "weight": 10.1
     },
     {
+      "stock_code": "02600",
+      "stock_name": "中国铝业",
+      "weight": 6.51
+    },
+    {
       "stock_code": "600549",
       "stock_name": "厦门钨业",
       "weight": 4.46
     },
     {
+      "stock_code": "00358",
+      "stock_name": "江西铜业股份",
+      "weight": 4.31
+    },
+    {
       "stock_code": "000807",
       "stock_name": "云铝股份",
       "weight": 4.1
+    },
+    {
+      "stock_code": "01772",
+      "stock_name": "赣锋锂业",
+      "weight": 3.96
+    },
+    {
+      "stock_code": "02099",
+      "stock_name": "中国黄金国际",
+      "weight": 3.55
     },
     {
       "stock_code": "000408",
@@ -47,6 +67,6 @@
       "weight": 0.07
     }
   ],
-  "fetched_at": "2026-02-08 12:54:51",
+  "fetched_at": "2026-02-11 10:03:48",
   "data_source": "eastmoney"
 }

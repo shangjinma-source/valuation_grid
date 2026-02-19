@@ -3,9 +3,14 @@
   "fund_name": "嘉实制造升级股票发起式C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 93.59,
-  "parsed_weight": 45.25,
-  "missing_weight": 48.34,
+  "parsed_weight": 61.63,
+  "missing_weight": 31.96,
   "positions": [
+    {
+      "stock_code": "09880",
+      "stock_name": "优必选",
+      "weight": 9.38
+    },
     {
       "stock_code": "688290",
       "stock_name": "景业智能",
@@ -15,6 +20,11 @@
       "stock_code": "300969",
       "stock_name": "恒帅股份",
       "weight": 7.9
+    },
+    {
+      "stock_code": "00425",
+      "stock_name": "敏实集团",
+      "weight": 7.0
     },
     {
       "stock_code": "601100",
@@ -47,6 +57,6 @@
       "weight": 3.97
     }
   ],
-  "fetched_at": "2026-02-08 12:55:46",
+  "fetched_at": "2026-02-11 10:10:12",
   "data_source": "eastmoney"
 }

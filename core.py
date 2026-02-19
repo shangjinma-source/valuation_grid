@@ -164,6 +164,14 @@ def calculate_valuation(fund_code: str) -> dict:
 
     # 残差权重 = 股票总仓位 - 已覆盖权重
     stock_total = holdings.get("stock_total_weight", 0)
+    parsed_weight = holdings.get("parsed_weight", 0)
+
+    # 数据保护：如果持仓权重合计 > 股票总仓位（可能来自不同报告期），
+    # 以实际持仓权重为准，避免残差为负或覆盖率溢出
+    if parsed_weight > stock_total:
+        stock_total = parsed_weight
+        result["coverage"]["stock_total_weight"] = stock_total
+
     residual_weight = stock_total - covered_weight
 
     # 对于残差部分，用已覆盖持仓的平均涨跌幅来估算

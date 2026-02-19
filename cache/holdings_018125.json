@@ -3,8 +3,8 @@
   "fund_name": "永赢先进制造智选混合发起C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 94.82,
-  "parsed_weight": 52.74,
-  "missing_weight": 42.08,
+  "parsed_weight": 58.95,
+  "missing_weight": 35.87,
   "positions": [
     {
       "stock_code": "603179",
@@ -20,6 +20,11 @@
       "stock_code": "301550",
       "stock_name": "斯菱智驱",
       "weight": 7.39
+    },
+    {
+      "stock_code": "00179",
+      "stock_name": "德昌电机控股",
+      "weight": 6.21
     },
     {
       "stock_code": "603667",
@@ -52,6 +57,6 @@
       "weight": 3.99
     }
   ],
-  "fetched_at": "2026-02-08 12:55:44",
+  "fetched_at": "2026-02-11 10:09:58",
   "data_source": "eastmoney"
 }

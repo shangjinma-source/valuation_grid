@@ -3,8 +3,8 @@
   "fund_name": "中航智选领航混合发起C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 94.69,
-  "parsed_weight": 46.18,
-  "missing_weight": 48.51,
+  "parsed_weight": 80.98,
+  "missing_weight": 13.71,
   "positions": [
     {
       "stock_code": "688326",
@@ -17,9 +17,29 @@
       "weight": 9.79
     },
     {
+      "stock_code": "09660",
+      "stock_name": "地平线机器人-W",
+      "weight": 9.7
+    },
+    {
+      "stock_code": "02533",
+      "stock_name": "黑芝麻智能",
+      "weight": 9.42
+    },
+    {
       "stock_code": "002920",
       "stock_name": "德赛西威",
       "weight": 9.15
+    },
+    {
+      "stock_code": "02498",
+      "stock_name": "速腾聚创",
+      "weight": 8.18
+    },
+    {
+      "stock_code": "09868",
+      "stock_name": "小鹏汽车-W",
+      "weight": 7.5
     },
     {
       "stock_code": "603179",
@@ -37,6 +57,6 @@
       "weight": 5.78
     }
   ],
-  "fetched_at": "2026-02-08 12:55:50",
+  "fetched_at": "2026-02-11 10:10:43",
   "data_source": "eastmoney"
 }

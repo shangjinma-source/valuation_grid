@@ -3,8 +3,8 @@
   "fund_name": "易方达先锋成长混合C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 93.69,
-  "parsed_weight": 56.91,
-  "missing_weight": 36.78,
+  "parsed_weight": 60.54,
+  "missing_weight": 33.15,
   "positions": [
     {
       "stock_code": "300308",
@@ -47,11 +47,16 @@
       "weight": 3.91
     },
     {
+      "stock_code": "06869",
+      "stock_name": "长飞光纤光缆",
+      "weight": 3.63
+    },
+    {
       "stock_code": "688183",
       "stock_name": "生益电子",
       "weight": 3.47
     }
   ],
-  "fetched_at": "2026-02-08 12:55:17",
+  "fetched_at": "2026-02-11 10:06:48",
   "data_source": "eastmoney"
 }

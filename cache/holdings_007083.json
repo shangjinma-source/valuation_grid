@@ -3,8 +3,8 @@
   "fund_name": "平安高端制造混合C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 94.0,
-  "parsed_weight": 51.83,
-  "missing_weight": 42.17,
+  "parsed_weight": 81.78,
+  "missing_weight": 12.22,
   "positions": [
     {
       "stock_code": "002459",
@@ -12,9 +12,19 @@
       "weight": 10.28
     },
     {
+      "stock_code": "00968",
+      "stock_name": "信义光能",
+      "weight": 10.02
+    },
+    {
       "stock_code": "688599",
       "stock_name": "天合光能",
       "weight": 10.01
+    },
+    {
+      "stock_code": "03800",
+      "stock_name": "协鑫科技",
+      "weight": 9.93
     },
     {
       "stock_code": "688223",
@@ -32,11 +42,21 @@
       "weight": 8.94
     },
     {
+      "stock_code": "06865",
+      "stock_name": "福莱特玻璃",
+      "weight": 5.3
+    },
+    {
+      "stock_code": "02319",
+      "stock_name": "蒙牛乳业",
+      "weight": 4.7
+    },
+    {
       "stock_code": "600690",
       "stock_name": "海尔智家",
       "weight": 2.88
     }
   ],
-  "fetched_at": "2026-02-08 12:55:56",
+  "fetched_at": "2026-02-11 10:11:15",
   "data_source": "eastmoney"
 }

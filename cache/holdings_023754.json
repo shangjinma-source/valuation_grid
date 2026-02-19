@@ -3,8 +3,8 @@
   "fund_name": "永赢信息产业智选混合发起C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 91.9,
-  "parsed_weight": 59.59,
-  "missing_weight": 32.31,
+  "parsed_weight": 64.94,
+  "missing_weight": 26.96,
   "positions": [
     {
       "stock_code": "300170",
@@ -42,6 +42,11 @@
       "weight": 5.4
     },
     {
+      "stock_code": "00268",
+      "stock_name": "金蝶国际",
+      "weight": 5.35
+    },
+    {
       "stock_code": "300378",
       "stock_name": "鼎捷数智",
       "weight": 5.31
@@ -52,6 +57,6 @@
       "weight": 4.36
     }
   ],
-  "fetched_at": "2026-02-08 12:55:25",
+  "fetched_at": "2026-02-11 10:07:47",
   "data_source": "eastmoney"
 }

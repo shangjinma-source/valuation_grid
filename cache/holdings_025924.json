@@ -3,8 +3,8 @@
   "fund_name": "平安新能源精选混合发起式C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 89.11,
-  "parsed_weight": 40.44,
-  "missing_weight": 48.67,
+  "parsed_weight": 48.57,
+  "missing_weight": 40.54,
   "positions": [
     {
       "stock_code": "688005",
@@ -15,6 +15,11 @@
       "stock_code": "688170",
       "stock_name": "德龙激光",
       "weight": 4.96
+    },
+    {
+      "stock_code": "02465",
+      "stock_name": "龙蟠科技",
+      "weight": 4.93
     },
     {
       "stock_code": "301662",
@@ -50,8 +55,13 @@
       "stock_code": "688778",
       "stock_name": "厦钨新能",
       "weight": 3.92
+    },
+    {
+      "stock_code": "02579",
+      "stock_name": "中伟新材",
+      "weight": 3.2
     }
   ],
-  "fetched_at": "2026-02-08 12:55:37",
+  "fetched_at": "2026-02-11 10:09:15",
   "data_source": "eastmoney"
 }

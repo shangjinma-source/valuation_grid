@@ -3,8 +3,8 @@
   "fund_name": "浦银安盛数字经济混合C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 94.21,
-  "parsed_weight": 61.77,
-  "missing_weight": 32.44,
+  "parsed_weight": 66.67,
+  "missing_weight": 27.54,
   "positions": [
     {
       "stock_code": "300308",
@@ -37,6 +37,11 @@
       "weight": 5.31
     },
     {
+      "stock_code": "06869",
+      "stock_name": "长飞光纤光缆",
+      "weight": 4.9
+    },
+    {
       "stock_code": "688195",
       "stock_name": "腾景科技",
       "weight": 4.73
@@ -52,6 +57,6 @@
       "weight": 4.31
     }
   ],
-  "fetched_at": "2026-02-08 12:55:15",
+  "fetched_at": "2026-02-11 10:06:36",
   "data_source": "eastmoney"
 }

@@ -3,13 +3,18 @@
   "fund_name": "平安先进制造主题股票发起C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 91.09,
-  "parsed_weight": 41.56,
-  "missing_weight": 49.53,
+  "parsed_weight": 52.11,
+  "missing_weight": 38.98,
   "positions": [
     {
       "stock_code": "601100",
       "stock_name": "恒立液压",
       "weight": 8.3
+    },
+    {
+      "stock_code": "00425",
+      "stock_name": "敏实集团",
+      "weight": 7.28
     },
     {
       "stock_code": "688279",
@@ -50,8 +55,13 @@
       "stock_code": "300115",
       "stock_name": "长盈精密",
       "weight": 3.28
+    },
+    {
+      "stock_code": "01304",
+      "stock_name": "FORTIOR",
+      "weight": 3.27
     }
   ],
-  "fetched_at": "2026-02-08 12:55:46",
+  "fetched_at": "2026-02-11 10:10:10",
   "data_source": "eastmoney"
 }

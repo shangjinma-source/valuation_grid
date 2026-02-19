@@ -3,9 +3,19 @@
   "fund_name": "长城产业优选混合C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 92.91,
-  "parsed_weight": 38.25,
-  "missing_weight": 54.66,
+  "parsed_weight": 65.65,
+  "missing_weight": 27.26,
   "positions": [
+    {
+      "stock_code": "09988",
+      "stock_name": "阿里巴巴-W",
+      "weight": 7.77
+    },
+    {
+      "stock_code": "00268",
+      "stock_name": "金蝶国际",
+      "weight": 7.33
+    },
     {
       "stock_code": "688088",
       "stock_name": "虹软科技",
@@ -15,6 +25,11 @@
       "stock_code": "688031",
       "stock_name": "星环科技",
       "weight": 7.1
+    },
+    {
+      "stock_code": "00700",
+      "stock_name": "腾讯控股",
+      "weight": 6.98
     },
     {
       "stock_code": "300454",
@@ -35,8 +50,13 @@
       "stock_code": "688615",
       "stock_name": "合合信息",
       "weight": 5.34
+    },
+    {
+      "stock_code": "06682",
+      "stock_name": "范式智能",
+      "weight": 5.32
     }
   ],
-  "fetched_at": "2026-02-08 12:55:32",
+  "fetched_at": "2026-02-11 10:08:37",
   "data_source": "eastmoney"
 }

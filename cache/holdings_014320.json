@@ -3,8 +3,8 @@
   "fund_name": "德邦半导体产业混合发起式C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 93.89,
-  "parsed_weight": 43.91,
-  "missing_weight": 49.98,
+  "parsed_weight": 54.12,
+  "missing_weight": 39.77,
   "positions": [
     {
       "stock_code": "688041",
@@ -20,6 +20,11 @@
       "stock_code": "688256",
       "stock_name": "寒武纪",
       "weight": 6.78
+    },
+    {
+      "stock_code": "00981",
+      "stock_name": "中芯国际",
+      "weight": 6.07
     },
     {
       "stock_code": "001309",
@@ -42,11 +47,16 @@
       "weight": 4.27
     },
     {
+      "stock_code": "09660",
+      "stock_name": "地平线机器人-W",
+      "weight": 4.14
+    },
+    {
       "stock_code": "688548",
       "stock_name": "广钢气体",
       "weight": 4.02
     }
   ],
-  "fetched_at": "2026-02-08 12:55:06",
+  "fetched_at": "2026-02-11 10:05:31",
   "data_source": "eastmoney"
 }

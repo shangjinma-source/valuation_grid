@@ -3,13 +3,33 @@
   "fund_name": "东财卓越成长C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 94.77,
-  "parsed_weight": 34.86,
-  "missing_weight": 59.91,
+  "parsed_weight": 71.32,
+  "missing_weight": 23.45,
   "positions": [
+    {
+      "stock_code": "03896",
+      "stock_name": "金山云",
+      "weight": 8.22
+    },
     {
       "stock_code": "300364",
       "stock_name": "中文在线",
       "weight": 8.04
+    },
+    {
+      "stock_code": "03888",
+      "stock_name": "金山软件",
+      "weight": 7.56
+    },
+    {
+      "stock_code": "00354",
+      "stock_name": "中国软件国际",
+      "weight": 6.99
+    },
+    {
+      "stock_code": "02586",
+      "stock_name": "多点数智",
+      "weight": 6.95
     },
     {
       "stock_code": "920799",
@@ -22,6 +42,11 @@
       "weight": 6.77
     },
     {
+      "stock_code": "02556",
+      "stock_name": "迈富时",
+      "weight": 6.74
+    },
+    {
       "stock_code": "920493",
       "stock_name": "并行科技",
       "weight": 6.69
@@ -32,6 +57,6 @@
       "weight": 6.55
     }
   ],
-  "fetched_at": "2026-02-08 12:55:32",
+  "fetched_at": "2026-02-11 10:08:39",
   "data_source": "eastmoney"
 }
