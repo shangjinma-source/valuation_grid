@@ -100,6 +100,13 @@ def get_fund_name_api(fund_code: str):
     else:
         return {"fund_code": fund_code, "name": None, "error": "无法获取基金名称"}
 
+@app.get("/v1/fund/{fund_code}/nav-history")
+def get_nav_history(fund_code: str, days: int = 15):
+    """获取基金最近N日真实净值涨跌"""
+    from providers import get_fund_nav_history
+    data = get_fund_nav_history(fund_code, days)
+    return {"fund_code": fund_code, "days": len(data), "history": data}
+
 # ============================================================
 # ETF联接基金映射 API
 # ============================================================

@@ -203,7 +203,48 @@ def calculate_valuation(fund_code: str) -> dict:
     if result["holdings_asof_date"]:
         result["notes"].append(f"持仓日期: {result['holdings_asof_date']}")
 
+    # 6. 附带近3个交易日真实涨跌幅（已结算数据，不含今天）
+    from providers import get_fund_nav_history
+    history = get_fund_nav_history(fund_code, 5)
+    today_str = datetime.now().strftime("%Y-%m-%d")
+    result["recent_changes"] = [
+        {"date": h["date"], "change": h["change"]}
+        for h in history if h["date"] != today_str
+    ][:3]  # 过滤今天后取前3条
+
+    # 7. 收盘后用真实净值涨跌替代估值
+    #    盘中估值只在交易时段可靠，收盘后新浪行情数据不再反映当日真实涨跌
+    #    （尤其含港股持仓时，A股/港股收盘时间不同导致偏差更大）
+    #    替换条件：当天已收盘（15:05后、或非交易日）且有真实净值数据
+    if _is_market_closed() and result["recent_changes"]:
+        latest = result["recent_changes"][0]
+        if latest["change"] is not None:
+            result["estimation_change"] = round(latest["change"], 4)
+            result["_source"] = "nav"  # 标记数据来源：净值
+            result["notes"].append(f"使用真实净值涨跌 {latest['date']}")
+        else:
+            result["_source"] = "estimation"
+    else:
+        result["_source"] = "estimation"
+
     return result
+
+
+def _is_market_closed() -> bool:
+    """判断当天是否已收盘（或非交易日）
+    True = 可以安全用真实净值替代估值
+    盘前/盘中/午休 都返回 False，只有15:05后和非交易日返回 True
+    """
+    now = datetime.now()
+    weekday = now.weekday()  # 0=周一 ... 6=周日
+    if weekday >= 5:
+        return True  # 周末
+    hhmm = now.hour * 100 + now.minute
+    if hhmm >= 1505:
+        return True  # 收盘后
+    if hhmm < 915:
+        return True  # 盘前
+    return False  # 盘中或午休，继续用估值
 
 def calculate_valuation_batch(fund_codes: List[str]) -> List[dict]:
     from concurrent.futures import ThreadPoolExecutor

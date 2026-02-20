@@ -166,118 +166,118 @@
             text-align: right;
             width: 60px;
         }
-        .td-action { 
-            width: 30px; 
-            text-align: center; 
+        .td-action {
+            width: 30px;
+            text-align: center;
         }
-        .td-action button { 
-            background: none; 
-            border: none; 
-            color: #d1d5db; 
-            cursor: pointer; 
+        .td-action button {
+            background: none;
+            border: none;
+            color: #d1d5db;
+            cursor: pointer;
             font-size: 14px;
             padding: 2px 6px;
             border-radius: 4px;
         }
-        .td-action button:hover { 
-            color: #ef4444; 
+        .td-action button:hover {
+            color: #ef4444;
             background: #fef2f2;
         }
-        
+
         /* 添加表单 */
-        .add-row { 
-            display: flex; 
-            gap: 8px; 
-            padding: 8px 10px; 
-            background: #fafafa; 
+        .add-row {
+            display: flex;
+            gap: 8px;
+            padding: 8px 10px;
+            background: #fafafa;
             border-top: 1px solid #f1f5f9;
         }
-        .add-row input { 
-            padding: 6px 10px; 
-            border: 1px solid #e5e7eb; 
-            border-radius: 4px; 
-            font-size: 12px; 
+        .add-row input {
+            padding: 6px 10px;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            font-size: 12px;
             outline: none;
             transition: border-color .15s;
         }
         .add-row input:focus { border-color: #4f46e5; }
         .add-row input[name="code"] { width: 80px; }
         .add-row input[name="alias"] { flex: 1; min-width: 0; }
-        .add-row button { 
-            padding: 6px 12px; 
+        .add-row button {
+            padding: 6px 12px;
             font-size: 12px;
             white-space: nowrap;
         }
-        
+
         /* 弹窗 */
-        .modal { 
-            display: none; 
-            position: fixed; 
-            top: 0; left: 0; right: 0; bottom: 0; 
-            background: rgba(0,0,0,.4); 
-            justify-content: center; 
-            align-items: center; 
-            z-index: 100; 
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,.4);
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
         }
         .modal.show { display: flex; }
-        .modal-content { 
-            background: #fff; 
-            padding: 20px; 
-            border-radius: 10px; 
-            width: 90%; 
-            max-width: 360px; 
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 360px;
         }
         .modal-content h3 { margin-bottom: 12px; font-size: 15px; }
-        .modal-content input { 
-            width: 100%; 
-            padding: 10px; 
-            border: 1px solid #d1d5db; 
-            border-radius: 6px; 
-            font-size: 13px; 
-            margin-bottom: 12px; 
+        .modal-content input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 13px;
+            margin-bottom: 12px;
         }
         .modal-actions { display: flex; gap: 8px; justify-content: flex-end; }
         .modal-actions button { padding: 8px 16px; font-size: 13px; border-radius: 6px; }
         .btn-secondary { background: #e5e7eb; color: #374151; border: none; cursor: pointer; }
         .btn-secondary:hover { background: #d1d5db; }
-        
+
         /* 空状态 */
         .empty { text-align: center; padding: 40px 20px; color: #9ca3af; }
         .empty-icon { font-size: 36px; margin-bottom: 10px; }
-        
+
         /* 加载 */
-        .loading { 
-            display: inline-block; 
-            width: 12px; height: 12px; 
-            border: 2px solid #e5e7eb; 
-            border-top-color: #4f46e5; 
-            border-radius: 50%; 
-            animation: spin .6s linear infinite; 
-            margin-right: 6px; 
+        .loading {
+            display: inline-block;
+            width: 12px; height: 12px;
+            border: 2px solid #e5e7eb;
+            border-top-color: #4f46e5;
+            border-radius: 50%;
+            animation: spin .6s linear infinite;
+            margin-right: 6px;
         }
         @keyframes spin { to { transform: rotate(360deg); } }
-        
+
         /* 更新时间 */
-        .update-time { 
-            text-align: center; 
-            color: #9ca3af; 
-            font-size: 11px; 
-            margin-top: 12px; 
+        .update-time {
+            text-align: center;
+            color: #9ca3af;
+            font-size: 11px;
+            margin-top: 12px;
         }
 
         /* 更新时间 */
-        .update-time { 
-            text-align: center; 
-            color: #9ca3af; 
-            font-size: 11px; 
-            margin-top: 12px; 
+        .update-time {
+            text-align: center;
+            color: #9ca3af;
+            font-size: 11px;
+            margin-top: 12px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>📊 盘中估值</h1>
-        
+
         <div class="toolbar">
             <button class="btn-primary" onclick="refreshAll()" id="refreshBtn">🔄 刷新</button>
             <button class="btn-success" onclick="showAddSectorModal()">➕ 新建板块</button>
@@ -286,14 +286,14 @@
                 <span id="refreshTimer">自动刷新中</span>
             </div>
         </div>
-        
+
         <div class="status" id="status"></div>
-        
+
         <div id="sectors"></div>
-        
+
         <div class="update-time" id="updateTime"></div>
     </div>
-    
+
     <!-- 新建板块弹窗 -->
     <div class="modal" id="addSectorModal">
         <div class="modal-content">
@@ -305,7 +305,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- ETF映射弹窗 -->
     <div class="modal" id="etfLinkModal">
         <div class="modal-content">
@@ -345,7 +345,7 @@
             document.getElementById('addSectorModal').classList.add('show');
             document.getElementById('newSectorName').focus();
         }
-        
+
         function closeModal(id) {
             document.getElementById(id).classList.remove('show');
         }
@@ -413,7 +413,7 @@
 
                 render();
                 lastRefreshTime = new Date();
-                document.getElementById('updateTime').textContent = 
+                document.getElementById('updateTime').textContent =
                     `更新于 ${lastRefreshTime.toLocaleTimeString()}`;
             } catch (e) {
                 showStatus('刷新失败: ' + e.message, 'error');
@@ -428,7 +428,7 @@
         function addSector() {
             const name = document.getElementById('newSectorName').value.trim();
             if (!name) return;
-            
+
             state.sectors.push({ name, funds: [] });
             saveState();
             render();
@@ -442,19 +442,19 @@
             const aliasInput = form.querySelector('input[name="alias"]');
             const code = codeInput.value.trim();
             let alias = aliasInput.value.trim();
-            
+
             if (!code || !/^\d{6}$/.test(code)) {
                 showStatus('请输入6位基金代码', 'error');
                 return;
             }
-            
+
             // 检查重复
             const exists = state.sectors[sectorIndex].funds.some(f => f.code === code);
             if (exists) {
                 showStatus('该基金已存在', 'error');
                 return;
             }
-            
+
             // 自动获取基金名称
             if (!alias) {
                 const btn = form.querySelector('button');
@@ -464,14 +464,14 @@
                 btn.innerHTML = '添加';
                 btn.disabled = false;
             }
-            
+
             state.sectors[sectorIndex].funds.push({ code, alias });
             saveState();
             render();
-            
+
             codeInput.value = '';
             aliasInput.value = '';
-            
+
             // 添加后立即刷新估值
             refreshAll();
         }
@@ -490,22 +490,55 @@
             render();
         }
 
-        // ============ 自动刷新 ============
+        // ============ 自动刷新（交易时段感知） ============
+        function isTradeTime() {
+            const now = new Date();
+            const day = now.getDay();
+            if (day === 0 || day === 6) return false;
+            const hhmm = now.getHours() * 100 + now.getMinutes();
+            // 9:15~11:35 和 12:55~15:05（留缓冲）
+            return (hhmm >= 915 && hhmm <= 1135) || (hhmm >= 1255 && hhmm <= 1505);
+        }
+
         function startAutoRefresh() {
             if (autoRefreshTimer) return;
-            autoRefreshTimer = setInterval(() => {
+            _scheduleNextRefresh();
+            updateRefreshTimer();
+        }
+
+        function _scheduleNextRefresh() {
+            if (autoRefreshTimer) clearTimeout(autoRefreshTimer);
+            const interval = isTradeTime() ? 30000 : 300000; // 交易时段30s，非交易5min
+            autoRefreshTimer = setTimeout(() => {
                 if (state.sectors.some(s => s.funds.length > 0)) {
                     refreshAll();
                 }
-            }, 30000);
-            updateRefreshTimer();
+                _scheduleNextRefresh();
+            }, interval);
         }
 
         function updateRefreshTimer() {
             const el = document.getElementById('refreshTimer');
-            if (lastRefreshTime) {
-                const ago = Math.floor((Date.now() - lastRefreshTime) / 1000);
-                el.textContent = `${ago}s前更新 · 30s刷新`;
+            const dot = document.querySelector('.refresh-status .dot');
+            const trading = isTradeTime();
+
+            if (trading) {
+                if (dot) dot.style.background = '#10b981';
+                if (lastRefreshTime) {
+                    const ago = Math.floor((Date.now() - lastRefreshTime) / 1000);
+                    el.textContent = `${ago}s前更新 · 30s刷新`;
+                } else {
+                    el.textContent = '🟢 30s自动刷新中';
+                }
+            } else {
+                if (dot) dot.style.background = '#9ca3af';
+                if (lastRefreshTime) {
+                    const ago = Math.floor((Date.now() - lastRefreshTime) / 1000);
+                    const agoText = ago < 60 ? `${ago}s` : `${Math.floor(ago/60)}m`;
+                    el.textContent = `⏸ 非交易时段 · ${agoText}前更新`;
+                } else {
+                    el.textContent = '⏸ 非交易时段';
+                }
             }
             setTimeout(updateRefreshTimer, 1000);
         }
@@ -550,7 +583,7 @@
                                 <tr>
                                     <th>代码</th>
                                     <th>名称</th>
-                                    <th style="text-align:right">估值涨幅</th>
+                                    <th style="text-align:right">涨跌幅</th>
                                     <th style="text-align:right">近5日</th>
                                     <th style="text-align:right">置信度</th>
                                     <th></th>
@@ -588,6 +621,10 @@
                     const change = val.estimation_change;
                     changeText = (change >= 0 ? '+' : '') + change.toFixed(2) + '%';
                     changeClass = change > 0 ? 'up' : change < 0 ? 'down' : 'flat';
+                    // 非交易时段使用真实净值时，加标记区分
+                    if (val._source === 'nav') {
+                        changeText += ' ✓';
+                    }
                 }
                 if (val.week_change !== null && val.week_change !== undefined) {
                     const wc = val.week_change;
