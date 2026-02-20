@@ -690,3 +690,87 @@ def refresh_stale_holdings() -> dict:
     summary = {"refreshed": refreshed, "failed": failed, "skipped": skipped, "unmapped_etf_links": unmapped}
     print(f"[AutoRefresh] Done: {len(refreshed)} refreshed, {len(failed)} failed, {skipped} skipped")
     return summary
+
+
+# ============================================================
+# 基金历史净值（逐日真实涨跌幅）
+# ============================================================
+
+_nav_history_cache: Dict[str, dict] = {}  # key=fund_code, value={"data": list, "ts": float}
+_NAV_HISTORY_TTL = 3600  # 1小时缓存
+_NAV_HISTORY_FETCH_SIZE = 30  # 固定请求30条，缓存完整数据
+
+
+def get_fund_nav_history(fund_code: str, days: int = 15) -> list:
+    """
+    获取基金最近N个交易日的真实净值数据（收盘结算后的精确值）。
+
+    返回格式（按日期降序，最新的在前）：
+    [
+        {"date": "2026-02-19", "nav": 1.2345, "change": -1.23},
+        {"date": "2026-02-18", "nav": 1.2500, "change": 0.85},
+        ...
+    ]
+
+    其中 change 是当日真实涨跌幅%（来自JZZZL字段）。
+    缓存策略：内存缓存，TTL = 1小时（历史数据不需要频繁刷新）。
+    """
+    # 检查缓存
+    cache_key = fund_code
+    if cache_key in _nav_history_cache:
+        cached = _nav_history_cache[cache_key]
+        if time.time() - cached["ts"] < _NAV_HISTORY_TTL:
+            # 缓存数据够用，直接截取
+            if len(cached["data"]) >= days:
+                return cached["data"][:days]
+            # 缓存数据不够，重新拉取
+
+    # 请求时用 max(days, _NAV_HISTORY_FETCH_SIZE) 确保拿够
+    fetch_size = max(days, _NAV_HISTORY_FETCH_SIZE)
+
+    # 请求天天基金历史净值API
+    try:
+        url = (
+            f"https://api.fund.eastmoney.com/f10/lsjz?"
+            f"fundCode={fund_code}&pageIndex=1&pageSize={fetch_size}"
+        )
+        req = Request(url, headers={
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            "Referer": f"https://fundf10.eastmoney.com/jjjz_{fund_code}.html",
+        })
+        with urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
+            content = resp.read().decode("utf-8")
+
+        data = json.loads(content)
+        items = data.get("Data", {}).get("LSJZList", [])
+
+        result = []
+        for item in items:
+            date_str = item.get("FSRQ", "")
+            nav_str = item.get("DWJZ", "")
+            change_str = item.get("JZZZL", "")
+
+            try:
+                nav = float(nav_str) if nav_str else None
+            except (ValueError, TypeError):
+                nav = None
+
+            try:
+                change = float(change_str) if change_str and change_str.strip() else None
+            except (ValueError, TypeError):
+                change = None
+
+            result.append({
+                "date": date_str,
+                "nav": nav,
+                "change": change,
+            })
+
+        # 写入缓存
+        _nav_history_cache[cache_key] = {"data": result, "ts": time.time()}
+        print(f"[NavHistory] {fund_code} 获取到 {len(result)} 条净值记录")
+        return result[:days]
+
+    except Exception as e:
+        print(f"[NavHistory] {fund_code} 获取失败: {e}")
+        return []
