@@ -1410,7 +1410,7 @@
                     </div>
                 </div>`;
 
-                // 按分组计算预算的辅助函数
+                // 按分组计算预算的辅助函数（预算用成本口径）
                 function calcGroupBudget(fundCodes) {
                     let maxInvest = 0, invested = 0;
                     for (const code of fundCodes) {
@@ -1703,11 +1703,11 @@
                                 </div>
                                 <div style="display:flex;align-items:baseline;gap:6px;">
                                     <span style="display:inline-block;background:#fee2e2;color:#dc2626;font-size:9px;font-weight:600;padding:1px 5px;border-radius:3px;flex-shrink:0;">卖出</span>
-                                    <span>冲高止盈(P2) ≥${sp.take_profit_trigger||'--'}% · 慢涨止盈(P2) 浮盈≥3%+趋势稳 · 回撤止盈(P2.2) 峰值回撤≥${sp.trail_dd||'1.8'}% · 扭亏止盈(P2.5) 总浮盈>${sp.total_profit_sell_min||0.5}% · 趋弱(P3) 2日跌≤${sp.trend_weak_cumulative||'--'}%+5日确认 · 止损(P1) ≤${sp.stop_loss_base||'--'}%−费率</span>
+                                    <span>冲高止盈(P2) ≥${sp.take_profit_trigger||'--'}% · 慢涨止盈(P2) 浮盈≥3%+趋势稳 · 回撤止盈(P2.2) 峰值回撤≥${sp.trail_dd||'1.8'}% · 扭亏止盈(P2.5) 总浮盈>${sp.total_profit_sell_min||0.5}% · 趋弱(P3) 按盈利分级减仓(薄利100%/中利70%/厚利50%) · 止损(P1) ≤${sp.stop_loss_base||'--'}%−费率 · 短期深亏≤-6%安全网减30%</span>
                                 </div>
                                 <div style="display:flex;align-items:baseline;gap:6px;">
                                     <span style="display:inline-block;background:#fef3c7;color:#92400e;font-size:9px;font-weight:600;padding:1px 5px;border-radius:3px;flex-shrink:0;">风控</span>
-                                    <span>灾难阀 ≤${sp.disaster_loss_threshold||'-9'}%(极端亏损卖50%/暴跌卖30%) · 补仓禁入(10日≤-7%+连跌≥3 或 回撤≥10%+波动≥2.2%) · 补仓节奏阀(间隔≥3交易日) · FIFO穿透亏损>50元自动暂缓 · 动态阈值 ${sp.risk_multiplier != null ? sp.risk_multiplier+'×' : '1.0×'}</span>
+                                    <span>灾难阀 ≤${sp.disaster_loss_threshold||'-9'}%(极端亏损卖50%/暴跌卖30%) · 补仓禁入(10日≤-7%+连跌≥3 或 回撤≥10%+波动≥2.2%) · 补仓节奏阀(间隔≥3交易日,急跌可缩至2日) · FIFO穿透亏损>50元自动暂缓 · 总仓位止损(超线深度分级30/50/70%) · 动态阈值 ${sp.risk_multiplier != null ? sp.risk_multiplier+'×' : '1.0×'}</span>
                                 </div>
                             </div>
                         </div>`;
@@ -1721,20 +1721,45 @@
 
                     // 持仓汇总
                     if (hasPos) {
-                        const totalAmount = holdingBatches.reduce((s, b) => s + b.amount, 0);
+                        const totalCost = holdingBatches.reduce((s, b) => s + b.amount, 0);
                         const totalShares = holdingBatches.reduce((s, b) => s + b.shares, 0);
                         const totalOriginal = holdingBatches.reduce((s, b) => s + (b.original_amount || b.amount), 0);
                         const maxPos = fundPos.max_position || 5000;
                         const suppCount = fundPos.supplement_count || 0;
-                        const hasSold = totalOriginal - totalAmount > 0.01;
+                        const hasSold = totalOriginal - totalCost > 0.01;
                         const feeSchedule = fundPos.fee_schedule || null;
                         const feeDisplay = feeSchedule && feeSchedule.length > 0
                             ? feeSchedule.map(s => s.days ? `<${s.days}天${s.rate}%` : `${s.rate}%`).join(' / ')
                             : '默认';
                         window._feeCache = window._feeCache || {};
                         window._feeCache[code] = feeSchedule;
+                        // v5.2: 使用 market_value（份额×净值）展示持仓金额，与支付宝一致
+                        const marketValue = ma && ma.market_value != null ? ma.market_value : null;
+                        const displayAmount = marketValue != null ? marketValue : totalCost;
+                        const unrealizedPnl = ma && ma.unrealized_pnl != null ? ma.unrealized_pnl : null;
+                        const unrealizedPnlPct = ma && ma.unrealized_pnl_pct != null ? ma.unrealized_pnl_pct : null;
+                        const cumulativePnl = ma && ma.cumulative_pnl != null ? ma.cumulative_pnl : null;
+                        const realizedPnl = ma && ma.realized_pnl != null ? ma.realized_pnl : 0;
+
+                        // 盈亏显示
+                        let pnlHtml = '';
+                        if (unrealizedPnl != null) {
+                            const pnlColor = unrealizedPnl >= 0 ? '#dc2626' : '#16a34a';
+                            const pnlSign = unrealizedPnl >= 0 ? '+' : '';
+                            pnlHtml = `<div class="item"><span class="label">浮动盈亏:</span><span class="value" style="color:${pnlColor};font-weight:700;">${pnlSign}¥${unrealizedPnl.toFixed(2)}${unrealizedPnlPct != null ? `(${pnlSign}${unrealizedPnlPct}%)` : ''}</span></div>`;
+                        }
+                        let cumPnlHtml = '';
+                        if (cumulativePnl != null && realizedPnl !== 0) {
+                            const cumColor = cumulativePnl >= 0 ? '#dc2626' : '#16a34a';
+                            const cumSign = cumulativePnl >= 0 ? '+' : '';
+                            cumPnlHtml = `<div class="item"><span class="label">累计盈亏:</span><span class="value" style="color:${cumColor};">${cumSign}¥${cumulativePnl.toFixed(2)}</span></div>`;
+                        }
+                        // 成本标注：仅在 market_value 可用时显示成本对比
+                        const costNote = marketValue != null ? `<span style="color:#9ca3af;font-size:9px;margin-left:2px;">(成本¥${totalCost.toFixed(0)}${hasSold ? `/投入¥${totalOriginal.toFixed(0)}` : ''})</span>` : (hasSold ? `<span style="color:#9ca3af;font-size:9px;margin-left:2px;">(投入¥${totalOriginal.toFixed(0)})</span>` : '');
                         html += `<div class="pos-summary">
-                            <div class="item"><span class="label">持仓:</span><span class="value">¥${totalAmount.toFixed(2)}${hasSold ? `<span style="color:#9ca3af;font-size:9px;margin-left:2px;">(投入¥${totalOriginal.toFixed(0)})</span>` : ''}</span></div>
+                            <div class="item"><span class="label">持仓金额:</span><span class="value">¥${displayAmount.toFixed(2)}${costNote}</span></div>
+                            ${pnlHtml}
+                            ${cumPnlHtml}
                             <div class="item"><span class="label">份额:</span><span class="value">${totalShares.toFixed(2)}</span></div>
                             <div class="item"><span class="label">批次:</span><span class="value">${holdingBatches.length}笔</span></div>
                             ${suppCount > 0 ? `<div class="item"><span class="label">补仓:</span><span class="value" style="color:#d97706;">${suppCount}/3次</span></div>` : ''}

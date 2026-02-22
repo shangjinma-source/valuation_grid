@@ -705,10 +705,20 @@ def get_fund_position(fund_code: str) -> dict:
         except:
             pass
 
+    # === 已实现盈亏（从 sell_records 汇总）===
+    sell_records = fund.get("sell_records", [])
+    realized_pnl = round(sum(r.get("profit", 0) or 0 for r in sell_records), 2)
+    total_invested = round(
+        sum(b.get("original_amount", b["amount"]) for b in fund.get("batches", [])),
+        2
+    )
+    total_received = round(sum(r.get("net", 0) or 0 for r in sell_records), 2)
+
     return {
         "fund_code": fund_code,
         "has_position": len(holding_batches) > 0,
-        "total_amount": total_amount,
+        "total_amount": total_amount,       # 向后兼容：当前持仓成本
+        "total_cost": total_amount,          # 语义明确：当前持仓成本
         "total_shares": total_shares,
         "batches": holding_batches,
         "oldest_hold_days": max(hold_days_list) if hold_days_list else 0,
@@ -716,10 +726,15 @@ def get_fund_position(fund_code: str) -> dict:
         "max_position": fund.get("max_position", 5000),
         "supplement_count": fund.get("supplement_count", 0),
         "in_cooldown": in_cooldown,
-        "cooldown_until": cd,  # 原始日期字符串，供策略统一判断
-        "cooldown_sell_date": fund.get("cooldown_sell_date"),      # v4.1
-        "cooldown_trade_days": fund.get("cooldown_trade_days", 2), # v4.1
+        "cooldown_until": cd,
+        "cooldown_sell_date": fund.get("cooldown_sell_date"),
+        "cooldown_trade_days": fund.get("cooldown_trade_days", 2),
         "fee_schedule": fund.get("fee_schedule"),
+        # v5.2 新增：盈亏追踪字段
+        "realized_pnl": realized_pnl,           # 已实现盈亏（从卖出记录汇总）
+        "total_invested": total_invested,        # 历史总投入（含已卖出批次）
+        "total_received": total_received,        # 已回款总额
+        "sell_records_count": len(sell_records),
     }
 
 
