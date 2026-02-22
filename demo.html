@@ -857,6 +857,37 @@
         </div>
     </div>
 
+    <!-- 灵敏度调整弹窗 -->
+    <div class="modal" id="volSensModal">
+        <div class="modal-content">
+            <h3 id="volSensTitle">调整波动率灵敏度</h3>
+            <p style="font-size:11px;color:#6b7280;margin-bottom:8px;">
+                灵敏度影响买卖阈值的宽窄：<b>&gt;1.0</b> 阈值更宽（更不容易触发），<b>&lt;1.0</b> 阈值更窄（更灵敏）。
+            </p>
+            <div id="volSensInfo" style="font-size:11px;color:#6b7280;margin-bottom:8px;padding:6px 8px;background:#f8fafc;border-radius:4px;"></div>
+            <div class="trade-form">
+                <div>
+                    <label>灵敏度值 (0.5 ~ 1.5)</label>
+                    <input type="range" id="volSensSlider" min="0.5" max="1.5" step="0.05" value="1.0"
+                           oninput="document.getElementById('volSensDisplay').textContent=this.value"
+                           style="width:100%;margin-top:4px;">
+                    <div style="display:flex;justify-content:space-between;font-size:10px;color:#9ca3af;">
+                        <span>0.5 灵敏</span>
+                        <span id="volSensDisplay" style="font-weight:600;color:#4f46e5;font-size:13px;">1.00</span>
+                        <span>1.5 迟钝</span>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="volSensFundCode">
+            <div class="modal-actions" style="margin-top:12px;">
+                <button class="btn-secondary" onclick="closeModal('volSensModal')">取消</button>
+                <button class="btn-secondary" onclick="clearVolSensitivity()" style="color:#f59e0b;">恢复自动</button>
+                <button class="btn-secondary" onclick="recalibrateVolSensitivity()" style="color:#4f46e5;">重新校准</button>
+                <button class="btn-primary" onclick="saveVolSensitivity()">手动设置</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         const API_BASE = 'http://localhost:8000';
         let state = { version: 1, sectors: [] };
@@ -1417,8 +1448,14 @@
                         const f = funds[code];
                         if (!f) continue;
                         maxInvest += (f.max_position || 5000);
-                        const holding = (f.batches || []).filter(b => b.status === 'holding');
-                        invested += holding.reduce((s, b) => s + (b.amount || 0), 0);
+                        // 优先使用市值（与持仓汇总展示口径一致），回退到成本求和
+                        const mv = sigMap[code]?.market_analysis?.market_value;
+                        if (mv != null && mv > 0) {
+                            invested += mv;
+                        } else {
+                            const holding = (f.batches || []).filter(b => b.status === 'holding');
+                            invested += holding.reduce((s, b) => s + (b.amount || 0), 0);
+                        }
                     }
                     maxInvest *= (1 - cashReserveRatio);
                     return { maxInvest, invested, available: Math.max(0, maxInvest - invested) };
@@ -1693,6 +1730,12 @@
                             const rmColor = sp.risk_multiplier > 1.2 ? '#d97706' : sp.risk_multiplier < 0.9 ? '#059669' : '#6b7280';
                             html += `<div class="stat-item"><span class="stat-label">风险系数:</span><span class="stat-value" style="color:${rmColor}">${sp.risk_multiplier}×</span></div>`;
                         }
+                        if (sp.vol_sensitivity != null) {
+                            const vs = sp.vol_sensitivity;
+                            const vsColor = Math.abs(vs - 1.0) > 0.05 ? (vs > 1.0 ? '#d97706' : '#059669') : '#6b7280';
+                            const vsSource = sp.vol_sensitivity_source === 'manual' ? '手动' : sp.vol_sensitivity_source === 'auto' ? '自动' : '默认';
+                            html += `<div class="stat-item"><span class="stat-label">灵敏度:</span><span class="stat-value" style="color:${vsColor};cursor:pointer;border-bottom:1px dashed ${vsColor};" onclick="showVolSensitivityModal('${code}')" title="点击调整灵敏度（当前来源:${vsSource}）">${vs.toFixed(2)}×<sup style="font-size:7px;color:#9ca3af;margin-left:1px;">${vsSource}</sup></span></div>`;
+                        }
                         html += `<button class="strategy-info-btn" onclick="toggleStrategyInfo('${code}')" title="策略触发条件">?</button>`;
                         html += `</div>`;
                         html += `<div class="strategy-info-box" id="strategy-info-${code}">
@@ -1707,7 +1750,7 @@
                                 </div>
                                 <div style="display:flex;align-items:baseline;gap:6px;">
                                     <span style="display:inline-block;background:#fef3c7;color:#92400e;font-size:9px;font-weight:600;padding:1px 5px;border-radius:3px;flex-shrink:0;">风控</span>
-                                    <span>灾难阀 ≤${sp.disaster_loss_threshold||'-9'}%(极端亏损卖50%/暴跌卖30%) · 补仓禁入(10日≤-7%+连跌≥3 或 回撤≥10%+波动≥2.2%) · 补仓节奏阀(间隔≥3交易日,急跌可缩至2日) · FIFO穿透亏损>50元自动暂缓 · 总仓位止损(超线深度分级30/50/70%) · 动态阈值 ${sp.risk_multiplier != null ? sp.risk_multiplier+'×' : '1.0×'}</span>
+                                    <span>灾难阀 ≤${sp.disaster_loss_threshold||'-9'}%(极端亏损卖50%/暴跌卖30%) · 补仓禁入(10日≤-7%+连跌≥3 或 回撤≥10%+波动≥2.2%) · 补仓节奏阀(间隔≥3交易日,急跌可缩至2日) · FIFO穿透亏损>50元自动暂缓 · 总仓位止损(超线深度分级30/50/70%) · 动态阈值 ${sp.risk_multiplier != null ? sp.risk_multiplier+'×' : '1.0×'} · 灵敏度 ${sp.vol_sensitivity != null ? sp.vol_sensitivity.toFixed(2)+'×' : '1.0×'}(${sp.vol_sensitivity_source === 'manual' ? '手动' : sp.vol_sensitivity_source === 'auto' ? '自动' : '默认'})</span>
                                 </div>
                             </div>
                         </div>`;
@@ -1762,7 +1805,7 @@
                             ${cumPnlHtml}
                             <div class="item"><span class="label">份额:</span><span class="value">${totalShares.toFixed(2)}</span></div>
                             <div class="item"><span class="label">批次:</span><span class="value">${holdingBatches.length}笔</span></div>
-                            ${suppCount > 0 ? `<div class="item"><span class="label">补仓:</span><span class="value" style="color:#d97706;">${suppCount}/3次</span></div>` : ''}
+                            ${suppCount > 0 ? `<div class="item"><span class="label">补仓:</span><span class="value" style="color:#d97706;">${suppCount}/${sigMap[code]?.market_analysis?.strategy_params?.supplement_max_count || 3}次</span></div>` : ''}
                             <div class="item"><span class="label">上限:</span><span class="value" style="cursor:pointer;border-bottom:1px dashed #9ca3af;" onclick="editMaxPosition('${code}',${maxPos})" title="点击修改上限">¥${maxPos}</span></div>
                             <div class="item"><span class="label">费率:</span><span class="value" style="cursor:pointer;border-bottom:1px dashed #9ca3af;" onclick="editFeeSchedule('${code}')" title="点击修改费率">${feeDisplay}</span></div>
                         </div>`;
@@ -2662,8 +2705,98 @@
                 closeModal('sellModal');
                 closeModal('groupModal');
                 closeModal('assignGroupModal');
+                closeModal('volSensModal');
             }
         });
+
+        // ============ 波动率灵敏度调整 ============
+        async function showVolSensitivityModal(fundCode) {
+            document.getElementById('volSensFundCode').value = fundCode;
+            const realCode = fundCode.includes('__') ? fundCode.split('__')[0] : fundCode;
+            const name = valuations[realCode]?.fund_name || realCode;
+            document.getElementById('volSensTitle').textContent = `调整灵敏度 · ${name}`;
+
+            // 加载当前信息
+            const infoEl = document.getElementById('volSensInfo');
+            infoEl.innerHTML = '<span class="loading"></span>加载中...';
+            document.getElementById('volSensModal').classList.add('show');
+
+            try {
+                const res = await fetch(`${API_BASE}/v1/position/${encodeURIComponent(fundCode)}/vol-sensitivity`);
+                const data = await res.json();
+                const slider = document.getElementById('volSensSlider');
+                const display = document.getElementById('volSensDisplay');
+                slider.value = data.effective;
+                display.textContent = data.effective.toFixed(2);
+
+                const sourceMap = { manual: '手动设置', auto: '自动校准', default: '默认值' };
+                let infoHtml = `<div>当前生效: <b>${data.effective.toFixed(2)}×</b> (${sourceMap[data.source] || data.source})</div>`;
+                if (data.auto_cached != null) {
+                    infoHtml += `<div>自动校准值: ${data.auto_cached.toFixed(2)}× (${data.auto_cached_at || ''})</div>`;
+                }
+                if (data.manual != null) {
+                    infoHtml += `<div>手动设置值: ${data.manual.toFixed(2)}×</div>`;
+                }
+                infoHtml += `<div style="margin-top:4px;color:#9ca3af;font-size:10px;">
+                    灵敏度 < 1.0 = 阈值更灵敏(更易触发买卖) · > 1.0 = 阈值更宽(更不易触发)
+                </div>`;
+                infoEl.innerHTML = infoHtml;
+            } catch (e) {
+                infoEl.innerHTML = `<span style="color:#ef4444;">加载失败: ${e.message}</span>`;
+            }
+        }
+
+        async function saveVolSensitivity() {
+            const fundCode = document.getElementById('volSensFundCode').value;
+            const value = parseFloat(document.getElementById('volSensSlider').value);
+            try {
+                const res = await fetch(`${API_BASE}/v1/position/${encodeURIComponent(fundCode)}/vol-sensitivity`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ sensitivity: value })
+                });
+                if (!res.ok) throw new Error('设置失败');
+                showStatus(`灵敏度已设为 ${value.toFixed(2)}×`, 'success');
+                closeModal('volSensModal');
+                loadStrategyPanel();
+            } catch (e) {
+                showStatus('设置失败: ' + e.message, 'error');
+            }
+        }
+
+        async function clearVolSensitivity() {
+            const fundCode = document.getElementById('volSensFundCode').value;
+            try {
+                const res = await fetch(`${API_BASE}/v1/position/${encodeURIComponent(fundCode)}/vol-sensitivity`, {
+                    method: 'DELETE'
+                });
+                if (!res.ok) throw new Error('清除失败');
+                showStatus('已恢复自动校准', 'success');
+                closeModal('volSensModal');
+                loadStrategyPanel();
+            } catch (e) {
+                showStatus('操作失败: ' + e.message, 'error');
+            }
+        }
+
+        async function recalibrateVolSensitivity() {
+            const fundCode = document.getElementById('volSensFundCode').value;
+            try {
+                const btn = event.target;
+                btn.textContent = '校准中...';
+                btn.disabled = true;
+                const res = await fetch(`${API_BASE}/v1/position/${encodeURIComponent(fundCode)}/vol-sensitivity/calibrate`, {
+                    method: 'POST'
+                });
+                if (!res.ok) throw new Error('校准失败');
+                const data = await res.json();
+                showStatus(`重新校准完成: ${data.effective.toFixed(2)}×`, 'success');
+                // 刷新弹窗信息
+                showVolSensitivityModal(fundCode);
+            } catch (e) {
+                showStatus('校准失败: ' + e.message, 'error');
+            }
+        }
     </script>
 </body>
 </html>

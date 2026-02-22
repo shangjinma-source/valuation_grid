@@ -219,41 +219,77 @@ def calc_signal_win_rate(fund_code: str = None, lookback: int = 30) -> dict:
 
 
 # ============================================================
-# v5.2: 波动率灵敏度自动校准
+# v5.3: 波动率灵敏度自动校准（修复空壳实现）
 # ============================================================
 
 DEFAULT_VOL_SENSITIVITY = 1.0
+# 自动校准结果缓存有效期（秒），避免每次信号生成都重新计算
+_VOL_SENS_CACHE_TTL = 3600 * 6  # 6小时
 
-def _get_vol_sensitivity(fund_code: str) -> float:
+
+def _get_vol_sensitivity(fund_code: str) -> tuple:
     """
     获取基金的波动率灵敏度系数。优先级：
-    1. positions.json 中用户手动配置的 vol_sensitivity
-    2. 自动校准值（基于历史波动率 vs 估值波动率的偏差）
-    3. 默认 1.0
-    """
-    real_code, _ = parse_fund_key(fund_code)
+    1. positions.json 中用户手动配置的 vol_sensitivity（用户显式覆盖）
+    2. positions.json 中缓存的自动校准值 vol_sensitivity_auto（带时间戳）
+    3. 实时计算自动校准值并缓存
+    4. 默认 1.0
 
-    # 1. 检查用户配置
+    返回 (sensitivity_value, source_str) 元组，source_str ∈ {"manual", "auto", "default"}
+    """
     data = load_positions()
     fund = data.get("funds", {}).get(fund_code)
-    if fund and fund.get("vol_sensitivity") is not None:
-        return max(0.5, min(1.5, fund["vol_sensitivity"]))
+    if not fund:
+        return DEFAULT_VOL_SENSITIVITY, "default"
 
-    # 2. 自动校准：用净值历史波动率 / 估值日频波动率
-    # 这里简化实现：如果数据不足直接返回默认值
-    # 完整实现需要积累估值历史，此处预留接口
-    return DEFAULT_VOL_SENSITIVITY
+    # 1. 用户手动配置（最高优先级）
+    if fund.get("vol_sensitivity") is not None:
+        return max(0.5, min(1.5, fund["vol_sensitivity"])), "manual"
+
+    # 2. 检查缓存的自动校准值是否还在有效期内
+    cached = fund.get("vol_sensitivity_auto")
+    cached_at = fund.get("vol_sensitivity_auto_at")
+    if cached is not None and cached_at:
+        try:
+            ts = datetime.strptime(cached_at, "%Y-%m-%d %H:%M:%S")
+            if (datetime.now() - ts).total_seconds() < _VOL_SENS_CACHE_TTL:
+                return max(0.5, min(1.5, cached)), "auto"
+        except (ValueError, TypeError):
+            pass
+
+    # 3. 实时计算并缓存
+    calibrated = auto_calibrate_vol_sensitivity(fund_code)
+    if calibrated is not None:
+        fund["vol_sensitivity_auto"] = calibrated
+        fund["vol_sensitivity_auto_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        save_positions(data)
+        return max(0.5, min(1.5, calibrated)), "auto"
+
+    return DEFAULT_VOL_SENSITIVITY, "default"
 
 
 def auto_calibrate_vol_sensitivity(fund_code: str) -> Optional[float]:
     """
     自动校准波动率灵敏度。
 
-    原理：比较"真实净值日波动率"和"盘中估值日波动率"
-    - 如果估值波动 < 真实波动 → 估值偏保守 → sensitivity < 1（让阈值更灵敏）
-    - 如果估值波动 > 真实波动 → 估值偏激进 → sensitivity > 1（让阈值更迟钝）
+    由于没有盘中估值历史数据，无法直接比较"估值波动率 vs 真实波动率"。
+    改用以下可观测指标的综合判断：
 
-    返回建议的 sensitivity 值，None 表示数据不足
+    1. 尾部厚度因子（tail_ratio = stddev / MAD×1.4826）
+       - 正态分布 ≈ 1.0
+       - 厚尾（极端波动频繁）> 1.2 → 阈值应更宽 → sensitivity ↑
+       - 轻尾（波动集中在均值附近）< 0.8 → 阈值可收紧 → sensitivity ↓
+
+    2. 持仓覆盖率修正（从估值结果推断）
+       - 覆盖率低的基金，盘中估值可能系统性偏离真实净值
+       - 覆盖率 < 70% → sensitivity × 1.1（估值不可靠，放宽阈值）
+
+    3. 近期波动率变化率（regime detection）
+       - 近5日波动率 / 近20日波动率
+       - > 1.5 = 波动率放大期 → sensitivity × 1.05
+       - < 0.6 = 波动率收缩期 → sensitivity × 0.95
+
+    返回建议的 sensitivity 值（0.7~1.3），None 表示数据不足
     """
     real_code, _ = parse_fund_key(fund_code)
     nav_hist = get_fund_nav_history(real_code, 30)
@@ -261,7 +297,6 @@ def auto_calibrate_vol_sensitivity(fund_code: str) -> Optional[float]:
     if len(nav_hist) < 15:
         return None
 
-    # 真实净值日波动率
     real_changes = [h["change"] for h in nav_hist if h.get("change") is not None]
     if len(real_changes) < 10:
         return None
@@ -271,9 +306,9 @@ def auto_calibrate_vol_sensitivity(fund_code: str) -> Optional[float]:
     vol_real = var_real ** 0.5
 
     if vol_real < 0.1:
-        return 1.0  # 极低波动基金（货币/纯债），无需校准
+        return 1.0  # 极低波动（货币/纯债）
 
-    # 简化策略：如果没有积累估值历史，用MAD鲁棒估计做近似
+    # --- 因子1: 尾部厚度 ---
     sorted_changes = sorted(real_changes)
     n = len(sorted_changes)
     median = sorted_changes[n // 2] if n % 2 else (sorted_changes[n // 2 - 1] + sorted_changes[n // 2]) / 2
@@ -282,16 +317,46 @@ def auto_calibrate_vol_sensitivity(fund_code: str) -> Optional[float]:
     mad = abs_devs[m // 2] if m % 2 else (abs_devs[m // 2 - 1] + abs_devs[m // 2]) / 2
     vol_robust = mad * 1.4826
 
-    # 真实 vol / 鲁棒 vol 的比值反映分布尾部厚度
-    # 尾部越厚（极端事件多） → 阈值应更宽 → sensitivity 偏高
     if vol_robust > 0:
         tail_ratio = vol_real / vol_robust
-        # tail_ratio 正常≈1.0, 厚尾>1.2, 轻尾<0.8
-        sensitivity = max(0.7, min(1.3, tail_ratio))
+        tail_factor = max(0.8, min(1.2, tail_ratio))
     else:
-        sensitivity = 1.0
+        tail_factor = 1.0
 
-    return round(sensitivity, 2)
+    # --- 因子2: 波动率变化率（regime detection）---
+    regime_factor = 1.0
+    if len(real_changes) >= 10:
+        vol_5d = (sum((c - sum(real_changes[:5]) / 5) ** 2 for c in real_changes[:5]) / 5) ** 0.5
+        vol_all = vol_real
+        if vol_all > 0:
+            regime_ratio = vol_5d / vol_all
+            if regime_ratio > 1.5:
+                regime_factor = 1.05  # 波动放大期
+            elif regime_ratio < 0.6:
+                regime_factor = 0.95  # 波动收缩期
+
+    # --- 因子3: 持仓覆盖率修正（从估值置信度推断）---
+    coverage_factor = 1.0
+    try:
+        from core import calculate_valuation
+        val = calculate_valuation(real_code)
+        coverage = val.get("coverage", {})
+        stock_total = coverage.get("stock_total_weight", 0)
+        covered = coverage.get("covered_weight", 0)
+        if stock_total > 0:
+            cov_ratio = covered / stock_total
+            if cov_ratio < 0.5:
+                coverage_factor = 1.15
+            elif cov_ratio < 0.7:
+                coverage_factor = 1.10  # 覆盖率低→估值不可靠→放宽
+    except Exception:
+        pass
+
+    # --- 综合 ---
+    sensitivity = round(tail_factor * regime_factor * coverage_factor, 2)
+    sensitivity = max(0.7, min(1.3, sensitivity))
+
+    return sensitivity
 
 
 def update_vol_sensitivity(fund_code: str, sensitivity: float) -> bool:
@@ -307,14 +372,40 @@ def update_vol_sensitivity(fund_code: str, sensitivity: float) -> bool:
 
 
 def clear_vol_sensitivity(fund_code: str) -> bool:
-    """清除手动设置，恢复为自动校准"""
+    """清除手动设置和自动缓存，下次信号生成时重新校准"""
     data = load_positions()
     fund = data.get("funds", {}).get(fund_code)
     if not fund:
         return False
     fund.pop("vol_sensitivity", None)
+    fund.pop("vol_sensitivity_auto", None)
+    fund.pop("vol_sensitivity_auto_at", None)
     save_positions(data)
     return True
+
+
+def get_vol_sensitivity_info(fund_code: str) -> dict:
+    """获取灵敏度完整信息（供API返回）"""
+    data = load_positions()
+    fund = data.get("funds", {}).get(fund_code, {})
+
+    manual = fund.get("vol_sensitivity")
+    auto_cached = fund.get("vol_sensitivity_auto")
+    auto_at = fund.get("vol_sensitivity_auto_at")
+
+    # 当前生效值
+    effective, source = _get_vol_sensitivity(fund_code)
+
+    return {
+        "fund_code": fund_code,
+        "effective": effective,
+        "source": source,
+        "manual": manual,
+        "auto_cached": auto_cached,
+        "auto_cached_at": auto_at,
+        "default": DEFAULT_VOL_SENSITIVITY,
+        "range": {"min": 0.5, "max": 1.5},
+    }
 
 
 # ============================================================
@@ -344,7 +435,6 @@ DEFAULT_DISASTER_LOSS = -9.0
 DEFAULT_DISASTER_DAILY_DROP = -5.0
 
 # --- 向后兼容别名 ---
-DIP_BUY_THRESHOLDS = {}
 TAKE_PROFIT_TRIGGER = DEFAULT_TAKE_PROFIT_TRIGGER
 STOP_LOSS_BASE = DEFAULT_STOP_LOSS_BASE
 SUPPLEMENT_TRIGGER = DEFAULT_SUPPLEMENT_TRIGGER
@@ -385,7 +475,7 @@ TOTAL_PROFIT_SELL_TIERS_VOL = [
 TOTAL_PROFIT_SELL_TIERS = [
     (3.0, 50),
     (1.5, 30),
-    (0.5, 20),
+    (0.8, 20),
 ]
 
 TREND_BUILD_TRIGGER_5D = -3.0
@@ -394,13 +484,13 @@ TREND_BUILD_TRIGGER_10D = -5.0
 TAKE_PROFIT_TIERS = [
     (8.0, 100),
     (5.0, 70),
-    (3.0, 50),
+    (3.5, 50),
 ]
 
 SLOW_PROFIT_TIERS = [
     (8.0, 70),
     (5.0, 50),
-    (3.0, 30),
+    (4.0, 30),
 ]
 
 DISASTER_CONSECUTIVE_DOWN = 3
@@ -408,17 +498,17 @@ DISASTER_SELL_PCT_EXTREME = 50
 DISASTER_SELL_PCT_DAILY = 30
 
 SUPPLEMENT_MIN_GAP_TRADE_DAYS = 3
-SUPPLEMENT_REBUY_STEP_PCT = 1.2
+SUPPLEMENT_REBUY_STEP_PCT = 1.0
 
 # 回撤止盈
-TRAIL_PROFIT_ACTIVATE = 3.0
+TRAIL_PROFIT_ACTIVATE = 3.5
 TRAIL_DD_BASE = 1.8
 TRAIL_DD_MIN = 1.2
 TRAIL_DD_MAX = 4.0
 TRAIL_PROFIT_SELL_TIERS = [
     (8.0, 70),
     (5.0, 50),
-    (3.0, 30),
+    (3.5, 30),
 ]
 
 # FIFO穿透降级
@@ -428,9 +518,9 @@ PASSTHROUGH_MIN_NET_PROFIT_ABS = 30.0
 PASSTHROUGH_LOSS_RATIO_THRESHOLD = 0.6
 
 # 组合级
-DAILY_BUY_CAP_RATIO_BASE = 0.06
-DAILY_BUY_CAP_RATIO_CONSERVATIVE = 0.04
-DAILY_BUY_CAP_RATIO_AGGRESSIVE = 0.08
+DAILY_BUY_CAP_RATIO_BASE = 0.10
+DAILY_BUY_CAP_RATIO_CONSERVATIVE = 0.06
+DAILY_BUY_CAP_RATIO_AGGRESSIVE = 0.15
 
 # 波动率状态机
 VOL_LOW = 0.8
@@ -461,9 +551,9 @@ LIQUIDITY_PREMIUM_EXTRA_PCT = 15
 def _vol_adaptive_thresholds(fund_code: str, vol: float) -> dict:
     """
     根据波动率动态生成所有阈值。
-    v5.2: sensitivity 从 _get_vol_sensitivity 获取（自适应或用户配置）
+    v5.3: sensitivity 从 _get_vol_sensitivity 获取（自适应+缓存+用户配置）
     """
-    sensitivity = _get_vol_sensitivity(fund_code)
+    sensitivity, sens_source = _get_vol_sensitivity(fund_code)
 
     if vol is None or vol <= 0:
         return {
@@ -480,6 +570,7 @@ def _vol_adaptive_thresholds(fund_code: str, vol: float) -> dict:
             "total_profit_tiers": TOTAL_PROFIT_SELL_TIERS,
             "_vol_based": False,
             "_sensitivity": sensitivity,
+            "_sensitivity_source": sens_source,
         }
 
     v = vol * sensitivity
@@ -517,6 +608,7 @@ def _vol_adaptive_thresholds(fund_code: str, vol: float) -> dict:
         "total_profit_tiers": tp_tiers,
         "_vol_based": True,
         "_sensitivity": sensitivity,
+        "_sensitivity_source": sens_source,
     }
 
 
@@ -619,7 +711,7 @@ def _calc_dynamic_thresholds(trend_ctx: dict, fund_code: str,
     dip_threshold = max(-6.0, dip_threshold)
     stop_loss_adj = max(-12.0, stop_loss_adj)
 
-    rebuy_step = max(1.0, vol * 0.8) if vol else SUPPLEMENT_REBUY_STEP_PCT
+    rebuy_step = max(0.8, vol * 0.8) if vol else SUPPLEMENT_REBUY_STEP_PCT
 
     return {
         "risk_multiplier": round(risk_mul, 2),
@@ -635,6 +727,7 @@ def _calc_dynamic_thresholds(trend_ctx: dict, fund_code: str,
         "_va": va,
         "_vol_based": va.get("_vol_based", False),
         "_sensitivity": va.get("_sensitivity", DEFAULT_VOL_SENSITIVITY),
+        "_sensitivity_source": va.get("_sensitivity_source", "default"),
         "consecutive_dip_trigger": round(va["consecutive_dip"], 2),
         "supplement_trigger": round(va["supplement_trigger"], 2),
         "supplement_loss_min": round(va["supplement_loss_min"], 2),
@@ -658,13 +751,13 @@ def _calc_sell_score(batch: dict, current_nav: float, today_change: float,
     """
     profit_pct = round((current_nav / batch["nav"] - 1) * 100, 2) if batch["nav"] > 0 else 0.0
 
-    if profit_pct <= fee_rate * 1.5:
+    if profit_pct <= fee_rate * 2.0:
         return {"score": 0, "sell_pct": 0, "signal_name": None, "reason": "盈利不足覆盖费率"}
 
     vol = trend_ctx.get("volatility_robust") or trend_ctx.get("volatility") or 1.2
 
     # v5.2: 修正 profit_norm，低波品种更灵敏
-    profit_norm = max(2.5, vol * 4.0)
+    profit_norm = max(3.0, vol * 4.0)
     profit_score = math.tanh(profit_pct / profit_norm) * 40
 
     trail_score = 0
@@ -682,7 +775,7 @@ def _calc_sell_score(batch: dict, current_nav: float, today_change: float,
     if today_change >= liquidity_trigger:
         liquidity_score = min(15, (today_change - liquidity_trigger) * 5)
 
-    fee_drag = -fee_rate * 3
+    fee_drag = -fee_rate * 5
 
     total_score = profit_score + trail_score + momentum_score + liquidity_score + fee_drag
 
@@ -695,7 +788,7 @@ def _calc_sell_score(batch: dict, current_nav: float, today_change: float,
     elif total_score >= 30:
         sell_pct = 50
         signal_name = "分批止盈"
-    elif total_score >= 20:
+    elif total_score >= 25:
         sell_pct = 30
         signal_name = "慢涨止盈"
     else:
@@ -1029,7 +1122,7 @@ def _get_slow_profit_sell_pct(profit_pct: float) -> Optional[int]:
 
 
 def _calc_min_profit_buffer(fee_rate: float, vol: float = 1.0) -> float:
-    return max(1.0, fee_rate * 2 + max(0.3, vol * 0.5))
+    return max(1.5, fee_rate * 2.5 + max(0.3, vol * 0.5))
 
 
 def _get_trail_profit_sell_pct(peak_profit_pct: float) -> int:
@@ -1268,7 +1361,7 @@ def _build_decision_note(fund_code: str, tc: dict, today_change: float,
             parts.append(f"总浮亏{total_profit_pct}%，观察企稳")
 
     if pos and pos.get("has_position"):
-        pct_used = pos["total_amount"] / pos.get("max_position", 5000) * 100
+        pct_used = pos["total_cost"] / pos.get("max_position", 5000) * 100
         if pct_used > 80:
             parts.append(f"仓位已用{pct_used:.0f}%，空间有限")
         elif pct_used < 30:
@@ -1314,6 +1407,7 @@ def _build_market_analysis(fund_code: str, val: dict, nav_history: list,
         "trail_dd": dt.get("trail_dd", TRAIL_DD_BASE),
         "win_rate_adj": dt.get("win_rate_adj", 1.0),
         "vol_sensitivity": dt.get("_sensitivity", DEFAULT_VOL_SENSITIVITY),
+        "vol_sensitivity_source": dt.get("_sensitivity_source", "default"),
         "consecutive_dip_trigger": dt.get("consecutive_dip_trigger", DEFAULT_CONSECUTIVE_DIP_TRIGGER),
         "supplement_max_count": _calc_dynamic_supplement_max(pos) if pos else SUPPLEMENT_MAX_COUNT_DEFAULT,
         "supplement_trigger": dt.get("supplement_trigger", DEFAULT_SUPPLEMENT_TRIGGER),
@@ -1834,7 +1928,7 @@ def generate_signal(fund_code: str) -> dict:
             supp_count = pos.get("supplement_count", 0)
             dyn_max_supp = _calc_dynamic_supplement_max(pos)
             remaining_ratio = max(0, (dyn_max_supp - supp_count) / max(1, dyn_max_supp))
-            has_budget = pos["total_amount"] < pos["max_position"] * 0.8
+            has_budget = pos["total_cost"] < pos["max_position"] * 0.8
 
             if has_budget and remaining_ratio > 0:
                 portfolio_stop = round(base_portfolio_stop * (1 + 0.2 * remaining_ratio), 2)
@@ -1900,7 +1994,7 @@ def generate_signal(fund_code: str) -> dict:
             if total_profit_pct < -3.0:
                 extra_alerts.append(f"补仓被禁入: {forbid_reason}")
         elif (supplement_count < dynamic_max_supp
-                and pos["total_amount"] < pos["max_position"]
+                and pos["total_cost"] < pos["max_position"]
                 and not in_cooldown):
             pos["_total_profit_pct"] = total_profit_pct
             rebuy_step = dyn.get("rebuy_step", SUPPLEMENT_REBUY_STEP_PCT)
@@ -1916,7 +2010,7 @@ def generate_signal(fund_code: str) -> dict:
                     if supplement_count == tier_count:
                         if (total_profit_pct <= tier_loss_min
                                 and today_change <= tier_trigger):
-                            risk_budget = pos["max_position"] - pos["total_amount"]
+                            risk_budget = pos["max_position"] - pos["total_cost"]
                             effective_ratio = tier_ratio * tier_factor
                             supplement_amount = round(risk_budget * effective_ratio, 2)
                             cap = pos["max_position"] * SUPPLEMENT_CAP_RATIO
@@ -1954,12 +2048,12 @@ def generate_signal(fund_code: str) -> dict:
         # --- 冷却期后加仓 ---
         if (not in_cooldown
                 and pos.get("cooldown_sell_date")
-                and pos["total_amount"] < pos["max_position"] * 0.8
+                and pos["total_cost"] < pos["max_position"] * 0.8
                 and total_profit_pct < -2.0
                 and today_change <= 0
                 and not forbidden):
-            remaining = pos["max_position"] - pos["total_amount"]
-            rebuy_amount = round(min(remaining * 0.3, pos["total_amount"] * 0.3) * size_mul, 2)
+            remaining = pos["max_position"] - pos["total_cost"]
+            rebuy_amount = round(min(remaining * 0.3, pos["total_cost"] * 0.3) * size_mul, 2)
             if rebuy_amount >= 100:
                 sig = _make_signal(
                     fund_code,
@@ -1997,7 +2091,7 @@ def generate_signal(fund_code: str) -> dict:
                 if fifo_plan.get("has_passthrough") and best_priority >= 2:
                     loss_total = fifo_plan.get("passthrough_loss_total", 0)
                     total_est_profit = fifo_plan.get("total_estimated_profit", 0)
-                    total_pos_amount = pos.get("total_amount", 1)
+                    total_pos_amount = pos.get("total_cost", 1)
 
                     min_net_profit = max(
                         PASSTHROUGH_MIN_NET_PROFIT_ABS,
@@ -2284,7 +2378,7 @@ def generate_all_signals() -> dict:
 
         # 修正折扣公式
         if total_buy_count > 1:
-            discount = max(0.65, 1.0 - (total_buy_count - 1) * 0.15)
+            discount = max(0.75, 1.0 - (total_buy_count - 1) * 0.10)
             confidences = [s.get("_confidence", 1.0) for s in buy_signals]
             avg_conf = sum(confidences) / len(confidences) if confidences else 1.0
             if avg_conf < 0.6:
