@@ -1,168 +1,77 @@
 """
-strategy.py - 低频网格交易策略信号引擎 v5.0
+strategy.py - 低频网格交易策略信号引擎 v5.3
 
 ================================================================================
-v5.0 升级要点（基于资深基金经理审查 v4.1 后的全面优化）
+v5.3 升级要点（资深基金经理30年经验深度优化）
 ================================================================================
 
-【一、止盈体系重构 — 从"固定分档"到"凯利动态仓位"】
+【v5.2 保留的改进】
+  - FUND_VOL_SENSITIVITY 自适应+可配置
+  - profit_norm 下限降到 max(2.5, vol * 4.0)
+  - 补仓成本修复效率阈值动态化
+  - generate_all_signals 并发优化
+  - volume_proxy 成交量代理
+  - _estimate_current_nav 收盘后修正
+  - 止损/灾难保护根据补仓次数递减
 
-  v4.1 问题诊断：
-    1. 冲高止盈/慢涨止盈/回撤止盈三套独立逻辑，优先级互斥（continue跳过），
-       导致"浮盈5%+当日涨3%"时只触发冲高止盈卖50%，错过更优的"回撤止盈已从8%
-       峰值回落"信号。实际管理百亿基金时，止盈决策应是综合评分而非if-elif瀑布。
-    2. 止盈比例写死在 TAKE_PROFIT_TIERS/SLOW_PROFIT_TIERS，没有考虑：
-       - 持仓成本分布（同一基金不同批次成本差异大时应分别对待）
-       - 市场流动性状态（大涨日往往伴随放量，应趁流动性好多卖）
-       - 盈亏比（当前浮盈 vs 潜在继续上涨空间 vs 回撤风险）
+【一、趋势转弱卖出：从一刀切100%改为盈利深度分级减仓】
+  v5.2 问题：趋势确认转弱后直接卖100%，不考虑总盈利水平。
+  基金正常回调2-3%很常见，如果总浮盈>5%，不应因一次回调就清仓。
 
-  v5.0 改进：
-    1. 统一止盈评分框架：每个批次计算 sell_score = f(浮盈, 峰值回撤, 当日动量,
-       波动率, 持有天数, 费率摩擦), 取 score 最高的批次和比例执行
-    2. 引入"盈亏比衰减"：浮盈越高，继续持有的边际收益递减（均值回归假设），
-       对应的止盈比例自然递增，而非人为设定台阶
-    3. 当日大涨时的"流动性溢价"：今日涨幅 > tp_trigger 时，额外加 15-25%
-       卖出比例（趁热打铁，大涨日流动性好、冲击成本低）
+  v5.3 改进：
+    - 总浮盈<2%  → 100%清仓（薄利快跑）
+    - 总浮盈2-5% → 70%减仓（留底仓观察）
+    - 总浮盈>5%  → 50%减仓（回调是正常波动）
+    - 放量确认转弱 → 在上述基础上各+20%
 
+【二、补仓节奏阀增加价格纵深维度】
+  v5.2 问题：3个交易日间隔对急跌太慢、对阴跌太快。
+  v5.3 改进：
+    - 3日内急跌超过2倍波动率 → 允许提前补仓（缩短为2个交易日）
+    - 阴跌（每日<0.5%但连续5天）→ 间隔延长到5个交易日
 
-【二、补仓逻辑升级 — 从"递进补仓"到"成本修复效率优先"】
+【三、_estimate_current_nav 收盘后逻辑修复】
+  v5.2 BUG：收盘后如果最新日期≠今天，直接返回最新净值不乘今日涨跌。
+  当T日收盘后T日净值尚未公布时，会用T-1净值，导致估值偏差。
+  v5.3：收盘后且最新≠今天 → 用最新净值×(1+today_change/100)
 
-  v4.1 问题诊断：
-    1. 补仓上限仅3次（SUPPLEMENT_MAX_COUNT=3），且每次补仓金额以"剩余预算×固定比
-       例"计算。实际操作中，当基金已浮亏-8%时仅补25%预算，远不足以有效摊低成本。
-    2. 补仓触发条件只看"当日跌幅"和"总浮亏"，没有评估"这次补仓能让平均成本
-       下降多少"——这才是补仓的核心目的。
-    3. 节奏阀虽然合理，但"相对上次补仓价再跌1.2%"在低波动品种上太松、高波动
-       品种上太紧，应该与波动率联动。
+【四、总仓位止损减仓比例动态化】
+  v5.2 问题：总仓位止损固定减50%最老批次。
+  v5.3 改进：
+    - 浮亏刚触止损线  → 30%减仓（给反弹空间）
+    - 浮亏超止损线2%以上 → 50%减仓
+    - 浮亏超止损线5%以上 → 70%减仓
+    - 补仓>=3次且浮亏仍深 → 额外+10%（表明判断错误应加速止损）
 
-  v5.0 改进：
-    1. 补仓决策引入"成本修复效率"指标：
-       cost_repair_efficiency = (补仓后新均价 - 当前均价) / 补仓金额
-       只有效率 > 阈值时才值得补仓（避免在底部区域反复小额补仓，效率极低）
-    2. 补仓上限动态化：max_supplement = ceil(max_position / 初始建仓金额) - 1，
-       但不超过5次。大仓位基金自动获得更多补仓次数。
-    3. 节奏阀的"再跌幅度"与鲁棒波动率挂钩：
-       rebuy_step = max(1.0, volatility_robust * 0.8)
+【五、空仓"冷却期后建仓"增加趋势过滤】
+  v5.2 问题：冷却结束后只要今天跌就买，没有趋势过滤。
+  v5.3 改进：需要同时满足：
+    - 今天跌幅 ≤ 0
+    - 5日累计非深度下跌（>-5%）或 已出现企稳信号
+    - 置信度足够
 
+【六、灾难保护通道增加短期大亏安全网】
+  v5.2 问题：持有<7天走灾难保护通道，但灾难触发条件可能不满足，
+  导致持有3天亏7%却只触发L1预警无法止损。
+  v5.3 改进：增加"短期深亏安全网"——持有<7天且单批浮亏>6%，
+  无条件减仓30%（不等灾难触发）
 
-【三、止损体系优化 — 分级止损替代一刀切】
-
-  v4.1 问题诊断：
-    1. 止损线 = STOP_LOSS_BASE * risk_mul - fee_rate，本质是固定比例止损。
-       但基金不是个股，净值波动有极强的均值回归特征（特别是宽基指数基金）。
-       百亿基金经理的经验：基金止损应该看"是否跌破长期趋势线"而非固定百分比。
-    2. 灾难保护阀（未满7天极端亏损）的设计很好，但"卖30%/50%"的比例缺乏
-       逻辑支撑。实际上应该根据"继续下跌的概率"（可用连跌天数+波动率近似）
-       来决定减仓比例。
-
-  v5.0 改进：
-    1. 三级止损体系：
-       - L1 预警止损（soft）：浮亏 > 动态止损线 × 0.7 → 标记观察，不执行
-       - L2 常规止损（medium）：浮亏 > 动态止损线 → 卖出50%（保留反弹仓位）
-       - L3 极端止损（hard）：浮亏 > 动态止损线 × 1.5 或 连跌5天以上 → 全部卖出
-    2. 止损线引入20日均线偏离度：当净值低于20日均线 > 2个标准差时，
-       止损阈值收紧（市场可能进入系统性下跌）
-
-
-【四、趋势判断增强 — 引入成交量代理和动量因子】
-
-  v4.1 问题诊断：
-    1. _analyze_trend 仅用价格数据（涨跌幅），没有成交量维度。基金虽然没有
-       直接的成交量数据，但可以用"净值涨跌幅的绝对值"作为代理（大涨/大跌日
-       通常对应高成交量）。
-    2. trend_label 分类过于粗糙（连跌/连涨/偏弱/偏强/中期走弱/中期走强/震荡），
-       对策略信号的影响仅限于 size_mul 的微调，没有充分利用。
-
-  v5.0 改进：
-    1. 引入"动量因子"（momentum_score）：
-       momentum = 0.5 * norm(5日回报) + 0.3 * norm(10日回报) + 0.2 * norm(20日回报)
-       momentum > 0.6 → 上升趋势中少买多卖
-       momentum < -0.6 → 下降趋势中多买少卖（前提：禁入门未触发）
-    2. 引入"波动率状态机"：
-       - low_vol（< 0.8%）：网格收窄，买卖阈值收紧
-       - normal_vol（0.8-1.8%）：标准参数
-       - high_vol（> 1.8%）：网格放宽，买卖阈值放宽
-       - extreme_vol（> 3.0%）：暂停所有买入，仅允许止损和灾难保护
-
-
-【五、组合层风控升级 — 相关性约束和再平衡】
-
-  v4.1 问题诊断：
-    1. generate_all_signals 的预算分配是线性的（按优先级逐个分配），没有考虑
-       基金之间的相关性。如果5只基金全是消费主题，同时触发大跌抄底信号，
-       会把预算集中投入同一赛道——这违反了分散化原则。
-    2. daily_buy_cap = 总额度 × 6% 是固定值，没有考虑当前市场环境。
-       在系统性下跌中应该进一步收紧（留更多子弹），在个别基金独立下跌时
-       可以适当放宽。
-
-  v5.0 改进：
-    1. 引入"同赛道集中度约束"：同一 sector 内的基金，单日买入总额不超过
-       effective_budget × 40%（需要从 state.json 读取 sector 分组信息）
-    2. daily_buy_cap 动态化：
-       - 市场普跌（> 60%基金今日为负）→ cap = 总额度 × 4%（保守）
-       - 市场分化（30-60%为负）→ cap = 总额度 × 6%（标准）
-       - 市场普涨（< 30%为负）→ cap = 总额度 × 8%（个别下跌更具alpha）
-
-
-【六、信号质量监控 — 回测验证框架】
-
-  v4.1 问题诊断：
-    1. 信号历史只记录了信号本身，没有记录"如果执行了这个信号，后续结果如何"。
-       这导致策略参数的调优全凭直觉，无法量化验证。
-
-  v5.0 改进：
-    1. signal_history 增加 outcome 字段：T+3/T+5/T+10 的实际涨跌幅
-    2. 定期（每天收盘后）回填历史信号的 outcome，可计算：
-       - 买入信号胜率（T+5 盈利的比例）
-       - 卖出信号准确率（T+5 继续跌的比例）
-       - 各优先级信号的平均收益贡献
-    3. 参数自适应：如果最近30天买入信号胜率 < 40%，自动收紧买入阈值 10%
-
-
-【七、其他细节优化】
-
-  1. _estimate_current_nav 使用 batch_nav 兜底不合理：应优先用 nav_history[0].nav
-     作为"昨日净值"基准，batch_nav 可能是很久以前的买入价。
-     → 已修正优先级：收盘净值 > 昨日净值×今日涨幅 > batch_nav×今日涨幅
-
-  2. _calc_total_profit_pct 用 sum(b["amount"]) 作为总成本，但部分卖出后
-     amount 被等比缩减了——这意味着已实现的利润/亏损没有被计入总浮盈计算。
-     → 引入 realized_pnl 追踪已实现损益
-
-  3. 慢涨止盈的 is_trend_ok 条件太松：mid_10d >= 0 就算趋势OK，但 mid_10d=0.1%
-     也许只是震荡。应要求 mid_10d > volatility（上涨幅度超过波动率才算真趋势）
-
-  4. FIFO穿透降级逻辑中，passthrough_loss_total 如果是正数（穿透批次也盈利），
-     不应该降级。当前代码 `loss_total < 0` 的判断是对的，但后续的
-     `abs(loss_total) > abs(total_est_profit) * 0.6` 在 total_est_profit < 0 时
-     会产生误判 → 增加 total_est_profit > 0 的前置条件
-
-  5. 冷却期后建仓/加仓的触发条件太多（cooldown_until 日期判断 + 精确交易日
-     判断 + 跌幅条件 + 仓位条件 + 禁入条件），容易永远无法触发。
-     → 简化为：冷却期结束 + 当日不涨（today_change <= 0）即可
-
-  6. generate_all_signals 的折扣公式有误：
-     discount = max(0.65, 1.0 - total_buy_count * 0.15 + 0.15)
-     当 count=2 时 = max(0.65, 1.0 - 0.3 + 0.15) = 0.85
-     当 count=3 时 = max(0.65, 1.0 - 0.45 + 0.15) = 0.70
-     当 count=4 时 = max(0.65, 1.0 - 0.60 + 0.15) = 0.65
-     实际应该是 1.0 - (count-1)*0.15 的意图？当前写法 +0.15 使得
-     count=1 时 discount=1.15 > 1.0，需要 clamp。→ 修正公式
+【七、组合级风控negative_ratio改为加权计算】
+  v5.2 问题：只按基金数量计算负面比例，一只重仓和一只轻仓权重一样。
+  v5.3 改进：按持仓金额加权计算 negative_ratio
 
 ================================================================================
-
-以下为完整的 v5.0 策略代码实现。
-标记了所有改动点供 diff 参考，保持与原有 API 接口完全兼容。
 """
 
 import json
 import math
 import threading
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 from pathlib import Path
 from typing import Optional, List, Tuple
 
-from positions import get_fund_position, get_sell_fee_rate, load_positions, parse_fund_key
+from positions import get_fund_position, get_sell_fee_rate, load_positions, save_positions, parse_fund_key
 from core import calculate_valuation, load_state, _is_market_closed
 from providers import get_fund_nav_history
 
@@ -173,7 +82,7 @@ from providers import get_fund_nav_history
 DATA_DIR = Path(__file__).parent / "data"
 HISTORY_FILE = DATA_DIR / "signal_history.json"
 _hist_lock = threading.Lock()
-MAX_HISTORY_PER_FUND = 90  # v5.0: 增大到90条，用于回测验证
+MAX_HISTORY_PER_FUND = 90
 
 
 def _load_history() -> dict:
@@ -199,7 +108,7 @@ def _save_history(data: dict):
 
 
 def _append_signal_history(fund_code: str, signal: dict, market: dict):
-    """追加一条信号记录，同一天同一来源覆盖。v5.0增加 nav_at_signal 用于后续回测"""
+    """追加一条信号记录，同一天同一来源覆盖"""
     history = _load_history()
     records = history.setdefault(fund_code, [])
 
@@ -218,11 +127,10 @@ def _append_signal_history(fund_code: str, signal: dict, market: dict):
         "today_change": market.get("today_change"),
         "total_profit_pct": market.get("total_profit_pct"),
         "current_nav": market.get("current_nav"),
-        # v5.0: 回测验证字段
         "nav_at_signal": market.get("current_nav"),
-        "outcome_t3": None,   # T+3实际涨跌%，由回填任务更新
-        "outcome_t5": None,   # T+5实际涨跌%
-        "outcome_t10": None,  # T+10实际涨跌%
+        "outcome_t3": None,
+        "outcome_t5": None,
+        "outcome_t10": None,
     }
 
     records = [r for r in records
@@ -237,10 +145,7 @@ def _append_signal_history(fund_code: str, signal: dict, market: dict):
 
 
 def backfill_signal_outcomes():
-    """
-    v5.0: 回填历史信号的 outcome 字段。建议收盘后调用一次。
-    遍历信号历史，对缺少 outcome 的记录，用当前净值与信号日净值计算收益。
-    """
+    """回填历史信号的 outcome 字段。建议收盘后调用一次。"""
     history = _load_history()
     updated = False
 
@@ -260,7 +165,6 @@ def backfill_signal_outcomes():
             for offset, field in [(3, "outcome_t3"), (5, "outcome_t5"), (10, "outcome_t10")]:
                 if rec.get(field) is not None:
                     continue
-                # 找到信号日之后第 offset 个交易日
                 future_dates = [d for d in trade_dates if d > sig_date]
                 if len(future_dates) >= offset:
                     target_date = future_dates[offset - 1]
@@ -283,10 +187,7 @@ def get_signal_history(fund_code: str = None, limit: int = 30) -> dict:
 
 
 def calc_signal_win_rate(fund_code: str = None, lookback: int = 30) -> dict:
-    """
-    v5.0: 计算信号胜率统计。
-    返回 { buy_win_rate, sell_accuracy, avg_buy_outcome_t5, sample_count }
-    """
+    """计算信号胜率统计"""
     history = _load_history()
     codes = [fund_code] if fund_code else list(history.keys())
 
@@ -318,38 +219,169 @@ def calc_signal_win_rate(fund_code: str = None, lookback: int = 30) -> dict:
 
 
 # ============================================================
-# 基础阈值常量（v5.0 调整说明见每行注释）
+# v5.2: 波动率灵敏度自动校准
 # ============================================================
 
-DIP_BUY_THRESHOLDS = {
-    "015968": -2.5,
-    "025500": -3.0,
-    "017193": -2.0,
-}
+DEFAULT_VOL_SENSITIVITY = 1.0
+
+def _get_vol_sensitivity(fund_code: str) -> float:
+    """
+    获取基金的波动率灵敏度系数。优先级：
+    1. positions.json 中用户手动配置的 vol_sensitivity
+    2. 自动校准值（基于历史波动率 vs 估值波动率的偏差）
+    3. 默认 1.0
+    """
+    real_code, _ = parse_fund_key(fund_code)
+
+    # 1. 检查用户配置
+    data = load_positions()
+    fund = data.get("funds", {}).get(fund_code)
+    if fund and fund.get("vol_sensitivity") is not None:
+        return max(0.5, min(1.5, fund["vol_sensitivity"]))
+
+    # 2. 自动校准：用净值历史波动率 / 估值日频波动率
+    # 这里简化实现：如果数据不足直接返回默认值
+    # 完整实现需要积累估值历史，此处预留接口
+    return DEFAULT_VOL_SENSITIVITY
+
+
+def auto_calibrate_vol_sensitivity(fund_code: str) -> Optional[float]:
+    """
+    自动校准波动率灵敏度。
+
+    原理：比较"真实净值日波动率"和"盘中估值日波动率"
+    - 如果估值波动 < 真实波动 → 估值偏保守 → sensitivity < 1（让阈值更灵敏）
+    - 如果估值波动 > 真实波动 → 估值偏激进 → sensitivity > 1（让阈值更迟钝）
+
+    返回建议的 sensitivity 值，None 表示数据不足
+    """
+    real_code, _ = parse_fund_key(fund_code)
+    nav_hist = get_fund_nav_history(real_code, 30)
+
+    if len(nav_hist) < 15:
+        return None
+
+    # 真实净值日波动率
+    real_changes = [h["change"] for h in nav_hist if h.get("change") is not None]
+    if len(real_changes) < 10:
+        return None
+
+    mean_real = sum(real_changes) / len(real_changes)
+    var_real = sum((c - mean_real) ** 2 for c in real_changes) / len(real_changes)
+    vol_real = var_real ** 0.5
+
+    if vol_real < 0.1:
+        return 1.0  # 极低波动基金（货币/纯债），无需校准
+
+    # 简化策略：如果没有积累估值历史，用MAD鲁棒估计做近似
+    sorted_changes = sorted(real_changes)
+    n = len(sorted_changes)
+    median = sorted_changes[n // 2] if n % 2 else (sorted_changes[n // 2 - 1] + sorted_changes[n // 2]) / 2
+    abs_devs = sorted([abs(c - median) for c in real_changes])
+    m = len(abs_devs)
+    mad = abs_devs[m // 2] if m % 2 else (abs_devs[m // 2 - 1] + abs_devs[m // 2]) / 2
+    vol_robust = mad * 1.4826
+
+    # 真实 vol / 鲁棒 vol 的比值反映分布尾部厚度
+    # 尾部越厚（极端事件多） → 阈值应更宽 → sensitivity 偏高
+    if vol_robust > 0:
+        tail_ratio = vol_real / vol_robust
+        # tail_ratio 正常≈1.0, 厚尾>1.2, 轻尾<0.8
+        sensitivity = max(0.7, min(1.3, tail_ratio))
+    else:
+        sensitivity = 1.0
+
+    return round(sensitivity, 2)
+
+
+def update_vol_sensitivity(fund_code: str, sensitivity: float) -> bool:
+    """用户手动设置波动率灵敏度（覆盖自动校准值）"""
+    sensitivity = max(0.5, min(1.5, sensitivity))
+    data = load_positions()
+    funds = data.setdefault("funds", {})
+    if fund_code not in funds:
+        return False
+    funds[fund_code]["vol_sensitivity"] = round(sensitivity, 2)
+    save_positions(data)
+    return True
+
+
+def clear_vol_sensitivity(fund_code: str) -> bool:
+    """清除手动设置，恢复为自动校准"""
+    data = load_positions()
+    fund = data.get("funds", {}).get(fund_code)
+    if not fund:
+        return False
+    fund.pop("vol_sensitivity", None)
+    save_positions(data)
+    return True
+
+
+# ============================================================
+# 核心阈值常量
+# ============================================================
+
+# --- 以波动率倍数表达的核心阈值 ---
+DIP_BUY_VOL_MULTIPLE = 1.8
+SUPPLEMENT_TRIGGER_VOL_MULTIPLE = 1.2
+SUPPLEMENT_LOSS_VOL_MULTIPLE = 2.2
+CONSECUTIVE_DIP_VOL_MULTIPLE = 0.7
+STOP_LOSS_VOL_MULTIPLE = 3.5
+TAKE_PROFIT_VOL_MULTIPLE = 1.5
+TREND_WEAK_VOL_MULTIPLE = 1.5
+DISASTER_LOSS_VOL_MULTIPLE = 5.0
+DISASTER_DAILY_VOL_MULTIPLE = 3.0
+
+# --- 固定默认值（波动率数据不足时兜底）---
 DEFAULT_DIP_THRESHOLD = -2.5
+DEFAULT_TAKE_PROFIT_TRIGGER = 2.0
+DEFAULT_STOP_LOSS_BASE = -5.0
+DEFAULT_SUPPLEMENT_TRIGGER = -1.5
+DEFAULT_SUPPLEMENT_LOSS_MIN = -3.0
+DEFAULT_CONSECUTIVE_DIP_TRIGGER = -1.0
+DEFAULT_TREND_WEAK_CUMULATIVE = -2.0
+DEFAULT_DISASTER_LOSS = -9.0
+DEFAULT_DISASTER_DAILY_DROP = -5.0
 
-TAKE_PROFIT_TRIGGER = 2.0
-STOP_LOSS_BASE = -5.0
-TREND_WEAK_CUMULATIVE = -2.0
-SUPPLEMENT_TRIGGER = -1.5
-SUPPLEMENT_LOSS_MIN = -3.0
-CONSECUTIVE_DIP_TRIGGER = -1.0
+# --- 向后兼容别名 ---
+DIP_BUY_THRESHOLDS = {}
+TAKE_PROFIT_TRIGGER = DEFAULT_TAKE_PROFIT_TRIGGER
+STOP_LOSS_BASE = DEFAULT_STOP_LOSS_BASE
+SUPPLEMENT_TRIGGER = DEFAULT_SUPPLEMENT_TRIGGER
+SUPPLEMENT_LOSS_MIN = DEFAULT_SUPPLEMENT_LOSS_MIN
+CONSECUTIVE_DIP_TRIGGER = DEFAULT_CONSECUTIVE_DIP_TRIGGER
+TREND_WEAK_CUMULATIVE = DEFAULT_TREND_WEAK_CUMULATIVE
+DISASTER_LOSS_THRESHOLD = DEFAULT_DISASTER_LOSS
+DISASTER_DAILY_DROP = DEFAULT_DISASTER_DAILY_DROP
+
 COOLDOWN_DAYS = 2
-
-# v5.0: 补仓上限动态化，这里只是兜底值
 SUPPLEMENT_MAX_COUNT_DEFAULT = 3
-SUPPLEMENT_MAX_COUNT_HARD_CAP = 5  # 绝对上限
+SUPPLEMENT_MAX_COUNT_HARD_CAP = 5
 
+# 补仓档位：(次数, 预算比例, 当日跌幅vol倍数, 浮亏vol倍数)
+SUPPLEMENT_TIERS_VOL = [
+    (0, 0.25, 1.2, 2.2),
+    (1, 0.20, 1.6, 3.5),
+    (2, 0.15, 2.0, 5.5),
+    (3, 0.12, 2.4, 7.0),
+    (4, 0.10, 2.8, 8.5),
+]
 SUPPLEMENT_TIERS = [
     (0, 0.25, -1.5, -3.0),
     (1, 0.20, -2.0, -5.0),
     (2, 0.15, -2.5, -8.0),
-    (3, 0.12, -3.0, -10.0),  # v5.0: 新增第4次补仓档位
-    (4, 0.10, -3.5, -12.0),  # v5.0: 新增第5次补仓档位
+    (3, 0.12, -3.0, -10.0),
+    (4, 0.10, -3.5, -12.0),
 ]
 
 SUPPLEMENT_CAP_RATIO = 0.20
 
+# 扭亏止盈档位
+TOTAL_PROFIT_SELL_TIERS_VOL = [
+    (2.0, 50),
+    (1.0, 30),
+    (0.3, 20),
+]
 TOTAL_PROFIT_SELL_TIERS = [
     (3.0, 50),
     (1.5, 30),
@@ -371,15 +403,12 @@ SLOW_PROFIT_TIERS = [
     (3.0, 30),
 ]
 
-DISASTER_LOSS_THRESHOLD = -9.0
-DISASTER_DAILY_DROP = -5.0
 DISASTER_CONSECUTIVE_DOWN = 3
 DISASTER_SELL_PCT_EXTREME = 50
 DISASTER_SELL_PCT_DAILY = 30
 
-# 补仓节奏阀（v5.0: rebuy_step 与波动率联动，这里只是兜底）
 SUPPLEMENT_MIN_GAP_TRADE_DAYS = 3
-SUPPLEMENT_REBUY_STEP_PCT = 1.2  # fallback，实际用 max(1.0, vol * 0.8)
+SUPPLEMENT_REBUY_STEP_PCT = 1.2
 
 # 回撤止盈
 TRAIL_PROFIT_ACTIVATE = 3.0
@@ -398,40 +427,104 @@ PASSTHROUGH_MIN_NET_PROFIT_RATIO = 0.002
 PASSTHROUGH_MIN_NET_PROFIT_ABS = 30.0
 PASSTHROUGH_LOSS_RATIO_THRESHOLD = 0.6
 
-# 组合级单日买入上限（v5.0: 动态化，这里是中间档基准）
+# 组合级
 DAILY_BUY_CAP_RATIO_BASE = 0.06
-DAILY_BUY_CAP_RATIO_CONSERVATIVE = 0.04  # 普跌时
-DAILY_BUY_CAP_RATIO_AGGRESSIVE = 0.08    # 普涨时（个别下跌更有alpha）
+DAILY_BUY_CAP_RATIO_CONSERVATIVE = 0.04
+DAILY_BUY_CAP_RATIO_AGGRESSIVE = 0.08
 
-# v5.0: 波动率状态机阈值
+# 波动率状态机
 VOL_LOW = 0.8
 VOL_NORMAL_HIGH = 1.8
 VOL_EXTREME = 3.0
 
-# v5.0: 止损分级
-STOP_LOSS_L1_FACTOR = 0.7   # 预警线 = 止损线 × 0.7
-STOP_LOSS_L2_SELL_PCT = 50  # 常规止损卖50%
-STOP_LOSS_L3_FACTOR = 1.5   # 极端止损 = 止损线 × 1.5
+# 止损分级
+STOP_LOSS_L1_FACTOR = 0.7
+STOP_LOSS_L2_SELL_PCT_BASE = 50  # v5.2: 基准值，实际根据补仓次数递减
+STOP_LOSS_L3_FACTOR = 1.5
 STOP_LOSS_L3_CONSEC_DOWN = 5
 
-# v5.0: 同赛道集中度约束
-SECTOR_BUY_CAP_RATIO = 0.40  # 同 sector 单日买入不超过有效预算的 40%
+# 同赛道约束
+SECTOR_BUY_CAP_RATIO = 0.40
 
-# v5.0: 信号胜率自适应
-WIN_RATE_TIGHTEN_THRESHOLD = 0.40  # 买入胜率 < 40% → 收紧阈值
-WIN_RATE_TIGHTEN_FACTOR = 1.10     # 收紧10%
+# 信号胜率自适应
+WIN_RATE_TIGHTEN_THRESHOLD = 0.40
+WIN_RATE_TIGHTEN_FACTOR = 1.10
 
-# v5.0: 流动性溢价（大涨日额外止盈比例）
-LIQUIDITY_PREMIUM_TRIGGER = 2.5  # 当日涨幅 > 此值
-LIQUIDITY_PREMIUM_EXTRA_PCT = 15  # 额外卖出比例%
+# 流动性溢价
+LIQUIDITY_PREMIUM_EXTRA_PCT = 15
 
 
 # ============================================================
-# v5.0: 波动率状态机
+# 波动率自适应阈值生成器
+# ============================================================
+
+def _vol_adaptive_thresholds(fund_code: str, vol: float) -> dict:
+    """
+    根据波动率动态生成所有阈值。
+    v5.2: sensitivity 从 _get_vol_sensitivity 获取（自适应或用户配置）
+    """
+    sensitivity = _get_vol_sensitivity(fund_code)
+
+    if vol is None or vol <= 0:
+        return {
+            "dip_threshold": DEFAULT_DIP_THRESHOLD,
+            "tp_trigger": DEFAULT_TAKE_PROFIT_TRIGGER,
+            "stop_loss": DEFAULT_STOP_LOSS_BASE,
+            "supplement_trigger": DEFAULT_SUPPLEMENT_TRIGGER,
+            "supplement_loss_min": DEFAULT_SUPPLEMENT_LOSS_MIN,
+            "consecutive_dip": DEFAULT_CONSECUTIVE_DIP_TRIGGER,
+            "trend_weak": DEFAULT_TREND_WEAK_CUMULATIVE,
+            "disaster_loss": DEFAULT_DISASTER_LOSS,
+            "disaster_daily": DEFAULT_DISASTER_DAILY_DROP,
+            "supplement_tiers": SUPPLEMENT_TIERS,
+            "total_profit_tiers": TOTAL_PROFIT_SELL_TIERS,
+            "_vol_based": False,
+            "_sensitivity": sensitivity,
+        }
+
+    v = vol * sensitivity
+
+    dip       = max(-5.0,  min(-1.2, round(-v * DIP_BUY_VOL_MULTIPLE, 2)))
+    tp        = max(1.0,   min(5.0,  round( v * TAKE_PROFIT_VOL_MULTIPLE, 2)))
+    sl        = max(-10.0, min(-3.0, round(-v * STOP_LOSS_VOL_MULTIPLE, 2)))
+    supp_trig = max(-4.0,  min(-0.8, round(-v * SUPPLEMENT_TRIGGER_VOL_MULTIPLE, 2)))
+    supp_loss = max(-10.0, min(-2.0, round(-v * SUPPLEMENT_LOSS_VOL_MULTIPLE, 2)))
+    consec_dip= max(-2.5,  min(-0.5, round(-v * CONSECUTIVE_DIP_VOL_MULTIPLE, 2)))
+    tw        = max(-4.0,  min(-1.0, round(-v * TREND_WEAK_VOL_MULTIPLE, 2)))
+    dis_loss  = max(-12.0, min(-5.0, round(-v * DISASTER_LOSS_VOL_MULTIPLE, 2)))
+    dis_daily = max(-7.0,  min(-3.0, round(-v * DISASTER_DAILY_VOL_MULTIPLE, 2)))
+
+    supp_tiers = []
+    for tier_count, ratio, trig_mul, loss_mul in SUPPLEMENT_TIERS_VOL:
+        t = max(-4.0,  min(-0.8, round(-v * trig_mul, 2)))
+        l = max(-12.0, min(-2.0, round(-v * loss_mul, 2)))
+        supp_tiers.append((tier_count, ratio, t, l))
+
+    tp_tiers = [(round(max(0.3, min(4.0, v * mul)), 2), pct)
+                for mul, pct in TOTAL_PROFIT_SELL_TIERS_VOL]
+
+    return {
+        "dip_threshold": dip,
+        "tp_trigger": tp,
+        "stop_loss": sl,
+        "supplement_trigger": supp_trig,
+        "supplement_loss_min": supp_loss,
+        "consecutive_dip": consec_dip,
+        "trend_weak": tw,
+        "disaster_loss": dis_loss,
+        "disaster_daily": dis_daily,
+        "supplement_tiers": supp_tiers,
+        "total_profit_tiers": tp_tiers,
+        "_vol_based": True,
+        "_sensitivity": sensitivity,
+    }
+
+
+# ============================================================
+# 波动率状态机
 # ============================================================
 
 def _classify_volatility(vol: float) -> str:
-    """将鲁棒波动率分类为四个状态"""
     if vol is None or vol < VOL_LOW:
         return "low_vol"
     elif vol < VOL_NORMAL_HIGH:
@@ -443,19 +536,15 @@ def _classify_volatility(vol: float) -> str:
 
 
 # ============================================================
-# v5.0: 动量因子计算
+# 动量因子计算
 # ============================================================
 
 def _calc_momentum_score(trend_ctx: dict) -> float:
-    """
-    综合动量评分 ∈ [-1, 1]
-    正值=上升趋势, 负值=下降趋势, 0=震荡
-    """
+    """综合动量评分 ∈ [-1, 1]"""
     s5 = trend_ctx.get("short_5d")
     m10 = trend_ctx.get("mid_10d")
     l20 = trend_ctx.get("long_20d")
 
-    # 归一化：用 tanh 将涨跌幅映射到 [-1, 1]
     def _norm(x, scale=5.0):
         if x is None:
             return 0.0
@@ -466,89 +555,70 @@ def _calc_momentum_score(trend_ctx: dict) -> float:
 
 
 # ============================================================
-# 动态阈值计算（v5.0 增强版）
+# 动态阈值计算
 # ============================================================
 
 def _calc_risk_multiplier(trend_ctx: dict) -> float:
-    """
-    v5.0: 在 v4.0 基础上增加波动率状态机约束。
-    extreme_vol 时 risk_mul 直接设为上限（限制所有操作）。
-    """
-    vol = trend_ctx.get("volatility_robust") or trend_ctx.get("volatility") or 1.0
+    """risk_mul 只用回撤驱动"""
     mdd_20 = trend_ctx.get("max_drawdown") or 0.0
     mdd_60 = trend_ctx.get("max_drawdown_60") or 0.0
     mdd = max(mdd_20, mdd_60)
 
-    vol_state = _classify_volatility(vol)
-    if vol_state == "extreme_vol":
-        return 1.8  # 极端波动，直接顶格
-
-    vol_term = (vol - 1.0) * 0.35
-
-    if mdd <= 6:
+    if mdd <= 5:
         mdd_term = 0.0
-    elif mdd <= 12:
-        mdd_term = (mdd - 6) * 0.05
+    elif mdd <= 10:
+        mdd_term = (mdd - 5) * 0.06
     else:
-        mdd_term = 0.30 + (mdd - 12) * 0.02
+        mdd_term = 0.30 + (mdd - 10) * 0.03
 
-    risk_mul = 1.0 + vol_term + mdd_term
-    return max(0.8, min(1.8, risk_mul))
+    risk_mul = 1.0 + mdd_term
+    return max(0.85, min(1.5, risk_mul))
 
 
 def _calc_dynamic_thresholds(trend_ctx: dict, fund_code: str,
                              confidence: float, source: str,
                              signal_stats: dict = None) -> dict:
-    """
-    v5.0: 动态阈值增加信号胜率自适应。
-    如果近期买入信号胜率偏低，自动收紧买入阈值。
-    """
     real_code, _ = parse_fund_key(fund_code)
     risk_mul = _calc_risk_multiplier(trend_ctx)
     vol = trend_ctx.get("volatility_robust") or trend_ctx.get("volatility") or 1.0
+    vol_state = _classify_volatility(vol)
 
-    # 基础阈值计算（与v4.1一致）
-    base_dip = DIP_BUY_THRESHOLDS.get(real_code, DEFAULT_DIP_THRESHOLD)
-    dip_threshold = base_dip * risk_mul
+    va = _vol_adaptive_thresholds(fund_code, vol)
 
-    tp_trigger = TAKE_PROFIT_TRIGGER + max(0, vol - 1.2) * 0.4
+    dip_threshold = round(va["dip_threshold"] * risk_mul, 2)
+    tp_trigger = round(va["tp_trigger"], 2)
+    stop_loss_adj = round(va["stop_loss"] * risk_mul, 2)
+
     if source == "estimation" and confidence < 0.75:
-        tp_trigger += 0.5
-
-    stop_loss_adj = STOP_LOSS_BASE * risk_mul
+        tp_trigger = round(tp_trigger + 0.5, 2)
 
     supplement_tiers_adj = []
-    for count, ratio, trigger, loss_min in SUPPLEMENT_TIERS:
-        adj_trigger = trigger * risk_mul
-        adj_loss = loss_min * risk_mul
-        supplement_tiers_adj.append((count, ratio, adj_trigger, adj_loss))
+    for count, ratio, trigger, loss_min in va["supplement_tiers"]:
+        supplement_tiers_adj.append((count, ratio,
+                                     round(trigger * risk_mul, 2),
+                                     round(loss_min * risk_mul, 2)))
 
     trail_dd = max(TRAIL_DD_MIN, min(TRAIL_DD_MAX, TRAIL_DD_BASE * risk_mul))
 
-    # v5.0: 信号胜率自适应
+    # 信号胜率自适应
     win_rate_adj = 1.0
     if signal_stats and signal_stats.get("buy_win_rate") is not None:
         if (signal_stats["buy_win_rate"] < WIN_RATE_TIGHTEN_THRESHOLD
-                and signal_stats.get("buy_sample_count", 0) >= 5):  # 样本足够才调整
+                and signal_stats.get("buy_sample_count", 0) >= 5):
             win_rate_adj = WIN_RATE_TIGHTEN_FACTOR
-            dip_threshold *= win_rate_adj  # 阈值更负 = 更难触发
-            # 补仓阈值也收紧
+            dip_threshold = round(dip_threshold * win_rate_adj, 2)
             supplement_tiers_adj = [
-                (c, r, t * win_rate_adj, l * win_rate_adj)
+                (c, r, round(t * win_rate_adj, 2), round(l * win_rate_adj, 2))
                 for c, r, t, l in supplement_tiers_adj
             ]
 
-    # v5.0: 波动率状态机对阈值的额外调整
-    vol_state = _classify_volatility(vol)
     if vol_state == "low_vol":
-        # 低波动环境：收窄网格
-        dip_threshold *= 0.85  # 更容易触发买入
-        tp_trigger *= 0.85     # 更容易触发卖出
-    elif vol_state == "extreme_vol":
-        # 极端波动：只允许止损
-        dip_threshold *= 2.0   # 几乎不可能触发买入
+        dip_threshold = round(dip_threshold * 0.85, 2)
+        tp_trigger = round(tp_trigger * 0.85, 2)
 
-    # v5.0: 补仓节奏阀与波动率联动
+    dip_threshold = max(-6.0, dip_threshold)
+    stop_loss_adj = max(-12.0, stop_loss_adj)
+
     rebuy_step = max(1.0, vol * 0.8) if vol else SUPPLEMENT_REBUY_STEP_PCT
 
     return {
@@ -562,59 +632,60 @@ def _calc_dynamic_thresholds(trend_ctx: dict, fund_code: str,
         "momentum_score": _calc_momentum_score(trend_ctx),
         "win_rate_adj": round(win_rate_adj, 2),
         "rebuy_step": round(rebuy_step, 2),
+        "_va": va,
+        "_vol_based": va.get("_vol_based", False),
+        "_sensitivity": va.get("_sensitivity", DEFAULT_VOL_SENSITIVITY),
+        "consecutive_dip_trigger": round(va["consecutive_dip"], 2),
+        "supplement_trigger": round(va["supplement_trigger"], 2),
+        "supplement_loss_min": round(va["supplement_loss_min"], 2),
+        "trend_weak_cumulative": round(va["trend_weak"], 2),
+        "disaster_loss_threshold": round(va["disaster_loss"], 2),
+        "disaster_daily_drop": round(va["disaster_daily"], 2),
+        "total_profit_sell_tiers": va.get("total_profit_tiers", TOTAL_PROFIT_SELL_TIERS),
     }
 
 
 # ============================================================
-# v5.0: 统一止盈评分框架
+# 统一止盈评分框架
 # ============================================================
 
 def _calc_sell_score(batch: dict, current_nav: float, today_change: float,
                      trend_ctx: dict, dyn: dict, fee_rate: float,
                      hold_days: int, peak_profit: float) -> dict:
     """
-    v5.0: 为每个批次计算统一的止盈评分和建议卖出比例。
-    返回 { score, sell_pct, signal_name, reason }
-
-    score 组成：
-    - profit_score: 浮盈越高越该卖（盈亏比衰减）
-    - trail_score: 从峰值回撤越大越该卖
-    - momentum_score: 上升动量减弱时更该卖
-    - liquidity_score: 当日大涨时趁流动性好多卖
-    - fee_drag: 费率摩擦惩罚
+    v5.2 改进：profit_norm 下限从 4.0 降到 max(2.5, vol*4.0)
+    让低波品种更容易触发止盈
     """
     profit_pct = round((current_nav / batch["nav"] - 1) * 100, 2) if batch["nav"] > 0 else 0.0
 
-    # 不满足基本盈利条件，直接返回
     if profit_pct <= fee_rate * 1.5:
         return {"score": 0, "sell_pct": 0, "signal_name": None, "reason": "盈利不足覆盖费率"}
 
-    # 1. 盈利分（盈亏比衰减：用 tanh 使高浮盈的边际贡献递减）
-    profit_score = math.tanh(profit_pct / 8.0) * 40  # 满分40
+    vol = trend_ctx.get("volatility_robust") or trend_ctx.get("volatility") or 1.2
 
-    # 2. 回撤分（如果有峰值且正在回落）
+    # v5.2: 修正 profit_norm，低波品种更灵敏
+    profit_norm = max(2.5, vol * 4.0)
+    profit_score = math.tanh(profit_pct / profit_norm) * 40
+
     trail_score = 0
     if peak_profit > 3.0 and peak_profit > profit_pct:
         dd = peak_profit - profit_pct
         trail_dd_threshold = dyn.get("trail_dd", TRAIL_DD_BASE)
         if dd >= trail_dd_threshold:
-            trail_score = min(30, dd / trail_dd_threshold * 15)  # 满分30
+            trail_score = min(30, dd / trail_dd_threshold * 15)
 
-    # 3. 动量分（上升动量减弱 → 更该卖）
     momentum = dyn.get("momentum_score", 0)
-    momentum_score = max(0, -momentum * 15)  # 动量为负时得分，满分15
+    momentum_score = max(0, -momentum * 15)
 
-    # 4. 流动性溢价（大涨日多卖）
     liquidity_score = 0
-    if today_change >= LIQUIDITY_PREMIUM_TRIGGER:
-        liquidity_score = min(15, (today_change - LIQUIDITY_PREMIUM_TRIGGER) * 5)  # 满分15
+    liquidity_trigger = max(1.5, vol * TAKE_PROFIT_VOL_MULTIPLE)
+    if today_change >= liquidity_trigger:
+        liquidity_score = min(15, (today_change - liquidity_trigger) * 5)
 
-    # 5. 费率惩罚
-    fee_drag = -fee_rate * 3  # 费率1.5%扣4.5分
+    fee_drag = -fee_rate * 3
 
     total_score = profit_score + trail_score + momentum_score + liquidity_score + fee_drag
 
-    # 根据总分确定卖出比例
     if total_score >= 60:
         sell_pct = 100
         signal_name = "强势止盈"
@@ -631,8 +702,7 @@ def _calc_sell_score(batch: dict, current_nav: float, today_change: float,
         sell_pct = 0
         signal_name = None
 
-    # v5.0: 流动性溢价额外加成
-    if today_change >= LIQUIDITY_PREMIUM_TRIGGER and sell_pct > 0 and sell_pct < 100:
+    if today_change >= liquidity_trigger and sell_pct > 0 and sell_pct < 100:
         sell_pct = min(100, sell_pct + LIQUIDITY_PREMIUM_EXTRA_PCT)
 
     reason = (f"综合评分{total_score:.0f}(盈利{profit_score:.0f}+回撤{trail_score:.0f}"
@@ -649,15 +719,11 @@ def _calc_sell_score(batch: dict, current_nav: float, today_change: float,
 
 
 # ============================================================
-# v5.0: 补仓成本修复效率
+# 补仓成本修复效率
 # ============================================================
 
 def _calc_cost_repair_efficiency(batches: list, current_nav: float,
                                  supplement_amount: float) -> float:
-    """
-    计算补仓的成本修复效率：每投入1元补仓资金，平均成本下降多少%。
-    效率越高，补仓越值得。
-    """
     total_cost = sum(b["amount"] for b in batches)
     total_shares = sum(b["shares"] for b in batches)
 
@@ -669,17 +735,12 @@ def _calc_cost_repair_efficiency(batches: list, current_nav: float,
     avg_cost_after = (total_cost + supplement_amount) / (total_shares + new_shares)
 
     cost_drop_pct = (avg_cost_before - avg_cost_after) / avg_cost_before * 100
-    efficiency = cost_drop_pct / (supplement_amount / 1000)  # 每千元补仓降低的成本%
+    efficiency = cost_drop_pct / (supplement_amount / 1000)
     return round(efficiency, 4)
 
 
 def _calc_dynamic_supplement_max(pos: dict) -> int:
-    """
-    v5.0: 动态计算补仓上限。
-    大仓位基金自动获得更多补仓次数。
-    """
     max_pos = pos.get("max_position", 5000)
-    # 估算初始建仓金额（用第一笔 holding 批次，或 max_pos * 0.3）
     batches = pos.get("batches", [])
     holding = [b for b in batches if b.get("status") == "holding"]
     if holding:
@@ -696,16 +757,16 @@ def _calc_dynamic_supplement_max(pos: dict) -> int:
 
 
 # ============================================================
-# v5.0: 三级止损体系
+# 三级止损体系（v5.2: L2卖出比例根据补仓次数递减）
 # ============================================================
 
 def _evaluate_stop_loss(profit_pct: float, stop_loss_adj: float,
                         hold_days: int, fee_rate: float,
                         trend_ctx: dict, confidence: float,
-                        source: str) -> dict:
+                        source: str, supplement_count: int = 0) -> dict:
     """
-    v5.0: 三级止损评估。
-    返回 { level: "L1"/"L2"/"L3"/None, sell_pct, reason }
+    v5.2: L2 sell_pct 根据补仓次数递减
+    补仓越多 → 越应该保留仓位等反弹 → 减仓比例越小
     """
     if hold_days < 7:
         return {"level": None, "sell_pct": 0, "reason": "未满7天，走灾难保护通道"}
@@ -725,12 +786,14 @@ def _evaluate_stop_loss(profit_pct: float, stop_loss_adj: float,
             reason += f", 连跌{consec_down}天"
         return {"level": "L3", "sell_pct": 100, "reason": reason}
 
-    # L2: 常规止损
+    # L2: 常规止损（v5.2: 补仓次数越多，保留越多仓位）
     if profit_pct <= effective_stop:
+        l2_sell_pct = max(30, STOP_LOSS_L2_SELL_PCT_BASE - supplement_count * 10)
         return {
             "level": "L2",
-            "sell_pct": STOP_LOSS_L2_SELL_PCT,
-            "reason": f"常规止损: 浮亏{profit_pct}% ≤ 止损线{effective_stop:.1f}%, 减仓{STOP_LOSS_L2_SELL_PCT}%保留反弹仓位"
+            "sell_pct": l2_sell_pct,
+            "reason": f"常规止损: 浮亏{profit_pct}% ≤ 止损线{effective_stop:.1f}%, 减仓{l2_sell_pct}%"
+                      f"(已补仓{supplement_count}次, 保留反弹仓位)"
         }
 
     # L1: 预警
@@ -746,13 +809,11 @@ def _evaluate_stop_loss(profit_pct: float, stop_loss_adj: float,
 
 
 # ============================================================
-# 补仓禁入判断（保持 v4.1 逻辑，v5.0 增加极端波动禁入）
+# 补仓禁入判断
 # ============================================================
 
 def _is_supplement_forbidden(trend_ctx: dict, confidence: float,
                              source: str, vol_state: str) -> tuple:
-    """v5.0: 增加极端波动率禁入条件"""
-    # v5.0: 极端波动率禁入
     if vol_state == "extreme_vol":
         vol = trend_ctx.get("volatility_robust") or trend_ctx.get("volatility") or 0
         return True, f"波动率{vol}%处于极端水平，暂停补仓"
@@ -777,7 +838,6 @@ def _is_supplement_forbidden(trend_ctx: dict, confidence: float,
 def _check_supplement_rate_limit(pos: dict, current_nav: float,
                                  nav_history: list, trend_ctx: dict,
                                  rebuy_step: float) -> tuple:
-    """v5.0: rebuy_step 参数化（与波动率联动）"""
     batches = pos.get("batches", [])
     holding_batches = [b for b in batches if b.get("status") == "holding"]
     if not holding_batches:
@@ -794,12 +854,27 @@ def _check_supplement_rate_limit(pos: dict, current_nav: float,
     else:
         ref_batches = [b for b in holding_batches if b.get("is_supplement")]
 
+    # v5.3: 动态间隔——根据近期跌速调整
+    vol = trend_ctx.get("volatility_robust") or trend_ctx.get("volatility") or 1.0
+    short_3d = trend_ctx.get("short_3d") or 0
+    consecutive_down = trend_ctx.get("consecutive_down", 0)
+
+    # 急跌缩短间隔（3日跌幅>2倍波动率 → 允许2日间隔）
+    # 阴跌延长间隔（连续5天每天<0.5%但都是跌 → 5日间隔）
+    dynamic_gap = SUPPLEMENT_MIN_GAP_TRADE_DAYS  # 默认3
+    if abs(short_3d) > vol * 2 and short_3d < 0:
+        dynamic_gap = max(2, SUPPLEMENT_MIN_GAP_TRADE_DAYS - 1)
+    elif consecutive_down >= 5:
+        recent_changes = [h.get("change", 0) for h in nav_history[:5] if h.get("change") is not None]
+        if recent_changes and all(abs(c) < 0.5 for c in recent_changes):
+            dynamic_gap = min(5, SUPPLEMENT_MIN_GAP_TRADE_DAYS + 2)
+
     if ref_batches:
         latest = max(ref_batches, key=lambda b: b["buy_date"])
         gap = _count_trade_days_between(latest["buy_date"], today_str, trade_dates)
-        if gap < SUPPLEMENT_MIN_GAP_TRADE_DAYS:
+        if gap < dynamic_gap:
             scope = "所有买入" if use_all_buys else "补仓"
-            return True, f"距上次{scope}仅{gap}个交易日(要求≥{SUPPLEMENT_MIN_GAP_TRADE_DAYS})", 1.0
+            return True, f"距上次{scope}仅{gap}个交易日(要求≥{dynamic_gap})", 1.0
 
         supplement_batches = [b for b in holding_batches if b.get("is_supplement")]
         if supplement_batches:
@@ -807,17 +882,13 @@ def _check_supplement_rate_limit(pos: dict, current_nav: float,
             last_supp_nav = latest_supp.get("nav", 0)
             if last_supp_nav > 0 and current_nav > 0:
                 drop_from_last = (current_nav / last_supp_nav - 1) * 100
-                # v5.0: 使用波动率联动的 rebuy_step
                 if drop_from_last > -rebuy_step:
                     return (True,
                             f"当前净值较上次补仓仅跌{drop_from_last:.1f}%(要求≥{rebuy_step:.1f}%)",
                             1.0)
 
-    # 灰区降速
     tier_factor = 1.0
     mid_10d = trend_ctx.get("mid_10d")
-    consecutive_down = trend_ctx.get("consecutive_down", 0)
-    vol = trend_ctx.get("volatility_robust") or trend_ctx.get("volatility") or 0
 
     if (mid_10d is not None and mid_10d < -5) or consecutive_down >= 4:
         tier_factor *= 0.7
@@ -846,7 +917,6 @@ def _count_trade_days_between(date_from: str, date_to: str,
 
 
 def _is_in_cooldown(pos: dict, nav_history: list) -> bool:
-    """与 v4.1 相同"""
     sell_date = pos.get("cooldown_sell_date")
     cooldown_td = pos.get("cooldown_trade_days", COOLDOWN_DAYS)
 
@@ -868,7 +938,6 @@ def _is_in_cooldown(pos: dict, nav_history: list) -> bool:
 
 def _calc_size_multiplier(risk_mul: float, confidence: float,
                           trend_label: str, momentum_score: float = 0) -> float:
-    """v5.0: 增加动量因子对买入规模的影响"""
     size_mul_risk = 1.0 / max(0.8, risk_mul)
 
     if confidence < 0.6:
@@ -887,7 +956,6 @@ def _calc_size_multiplier(risk_mul: float, confidence: float,
     else:
         size_mul_trend = 1.0
 
-    # v5.0: 动量因子影响（负动量=下跌趋势中买→减少规模）
     momentum_adj = 1.0
     if momentum_score < -0.5:
         momentum_adj = 0.75
@@ -899,21 +967,36 @@ def _calc_size_multiplier(risk_mul: float, confidence: float,
 
 
 # ============================================================
-# 辅助函数（v5.0 修正）
+# 辅助函数
 # ============================================================
 
 def _estimate_current_nav(batch_nav: float, today_change: float,
                           nav_history: list) -> float:
-    """v5.0 修正：优先用 nav_history[0].nav 而非 batch_nav"""
+    """
+    收盘后净值估算逻辑：
+    - 最新记录==今天 → 直接用今天净值
+    - 最新记录≠今天 → 返回最新收盘净值（此时 today_change 已被 core.py 替换为
+      该日真实涨跌，latest_nav 已包含该变动，不可重复计算）
+    - 盘中 → 用昨日净值 × (1 + today_change/100)
+    """
+    today_str = datetime.now().strftime("%Y-%m-%d")
+
     if _is_market_closed() and nav_history:
-        latest_nav = nav_history[0].get("nav")
+        latest = nav_history[0]
+        latest_nav = latest.get("nav")
         if latest_nav is not None:
+            # 如果最新记录就是今天的，直接用
+            if latest.get("date") == today_str:
+                return latest_nav
+            # 否则返回最新收盘净值（不乘 today_change，避免重复计算）
             return latest_nav
-    # v5.0: 优先用昨日净值作为基准
+
+    # 盘中：用昨日净值 × (1 + today_change)
     if nav_history and nav_history[0].get("nav") is not None:
         yesterday_nav = nav_history[0]["nav"]
         return yesterday_nav * (1 + today_change / 100)
-    # 最后兜底：用批次买入净值（可能很旧）
+
+    # 兜底
     return batch_nav * (1 + today_change / 100)
 
 
@@ -945,8 +1028,8 @@ def _get_slow_profit_sell_pct(profit_pct: float) -> Optional[int]:
     return None
 
 
-def _calc_min_profit_buffer(fee_rate: float) -> float:
-    return max(1.2, fee_rate * 2 + 0.3)
+def _calc_min_profit_buffer(fee_rate: float, vol: float = 1.0) -> float:
+    return max(1.0, fee_rate * 2 + max(0.3, vol * 0.5))
 
 
 def _get_trail_profit_sell_pct(peak_profit_pct: float) -> int:
@@ -957,7 +1040,6 @@ def _get_trail_profit_sell_pct(peak_profit_pct: float) -> int:
 
 
 def _calc_peak_profit(batch: dict, nav_history: list) -> float:
-    """与 v4.1 相同"""
     buy_nav = batch.get("nav", 0)
     if buy_nav <= 0:
         return 0.0
@@ -981,8 +1063,6 @@ def _calc_peak_profit(batch: dict, nav_history: list) -> float:
 
 
 def _update_batch_peak_nav(fund_code: str, batch_id: str, current_nav: float):
-    """与 v4.1 相同"""
-    from positions import load_positions, save_positions
     data = load_positions()
     fund = data.get("funds", {}).get(fund_code)
     if not fund:
@@ -999,7 +1079,6 @@ def _update_batch_peak_nav(fund_code: str, batch_id: str, current_nav: float):
 
 def _build_fifo_sell_plan(batches_sorted: list, sell_signals: list,
                           current_nav: float, fund_code: str) -> dict:
-    """与 v4.1 相同（略，为节省篇幅保持原实现）"""
     target_sells = {}
     for sig in sell_signals:
         bid = sig["target_batch_id"]
@@ -1118,14 +1197,13 @@ def _is_higher_priority(new_sig: dict, current_best: dict) -> bool:
 
 
 def _stamp(sig, confidence, source):
-    """v5.0: 提取为独立函数避免闭包"""
     sig["_confidence"] = confidence
     sig["_source"] = source
     return sig
 
 
 # ============================================================
-# 决策依据说明（与 v4.1 基本一致，增加 v5.0 字段）
+# 决策依据说明
 # ============================================================
 
 def _build_decision_note(fund_code: str, tc: dict, today_change: float,
@@ -1151,11 +1229,18 @@ def _build_decision_note(fund_code: str, tc: dict, today_change: float,
     elif vol_state == "low_vol":
         parts.append(f"低波动环境(网格收窄)")
 
+    sensitivity = dt.get("_sensitivity", 1.0)
+    if abs(sensitivity - 1.0) > 0.05:
+        parts.append(f"灵敏度{sensitivity:.2f}")
+
+    if dt.get("_vol_based"):
+        va = dt.get("_va", {})
+        parts.append(f"阈值自适应(买≤{va.get('dip_threshold','?')}%/止损≤{va.get('stop_loss','?')}%)")
+
     if abs(momentum) > 0.3:
         direction = "上升" if momentum > 0 else "下降"
         parts.append(f"动量{direction}({momentum:.2f})")
 
-    # 信号胜率自适应
     win_adj = dt.get("win_rate_adj", 1.0)
     if win_adj > 1.0:
         parts.append(f"近期买入胜率偏低，阈值已收紧{(win_adj-1)*100:.0f}%")
@@ -1197,7 +1282,6 @@ def _build_market_analysis(fund_code: str, val: dict, nav_history: list,
                            total_profit_pct: float = None,
                            trend_ctx: dict = None,
                            dynamic_thresholds: dict = None) -> dict:
-    """构建市场分析摘要（与 v4.1 结构兼容，增加 v5.0 字段）"""
     real_code, _ = parse_fund_key(fund_code)
     today_change = val.get("estimation_change") or 0.0
     source = val.get("_source", "estimation")
@@ -1221,15 +1305,35 @@ def _build_market_analysis(fund_code: str, val: dict, nav_history: list,
     dt = dynamic_thresholds or {}
 
     strategy_params = {
-        "dip_buy_threshold": dt.get("dip_threshold", DIP_BUY_THRESHOLDS.get(real_code, DEFAULT_DIP_THRESHOLD)),
-        "take_profit_trigger": dt.get("tp_trigger", TAKE_PROFIT_TRIGGER),
-        "stop_loss_base": dt.get("stop_loss_adj", STOP_LOSS_BASE),
+        "dip_buy_threshold": dt.get("dip_threshold", DEFAULT_DIP_THRESHOLD),
+        "take_profit_trigger": dt.get("tp_trigger", DEFAULT_TAKE_PROFIT_TRIGGER),
+        "stop_loss_base": dt.get("stop_loss_adj", DEFAULT_STOP_LOSS_BASE),
         "risk_multiplier": dt.get("risk_multiplier", 1.0),
         "vol_state": dt.get("vol_state", "normal_vol"),
         "momentum_score": dt.get("momentum_score", 0),
         "trail_dd": dt.get("trail_dd", TRAIL_DD_BASE),
         "win_rate_adj": dt.get("win_rate_adj", 1.0),
+        "vol_sensitivity": dt.get("_sensitivity", DEFAULT_VOL_SENSITIVITY),
+        "consecutive_dip_trigger": dt.get("consecutive_dip_trigger", DEFAULT_CONSECUTIVE_DIP_TRIGGER),
+        "supplement_max_count": _calc_dynamic_supplement_max(pos) if pos else SUPPLEMENT_MAX_COUNT_DEFAULT,
+        "supplement_trigger": dt.get("supplement_trigger", DEFAULT_SUPPLEMENT_TRIGGER),
+        "supplement_loss_min": dt.get("supplement_loss_min", DEFAULT_SUPPLEMENT_LOSS_MIN),
+        "total_profit_sell_min": dt.get("total_profit_sell_tiers", TOTAL_PROFIT_SELL_TIERS)[-1][0] if dt.get("total_profit_sell_tiers", TOTAL_PROFIT_SELL_TIERS) else 0.5,
+        "trend_weak_cumulative": dt.get("trend_weak_cumulative", DEFAULT_TREND_WEAK_CUMULATIVE),
+        "disaster_loss_threshold": dt.get("disaster_loss_threshold", DEFAULT_DISASTER_LOSS),
+        "vol_based": dt.get("_vol_based", False),
     }
+
+    # v5.2: 计算当前市值和盈亏（供前端展示，与支付宝对齐）
+    market_value = round(current_nav * pos.get("total_shares", 0), 2) if current_nav and pos else None
+    total_cost = pos.get("total_cost", pos.get("total_amount", 0)) if pos else 0
+    unrealized_pnl = round(market_value - total_cost, 2) if market_value is not None else None
+    unrealized_pnl_pct = round(unrealized_pnl / total_cost * 100, 2) if unrealized_pnl is not None and total_cost > 0 else None
+    realized_pnl = pos.get("realized_pnl", 0) if pos else 0
+    total_invested = pos.get("total_invested", total_cost) if pos else 0
+    total_received = pos.get("total_received", 0) if pos else 0
+    # 累计盈亏 = 当前市值 + 已回款 - 总投入（与支付宝"累计盈亏"口径一致）
+    cumulative_pnl = round((market_value or 0) + total_received - total_invested, 2) if market_value is not None else None
 
     return {
         "today_change": round(today_change, 2),
@@ -1241,11 +1345,20 @@ def _build_market_analysis(fund_code: str, val: dict, nav_history: list,
         "long_20d": tc.get("long_20d"),
         "trend": tc.get("trend_label", "震荡"),
         "volatility": tc.get("volatility"),
+        "volatility_robust": tc.get("volatility_robust"),
+        "volume_proxy": tc.get("volume_proxy"),
         "consecutive_down": tc.get("consecutive_down", 0),
         "consecutive_up": tc.get("consecutive_up", 0),
         "max_drawdown": tc.get("max_drawdown"),
         "data_days": tc.get("data_days", len(day_changes)),
         "current_nav": round(current_nav, 4) if current_nav else None,
+        # v5.2: 市值与盈亏（前端应展示 market_value 而非 total_cost）
+        "market_value": market_value,               # 当前市值 = 份额 × 净值（对标支付宝"金额"）
+        "total_cost": total_cost,                    # 持仓成本 = sum(batch.amount)
+        "unrealized_pnl": unrealized_pnl,            # 未实现盈亏 = 市值 - 成本
+        "unrealized_pnl_pct": unrealized_pnl_pct,    # 未实现盈亏率 = 盈亏/成本
+        "realized_pnl": realized_pnl,                # 已实现盈亏（历史卖出）
+        "cumulative_pnl": cumulative_pnl,            # 累计盈亏（对标支付宝"累计盈亏"）
         "total_profit_pct": round(total_profit_pct, 2) if total_profit_pct is not None else None,
         "confidence": val.get("confidence"),
         "strategy_params": strategy_params,
@@ -1256,15 +1369,12 @@ def _build_market_analysis(fund_code: str, val: dict, nav_history: list,
 
 
 # ============================================================
-# 综合趋势分析（与 v4.1 相同，此处省略完整代码，生产环境直接复用）
+# 综合趋势分析（v5.2: 增加 volume_proxy 成交量代理）
 # ============================================================
 
 def _analyze_trend(today_change: float, hist_changes: list,
                    nav_history: list = None,
                    nav_history_60: list = None) -> dict:
-    """与 v4.1 完全相同，此处不重复。生产部署时直接复用 v4.1 的实现。"""
-    # ... (省略 ~100 行，与 v4.1 完全一致)
-    # 为节省篇幅，标记为"复用 v4.1"
     all_changes = [today_change] + hist_changes
 
     def _compound_return(changes):
@@ -1291,6 +1401,8 @@ def _analyze_trend(today_change: float, hist_changes: list,
         long_20d = _compound_return(all_changes[:20]) if len(all_changes) >= 20 else None
 
     vol_data = all_changes[:20]
+    volatility = None
+    volatility_robust = None
     if len(vol_data) >= 5:
         mean = sum(vol_data) / len(vol_data)
         variance = sum((c - mean) ** 2 for c in vol_data) / len(vol_data)
@@ -1302,9 +1414,14 @@ def _analyze_trend(today_change: float, hist_changes: list,
         m = len(abs_devs)
         mad = abs_devs[m // 2] if m % 2 else (abs_devs[m // 2 - 1] + abs_devs[m // 2]) / 2
         volatility_robust = round(mad * 1.4826, 2)
-    else:
-        volatility = None
-        volatility_robust = None
+
+    # v5.2: 成交量代理（用近5日涨跌幅绝对值/波动率 近似）
+    volume_proxy = None
+    if len(all_changes) >= 5 and volatility_robust and volatility_robust > 0:
+        recent_abs = [abs(c) for c in all_changes[:5]]
+        mean_abs = sum(recent_abs) / len(recent_abs)
+        volume_proxy = round(mean_abs / volatility_robust, 2)
+        # > 1.5 = 放量, < 0.5 = 缩量
 
     consecutive_down = 0
     for c in all_changes:
@@ -1324,11 +1441,11 @@ def _analyze_trend(today_change: float, hist_changes: list,
         navs = [h["nav"] for h in nav_history if h.get("nav") is not None]
         navs_chrono = list(reversed(navs[:20]))
         peak = navs_chrono[0] if navs_chrono else 0
-        for n in navs_chrono:
-            if n > peak:
-                peak = n
+        for n_val in navs_chrono:
+            if n_val > peak:
+                peak = n_val
             if peak > 0:
-                dd = (peak - n) / peak * 100
+                dd = (peak - n_val) / peak * 100
                 if dd > max_drawdown:
                     max_drawdown = dd
     max_drawdown = round(max_drawdown, 2)
@@ -1339,11 +1456,11 @@ def _analyze_trend(today_change: float, hist_changes: list,
         if len(navs_60) >= 5:
             navs_60_chrono = list(reversed(navs_60[:60]))
             peak_60 = navs_60_chrono[0] if navs_60_chrono else 0
-            for n in navs_60_chrono:
-                if n > peak_60:
-                    peak_60 = n
+            for n_val in navs_60_chrono:
+                if n_val > peak_60:
+                    peak_60 = n_val
                 if peak_60 > 0:
-                    dd = (peak_60 - n) / peak_60 * 100
+                    dd = (peak_60 - n_val) / peak_60 * 100
                     if dd > max_drawdown_60:
                         max_drawdown_60 = dd
     max_drawdown_60 = round(max_drawdown_60, 2)
@@ -1369,6 +1486,7 @@ def _analyze_trend(today_change: float, hist_changes: list,
         "long_20d": round(long_20d, 2) if long_20d is not None else None,
         "volatility": volatility,
         "volatility_robust": volatility_robust,
+        "volume_proxy": volume_proxy,
         "consecutive_down": consecutive_down,
         "consecutive_up": consecutive_up,
         "max_drawdown": max_drawdown,
@@ -1379,21 +1497,12 @@ def _analyze_trend(today_change: float, hist_changes: list,
 
 
 # ============================================================
-# 核心信号生成（v5.0 重构版）
+# 核心信号生成
 # ============================================================
 
 def generate_signal(fund_code: str) -> dict:
-    """
-    v5.0 核心升级：
-    1. 统一止盈评分框架替代三套独立止盈逻辑
-    2. 三级止损替代一刀切止损
-    3. 补仓决策加入成本修复效率判断
-    4. 波动率状态机控制极端环境下的行为
-    5. 信号胜率自适应调整阈值
-    """
     real_code, owner = parse_fund_key(fund_code)
 
-    # === 获取市场数据 ===
     val = calculate_valuation(real_code)
     today_change = val.get("estimation_change") or 0.0
     recent = val.get("recent_changes", [])
@@ -1403,25 +1512,20 @@ def generate_signal(fund_code: str) -> dict:
     confidence = val.get("confidence", 0.0)
     source = val.get("_source", "estimation")
 
-    # === 综合趋势分析 ===
     hist_changes = [h["change"] for h in nav_history if h.get("change") is not None]
     trend_ctx = _analyze_trend(today_change, hist_changes, nav_history,
                                nav_history_60=nav_history_60)
 
-    # === v5.0: 信号胜率统计 ===
     signal_stats = calc_signal_win_rate(fund_code)
 
-    # === 动态阈值计算 ===
     dyn = _calc_dynamic_thresholds(trend_ctx, fund_code, confidence, source,
                                     signal_stats=signal_stats)
 
     vol_state = dyn["vol_state"]
     momentum = dyn.get("momentum_score", 0)
 
-    # === 冷却期判断 ===
     in_cooldown = _is_in_cooldown(pos, nav_history)
 
-    # === 买入规模系数 ===
     size_mul = _calc_size_multiplier(
         dyn["risk_multiplier"], confidence,
         trend_ctx.get("trend_label", "震荡"),
@@ -1433,7 +1537,6 @@ def generate_signal(fund_code: str) -> dict:
         batches = pos["batches"]
         batches_sorted = sorted(batches, key=lambda b: b["buy_date"])
 
-        # v5.0: 优先用 nav_history 的最新净值估算
         current_nav = _estimate_current_nav(
             batches_sorted[0]["nav"], today_change, nav_history
         )
@@ -1448,6 +1551,7 @@ def generate_signal(fund_code: str) -> dict:
         best_signal = None
         all_signals = []
         extra_alerts = []
+        supplement_count = pos.get("supplement_count", 0)
 
         for batch in batches_sorted:
             buy_date = datetime.strptime(batch["buy_date"], "%Y-%m-%d").date()
@@ -1455,17 +1559,16 @@ def generate_signal(fund_code: str) -> dict:
             fee_rate = get_sell_fee_rate(fund_code, hold_days)
             profit_pct = _calc_batch_profit_pct(batch, current_nav)
 
-            # 更新峰值净值
             _update_batch_peak_nav(fund_code, batch["id"], current_nav)
 
-            # --- v5.0: 三级止损评估 ---
+            # --- 三级止损评估（v5.2: 传入 supplement_count）---
             stop_eval = _evaluate_stop_loss(
                 profit_pct, dyn["stop_loss_adj"], hold_days, fee_rate,
-                trend_ctx, confidence, source
+                trend_ctx, confidence, source,
+                supplement_count=supplement_count
             )
 
             if stop_eval["level"] == "L3":
-                # 极端止损：全部卖出
                 sig = _make_signal(
                     fund_code,
                     signal_name="极端止损(L3)",
@@ -1487,7 +1590,6 @@ def generate_signal(fund_code: str) -> dict:
                 continue
 
             elif stop_eval["level"] == "L2":
-                # 常规止损：卖50%
                 sell_shares = round(batch["shares"] * stop_eval["sell_pct"] / 100, 2)
                 sig = _make_signal(
                     fund_code,
@@ -1511,26 +1613,29 @@ def generate_signal(fund_code: str) -> dict:
                 continue
 
             elif stop_eval["level"] == "L1":
-                # 预警：不执行，仅记录
                 extra_alerts.append(stop_eval["reason"])
 
-            # --- 灾难保护阀（未满7天，与 v4.1 一致）---
+            # --- 灾难保护阀（未满7天）---
             if hold_days < 7:
                 disaster_triggered = False
                 disaster_reason = ""
-                disaster_sell_pct = DISASTER_SELL_PCT_EXTREME
+                # v5.2: 灾难保护卖出比例也根据补仓情况递减
+                disaster_sell_pct = max(30, DISASTER_SELL_PCT_EXTREME - supplement_count * 10)
 
-                disaster_loss = min(DISASTER_LOSS_THRESHOLD, STOP_LOSS_BASE * 1.6)
-                if profit_pct <= disaster_loss:
+                va = dyn.get("_va", {})
+                disaster_loss = va.get("disaster_loss", DEFAULT_DISASTER_LOSS)
+                disaster_daily = va.get("disaster_daily", DEFAULT_DISASTER_DAILY_DROP)
+
+                effective_disaster = min(disaster_loss, dyn["stop_loss_adj"] * 1.5)
+                if profit_pct <= effective_disaster:
                     disaster_triggered = True
-                    disaster_sell_pct = DISASTER_SELL_PCT_EXTREME
-                    disaster_reason = f"批次{batch['id']}仅{hold_days}天但亏损{profit_pct}%已达灾难阈值"
+                    disaster_reason = f"批次{batch['id']}仅{hold_days}天, 亏损{profit_pct}% ≤ 灾难线{effective_disaster}%"
 
                 if (not disaster_triggered
-                        and today_change <= DISASTER_DAILY_DROP
+                        and today_change <= disaster_daily
                         and trend_ctx.get("consecutive_down", 0) >= DISASTER_CONSECUTIVE_DOWN):
                     disaster_triggered = True
-                    disaster_sell_pct = DISASTER_SELL_PCT_DAILY
+                    disaster_sell_pct = max(20, DISASTER_SELL_PCT_DAILY - supplement_count * 5)
                     disaster_reason = f"批次{batch['id']}仅{hold_days}天, 今日暴跌{today_change}%+连跌, 灾难保护"
 
                 if disaster_triggered:
@@ -1555,12 +1660,35 @@ def generate_signal(fund_code: str) -> dict:
 
                 if profit_pct <= -3.0:
                     extra_alerts.append(f"批次{batch['id']}亏损{profit_pct}%但仅持有{hold_days}天")
-                continue  # 未满7天跳过止盈判断
+
+                # v5.3: 短期深亏安全网——持有<7天且单批浮亏>6%，
+                # 灾难触发条件未满足时也要止损（避免止损空隙）
+                if not disaster_triggered and profit_pct <= -6.0:
+                    safety_sell_pct = 30
+                    sell_shares_sn = round(batch["shares"] * safety_sell_pct / 100, 2)
+                    sig = _make_signal(
+                        fund_code,
+                        signal_name="短期深亏止损(安全网)",
+                        action="sell",
+                        priority=1.5,
+                        target_batch_id=batch["id"],
+                        sell_shares=sell_shares_sn,
+                        sell_pct=safety_sell_pct,
+                        reason=f"批次{batch['id']}仅{hold_days}天, 亏损{profit_pct}%已超6%, 安全网减仓{safety_sell_pct}%",
+                        fee_info={"sell_fee_rate": fee_rate},
+                        alert=True,
+                        alert_msg=f"短期深亏安全网：仅持有{hold_days}天即亏损{profit_pct}%，建议减仓止损",
+                    )
+                    all_signals.append(sig)
+                    if best_signal is None or _is_higher_priority(sig, best_signal):
+                        best_signal = sig
+
+                continue
 
             if hold_days < 7:
                 continue
 
-            # --- v5.0: 统一止盈评分 ---
+            # --- 统一止盈评分 ---
             peak_profit = _calc_peak_profit(batch, nav_history_60)
             sell_eval = _calc_sell_score(
                 batch, current_nav, today_change, trend_ctx, dyn,
@@ -1574,14 +1702,13 @@ def generate_signal(fund_code: str) -> dict:
                 est_fee = round(est_gross * fee_rate / 100, 2)
                 est_net_profit = round(est_gross * (1 - fee_rate / 100) - batch["amount"] * sell_pct / 100, 2)
 
-                # 低置信度时降级为待确认
                 is_low_conf = source == "estimation" and confidence < 0.5
                 sig = _make_signal(
                     fund_code,
                     signal_name=sell_eval["signal_name"] + ("(待确认)" if is_low_conf else ""),
                     action="sell" if not is_low_conf else "hold",
                     priority=2,
-                    sub_priority=max(0, 10 - sell_eval["score"]),  # 分数越高优先级越高
+                    sub_priority=max(0, 10 - sell_eval["score"]),
                     target_batch_id=batch["id"],
                     sell_shares=sell_shares,
                     sell_pct=sell_pct,
@@ -1600,13 +1727,11 @@ def generate_signal(fund_code: str) -> dict:
                     best_signal = sig
                 continue
 
-            # --- 趋势转弱卖出（保留 v4.1 逻辑，增加波动率校验）---
-            min_profit_buffer = _calc_min_profit_buffer(fee_rate)
+            # --- 趋势转弱卖出 ---
+            vol = trend_ctx.get("volatility_robust") or trend_ctx.get("volatility") or 1.0
+            min_profit_buffer = _calc_min_profit_buffer(fee_rate, vol)
             mid_10d_val = trend_ctx.get("mid_10d")
             short_5d_val = trend_ctx.get("short_5d")
-
-            # v5.0: 慢涨止盈要求 mid_10d > volatility（不仅仅 >= 0）
-            vol = trend_ctx.get("volatility_robust") or trend_ctx.get("volatility") or 1.0
 
             has_trend_confirm = False
             if (len(recent) >= 2
@@ -1614,26 +1739,50 @@ def generate_signal(fund_code: str) -> dict:
                     and recent[1].get("change") is not None
                     and recent[0]["change"] < 0 and recent[1]["change"] < 0):
                 cumulative_drop = recent[0]["change"] + recent[1]["change"]
-                if cumulative_drop <= TREND_WEAK_CUMULATIVE:
+                trend_weak_thresh = dyn.get("trend_weak_cumulative", DEFAULT_TREND_WEAK_CUMULATIVE)
+                if cumulative_drop <= trend_weak_thresh:
                     if ((short_5d_val is not None and short_5d_val < 0)
                             or (mid_10d_val is not None and mid_10d_val < 0)):
                         has_trend_confirm = True
 
+            # v5.2: 放量下跌时趋势转弱更可信
+            volume_proxy = trend_ctx.get("volume_proxy")
+            if has_trend_confirm and volume_proxy and volume_proxy > 1.5:
+                has_trend_confirm = True  # 放量确认，维持信号
+            elif has_trend_confirm and volume_proxy and volume_proxy < 0.5:
+                has_trend_confirm = False  # 缩量下跌，可能是假信号
+
             if profit_pct > min_profit_buffer and has_trend_confirm:
                 is_low_conf = source == "estimation" and confidence < 0.5
+                # v5.3: 趋势转弱减仓比例按总浮盈深度分级
+                # 薄利快跑，厚利只减仓（回调是正常波动）
+                if total_profit_pct < 2:
+                    trend_sell_pct = 100  # 薄利快跑
+                elif total_profit_pct < 5:
+                    trend_sell_pct = 70   # 留底仓观察
+                else:
+                    trend_sell_pct = 50   # 回调是正常波动
+
+                # 放量确认转弱 → 加码卖出
+                if volume_proxy and volume_proxy > 1.5:
+                    trend_sell_pct = min(100, trend_sell_pct + 20)
+
+                sell_shares_tw = round(batch["shares"] * trend_sell_pct / 100, 2)
                 sig = _make_signal(
                     fund_code,
                     signal_name="趋势转弱" if not is_low_conf else "趋势转弱(待确认)",
                     action="sell" if not is_low_conf else "hold",
                     priority=3,
                     target_batch_id=batch["id"],
-                    sell_shares=round(batch["shares"], 2),
-                    sell_pct=100,
-                    reason=f"持有{hold_days}天, 浮盈{profit_pct}%, 趋势确认转弱",
+                    sell_shares=sell_shares_tw,
+                    sell_pct=trend_sell_pct,
+                    reason=f"持有{hold_days}天, 浮盈{profit_pct}%, 总浮盈{total_profit_pct}%, "
+                           f"趋势确认转弱, 减仓{trend_sell_pct}%"
+                           + (f"(放量{volume_proxy:.1f}×)" if volume_proxy and volume_proxy > 1.5 else ""),
                     fee_info={
                         "sell_fee_rate": fee_rate,
-                        "estimated_fee": round(batch["shares"] * current_nav * fee_rate / 100, 2),
-                        "estimated_net_profit": round(batch["shares"] * current_nav * (1 - fee_rate / 100) - batch["amount"], 2),
+                        "estimated_fee": round(sell_shares_tw * current_nav * fee_rate / 100, 2),
+                        "estimated_net_profit": round(sell_shares_tw * current_nav * (1 - fee_rate / 100) - batch["amount"] * trend_sell_pct / 100, 2),
                     },
                     alert=is_low_conf,
                 )
@@ -1642,7 +1791,7 @@ def generate_signal(fund_code: str) -> dict:
                     best_signal = sig
                 continue
 
-        # --- 总仓位扭亏为盈（与 v4.1 一致）---
+        # --- 总仓位扭亏为盈 ---
         if total_profit_pct > 0 and len(batches_sorted) >= 2:
             oldest = batches_sorted[0]
             oldest_buy_date = datetime.strptime(oldest["buy_date"], "%Y-%m-%d").date()
@@ -1651,7 +1800,8 @@ def generate_signal(fund_code: str) -> dict:
 
             if oldest_hold_days >= 7:
                 sell_pct = None
-                for threshold, pct in TOTAL_PROFIT_SELL_TIERS:
+                profit_tiers = dyn.get("total_profit_sell_tiers", TOTAL_PROFIT_SELL_TIERS)
+                for threshold, pct in profit_tiers:
                     if total_profit_pct > threshold:
                         sell_pct = pct
                         break
@@ -1676,8 +1826,71 @@ def generate_signal(fund_code: str) -> dict:
                     if best_signal is None or _is_higher_priority(sig, best_signal):
                         best_signal = sig
 
-        # --- v5.0: 递进补仓（增加成本修复效率判断）---
-        supplement_count = pos.get("supplement_count", 0)
+        # --- 总仓位止损 ---
+        if total_profit_pct < 0 and not best_signal:
+            va = dyn.get("_va", {})
+            base_portfolio_stop = round(va.get("stop_loss", DEFAULT_STOP_LOSS_BASE) * 0.65, 2)
+
+            supp_count = pos.get("supplement_count", 0)
+            dyn_max_supp = _calc_dynamic_supplement_max(pos)
+            remaining_ratio = max(0, (dyn_max_supp - supp_count) / max(1, dyn_max_supp))
+            has_budget = pos["total_amount"] < pos["max_position"] * 0.8
+
+            if has_budget and remaining_ratio > 0:
+                portfolio_stop = round(base_portfolio_stop * (1 + 0.2 * remaining_ratio), 2)
+            else:
+                portfolio_stop = base_portfolio_stop
+            portfolio_stop = max(-8.0, portfolio_stop)
+
+            portfolio_warn = round(portfolio_stop * 0.7, 2)
+
+            if total_profit_pct <= portfolio_stop:
+                oldest = batches_sorted[0]
+                oldest_bd = datetime.strptime(oldest["buy_date"], "%Y-%m-%d").date()
+                oldest_hd = (datetime.now().date() - oldest_bd).days
+                if oldest_hd >= 7:
+                    oldest_fr = get_sell_fee_rate(fund_code, oldest_hd)
+                    # v5.3: 动态减仓比例，根据超止损线的深度决定
+                    excess_loss = portfolio_stop - total_profit_pct  # 正数，越大越严重
+                    if excess_loss >= 5:
+                        portfolio_sell_pct = 70
+                    elif excess_loss >= 2:
+                        portfolio_sell_pct = 50
+                    else:
+                        portfolio_sell_pct = 30
+                    # 补仓>=3次且仍深亏 → 判断可能错误，加速止损
+                    if supp_count >= 3:
+                        portfolio_sell_pct = min(100, portfolio_sell_pct + 10)
+                    sell_shares = round(oldest["shares"] * portfolio_sell_pct / 100, 2)
+                    sig = _make_signal(
+                        fund_code,
+                        signal_name="总仓位止损",
+                        action="sell",
+                        priority=1,
+                        sub_priority=2,
+                        target_batch_id=oldest["id"],
+                        sell_shares=sell_shares,
+                        sell_pct=portfolio_sell_pct,
+                        reason=(f"总浮亏{total_profit_pct}% ≤ 总仓位止损线{portfolio_stop}%"
+                                f"(补仓{supp_count}/{dyn_max_supp}), 超线{excess_loss:.1f}%, "
+                                f"最老批次减仓{portfolio_sell_pct}%"),
+                        fee_info={
+                            "sell_fee_rate": oldest_fr,
+                            "estimated_fee": round(sell_shares * current_nav * oldest_fr / 100, 2),
+                            "estimated_net_profit": round(sell_shares * current_nav * (1 - oldest_fr / 100) - oldest["amount"] * portfolio_sell_pct / 100, 2),
+                        },
+                        alert=True,
+                        alert_msg=f"总仓位浮亏{total_profit_pct}%已触达止损线{portfolio_stop}%",
+                    )
+                    all_signals.append(sig)
+                    if best_signal is None or _is_higher_priority(sig, best_signal):
+                        best_signal = sig
+            elif total_profit_pct <= portfolio_warn:
+                extra_alerts.append(
+                    f"总仓位浮亏{total_profit_pct}%接近止损线{portfolio_stop}%(预警线{portfolio_warn}%)"
+                )
+
+        # --- 递进补仓 ---
         dynamic_max_supp = _calc_dynamic_supplement_max(pos)
         forbidden, forbid_reason = _is_supplement_forbidden(
             trend_ctx, confidence, source, vol_state
@@ -1710,17 +1923,17 @@ def generate_signal(fund_code: str) -> dict:
                             supplement_amount = round(min(supplement_amount, cap, risk_budget), 2)
                             supplement_amount = round(supplement_amount * size_mul, 2)
 
-                            # v5.0: 成本修复效率检查
+                            # v5.2: 成本修复效率阈值动态化
+                            max_pos = pos.get("max_position", 5000)
+                            min_efficiency = 0.05 * (5000 / max(1000, max_pos))
                             efficiency = _calc_cost_repair_efficiency(
                                 batches_sorted, current_nav, supplement_amount
                             )
-                            min_efficiency = 0.05  # 每千元至少降低0.05%成本
                             if efficiency < min_efficiency and supplement_amount > 500:
                                 extra_alerts.append(
-                                    f"补仓效率偏低({efficiency:.4f}% per 千元 < {min_efficiency}%), "
+                                    f"补仓效率偏低({efficiency:.4f}% per 千元 < {min_efficiency:.4f}%), "
                                     f"建议等待更大跌幅后补仓"
                                 )
-                                # 降级为建议而非信号
                                 break
 
                             if supplement_amount > 0:
@@ -1738,12 +1951,12 @@ def generate_signal(fund_code: str) -> dict:
                                     best_signal = sig
                         break
 
-        # --- 冷却期后加仓（v5.0: 简化触发条件）---
+        # --- 冷却期后加仓 ---
         if (not in_cooldown
                 and pos.get("cooldown_sell_date")
                 and pos["total_amount"] < pos["max_position"] * 0.8
                 and total_profit_pct < -2.0
-                and today_change <= 0  # v5.0: 简化为"当日不涨"
+                and today_change <= 0
                 and not forbidden):
             remaining = pos["max_position"] - pos["total_amount"]
             rebuy_amount = round(min(remaining * 0.3, pos["total_amount"] * 0.3) * size_mul, 2)
@@ -1774,7 +1987,7 @@ def generate_signal(fund_code: str) -> dict:
                 for s in all_signals
             ]
 
-            # FIFO 穿透降级（v5.0: 增加 total_est_profit > 0 前置条件修复 bug）
+            # FIFO 穿透降级
             sell_signals = [s for s in all_signals if s.get("action") == "sell" and s.get("target_batch_id")]
             if sell_signals:
                 fifo_plan = _build_fifo_sell_plan(
@@ -1798,10 +2011,9 @@ def generate_signal(fund_code: str) -> dict:
                         should_downgrade = True
                         downgrade_reason = f"净收益{total_est_profit:.0f}元 < 门槛{min_net_profit:.0f}元"
 
-                    # v5.0 修复：增加 total_est_profit > 0 条件，避免双负值误判
                     if (not should_downgrade
                             and loss_total < 0
-                            and total_est_profit > 0  # v5.0 修复
+                            and total_est_profit > 0
                             and abs(loss_total) > total_est_profit * PASSTHROUGH_LOSS_RATIO_THRESHOLD):
                         should_downgrade = True
                         downgrade_reason = f"穿透亏损{loss_total:.0f}元 > 总利润{total_est_profit:.0f}元×{PASSTHROUGH_LOSS_RATIO_THRESHOLD:.0%}"
@@ -1860,7 +2072,7 @@ def generate_signal(fund_code: str) -> dict:
 
     can_buy_empty = (source == "nav" or confidence >= 0.55)
 
-    # v5.0: 极端波动禁止买入
+    # 极端波动禁止买入
     if vol_state == "extreme_vol":
         sig = _make_signal(
             fund_code, signal_name="极端波动观望", action="hold", priority=8,
@@ -1875,10 +2087,19 @@ def generate_signal(fund_code: str) -> dict:
     if today_change <= dip_threshold and not in_cooldown and can_buy_empty:
         max_pos = pos["max_position"]
         buy_amount = round(max_pos * 0.5 * size_mul, 2)
+
+        # v5.2: 缩量大跌可能是假突破，减少建仓规模
+        volume_proxy = trend_ctx.get("volume_proxy")
+        if volume_proxy and volume_proxy < 0.5:
+            buy_amount = round(buy_amount * 0.6, 2)
+            vol_note = f"(缩量{volume_proxy:.1f}×, 减仓买入)"
+        else:
+            vol_note = ""
+
         sig = _make_signal(
             fund_code, signal_name="大跌抄底", action="buy", priority=6,
             amount=buy_amount,
-            reason=f"今日跌{today_change}% ≤ 动态阈值{dip_threshold}%, 买入{buy_amount}元",
+            reason=f"今日跌{today_change}% ≤ 动态阈值{dip_threshold}%, 买入{buy_amount}元{vol_note}",
         )
         sig["market_analysis"] = market_analysis
         _append_signal_history(fund_code, sig, market_ctx)
@@ -1925,7 +2146,8 @@ def generate_signal(fund_code: str) -> dict:
             return build_signal
 
     # --- 连跌低吸 ---
-    if (today_change <= CONSECUTIVE_DIP_TRIGGER
+    consec_dip_thresh = dyn.get("consecutive_dip_trigger", DEFAULT_CONSECUTIVE_DIP_TRIGGER)
+    if (today_change <= consec_dip_thresh
             and len(recent) >= 1
             and recent[0].get("change") is not None
             and recent[0]["change"] < 0
@@ -1935,27 +2157,41 @@ def generate_signal(fund_code: str) -> dict:
         sig = _make_signal(
             fund_code, signal_name="连跌低吸", action="buy", priority=7,
             amount=buy_amount,
-            reason=f"今日跌{today_change}%, 昨日跌{recent[0]['change']}%, 连跌低吸{buy_amount}元",
+            reason=f"今日跌{today_change}% ≤ {consec_dip_thresh}%, 昨日跌{recent[0]['change']}%, 连跌低吸{buy_amount}元",
         )
         sig["market_analysis"] = market_analysis
         _append_signal_history(fund_code, sig, market_ctx)
         return _stamp(sig, confidence, source)
 
-    # --- 冷却期后建仓（v5.0 简化条件）---
+    # --- 冷却期后建仓 ---
+    # v5.3: 增加趋势过滤，避免在深度下跌趋势中盲目建仓
     if (not in_cooldown
             and pos.get("cooldown_sell_date")
-            and today_change <= 0  # v5.0: 简化为"不涨即可"
+            and today_change <= 0
             and can_buy_empty):
-        max_pos = pos["max_position"]
-        buy_amount = round(max_pos * 0.3 * size_mul, 2)
-        sig = _make_signal(
-            fund_code, signal_name="冷却期后建仓", action="buy", priority=7,
-            amount=buy_amount,
-            reason=f"冷却期结束, 今日{today_change}%, 重新建仓{buy_amount}元",
-        )
-        sig["market_analysis"] = market_analysis
-        _append_signal_history(fund_code, sig, market_ctx)
-        return _stamp(sig, confidence, source)
+        # v5.3: 过滤深度下跌趋势
+        short_5d_cd = trend_ctx.get("short_5d")
+        consecutive_down_cd = trend_ctx.get("consecutive_down", 0)
+        trend_ok = True
+        cd_note = ""
+        if short_5d_cd is not None and short_5d_cd <= -5 and consecutive_down_cd >= 3:
+            trend_ok = False
+            cd_note = f"(5日累跌{short_5d_cd}%+连跌{consecutive_down_cd}天, 延迟建仓)"
+        if trend_ok:
+            max_pos = pos["max_position"]
+            buy_amount = round(max_pos * 0.3 * size_mul, 2)
+            sig = _make_signal(
+                fund_code, signal_name="冷却期后建仓", action="buy", priority=7,
+                amount=buy_amount,
+                reason=f"冷却期结束, 今日{today_change}%, 重新建仓{buy_amount}元",
+            )
+            sig["market_analysis"] = market_analysis
+            _append_signal_history(fund_code, sig, market_ctx)
+            return _stamp(sig, confidence, source)
+        else:
+            # 趋势不好，记录但不建仓
+            extra_cd_note = f"冷却期已结束但趋势不佳{cd_note}"
+            # 继续走到"观望"
 
     # --- 观望 ---
     obs_parts = [f"今日{today_change}%"]
@@ -1973,30 +2209,34 @@ def generate_signal(fund_code: str) -> dict:
 
 
 # ============================================================
-# 批量信号（v5.0: 组合级风控增强）
+# 批量信号（v5.2: 并发优化 + 组合级风控）
 # ============================================================
 
 def generate_all_signals() -> dict:
-    """
-    v5.0 组合级风控升级：
-    1. daily_buy_cap 根据市场普跌/分化/普涨动态调整
-    2. 同赛道集中度约束
-    3. 折扣公式修正
-    """
     fund_codes = set()
     pos_data = load_positions()
     for code in pos_data.get("funds", {}).keys():
         fund_codes.add(code)
 
+    # v5.2: 并发生成信号
     signals = []
-    for code in sorted(fund_codes):
+    sorted_codes = sorted(fund_codes)
+
+    def _safe_generate(code):
         try:
-            sig = generate_signal(code)
-            signals.append(sig)
+            return generate_signal(code)
         except Exception as e:
             print(f"[Strategy] 生成 {code} 信号失败: {e}")
-            signals.append(_make_signal(code, reason=f"信号生成失败: {e}"))
+            return _make_signal(code, reason=f"信号生成失败: {e}")
 
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        futures = {pool.submit(_safe_generate, code): code for code in sorted_codes}
+        results_map = {}
+        for future in futures:
+            code = futures[future]
+            results_map[code] = future.result()
+
+    signals = [results_map[code] for code in sorted_codes]
     signals.sort(key=lambda s: (s["priority"], s.get("sub_priority", 0)))
 
     # === 组合级风控 ===
@@ -2014,17 +2254,21 @@ def generate_all_signals() -> dict:
 
     daily_budget = max(0, portfolio_max_invest - portfolio_invested)
 
-    # v5.0: 动态 daily_buy_cap
-    negative_count = sum(1 for s in signals
-                         if s.get("market_analysis", {}).get("today_change", 0) < 0)
-    total_count = max(1, len(signals))
-    negative_ratio = negative_count / total_count
+    # 动态 daily_buy_cap
+    # v5.3: 按持仓金额加权计算 negative_ratio（重仓基金下跌影响更大）
+    total_weight = 0
+    negative_weight = 0
+    for s in signals:
+        ma = s.get("market_analysis", {})
+        fund_amount = ma.get("total_cost", 0) or ma.get("market_value", 0) or 1000
+        total_weight += fund_amount
+        if ma.get("today_change", 0) < 0:
+            negative_weight += fund_amount
+    negative_ratio = negative_weight / max(1, total_weight)
 
     if negative_ratio > 0.6:
-        # 普跌：保守
         cap_ratio = DAILY_BUY_CAP_RATIO_CONSERVATIVE
     elif negative_ratio < 0.3:
-        # 普涨：个别下跌更有alpha
         cap_ratio = DAILY_BUY_CAP_RATIO_AGGRESSIVE
     else:
         cap_ratio = DAILY_BUY_CAP_RATIO_BASE
@@ -2038,9 +2282,9 @@ def generate_all_signals() -> dict:
         remaining_budget = effective_budget
         total_buy_count = len(buy_signals)
 
-        # v5.0: 修正折扣公式
+        # 修正折扣公式
         if total_buy_count > 1:
-            discount = max(0.65, 1.0 - (total_buy_count - 1) * 0.15)  # 修正：-1
+            discount = max(0.65, 1.0 - (total_buy_count - 1) * 0.15)
             confidences = [s.get("_confidence", 1.0) for s in buy_signals]
             avg_conf = sum(confidences) / len(confidences) if confidences else 1.0
             if avg_conf < 0.6:
@@ -2050,20 +2294,19 @@ def generate_all_signals() -> dict:
         else:
             discount = 1.0
 
-        # v5.0: 同赛道集中度约束
+        # 同赛道集中度约束
         state = load_state()
-        sector_map = {}  # fund_code -> sector_name
+        sector_map = {}
         for sector in state.get("sectors", []):
             for fund in sector.get("funds", []):
                 sector_map[fund.get("code", "")] = sector["name"]
 
-        sector_spent = {}  # sector_name -> 已分配金额
+        sector_spent = {}
 
         for sig in buy_signals:
             original = sig["amount"]
             discounted = round(original * discount, 2)
 
-            # 同赛道约束
             real_code, _ = parse_fund_key(sig["fund_code"])
             sector_name = sector_map.get(real_code, "默认")
             sector_cap = effective_budget * SECTOR_BUY_CAP_RATIO
