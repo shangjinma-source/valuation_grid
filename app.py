@@ -25,7 +25,12 @@ from positions import (
     get_groups, add_group, update_group, delete_group,
     make_fund_key, parse_fund_key, rename_fund_key
 )
-from strategy import generate_signal, generate_all_signals, get_signal_history
+from strategy import (
+    generate_signal, generate_all_signals, get_signal_history,
+    get_vol_sensitivity_info, update_vol_sensitivity, clear_vol_sensitivity,
+    auto_calibrate_vol_sensitivity,
+    backfill_signal_outcomes, calc_signal_win_rate
+)
 
 # ============================================================
 # 启动时刷新持仓缓存（后台线程，不阻塞服务就绪）
@@ -379,6 +384,67 @@ def get_all_signal_history(limit: int = 30):
 def get_fund_signal_history(fund_code: str, limit: int = 30):
     """获取单基金信号历史"""
     return get_signal_history(fund_code=fund_code, limit=limit)
+
+
+@app.post("/v1/strategy/backfill")
+def backfill_outcomes():
+    """回填历史信号的 outcome 字段（建议收盘后调用）"""
+    updated = backfill_signal_outcomes()
+    return {"success": True, "updated": updated}
+
+
+@app.get("/v1/strategy/win-rate")
+def get_all_win_rate(lookback: int = 30):
+    """获取全部基金信号胜率统计"""
+    return calc_signal_win_rate(lookback=lookback)
+
+
+@app.get("/v1/strategy/win-rate/{fund_code}")
+def get_fund_win_rate(fund_code: str, lookback: int = 30):
+    """获取单基金信号胜率统计"""
+    return calc_signal_win_rate(fund_code=fund_code, lookback=lookback)
+
+
+# ============================================================
+# 波动率灵敏度 API
+# ============================================================
+
+@app.get("/v1/position/{fund_code}/vol-sensitivity")
+def get_vol_sensitivity_api(fund_code: str):
+    """获取基金波动率灵敏度信息"""
+    return get_vol_sensitivity_info(fund_code)
+
+
+class VolSensitivityRequest(BaseModel):
+    sensitivity: float
+
+
+@app.put("/v1/position/{fund_code}/vol-sensitivity")
+def set_vol_sensitivity_api(fund_code: str, req: VolSensitivityRequest):
+    """手动设置波动率灵敏度（覆盖自动校准）"""
+    if req.sensitivity < 0.5 or req.sensitivity > 1.5:
+        raise HTTPException(status_code=400, detail="灵敏度范围 0.5~1.5")
+    if update_vol_sensitivity(fund_code, req.sensitivity):
+        return {"success": True, "sensitivity": round(req.sensitivity, 2)}
+    raise HTTPException(status_code=404, detail=f"基金 {fund_code} 不存在")
+
+
+@app.delete("/v1/position/{fund_code}/vol-sensitivity")
+def clear_vol_sensitivity_api(fund_code: str):
+    """清除手动设置，恢复自动校准"""
+    if clear_vol_sensitivity(fund_code):
+        return {"success": True, "message": "已恢复自动校准"}
+    raise HTTPException(status_code=404, detail=f"基金 {fund_code} 不存在")
+
+
+@app.post("/v1/position/{fund_code}/vol-sensitivity/calibrate")
+def recalibrate_vol_sensitivity_api(fund_code: str):
+    """强制重新校准（清除缓存并立即计算）"""
+    # 先清除缓存
+    clear_vol_sensitivity(fund_code)
+    # 触发重新计算
+    info = get_vol_sensitivity_info(fund_code)
+    return {"success": True, **info}
 
 
 # ============================================================

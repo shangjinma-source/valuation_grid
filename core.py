@@ -234,6 +234,7 @@ def _is_market_closed() -> bool:
     """判断当天是否已收盘（或非交易日）
     True = 可以安全用真实净值替代估值
     盘前/盘中/午休 都返回 False，只有15:05后和非交易日返回 True
+    节假日检测：最近一个有净值的交易日距今>3天则视为长假期间
     """
     now = datetime.now()
     weekday = now.weekday()  # 0=周一 ... 6=周日
@@ -244,27 +245,52 @@ def _is_market_closed() -> bool:
         return True  # 收盘后
     if hhmm < 915:
         return True  # 盘前
+    # 工作日盘中时段，额外检查是否为法定节假日
+    # 正常情况：周一最近净值=周五(隔2天)，周二~五=前一天(隔1天)
+    # 若最近净值距今>=4天，说明中间有连续非交易日（法定假期）
+    try:
+        from providers import get_fund_nav_history
+        hist = get_fund_nav_history("000300", 3)  # 沪深300
+        if hist:
+            latest_date = datetime.strptime(hist[0]["date"], "%Y-%m-%d")
+            gap = (now - latest_date).days
+            # 周一允许gap=3(周五→周一)，其余工作日gap>=4必为假期
+            max_normal_gap = 3 if weekday == 0 else 2
+            if gap > max_normal_gap:
+                return True
+    except Exception:
+        pass
     return False  # 盘中或午休，继续用估值
 
 def calculate_valuation_batch(fund_codes: List[str]) -> List[dict]:
     from concurrent.futures import ThreadPoolExecutor
     from providers import get_fund_5day_change
 
-    # 1. 批量计算估值
-    results = [calculate_valuation(code) for code in fund_codes]
-
-    # 2. 并发获取近5日涨幅
+    # 1. 并发计算估值
+    results_map = {}
     week_data = {}
     with ThreadPoolExecutor(max_workers=8) as pool:
-        futures = {pool.submit(get_fund_5day_change, code): code for code in fund_codes}
-        for future in futures:
-            code = futures[future]
+        # 估值并发
+        val_futures = {pool.submit(calculate_valuation, code): code for code in fund_codes}
+        # 5日涨幅并发
+        week_futures = {pool.submit(get_fund_5day_change, code): code for code in fund_codes}
+
+        for future in val_futures:
+            code = val_futures[future]
+            try:
+                results_map[code] = future.result(timeout=30)
+            except:
+                results_map[code] = {"fund_code": code, "error": "估值计算超时"}
+
+        for future in week_futures:
+            code = week_futures[future]
             try:
                 week_data[code] = future.result(timeout=20)
             except:
                 week_data[code] = None
 
-    # 3. 合并
+    # 2. 按原始顺序组装结果并合并
+    results = [results_map.get(code, {"fund_code": code}) for code in fund_codes]
     for r in results:
         r["week_change"] = week_data.get(r["fund_code"])
 
