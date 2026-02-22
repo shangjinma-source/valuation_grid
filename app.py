@@ -1,5 +1,5 @@
 """
-app.py - API入口：/state + /valuation + /fund/name
+app.py - API入口：/state + /valuation + /fund/name + /position + /strategy
 """
 import threading
 from contextlib import asynccontextmanager
@@ -18,6 +18,14 @@ from providers import (
     get_fund_name, set_etf_link_target, get_etf_link_target, clear_etf_link_target,
     refresh_stale_holdings
 )
+from positions import (
+    add_batch, sell_batch, delete_batch, update_fund_config,
+    get_fund_position, get_all_positions, remove_fund, update_sell_nav,
+    delete_sell_record, update_fee_schedule, sell_fifo,
+    get_groups, add_group, update_group, delete_group,
+    make_fund_key, parse_fund_key, rename_fund_key
+)
+from strategy import generate_signal, generate_all_signals, get_signal_history
 
 # ============================================================
 # 启动时刷新持仓缓存（后台线程，不阻塞服务就绪）
@@ -30,9 +38,9 @@ async def lifespan(app):
     yield
 
 app = FastAPI(
-    title="盘中估值工具",
-    description="基金盘中估值 + 本地自选板块管理",
-    version="2.0.0",
+    title="Ease Grid",
+    description="基金盘中估值 + 本地自选板块管理 + 低频网格交易策略",
+    version="2.2.0",
     lifespan=lifespan,
 )
 
@@ -180,6 +188,236 @@ def post_holdings_refresh():
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
+
+# ============================================================
+# 持仓管理 API（新增）
+# ============================================================
+
+class BuyRequest(BaseModel):
+    amount: float
+    nav: float
+    note: Optional[str] = ""
+    buy_date: Optional[str] = None  # 格式 YYYY-MM-DD，默认今天
+    is_supplement: Optional[bool] = False  # 是否为补仓买入
+    owner: Optional[str] = ""  # 持仓所有者标签（多人模式）
+
+class SellRequest(BaseModel):
+    batch_id: str
+    sell_shares: float              # 卖出份额（必填）
+    sell_nav: Optional[float] = None  # 确认净值（选填，待确认时不填）
+    sell_date: Optional[str] = None   # 卖出日期 YYYY-MM-DD
+
+class FundConfigRequest(BaseModel):
+    max_position: Optional[int] = None
+    fund_name: Optional[str] = None
+
+class FeeScheduleItem(BaseModel):
+    days: Optional[int] = None  # None = 兜底档
+    rate: float                 # 费率%
+
+class FeeScheduleRequest(BaseModel):
+    schedule: List[FeeScheduleItem]
+
+
+@app.get("/v1/positions")
+def get_positions():
+    """获取全部持仓"""
+    return get_all_positions()
+
+
+@app.get("/v1/position/{fund_code}")
+def get_position(fund_code: str):
+    """获取单基金持仓汇总"""
+    return get_fund_position(fund_code)
+
+
+@app.post("/v1/position/{fund_code}/buy")
+def buy_fund(fund_code: str, req: BuyRequest):
+    """新增买入批次（支持 owner 参数实现同基金多人持仓）"""
+    if req.amount <= 0 or req.nav <= 0:
+        raise HTTPException(status_code=400, detail="amount和nav必须大于0")
+    fund_key = make_fund_key(fund_code, req.owner or "")
+    batch = add_batch(fund_key, req.amount, req.nav, req.note or "",
+                      req.buy_date, req.is_supplement)
+    return {"success": True, "batch": batch, "fund_key": fund_key}
+
+
+@app.post("/v1/position/{fund_code}/sell")
+def sell_fund(fund_code: str, req: SellRequest):
+    """卖出批次（按份额）"""
+    if req.sell_shares <= 0:
+        raise HTTPException(status_code=400, detail="卖出份额必须大于0")
+    try:
+        result = sell_batch(fund_code, req.batch_id, req.sell_shares,
+                            req.sell_nav, req.sell_date)
+        return {"success": True, **result}
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+@app.delete("/v1/position/{fund_code}/batch/{batch_id}")
+def delete_fund_batch(fund_code: str, batch_id: str):
+    """删除错误录入的批次"""
+    if delete_batch(fund_code, batch_id):
+        return {"success": True, "message": f"已删除 {batch_id}"}
+    else:
+        raise HTTPException(status_code=404, detail=f"批次 {batch_id} 不存在")
+
+
+@app.delete("/v1/position/{fund_code}")
+def remove_fund_position(fund_code: str):
+    """从策略面板完全移除一只基金"""
+    if remove_fund(fund_code):
+        return {"success": True, "message": f"已移除 {fund_code}"}
+    else:
+        raise HTTPException(status_code=404, detail=f"基金 {fund_code} 不存在")
+
+
+class RenameFundKeyRequest(BaseModel):
+    new_owner: str  # 新标签（空字符串表示去除标签）
+
+@app.post("/v1/position/{fund_code}/rename")
+def rename_fund_key_api(fund_code: str, req: RenameFundKeyRequest):
+    """给已有持仓设置/修改标签（重命名存储键）"""
+    real_code, _ = parse_fund_key(fund_code)
+    new_key = make_fund_key(real_code, req.new_owner.strip())
+    if fund_code == new_key:
+        return {"success": True, "message": "标签未变化", "new_key": new_key}
+    if rename_fund_key(fund_code, new_key):
+        return {"success": True, "message": f"已重命名 {fund_code} → {new_key}", "new_key": new_key}
+    else:
+        raise HTTPException(status_code=400, detail="重命名失败（目标键可能已存在）")
+
+
+@app.put("/v1/position/{fund_code}/config")
+def update_config(fund_code: str, req: FundConfigRequest):
+    """更新基金配置"""
+    if update_fund_config(fund_code, req.max_position, req.fund_name):
+        return {"success": True}
+    else:
+        raise HTTPException(status_code=500, detail="更新失败")
+
+
+@app.put("/v1/position/{fund_code}/fee-schedule")
+def update_fee_schedule_api(fund_code: str, req: FeeScheduleRequest):
+    """更新基金卖出费率表"""
+    schedule = [{"days": s.days, "rate": s.rate} for s in req.schedule]
+    if update_fee_schedule(fund_code, schedule):
+        return {"success": True, "schedule": schedule}
+    else:
+        raise HTTPException(status_code=500, detail="更新失败")
+
+
+class UpdateSellNavRequest(BaseModel):
+    sell_record_id: str
+    sell_nav: float
+
+
+class SellFifoRequest(BaseModel):
+    total_sell_shares: float
+    sell_nav: Optional[float] = None
+    sell_date: Optional[str] = None
+
+
+@app.post("/v1/position/{fund_code}/sell-fifo")
+def sell_fund_fifo(fund_code: str, req: SellFifoRequest):
+    """按FIFO顺序卖出指定总份额（模拟支付宝先进先出行为）"""
+    if req.total_sell_shares <= 0:
+        raise HTTPException(status_code=400, detail="卖出份额必须大于0")
+    try:
+        result = sell_fifo(fund_code, req.total_sell_shares,
+                           req.sell_nav, req.sell_date)
+        return {"success": True, **result}
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+@app.put("/v1/position/{fund_code}/sell-nav")
+def update_sell_nav_api(fund_code: str, req: UpdateSellNavRequest):
+    """补录卖出确认净值"""
+    if req.sell_nav <= 0:
+        raise HTTPException(status_code=400, detail="净值必须大于0")
+    try:
+        result = update_sell_nav(fund_code, req.sell_record_id, req.sell_nav)
+        return {"success": True, "record": result}
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+
+
+@app.delete("/v1/position/{fund_code}/sell-record/{sell_record_id}")
+def delete_sell_record_api(fund_code: str, sell_record_id: str):
+    """删除卖出记录"""
+    if delete_sell_record(fund_code, sell_record_id):
+        return {"success": True, "message": f"已删除卖出记录 {sell_record_id}"}
+    else:
+        raise HTTPException(status_code=404, detail=f"卖出记录 {sell_record_id} 不存在")
+
+
+# ============================================================
+# 策略信号 API（新增）
+# ============================================================
+
+@app.get("/v1/strategy/signals")
+def get_all_strategy_signals():
+    """获取全部基金策略信号"""
+    return generate_all_signals()
+
+
+@app.get("/v1/strategy/signal/{fund_code}")
+def get_strategy_signal(fund_code: str):
+    """获取单基金策略信号"""
+    return generate_signal(fund_code)
+
+
+@app.get("/v1/strategy/history")
+def get_all_signal_history(limit: int = 30):
+    """获取全部基金信号历史"""
+    return get_signal_history(limit=limit)
+
+
+@app.get("/v1/strategy/history/{fund_code}")
+def get_fund_signal_history(fund_code: str, limit: int = 30):
+    """获取单基金信号历史"""
+    return get_signal_history(fund_code=fund_code, limit=limit)
+
+
+# ============================================================
+# 分组管理 API
+# ============================================================
+
+class GroupCreateRequest(BaseModel):
+    name: str
+
+class GroupUpdateRequest(BaseModel):
+    name: Optional[str] = None
+    fund_codes: Optional[List[str]] = None
+
+@app.get("/v1/groups")
+def get_groups_api():
+    """获取全部分组"""
+    return {"groups": get_groups()}
+
+@app.post("/v1/groups")
+def create_group(req: GroupCreateRequest):
+    """新建分组"""
+    if not req.name.strip():
+        raise HTTPException(status_code=400, detail="分组名称不能为空")
+    group = add_group(req.name.strip())
+    return {"success": True, "group": group}
+
+@app.put("/v1/groups/{group_id}")
+def update_group_api(group_id: str, req: GroupUpdateRequest):
+    """更新分组"""
+    if update_group(group_id, req.name, req.fund_codes):
+        return {"success": True}
+    raise HTTPException(status_code=404, detail="分组不存在")
+
+@app.delete("/v1/groups/{group_id}")
+def delete_group_api(group_id: str):
+    """删除分组"""
+    if delete_group(group_id):
+        return {"success": True}
+    raise HTTPException(status_code=404, detail="分组不存在")
 
 
 if __name__ == "__main__":
