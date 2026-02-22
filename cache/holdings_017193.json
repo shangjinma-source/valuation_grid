@@ -1,65 +1,72 @@
 {
   "fund_code": "017193",
   "fund_name": "天弘中证工业有色金属主题ETF发起联接C",
-  "holdings_asof_date": "2026-03-31",
-  "stock_total_weight": 95.0,
-  "parsed_weight": 22.47,
-  "missing_weight": 72.53,
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 95.05,
+  "parsed_weight": 54.87,
+  "missing_weight": 40.18,
   "positions": [
     {
       "stock_code": "603993",
       "stock_name": "洛阳钼业",
-      "weight": 5.13
+      "weight": 12.62
     },
     {
       "stock_code": "600111",
       "stock_name": "北方稀土",
-      "weight": 3.18
+      "weight": 8.23
     },
     {
       "stock_code": "601600",
       "stock_name": "中国铝业",
-      "weight": 2.71
-    },
-    {
-      "stock_code": "000426",
-      "stock_name": "兴业银锡",
-      "weight": 2.11
+      "weight": 7.08
     },
     {
       "stock_code": "000807",
       "stock_name": "云铝股份",
-      "weight": 1.69
-    },
-    {
-      "stock_code": "000630",
-      "stock_name": "铜陵有色",
-      "weight": 1.61
+      "weight": 4.98
     },
     {
       "stock_code": "600362",
       "stock_name": "江西铜业",
-      "weight": 1.59
+      "weight": 4.21
     },
     {
-      "stock_code": "600549",
-      "stock_name": "厦门钨业",
-      "weight": 1.52
+      "stock_code": "000426",
+      "stock_name": "兴业银锡",
+      "weight": 3.66
     },
     {
-      "stock_code": "600489",
-      "stock_name": "中金黄金",
-      "weight": 1.5
+      "stock_code": "000933",
+      "stock_name": "神火股份",
+      "weight": 3.57
+    },
+    {
+      "stock_code": "000630",
+      "stock_name": "铜陵有色",
+      "weight": 3.52
+    },
+    {
+      "stock_code": "002532",
+      "stock_name": "天山铝业",
+      "weight": 3.51
     },
     {
       "stock_code": "601168",
       "stock_name": "西部矿业",
-      "weight": 1.43
+      "weight": 3.47
+    },
+    {
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-11 10:03:17",
-  "data_source": "eastmoney",
-  "original_fund_code": "017193",
-  "etf_target": "159157",
-  "is_etf_link": true
+  "fetched_at": "2026-02-21 23:49:32",
+  "data_source": "eastmoney"
 }

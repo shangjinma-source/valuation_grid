@@ -158,6 +158,13 @@ def _fetch_eastmoney_holdings(fund_code: str, headers: dict) -> Tuple[Optional[L
             quarter = int(quarter_match.group(2))
             quarter_end = {1: "03-31", 2: "06-30", 3: "09-30", 4: "12-31"}
             report_date = f"{year}-{quarter_end.get(quarter, '12-31')}"
+            # 防御：报告日期不能超过今天（新基金页面可能含未来季度标签）
+            try:
+                if datetime.strptime(report_date, "%Y-%m-%d") > datetime.now():
+                    print(f"[Holdings] {fund_code} 报告日期 {report_date} 超过今天，视为无效")
+                    report_date = None
+            except Exception:
+                pass
 
         # === 定位最新一期报告的内容边界 ===
         # 页面按时间倒序排列多期报告，用季度标题分割
@@ -287,12 +294,19 @@ def _fetch_holdings_combined(fund_code: str, depth: int = 0) -> Optional[dict]:
         print(f"[Holdings] 使用用户指定的目标ETF: {fund_code} -> {user_etf_target}")
         etf_holdings = _fetch_holdings_combined(user_etf_target, depth + 1)
         if etf_holdings and etf_holdings.get("positions"):
-            etf_holdings["original_fund_code"] = fund_code
-            etf_holdings["fund_code"] = fund_code
-            etf_holdings["fund_name"] = fund_name
-            etf_holdings["etf_target"] = user_etf_target
-            etf_holdings["is_etf_link"] = True
-            return etf_holdings
+            etf_pw = etf_holdings.get("parsed_weight", 0)
+            # 穿透结果质量校验：如果ETF持仓权重过低（<30%），
+            # 说明目标ETF可能是新基金、尚无完整季报，回退到联接基金自身持仓
+            if etf_pw < 30:
+                print(f"[Holdings] ETF穿透 {user_etf_target} 持仓权重仅 {etf_pw:.1f}%，"
+                      f"质量不足，回退到联接基金 {fund_code} 自身持仓")
+            else:
+                etf_holdings["original_fund_code"] = fund_code
+                etf_holdings["fund_code"] = fund_code
+                etf_holdings["fund_name"] = fund_name
+                etf_holdings["etf_target"] = user_etf_target
+                etf_holdings["is_etf_link"] = True
+                return etf_holdings
 
     # === 未配映射的联接基金，直接走天天基金 ===
     if is_link and depth == 0:
