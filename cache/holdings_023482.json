@@ -1,0 +1,65 @@
+{
+  "fund_code": "023482",
+  "fund_name": "万家中证港股通创新药ETF发起式联接C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 99.36,
+  "parsed_weight": 70.89,
+  "missing_weight": 28.47,
+  "positions": [
+    {
+      "stock_code": "02269",
+      "stock_name": "药明生物",
+      "weight": 10.28
+    },
+    {
+      "stock_code": "06160",
+      "stock_name": "百济神州",
+      "weight": 9.97
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 9.59
+    },
+    {
+      "stock_code": "09926",
+      "stock_name": "康方生物",
+      "weight": 8.17
+    },
+    {
+      "stock_code": "01177",
+      "stock_name": "中国生物制药",
+      "weight": 6.84
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 6.66
+    },
+    {
+      "stock_code": "03692",
+      "stock_name": "翰森制药",
+      "weight": 6.43
+    },
+    {
+      "stock_code": "02359",
+      "stock_name": "药明康德",
+      "weight": 4.93
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 4.83
+    },
+    {
+      "stock_code": "02228",
+      "stock_name": "晶泰控股",
+      "weight": 3.19
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:40",
+  "data_source": "eastmoney",
+  "original_fund_code": "023482",
+  "etf_target": "520700",
+  "is_etf_link": true
+}

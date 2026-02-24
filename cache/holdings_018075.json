@@ -1,0 +1,62 @@
+{
+  "fund_code": "018075",
+  "fund_name": "长盛航天海工混合C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 93.85,
+  "parsed_weight": 34.9,
+  "missing_weight": 58.95,
+  "positions": [
+    {
+      "stock_code": "300810",
+      "stock_name": "中科海讯",
+      "weight": 4.68
+    },
+    {
+      "stock_code": "600764",
+      "stock_name": "中国海防",
+      "weight": 4.64
+    },
+    {
+      "stock_code": "600184",
+      "stock_name": "光电股份",
+      "weight": 4.24
+    },
+    {
+      "stock_code": "600391",
+      "stock_name": "航发科技",
+      "weight": 3.45
+    },
+    {
+      "stock_code": "688081",
+      "stock_name": "兴图新科",
+      "weight": 3.08
+    },
+    {
+      "stock_code": "688281",
+      "stock_name": "华秦科技",
+      "weight": 3.0
+    },
+    {
+      "stock_code": "688586",
+      "stock_name": "江航装备",
+      "weight": 2.99
+    },
+    {
+      "stock_code": "688239",
+      "stock_name": "航宇科技",
+      "weight": 2.96
+    },
+    {
+      "stock_code": "688636",
+      "stock_name": "智明达",
+      "weight": 2.94
+    },
+    {
+      "stock_code": "300855",
+      "stock_name": "图南股份",
+      "weight": 2.92
+    }
+  ],
+  "fetched_at": "2026-02-21 23:52:00",
+  "data_source": "eastmoney"
+}

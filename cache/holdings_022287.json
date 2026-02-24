@@ -1,0 +1,67 @@
+{
+  "fund_code": "022287",
+  "fund_name": "长城医药产业精选混合发起式C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 88.04,
+  "parsed_weight": 67.76,
+  "missing_weight": 20.28,
+  "positions": [
+    {
+      "stock_code": "688382",
+      "stock_name": "益方生物",
+      "weight": 8.21
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 8.1
+    },
+    {
+      "stock_code": "09606",
+      "stock_name": "映恩生物-B",
+      "weight": 8.09
+    },
+    {
+      "stock_code": "06990",
+      "stock_name": "科伦博泰生物-B",
+      "weight": 7.75
+    },
+    {
+      "stock_code": "09926",
+      "stock_name": "康方生物",
+      "weight": 6.72
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 6.62
+    },
+    {
+      "stock_code": "688513",
+      "stock_name": "苑东生物",
+      "weight": 6.31
+    },
+    {
+      "stock_code": "002294",
+      "stock_name": "信立泰",
+      "weight": 6.22
+    },
+    {
+      "stock_code": "002653",
+      "stock_name": "海思科",
+      "weight": 5.23
+    },
+    {
+      "stock_code": "688235",
+      "stock_name": "百济神州",
+      "weight": 2.37
+    },
+    {
+      "stock_code": "06160",
+      "stock_name": "百济神州",
+      "weight": 2.14
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:38",
+  "data_source": "eastmoney"
+}

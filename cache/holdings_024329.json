@@ -1,0 +1,65 @@
+{
+  "fund_code": "024329",
+  "fund_name": "易方达恒生港股通创新药ETF联接发起式C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 98.82,
+  "parsed_weight": 73.35,
+  "missing_weight": 25.47,
+  "positions": [
+    {
+      "stock_code": "09926",
+      "stock_name": "康方生物",
+      "weight": 10.36
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 10.31
+    },
+    {
+      "stock_code": "06160",
+      "stock_name": "百济神州",
+      "weight": 9.82
+    },
+    {
+      "stock_code": "01177",
+      "stock_name": "中国生物制药",
+      "weight": 9.67
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 8.91
+    },
+    {
+      "stock_code": "03692",
+      "stock_name": "翰森制药",
+      "weight": 8.28
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 7.14
+    },
+    {
+      "stock_code": "06990",
+      "stock_name": "科伦博泰生物-B",
+      "weight": 3.87
+    },
+    {
+      "stock_code": "00867",
+      "stock_name": "康哲药业",
+      "weight": 2.62
+    },
+    {
+      "stock_code": "06855",
+      "stock_name": "亚盛医药-B",
+      "weight": 2.37
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:45",
+  "data_source": "eastmoney",
+  "original_fund_code": "024329",
+  "etf_target": "159316",
+  "is_etf_link": true
+}

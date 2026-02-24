@@ -1,0 +1,67 @@
+{
+  "fund_code": "017963",
+  "fund_name": "广发医药创新混合发起式C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 93.4,
+  "parsed_weight": 77.53,
+  "missing_weight": 15.87,
+  "positions": [
+    {
+      "stock_code": "688266",
+      "stock_name": "泽璟制药",
+      "weight": 10.9
+    },
+    {
+      "stock_code": "688506",
+      "stock_name": "百利天恒",
+      "weight": 10.26
+    },
+    {
+      "stock_code": "603127",
+      "stock_name": "昭衍新药",
+      "weight": 9.08
+    },
+    {
+      "stock_code": "06990",
+      "stock_name": "科伦博泰生物-B",
+      "weight": 7.54
+    },
+    {
+      "stock_code": "002294",
+      "stock_name": "信立泰",
+      "weight": 6.96
+    },
+    {
+      "stock_code": "688382",
+      "stock_name": "益方生物",
+      "weight": 6.73
+    },
+    {
+      "stock_code": "688221",
+      "stock_name": "前沿生物",
+      "weight": 6.44
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 5.7
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 5.68
+    },
+    {
+      "stock_code": "603590",
+      "stock_name": "康辰药业",
+      "weight": 5.56
+    },
+    {
+      "stock_code": "06127",
+      "stock_name": "昭衍新药",
+      "weight": 2.68
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:49",
+  "data_source": "eastmoney"
+}

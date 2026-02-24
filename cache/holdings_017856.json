@@ -1,0 +1,65 @@
+{
+  "fund_code": "017856",
+  "fund_name": "华夏中证石化产业ETF发起式联接C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 99.79,
+  "parsed_weight": 56.61,
+  "missing_weight": 43.18,
+  "positions": [
+    {
+      "stock_code": "600309",
+      "stock_name": "万华化学",
+      "weight": 10.61
+    },
+    {
+      "stock_code": "601857",
+      "stock_name": "中国石油",
+      "weight": 8.68
+    },
+    {
+      "stock_code": "600028",
+      "stock_name": "中国石化",
+      "weight": 6.62
+    },
+    {
+      "stock_code": "000792",
+      "stock_name": "盐湖股份",
+      "weight": 6.58
+    },
+    {
+      "stock_code": "600938",
+      "stock_name": "中国海油",
+      "weight": 5.31
+    },
+    {
+      "stock_code": "000408",
+      "stock_name": "藏格矿业",
+      "weight": 4.87
+    },
+    {
+      "stock_code": "600160",
+      "stock_name": "巨化股份",
+      "weight": 3.82
+    },
+    {
+      "stock_code": "600346",
+      "stock_name": "恒力石化",
+      "weight": 3.5
+    },
+    {
+      "stock_code": "600426",
+      "stock_name": "华鲁恒升",
+      "weight": 3.44
+    },
+    {
+      "stock_code": "600989",
+      "stock_name": "宝丰能源",
+      "weight": 3.18
+    }
+  ],
+  "fetched_at": "2026-02-25 00:04:05",
+  "data_source": "eastmoney",
+  "original_fund_code": "017856",
+  "etf_target": "159731",
+  "is_etf_link": true
+}

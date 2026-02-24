@@ -1,0 +1,62 @@
+{
+  "fund_code": "015945",
+  "fund_name": "易方达国防军工混合C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 94.14,
+  "parsed_weight": 54.67,
+  "missing_weight": 39.47,
+  "positions": [
+    {
+      "stock_code": "688002",
+      "stock_name": "睿创微纳",
+      "weight": 9.23
+    },
+    {
+      "stock_code": "600760",
+      "stock_name": "中航沈飞",
+      "weight": 6.48
+    },
+    {
+      "stock_code": "600879",
+      "stock_name": "航天电子",
+      "weight": 6.22
+    },
+    {
+      "stock_code": "600482",
+      "stock_name": "中国动力",
+      "weight": 5.1
+    },
+    {
+      "stock_code": "002025",
+      "stock_name": "航天电器",
+      "weight": 4.98
+    },
+    {
+      "stock_code": "002179",
+      "stock_name": "中航光电",
+      "weight": 4.95
+    },
+    {
+      "stock_code": "300604",
+      "stock_name": "长川科技",
+      "weight": 4.67
+    },
+    {
+      "stock_code": "600862",
+      "stock_name": "中航高科",
+      "weight": 4.53
+    },
+    {
+      "stock_code": "600893",
+      "stock_name": "航发动力",
+      "weight": 4.31
+    },
+    {
+      "stock_code": "000768",
+      "stock_name": "中航西飞",
+      "weight": 4.2
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:54",
+  "data_source": "eastmoney"
+}

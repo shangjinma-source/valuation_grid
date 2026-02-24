@@ -1,0 +1,105 @@
+{
+  "fund_code": "014565",
+  "fund_name": "天弘沪深港创新药50ETF联接C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 99.01,
+  "parsed_weight": 71.46,
+  "missing_weight": 27.55,
+  "positions": [
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 15.03
+    },
+    {
+      "stock_code": "06160",
+      "stock_name": "百济神州",
+      "weight": 11.82
+    },
+    {
+      "stock_code": "603259",
+      "stock_name": "药明康德",
+      "weight": 11.6
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 6.76
+    },
+    {
+      "stock_code": "02269",
+      "stock_name": "药明生物",
+      "weight": 6.29
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 3.7
+    },
+    {
+      "stock_code": "01177",
+      "stock_name": "中国生物制药",
+      "weight": 3.47
+    },
+    {
+      "stock_code": "03692",
+      "stock_name": "翰森制药",
+      "weight": 2.97
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 2.56
+    },
+    {
+      "stock_code": "02359",
+      "stock_name": "药明康德",
+      "weight": 2.51
+    },
+    {
+      "stock_code": "600196",
+      "stock_name": "复星医药",
+      "weight": 2.04
+    },
+    {
+      "stock_code": "688235",
+      "stock_name": "百济神州",
+      "weight": 1.89
+    },
+    {
+      "stock_code": "02196",
+      "stock_name": "复星医药",
+      "weight": 0.52
+    },
+    {
+      "stock_code": "03933",
+      "stock_name": "联邦制药",
+      "weight": 0.19
+    },
+    {
+      "stock_code": "600930",
+      "stock_name": "华电新能",
+      "weight": 0.04
+    },
+    {
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
+      "weight": 0.03
+    },
+    {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "688783",
+      "stock_name": "西安奕材",
+      "weight": 0.02
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:46",
+  "data_source": "eastmoney",
+  "original_fund_code": "014565",
+  "etf_target": "517380",
+  "is_etf_link": true
+}

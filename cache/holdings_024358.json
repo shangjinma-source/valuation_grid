@@ -1,0 +1,62 @@
+{
+  "fund_code": "024358",
+  "fund_name": "东方阿尔法健康产业混合发起C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 93.03,
+  "parsed_weight": 71.63,
+  "missing_weight": 21.4,
+  "positions": [
+    {
+      "stock_code": "002294",
+      "stock_name": "信立泰",
+      "weight": 8.34
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 8.12
+    },
+    {
+      "stock_code": "06990",
+      "stock_name": "科伦博泰生物-B",
+      "weight": 8.11
+    },
+    {
+      "stock_code": "09606",
+      "stock_name": "映恩生物-B",
+      "weight": 7.68
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 7.57
+    },
+    {
+      "stock_code": "688382",
+      "stock_name": "益方生物",
+      "weight": 7.32
+    },
+    {
+      "stock_code": "688513",
+      "stock_name": "苑东生物",
+      "weight": 7.12
+    },
+    {
+      "stock_code": "688068",
+      "stock_name": "热景生物",
+      "weight": 6.95
+    },
+    {
+      "stock_code": "688658",
+      "stock_name": "悦康药业",
+      "weight": 5.68
+    },
+    {
+      "stock_code": "688266",
+      "stock_name": "泽璟制药",
+      "weight": 4.74
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:38",
+  "data_source": "eastmoney"
+}

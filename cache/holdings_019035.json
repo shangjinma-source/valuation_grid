@@ -1,0 +1,62 @@
+{
+  "fund_code": "019035",
+  "fund_name": "易方达全球医药行业混合发起式(QDII)C(人民币)",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 89.65,
+  "parsed_weight": 46.12,
+  "missing_weight": 43.53,
+  "positions": [
+    {
+      "stock_code": "09606",
+      "stock_name": "映恩生物-B",
+      "weight": 6.76
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 5.95
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 5.83
+    },
+    {
+      "stock_code": "03692",
+      "stock_name": "翰森制药",
+      "weight": 5.79
+    },
+    {
+      "stock_code": "06990",
+      "stock_name": "科伦博泰生物-B",
+      "weight": 4.93
+    },
+    {
+      "stock_code": "03696",
+      "stock_name": "英矽智能",
+      "weight": 3.75
+    },
+    {
+      "stock_code": "02162",
+      "stock_name": "康诺亚-B",
+      "weight": 3.7
+    },
+    {
+      "stock_code": "02696",
+      "stock_name": "复宏汉霖",
+      "weight": 3.44
+    },
+    {
+      "stock_code": "09995",
+      "stock_name": "荣昌生物",
+      "weight": 3.18
+    },
+    {
+      "stock_code": "09887",
+      "stock_name": "维立志博-B",
+      "weight": 2.79
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:47",
+  "data_source": "eastmoney"
+}

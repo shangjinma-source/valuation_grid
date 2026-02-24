@@ -1,0 +1,62 @@
+{
+  "fund_code": "018590",
+  "fund_name": "银华体育文化灵活配置混合C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 93.95,
+  "parsed_weight": 68.99,
+  "missing_weight": 24.96,
+  "positions": [
+    {
+      "stock_code": "002517",
+      "stock_name": "恺英网络",
+      "weight": 9.18
+    },
+    {
+      "stock_code": "603444",
+      "stock_name": "吉比特",
+      "weight": 9.16
+    },
+    {
+      "stock_code": "002558",
+      "stock_name": "巨人网络",
+      "weight": 8.73
+    },
+    {
+      "stock_code": "002624",
+      "stock_name": "完美世界",
+      "weight": 8.71
+    },
+    {
+      "stock_code": "002315",
+      "stock_name": "焦点科技",
+      "weight": 6.81
+    },
+    {
+      "stock_code": "002555",
+      "stock_name": "三七互娱",
+      "weight": 6.56
+    },
+    {
+      "stock_code": "002602",
+      "stock_name": "世纪华通",
+      "weight": 5.83
+    },
+    {
+      "stock_code": "300378",
+      "stock_name": "鼎捷数智",
+      "weight": 5.29
+    },
+    {
+      "stock_code": "688258",
+      "stock_name": "卓易信息",
+      "weight": 4.51
+    },
+    {
+      "stock_code": "688111",
+      "stock_name": "金山办公",
+      "weight": 4.21
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:53",
+  "data_source": "eastmoney"
+}

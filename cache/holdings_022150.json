@@ -1,0 +1,67 @@
+{
+  "fund_code": "022150",
+  "fund_name": "诺安精选价值混合C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 92.38,
+  "parsed_weight": 68.19,
+  "missing_weight": 24.19,
+  "positions": [
+    {
+      "stock_code": "09926",
+      "stock_name": "康方生物",
+      "weight": 8.57
+    },
+    {
+      "stock_code": "06990",
+      "stock_name": "科伦博泰生物-B",
+      "weight": 8.46
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 7.96
+    },
+    {
+      "stock_code": "688235",
+      "stock_name": "百济神州",
+      "weight": 6.7
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 6.55
+    },
+    {
+      "stock_code": "688382",
+      "stock_name": "益方生物",
+      "weight": 6.4
+    },
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 5.86
+    },
+    {
+      "stock_code": "688266",
+      "stock_name": "泽璟制药",
+      "weight": 5.72
+    },
+    {
+      "stock_code": "688428",
+      "stock_name": "诺诚健华",
+      "weight": 5.0
+    },
+    {
+      "stock_code": "688799",
+      "stock_name": "华纳药厂",
+      "weight": 4.15
+    },
+    {
+      "stock_code": "01276",
+      "stock_name": "恒瑞医药",
+      "weight": 2.82
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:37",
+  "data_source": "eastmoney"
+}

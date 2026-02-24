@@ -1,0 +1,62 @@
+{
+  "fund_code": "010710",
+  "fund_name": "安信医药健康股票C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 91.85,
+  "parsed_weight": 47.66,
+  "missing_weight": 44.19,
+  "positions": [
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 7.47
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 5.89
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 5.56
+    },
+    {
+      "stock_code": "688382",
+      "stock_name": "益方生物",
+      "weight": 5.11
+    },
+    {
+      "stock_code": "688621",
+      "stock_name": "阳光诺和",
+      "weight": 5.07
+    },
+    {
+      "stock_code": "600521",
+      "stock_name": "华海药业",
+      "weight": 4.54
+    },
+    {
+      "stock_code": "603233",
+      "stock_name": "大参林",
+      "weight": 4.27
+    },
+    {
+      "stock_code": "688799",
+      "stock_name": "华纳药厂",
+      "weight": 3.47
+    },
+    {
+      "stock_code": "02096",
+      "stock_name": "先声药业",
+      "weight": 3.4
+    },
+    {
+      "stock_code": "300358",
+      "stock_name": "楚天科技",
+      "weight": 2.88
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:49",
+  "data_source": "eastmoney"
+}

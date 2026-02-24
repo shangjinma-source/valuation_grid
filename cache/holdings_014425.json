@@ -1,0 +1,65 @@
+{
+  "fund_code": "014425",
+  "fund_name": "博时恒生医疗保健ETF发起式联接(QDII)C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 99.05,
+  "parsed_weight": 59.15,
+  "missing_weight": 39.9,
+  "positions": [
+    {
+      "stock_code": "06160",
+      "stock_name": "百济神州",
+      "weight": 9.71
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 8.81
+    },
+    {
+      "stock_code": "02269",
+      "stock_name": "药明生物",
+      "weight": 8.69
+    },
+    {
+      "stock_code": "09926",
+      "stock_name": "康方生物",
+      "weight": 6.26
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 5.11
+    },
+    {
+      "stock_code": "01177",
+      "stock_name": "中国生物制药",
+      "weight": 4.79
+    },
+    {
+      "stock_code": "06618",
+      "stock_name": "京东健康",
+      "weight": 4.67
+    },
+    {
+      "stock_code": "03692",
+      "stock_name": "翰森制药",
+      "weight": 4.1
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 3.54
+    },
+    {
+      "stock_code": "02359",
+      "stock_name": "药明康德",
+      "weight": 3.47
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:48",
+  "data_source": "eastmoney",
+  "original_fund_code": "014425",
+  "etf_target": "513060",
+  "is_etf_link": true
+}

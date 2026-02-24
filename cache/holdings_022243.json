@@ -1,0 +1,62 @@
+{
+  "fund_code": "022243",
+  "fund_name": "中邮军民融合灵活配置混合C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 92.87,
+  "parsed_weight": 23.0,
+  "missing_weight": 69.87,
+  "positions": [
+    {
+      "stock_code": "600879",
+      "stock_name": "航天电子",
+      "weight": 4.16
+    },
+    {
+      "stock_code": "002683",
+      "stock_name": "广东宏大",
+      "weight": 2.43
+    },
+    {
+      "stock_code": "300101",
+      "stock_name": "振芯科技",
+      "weight": 2.17
+    },
+    {
+      "stock_code": "300699",
+      "stock_name": "光威复材",
+      "weight": 2.14
+    },
+    {
+      "stock_code": "002465",
+      "stock_name": "海格通信",
+      "weight": 2.14
+    },
+    {
+      "stock_code": "600893",
+      "stock_name": "航发动力",
+      "weight": 2.04
+    },
+    {
+      "stock_code": "002297",
+      "stock_name": "博云新材",
+      "weight": 2.03
+    },
+    {
+      "stock_code": "002935",
+      "stock_name": "天奥电子",
+      "weight": 1.99
+    },
+    {
+      "stock_code": "301571",
+      "stock_name": "国科天成",
+      "weight": 1.96
+    },
+    {
+      "stock_code": "002625",
+      "stock_name": "光启技术",
+      "weight": 1.94
+    }
+  ],
+  "fetched_at": "2026-02-25 00:40:59",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "015395",
+  "fund_name": "招商体育文化休闲股票C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 94.02,
+  "parsed_weight": 41.25,
+  "missing_weight": 52.77,
+  "positions": [
+    {
+      "stock_code": "002558",
+      "stock_name": "巨人网络",
+      "weight": 5.97
+    },
+    {
+      "stock_code": "300058",
+      "stock_name": "蓝色光标",
+      "weight": 5.15
+    },
+    {
+      "stock_code": "603444",
+      "stock_name": "吉比特",
+      "weight": 4.42
+    },
+    {
+      "stock_code": "002555",
+      "stock_name": "三七互娱",
+      "weight": 4.14
+    },
+    {
+      "stock_code": "601595",
+      "stock_name": "上海电影",
+      "weight": 3.96
+    },
+    {
+      "stock_code": "300002",
+      "stock_name": "神州泰岳",
+      "weight": 3.85
+    },
+    {
+      "stock_code": "000681",
+      "stock_name": "视觉中国",
+      "weight": 3.54
+    },
+    {
+      "stock_code": "300624",
+      "stock_name": "万兴科技",
+      "weight": 3.46
+    },
+    {
+      "stock_code": "301171",
+      "stock_name": "易点天下",
+      "weight": 3.38
+    },
+    {
+      "stock_code": "002292",
+      "stock_name": "奥飞娱乐",
+      "weight": 3.38
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:51",
+  "data_source": "eastmoney"
+}

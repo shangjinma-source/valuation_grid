@@ -1,0 +1,65 @@
+{
+  "fund_code": "019828",
+  "fund_name": "鹏华国证石油天然气ETF联接C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 99.64,
+  "parsed_weight": 66.9,
+  "missing_weight": 32.74,
+  "positions": [
+    {
+      "stock_code": "601857",
+      "stock_name": "中国石油",
+      "weight": 15.39
+    },
+    {
+      "stock_code": "600028",
+      "stock_name": "中国石化",
+      "weight": 13.41
+    },
+    {
+      "stock_code": "600938",
+      "stock_name": "中国海油",
+      "weight": 13.09
+    },
+    {
+      "stock_code": "002353",
+      "stock_name": "杰瑞股份",
+      "weight": 7.62
+    },
+    {
+      "stock_code": "600256",
+      "stock_name": "广汇能源",
+      "weight": 3.77
+    },
+    {
+      "stock_code": "601872",
+      "stock_name": "招商轮船",
+      "weight": 3.14
+    },
+    {
+      "stock_code": "600803",
+      "stock_name": "新奥股份",
+      "weight": 2.81
+    },
+    {
+      "stock_code": "605090",
+      "stock_name": "九丰能源",
+      "weight": 2.77
+    },
+    {
+      "stock_code": "600026",
+      "stock_name": "中远海能",
+      "weight": 2.74
+    },
+    {
+      "stock_code": "600635",
+      "stock_name": "大众公用",
+      "weight": 2.16
+    }
+  ],
+  "fetched_at": "2026-02-25 00:03:41",
+  "data_source": "eastmoney",
+  "original_fund_code": "019828",
+  "etf_target": "159697",
+  "is_etf_link": true
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "163208",
+  "fund_name": "诺安油气能源",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 17.45,
+  "parsed_weight": 15.99,
+  "missing_weight": 1.46,
+  "positions": [
+    {
+      "stock_code": "00916",
+      "stock_name": "龙源电力",
+      "weight": 3.21
+    },
+    {
+      "stock_code": "00836",
+      "stock_name": "华润电力",
+      "weight": 2.46
+    },
+    {
+      "stock_code": "00135",
+      "stock_name": "昆仑能源",
+      "weight": 1.97
+    },
+    {
+      "stock_code": "01798",
+      "stock_name": "大唐新能源",
+      "weight": 1.87
+    },
+    {
+      "stock_code": "06865",
+      "stock_name": "福莱特玻璃",
+      "weight": 1.43
+    },
+    {
+      "stock_code": "00968",
+      "stock_name": "信义光能",
+      "weight": 1.16
+    },
+    {
+      "stock_code": "01811",
+      "stock_name": "中广核新能源",
+      "weight": 1.14
+    },
+    {
+      "stock_code": "01171",
+      "stock_name": "兖矿能源",
+      "weight": 1.13
+    },
+    {
+      "stock_code": "00857",
+      "stock_name": "中国石油股份",
+      "weight": 0.9
+    },
+    {
+      "stock_code": "00386",
+      "stock_name": "中国石油化工股份",
+      "weight": 0.72
+    }
+  ],
+  "fetched_at": "2026-02-25 00:41:05",
+  "data_source": "eastmoney"
+}

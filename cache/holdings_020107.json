@@ -1,0 +1,62 @@
+{
+  "fund_code": "020107",
+  "fund_name": "兴业安保优选混合C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 89.02,
+  "parsed_weight": 58.13,
+  "missing_weight": 30.89,
+  "positions": [
+    {
+      "stock_code": "600893",
+      "stock_name": "航发动力",
+      "weight": 7.82
+    },
+    {
+      "stock_code": "600760",
+      "stock_name": "中航沈飞",
+      "weight": 7.52
+    },
+    {
+      "stock_code": "688708",
+      "stock_name": "佳驰科技",
+      "weight": 7.16
+    },
+    {
+      "stock_code": "600879",
+      "stock_name": "航天电子",
+      "weight": 5.54
+    },
+    {
+      "stock_code": "688002",
+      "stock_name": "睿创微纳",
+      "weight": 5.42
+    },
+    {
+      "stock_code": "600562",
+      "stock_name": "国睿科技",
+      "weight": 5.13
+    },
+    {
+      "stock_code": "600316",
+      "stock_name": "洪都航空",
+      "weight": 5.1
+    },
+    {
+      "stock_code": "688543",
+      "stock_name": "国科军工",
+      "weight": 5.0
+    },
+    {
+      "stock_code": "002414",
+      "stock_name": "高德红外",
+      "weight": 4.75
+    },
+    {
+      "stock_code": "300446",
+      "stock_name": "航天智造",
+      "weight": 4.69
+    }
+  ],
+  "fetched_at": "2026-02-21 23:52:00",
+  "data_source": "eastmoney"
+}

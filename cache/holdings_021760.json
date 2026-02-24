@@ -1,0 +1,62 @@
+{
+  "fund_code": "021760",
+  "fund_name": "中欧中证港股通创新药指数发起C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 95.4,
+  "parsed_weight": 68.1,
+  "missing_weight": 27.3,
+  "positions": [
+    {
+      "stock_code": "02269",
+      "stock_name": "药明生物",
+      "weight": 9.9
+    },
+    {
+      "stock_code": "06160",
+      "stock_name": "百济神州",
+      "weight": 9.58
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 9.22
+    },
+    {
+      "stock_code": "09926",
+      "stock_name": "康方生物",
+      "weight": 7.84
+    },
+    {
+      "stock_code": "01177",
+      "stock_name": "中国生物制药",
+      "weight": 6.58
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 6.32
+    },
+    {
+      "stock_code": "03692",
+      "stock_name": "翰森制药",
+      "weight": 6.2
+    },
+    {
+      "stock_code": "02359",
+      "stock_name": "药明康德",
+      "weight": 4.76
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 4.63
+    },
+    {
+      "stock_code": "02228",
+      "stock_name": "晶泰控股",
+      "weight": 3.07
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:39",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,65 @@
+{
+  "fund_code": "005693",
+  "fund_name": "广发中证军工ETF联接C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 99.88,
+  "parsed_weight": 35.86,
+  "missing_weight": 64.02,
+  "positions": [
+    {
+      "stock_code": "600150",
+      "stock_name": "中国船舶",
+      "weight": 8.7
+    },
+    {
+      "stock_code": "002625",
+      "stock_name": "光启技术",
+      "weight": 4.42
+    },
+    {
+      "stock_code": "600879",
+      "stock_name": "航天电子",
+      "weight": 3.38
+    },
+    {
+      "stock_code": "600118",
+      "stock_name": "中国卫星",
+      "weight": 3.37
+    },
+    {
+      "stock_code": "600893",
+      "stock_name": "航发动力",
+      "weight": 3.2
+    },
+    {
+      "stock_code": "600760",
+      "stock_name": "中航沈飞",
+      "weight": 2.86
+    },
+    {
+      "stock_code": "002179",
+      "stock_name": "中航光电",
+      "weight": 2.7
+    },
+    {
+      "stock_code": "000547",
+      "stock_name": "航天发展",
+      "weight": 2.52
+    },
+    {
+      "stock_code": "300395",
+      "stock_name": "菲利华",
+      "weight": 2.51
+    },
+    {
+      "stock_code": "688002",
+      "stock_name": "睿创微纳",
+      "weight": 2.2
+    }
+  ],
+  "fetched_at": "2026-02-21 23:52:00",
+  "data_source": "eastmoney",
+  "original_fund_code": "005693",
+  "etf_target": "512680",
+  "is_etf_link": true
+}

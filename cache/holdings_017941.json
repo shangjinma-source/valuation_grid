@@ -1,0 +1,62 @@
+{
+  "fund_code": "017941",
+  "fund_name": "国投瑞银国家安全混合C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 94.57,
+  "parsed_weight": 67.22,
+  "missing_weight": 27.35,
+  "positions": [
+    {
+      "stock_code": "600760",
+      "stock_name": "中航沈飞",
+      "weight": 9.35
+    },
+    {
+      "stock_code": "600562",
+      "stock_name": "国睿科技",
+      "weight": 9.31
+    },
+    {
+      "stock_code": "300747",
+      "stock_name": "锐科激光",
+      "weight": 9.26
+    },
+    {
+      "stock_code": "000768",
+      "stock_name": "中航西飞",
+      "weight": 7.82
+    },
+    {
+      "stock_code": "688385",
+      "stock_name": "复旦微电",
+      "weight": 7.37
+    },
+    {
+      "stock_code": "300395",
+      "stock_name": "菲利华",
+      "weight": 5.95
+    },
+    {
+      "stock_code": "600685",
+      "stock_name": "中船防务",
+      "weight": 5.52
+    },
+    {
+      "stock_code": "688282",
+      "stock_name": "理工导航",
+      "weight": 4.34
+    },
+    {
+      "stock_code": "000738",
+      "stock_name": "航发控制",
+      "weight": 4.17
+    },
+    {
+      "stock_code": "000519",
+      "stock_name": "中兵红箭",
+      "weight": 4.13
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:54",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,65 @@
+{
+  "fund_code": "021823",
+  "fund_name": "景顺长城国证石油天然气ETF发起式联接基金C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 98.77,
+  "parsed_weight": 66.31,
+  "missing_weight": 32.46,
+  "positions": [
+    {
+      "stock_code": "601857",
+      "stock_name": "中国石油",
+      "weight": 15.27
+    },
+    {
+      "stock_code": "600028",
+      "stock_name": "中国石化",
+      "weight": 13.29
+    },
+    {
+      "stock_code": "600938",
+      "stock_name": "中国海油",
+      "weight": 13.0
+    },
+    {
+      "stock_code": "002353",
+      "stock_name": "杰瑞股份",
+      "weight": 7.54
+    },
+    {
+      "stock_code": "600256",
+      "stock_name": "广汇能源",
+      "weight": 3.74
+    },
+    {
+      "stock_code": "601872",
+      "stock_name": "招商轮船",
+      "weight": 3.11
+    },
+    {
+      "stock_code": "600803",
+      "stock_name": "新奥股份",
+      "weight": 2.78
+    },
+    {
+      "stock_code": "605090",
+      "stock_name": "九丰能源",
+      "weight": 2.73
+    },
+    {
+      "stock_code": "600026",
+      "stock_name": "中远海能",
+      "weight": 2.71
+    },
+    {
+      "stock_code": "600635",
+      "stock_name": "大众公用",
+      "weight": 2.14
+    }
+  ],
+  "fetched_at": "2026-02-25 00:03:33",
+  "data_source": "eastmoney",
+  "original_fund_code": "021823",
+  "etf_target": "159588",
+  "is_etf_link": true
+}

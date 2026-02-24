@@ -1,0 +1,22 @@
+{
+  "fund_code": "019578",
+  "fund_name": "摩根全球天然资源混合(QDII)C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 81.69,
+  "parsed_weight": 6.28,
+  "missing_weight": 75.41,
+  "positions": [
+    {
+      "stock_code": "02899",
+      "stock_name": "紫金矿业",
+      "weight": 3.85
+    },
+    {
+      "stock_code": "03993",
+      "stock_name": "洛阳钼业",
+      "weight": 2.43
+    }
+  ],
+  "fetched_at": "2026-02-25 00:41:02",
+  "data_source": "eastmoney"
+}

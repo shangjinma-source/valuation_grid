@@ -1,0 +1,62 @@
+{
+  "fund_code": "020105",
+  "fund_name": "易方达化工行业ETF联接C",
+  "holdings_asof_date": "2024-09-30",
+  "stock_total_weight": 0.0,
+  "parsed_weight": 1.08,
+  "missing_weight": 0,
+  "positions": [
+    {
+      "stock_code": "600309",
+      "stock_name": "万华化学",
+      "weight": 0.29
+    },
+    {
+      "stock_code": "601857",
+      "stock_name": "中国石油",
+      "weight": 0.17
+    },
+    {
+      "stock_code": "600028",
+      "stock_name": "中国石化",
+      "weight": 0.17
+    },
+    {
+      "stock_code": "600938",
+      "stock_name": "中国海油",
+      "weight": 0.11
+    },
+    {
+      "stock_code": "600426",
+      "stock_name": "华鲁恒升",
+      "weight": 0.07
+    },
+    {
+      "stock_code": "600989",
+      "stock_name": "宝丰能源",
+      "weight": 0.07
+    },
+    {
+      "stock_code": "600346",
+      "stock_name": "恒力石化",
+      "weight": 0.06
+    },
+    {
+      "stock_code": "600096",
+      "stock_name": "云天化",
+      "weight": 0.05
+    },
+    {
+      "stock_code": "600352",
+      "stock_name": "浙江龙盛",
+      "weight": 0.05
+    },
+    {
+      "stock_code": "603260",
+      "stock_name": "合盛硅业",
+      "weight": 0.04
+    }
+  ],
+  "fetched_at": "2026-02-25 00:40:59",
+  "data_source": "eastmoney"
+}

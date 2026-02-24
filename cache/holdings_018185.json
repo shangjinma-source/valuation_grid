@@ -1,0 +1,62 @@
+{
+  "fund_code": "018185",
+  "fund_name": "万家先进制造混合发起式C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 94.7,
+  "parsed_weight": 59.79,
+  "missing_weight": 34.91,
+  "positions": [
+    {
+      "stock_code": "300810",
+      "stock_name": "中科海讯",
+      "weight": 9.53
+    },
+    {
+      "stock_code": "600760",
+      "stock_name": "中航沈飞",
+      "weight": 8.23
+    },
+    {
+      "stock_code": "688750",
+      "stock_name": "金天钛业",
+      "weight": 7.79
+    },
+    {
+      "stock_code": "600482",
+      "stock_name": "中国动力",
+      "weight": 7.34
+    },
+    {
+      "stock_code": "600764",
+      "stock_name": "中国海防",
+      "weight": 6.36
+    },
+    {
+      "stock_code": "601890",
+      "stock_name": "亚星锚链",
+      "weight": 5.02
+    },
+    {
+      "stock_code": "300065",
+      "stock_name": "海兰信",
+      "weight": 4.43
+    },
+    {
+      "stock_code": "300922",
+      "stock_name": "天秦装备",
+      "weight": 3.87
+    },
+    {
+      "stock_code": "688084",
+      "stock_name": "晶品特装",
+      "weight": 3.63
+    },
+    {
+      "stock_code": "688510",
+      "stock_name": "航亚科技",
+      "weight": 3.59
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:56",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "008960",
+  "fund_name": "长信国防军工量化混合C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 93.81,
+  "parsed_weight": 54.08,
+  "missing_weight": 39.73,
+  "positions": [
+    {
+      "stock_code": "688311",
+      "stock_name": "盟升电子",
+      "weight": 6.18
+    },
+    {
+      "stock_code": "688002",
+      "stock_name": "睿创微纳",
+      "weight": 6.14
+    },
+    {
+      "stock_code": "002414",
+      "stock_name": "高德红外",
+      "weight": 5.97
+    },
+    {
+      "stock_code": "603267",
+      "stock_name": "鸿远电子",
+      "weight": 5.76
+    },
+    {
+      "stock_code": "688522",
+      "stock_name": "纳睿雷达",
+      "weight": 5.15
+    },
+    {
+      "stock_code": "002049",
+      "stock_name": "紫光国微",
+      "weight": 5.05
+    },
+    {
+      "stock_code": "688708",
+      "stock_name": "佳驰科技",
+      "weight": 5.02
+    },
+    {
+      "stock_code": "600893",
+      "stock_name": "航发动力",
+      "weight": 5.01
+    },
+    {
+      "stock_code": "600482",
+      "stock_name": "中国动力",
+      "weight": 4.91
+    },
+    {
+      "stock_code": "000733",
+      "stock_name": "振华科技",
+      "weight": 4.89
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:55",
+  "data_source": "eastmoney"
+}

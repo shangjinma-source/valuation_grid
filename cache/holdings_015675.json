@@ -1,0 +1,67 @@
+{
+  "fund_code": "015675",
+  "fund_name": "鹏华中证传媒指数(LOF)C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 94.82,
+  "parsed_weight": 48.84,
+  "missing_weight": 45.98,
+  "positions": [
+    {
+      "stock_code": "002027",
+      "stock_name": "分众传媒",
+      "weight": 8.87
+    },
+    {
+      "stock_code": "002558",
+      "stock_name": "巨人网络",
+      "weight": 6.98
+    },
+    {
+      "stock_code": "300058",
+      "stock_name": "蓝色光标",
+      "weight": 4.92
+    },
+    {
+      "stock_code": "002195",
+      "stock_name": "岩山科技",
+      "weight": 4.79
+    },
+    {
+      "stock_code": "002131",
+      "stock_name": "利欧股份",
+      "weight": 4.55
+    },
+    {
+      "stock_code": "002517",
+      "stock_name": "恺英网络",
+      "weight": 4.45
+    },
+    {
+      "stock_code": "300418",
+      "stock_name": "昆仑万维",
+      "weight": 4.36
+    },
+    {
+      "stock_code": "002555",
+      "stock_name": "三七互娱",
+      "weight": 4.35
+    },
+    {
+      "stock_code": "300251",
+      "stock_name": "光线传媒",
+      "weight": 2.86
+    },
+    {
+      "stock_code": "300002",
+      "stock_name": "神州泰岳",
+      "weight": 2.7
+    },
+    {
+      "stock_code": "301656",
+      "stock_name": "联合动力",
+      "weight": 0.01
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:52",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,65 @@
+{
+  "fund_code": "020111",
+  "fund_name": "富国恒生港股通创新药及医疗保健ETF发起式联接C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 99.76,
+  "parsed_weight": 74.03,
+  "missing_weight": 25.73,
+  "positions": [
+    {
+      "stock_code": "06160",
+      "stock_name": "百济神州",
+      "weight": 14.74
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 11.98
+    },
+    {
+      "stock_code": "02269",
+      "stock_name": "药明生物",
+      "weight": 11.16
+    },
+    {
+      "stock_code": "09926",
+      "stock_name": "康方生物",
+      "weight": 8.04
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 6.56
+    },
+    {
+      "stock_code": "01177",
+      "stock_name": "中国生物制药",
+      "weight": 6.15
+    },
+    {
+      "stock_code": "03692",
+      "stock_name": "翰森制药",
+      "weight": 5.24
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 4.55
+    },
+    {
+      "stock_code": "02228",
+      "stock_name": "晶泰控股",
+      "weight": 3.14
+    },
+    {
+      "stock_code": "06990",
+      "stock_name": "科伦博泰生物-B",
+      "weight": 2.47
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:43",
+  "data_source": "eastmoney",
+  "original_fund_code": "020111",
+  "etf_target": "159506",
+  "is_etf_link": true
+}

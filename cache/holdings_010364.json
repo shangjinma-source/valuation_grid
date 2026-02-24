@@ -1,0 +1,82 @@
+{
+  "fund_code": "010364",
+  "fund_name": "鹏华空天军工指数(LOF)C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 94.68,
+  "parsed_weight": 45.27,
+  "missing_weight": 49.41,
+  "positions": [
+    {
+      "stock_code": "600879",
+      "stock_name": "航天电子",
+      "weight": 6.14
+    },
+    {
+      "stock_code": "600893",
+      "stock_name": "航发动力",
+      "weight": 5.82
+    },
+    {
+      "stock_code": "600760",
+      "stock_name": "中航沈飞",
+      "weight": 5.21
+    },
+    {
+      "stock_code": "002179",
+      "stock_name": "中航光电",
+      "weight": 4.91
+    },
+    {
+      "stock_code": "300395",
+      "stock_name": "菲利华",
+      "weight": 4.57
+    },
+    {
+      "stock_code": "688002",
+      "stock_name": "睿创微纳",
+      "weight": 4.05
+    },
+    {
+      "stock_code": "000768",
+      "stock_name": "中航西飞",
+      "weight": 3.85
+    },
+    {
+      "stock_code": "688122",
+      "stock_name": "西部超导",
+      "weight": 3.7
+    },
+    {
+      "stock_code": "600372",
+      "stock_name": "中航机载",
+      "weight": 3.54
+    },
+    {
+      "stock_code": "002465",
+      "stock_name": "海格通信",
+      "weight": 3.41
+    },
+    {
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
+      "weight": 0.04
+    },
+    {
+      "stock_code": "688783",
+      "stock_name": "西安奕材",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301656",
+      "stock_name": "联合动力",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "688765",
+      "stock_name": "禾元生物",
+      "weight": 0.01
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:58",
+  "data_source": "eastmoney"
+}
