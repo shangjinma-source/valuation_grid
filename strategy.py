@@ -1642,6 +1642,12 @@ def generate_signal(fund_code: str) -> dict:
             trend_ctx=trend_ctx, dynamic_thresholds=dyn
         )
 
+        # === 同日卖出抑制：检测今天是否已执行过卖出操作 ===
+        # 若今天已卖出，抑制新的卖出信号，避免重复建议
+        # （止损信号L2/L3除外——风险优先级高于重复抑制）
+        today_str = datetime.now().strftime("%Y-%m-%d")
+        _sold_today = (pos.get("cooldown_sell_date") == today_str)
+
         best_signal = None
         all_signals = []
         extra_alerts = []
@@ -1797,10 +1803,12 @@ def generate_signal(fund_code: str) -> dict:
                 est_net_profit = round(est_gross * (1 - fee_rate / 100) - batch["amount"] * sell_pct / 100, 2)
 
                 is_low_conf = source == "estimation" and confidence < 0.5
+                # 同日卖出抑制：今天已卖过则降级为 hold，避免重复建议
+                is_suppressed = _sold_today
                 sig = _make_signal(
                     fund_code,
-                    signal_name=sell_eval["signal_name"] + ("(待确认)" if is_low_conf else ""),
-                    action="sell" if not is_low_conf else "hold",
+                    signal_name=sell_eval["signal_name"] + ("(今日已操作)" if is_suppressed else "(待确认)" if is_low_conf else ""),
+                    action="hold" if (is_low_conf or is_suppressed) else "sell",
                     priority=2,
                     sub_priority=max(0, 10 - sell_eval["score"]),
                     target_batch_id=batch["id"],
@@ -1808,13 +1816,14 @@ def generate_signal(fund_code: str) -> dict:
                     sell_pct=sell_pct,
                     reason=(f"持有{hold_days}天, 浮盈{sell_eval['profit_pct']}%, "
                             f"峰值{peak_profit:.1f}%, {sell_eval['reason']}, 卖出{sell_pct}%"
-                            + (f", 置信度{confidence:.0%}偏低" if is_low_conf else "")),
+                            + (f", 置信度{confidence:.0%}偏低" if is_low_conf else "")
+                            + (f" (今日已执行卖出，次日再评估)" if is_suppressed else "")),
                     fee_info={
                         "sell_fee_rate": fee_rate,
                         "estimated_fee": est_fee,
                         "estimated_net_profit": est_net_profit,
                     },
-                    alert=is_low_conf,
+                    alert=is_low_conf or is_suppressed,
                 )
                 all_signals.append(sig)
                 if best_signal is None or _is_higher_priority(sig, best_signal):
@@ -1848,6 +1857,8 @@ def generate_signal(fund_code: str) -> dict:
 
             if profit_pct > min_profit_buffer and has_trend_confirm:
                 is_low_conf = source == "estimation" and confidence < 0.5
+                # 同日卖出抑制
+                is_suppressed = _sold_today
                 # v5.3: 趋势转弱减仓比例按总浮盈深度分级
                 # 薄利快跑，厚利只减仓（回调是正常波动）
                 if total_profit_pct < 2:
@@ -1864,21 +1875,22 @@ def generate_signal(fund_code: str) -> dict:
                 sell_shares_tw = round(batch["shares"] * trend_sell_pct / 100, 2)
                 sig = _make_signal(
                     fund_code,
-                    signal_name="趋势转弱" if not is_low_conf else "趋势转弱(待确认)",
-                    action="sell" if not is_low_conf else "hold",
+                    signal_name="趋势转弱" + ("(今日已操作)" if is_suppressed else "(待确认)" if is_low_conf else ""),
+                    action="hold" if (is_low_conf or is_suppressed) else "sell",
                     priority=3,
                     target_batch_id=batch["id"],
                     sell_shares=sell_shares_tw,
                     sell_pct=trend_sell_pct,
                     reason=f"持有{hold_days}天, 浮盈{profit_pct}%, 总浮盈{total_profit_pct}%, "
                            f"趋势确认转弱, 减仓{trend_sell_pct}%"
-                           + (f"(放量{volume_proxy:.1f}×)" if volume_proxy and volume_proxy > 1.5 else ""),
+                           + (f"(放量{volume_proxy:.1f}×)" if volume_proxy and volume_proxy > 1.5 else "")
+                           + (f" (今日已执行卖出，次日再评估)" if is_suppressed else ""),
                     fee_info={
                         "sell_fee_rate": fee_rate,
                         "estimated_fee": round(sell_shares_tw * current_nav * fee_rate / 100, 2),
                         "estimated_net_profit": round(sell_shares_tw * current_nav * (1 - fee_rate / 100) - batch["amount"] * trend_sell_pct / 100, 2),
                     },
-                    alert=is_low_conf,
+                    alert=is_low_conf or is_suppressed,
                 )
                 all_signals.append(sig)
                 if best_signal is None or _is_higher_priority(sig, best_signal):
@@ -1901,20 +1913,24 @@ def generate_signal(fund_code: str) -> dict:
                         break
                 if sell_pct:
                     sell_shares = round(oldest["shares"] * sell_pct / 100, 2)
+                    # 同日卖出抑制
+                    _tp_suppressed = _sold_today
                     sig = _make_signal(
                         fund_code,
-                        signal_name="扭亏止盈",
-                        action="sell",
+                        signal_name="扭亏止盈" + ("(今日已操作)" if _tp_suppressed else ""),
+                        action="hold" if _tp_suppressed else "sell",
                         priority=2.5,
                         target_batch_id=oldest["id"],
                         sell_shares=sell_shares,
                         sell_pct=sell_pct,
-                        reason=f"总浮盈{total_profit_pct}%, 补仓{len(batches_sorted)}批后扭亏, 最老批次减仓{sell_pct}%",
+                        reason=f"总浮盈{total_profit_pct}%, 补仓{len(batches_sorted)}批后扭亏, 最老批次减仓{sell_pct}%"
+                               + (f" (今日已执行卖出，次日再评估)" if _tp_suppressed else ""),
                         fee_info={
                             "sell_fee_rate": oldest_fee_rate,
                             "estimated_fee": round(sell_shares * current_nav * oldest_fee_rate / 100, 2),
                             "estimated_net_profit": round(sell_shares * current_nav * (1 - oldest_fee_rate / 100) - oldest["amount"] * sell_pct / 100, 2),
                         },
+                        alert=_tp_suppressed,
                     )
                     all_signals.append(sig)
                     if best_signal is None or _is_higher_priority(sig, best_signal):
@@ -1956,10 +1972,12 @@ def generate_signal(fund_code: str) -> dict:
                     if supp_count >= 3:
                         portfolio_sell_pct = min(100, portfolio_sell_pct + 10)
                     sell_shares = round(oldest["shares"] * portfolio_sell_pct / 100, 2)
+                    # 同日卖出抑制（总仓位止损也抑制，今天已减过仓了）
+                    _psl_suppressed = _sold_today
                     sig = _make_signal(
                         fund_code,
-                        signal_name="总仓位止损",
-                        action="sell",
+                        signal_name="总仓位止损" + ("(今日已操作)" if _psl_suppressed else ""),
+                        action="hold" if _psl_suppressed else "sell",
                         priority=1,
                         sub_priority=2,
                         target_batch_id=oldest["id"],
@@ -1967,7 +1985,8 @@ def generate_signal(fund_code: str) -> dict:
                         sell_pct=portfolio_sell_pct,
                         reason=(f"总浮亏{total_profit_pct}% ≤ 总仓位止损线{portfolio_stop}%"
                                 f"(补仓{supp_count}/{dyn_max_supp}), 超线{excess_loss:.1f}%, "
-                                f"最老批次减仓{portfolio_sell_pct}%"),
+                                f"最老批次减仓{portfolio_sell_pct}%"
+                                + (f" (今日已执行卖出，次日再评估)" if _psl_suppressed else "")),
                         fee_info={
                             "sell_fee_rate": oldest_fr,
                             "estimated_fee": round(sell_shares * current_nav * oldest_fr / 100, 2),

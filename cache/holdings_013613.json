@@ -1,0 +1,62 @@
+{
+  "fund_code": "013613",
+  "fund_name": "宝盈国家安全沪港深股票C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 87.77,
+  "parsed_weight": 58.63,
+  "missing_weight": 29.14,
+  "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 7.89
+    },
+    {
+      "stock_code": "600118",
+      "stock_name": "中国卫星",
+      "weight": 7.65
+    },
+    {
+      "stock_code": "688270",
+      "stock_name": "臻镭科技",
+      "weight": 6.89
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 5.9
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 5.58
+    },
+    {
+      "stock_code": "688668",
+      "stock_name": "鼎通科技",
+      "weight": 5.18
+    },
+    {
+      "stock_code": "300136",
+      "stock_name": "信维通信",
+      "weight": 5.13
+    },
+    {
+      "stock_code": "300762",
+      "stock_name": "上海瀚讯",
+      "weight": 5.1
+    },
+    {
+      "stock_code": "605598",
+      "stock_name": "上海港湾",
+      "weight": 4.76
+    },
+    {
+      "stock_code": "01347",
+      "stock_name": "华虹半导体",
+      "weight": 4.55
+    }
+  ],
+  "fetched_at": "2026-02-21 23:52:03",
+  "data_source": "eastmoney"
+}

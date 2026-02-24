@@ -1,0 +1,65 @@
+{
+  "fund_code": "020406",
+  "fund_name": "国泰中证油气产业ETF发起联接C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 99.6,
+  "parsed_weight": 59.44,
+  "missing_weight": 40.16,
+  "positions": [
+    {
+      "stock_code": "600938",
+      "stock_name": "中国海油",
+      "weight": 10.11
+    },
+    {
+      "stock_code": "601857",
+      "stock_name": "中国石油",
+      "weight": 10.11
+    },
+    {
+      "stock_code": "600028",
+      "stock_name": "中国石化",
+      "weight": 9.93
+    },
+    {
+      "stock_code": "002353",
+      "stock_name": "杰瑞股份",
+      "weight": 8.23
+    },
+    {
+      "stock_code": "601872",
+      "stock_name": "招商轮船",
+      "weight": 5.43
+    },
+    {
+      "stock_code": "600256",
+      "stock_name": "广汇能源",
+      "weight": 4.12
+    },
+    {
+      "stock_code": "600026",
+      "stock_name": "中远海能",
+      "weight": 3.65
+    },
+    {
+      "stock_code": "600346",
+      "stock_name": "恒力石化",
+      "weight": 2.91
+    },
+    {
+      "stock_code": "002493",
+      "stock_name": "荣盛石化",
+      "weight": 2.53
+    },
+    {
+      "stock_code": "600759",
+      "stock_name": "洲际油气",
+      "weight": 2.42
+    }
+  ],
+  "fetched_at": "2026-02-25 00:03:59",
+  "data_source": "eastmoney",
+  "original_fund_code": "020406",
+  "etf_target": "561360",
+  "is_etf_link": true
+}

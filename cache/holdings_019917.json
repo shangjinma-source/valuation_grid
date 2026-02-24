@@ -1,0 +1,67 @@
+{
+  "fund_code": "019917",
+  "fund_name": "富国医药创新股票C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 92.13,
+  "parsed_weight": 71.77,
+  "missing_weight": 20.36,
+  "positions": [
+    {
+      "stock_code": "002653",
+      "stock_name": "海思科",
+      "weight": 9.16
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 9.01
+    },
+    {
+      "stock_code": "688266",
+      "stock_name": "泽璟制药",
+      "weight": 9.01
+    },
+    {
+      "stock_code": "06160",
+      "stock_name": "百济神州",
+      "weight": 8.99
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 8.42
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 5.84
+    },
+    {
+      "stock_code": "688506",
+      "stock_name": "百利天恒",
+      "weight": 5.78
+    },
+    {
+      "stock_code": "688068",
+      "stock_name": "热景生物",
+      "weight": 5.75
+    },
+    {
+      "stock_code": "03933",
+      "stock_name": "联邦制药",
+      "weight": 5.11
+    },
+    {
+      "stock_code": "688658",
+      "stock_name": "悦康药业",
+      "weight": 4.6
+    },
+    {
+      "stock_code": "688235",
+      "stock_name": "百济神州",
+      "weight": 0.1
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:39",
+  "data_source": "eastmoney"
+}

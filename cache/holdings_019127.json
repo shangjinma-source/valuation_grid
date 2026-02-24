@@ -1,0 +1,72 @@
+{
+  "fund_code": "019127",
+  "fund_name": "华泰柏瑞港股通医疗精选混合发起式C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 88.57,
+  "parsed_weight": 76.2,
+  "missing_weight": 12.37,
+  "positions": [
+    {
+      "stock_code": "01276",
+      "stock_name": "恒瑞医药",
+      "weight": 9.68
+    },
+    {
+      "stock_code": "09606",
+      "stock_name": "映恩生物-B",
+      "weight": 9.44
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 9.21
+    },
+    {
+      "stock_code": "03692",
+      "stock_name": "翰森制药",
+      "weight": 8.95
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 8.84
+    },
+    {
+      "stock_code": "06160",
+      "stock_name": "百济神州",
+      "weight": 8.76
+    },
+    {
+      "stock_code": "06990",
+      "stock_name": "科伦博泰生物-B",
+      "weight": 8.53
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 4.54
+    },
+    {
+      "stock_code": "02096",
+      "stock_name": "先声药业",
+      "weight": 2.87
+    },
+    {
+      "stock_code": "09926",
+      "stock_name": "康方生物",
+      "weight": 2.59
+    },
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 1.54
+    },
+    {
+      "stock_code": "688235",
+      "stock_name": "百济神州",
+      "weight": 1.25
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:47",
+  "data_source": "eastmoney"
+}

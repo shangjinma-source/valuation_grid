@@ -1,0 +1,62 @@
+{
+  "fund_code": "015916",
+  "fund_name": "永赢医药创新智选混合发起C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 87.37,
+  "parsed_weight": 78.39,
+  "missing_weight": 8.98,
+  "positions": [
+    {
+      "stock_code": "09926",
+      "stock_name": "康方生物",
+      "weight": 9.68
+    },
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 9.21
+    },
+    {
+      "stock_code": "688235",
+      "stock_name": "百济神州",
+      "weight": 9.06
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 8.61
+    },
+    {
+      "stock_code": "002755",
+      "stock_name": "奥赛康",
+      "weight": 8.55
+    },
+    {
+      "stock_code": "06990",
+      "stock_name": "科伦博泰生物-B",
+      "weight": 8.22
+    },
+    {
+      "stock_code": "688506",
+      "stock_name": "百利天恒",
+      "weight": 7.74
+    },
+    {
+      "stock_code": "688331",
+      "stock_name": "荣昌生物",
+      "weight": 6.13
+    },
+    {
+      "stock_code": "688192",
+      "stock_name": "迪哲医药",
+      "weight": 5.89
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 5.3
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:39",
+  "data_source": "eastmoney"
+}

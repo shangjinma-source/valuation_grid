@@ -1,0 +1,62 @@
+{
+  "fund_code": "012842",
+  "fund_name": "易方达中证军工(LOF)C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 94.89,
+  "parsed_weight": 34.0,
+  "missing_weight": 60.89,
+  "positions": [
+    {
+      "stock_code": "600150",
+      "stock_name": "中国船舶",
+      "weight": 8.24
+    },
+    {
+      "stock_code": "002625",
+      "stock_name": "光启技术",
+      "weight": 4.18
+    },
+    {
+      "stock_code": "600879",
+      "stock_name": "航天电子",
+      "weight": 3.2
+    },
+    {
+      "stock_code": "600118",
+      "stock_name": "中国卫星",
+      "weight": 3.19
+    },
+    {
+      "stock_code": "600893",
+      "stock_name": "航发动力",
+      "weight": 3.03
+    },
+    {
+      "stock_code": "600760",
+      "stock_name": "中航沈飞",
+      "weight": 2.71
+    },
+    {
+      "stock_code": "002179",
+      "stock_name": "中航光电",
+      "weight": 2.56
+    },
+    {
+      "stock_code": "000547",
+      "stock_name": "航天发展",
+      "weight": 2.4
+    },
+    {
+      "stock_code": "300395",
+      "stock_name": "菲利华",
+      "weight": 2.38
+    },
+    {
+      "stock_code": "688002",
+      "stock_name": "睿创微纳",
+      "weight": 2.11
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:57",
+  "data_source": "eastmoney"
+}

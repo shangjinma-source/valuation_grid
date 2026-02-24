@@ -1,0 +1,65 @@
+{
+  "fund_code": "012729",
+  "fund_name": "国泰中证动漫游戏ETF联接C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 99.65,
+  "parsed_weight": 75.41,
+  "missing_weight": 24.24,
+  "positions": [
+    {
+      "stock_code": "002558",
+      "stock_name": "巨人网络",
+      "weight": 15.48
+    },
+    {
+      "stock_code": "002517",
+      "stock_name": "恺英网络",
+      "weight": 11.41
+    },
+    {
+      "stock_code": "002555",
+      "stock_name": "三七互娱",
+      "weight": 11.15
+    },
+    {
+      "stock_code": "300251",
+      "stock_name": "光线传媒",
+      "weight": 7.33
+    },
+    {
+      "stock_code": "300002",
+      "stock_name": "神州泰岳",
+      "weight": 6.92
+    },
+    {
+      "stock_code": "002624",
+      "stock_name": "完美世界",
+      "weight": 6.8
+    },
+    {
+      "stock_code": "603444",
+      "stock_name": "吉比特",
+      "weight": 5.58
+    },
+    {
+      "stock_code": "300315",
+      "stock_name": "掌趣科技",
+      "weight": 4.08
+    },
+    {
+      "stock_code": "002174",
+      "stock_name": "游族网络",
+      "weight": 3.67
+    },
+    {
+      "stock_code": "600633",
+      "stock_name": "浙数文化",
+      "weight": 2.99
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:52",
+  "data_source": "eastmoney",
+  "original_fund_code": "012729",
+  "etf_target": "516010",
+  "is_etf_link": true
+}

@@ -1,0 +1,82 @@
+{
+  "fund_code": "010655",
+  "fund_name": "天弘医药创新C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 89.21,
+  "parsed_weight": 72.31,
+  "missing_weight": 16.9,
+  "positions": [
+    {
+      "stock_code": "06990",
+      "stock_name": "科伦博泰生物-B",
+      "weight": 8.64
+    },
+    {
+      "stock_code": "02269",
+      "stock_name": "药明生物",
+      "weight": 8.08
+    },
+    {
+      "stock_code": "02268",
+      "stock_name": "药明合联",
+      "weight": 8.02
+    },
+    {
+      "stock_code": "603259",
+      "stock_name": "药明康德",
+      "weight": 7.56
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 7.12
+    },
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 5.25
+    },
+    {
+      "stock_code": "002821",
+      "stock_name": "凯莱英",
+      "weight": 5.21
+    },
+    {
+      "stock_code": "300759",
+      "stock_name": "康龙化成",
+      "weight": 4.95
+    },
+    {
+      "stock_code": "300347",
+      "stock_name": "泰格医药",
+      "weight": 4.94
+    },
+    {
+      "stock_code": "688235",
+      "stock_name": "百济神州",
+      "weight": 4.0
+    },
+    {
+      "stock_code": "06160",
+      "stock_name": "百济神州",
+      "weight": 3.39
+    },
+    {
+      "stock_code": "03347",
+      "stock_name": "泰格医药",
+      "weight": 1.94
+    },
+    {
+      "stock_code": "06821",
+      "stock_name": "凯莱英",
+      "weight": 1.77
+    },
+    {
+      "stock_code": "03759",
+      "stock_name": "康龙化成",
+      "weight": 1.44
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:45",
+  "data_source": "eastmoney"
+}

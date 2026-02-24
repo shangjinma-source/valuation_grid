@@ -1,0 +1,62 @@
+{
+  "fund_code": "021620",
+  "fund_name": "天弘中证油气产业指数发起C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 94.16,
+  "parsed_weight": 57.42,
+  "missing_weight": 36.74,
+  "positions": [
+    {
+      "stock_code": "600938",
+      "stock_name": "中国海油",
+      "weight": 9.92
+    },
+    {
+      "stock_code": "601857",
+      "stock_name": "中国石油",
+      "weight": 9.74
+    },
+    {
+      "stock_code": "600028",
+      "stock_name": "中国石化",
+      "weight": 9.53
+    },
+    {
+      "stock_code": "002353",
+      "stock_name": "杰瑞股份",
+      "weight": 8.06
+    },
+    {
+      "stock_code": "601872",
+      "stock_name": "招商轮船",
+      "weight": 5.22
+    },
+    {
+      "stock_code": "600256",
+      "stock_name": "广汇能源",
+      "weight": 3.98
+    },
+    {
+      "stock_code": "600026",
+      "stock_name": "中远海能",
+      "weight": 3.54
+    },
+    {
+      "stock_code": "600346",
+      "stock_name": "恒力石化",
+      "weight": 2.85
+    },
+    {
+      "stock_code": "002493",
+      "stock_name": "荣盛石化",
+      "weight": 2.37
+    },
+    {
+      "stock_code": "600759",
+      "stock_name": "洲际油气",
+      "weight": 2.21
+    }
+  ],
+  "fetched_at": "2026-02-24 23:30:03",
+  "data_source": "eastmoney"
+}

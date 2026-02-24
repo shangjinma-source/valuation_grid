@@ -1,0 +1,87 @@
+{
+  "fund_code": "015046",
+  "fund_name": "前海开源中航军工指数C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 94.91,
+  "parsed_weight": 57.65,
+  "missing_weight": 37.26,
+  "positions": [
+    {
+      "stock_code": "600760",
+      "stock_name": "中航沈飞",
+      "weight": 9.54
+    },
+    {
+      "stock_code": "600879",
+      "stock_name": "航天电子",
+      "weight": 8.19
+    },
+    {
+      "stock_code": "600150",
+      "stock_name": "中国船舶",
+      "weight": 7.12
+    },
+    {
+      "stock_code": "002179",
+      "stock_name": "中航光电",
+      "weight": 6.18
+    },
+    {
+      "stock_code": "600893",
+      "stock_name": "航发动力",
+      "weight": 6.01
+    },
+    {
+      "stock_code": "000768",
+      "stock_name": "中航西飞",
+      "weight": 5.0
+    },
+    {
+      "stock_code": "600372",
+      "stock_name": "中航机载",
+      "weight": 4.68
+    },
+    {
+      "stock_code": "300699",
+      "stock_name": "光威复材",
+      "weight": 3.86
+    },
+    {
+      "stock_code": "688568",
+      "stock_name": "中科星图",
+      "weight": 3.5
+    },
+    {
+      "stock_code": "600765",
+      "stock_name": "中航重机",
+      "weight": 3.48
+    },
+    {
+      "stock_code": "688783",
+      "stock_name": "西安奕材",
+      "weight": 0.03
+    },
+    {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "301656",
+      "stock_name": "联合动力",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "688729",
+      "stock_name": "屹唐股份",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "688790",
+      "stock_name": "昂瑞微",
+      "weight": 0.01
+    }
+  ],
+  "fetched_at": "2026-02-21 23:52:01",
+  "data_source": "eastmoney"
+}

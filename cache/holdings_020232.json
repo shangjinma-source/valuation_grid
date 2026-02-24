@@ -1,0 +1,67 @@
+{
+  "fund_code": "020232",
+  "fund_name": "嘉实互融精选股票C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 89.39,
+  "parsed_weight": 66.03,
+  "missing_weight": 23.36,
+  "positions": [
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 8.8
+    },
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 7.52
+    },
+    {
+      "stock_code": "06990",
+      "stock_name": "科伦博泰生物-B",
+      "weight": 6.77
+    },
+    {
+      "stock_code": "688266",
+      "stock_name": "泽璟制药",
+      "weight": 6.58
+    },
+    {
+      "stock_code": "688192",
+      "stock_name": "迪哲医药",
+      "weight": 6.52
+    },
+    {
+      "stock_code": "688235",
+      "stock_name": "百济神州",
+      "weight": 6.03
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 5.64
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 5.19
+    },
+    {
+      "stock_code": "688382",
+      "stock_name": "益方生物",
+      "weight": 4.98
+    },
+    {
+      "stock_code": "300765",
+      "stock_name": "新诺威",
+      "weight": 4.85
+    },
+    {
+      "stock_code": "06160",
+      "stock_name": "百济神州",
+      "weight": 3.15
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:41",
+  "data_source": "eastmoney"
+}

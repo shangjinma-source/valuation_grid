@@ -651,8 +651,6 @@
     <div class="container">
 
         <div class="toolbar">
-            <button class="btn-primary" onclick="refreshAll()" id="refreshBtn">🔄 刷新</button>
-            <button class="btn-success" onclick="showAddSectorModal()">➕ 新建板块</button>
             <div class="refresh-status">
                 <span class="dot"></span>
                 <span id="refreshTimer">自动刷新中</span>
@@ -669,6 +667,11 @@
 
         <!-- 估值看板 -->
         <div class="tab-panel active" id="tab-valuation">
+            <div style="display:flex;gap:8px;margin-bottom:10px;">
+                <button class="btn-primary" onclick="refreshAll()" id="refreshBtn">🔄 刷新</button>
+                <button class="btn-success" onclick="showAddSectorModal()">➕ 新建板块</button>
+                <button class="btn-warning" onclick="exportAllSectorImages()">📷 批量导出</button>
+            </div>
             <div id="sectors"></div>
         </div>
 
@@ -1297,7 +1300,18 @@
             }
 
             // ✓ 标记作为小号内联元素，和数字在同一行
-            const navMark = isNav ? '<span style="font-size:10px;margin-left:2px;color:#10b981;font-weight:400;">✓</span>' : '';
+            // _nav_date 存在且非今天时，显示净值日期（如"2/13净值"）
+            let navMark = '';
+            if (isNav) {
+                const navDate = val?._nav_date;
+                const todayStr = new Date().toISOString().slice(0, 10);
+                if (navDate && navDate !== todayStr) {
+                    const md = navDate.slice(5).replace(/^0/, '').replace(/-0?/, '/');
+                    navMark = `<span style="font-size:9px;margin-left:2px;color:#f59e0b;font-weight:400;" title="${navDate}净值">${md}</span>`;
+                } else {
+                    navMark = '<span style="font-size:10px;margin-left:2px;color:#10b981;font-weight:400;">✓</span>';
+                }
+            }
 
             const etfBtn = needsEtfLink ?
                 `<button onclick="showEtfLinkModal('${fund.code}')" title="设置ETF穿透" style="color:#f59e0b;">⚙</button>` : '';
@@ -2652,6 +2666,17 @@
                 ctx.font = 'bold 12px -apple-system, BlinkMacSystemFont, sans-serif';
                 ctx.fillText(chgTxt, colChangeR - ctx.measureText(chgTxt).width, textY);
 
+                // 净值日期标注（非今天的历史净值时显示日期）
+                if (val?._source === 'nav' && val?._nav_date) {
+                    const todayCheck = new Date().toISOString().slice(0, 10);
+                    if (val._nav_date !== todayCheck) {
+                        const md = val._nav_date.slice(5).replace(/^0/, '').replace(/-0?/, '/');
+                        ctx.fillStyle = '#f59e0b';
+                        ctx.font = '9px -apple-system, BlinkMacSystemFont, sans-serif';
+                        ctx.fillText(md, colChangeR + 2, textY);
+                    }
+                }
+
                 // 近5日（右对齐）
                 let wTxt = '--', wClr = '#64748b';
                 if (val?.week_change != null) {
@@ -2669,6 +2694,29 @@
             link.href = canvas.toDataURL('image/png');
             link.click();
             showStatus('图片已导出', 'success');
+        }
+
+        async function exportAllSectorImages() {
+            if (!state.sectors || state.sectors.length === 0) {
+                showStatus('没有板块可导出', 'error');
+                return;
+            }
+            let exported = 0;
+            for (let i = 0; i < state.sectors.length; i++) {
+                const sector = state.sectors[i];
+                if (sector.funds.length === 0) continue;
+                // 复用单板块导出，加延迟避免浏览器吞下载
+                await exportSectorImage(i);
+                exported++;
+                if (i < state.sectors.length - 1) {
+                    await new Promise(r => setTimeout(r, 500));
+                }
+            }
+            if (exported > 0) {
+                showStatus(`已导出 ${exported} 个板块图片`, 'success');
+            } else {
+                showStatus('没有可导出的板块', 'error');
+            }
         }
 
         // ============ 初始化 ============

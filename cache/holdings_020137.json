@@ -1,0 +1,67 @@
+{
+  "fund_code": "020137",
+  "fund_name": "平安医疗健康混合C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 94.07,
+  "parsed_weight": 83.72,
+  "missing_weight": 10.35,
+  "positions": [
+    {
+      "stock_code": "09926",
+      "stock_name": "康方生物",
+      "weight": 9.47
+    },
+    {
+      "stock_code": "688235",
+      "stock_name": "百济神州",
+      "weight": 9.36
+    },
+    {
+      "stock_code": "06990",
+      "stock_name": "科伦博泰生物-B",
+      "weight": 9.09
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 9.08
+    },
+    {
+      "stock_code": "300049",
+      "stock_name": "福瑞医科",
+      "weight": 8.98
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 8.9
+    },
+    {
+      "stock_code": "688506",
+      "stock_name": "百利天恒",
+      "weight": 8.84
+    },
+    {
+      "stock_code": "002294",
+      "stock_name": "信立泰",
+      "weight": 6.24
+    },
+    {
+      "stock_code": "02268",
+      "stock_name": "药明合联",
+      "weight": 5.98
+    },
+    {
+      "stock_code": "688796",
+      "stock_name": "百奥赛图",
+      "weight": 4.87
+    },
+    {
+      "stock_code": "02315",
+      "stock_name": "百奥赛图-B",
+      "weight": 2.91
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:36",
+  "data_source": "eastmoney"
+}

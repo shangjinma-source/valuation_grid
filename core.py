@@ -91,6 +91,48 @@ def _calc_staleness_score(holdings_date_str: Optional[str]) -> float:
     except:
         return 0.0
 
+def _try_nav_fallback(result: dict, fund_code: str) -> dict:
+    """当盘中估值无法计算时（QDII/LOF/无持仓），尝试用最新真实净值填充。
+    返回填充后的 result（原地修改）。"""
+    from providers import get_fund_nav_history, get_fund_name
+    history = get_fund_nav_history(fund_code, 5)
+    if not history:
+        return result
+
+    today_str = datetime.now().strftime("%Y-%m-%d")
+
+    # 优先用今天的净值，其次用最新一条
+    entry = next(
+        (h for h in history if h["date"] == today_str and h.get("change") is not None),
+        None
+    )
+    if entry is None:
+        entry = next((h for h in history if h.get("change") is not None), None)
+    if entry is None:
+        return result
+
+    result["estimation_change"] = round(entry["change"], 4)
+    result["_source"] = "nav"
+    # 标记净值日期，前端据此显示"X月X日净值"
+    result["_nav_date"] = entry["date"]
+    if entry["date"] == today_str:
+        result["notes"].append(f"使用当日真实净值涨跌")
+    else:
+        result["notes"].append(f"使用 {entry['date']} 真实净值涨跌")
+
+    # 补充基金名称（如果还没有的话）
+    if not result.get("fund_name"):
+        result["fund_name"] = get_fund_name(fund_code)
+
+    # recent_changes 供前端柱状图
+    result["recent_changes"] = [
+        {"date": h["date"], "change": h["change"]}
+        for h in history if h.get("change") is not None
+    ][:5]
+
+    return result
+
+
 def calculate_valuation(fund_code: str) -> dict:
     """计算单基金盘中估值涨跌幅"""
     result = {
@@ -118,11 +160,11 @@ def calculate_valuation(fund_code: str) -> dict:
 
     if holdings.get("error"):
         result["notes"].append(f"持仓获取失败: {holdings['error']}")
-        return result
+        return _try_nav_fallback(result, fund_code)
 
     if not holdings.get("positions"):
         result["notes"].append("无持仓数据")
-        return result
+        return _try_nav_fallback(result, fund_code)
 
     result["fund_name"] = holdings.get("fund_name")
     result["holdings_asof_date"] = holdings.get("holdings_asof_date")
@@ -144,7 +186,7 @@ def calculate_valuation(fund_code: str) -> dict:
     if not quotes:
         result["notes"].append("无法获取任何行情数据")
         result["coverage"]["missing_tickers"] = missing
-        return result
+        return _try_nav_fallback(result, fund_code)
 
     # 3. 计算估值涨跌幅
     estimation_change = 0.0
@@ -216,12 +258,27 @@ def calculate_valuation(fund_code: str) -> dict:
     #    盘中估值只在交易时段可靠，收盘后新浪行情数据不再反映当日真实涨跌
     #    （尤其含港股持仓时，A股/港股收盘时间不同导致偏差更大）
     #    替换条件：当天已收盘（15:05后、或非交易日）且有真实净值数据
-    if _is_market_closed() and result["recent_changes"]:
-        latest = result["recent_changes"][0]
-        if latest["change"] is not None:
-            result["estimation_change"] = round(latest["change"], 4)
-            result["_source"] = "nav"  # 标记数据来源：净值
-            result["notes"].append(f"使用真实净值涨跌 {latest['date']}")
+    if _is_market_closed():
+        # 优先查找今天的真实净值（收盘后基金公司已公布当日净值）
+        today_nav_entry = next(
+            (h for h in history if h["date"] == today_str and h.get("change") is not None),
+            None
+        )
+        if today_nav_entry is not None:
+            result["estimation_change"] = round(today_nav_entry["change"], 4)
+            result["_source"] = "nav"
+            result["_nav_date"] = today_str
+            result["notes"].append(f"使用真实净值涨跌 {today_str}")
+        elif result["recent_changes"]:
+            # 今天的净值尚未公布，退回到最近一个交易日的真实净值
+            latest = result["recent_changes"][0]
+            if latest["change"] is not None:
+                result["estimation_change"] = round(latest["change"], 4)
+                result["_source"] = "nav"
+                result["_nav_date"] = latest["date"]
+                result["notes"].append(f"使用真实净值涨跌 {latest['date']}")
+            else:
+                result["_source"] = "estimation"
         else:
             result["_source"] = "estimation"
     else:

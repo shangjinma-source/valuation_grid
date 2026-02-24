@@ -1,0 +1,67 @@
+{
+  "fund_code": "020398",
+  "fund_name": "中银港股通医药混合发起C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 86.28,
+  "parsed_weight": 71.66,
+  "missing_weight": 14.62,
+  "positions": [
+    {
+      "stock_code": "09926",
+      "stock_name": "康方生物",
+      "weight": 8.32
+    },
+    {
+      "stock_code": "09606",
+      "stock_name": "映恩生物-B",
+      "weight": 8.0
+    },
+    {
+      "stock_code": "06990",
+      "stock_name": "科伦博泰生物-B",
+      "weight": 8.0
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 8.0
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 7.85
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 6.83
+    },
+    {
+      "stock_code": "01276",
+      "stock_name": "恒瑞医药",
+      "weight": 6.27
+    },
+    {
+      "stock_code": "06160",
+      "stock_name": "百济神州",
+      "weight": 6.11
+    },
+    {
+      "stock_code": "03692",
+      "stock_name": "翰森制药",
+      "weight": 6.03
+    },
+    {
+      "stock_code": "09995",
+      "stock_name": "荣昌生物",
+      "weight": 4.3
+    },
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 1.95
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:42",
+  "data_source": "eastmoney"
+}

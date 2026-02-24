@@ -1,0 +1,80 @@
+{
+  "fund_code": "018028",
+  "fund_name": "嘉实中证高端装备细分50ETF发起联接C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 99.68,
+  "parsed_weight": 44.57,
+  "missing_weight": 55.11,
+  "positions": [
+    {
+      "stock_code": "600879",
+      "stock_name": "航天电子",
+      "weight": 5.64
+    },
+    {
+      "stock_code": "600118",
+      "stock_name": "中国卫星",
+      "weight": 5.62
+    },
+    {
+      "stock_code": "600893",
+      "stock_name": "航发动力",
+      "weight": 5.35
+    },
+    {
+      "stock_code": "600760",
+      "stock_name": "中航沈飞",
+      "weight": 4.78
+    },
+    {
+      "stock_code": "002179",
+      "stock_name": "中航光电",
+      "weight": 4.5
+    },
+    {
+      "stock_code": "000547",
+      "stock_name": "航天发展",
+      "weight": 4.22
+    },
+    {
+      "stock_code": "300395",
+      "stock_name": "菲利华",
+      "weight": 4.19
+    },
+    {
+      "stock_code": "000768",
+      "stock_name": "中航西飞",
+      "weight": 3.53
+    },
+    {
+      "stock_code": "688122",
+      "stock_name": "西部超导",
+      "weight": 3.4
+    },
+    {
+      "stock_code": "600372",
+      "stock_name": "中航机载",
+      "weight": 3.25
+    },
+    {
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
+      "weight": 0.07
+    },
+    {
+      "stock_code": "688790",
+      "stock_name": "昂瑞微",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "001280",
+      "stock_name": "中国铀业",
+      "weight": 0.01
+    }
+  ],
+  "fetched_at": "2026-02-21 23:52:02",
+  "data_source": "eastmoney",
+  "original_fund_code": "018028",
+  "etf_target": "159638",
+  "is_etf_link": true
+}

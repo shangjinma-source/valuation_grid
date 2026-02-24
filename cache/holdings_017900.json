@@ -1,0 +1,62 @@
+{
+  "fund_code": "017900",
+  "fund_name": "鹏华医药科技股票C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 80.2,
+  "parsed_weight": 41.34,
+  "missing_weight": 38.86,
+  "positions": [
+    {
+      "stock_code": "688192",
+      "stock_name": "迪哲医药",
+      "weight": 7.64
+    },
+    {
+      "stock_code": "688235",
+      "stock_name": "百济神州",
+      "weight": 5.12
+    },
+    {
+      "stock_code": "688197",
+      "stock_name": "首药控股",
+      "weight": 4.95
+    },
+    {
+      "stock_code": "688302",
+      "stock_name": "海创药业",
+      "weight": 4.72
+    },
+    {
+      "stock_code": "600196",
+      "stock_name": "复星医药",
+      "weight": 3.85
+    },
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 3.77
+    },
+    {
+      "stock_code": "300357",
+      "stock_name": "我武生物",
+      "weight": 3.3
+    },
+    {
+      "stock_code": "688301",
+      "stock_name": "奕瑞科技",
+      "weight": 2.88
+    },
+    {
+      "stock_code": "688271",
+      "stock_name": "联影医疗",
+      "weight": 2.75
+    },
+    {
+      "stock_code": "300003",
+      "stock_name": "乐普医疗",
+      "weight": 2.36
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:50",
+  "data_source": "eastmoney"
+}

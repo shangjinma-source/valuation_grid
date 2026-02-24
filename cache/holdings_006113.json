@@ -1,0 +1,62 @@
+{
+  "fund_code": "006113",
+  "fund_name": "汇添富创新医药混合A",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 90.51,
+  "parsed_weight": 67.94,
+  "missing_weight": 22.57,
+  "positions": [
+    {
+      "stock_code": "06990",
+      "stock_name": "科伦博泰生物-B",
+      "weight": 9.67
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 9.27
+    },
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 9.2
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 8.66
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 8.48
+    },
+    {
+      "stock_code": "002653",
+      "stock_name": "海思科",
+      "weight": 6.09
+    },
+    {
+      "stock_code": "688266",
+      "stock_name": "泽璟制药",
+      "weight": 5.31
+    },
+    {
+      "stock_code": "688506",
+      "stock_name": "百利天恒",
+      "weight": 4.5
+    },
+    {
+      "stock_code": "688068",
+      "stock_name": "热景生物",
+      "weight": 3.47
+    },
+    {
+      "stock_code": "300765",
+      "stock_name": "新诺威",
+      "weight": 3.29
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:36",
+  "data_source": "eastmoney"
+}

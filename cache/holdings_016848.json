@@ -1,0 +1,62 @@
+{
+  "fund_code": "016848",
+  "fund_name": "中欧高端装备股票发起C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 91.13,
+  "parsed_weight": 58.54,
+  "missing_weight": 32.59,
+  "positions": [
+    {
+      "stock_code": "600760",
+      "stock_name": "中航沈飞",
+      "weight": 8.89
+    },
+    {
+      "stock_code": "600316",
+      "stock_name": "洪都航空",
+      "weight": 7.37
+    },
+    {
+      "stock_code": "000768",
+      "stock_name": "中航西飞",
+      "weight": 6.69
+    },
+    {
+      "stock_code": "600893",
+      "stock_name": "航发动力",
+      "weight": 6.33
+    },
+    {
+      "stock_code": "688239",
+      "stock_name": "航宇科技",
+      "weight": 5.35
+    },
+    {
+      "stock_code": "002683",
+      "stock_name": "广东宏大",
+      "weight": 5.04
+    },
+    {
+      "stock_code": "688282",
+      "stock_name": "理工导航",
+      "weight": 5.02
+    },
+    {
+      "stock_code": "688143",
+      "stock_name": "长盈通",
+      "weight": 4.93
+    },
+    {
+      "stock_code": "688543",
+      "stock_name": "国科军工",
+      "weight": 4.91
+    },
+    {
+      "stock_code": "600391",
+      "stock_name": "航发科技",
+      "weight": 4.01
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:55",
+  "data_source": "eastmoney"
+}

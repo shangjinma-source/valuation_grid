@@ -1,0 +1,65 @@
+{
+  "fund_code": "016971",
+  "fund_name": "华夏恒生生物科技ETF发起式联接(QDII)C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 96.59,
+  "parsed_weight": 67.3,
+  "missing_weight": 29.29,
+  "positions": [
+    {
+      "stock_code": "02269",
+      "stock_name": "药明生物",
+      "weight": 10.56
+    },
+    {
+      "stock_code": "06160",
+      "stock_name": "百济神州",
+      "weight": 9.44
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 8.56
+    },
+    {
+      "stock_code": "09926",
+      "stock_name": "康方生物",
+      "weight": 8.16
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 6.66
+    },
+    {
+      "stock_code": "01177",
+      "stock_name": "中国生物制药",
+      "weight": 6.25
+    },
+    {
+      "stock_code": "03692",
+      "stock_name": "翰森制药",
+      "weight": 5.35
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 4.61
+    },
+    {
+      "stock_code": "02359",
+      "stock_name": "药明康德",
+      "weight": 4.52
+    },
+    {
+      "stock_code": "02228",
+      "stock_name": "晶泰控股",
+      "weight": 3.19
+    }
+  ],
+  "fetched_at": "2026-02-21 23:51:43",
+  "data_source": "eastmoney",
+  "original_fund_code": "016971",
+  "etf_target": "159892",
+  "is_etf_link": true
+}
