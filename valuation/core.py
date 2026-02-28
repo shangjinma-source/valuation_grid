@@ -7,10 +7,10 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional
 
-from providers import get_holdings, get_quotes, get_fund_5day_change
+from .providers import get_holdings, get_quotes, get_fund_5day_change, get_etf_realtime_change
 
 # === 配置 ===
-DATA_DIR = Path(__file__).parent / "data"
+DATA_DIR = Path(__file__).parent.parent / "data"
 STATE_FILE = DATA_DIR / "state.json"
 
 # === 文件锁 ===
@@ -94,7 +94,7 @@ def _calc_staleness_score(holdings_date_str: Optional[str]) -> float:
 def _try_nav_fallback(result: dict, fund_code: str) -> dict:
     """当盘中估值无法计算时（QDII/LOF/无持仓），尝试用最新真实净值填充。
     返回填充后的 result（原地修改）。"""
-    from providers import get_fund_nav_history, get_fund_name
+    from .providers import get_fund_nav_history, get_fund_name
     history = get_fund_nav_history(fund_code, 5)
     if not history:
         return result
@@ -133,6 +133,79 @@ def _try_nav_fallback(result: dict, fund_code: str) -> dict:
     return result
 
 
+def _try_etf_realtime_fallback(result: dict, fund_code: str) -> dict:
+    """当基金是商品类ETF联接（黄金/原油等）时，
+    直接用目标ETF的实时交易涨跌幅作为盘中估值。
+    仅限白名单中的商品类ETF，避免影响正常股票类ETF联接基金。"""
+    from .providers import get_etf_link_target, get_etf_realtime_change, get_fund_nav_history, get_fund_name
+
+    etf_target = get_etf_link_target(fund_code)
+    if not etf_target:
+        return result
+
+    # 仅限商品类ETF（黄金/原油等），底层持仓是合约无法解析股票持仓
+    # 如需扩展，在此添加对应的目标ETF代码
+    COMMODITY_ETF_CODES = {
+        # 黄金ETF（跟踪Au99.99）
+        "518800",   # 国泰黄金ETF
+        "518880",   # 华安黄金ETF
+        "159934",   # 易方达黄金ETF
+        "159937",   # 博时黄金ETF
+        "518660",   # 工银黄金ETF
+        "159812",   # 前海开源黄金ETF
+        # 上海金ETF（跟踪SHAU）
+        "159830",   # 天弘上海金ETF
+        "518600",   # 广发上海金ETF
+        "518680",   # 富国上海金ETF
+        "518860",   # 建信上海金ETF
+        "159831",   # 嘉实上海金ETF
+        "518890",   # 中银上海金ETF
+    }
+    if etf_target not in COMMODITY_ETF_CODES:
+        return result
+
+    quote = get_etf_realtime_change(etf_target)
+    if not quote or quote.get("pct_change") is None:
+        return result
+
+    pct = quote["pct_change"]
+    result["fund_name"] = get_fund_name(fund_code)
+    result["estimation_change"] = round(pct, 4)  # pct已是百分比形式（如3.55），与nav fallback一致
+    result["asof_time"] = quote.get("asof_time")
+    result["confidence"] = 0.9  # ETF实时价格可靠度高
+    result["_source"] = "etf_realtime"
+    result["notes"].append(f"ETF实时行情: {etf_target} ({quote.get('name', '')})")
+
+    # 附带近几日真实涨跌幅
+    history = get_fund_nav_history(fund_code, 5)
+    today_str = datetime.now().strftime("%Y-%m-%d")
+    result["recent_changes"] = [
+        {"date": h["date"], "change": h["change"]}
+        for h in history if h["date"] != today_str and h.get("change") is not None
+    ][:3]
+
+    # 收盘后仍用真实净值替代
+    if _is_market_closed():
+        today_nav = next(
+            (h for h in history if h["date"] == today_str and h.get("change") is not None),
+            None
+        )
+        if today_nav:
+            result["estimation_change"] = round(today_nav["change"], 4)
+            result["_source"] = "nav"
+            result["_nav_date"] = today_str
+            result["notes"].append(f"收盘后使用真实净值 {today_str}")
+        elif result["recent_changes"]:
+            latest = result["recent_changes"][0]
+            if latest["change"] is not None:
+                result["estimation_change"] = round(latest["change"], 4)
+                result["_source"] = "nav"
+                result["_nav_date"] = latest["date"]
+                result["notes"].append(f"收盘后使用真实净值 {latest['date']}")
+
+    return result
+
+
 def calculate_valuation(fund_code: str) -> dict:
     """计算单基金盘中估值涨跌幅"""
     result = {
@@ -154,6 +227,11 @@ def calculate_valuation(fund_code: str) -> dict:
     }
 
     # 获取近5日涨幅（由批量路由统一处理，此处不调用）
+
+    # 0. 商品类ETF联接基金（黄金/原油等）：跳过持仓穿透，直接用目标ETF实时行情
+    etf_result = _try_etf_realtime_fallback(result, fund_code)
+    if etf_result.get("estimation_change") is not None:
+        return etf_result
 
     # 1. 获取持仓
     holdings = get_holdings(fund_code)
@@ -246,7 +324,7 @@ def calculate_valuation(fund_code: str) -> dict:
         result["notes"].append(f"持仓日期: {result['holdings_asof_date']}")
 
     # 6. 附带近3个交易日真实涨跌幅（已结算数据，不含今天）
-    from providers import get_fund_nav_history
+    from .providers import get_fund_nav_history
     history = get_fund_nav_history(fund_code, 5)
     today_str = datetime.now().strftime("%Y-%m-%d")
     result["recent_changes"] = [
@@ -306,7 +384,7 @@ def _is_market_closed() -> bool:
     # 正常情况：周一最近净值=周五(隔2天)，周二~五=前一天(隔1天)
     # 若最近净值距今>=4天，说明中间有连续非交易日（法定假期）
     try:
-        from providers import get_fund_nav_history
+        from .providers import get_fund_nav_history
         hist = get_fund_nav_history("000300", 3)  # 沪深300
         if hist:
             latest_date = datetime.strptime(hist[0]["date"], "%Y-%m-%d")
@@ -321,7 +399,7 @@ def _is_market_closed() -> bool:
 
 def calculate_valuation_batch(fund_codes: List[str]) -> List[dict]:
     from concurrent.futures import ThreadPoolExecutor
-    from providers import get_fund_5day_change
+    from .providers import get_fund_5day_change
 
     # 1. 并发计算估值
     results_map = {}

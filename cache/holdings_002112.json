@@ -1,0 +1,62 @@
+{
+  "fund_code": "002112",
+  "fund_name": "德邦鑫星价值灵活配置混合C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 93.91,
+  "parsed_weight": 63.49,
+  "missing_weight": 30.42,
+  "positions": [
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 8.89
+    },
+    {
+      "stock_code": "300476",
+      "stock_name": "胜宏科技",
+      "weight": 8.65
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 8.65
+    },
+    {
+      "stock_code": "600183",
+      "stock_name": "生益科技",
+      "weight": 6.14
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 5.91
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 5.28
+    },
+    {
+      "stock_code": "300548",
+      "stock_name": "长芯博创",
+      "weight": 5.11
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 4.97
+    },
+    {
+      "stock_code": "601138",
+      "stock_name": "工业富联",
+      "weight": 4.95
+    },
+    {
+      "stock_code": "300395",
+      "stock_name": "菲利华",
+      "weight": 4.94
+    }
+  ],
+  "fetched_at": "2026-02-28 10:46:06",
+  "data_source": "eastmoney"
+}

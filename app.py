@@ -10,11 +10,11 @@ from pydantic import BaseModel
 from typing import List, Optional
 import uvicorn
 
-from core import (
+from valuation.core import (
     load_state, save_state, validate_state,
     calculate_valuation, calculate_valuation_batch, calculate_valuation_by_state
 )
-from providers import (
+from valuation.providers import (
     get_fund_name, set_etf_link_target, get_etf_link_target, clear_etf_link_target,
     refresh_stale_holdings
 )
@@ -25,11 +25,13 @@ from positions import (
     get_groups, add_group, update_group, delete_group,
     make_fund_key, parse_fund_key, rename_fund_key
 )
-from strategy import (
+from grid import (
     generate_signal, generate_all_signals, get_signal_history,
     get_vol_sensitivity_info, update_vol_sensitivity, clear_vol_sensitivity,
     auto_calibrate_vol_sensitivity,
-    backfill_signal_outcomes, calc_signal_win_rate
+    backfill_signal_outcomes, calc_signal_win_rate,
+    set_market_regime, get_market_regime_info,
+    get_fitness_scores, get_fund_fitness
 )
 
 # ============================================================
@@ -116,7 +118,7 @@ def get_fund_name_api(fund_code: str):
 @app.get("/v1/fund/{fund_code}/nav-history")
 def get_nav_history(fund_code: str, days: int = 15):
     """获取基金最近N日真实净值涨跌"""
-    from providers import get_fund_nav_history
+    from valuation.providers import get_fund_nav_history
     data = get_fund_nav_history(fund_code, days)
     return {"fund_code": fund_code, "days": len(data), "history": data}
 
@@ -484,6 +486,48 @@ def delete_group_api(group_id: str):
     if delete_group(group_id):
         return {"success": True}
     raise HTTPException(status_code=404, detail="分组不存在")
+
+
+# ============================================================
+# 行情模式管理 API（v5.17: 仅支持 neutral/bear，bull已禁用）
+# ============================================================
+
+class RegimeRequest(BaseModel):
+    regime: str = "neutral"  # "neutral" | "bear"
+    auto: bool = True
+    manual_override: bool = False
+
+
+@app.get("/v1/market-regime")
+def get_regime():
+    """获取当前行情模式及参数"""
+    return get_market_regime_info()
+
+
+@app.post("/v1/market-regime")
+def set_regime(req: RegimeRequest):
+    """设置行情模式（neutral/bear）。manual_override=True: 手动指定; False: 恢复自动"""
+    result = set_market_regime(req.regime, req.auto, req.manual_override)
+    return {"success": True, **result}
+
+
+# ============================================================
+# v5.13: 适配评分缓存 API
+# ============================================================
+
+@app.get("/v1/fund-fitness")
+def get_all_fitness():
+    """获取所有基金适配评分缓存"""
+    return {"scores": get_fitness_scores()}
+
+
+@app.get("/v1/fund-fitness/{fund_code}")
+def get_single_fitness(fund_code: str):
+    """获取单只基金适配评分"""
+    info = get_fund_fitness(fund_code)
+    if info:
+        return {"fund_code": fund_code, **info}
+    return {"fund_code": fund_code, "score": None, "grade": None}
 
 
 if __name__ == "__main__":

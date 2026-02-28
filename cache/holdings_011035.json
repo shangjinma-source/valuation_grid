@@ -1,0 +1,70 @@
+{
+  "fund_code": "011035",
+  "fund_name": "嘉实中证稀土产业ETF联接A",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 99.8,
+  "parsed_weight": 60.32,
+  "missing_weight": 39.48,
+  "positions": [
+    {
+      "stock_code": "600111",
+      "stock_name": "北方稀土",
+      "weight": 14.1
+    },
+    {
+      "stock_code": "002202",
+      "stock_name": "金风科技",
+      "weight": 6.17
+    },
+    {
+      "stock_code": "600580",
+      "stock_name": "卧龙电驱",
+      "weight": 5.36
+    },
+    {
+      "stock_code": "002340",
+      "stock_name": "格林美",
+      "weight": 5.33
+    },
+    {
+      "stock_code": "600549",
+      "stock_name": "厦门钨业",
+      "weight": 5.32
+    },
+    {
+      "stock_code": "601600",
+      "stock_name": "中国铝业",
+      "weight": 5.21
+    },
+    {
+      "stock_code": "002600",
+      "stock_name": "领益智造",
+      "weight": 4.95
+    },
+    {
+      "stock_code": "000831",
+      "stock_name": "中国稀土",
+      "weight": 4.88
+    },
+    {
+      "stock_code": "600010",
+      "stock_name": "包钢股份",
+      "weight": 4.67
+    },
+    {
+      "stock_code": "600392",
+      "stock_name": "盛和资源",
+      "weight": 4.27
+    },
+    {
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
+      "weight": 0.06
+    }
+  ],
+  "fetched_at": "2026-02-28 10:46:21",
+  "data_source": "eastmoney",
+  "original_fund_code": "011035",
+  "etf_target": "516150",
+  "is_etf_link": true
+}

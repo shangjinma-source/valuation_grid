@@ -1,0 +1,65 @@
+{
+  "fund_code": "019874",
+  "fund_name": "广发稀有金属ETF联接A",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 99.39,
+  "parsed_weight": 59.21,
+  "missing_weight": 40.18,
+  "positions": [
+    {
+      "stock_code": "603993",
+      "stock_name": "洛阳钼业",
+      "weight": 13.2
+    },
+    {
+      "stock_code": "600111",
+      "stock_name": "北方稀土",
+      "weight": 8.82
+    },
+    {
+      "stock_code": "603799",
+      "stock_name": "华友钴业",
+      "weight": 7.83
+    },
+    {
+      "stock_code": "000792",
+      "stock_name": "盐湖股份",
+      "weight": 6.76
+    },
+    {
+      "stock_code": "002460",
+      "stock_name": "赣锋锂业",
+      "weight": 5.36
+    },
+    {
+      "stock_code": "002466",
+      "stock_name": "天齐锂业",
+      "weight": 4.33
+    },
+    {
+      "stock_code": "002738",
+      "stock_name": "中矿资源",
+      "weight": 4.29
+    },
+    {
+      "stock_code": "600549",
+      "stock_name": "厦门钨业",
+      "weight": 3.45
+    },
+    {
+      "stock_code": "000831",
+      "stock_name": "中国稀土",
+      "weight": 2.61
+    },
+    {
+      "stock_code": "688122",
+      "stock_name": "西部超导",
+      "weight": 2.56
+    }
+  ],
+  "fetched_at": "2026-02-28 10:46:21",
+  "data_source": "eastmoney",
+  "original_fund_code": "019874",
+  "etf_target": "159608",
+  "is_etf_link": true
+}

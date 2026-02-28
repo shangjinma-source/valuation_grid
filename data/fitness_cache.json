@@ -1,0 +1,3071 @@
+{
+  "017193": {
+    "score": 38.2,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "天弘中证工业有色金属主题ETF发起联接C",
+    "annual_return": 3.22,
+    "sharpe": 0.32,
+    "max_drawdown": 20.53
+  },
+  "016708": {
+    "score": 36.3,
+    "grade": "D-偏差",
+    "env_label": "待观察",
+    "name": "华夏有色金属ETF联接C",
+    "annual_return": 1.91,
+    "sharpe": 0.23,
+    "max_drawdown": 21.23
+  },
+  "017992": {
+    "score": 53.0,
+    "grade": "C-一般",
+    "env_label": "待观察",
+    "name": "华泰柏瑞致远混合C",
+    "annual_return": 5.67,
+    "sharpe": 0.64,
+    "max_drawdown": 13.38
+  },
+  "004433": {
+    "score": 47.1,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "南方有色金属ETF联接C",
+    "annual_return": 2.63,
+    "sharpe": 0.36,
+    "max_drawdown": 17.14
+  },
+  "022321": {
+    "score": 80.8,
+    "grade": "A-极佳",
+    "env_label": "待观察",
+    "name": "汇添富弘瑞回报混合发起式C",
+    "annual_return": 20.87,
+    "sharpe": 1.73,
+    "max_drawdown": 5.55
+  },
+  "019165": {
+    "score": 40.0,
+    "grade": "C-一般",
+    "env_label": "待观察",
+    "name": "汇添富有色金属ETF联接C",
+    "annual_return": 1.37,
+    "sharpe": 0.18,
+    "max_drawdown": 13.33
+  },
+  "011631": {
+    "score": 47.2,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "东财有色增强C",
+    "annual_return": 4.19,
+    "sharpe": 0.48,
+    "max_drawdown": 19.05
+  },
+  "022084": {
+    "score": 75.8,
+    "grade": "A-极佳",
+    "env_label": "熊市优",
+    "name": "华安中证有色金属矿业主题指数发起式C",
+    "annual_return": 8.78,
+    "sharpe": 1.05,
+    "max_drawdown": 6.27
+  },
+  "018133": {
+    "score": 42.6,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "博时中证有色金属矿业主题指数C",
+    "annual_return": 3.86,
+    "sharpe": 0.4,
+    "max_drawdown": 19.2
+  },
+  "015596": {
+    "score": 42.3,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "国泰国证有色金属行业指数(LOF)C",
+    "annual_return": 0.39,
+    "sharpe": 0.09,
+    "max_drawdown": 13.35
+  },
+  "018168": {
+    "score": 74.1,
+    "grade": "A-极佳",
+    "env_label": "待观察",
+    "name": "国泰有色矿业ETF联接C",
+    "annual_return": 10.63,
+    "sharpe": 0.93,
+    "max_drawdown": 9.6
+  },
+  "025651": {
+    "score": 84.0,
+    "grade": "A-极佳",
+    "env_label": "待观察",
+    "name": "平安资源精选混合发起式C",
+    "annual_return": 74.1,
+    "sharpe": 4.77,
+    "max_drawdown": 3.79
+  },
+  "023037": {
+    "score": 74.0,
+    "grade": "A-极佳",
+    "env_label": "待观察",
+    "name": "中欧资源精选混合发起C",
+    "annual_return": 18.07,
+    "sharpe": 1.61,
+    "max_drawdown": 6.01
+  },
+  "020124": {
+    "score": 62.2,
+    "grade": "B-良好",
+    "env_label": "震荡优",
+    "name": "银华沪深股通精选混合C",
+    "annual_return": 5.86,
+    "sharpe": 0.8,
+    "max_drawdown": 8.62
+  },
+  "013081": {
+    "score": 42.0,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "中信保诚中证800有色指数(LOF)C",
+    "annual_return": -0.13,
+    "sharpe": 0.04,
+    "max_drawdown": 22.33
+  },
+  "011068": {
+    "score": 67.0,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "华宝资源优选混合C",
+    "annual_return": 4.7,
+    "sharpe": 0.78,
+    "max_drawdown": 7.18
+  },
+  "017811": {
+    "score": 62.1,
+    "grade": "B-良好",
+    "env_label": "熊市优",
+    "name": "东方人工智能主题混合C",
+    "annual_return": 9.09,
+    "sharpe": 1.06,
+    "max_drawdown": 12.83
+  },
+  "017470": {
+    "score": 65.3,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "嘉实上证科创板芯片ETF发起联接C",
+    "annual_return": 8.96,
+    "sharpe": 0.84,
+    "max_drawdown": 13.79
+  },
+  "014855": {
+    "score": 51.5,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "嘉实中证半导体指数增强发起式C",
+    "annual_return": 7.48,
+    "sharpe": 0.72,
+    "max_drawdown": 18.19
+  },
+  "021533": {
+    "score": 61.6,
+    "grade": "B-良好",
+    "env_label": "震荡优",
+    "name": "天弘半导体材料设备指数C",
+    "annual_return": 7.48,
+    "sharpe": 0.67,
+    "max_drawdown": 11.17
+  },
+  "015968": {
+    "score": 40.4,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "永赢半导体产业智选混合发起C",
+    "annual_return": 0.77,
+    "sharpe": 0.12,
+    "max_drawdown": 26.94
+  },
+  "012970": {
+    "score": 49.8,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "鹏华国证半导体芯片ETF联接C",
+    "annual_return": 4.06,
+    "sharpe": 0.5,
+    "max_drawdown": 17.76
+  },
+  "014143": {
+    "score": 59.4,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "银河创新成长混合C",
+    "annual_return": 5.0,
+    "sharpe": 0.45,
+    "max_drawdown": 11.79
+  },
+  "012630": {
+    "score": 49.3,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "广发国证半导体芯片ETF联接C",
+    "annual_return": 3.23,
+    "sharpe": 0.42,
+    "max_drawdown": 15.66
+  },
+  "024424": {
+    "score": 79.9,
+    "grade": "A-极佳",
+    "env_label": "牛市可",
+    "name": "东方阿尔法科技优选混合发起C",
+    "annual_return": 17.53,
+    "sharpe": 1.18,
+    "max_drawdown": 6.85
+  },
+  "018777": {
+    "score": 59.8,
+    "grade": "B-良好",
+    "env_label": "熊市优",
+    "name": "金信精选成长混合C",
+    "annual_return": 10.6,
+    "sharpe": 0.88,
+    "max_drawdown": 16.08
+  },
+  "019571": {
+    "score": 44.0,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "诺安优化配置混合C",
+    "annual_return": 0.08,
+    "sharpe": 0.06,
+    "max_drawdown": 13.69
+  },
+  "020640": {
+    "score": 63.2,
+    "grade": "B-良好",
+    "env_label": "震荡优",
+    "name": "广发半导体设备ETF联接C",
+    "annual_return": 6.39,
+    "sharpe": 0.69,
+    "max_drawdown": 9.38
+  },
+  "020357": {
+    "score": 46.5,
+    "grade": "C-一般",
+    "env_label": "待观察",
+    "name": "华夏半导体材料设备ETF联接C",
+    "annual_return": 1.02,
+    "sharpe": 0.15,
+    "max_drawdown": 9.05
+  },
+  "023829": {
+    "score": 79.4,
+    "grade": "A-极佳",
+    "env_label": "待观察",
+    "name": "万家中证半导体材料设备主题ETF发起式联接C",
+    "annual_return": 36.43,
+    "sharpe": 2.81,
+    "max_drawdown": 3.54
+  },
+  "019633": {
+    "score": 45.3,
+    "grade": "C-一般",
+    "env_label": "待观察",
+    "name": "国泰半导体设备ETF联接C",
+    "annual_return": 1.76,
+    "sharpe": 0.25,
+    "max_drawdown": 13.56
+  },
+  "024418": {
+    "score": 77.6,
+    "grade": "A-极佳",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "华夏上证科创板半导体材料设备主题ETF发起式联接C",
+    "annual_return": 40.47,
+    "sharpe": 2.25,
+    "max_drawdown": 5.08
+  },
+  "024975": {
+    "score": 75.1,
+    "grade": "A-极佳",
+    "env_label": "待观察",
+    "name": "华泰柏瑞上证科创板半导体材料设备主题ETF发起式联接C",
+    "annual_return": 30.21,
+    "sharpe": 2.25,
+    "max_drawdown": 4.79
+  },
+  "021894": {
+    "score": 75.1,
+    "grade": "A-极佳",
+    "env_label": "待观察",
+    "name": "易方达半导体设备ETF联接C",
+    "annual_return": 17.64,
+    "sharpe": 1.45,
+    "max_drawdown": 5.85
+  },
+  "007491": {
+    "score": 42.5,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "南方信息创新混合C",
+    "annual_return": 2.71,
+    "sharpe": 0.27,
+    "max_drawdown": 31.83
+  },
+  "021492": {
+    "score": 45.0,
+    "grade": "C-一般",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "中航远见领航混合发起C",
+    "annual_return": 1.3,
+    "sharpe": 0.18,
+    "max_drawdown": 8.93
+  },
+  "020465": {
+    "score": 73.9,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "招商中证半导体产业ETF发起式联接C",
+    "annual_return": 8.94,
+    "sharpe": 0.8,
+    "max_drawdown": 8.86
+  },
+  "021719": {
+    "score": 79.2,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "华泰紫金中证半导体产业指数型发起C",
+    "annual_return": 35.49,
+    "sharpe": 2.24,
+    "max_drawdown": 5.12
+  },
+  "002692": {
+    "score": 44.6,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "富国创新科技混合A",
+    "annual_return": 5.73,
+    "sharpe": 0.75,
+    "max_drawdown": 30.06
+  },
+  "014194": {
+    "score": 58.7,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "汇添富中证芯片产业指数增强发起式C",
+    "annual_return": 3.97,
+    "sharpe": 0.55,
+    "max_drawdown": 10.01
+  },
+  "021608": {
+    "score": 74.6,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "南方上证科创板芯片ETF发起联接C",
+    "annual_return": 27.02,
+    "sharpe": 1.63,
+    "max_drawdown": 7.74
+  },
+  "020629": {
+    "score": 76.2,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "汇添富上证科创板芯片ETF发起式联接C",
+    "annual_return": 26.88,
+    "sharpe": 1.75,
+    "max_drawdown": 6.38
+  },
+  "023652": {
+    "score": 79.9,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "富国上证科创板芯片ETF发起式联接C",
+    "annual_return": 31.54,
+    "sharpe": 2.44,
+    "max_drawdown": 3.34
+  },
+  "017560": {
+    "score": 75.7,
+    "grade": "A-极佳",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "华安上证科创板芯片ETF发起式联接C",
+    "annual_return": 12.73,
+    "sharpe": 1.26,
+    "max_drawdown": 12.06
+  },
+  "008888": {
+    "score": 38.5,
+    "grade": "D-偏差",
+    "env_label": "熊市优",
+    "name": "华夏国证半导体芯片ETF联接C",
+    "annual_return": -0.75,
+    "sharpe": -0.02,
+    "max_drawdown": 31.31
+  },
+  "025209": {
+    "score": 64.4,
+    "grade": "B-良好",
+    "env_label": "待观察",
+    "name": "永赢先锋半导体智选混合发起C",
+    "annual_return": 20.38,
+    "sharpe": 1.08,
+    "max_drawdown": 10.46
+  },
+  "016874": {
+    "score": 36.1,
+    "grade": "D-偏差",
+    "env_label": "熊市优",
+    "name": "广发远见智选混合C",
+    "annual_return": -1.94,
+    "sharpe": -0.13,
+    "max_drawdown": 26.18
+  },
+  "005967": {
+    "score": 59.3,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "鹏华创新驱动混合",
+    "annual_return": 5.44,
+    "sharpe": 0.78,
+    "max_drawdown": 11.9
+  },
+  "017745": {
+    "score": 70.0,
+    "grade": "A-极佳",
+    "env_label": "熊市优",
+    "name": "嘉实绿色主题股票发起式C",
+    "annual_return": 9.96,
+    "sharpe": 0.88,
+    "max_drawdown": 12.23
+  },
+  "010623": {
+    "score": 38.0,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "恒越成长精选混合C",
+    "annual_return": -2.02,
+    "sharpe": -0.09,
+    "max_drawdown": 37.71
+  },
+  "018816": {
+    "score": 57.7,
+    "grade": "B-良好",
+    "env_label": "牛市可",
+    "name": "方正富邦核心优势混合C",
+    "annual_return": 4.18,
+    "sharpe": 0.59,
+    "max_drawdown": 7.95
+  },
+  "025500": {
+    "score": 72.8,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "东方阿尔法科技智选混合发起C",
+    "annual_return": 8.2,
+    "sharpe": 0.94,
+    "max_drawdown": 5.39
+  },
+  "022351": {
+    "score": 76.7,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "嘉实中证全指集成电路ETF发起联接C",
+    "annual_return": 36.51,
+    "sharpe": 2.51,
+    "max_drawdown": 6.35
+  },
+  "160324": {
+    "score": 55.6,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "华夏磐晟混合(LOF)",
+    "annual_return": 5.49,
+    "sharpe": 0.7,
+    "max_drawdown": 13.63
+  },
+  "014320": {
+    "score": 62.0,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "德邦半导体产业混合发起式C",
+    "annual_return": 7.07,
+    "sharpe": 0.79,
+    "max_drawdown": 12.84
+  },
+  "002910": {
+    "score": 48.3,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "易方达供给改革混合",
+    "annual_return": 3.68,
+    "sharpe": 0.48,
+    "max_drawdown": 16.65
+  },
+  "019114": {
+    "score": 43.2,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "东财慧心优选C",
+    "annual_return": -1.37,
+    "sharpe": -0.11,
+    "max_drawdown": 14.11
+  },
+  "015790": {
+    "score": 57.3,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "永赢高端装备智选混合发起C",
+    "annual_return": 6.19,
+    "sharpe": 0.66,
+    "max_drawdown": 16.48
+  },
+  "007046": {
+    "score": 33.9,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/牛市可",
+    "name": "方正富邦创新动力混合C",
+    "annual_return": -4.84,
+    "sharpe": -0.31,
+    "max_drawdown": 55.94
+  },
+  "018363": {
+    "score": 28.7,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/牛市可",
+    "name": "东方阿尔法瑞丰混合发起C",
+    "annual_return": -10.01,
+    "sharpe": -0.9,
+    "max_drawdown": 28.19
+  },
+  "010052": {
+    "score": 52.6,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "长城久嘉创新成长混合C",
+    "annual_return": 5.5,
+    "sharpe": 0.63,
+    "max_drawdown": 19.64
+  },
+  "004321": {
+    "score": 77.4,
+    "grade": "A-极佳",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "前海开源沪港深强国产业混合",
+    "annual_return": 9.92,
+    "sharpe": 1.08,
+    "max_drawdown": 10.19
+  },
+  "009751": {
+    "score": 41.4,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "汇安价值蓝筹混合C",
+    "annual_return": -0.23,
+    "sharpe": -0.01,
+    "max_drawdown": 20.74
+  },
+  "025491": {
+    "score": 88.9,
+    "grade": "A-极佳",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "平安中证卫星产业指数C",
+    "annual_return": 117.91,
+    "sharpe": 4.6,
+    "max_drawdown": 4.36
+  },
+  "002067": {
+    "score": 51.3,
+    "grade": "C-一般",
+    "env_label": "待观察",
+    "name": "诺安精选回报混合A",
+    "annual_return": 4.42,
+    "sharpe": 0.54,
+    "max_drawdown": 15.12
+  },
+  "000690": {
+    "score": 43.6,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "前海开源大海洋混合",
+    "annual_return": 1.69,
+    "sharpe": 0.21,
+    "max_drawdown": 25.92
+  },
+  "015839": {
+    "score": 41.5,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "广发招利混合C",
+    "annual_return": -0.23,
+    "sharpe": -0.01,
+    "max_drawdown": 14.7
+  },
+  "019144": {
+    "score": 75.6,
+    "grade": "A-极佳",
+    "env_label": "待观察",
+    "name": "东财景气驱动C",
+    "annual_return": 16.3,
+    "sharpe": 1.22,
+    "max_drawdown": 7.79
+  },
+  "025647": {
+    "score": 82.9,
+    "grade": "A-极佳",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "平安高端装备混合发起式C",
+    "annual_return": 126.68,
+    "sharpe": 5.03,
+    "max_drawdown": 4.77
+  },
+  "025693": {
+    "score": 80.6,
+    "grade": "A-极佳",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "南方中证通用航空主题ETF发起联接C",
+    "annual_return": 255.9,
+    "sharpe": 5.39,
+    "max_drawdown": 6.53
+  },
+  "025733": {
+    "score": 85.5,
+    "grade": "A-极佳",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "华安国证航天航空行业ETF发起式联接C",
+    "annual_return": 72.38,
+    "sharpe": 4.79,
+    "max_drawdown": 2.88
+  },
+  "024195": {
+    "score": 71.3,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "永赢国证商用卫星通信产业ETF发起联接C",
+    "annual_return": 8.81,
+    "sharpe": 0.85,
+    "max_drawdown": 7.43
+  },
+  "009854": {
+    "score": 49.5,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "中加优势企业混合C",
+    "annual_return": 3.72,
+    "sharpe": 0.42,
+    "max_drawdown": 17.79
+  },
+  "024689": {
+    "score": 76.4,
+    "grade": "A-极佳",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "富国国证通用航空产业ETF发起式联接C",
+    "annual_return": 42.72,
+    "sharpe": 2.28,
+    "max_drawdown": 6.62
+  },
+  "023531": {
+    "score": 80.9,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "永赢国证通用航空产业ETF发起联接C",
+    "annual_return": 18.21,
+    "sharpe": 1.7,
+    "max_drawdown": 5.37
+  },
+  "024913": {
+    "score": 79.7,
+    "grade": "A-极佳",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "华夏国证通用航空产业ETF发起式联接C",
+    "annual_return": 41.0,
+    "sharpe": 2.2,
+    "max_drawdown": 6.17
+  },
+  "024349": {
+    "score": 73.7,
+    "grade": "A-极佳",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "中欧国证通用航空产业指数发起C",
+    "annual_return": 17.39,
+    "sharpe": 1.61,
+    "max_drawdown": 6.06
+  },
+  "005866": {
+    "score": 31.7,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/牛市可/震荡优",
+    "name": "浦银安盛量化多策略混合C",
+    "annual_return": 1.47,
+    "sharpe": 0.27,
+    "max_drawdown": 13.37
+  },
+  "025949": {
+    "score": 79.3,
+    "grade": "A-极佳",
+    "env_label": "待观察",
+    "name": "诺安研究精选股票C",
+    "annual_return": 120.38,
+    "sharpe": 5.66,
+    "max_drawdown": 2.76
+  },
+  "025422": {
+    "score": 70.4,
+    "grade": "A-极佳",
+    "env_label": "待观察",
+    "name": "浦银安盛数字经济混合C",
+    "annual_return": 50.82,
+    "sharpe": 3.04,
+    "max_drawdown": 2.84
+  },
+  "017462": {
+    "score": 59.0,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "长城久祥混合C",
+    "annual_return": 9.79,
+    "sharpe": 0.84,
+    "max_drawdown": 18.0
+  },
+  "004320": {
+    "score": 53.1,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "前海开源沪港深乐享生活",
+    "annual_return": 4.75,
+    "sharpe": 0.7,
+    "max_drawdown": 17.21
+  },
+  "018291": {
+    "score": 47.4,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "广发新兴成长混合C",
+    "annual_return": 3.7,
+    "sharpe": 0.52,
+    "max_drawdown": 14.53
+  },
+  "001438": {
+    "score": 62.3,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "易方达瑞享混合E",
+    "annual_return": 6.33,
+    "sharpe": 0.81,
+    "max_drawdown": 10.87
+  },
+  "011892": {
+    "score": 63.2,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "易方达先锋成长混合C",
+    "annual_return": 7.77,
+    "sharpe": 0.81,
+    "max_drawdown": 13.14
+  },
+  "011452": {
+    "score": 41.4,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "华泰柏瑞质量成长C",
+    "annual_return": -1.88,
+    "sharpe": -0.1,
+    "max_drawdown": 32.64
+  },
+  "018957": {
+    "score": 38.1,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "中航机遇领航混合发起C",
+    "annual_return": 4.37,
+    "sharpe": 0.41,
+    "max_drawdown": 18.05
+  },
+  "011370": {
+    "score": 51.4,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "华商均衡成长混合C",
+    "annual_return": 5.54,
+    "sharpe": 0.59,
+    "max_drawdown": 20.72
+  },
+  "009009": {
+    "score": 49.0,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "平安科技创新混合C",
+    "annual_return": 3.36,
+    "sharpe": 0.41,
+    "max_drawdown": 20.94
+  },
+  "006888": {
+    "score": 44.4,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "诺德新生活混合C",
+    "annual_return": 1.54,
+    "sharpe": 0.2,
+    "max_drawdown": 20.42
+  },
+  "010238": {
+    "score": 45.0,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "安信创新先锋混合发起C",
+    "annual_return": 1.46,
+    "sharpe": 0.2,
+    "max_drawdown": 22.72
+  },
+  "519771": {
+    "score": 71.5,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "交银优择回报灵活配置混合C",
+    "annual_return": 5.28,
+    "sharpe": 1.49,
+    "max_drawdown": 3.58
+  },
+  "017103": {
+    "score": 50.0,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "大摩数字经济混合C",
+    "annual_return": 12.45,
+    "sharpe": 0.86,
+    "max_drawdown": 27.14
+  },
+  "017489": {
+    "score": 63.9,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "嘉实信息产业股票发起式C",
+    "annual_return": 10.23,
+    "sharpe": 1.0,
+    "max_drawdown": 14.55
+  },
+  "013470": {
+    "score": 39.8,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "泰信低碳经济混合发起式C",
+    "annual_return": -3.79,
+    "sharpe": -0.28,
+    "max_drawdown": 29.11
+  },
+  "011120": {
+    "score": 39.7,
+    "grade": "D-偏差",
+    "env_label": "熊市优",
+    "name": "富国创新科技混合C",
+    "annual_return": -2.22,
+    "sharpe": -0.15,
+    "max_drawdown": 35.08
+  },
+  "009645": {
+    "score": 47.6,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "东方阿尔法优势产业混合C",
+    "annual_return": 3.9,
+    "sharpe": 0.46,
+    "max_drawdown": 21.65
+  },
+  "016371": {
+    "score": 52.7,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "信澳业绩驱动混合C",
+    "annual_return": 7.41,
+    "sharpe": 0.74,
+    "max_drawdown": 21.88
+  },
+  "022365": {
+    "score": 67.1,
+    "grade": "B-良好",
+    "env_label": "待观察",
+    "name": "永赢科技智选混合发起C",
+    "annual_return": 29.4,
+    "sharpe": 1.59,
+    "max_drawdown": 9.5
+  },
+  "021528": {
+    "score": 42.6,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "财通成长优选混合C",
+    "annual_return": 2.24,
+    "sharpe": 0.28,
+    "max_drawdown": 12.53
+  },
+  "006503": {
+    "score": 46.0,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "财通集成电路产业股票C",
+    "annual_return": 3.12,
+    "sharpe": 0.37,
+    "max_drawdown": 19.36
+  },
+  "001407": {
+    "score": 47.3,
+    "grade": "C-一般",
+    "env_label": "震荡优",
+    "name": "景顺长城稳健回报混合C",
+    "annual_return": 4.31,
+    "sharpe": 0.61,
+    "max_drawdown": 14.72
+  },
+  "007114": {
+    "score": 41.6,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "永赢高端制造混合C",
+    "annual_return": -1.47,
+    "sharpe": -0.11,
+    "max_drawdown": 26.93
+  },
+  "002170": {
+    "score": 63.3,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "东吴移动互联混合C",
+    "annual_return": 7.82,
+    "sharpe": 0.99,
+    "max_drawdown": 11.86
+  },
+  "010034": {
+    "score": 44.3,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "安信成长精选混合C",
+    "annual_return": -1.1,
+    "sharpe": -0.07,
+    "max_drawdown": 17.49
+  },
+  "002112": {
+    "score": 56.2,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "德邦鑫星价值灵活配置混合C",
+    "annual_return": 4.84,
+    "sharpe": 0.68,
+    "max_drawdown": 11.95
+  },
+  "004753": {
+    "score": 49.7,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "广发中证传媒ETF联接C",
+    "annual_return": 1.64,
+    "sharpe": 0.23,
+    "max_drawdown": 12.98
+  },
+  "017736": {
+    "score": 45.2,
+    "grade": "C-一般",
+    "env_label": "待观察",
+    "name": "融通明锐混合C",
+    "annual_return": 0.24,
+    "sharpe": 0.08,
+    "max_drawdown": 6.48
+  },
+  "001150": {
+    "score": 46.1,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "融通互联网传媒灵活配置混合",
+    "annual_return": 2.84,
+    "sharpe": 0.3,
+    "max_drawdown": 22.88
+  },
+  "015667": {
+    "score": 59.8,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "银河文体娱乐混合C",
+    "annual_return": 7.77,
+    "sharpe": 0.61,
+    "max_drawdown": 17.07
+  },
+  "023754": {
+    "score": 45.8,
+    "grade": "C-一般",
+    "env_label": "震荡优",
+    "name": "永赢信息产业智选混合发起C",
+    "annual_return": 1.05,
+    "sharpe": 0.15,
+    "max_drawdown": 8.44
+  },
+  "001630": {
+    "score": 39.6,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "天弘中证计算机ETF联接C",
+    "annual_return": 3.6,
+    "sharpe": 0.37,
+    "max_drawdown": 32.98
+  },
+  "013346": {
+    "score": 47.2,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "富荣信息技术混合C",
+    "annual_return": 3.17,
+    "sharpe": 0.32,
+    "max_drawdown": 19.26
+  },
+  "015642": {
+    "score": 63.1,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "银华数字经济股票发起式C",
+    "annual_return": 12.79,
+    "sharpe": 1.0,
+    "max_drawdown": 17.89
+  },
+  "023602": {
+    "score": 77.6,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "泰信优势领航混合C",
+    "annual_return": 14.24,
+    "sharpe": 2.41,
+    "max_drawdown": 2.9
+  },
+  "018463": {
+    "score": 30.2,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "德邦稳盈增长灵活配置混合C",
+    "annual_return": -10.94,
+    "sharpe": -0.68,
+    "max_drawdown": 39.69
+  },
+  "020065": {
+    "score": 75.0,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "西部利得科技创新混合C",
+    "annual_return": 11.43,
+    "sharpe": 1.46,
+    "max_drawdown": 4.6
+  },
+  "020486": {
+    "score": 70.1,
+    "grade": "A-极佳",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "华富智慧城市灵活配置混合C",
+    "annual_return": 7.54,
+    "sharpe": 0.89,
+    "max_drawdown": 8.33
+  },
+  "012183": {
+    "score": 35.3,
+    "grade": "D-偏差",
+    "env_label": "熊市优",
+    "name": "广发沪港深精选混合C",
+    "annual_return": -3.19,
+    "sharpe": -0.37,
+    "max_drawdown": 21.62
+  },
+  "018049": {
+    "score": 68.0,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "申万菱信数字产业股票型发起式C",
+    "annual_return": 7.84,
+    "sharpe": 0.75,
+    "max_drawdown": 9.8
+  },
+  "016074": {
+    "score": 56.4,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "创金合信软件产业股票发起C",
+    "annual_return": 6.42,
+    "sharpe": 0.66,
+    "max_drawdown": 13.34
+  },
+  "021654": {
+    "score": 76.5,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "南方中证全指计算机ETF发起联接C",
+    "annual_return": 9.39,
+    "sharpe": 0.88,
+    "max_drawdown": 7.51
+  },
+  "020485": {
+    "score": 74.1,
+    "grade": "A-极佳",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "中欧中证全指软件开发指数发起C",
+    "annual_return": 13.06,
+    "sharpe": 1.23,
+    "max_drawdown": 6.21
+  },
+  "020594": {
+    "score": 77.2,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "华夏软件龙头混合发起式C",
+    "annual_return": 19.16,
+    "sharpe": 2.0,
+    "max_drawdown": 3.52
+  },
+  "012847": {
+    "score": 35.4,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "诺安积极回报混合C",
+    "annual_return": -3.27,
+    "sharpe": -0.25,
+    "max_drawdown": 32.36
+  },
+  "018386": {
+    "score": 59.4,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/牛市可/震荡优",
+    "name": "招商中证全指软件ETF发起式联接C",
+    "annual_return": 9.8,
+    "sharpe": 0.88,
+    "max_drawdown": 15.59
+  },
+  "012620": {
+    "score": 50.0,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/牛市可/震荡优",
+    "name": "嘉实中证软件服务ETF联接C",
+    "annual_return": 5.43,
+    "sharpe": 0.49,
+    "max_drawdown": 20.97
+  },
+  "019062": {
+    "score": 41.1,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "易方达中证软件服务ETF联接发起式C",
+    "annual_return": -2.56,
+    "sharpe": -0.22,
+    "max_drawdown": 14.99
+  },
+  "021536": {
+    "score": 49.3,
+    "grade": "C-一般",
+    "env_label": "震荡优",
+    "name": "天弘中证软件服务指数发起C",
+    "annual_return": 5.05,
+    "sharpe": 0.6,
+    "max_drawdown": 12.54
+  },
+  "012637": {
+    "score": 38.1,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "国泰中证全指软件ETF联接C",
+    "annual_return": -5.77,
+    "sharpe": -0.48,
+    "max_drawdown": 31.93
+  },
+  "021615": {
+    "score": 74.3,
+    "grade": "A-极佳",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "华泰紫金中证全指软件指数型发起C",
+    "annual_return": 29.77,
+    "sharpe": 1.85,
+    "max_drawdown": 5.24
+  },
+  "020266": {
+    "score": 78.8,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "长城产业优选混合C",
+    "annual_return": 11.15,
+    "sharpe": 1.09,
+    "max_drawdown": 6.17
+  },
+  "019116": {
+    "score": 77.5,
+    "grade": "A-极佳",
+    "env_label": "熊市优",
+    "name": "东财卓越成长C",
+    "annual_return": 13.3,
+    "sharpe": 1.22,
+    "max_drawdown": 6.73
+  },
+  "011705": {
+    "score": 39.9,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "东方阿尔法产业先锋混合C",
+    "annual_return": 0.52,
+    "sharpe": 0.1,
+    "max_drawdown": 32.39
+  },
+  "005538": {
+    "score": 46.0,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "中航新起航灵活配置混合C",
+    "annual_return": 1.31,
+    "sharpe": 0.18,
+    "max_drawdown": 24.99
+  },
+  "021964": {
+    "score": 78.8,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "天弘储能电池指数C",
+    "annual_return": 16.37,
+    "sharpe": 1.47,
+    "max_drawdown": 5.51
+  },
+  "005600": {
+    "score": 42.4,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "汇安量化优选灵活配置C",
+    "annual_return": -1.01,
+    "sharpe": -0.06,
+    "max_drawdown": 23.41
+  },
+  "010032": {
+    "score": 47.6,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "华泰柏瑞新兴产业混合C",
+    "annual_return": 0.68,
+    "sharpe": 0.16,
+    "max_drawdown": 12.15
+  },
+  "016020": {
+    "score": 38.2,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "招商中证电池主题ETF联接C",
+    "annual_return": 0.33,
+    "sharpe": 0.08,
+    "max_drawdown": 30.28
+  },
+  "012863": {
+    "score": 36.6,
+    "grade": "D-偏差",
+    "env_label": "熊市优",
+    "name": "汇添富中证电池主题ETF发起式联接C",
+    "annual_return": -3.97,
+    "sharpe": -0.31,
+    "max_drawdown": 39.41
+  },
+  "017223": {
+    "score": 39.1,
+    "grade": "D-偏差",
+    "env_label": "熊市优",
+    "name": "富国中证电池主题ETF发起式联接C",
+    "annual_return": -1.23,
+    "sharpe": -0.04,
+    "max_drawdown": 26.47
+  },
+  "016567": {
+    "score": 46.0,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "嘉实中证电池主题ETF发起联接C",
+    "annual_return": 2.37,
+    "sharpe": 0.29,
+    "max_drawdown": 18.52
+  },
+  "018927": {
+    "score": 42.3,
+    "grade": "C-一般",
+    "env_label": "震荡优",
+    "name": "南方中证电池主题ETF发起联接C",
+    "annual_return": 2.83,
+    "sharpe": 0.31,
+    "max_drawdown": 17.03
+  },
+  "011143": {
+    "score": 38.5,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "创金合信新材料新能源股票C",
+    "annual_return": -0.96,
+    "sharpe": -0.06,
+    "max_drawdown": 29.67
+  },
+  "024738": {
+    "score": 78.7,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "永赢新材料智选混合发起C",
+    "annual_return": 19.77,
+    "sharpe": 1.9,
+    "max_drawdown": 3.01
+  },
+  "020425": {
+    "score": 69.6,
+    "grade": "B-良好",
+    "env_label": "震荡优",
+    "name": "方正富邦致盛混合C",
+    "annual_return": 12.88,
+    "sharpe": 1.15,
+    "max_drawdown": 11.2
+  },
+  "023159": {
+    "score": 79.6,
+    "grade": "A-极佳",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "上银先进制造混合发起式C",
+    "annual_return": 20.56,
+    "sharpe": 2.75,
+    "max_drawdown": 2.46
+  },
+  "025924": {
+    "score": 82.8,
+    "grade": "A-极佳",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "平安新能源精选混合发起式C",
+    "annual_return": 16.86,
+    "sharpe": 3.08,
+    "max_drawdown": 1.16
+  },
+  "013180": {
+    "score": 47.9,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "广发国证新能源车电池ETF联接C",
+    "annual_return": 6.27,
+    "sharpe": 0.64,
+    "max_drawdown": 26.56
+  },
+  "006168": {
+    "score": 47.0,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "德邦乐享生活混合C",
+    "annual_return": 3.18,
+    "sharpe": 0.38,
+    "max_drawdown": 17.1
+  },
+  "017074": {
+    "score": 43.8,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "嘉实清洁能源股票发起式C",
+    "annual_return": 1.15,
+    "sharpe": 0.16,
+    "max_drawdown": 20.43
+  },
+  "019244": {
+    "score": 71.3,
+    "grade": "A-极佳",
+    "env_label": "全天候/熊市优/牛市可/震荡优",
+    "name": "汇丰晋信龙腾混合C",
+    "annual_return": 11.94,
+    "sharpe": 0.83,
+    "max_drawdown": 11.69
+  },
+  "023567": {
+    "score": 67.8,
+    "grade": "B-良好",
+    "env_label": "待观察",
+    "name": "德邦高端装备混合发起式C",
+    "annual_return": 13.69,
+    "sharpe": 1.24,
+    "max_drawdown": 7.97
+  },
+  "008182": {
+    "score": 38.0,
+    "grade": "D-偏差",
+    "env_label": "熊市优",
+    "name": "方正富邦信泓混合C",
+    "annual_return": -2.55,
+    "sharpe": -0.18,
+    "max_drawdown": 39.06
+  },
+  "005165": {
+    "score": 64.8,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "富荣福锦混合C",
+    "annual_return": 6.65,
+    "sharpe": 0.77,
+    "max_drawdown": 9.86
+  },
+  "017994": {
+    "score": 36.7,
+    "grade": "D-偏差",
+    "env_label": "待观察",
+    "name": "方正富邦远见成长混合C",
+    "annual_return": 0.31,
+    "sharpe": 0.08,
+    "max_drawdown": 20.29
+  },
+  "007519": {
+    "score": 38.0,
+    "grade": "D-偏差",
+    "env_label": "熊市优",
+    "name": "东方阿尔法优选混合C",
+    "annual_return": 0.59,
+    "sharpe": 0.11,
+    "max_drawdown": 42.29
+  },
+  "017968": {
+    "score": 52.7,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "华富科技动能混合C",
+    "annual_return": 8.61,
+    "sharpe": 0.7,
+    "max_drawdown": 22.17
+  },
+  "021986": {
+    "score": 72.8,
+    "grade": "A-极佳",
+    "env_label": "待观察",
+    "name": "财通资管先进制造混合发起式C",
+    "annual_return": 10.61,
+    "sharpe": 0.72,
+    "max_drawdown": 11.29
+  },
+  "014409": {
+    "score": 38.1,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "创金合信兴选产业趋势混合C",
+    "annual_return": -1.8,
+    "sharpe": -0.17,
+    "max_drawdown": 18.28
+  },
+  "016531": {
+    "score": 32.9,
+    "grade": "D-偏差",
+    "env_label": "熊市优",
+    "name": "鹏华碳中和主题混合C",
+    "annual_return": -1.62,
+    "sharpe": -0.06,
+    "max_drawdown": 22.34
+  },
+  "000796": {
+    "score": 45.5,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "宝盈睿丰创新混合C",
+    "annual_return": 2.51,
+    "sharpe": 0.32,
+    "max_drawdown": 20.95
+  },
+  "015829": {
+    "score": 38.6,
+    "grade": "D-偏差",
+    "env_label": "熊市优",
+    "name": "永赢新能源智选混合发起C",
+    "annual_return": -4.46,
+    "sharpe": -0.39,
+    "max_drawdown": 31.27
+  },
+  "021490": {
+    "score": 55.1,
+    "grade": "B-良好",
+    "env_label": "待观察",
+    "name": "中航趋势领航混合发起C",
+    "annual_return": 4.77,
+    "sharpe": 0.57,
+    "max_drawdown": 9.26
+  },
+  "025942": {
+    "score": 72.2,
+    "grade": "A-极佳",
+    "env_label": "牛市可",
+    "name": "广发新动力混合C",
+    "annual_return": 27.69,
+    "sharpe": 2.21,
+    "max_drawdown": 3.76
+  },
+  "018125": {
+    "score": 63.6,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "永赢先进制造智选混合发起C",
+    "annual_return": 10.37,
+    "sharpe": 0.97,
+    "max_drawdown": 15.88
+  },
+  "015401": {
+    "score": 76.7,
+    "grade": "A-极佳",
+    "env_label": "待观察",
+    "name": "弘毅远方甄选混合C",
+    "annual_return": 27.96,
+    "sharpe": 2.23,
+    "max_drawdown": 3.52
+  },
+  "001770": {
+    "score": 72.7,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "前海开源嘉鑫混合C",
+    "annual_return": 5.84,
+    "sharpe": 1.2,
+    "max_drawdown": 3.37
+  },
+  "019412": {
+    "score": 72.0,
+    "grade": "A-极佳",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "长城新兴产业混合C",
+    "annual_return": 11.0,
+    "sharpe": 0.93,
+    "max_drawdown": 10.71
+  },
+  "016076": {
+    "score": 41.0,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "华夏智造升级混合C",
+    "annual_return": -1.9,
+    "sharpe": -0.1,
+    "max_drawdown": 28.7
+  },
+  "019458": {
+    "score": 70.6,
+    "grade": "A-极佳",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "平安先进制造主题股票发起C",
+    "annual_return": 11.43,
+    "sharpe": 1.05,
+    "max_drawdown": 12.26
+  },
+  "018241": {
+    "score": 49.3,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "嘉实制造升级股票发起式C",
+    "annual_return": 3.69,
+    "sharpe": 0.37,
+    "max_drawdown": 13.67
+  },
+  "007509": {
+    "score": 57.6,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "华商润丰灵活配置混合C",
+    "annual_return": 5.17,
+    "sharpe": 0.74,
+    "max_drawdown": 10.34
+  },
+  "024620": {
+    "score": 75.7,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "嘉实中证机器人ETF发起联接C",
+    "annual_return": 4.57,
+    "sharpe": 0.6,
+    "max_drawdown": 4.63
+  },
+  "020608": {
+    "score": 70.3,
+    "grade": "A-极佳",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "南方中证机器人ETF发起联接C",
+    "annual_return": 12.46,
+    "sharpe": 0.84,
+    "max_drawdown": 12.67
+  },
+  "021302": {
+    "score": 65.9,
+    "grade": "B-良好",
+    "env_label": "待观察",
+    "name": "银河中证机器人指数发起式C",
+    "annual_return": 8.57,
+    "sharpe": 0.8,
+    "max_drawdown": 11.22
+  },
+  "014881": {
+    "score": 50.5,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/牛市可",
+    "name": "天弘中证机器人ETF发起联接C",
+    "annual_return": 5.63,
+    "sharpe": 0.45,
+    "max_drawdown": 16.08
+  },
+  "018095": {
+    "score": 71.5,
+    "grade": "A-极佳",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "博时中证机器人指数发起式C",
+    "annual_return": 8.44,
+    "sharpe": 0.8,
+    "max_drawdown": 9.47
+  },
+  "020973": {
+    "score": 45.5,
+    "grade": "C-一般",
+    "env_label": "震荡优",
+    "name": "易方达机器人ETF联接C",
+    "annual_return": 3.15,
+    "sharpe": 0.35,
+    "max_drawdown": 11.9
+  },
+  "020482": {
+    "score": 66.3,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "招商中证机器人ETF发起联接C",
+    "annual_return": 7.72,
+    "sharpe": 0.67,
+    "max_drawdown": 9.91
+  },
+  "020256": {
+    "score": 71.0,
+    "grade": "A-极佳",
+    "env_label": "待观察",
+    "name": "中欧中证机器人指数发起C",
+    "annual_return": 8.33,
+    "sharpe": 0.7,
+    "max_drawdown": 9.38
+  },
+  "018345": {
+    "score": 53.3,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/牛市可/震荡优",
+    "name": "华夏中证机器人ETF发起式联接C",
+    "annual_return": 8.58,
+    "sharpe": 0.69,
+    "max_drawdown": 18.96
+  },
+  "020982": {
+    "score": 67.6,
+    "grade": "B-良好",
+    "env_label": "熊市优",
+    "name": "华安国证机器人产业指数发起式C",
+    "annual_return": 9.47,
+    "sharpe": 0.77,
+    "max_drawdown": 10.58
+  },
+  "024769": {
+    "score": 77.0,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "汇添富中证机器人ETF发起式联接C",
+    "annual_return": 10.74,
+    "sharpe": 1.17,
+    "max_drawdown": 5.19
+  },
+  "024389": {
+    "score": 71.8,
+    "grade": "A-极佳",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "中航智选领航混合发起C",
+    "annual_return": 6.2,
+    "sharpe": 1.17,
+    "max_drawdown": 2.9
+  },
+  "013817": {
+    "score": 38.4,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "汇添富中证光伏产业指数增强发起式C",
+    "annual_return": -3.63,
+    "sharpe": -0.2,
+    "max_drawdown": 34.89
+  },
+  "013602": {
+    "score": 37.2,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "国泰中证光伏产业ETF发起联接C",
+    "annual_return": -2.53,
+    "sharpe": -0.11,
+    "max_drawdown": 35.7
+  },
+  "012680": {
+    "score": 39.0,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "华泰柏瑞光伏ETF联接C",
+    "annual_return": -0.53,
+    "sharpe": 0.03,
+    "max_drawdown": 30.49
+  },
+  "024060": {
+    "score": 81.4,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "汇添富中证光伏产业ETF发起式联接C",
+    "annual_return": 13.62,
+    "sharpe": 1.98,
+    "max_drawdown": 2.59
+  },
+  "012723": {
+    "score": 30.8,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "平安中证光伏产业指数C",
+    "annual_return": -8.42,
+    "sharpe": -0.41,
+    "max_drawdown": 55.82
+  },
+  "012929": {
+    "score": 39.1,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "银华中证光伏ETF发起式联接C",
+    "annual_return": 0.31,
+    "sharpe": 0.09,
+    "max_drawdown": 32.47
+  },
+  "012365": {
+    "score": 36.1,
+    "grade": "D-偏差",
+    "env_label": "熊市优",
+    "name": "广发中证光伏产业指数C",
+    "annual_return": -7.56,
+    "sharpe": -0.7,
+    "max_drawdown": 38.77
+  },
+  "011103": {
+    "score": 33.9,
+    "grade": "D-偏差",
+    "env_label": "熊市优",
+    "name": "天弘中证光伏产业指数C",
+    "annual_return": -6.38,
+    "sharpe": -0.64,
+    "max_drawdown": 40.88
+  },
+  "011967": {
+    "score": 37.2,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "招商中证光伏产业指数C",
+    "annual_return": 0.17,
+    "sharpe": 0.08,
+    "max_drawdown": 34.3
+  },
+  "012886": {
+    "score": 37.6,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "华夏中证光伏产业ETF发起式联接C",
+    "annual_return": -1.07,
+    "sharpe": -0.0,
+    "max_drawdown": 35.15
+  },
+  "018503": {
+    "score": 56.8,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "东财光伏C",
+    "annual_return": 5.44,
+    "sharpe": 0.52,
+    "max_drawdown": 11.16
+  },
+  "017647": {
+    "score": 42.5,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "易方达中证光伏产业ETF联接发起式C",
+    "annual_return": 2.59,
+    "sharpe": 0.24,
+    "max_drawdown": 24.79
+  },
+  "007083": {
+    "score": 46.9,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "平安高端制造混合C",
+    "annual_return": 3.44,
+    "sharpe": 0.39,
+    "max_drawdown": 23.4
+  },
+  "011579": {
+    "score": 49.1,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "汇丰晋信核心成长C",
+    "annual_return": 3.72,
+    "sharpe": 0.37,
+    "max_drawdown": 21.22
+  },
+  "014918": {
+    "score": 41.2,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/牛市可",
+    "name": "汇丰晋信时代先锋混合C",
+    "annual_return": 1.63,
+    "sharpe": 0.19,
+    "max_drawdown": 25.82
+  },
+  "017787": {
+    "score": 55.2,
+    "grade": "B-良好",
+    "env_label": "熊市优",
+    "name": "万家宏观择时多策略混合C",
+    "annual_return": 2.62,
+    "sharpe": 0.35,
+    "max_drawdown": 8.78
+  },
+  "016814": {
+    "score": 45.3,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "国联中证煤炭指数C",
+    "annual_return": 0.37,
+    "sharpe": 0.09,
+    "max_drawdown": 9.83
+  },
+  "013275": {
+    "score": 42.4,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "富国中证煤炭指数(LOF)C",
+    "annual_return": 1.08,
+    "sharpe": 0.15,
+    "max_drawdown": 14.77
+  },
+  "008280": {
+    "score": 56.1,
+    "grade": "B-良好",
+    "env_label": "熊市优",
+    "name": "国泰中证煤炭ETF联接C",
+    "annual_return": 3.76,
+    "sharpe": 0.5,
+    "max_drawdown": 10.39
+  },
+  "013596": {
+    "score": 65.2,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "招商中证煤炭等权指数(LOF)C",
+    "annual_return": 3.72,
+    "sharpe": 0.6,
+    "max_drawdown": 5.83
+  },
+  "015566": {
+    "score": 71.3,
+    "grade": "A-极佳",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "万家精选混合C",
+    "annual_return": 7.48,
+    "sharpe": 0.92,
+    "max_drawdown": 8.41
+  },
+  "005963": {
+    "score": 46.3,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "宝盈人工智能股票C",
+    "annual_return": 2.14,
+    "sharpe": 0.26,
+    "max_drawdown": 21.58
+  },
+  "014162": {
+    "score": 38.5,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "万家人工智能混合C",
+    "annual_return": -5.44,
+    "sharpe": -0.44,
+    "max_drawdown": 28.25
+  },
+  "012734": {
+    "score": 62.2,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "易方达中证人工智能主题ETF联接C",
+    "annual_return": 7.08,
+    "sharpe": 0.83,
+    "max_drawdown": 11.75
+  },
+  "008586": {
+    "score": 45.5,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "华夏人工智能ETF联接C",
+    "annual_return": 2.27,
+    "sharpe": 0.31,
+    "max_drawdown": 16.59
+  },
+  "011840": {
+    "score": 52.0,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "天弘中证人工智能C",
+    "annual_return": 5.38,
+    "sharpe": 0.55,
+    "max_drawdown": 15.79
+  },
+  "023385": {
+    "score": 78.7,
+    "grade": "A-极佳",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "平安中证人工智能主题ETF发起式联接C",
+    "annual_return": 67.6,
+    "sharpe": 3.74,
+    "max_drawdown": 4.03
+  },
+  "024775": {
+    "score": 37.9,
+    "grade": "D-偏差",
+    "env_label": "牛市可",
+    "name": "永赢上证科创板人工智能指数发起C",
+    "annual_return": -12.94,
+    "sharpe": -0.99,
+    "max_drawdown": 10.14
+  },
+  "024410": {
+    "score": 76.8,
+    "grade": "A-极佳",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "鑫元科创AI指数发起式C",
+    "annual_return": 25.25,
+    "sharpe": 1.43,
+    "max_drawdown": 9.25
+  },
+  "024751": {
+    "score": 84.1,
+    "grade": "A-极佳",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "兴业上证科创板人工智能指数C",
+    "annual_return": 25.74,
+    "sharpe": 2.06,
+    "max_drawdown": 3.47
+  },
+  "023565": {
+    "score": 78.3,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "易方达科创人工智能ETF联接C",
+    "annual_return": 27.99,
+    "sharpe": 2.0,
+    "max_drawdown": 7.01
+  },
+  "024412": {
+    "score": 83.1,
+    "grade": "A-极佳",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "华夏上证科创板人工智能ETF联接C",
+    "annual_return": 32.05,
+    "sharpe": 3.45,
+    "max_drawdown": 1.42
+  },
+  "023551": {
+    "score": 81.3,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "银华上证科创板人工智能ETF发起式联接C",
+    "annual_return": 31.11,
+    "sharpe": 2.54,
+    "max_drawdown": 5.51
+  },
+  "023521": {
+    "score": 81.7,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "博时上证科创板人工智能ETF发起式联接C",
+    "annual_return": 32.42,
+    "sharpe": 2.59,
+    "max_drawdown": 5.39
+  },
+  "024246": {
+    "score": 69.1,
+    "grade": "B-良好",
+    "env_label": "待观察",
+    "name": "广发上证科创板人工智能ETF发起式联接C",
+    "annual_return": 10.03,
+    "sharpe": 0.9,
+    "max_drawdown": 10.21
+  },
+  "023408": {
+    "score": 39.6,
+    "grade": "D-偏差",
+    "env_label": "待观察",
+    "name": "华宝创业板人工智能ETF发起式联接C",
+    "annual_return": -2.9,
+    "sharpe": -0.2,
+    "max_drawdown": 10.26
+  },
+  "025493": {
+    "score": 77.2,
+    "grade": "A-极佳",
+    "env_label": "待观察",
+    "name": "国泰创业板人工智能ETF发起联接C",
+    "annual_return": 18.49,
+    "sharpe": 2.07,
+    "max_drawdown": 2.07
+  },
+  "024726": {
+    "score": 74.1,
+    "grade": "A-极佳",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "南方创业板人工智能ETF联接C",
+    "annual_return": 59.65,
+    "sharpe": 2.02,
+    "max_drawdown": 5.37
+  },
+  "024663": {
+    "score": 45.8,
+    "grade": "C-一般",
+    "env_label": "待观察",
+    "name": "富国创业板人工智能ETF发起式联接C",
+    "annual_return": 7.76,
+    "sharpe": 0.41,
+    "max_drawdown": 13.99
+  },
+  "025506": {
+    "score": 84.4,
+    "grade": "A-极佳",
+    "env_label": "牛市可",
+    "name": "华夏创业板人工智能ETF发起式联接C",
+    "annual_return": 30.42,
+    "sharpe": 2.38,
+    "max_drawdown": 2.99
+  },
+  "008021": {
+    "score": 40.4,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "华富中证人工智能产业ETF联接C",
+    "annual_return": 3.05,
+    "sharpe": 0.3,
+    "max_drawdown": 31.02
+  },
+  "001665": {
+    "score": 39.6,
+    "grade": "D-偏差",
+    "env_label": "震荡优",
+    "name": "平安鑫安混合C",
+    "annual_return": 2.73,
+    "sharpe": 0.45,
+    "max_drawdown": 13.8
+  },
+  "002164": {
+    "score": 42.2,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "汇添富新睿精选混合C",
+    "annual_return": 1.21,
+    "sharpe": 0.22,
+    "max_drawdown": 28.4
+  },
+  "025857": {
+    "score": 73.1,
+    "grade": "A-极佳",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "华夏中证电网设备主题ETF发起式联接C",
+    "annual_return": 80.34,
+    "sharpe": 3.82,
+    "max_drawdown": 3.84
+  },
+  "023639": {
+    "score": 78.7,
+    "grade": "A-极佳",
+    "env_label": "待观察",
+    "name": "国泰A股电网设备ETF联接C",
+    "annual_return": 17.26,
+    "sharpe": 4.56,
+    "max_drawdown": 0.82
+  },
+  "025793": {
+    "score": 84.7,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "东方阿尔法科技甄选混合发起C",
+    "annual_return": 35.39,
+    "sharpe": 3.16,
+    "max_drawdown": 1.48
+  },
+  "025833": {
+    "score": 78.3,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "天弘中证电网设备主题指数发起C",
+    "annual_return": 38.67,
+    "sharpe": 3.89,
+    "max_drawdown": 2.16
+  },
+  "006113": {
+    "score": 48.0,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "汇添富创新医药混合A",
+    "annual_return": 2.28,
+    "sharpe": 0.31,
+    "max_drawdown": 20.04
+  },
+  "020137": {
+    "score": 39.5,
+    "grade": "D-偏差",
+    "env_label": "待观察",
+    "name": "平安医疗健康混合C",
+    "annual_return": 0.02,
+    "sharpe": 0.05,
+    "max_drawdown": 16.03
+  },
+  "010500": {
+    "score": 40.9,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "中银创新医疗混合C",
+    "annual_return": -0.17,
+    "sharpe": 0.03,
+    "max_drawdown": 25.3
+  },
+  "022150": {
+    "score": 56.9,
+    "grade": "B-良好",
+    "env_label": "待观察",
+    "name": "诺安精选价值混合C",
+    "annual_return": 5.26,
+    "sharpe": 0.52,
+    "max_drawdown": 11.62
+  },
+  "024358": {
+    "score": 40.4,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "东方阿尔法健康产业混合发起C",
+    "annual_return": -10.63,
+    "sharpe": -1.18,
+    "max_drawdown": 8.98
+  },
+  "022287": {
+    "score": 75.8,
+    "grade": "A-极佳",
+    "env_label": "待观察",
+    "name": "长城医药产业精选混合发起式C",
+    "annual_return": 6.04,
+    "sharpe": 0.6,
+    "max_drawdown": 6.23
+  },
+  "015916": {
+    "score": 38.1,
+    "grade": "D-偏差",
+    "env_label": "熊市优",
+    "name": "永赢医药创新智选混合发起C",
+    "annual_return": -6.2,
+    "sharpe": -0.52,
+    "max_drawdown": 19.76
+  },
+  "019917": {
+    "score": 76.2,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "富国医药创新股票C",
+    "annual_return": 10.96,
+    "sharpe": 1.26,
+    "max_drawdown": 5.43
+  },
+  "021760": {
+    "score": 54.6,
+    "grade": "C-一般",
+    "env_label": "待观察",
+    "name": "中欧中证港股通创新药指数发起C",
+    "annual_return": 5.02,
+    "sharpe": 0.56,
+    "max_drawdown": 11.89
+  },
+  "023598": {
+    "score": 70.5,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "景顺长城中证港股通创新药ETF联接C",
+    "annual_return": 9.11,
+    "sharpe": 1.04,
+    "max_drawdown": 9.61
+  },
+  "023482": {
+    "score": 65.3,
+    "grade": "B-良好",
+    "env_label": "震荡优",
+    "name": "万家中证港股通创新药ETF发起式联接C",
+    "annual_return": 4.12,
+    "sharpe": 0.52,
+    "max_drawdown": 6.66
+  },
+  "019671": {
+    "score": 40.5,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "广发港股创新药ETF联接(QDII)C",
+    "annual_return": 0.91,
+    "sharpe": 0.13,
+    "max_drawdown": 18.1
+  },
+  "020232": {
+    "score": 41.3,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "嘉实互融精选股票C",
+    "annual_return": -2.36,
+    "sharpe": -0.19,
+    "max_drawdown": 14.26
+  },
+  "006229": {
+    "score": 45.4,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "中欧医疗创新股票C",
+    "annual_return": 1.8,
+    "sharpe": 0.27,
+    "max_drawdown": 21.8
+  },
+  "020398": {
+    "score": 76.3,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "中银港股通医药混合发起C",
+    "annual_return": 10.4,
+    "sharpe": 1.06,
+    "max_drawdown": 6.82
+  },
+  "016971": {
+    "score": 43.2,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "华夏恒生生物科技ETF发起式联接(QDII)C",
+    "annual_return": -0.17,
+    "sharpe": 0.05,
+    "max_drawdown": 22.45
+  },
+  "020111": {
+    "score": 47.2,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "富国恒生港股通创新药及医疗保健ETF发起式联接C",
+    "annual_return": 0.82,
+    "sharpe": 0.14,
+    "max_drawdown": 8.85
+  },
+  "021031": {
+    "score": 74.6,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "汇添富国证港股通创新药ETF发起式联接C",
+    "annual_return": 10.21,
+    "sharpe": 1.16,
+    "max_drawdown": 7.74
+  },
+  "023930": {
+    "score": 42.3,
+    "grade": "C-一般",
+    "env_label": "牛市可",
+    "name": "银华国证港股通创新药ETF发起式联接C",
+    "annual_return": -3.83,
+    "sharpe": -0.38,
+    "max_drawdown": 10.08
+  },
+  "010655": {
+    "score": 42.1,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "天弘医药创新C",
+    "annual_return": -0.22,
+    "sharpe": 0.03,
+    "max_drawdown": 24.84
+  },
+  "024329": {
+    "score": 43.3,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "易方达恒生港股通创新药ETF联接发起式C",
+    "annual_return": -7.86,
+    "sharpe": -0.78,
+    "max_drawdown": 7.69
+  },
+  "022853": {
+    "score": 41.1,
+    "grade": "C-一般",
+    "env_label": "待观察",
+    "name": "中航优选领航混合发起C",
+    "annual_return": 0.79,
+    "sharpe": 0.13,
+    "max_drawdown": 12.02
+  },
+  "014565": {
+    "score": 66.8,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "天弘沪深港创新药50ETF联接C",
+    "annual_return": 5.8,
+    "sharpe": 0.71,
+    "max_drawdown": 9.16
+  },
+  "019127": {
+    "score": 44.7,
+    "grade": "C-一般",
+    "env_label": "待观察",
+    "name": "华泰柏瑞港股通医疗精选混合发起式C",
+    "annual_return": -1.37,
+    "sharpe": -0.11,
+    "max_drawdown": 5.91
+  },
+  "019035": {
+    "score": 41.5,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "易方达全球医药行业混合发起式(QDII)C(人民币)",
+    "annual_return": -5.41,
+    "sharpe": -0.5,
+    "max_drawdown": 15.69
+  },
+  "014425": {
+    "score": 35.9,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "博时恒生医疗保健ETF发起式联接(QDII)C",
+    "annual_return": -1.42,
+    "sharpe": -0.07,
+    "max_drawdown": 34.0
+  },
+  "012738": {
+    "score": 46.6,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/牛市可",
+    "name": "广发创新药ETF联接C",
+    "annual_return": -0.58,
+    "sharpe": 0.0,
+    "max_drawdown": 17.9
+  },
+  "010710": {
+    "score": 47.1,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "安信医药健康股票C",
+    "annual_return": 2.33,
+    "sharpe": 0.27,
+    "max_drawdown": 17.01
+  },
+  "017963": {
+    "score": 45.0,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "广发医药创新混合发起式C",
+    "annual_return": 1.62,
+    "sharpe": 0.21,
+    "max_drawdown": 13.55
+  },
+  "017900": {
+    "score": 50.6,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "鹏华医药科技股票C",
+    "annual_return": 4.52,
+    "sharpe": 0.47,
+    "max_drawdown": 14.31
+  },
+  "015395": {
+    "score": 75.7,
+    "grade": "A-极佳",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "招商体育文化休闲股票C",
+    "annual_return": 10.96,
+    "sharpe": 1.04,
+    "max_drawdown": 8.88
+  },
+  "012769": {
+    "score": 50.0,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "华夏中证动漫游戏ETF发起式联接C",
+    "annual_return": 7.07,
+    "sharpe": 0.59,
+    "max_drawdown": 23.84
+  },
+  "012729": {
+    "score": 39.3,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "国泰中证动漫游戏ETF联接C",
+    "annual_return": -1.97,
+    "sharpe": -0.13,
+    "max_drawdown": 25.61
+  },
+  "015675": {
+    "score": 54.4,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "鹏华中证传媒指数(LOF)C",
+    "annual_return": 3.22,
+    "sharpe": 0.39,
+    "max_drawdown": 12.02
+  },
+  "010677": {
+    "score": 46.7,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "工银传媒指数C",
+    "annual_return": 2.0,
+    "sharpe": 0.29,
+    "max_drawdown": 14.64
+  },
+  "018590": {
+    "score": 53.6,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "银华体育文化灵活配置混合C",
+    "annual_return": 3.73,
+    "sharpe": 0.39,
+    "max_drawdown": 11.6
+  },
+  "015945": {
+    "score": 50.8,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "易方达国防军工混合C",
+    "annual_return": 5.18,
+    "sharpe": 0.64,
+    "max_drawdown": 19.31
+  },
+  "017941": {
+    "score": 42.0,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "国投瑞银国家安全混合C",
+    "annual_return": 0.1,
+    "sharpe": 0.05,
+    "max_drawdown": 15.6
+  },
+  "016848": {
+    "score": 38.2,
+    "grade": "D-偏差",
+    "env_label": "熊市优",
+    "name": "中欧高端装备股票发起C",
+    "annual_return": -2.29,
+    "sharpe": -0.14,
+    "max_drawdown": 20.95
+  },
+  "008960": {
+    "score": 42.3,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "长信国防军工量化混合C",
+    "annual_return": 1.82,
+    "sharpe": 0.25,
+    "max_drawdown": 29.19
+  },
+  "017652": {
+    "score": 49.8,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/牛市可/震荡优",
+    "name": "中航华证商飞高端制造产业指数发起C",
+    "annual_return": 3.57,
+    "sharpe": 0.51,
+    "max_drawdown": 14.89
+  },
+  "018185": {
+    "score": 52.4,
+    "grade": "C-一般",
+    "env_label": "牛市可",
+    "name": "万家先进制造混合发起式C",
+    "annual_return": 9.99,
+    "sharpe": 0.96,
+    "max_drawdown": 18.02
+  },
+  "018940": {
+    "score": 63.4,
+    "grade": "B-良好",
+    "env_label": "震荡优",
+    "name": "长城景气成长混合C",
+    "annual_return": 12.6,
+    "sharpe": 1.05,
+    "max_drawdown": 18.43
+  },
+  "012842": {
+    "score": 51.6,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/牛市可",
+    "name": "易方达中证军工(LOF)C",
+    "annual_return": 7.49,
+    "sharpe": 0.75,
+    "max_drawdown": 22.53
+  },
+  "015599": {
+    "score": 54.4,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/牛市可/震荡优",
+    "name": "国泰国证航天军工指数(LOF)C",
+    "annual_return": 4.63,
+    "sharpe": 0.72,
+    "max_drawdown": 12.99
+  },
+  "010364": {
+    "score": 55.1,
+    "grade": "B-良好",
+    "env_label": "熊市优",
+    "name": "鹏华空天军工指数(LOF)C",
+    "annual_return": 5.06,
+    "sharpe": 0.64,
+    "max_drawdown": 14.86
+  },
+  "013035": {
+    "score": 49.8,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "富国中证军工指数(LOF)C",
+    "annual_return": 3.78,
+    "sharpe": 0.48,
+    "max_drawdown": 16.82
+  },
+  "005693": {
+    "score": 60.9,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "广发中证军工ETF联接C",
+    "annual_return": 5.08,
+    "sharpe": 0.76,
+    "max_drawdown": 10.19
+  },
+  "020107": {
+    "score": 55.7,
+    "grade": "B-良好",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "兴业安保优选混合C",
+    "annual_return": 7.88,
+    "sharpe": 0.67,
+    "max_drawdown": 14.41
+  },
+  "018075": {
+    "score": 45.0,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/牛市可",
+    "name": "长盛航天海工混合C",
+    "annual_return": 2.58,
+    "sharpe": 0.26,
+    "max_drawdown": 18.28
+  },
+  "015046": {
+    "score": 35.9,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/牛市可",
+    "name": "前海开源中航军工指数C",
+    "annual_return": -2.04,
+    "sharpe": -0.12,
+    "max_drawdown": 31.89
+  },
+  "022243": {
+    "score": 46.1,
+    "grade": "C-一般",
+    "env_label": "待观察",
+    "name": "中邮军民融合灵活配置混合C",
+    "annual_return": 1.08,
+    "sharpe": 0.19,
+    "max_drawdown": 7.77
+  },
+  "013566": {
+    "score": 42.2,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "华夏军工安全混合C",
+    "annual_return": 0.08,
+    "sharpe": 0.06,
+    "max_drawdown": 25.41
+  },
+  "018028": {
+    "score": 35.9,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "嘉实中证高端装备细分50ETF发起联接C",
+    "annual_return": 0.21,
+    "sharpe": 0.08,
+    "max_drawdown": 25.36
+  },
+  "013613": {
+    "score": 58.1,
+    "grade": "B-良好",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "宝盈国家安全沪港深股票C",
+    "annual_return": 7.74,
+    "sharpe": 0.72,
+    "max_drawdown": 17.74
+  },
+  "023145": {
+    "score": 80.6,
+    "grade": "A-极佳",
+    "env_label": "待观察",
+    "name": "汇添富中证油气资源ETF发起式联接C",
+    "annual_return": 27.73,
+    "sharpe": 3.24,
+    "max_drawdown": 2.02
+  },
+  "021620": {
+    "score": 75.6,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "天弘中证油气产业指数发起C",
+    "annual_return": 6.73,
+    "sharpe": 0.94,
+    "max_drawdown": 6.01
+  },
+  "021823": {
+    "score": 70.3,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "景顺长城国证石油天然气ETF发起式联接基金C",
+    "annual_return": 12.22,
+    "sharpe": 1.15,
+    "max_drawdown": 8.92
+  },
+  "019828": {
+    "score": 76.9,
+    "grade": "A-极佳",
+    "env_label": "待观察",
+    "name": "鹏华国证石油天然气ETF联接C",
+    "annual_return": 10.42,
+    "sharpe": 1.02,
+    "max_drawdown": 8.42
+  },
+  "023833": {
+    "score": 73.7,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "华泰柏瑞中证油气产业ETF发起式联接C",
+    "annual_return": 16.8,
+    "sharpe": 2.44,
+    "max_drawdown": 2.55
+  },
+  "020406": {
+    "score": 52.6,
+    "grade": "C-一般",
+    "env_label": "震荡优",
+    "name": "国泰中证油气产业ETF发起联接C",
+    "annual_return": 3.22,
+    "sharpe": 0.51,
+    "max_drawdown": 9.07
+  },
+  "020105": {
+    "score": 73.2,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "易方达化工行业ETF联接C",
+    "annual_return": 8.04,
+    "sharpe": 1.1,
+    "max_drawdown": 7.51
+  },
+  "017856": {
+    "score": 40.2,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "华夏中证石化产业ETF发起式联接C",
+    "annual_return": 2.26,
+    "sharpe": 0.29,
+    "max_drawdown": 18.47
+  },
+  "018853": {
+    "score": 45.2,
+    "grade": "C-一般",
+    "env_label": "牛市可",
+    "name": "博时标普石油天然气勘探及生产精选行业指数发起(QDII)C人民币",
+    "annual_return": 0.95,
+    "sharpe": 0.14,
+    "max_drawdown": 15.1
+  },
+  "007844": {
+    "score": 59.2,
+    "grade": "B-良好",
+    "env_label": "熊市优",
+    "name": "华宝标普油气上游股票人民币C",
+    "annual_return": 5.59,
+    "sharpe": 0.59,
+    "max_drawdown": 13.68
+  },
+  "162411": {
+    "score": 51.5,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "华宝标普油气上游股票人民币A",
+    "annual_return": 6.18,
+    "sharpe": 0.5,
+    "max_drawdown": 21.48
+  },
+  "004243": {
+    "score": 47.5,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "广发道琼斯石油指数人民币C",
+    "annual_return": 2.78,
+    "sharpe": 0.38,
+    "max_drawdown": 18.95
+  },
+  "021694": {
+    "score": 73.8,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "银华抗通胀主题(QDII-FOF-LOF)C",
+    "annual_return": 5.45,
+    "sharpe": 1.42,
+    "max_drawdown": 2.39
+  },
+  "014982": {
+    "score": 62.5,
+    "grade": "B-良好",
+    "env_label": "震荡优",
+    "name": "华安标普全球石油指数(LOF)C",
+    "annual_return": 2.71,
+    "sharpe": 0.7,
+    "max_drawdown": 4.83
+  },
+  "019578": {
+    "score": 72.5,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "摩根全球天然资源混合(QDII)C",
+    "annual_return": 7.37,
+    "sharpe": 1.76,
+    "max_drawdown": 2.86
+  },
+  "163208": {
+    "score": 53.4,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "诺安油气能源",
+    "annual_return": 3.3,
+    "sharpe": 0.43,
+    "max_drawdown": 13.23
+  },
+  "501018": {
+    "score": 46.7,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "南方原油A",
+    "annual_return": 0.46,
+    "sharpe": 0.1,
+    "max_drawdown": 22.17
+  },
+  "006476": {
+    "score": 46.0,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "南方原油C",
+    "annual_return": -0.24,
+    "sharpe": 0.02,
+    "max_drawdown": 21.79
+  },
+  "160723": {
+    "score": 47.2,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "嘉实原油(QDII-LOF)",
+    "annual_return": 0.83,
+    "sharpe": 0.14,
+    "max_drawdown": 20.77
+  },
+  "161129": {
+    "score": 46.8,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "易方达原油A类人民币",
+    "annual_return": 0.48,
+    "sharpe": 0.1,
+    "max_drawdown": 21.68
+  },
+  "008701": {
+    "score": 59.5,
+    "grade": "B-良好",
+    "env_label": "待观察",
+    "name": "华夏黄金ETF联接A",
+    "annual_return": 4.36,
+    "sharpe": 0.96,
+    "max_drawdown": 6.93
+  },
+  "014662": {
+    "score": 73.5,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "天弘上海金ETF发起联接C",
+    "annual_return": 6.85,
+    "sharpe": 1.37,
+    "max_drawdown": 5.5
+  },
+  "008987": {
+    "score": 65.9,
+    "grade": "B-良好",
+    "env_label": "待观察",
+    "name": "广发上海金ETF联接C",
+    "annual_return": 4.21,
+    "sharpe": 1.01,
+    "max_drawdown": 5.01
+  },
+  "009505": {
+    "score": 55.0,
+    "grade": "B-良好",
+    "env_label": "待观察",
+    "name": "富国上海金ETF联接C",
+    "annual_return": 3.97,
+    "sharpe": 0.9,
+    "max_drawdown": 7.42
+  },
+  "009034": {
+    "score": 66.4,
+    "grade": "B-良好",
+    "env_label": "震荡优",
+    "name": "建信上海金ETF联接C",
+    "annual_return": 4.73,
+    "sharpe": 1.0,
+    "max_drawdown": 5.77
+  },
+  "016582": {
+    "score": 77.3,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "嘉实上海金ETF发起联接C",
+    "annual_return": 10.74,
+    "sharpe": 1.72,
+    "max_drawdown": 4.07
+  },
+  "009478": {
+    "score": 65.2,
+    "grade": "B-良好",
+    "env_label": "震荡优",
+    "name": "中银上海金ETF联接C",
+    "annual_return": 5.07,
+    "sharpe": 1.13,
+    "max_drawdown": 6.16
+  },
+  "018392": {
+    "score": 77.5,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "南方上海金ETF联接C",
+    "annual_return": 12.37,
+    "sharpe": 2.03,
+    "max_drawdown": 3.58
+  },
+  "002963": {
+    "score": 60.9,
+    "grade": "B-良好",
+    "env_label": "震荡优",
+    "name": "易方达黄金ETF联接C",
+    "annual_return": 3.95,
+    "sharpe": 0.97,
+    "max_drawdown": 5.63
+  },
+  "008702": {
+    "score": 70.2,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "华夏黄金ETF联接C",
+    "annual_return": 5.11,
+    "sharpe": 0.97,
+    "max_drawdown": 5.92
+  },
+  "004253": {
+    "score": 65.9,
+    "grade": "B-良好",
+    "env_label": "震荡优",
+    "name": "国泰黄金ETF联接C",
+    "annual_return": 4.65,
+    "sharpe": 1.17,
+    "max_drawdown": 5.53
+  },
+  "000217": {
+    "score": 59.4,
+    "grade": "B-良好",
+    "env_label": "待观察",
+    "name": "华安黄金ETF联接C",
+    "annual_return": 3.7,
+    "sharpe": 0.95,
+    "max_drawdown": 5.63
+  },
+  "008143": {
+    "score": 45.2,
+    "grade": "C-一般",
+    "env_label": "震荡优",
+    "name": "工银黄金ETF联接C",
+    "annual_return": 5.16,
+    "sharpe": 1.02,
+    "max_drawdown": 12.81
+  },
+  "002611": {
+    "score": 62.3,
+    "grade": "B-良好",
+    "env_label": "震荡优",
+    "name": "博时黄金ETF联接C",
+    "annual_return": 4.1,
+    "sharpe": 0.97,
+    "max_drawdown": 5.6
+  },
+  "021740": {
+    "score": 81.2,
+    "grade": "A-极佳",
+    "env_label": "震荡优",
+    "name": "前海开源黄金ETF联接C",
+    "annual_return": 18.74,
+    "sharpe": 2.22,
+    "max_drawdown": 5.53
+  },
+  "011036": {
+    "score": 36.2,
+    "grade": "D-偏差",
+    "env_label": "熊市优",
+    "name": "嘉实中证稀土产业ETF联接C",
+    "annual_return": -3.29,
+    "sharpe": -0.23,
+    "max_drawdown": 39.44
+  },
+  "014332": {
+    "score": 35.5,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "华泰柏瑞中证稀土产业ETF发起式联接C",
+    "annual_return": -1.64,
+    "sharpe": -0.12,
+    "max_drawdown": 30.99
+  },
+  "019875": {
+    "score": 66.6,
+    "grade": "B-良好",
+    "env_label": "待观察",
+    "name": "广发稀有金属ETF联接C",
+    "annual_return": 3.98,
+    "sharpe": 0.47,
+    "max_drawdown": 5.94
+  },
+  "014111": {
+    "score": 41.5,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "嘉实中证稀有金属主题ETF发起联接C",
+    "annual_return": 0.06,
+    "sharpe": 0.05,
+    "max_drawdown": 22.96
+  },
+  "019088": {
+    "score": 26.5,
+    "grade": "D-偏差",
+    "env_label": "待观察",
+    "name": "工银中证稀有金属主题ETF发起式联接C",
+    "annual_return": -5.03,
+    "sharpe": -0.43,
+    "max_drawdown": 26.69
+  },
+  "013943": {
+    "score": 42.0,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "华宝中证稀有金属指数增强发起C",
+    "annual_return": -0.06,
+    "sharpe": 0.04,
+    "max_drawdown": 23.02
+  },
+  "004937": {
+    "score": 40.7,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "中航混改精选混合C",
+    "annual_return": -0.88,
+    "sharpe": -0.1,
+    "max_drawdown": 20.83
+  },
+  "011035": {
+    "score": 40.6,
+    "grade": "C-一般",
+    "env_label": "熊市优",
+    "name": "嘉实中证稀土产业ETF联接A",
+    "annual_return": -0.4,
+    "sharpe": 0.02,
+    "max_drawdown": 28.15
+  },
+  "019874": {
+    "score": 68.4,
+    "grade": "B-良好",
+    "env_label": "待观察",
+    "name": "广发稀有金属ETF联接A",
+    "annual_return": 4.33,
+    "sharpe": 0.51,
+    "max_drawdown": 5.93
+  },
+  "016186": {
+    "score": 37.9,
+    "grade": "D-偏差",
+    "env_label": "牛市可",
+    "name": "广发中证全指电力ETF发起式联接C",
+    "annual_return": 0.8,
+    "sharpe": 0.17,
+    "max_drawdown": 7.87
+  },
+  "017057": {
+    "score": 30.4,
+    "grade": "D-偏差",
+    "env_label": "牛市可",
+    "name": "嘉实国证绿色电力ETF发起联接C",
+    "annual_return": -1.67,
+    "sharpe": -0.39,
+    "max_drawdown": 8.7
+  },
+  "017175": {
+    "score": 31.5,
+    "grade": "D-偏差",
+    "env_label": "牛市可",
+    "name": "天弘国证绿色电力指数发起C",
+    "annual_return": -1.21,
+    "sharpe": -0.23,
+    "max_drawdown": 8.41
+  },
+  "017482": {
+    "score": 35.9,
+    "grade": "D-偏差",
+    "env_label": "牛市可",
+    "name": "博时中证全指电力ETF发起式联接C",
+    "annual_return": 0.7,
+    "sharpe": 0.16,
+    "max_drawdown": 8.71
+  },
+  "021753": {
+    "score": 35.8,
+    "grade": "D-偏差",
+    "env_label": "待观察",
+    "name": "南方中证全指电力公用事业ETF发起联接C",
+    "annual_return": -0.44,
+    "sharpe": -0.03,
+    "max_drawdown": 7.26
+  },
+  "018173": {
+    "score": 39.1,
+    "grade": "D-偏差",
+    "env_label": "牛市可",
+    "name": "华泰柏瑞中证电力全指ETF发起式联接C",
+    "annual_return": 0.7,
+    "sharpe": 0.13,
+    "max_drawdown": 8.76
+  },
+  "018735": {
+    "score": 53.6,
+    "grade": "C-一般",
+    "env_label": "全天候/牛市可/震荡优",
+    "name": "华夏中证绿色电力ETF发起式联接C",
+    "annual_return": 3.17,
+    "sharpe": 0.52,
+    "max_drawdown": 6.51
+  },
+  "019059": {
+    "score": 35.3,
+    "grade": "D-偏差",
+    "env_label": "牛市可",
+    "name": "易方达中证绿色电力ETF联接发起式C",
+    "annual_return": -0.06,
+    "sharpe": 0.01,
+    "max_drawdown": 7.03
+  },
+  "020096": {
+    "score": 46.4,
+    "grade": "C-一般",
+    "env_label": "牛市可",
+    "name": "富国中证绿色电力ETF发起式联接C",
+    "annual_return": 2.61,
+    "sharpe": 0.47,
+    "max_drawdown": 7.75
+  },
+  "018035": {
+    "score": 30.2,
+    "grade": "D-偏差",
+    "env_label": "牛市可",
+    "name": "国泰国证绿色电力ETF发起联接C",
+    "annual_return": -0.8,
+    "sharpe": -0.2,
+    "max_drawdown": 8.13
+  }
+}

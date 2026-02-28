@@ -1,0 +1,65 @@
+{
+  "fund_code": "020096",
+  "fund_name": "富国中证绿色电力ETF发起式联接C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 99.79,
+  "parsed_weight": 54.6,
+  "missing_weight": 45.19,
+  "positions": [
+    {
+      "stock_code": "600900",
+      "stock_name": "长江电力",
+      "weight": 9.99
+    },
+    {
+      "stock_code": "601985",
+      "stock_name": "中国核电",
+      "weight": 9.52
+    },
+    {
+      "stock_code": "600905",
+      "stock_name": "三峡能源",
+      "weight": 7.81
+    },
+    {
+      "stock_code": "600795",
+      "stock_name": "国电电力",
+      "weight": 6.01
+    },
+    {
+      "stock_code": "600011",
+      "stock_name": "华能国际",
+      "weight": 4.39
+    },
+    {
+      "stock_code": "600886",
+      "stock_name": "国投电力",
+      "weight": 4.2
+    },
+    {
+      "stock_code": "600021",
+      "stock_name": "上海电力",
+      "weight": 3.77
+    },
+    {
+      "stock_code": "600674",
+      "stock_name": "川投能源",
+      "weight": 3.63
+    },
+    {
+      "stock_code": "600023",
+      "stock_name": "浙能电力",
+      "weight": 2.66
+    },
+    {
+      "stock_code": "600027",
+      "stock_name": "华电国际",
+      "weight": 2.62
+    }
+  ],
+  "fetched_at": "2026-02-28 10:46:22",
+  "data_source": "eastmoney",
+  "original_fund_code": "020096",
+  "etf_target": "561170",
+  "is_etf_link": true
+}

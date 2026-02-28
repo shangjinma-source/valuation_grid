@@ -1,62 +1,65 @@
 {
   "fund_code": "020105",
   "fund_name": "易方达化工行业ETF联接C",
-  "holdings_asof_date": "2024-09-30",
-  "stock_total_weight": 0.0,
-  "parsed_weight": 1.08,
-  "missing_weight": 0,
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 99.59,
+  "parsed_weight": 56.5,
+  "missing_weight": 43.09,
   "positions": [
     {
       "stock_code": "600309",
       "stock_name": "万华化学",
-      "weight": 0.29
+      "weight": 10.58
     },
     {
       "stock_code": "601857",
       "stock_name": "中国石油",
-      "weight": 0.17
+      "weight": 8.67
     },
     {
       "stock_code": "600028",
       "stock_name": "中国石化",
-      "weight": 0.17
+      "weight": 6.61
+    },
+    {
+      "stock_code": "000792",
+      "stock_name": "盐湖股份",
+      "weight": 6.57
     },
     {
       "stock_code": "600938",
       "stock_name": "中国海油",
-      "weight": 0.11
+      "weight": 5.3
     },
     {
-      "stock_code": "600426",
-      "stock_name": "华鲁恒升",
-      "weight": 0.07
+      "stock_code": "000408",
+      "stock_name": "藏格矿业",
+      "weight": 4.87
     },
     {
-      "stock_code": "600989",
-      "stock_name": "宝丰能源",
-      "weight": 0.07
+      "stock_code": "600160",
+      "stock_name": "巨化股份",
+      "weight": 3.81
     },
     {
       "stock_code": "600346",
       "stock_name": "恒力石化",
-      "weight": 0.06
+      "weight": 3.49
     },
     {
-      "stock_code": "600096",
-      "stock_name": "云天化",
-      "weight": 0.05
+      "stock_code": "600426",
+      "stock_name": "华鲁恒升",
+      "weight": 3.43
     },
     {
-      "stock_code": "600352",
-      "stock_name": "浙江龙盛",
-      "weight": 0.05
-    },
-    {
-      "stock_code": "603260",
-      "stock_name": "合盛硅业",
-      "weight": 0.04
+      "stock_code": "600989",
+      "stock_name": "宝丰能源",
+      "weight": 3.17
     }
   ],
-  "fetched_at": "2026-02-25 00:40:59",
-  "data_source": "eastmoney"
+  "fetched_at": "2026-02-28 10:46:19",
+  "data_source": "eastmoney",
+  "original_fund_code": "020105",
+  "etf_target": "516570",
+  "is_etf_link": true
 }
