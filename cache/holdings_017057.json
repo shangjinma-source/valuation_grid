@@ -1,0 +1,70 @@
+{
+  "fund_code": "017057",
+  "fund_name": "嘉实国证绿色电力ETF发起联接C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 99.45,
+  "parsed_weight": 54.39,
+  "missing_weight": 45.06,
+  "positions": [
+    {
+      "stock_code": "601985",
+      "stock_name": "中国核电",
+      "weight": 10.07
+    },
+    {
+      "stock_code": "600900",
+      "stock_name": "长江电力",
+      "weight": 9.92
+    },
+    {
+      "stock_code": "600905",
+      "stock_name": "三峡能源",
+      "weight": 9.44
+    },
+    {
+      "stock_code": "600886",
+      "stock_name": "国投电力",
+      "weight": 5.27
+    },
+    {
+      "stock_code": "003816",
+      "stock_name": "中国广核",
+      "weight": 4.37
+    },
+    {
+      "stock_code": "600674",
+      "stock_name": "川投能源",
+      "weight": 3.85
+    },
+    {
+      "stock_code": "600021",
+      "stock_name": "上海电力",
+      "weight": 3.02
+    },
+    {
+      "stock_code": "600011",
+      "stock_name": "华能国际",
+      "weight": 2.92
+    },
+    {
+      "stock_code": "600025",
+      "stock_name": "华能水电",
+      "weight": 2.83
+    },
+    {
+      "stock_code": "600795",
+      "stock_name": "国电电力",
+      "weight": 2.69
+    },
+    {
+      "stock_code": "001280",
+      "stock_name": "中国铀业",
+      "weight": 0.01
+    }
+  ],
+  "fetched_at": "2026-02-28 10:46:21",
+  "data_source": "eastmoney",
+  "original_fund_code": "017057",
+  "etf_target": "159625",
+  "is_etf_link": true
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "004937",
+  "fund_name": "中航混改精选混合C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 93.31,
+  "parsed_weight": 83.74,
+  "missing_weight": 9.57,
+  "positions": [
+    {
+      "stock_code": "600362",
+      "stock_name": "江西铜业",
+      "weight": 11.42
+    },
+    {
+      "stock_code": "600595",
+      "stock_name": "中孚实业",
+      "weight": 9.75
+    },
+    {
+      "stock_code": "601600",
+      "stock_name": "中国铝业",
+      "weight": 9.65
+    },
+    {
+      "stock_code": "603979",
+      "stock_name": "金诚信",
+      "weight": 9.62
+    },
+    {
+      "stock_code": "603993",
+      "stock_name": "洛阳钼业",
+      "weight": 9.56
+    },
+    {
+      "stock_code": "000408",
+      "stock_name": "藏格矿业",
+      "weight": 9.31
+    },
+    {
+      "stock_code": "000878",
+      "stock_name": "云南铜业",
+      "weight": 9.17
+    },
+    {
+      "stock_code": "001376",
+      "stock_name": "百通能源",
+      "weight": 5.54
+    },
+    {
+      "stock_code": "000933",
+      "stock_name": "神火股份",
+      "weight": 4.91
+    },
+    {
+      "stock_code": "002842",
+      "stock_name": "翔鹭钨业",
+      "weight": 4.81
+    }
+  ],
+  "fetched_at": "2026-02-28 10:46:21",
+  "data_source": "eastmoney"
+}

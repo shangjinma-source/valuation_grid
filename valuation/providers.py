@@ -13,7 +13,7 @@ from urllib.error import URLError, HTTPError
 from typing import Dict, List, Optional, Tuple
 
 # === 配置常量 ===
-CACHE_DIR = Path(__file__).parent / "cache"
+CACHE_DIR = Path(__file__).parent.parent / "cache"
 QUOTES_TTL_SECONDS = 8
 REQUEST_TIMEOUT = 15
 HOLDINGS_CACHE_DAYS = 30  # 持仓缓存天数（唯一控制持仓缓存有效期的常量）
@@ -484,6 +484,16 @@ def get_quotes(tickers: List[str]) -> dict:
     return {"quotes": results, "missing": [t for t in tickers if t not in results]}
 
 
+def get_etf_realtime_change(etf_code: str) -> Optional[dict]:
+    """获取ETF实时涨跌幅（用于商品类ETF联接基金的盘中估值）
+    直接复用新浪行情接口，返回 {"pct_change": float, "name": str, "asof_time": str} 或 None
+    """
+    result = _fetch_quotes_batch_sina([etf_code])
+    if etf_code in result:
+        return result[etf_code]
+    return None
+
+
 if __name__ == "__main__":
     import sys
     fund_code = sys.argv[1] if len(sys.argv) > 1 else "016708"
@@ -609,7 +619,7 @@ _REFRESH_INTERVAL_SEC = 2
 
 def _get_tracked_fund_codes() -> List[str]:
     """从 state.json 读取用户跟踪的全部基金代码"""
-    state_file = Path(__file__).parent / "data" / "state.json"
+    state_file = Path(__file__).parent.parent / "data" / "state.json"
     if not state_file.exists():
         return []
     try:
@@ -684,6 +694,9 @@ def refresh_stale_holdings() -> dict:
     # 打印未配映射的ETF联接基金（方便用户补充etf_links.json）
     unmapped = []
     for code in fund_codes:
+        # 已在 etf_links.json 中配置的直接跳过（即使缓存中无 is_etf_link 标记）
+        if get_etf_link_target(code):
+            continue
         cache_path = _get_holdings_cache_path(code)
         if cache_path.exists():
             try:

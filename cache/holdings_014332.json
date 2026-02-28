@@ -1,0 +1,90 @@
+{
+  "fund_code": "014332",
+  "fund_name": "华泰柏瑞中证稀土产业ETF发起式联接C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 99.57,
+  "parsed_weight": 60.21,
+  "missing_weight": 39.36,
+  "positions": [
+    {
+      "stock_code": "600111",
+      "stock_name": "北方稀土",
+      "weight": 14.06
+    },
+    {
+      "stock_code": "002202",
+      "stock_name": "金风科技",
+      "weight": 6.15
+    },
+    {
+      "stock_code": "600580",
+      "stock_name": "卧龙电驱",
+      "weight": 5.35
+    },
+    {
+      "stock_code": "002340",
+      "stock_name": "格林美",
+      "weight": 5.31
+    },
+    {
+      "stock_code": "600549",
+      "stock_name": "厦门钨业",
+      "weight": 5.31
+    },
+    {
+      "stock_code": "601600",
+      "stock_name": "中国铝业",
+      "weight": 5.19
+    },
+    {
+      "stock_code": "002600",
+      "stock_name": "领益智造",
+      "weight": 4.94
+    },
+    {
+      "stock_code": "000831",
+      "stock_name": "中国稀土",
+      "weight": 4.87
+    },
+    {
+      "stock_code": "600010",
+      "stock_name": "包钢股份",
+      "weight": 4.65
+    },
+    {
+      "stock_code": "600392",
+      "stock_name": "盛和资源",
+      "weight": 4.25
+    },
+    {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
+      "weight": 0.06
+    },
+    {
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
+      "weight": 0.04
+    },
+    {
+      "stock_code": "688783",
+      "stock_name": "西安奕材",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301656",
+      "stock_name": "联合动力",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "688765",
+      "stock_name": "禾元生物",
+      "weight": 0.01
+    }
+  ],
+  "fetched_at": "2026-02-28 10:46:20",
+  "data_source": "eastmoney",
+  "original_fund_code": "014332",
+  "etf_target": "516780",
+  "is_etf_link": true
+}

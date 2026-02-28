@@ -3,8 +3,8 @@
   "fund_name": "嘉实上证科创板芯片ETF发起联接C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 99.79,
-  "parsed_weight": 57.57,
-  "missing_weight": 42.22,
+  "parsed_weight": 58.54,
+  "missing_weight": 41.25,
   "positions": [
     {
       "stock_code": "688981",
@@ -57,12 +57,17 @@
       "weight": 2.33
     },
     {
+      "stock_code": "688082",
+      "stock_name": "盛美上海",
+      "weight": 0.97
+    },
+    {
       "stock_code": "688795",
       "stock_name": "摩尔线程",
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-21 23:49:46",
+  "fetched_at": "2026-02-28 10:43:10",
   "data_source": "eastmoney",
   "original_fund_code": "017470",
   "etf_target": "588200",

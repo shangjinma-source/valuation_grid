@@ -1,0 +1,87 @@
+{
+  "fund_code": "013943",
+  "fund_name": "华宝中证稀有金属指数增强发起C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 94.61,
+  "parsed_weight": 54.15,
+  "missing_weight": 40.46,
+  "positions": [
+    {
+      "stock_code": "603993",
+      "stock_name": "洛阳钼业",
+      "weight": 10.01
+    },
+    {
+      "stock_code": "000792",
+      "stock_name": "盐湖股份",
+      "weight": 8.72
+    },
+    {
+      "stock_code": "603799",
+      "stock_name": "华友钴业",
+      "weight": 7.9
+    },
+    {
+      "stock_code": "600111",
+      "stock_name": "北方稀土",
+      "weight": 7.42
+    },
+    {
+      "stock_code": "002460",
+      "stock_name": "赣锋锂业",
+      "weight": 4.4
+    },
+    {
+      "stock_code": "002466",
+      "stock_name": "天齐锂业",
+      "weight": 3.64
+    },
+    {
+      "stock_code": "002738",
+      "stock_name": "中矿资源",
+      "weight": 3.6
+    },
+    {
+      "stock_code": "600392",
+      "stock_name": "盛和资源",
+      "weight": 2.91
+    },
+    {
+      "stock_code": "600549",
+      "stock_name": "厦门钨业",
+      "weight": 2.9
+    },
+    {
+      "stock_code": "601958",
+      "stock_name": "金钼股份",
+      "weight": 2.33
+    },
+    {
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
+      "weight": 0.15
+    },
+    {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
+      "weight": 0.1
+    },
+    {
+      "stock_code": "688759",
+      "stock_name": "必贝特",
+      "weight": 0.03
+    },
+    {
+      "stock_code": "688790",
+      "stock_name": "昂瑞微",
+      "weight": 0.03
+    },
+    {
+      "stock_code": "001280",
+      "stock_name": "中国铀业",
+      "weight": 0.01
+    }
+  ],
+  "fetched_at": "2026-02-28 10:46:20",
+  "data_source": "eastmoney"
+}

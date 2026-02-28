@@ -1,0 +1,72 @@
+{
+  "fund_code": "017175",
+  "fund_name": "天弘国证绿色电力指数发起C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 94.74,
+  "parsed_weight": 51.82,
+  "missing_weight": 42.92,
+  "positions": [
+    {
+      "stock_code": "601985",
+      "stock_name": "中国核电",
+      "weight": 9.58
+    },
+    {
+      "stock_code": "600900",
+      "stock_name": "长江电力",
+      "weight": 9.45
+    },
+    {
+      "stock_code": "600905",
+      "stock_name": "三峡能源",
+      "weight": 8.98
+    },
+    {
+      "stock_code": "600886",
+      "stock_name": "国投电力",
+      "weight": 5.02
+    },
+    {
+      "stock_code": "003816",
+      "stock_name": "中国广核",
+      "weight": 4.16
+    },
+    {
+      "stock_code": "600674",
+      "stock_name": "川投能源",
+      "weight": 3.66
+    },
+    {
+      "stock_code": "600021",
+      "stock_name": "上海电力",
+      "weight": 2.87
+    },
+    {
+      "stock_code": "600011",
+      "stock_name": "华能国际",
+      "weight": 2.78
+    },
+    {
+      "stock_code": "600025",
+      "stock_name": "华能水电",
+      "weight": 2.69
+    },
+    {
+      "stock_code": "600795",
+      "stock_name": "国电电力",
+      "weight": 2.56
+    },
+    {
+      "stock_code": "600930",
+      "stock_name": "华电新能",
+      "weight": 0.05
+    },
+    {
+      "stock_code": "001280",
+      "stock_name": "中国铀业",
+      "weight": 0.02
+    }
+  ],
+  "fetched_at": "2026-02-28 10:46:21",
+  "data_source": "eastmoney"
+}

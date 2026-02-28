@@ -342,6 +342,30 @@
         /* ========== 策略面板 ========== */
         .strategy-panel { margin-top: 4px; }
 
+        /* ========== v5.17: 行情模式（紧凑内联） ========== */
+        .regime-inline { display: inline-flex; align-items: center; gap: 4px; margin: 0 8px; }
+        .regime-inline .ri-btn {
+            padding: 2px 8px; border: 1.5px solid #e2e8f0; border-radius: 4px;
+            background: #fff; cursor: pointer; font-size: 11px; transition: .15s;
+        }
+        .regime-inline .ri-btn:hover { border-color: #94a3b8; }
+        .regime-inline .ri-btn.active-neutral { border-color: #6366f1; background: #eef2ff; color: #4f46e5; font-weight: 600; }
+        .regime-inline .ri-btn.active-bear { border-color: #10b981; background: #ecfdf5; color: #059669; font-weight: 600; }
+        .regime-auto-badge {
+            font-size: 10px; padding: 1px 6px; border-radius: 3px;
+            background: #e0e7ff; color: #4338ca; font-weight: 500; cursor: pointer;
+        }
+        .regime-auto-badge.manual { background: #fef3c7; color: #92400e; }
+        .fitness-badge {
+            display: inline-block; font-size: 10px; padding: 1px 5px;
+            border-radius: 3px; font-weight: 600; margin-left: 4px;
+        }
+        .fitness-badge.grade-A { background: #d1fae5; color: #059669; }
+        .fitness-badge.grade-B { background: #dbeafe; color: #2563eb; }
+        .fitness-badge.grade-C { background: #fef3c7; color: #d97706; }
+        .fitness-badge.grade-D { background: #fed7aa; color: #ea580c; }
+        .fitness-badge.grade-E { background: #fecaca; color: #dc2626; }
+
         .signal-card {
             background: #fff;
             border-radius: 8px;
@@ -917,6 +941,7 @@
             document.getElementById(`tab-${tab}`).classList.add('active');
 
             if (tab === 'strategy') {
+                loadRegimeStatus();
                 loadStrategyPanel();
             }
         }
@@ -1412,6 +1437,72 @@
         }
 
         // ============ 策略面板 ============
+        // ============================================================
+        // v5.13: 行情模式管理
+        // ============================================================
+        let _currentRegime = 'neutral';
+        let _regimeAuto = true;
+        let _regimeManual = false;
+
+
+        async function loadRegimeStatus() {
+            try {
+                const res = await fetch(`${API_BASE}/v1/market-regime`);
+                const data = await res.json();
+                _currentRegime = data.regime || 'neutral';
+                if (_currentRegime === 'bull') _currentRegime = 'neutral';  // v5.17: bull已禁用
+                _regimeAuto = data.auto !== false;
+                _regimeManual = !!data.manual;
+                updateRegimeUI();
+            } catch(e) { console.warn('loadRegimeStatus error:', e); }
+        }
+
+        async function setRegimeManual(regime) {
+            try {
+                await fetch(`${API_BASE}/v1/market-regime`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ regime, auto: true, manual_override: true }),
+                });
+                _currentRegime = regime;
+                _regimeManual = true;
+                updateRegimeUI();
+                loadStrategyPanel();
+            } catch(e) { showStatus('设置行情模式失败', 'error'); }
+        }
+
+        async function toggleRegimeAuto() {
+            try {
+                if (_regimeManual) {
+                    // 恢复自动
+                    await fetch(`${API_BASE}/v1/market-regime`, {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({ regime: 'neutral', auto: true, manual_override: false }),
+                    });
+                    _regimeManual = false;
+                }
+                await loadRegimeStatus();
+                loadStrategyPanel();
+            } catch(e) { showStatus('切换自动识别失败', 'error'); }
+        }
+
+        function updateRegimeUI() {
+            // v5.17: 内联regime按钮在loadStrategyPanel中渲染，此处更新已存在的按钮
+            document.querySelectorAll('.ri-btn').forEach(btn => {
+                const text = btn.textContent;
+                const isBear = text.includes('熊');
+                const regime = isBear ? 'bear' : 'neutral';
+                btn.className = 'ri-btn';
+                if (regime === _currentRegime) btn.classList.add(`active-${_currentRegime}`);
+            });
+            const srcLabel = document.getElementById('regimeSourceLabel');
+            if (srcLabel) {
+                srcLabel.textContent = _regimeManual ? '手动' : '自动';
+                srcLabel.className = 'regime-auto-badge' + (_regimeManual ? ' manual' : '');
+            }
+        }
+
         async function loadStrategyPanel() {
             const panel = document.getElementById('strategyPanel');
             panel.innerHTML = '<div style="text-align:center;padding:20px;color:#9ca3af;"><span class="loading"></span>加载信号中...</div>';
@@ -1447,7 +1538,14 @@
                 const cashReserveRatio = pb ? pb.cash_reserve_ratio : 0.30;
 
                 let html = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                    <span style="font-size:12px;color:#6b7280;">信号生成于 ${sigData.generated_at || '--'}</span>
+                    <div style="display:flex;align-items:center;">
+                        <span style="font-size:12px;color:#6b7280;">信号生成于 ${sigData.generated_at || '--'}</span>
+                        <div class="regime-inline" id="regimeInline">
+                            <button class="ri-btn ${_currentRegime === 'neutral' ? 'active-neutral' : ''}" onclick="setRegimeManual('neutral')">⚖️ 震荡</button>
+                            <button class="ri-btn ${_currentRegime === 'bear' ? 'active-bear' : ''}" onclick="setRegimeManual('bear')">🐻 熊市</button>
+                            <span id="regimeSourceLabel" class="regime-auto-badge ${_regimeManual ? 'manual' : ''}" onclick="toggleRegimeAuto()" title="点击切换自动/手动">${_regimeManual ? '手动' : '自动'}</span>
+                        </div>
+                    </div>
                     <div style="display:flex;gap:6px;">
                         <button class="btn-warning" onclick="showAddInstanceModal()" style="padding:4px 12px;font-size:11px;">新增模块</button>
                         <button class="btn-success" onclick="showGroupModal()" style="padding:4px 12px;font-size:11px;">➕ 新建分组</button>
@@ -1489,7 +1587,9 @@
                 }
 
                 // === 按分组组织信号卡片 ===
-                const groupData = loadStrategyGroups();
+                // v5.4 优化: 自动根据角色标签同步分组
+                const allFundCodes = signals.map(s => s.fund_code);
+                const groupData = autoSyncGroupsFromOwnerTags(allFundCodes);
                 const groupedCodes = new Set();
                 for (const grp of groupData.groups) {
                     for (const c of grp.fund_codes) groupedCodes.add(c);
@@ -1577,11 +1677,28 @@
                     // 使用 encodeURIComponent 确保复合键在 URL 中安全
                     const safeCode = encodeURIComponent(code);
 
+                    // v5.13: 适配评分徽章
+                    let fitBadge = '';
+                    const _ma = sig.market_analysis || {};
+                    const fitScore = _ma.fitness_score;
+                    const fitGrade = _ma.fitness_grade;
+                    if (fitScore != null && fitGrade) {
+                        const fitCls = fitScore >= 70 ? 'grade-A' : fitScore >= 55 ? 'grade-B' : fitScore >= 40 ? 'grade-C' : fitScore >= 25 ? 'grade-D' : 'grade-E';
+                        fitBadge = `<span class="fitness-badge ${fitCls}" title="适配评分 ${Math.round(fitScore)}分 (${fitGrade})">${Math.round(fitScore)}</span>`;
+                    }
+
+                    // v5.17: 行情模式标签（熊市时显示）
+                    let regimeBadge = '';
+                    if (_ma.market_regime === 'bear') {
+                        const rSrc = _ma.regime_source === 'manual' ? '手动' : '自动';
+                        regimeBadge = `<span style="font-size:10px;margin-left:2px;" title="${rSrc}识别">🐻</span>`;
+                    }
+
                     let html = `<div class="signal-card">
                         <div class="signal-card-header">
                             <div class="fund-info">
                                 <span class="code" onclick="showNavHistory('${realCode}')">${realCode}</span>
-                                ${ownerBadge}
+                                ${ownerBadge}${fitBadge}${regimeBadge}
                                 ${fundName ? `<span style="margin-left:6px;font-weight:400;color:#6b7280;font-size:12px;">${fundName}</span>` : ''}
                             </div>
                             <div style="display:flex;align-items:center;gap:6px;">
@@ -1638,6 +1755,21 @@
                                 </div>`;
                             }
                         }
+                        // v5.12: 延迟回补建议（止盈后不立即买入，净值回落到触发价时回补）
+                        if (sig.rebuy_recommendation) {
+                            const rb = sig.rebuy_recommendation;
+                            const triggerInfo = rb.trigger_nav ? `净值≤${rb.trigger_nav}时触发` : `回补${Math.round((rb.ratio||0)*100)}%`;
+                            const windowInfo = rb.window_days ? `${rb.window_days}天内有效` : '';
+                            html += `<div style="background:#eef2ff;border:1px solid #c7d2fe;border-radius:6px;padding:6px 10px;margin-bottom:4px;">
+                                <div style="display:flex;justify-content:space-between;align-items:baseline;">
+                                    <div style="font-size:11px;color:#4338ca;">
+                                        <span style="font-weight:600;">🔄 延迟回补</span>
+                                        <span style="margin-left:6px;">趋势${rb.trend || ''}，${triggerInfo}${windowInfo ? '，'+windowInfo : ''}</span>
+                                    </div>
+                                    <div style="font-size:11px;color:#4f46e5;font-weight:600;">回补金额: ¥${rb.amount?.toFixed(2) || '--'}</div>
+                                </div>
+                            </div>`;
+                        }
                     } else {
                         for (const s of signalsToShow) {
                             if (s.action === 'sell' && s.target_batch_id && s.fee_info) {
@@ -1655,6 +1787,21 @@
                                     <div style="font-size:12px;font-weight:600;color:#dc2626;white-space:nowrap;">建议卖出: ${s.sell_shares}份 ${s.sell_pct ? `(该批次${s.sell_pct}%)` : ''}</div>
                                 </div>
                             </div>`;
+                                // v5.12: 延迟回补建议
+                                if (s.rebuy_recommendation || sig.rebuy_recommendation) {
+                                    const rb = s.rebuy_recommendation || sig.rebuy_recommendation;
+                                    const triggerInfo = rb.trigger_nav ? `净值≤${rb.trigger_nav}时触发` : `回补${Math.round((rb.ratio||0)*100)}%`;
+                                    const windowInfo = rb.window_days ? `${rb.window_days}天内有效` : '';
+                                    html += `<div style="background:#eef2ff;border:1px solid #c7d2fe;border-radius:6px;padding:6px 10px;margin-bottom:4px;">
+                                        <div style="display:flex;justify-content:space-between;align-items:baseline;">
+                                            <div style="font-size:11px;color:#4338ca;">
+                                                <span style="font-weight:600;">🔄 延迟回补</span>
+                                                <span style="margin-left:6px;">趋势${rb.trend || ''}，${triggerInfo}${windowInfo ? '，'+windowInfo : ''}</span>
+                                            </div>
+                                            <div style="font-size:11px;color:#4f46e5;font-weight:600;">回补金额: ¥${rb.amount?.toFixed(2) || '--'}</div>
+                                        </div>
+                                    </div>`;
+                                }
                             } else if (s.action === 'buy' && s.amount) {
                                 html += `<div style="background:#ecfdf5;border:1px solid #a7f3d0;border-radius:6px;padding:6px 10px;margin-bottom:4px;">
                                 <div style="font-size:11px;color:#374151;">
@@ -1756,15 +1903,15 @@
                             <div style="display:flex;flex-direction:column;gap:4px;">
                                 <div style="display:flex;align-items:baseline;gap:6px;">
                                     <span style="display:inline-block;background:#d1fae5;color:#059669;font-size:9px;font-weight:600;padding:1px 5px;border-radius:3px;flex-shrink:0;">买入</span>
-                                    <span>大跌 ≤${sp.dip_buy_threshold||'--'}% · 连跌低吸 ≤${sp.consecutive_dip_trigger||'--'}%且前日跌 · 补仓最多${sp.supplement_max_count||3}次(浮亏≤${sp.supplement_loss_min||'--'}%且当日≤${sp.supplement_trigger||'--'}%，间隔≥3交易日+再跌≥1.2%) · 趋势建仓(5日≤-3%或10日≤-5%)</span>
+                                    <span>大跌 ≤${sp.dip_buy_threshold||'--'}% · 连跌低吸 ≤${sp.consecutive_dip_trigger||'--'}%且前日跌 · 补仓最多${sp.supplement_max_count||3}次(浮亏≤${sp.supplement_loss_min||'--'}%且当日≤${sp.supplement_trigger||'--'}%，间隔≥2交易日+再跌≥1.2%) · 趋势建仓(5日≤-3%或10日≤-5%) · <b style="color:#4f46e5;">延迟回补(净值回落1.5-2%后触发，强趋势60%/中性35%，15天窗口)</b> · <b style="color:#4f46e5;">趋势自适应仓位(强趋势买入×1.4/弱趋势×0.8)</b></span>
                                 </div>
                                 <div style="display:flex;align-items:baseline;gap:6px;">
                                     <span style="display:inline-block;background:#fee2e2;color:#dc2626;font-size:9px;font-weight:600;padding:1px 5px;border-radius:3px;flex-shrink:0;">卖出</span>
-                                    <span>冲高止盈(P2) ≥${sp.take_profit_trigger||'--'}% · 慢涨止盈(P2) 浮盈≥3%+趋势稳 · 回撤止盈(P2.2) 峰值回撤≥${sp.trail_dd||'1.8'}% · 扭亏止盈(P2.5) 总浮盈>${sp.total_profit_sell_min||0.5}% · 趋弱(P3) 按盈利分级减仓(薄利100%/中利70%/厚利50%) · 止损(P1) ≤${sp.stop_loss_base||'--'}%−费率 · 短期深亏≤-6%安全网减30%</span>
+                                    <span>冲高止盈(P2) ≥${sp.take_profit_trigger||'--'}% · 慢涨止盈(P2) 评分≥54(窄化窗口) · 回撤止盈(P2.2) 峰值回撤≥${sp.trail_dd||'1.8'}% · <b style="color:#4f46e5;">扭亏评分化(nz_bonus=min(12,浮盈×2)，走统一评分门槛)</b> · 趋弱(P3) 按盈利分级减仓(薄利70%/中利50%/厚利30%) · 止损(P1) ≤${sp.stop_loss_base||'--'}%−费率 · 短期深亏≤-6%安全网减30% · 回补仓位L2保护期10天</span>
                                 </div>
                                 <div style="display:flex;align-items:baseline;gap:6px;">
                                     <span style="display:inline-block;background:#fef3c7;color:#92400e;font-size:9px;font-weight:600;padding:1px 5px;border-radius:3px;flex-shrink:0;">风控</span>
-                                    <span>灾难阀 ≤${sp.disaster_loss_threshold||'-9'}%(极端亏损卖50%/暴跌卖30%) · 补仓禁入(10日≤-7%+连跌≥3 或 回撤≥10%+波动≥2.2%) · 补仓节奏阀(间隔≥3交易日,急跌可缩至2日) · FIFO穿透亏损>50元自动暂缓 · 总仓位止损(超线深度分级30/50/70%) · 动态阈值 ${sp.risk_multiplier != null ? sp.risk_multiplier+'×' : '1.0×'} · 灵敏度 ${sp.vol_sensitivity != null ? sp.vol_sensitivity.toFixed(2)+'×' : '1.0×'}(${sp.vol_sensitivity_source === 'manual' ? '手动' : sp.vol_sensitivity_source === 'auto' ? '自动' : '默认'})</span>
+                                    <span>灾难阀 ≤${sp.disaster_loss_threshold||'-9'}%(极端亏损卖50%/暴跌卖30%) · 补仓禁入(10日≤-10%+连跌≥5 或 回撤≥15%+波动≥2.5%) · 补仓节奏阀(间隔≥2交易日,急跌可缩至2日) · FIFO穿透亏损>50元自动暂缓 · 总仓位风控(灾难保底/时间豁免/趋势确认三层) · 趋势确认减仓(连跌≥6天+10日≤-10%双确认，浅亏≤-6%不减) · L3分级减仓(新仓&lt;25天+非暴跌减70%) · <b style="color:#4f46e5;">趋势自适应仓位(强趋势上限×1.6/弱趋势×0.7)</b> · 动态阈值 ${sp.risk_multiplier != null ? sp.risk_multiplier+'×' : '1.0×'} · 灵敏度 ${sp.vol_sensitivity != null ? sp.vol_sensitivity.toFixed(2)+'×' : '1.0×'}(${sp.vol_sensitivity_source === 'manual' ? '手动' : sp.vol_sensitivity_source === 'auto' ? '自动' : '默认'})</span>
                                 </div>
                             </div>
                         </div>`;
@@ -2374,7 +2521,8 @@
         }
 
         // ============ 策略分组管理（localStorage持久化） ============
-        // 数据结构: { groups: [{id, name, fund_codes: []}], fund_group_map: {code: groupId} }
+        // v5.4 优化: 根据角色标签(owner tag)自动归类分组，支持手动移入移出覆盖
+        // 数据结构: { groups: [{id, name, fund_codes: []}], fund_group_map: {code: groupId}, overrides: {code: groupId|""} }
         const STRATEGY_GROUPS_KEY = 'ease_grid_strategy_groups';
 
         function loadStrategyGroups() {
@@ -2382,11 +2530,91 @@
                 const raw = localStorage.getItem(STRATEGY_GROUPS_KEY);
                 if (raw) return JSON.parse(raw);
             } catch {}
-            return { groups: [], fund_group_map: {} };
+            return { groups: [], fund_group_map: {}, overrides: {} };
         }
 
         function saveStrategyGroups(data) {
             localStorage.setItem(STRATEGY_GROUPS_KEY, JSON.stringify(data));
+        }
+
+        /**
+         * v5.4 优化: 根据所有基金的角色标签自动同步分组
+         * - 从 fund_codes 中提取 owner tag (如 025500__老爸 → "老爸")
+         * - 自动创建/维护以 owner tag 命名的分组
+         * - 手动覆盖(overrides)优先：用户手动移入移出的记录不会被自动覆盖
+         */
+        function autoSyncGroupsFromOwnerTags(allFundCodes) {
+            const data = loadStrategyGroups();
+            if (!data.overrides) data.overrides = {};
+
+            // 1. 收集所有 owner tag
+            const tagToFunds = {};  // tag -> [code, ...]
+            const noTagFunds = [];
+            for (const code of allFundCodes) {
+                if (code.includes('__')) {
+                    const tag = code.split('__')[1] || '';
+                    if (tag) {
+                        (tagToFunds[tag] = tagToFunds[tag] || []).push(code);
+                        continue;
+                    }
+                }
+                noTagFunds.push(code);
+            }
+
+            // 2. 为每个 tag 确保存在对应分组（用 name 匹配，不重复创建）
+            const tagToGroupId = {};
+            for (const tag of Object.keys(tagToFunds)) {
+                let grp = data.groups.find(g => g.name === tag);
+                if (!grp) {
+                    grp = { id: 'grp_auto_' + tag, name: tag, fund_codes: [] };
+                    data.groups.push(grp);
+                }
+                tagToGroupId[tag] = grp.id;
+            }
+
+            // 3. 自动分配（overrides优先）
+            // 先清空所有自动分组的fund_codes，重新填充
+            for (const grp of data.groups) {
+                grp.fund_codes = [];
+            }
+            data.fund_group_map = {};
+
+            for (const code of allFundCodes) {
+                // 手动覆盖优先
+                if (code in data.overrides) {
+                    const overrideGroupId = data.overrides[code];
+                    if (overrideGroupId) {
+                        const grp = data.groups.find(g => g.id === overrideGroupId);
+                        if (grp) {
+                            grp.fund_codes.push(code);
+                            data.fund_group_map[code] = overrideGroupId;
+                        }
+                    }
+                    // overrideGroupId === "" 表示用户手动设为"不分组"
+                    continue;
+                }
+
+                // 自动：按 owner tag 归类
+                if (code.includes('__')) {
+                    const tag = code.split('__')[1] || '';
+                    const gid = tagToGroupId[tag];
+                    if (gid) {
+                        const grp = data.groups.find(g => g.id === gid);
+                        if (grp) {
+                            grp.fund_codes.push(code);
+                            data.fund_group_map[code] = gid;
+                        }
+                        continue;
+                    }
+                }
+                // 无tag且无override → 不分组
+            }
+
+            // 4. 清理空的自动分组（仅清理自动创建的，保留手动创建的）
+            data.groups = data.groups.filter(g => g.fund_codes.length > 0 || !g.id.startsWith('grp_auto_'));
+
+            saveStrategyGroups(data);
+            return data;
         }
 
         function showGroupModal(editId) {
@@ -2435,12 +2663,24 @@
 
         function showAssignGroupModal(fundCode) {
             const data = loadStrategyGroups();
+            if (!data.overrides) data.overrides = {};
             const currentGroupId = data.fund_group_map[fundCode] || '';
             const fundName = valuations[fundCode]?.fund_name || fundCode;
+            const hasOverride = fundCode in data.overrides;
+            // v5.4: 提取自动归类的目标tag
+            const autoTag = fundCode.includes('__') ? fundCode.split('__')[1] : '';
 
             document.getElementById('assignGroupTitle').textContent = `分配 ${fundCode} 到分组`;
 
             let html = '';
+
+            // v5.4: 如果有手动覆盖，显示"恢复自动归类"选项
+            if (hasOverride && autoTag) {
+                html += `<div style="padding:8px 10px;border-bottom:1px solid #dbeafe;cursor:pointer;border-radius:4px;background:#fef3c7;" onclick="resetAutoGroup('${fundCode}')">
+                    <span style="font-size:12px;color:#92400e;">🔄 恢复自动归类（→ ${autoTag}）</span>
+                </div>`;
+            }
+
             // 无分组选项
             html += `<div style="padding:8px 10px;border-bottom:1px solid #f1f5f9;cursor:pointer;border-radius:4px;${!currentGroupId ? 'background:#eff6ff;' : ''}" onclick="assignFundToGroup('${fundCode}','')">
                 <span style="font-size:12px;color:#374151;">📂 不分组</span>
@@ -2463,8 +2703,19 @@
             document.getElementById('assignGroupModal').classList.add('show');
         }
 
+        // v5.4: 恢复自动归类（删除手动覆盖）
+        function resetAutoGroup(fundCode) {
+            const data = loadStrategyGroups();
+            if (data.overrides) delete data.overrides[fundCode];
+            saveStrategyGroups(data);
+            closeModal('assignGroupModal');
+            showStatus('已恢复自动归类', 'success');
+            loadStrategyPanel();
+        }
+
         function assignFundToGroup(fundCode, groupId) {
             const data = loadStrategyGroups();
+            if (!data.overrides) data.overrides = {};
             const oldGroupId = data.fund_group_map[fundCode];
 
             // 从旧分组中移除
@@ -2485,6 +2736,9 @@
             } else {
                 delete data.fund_group_map[fundCode];
             }
+
+            // v5.4 优化: 记录手动覆盖，防止自动同步冲掉用户选择
+            data.overrides[fundCode] = groupId || "";
 
             saveStrategyGroups(data);
             closeModal('assignGroupModal');
