@@ -652,15 +652,47 @@ def _holdings_cache_remaining_days(fund_code: str) -> Optional[float]:
 def refresh_stale_holdings() -> dict:
     """
     扫描用户跟踪的全部基金，刷新已过期或即将过期的持仓缓存。
+    静默跳过已知无法获取持仓的基金类型（QDII原油、黄金ETF等），
+    仅在汇总中报告，不逐只刷屏。
     """
     _ensure_cache_dir()
     fund_codes = _get_tracked_fund_codes()
 
     refreshed = []
     failed = []
+    failed_detail = {}  # code -> reason
     skipped = 0
+    skipped_no_holdings = {}  # code -> reason
 
     for code in fund_codes:
+        # 优先检查是否为已知无持仓类型（必须在 remaining 检查之前）
+        cache_path = _get_holdings_cache_path(code)
+        if cache_path.exists():
+            try:
+                with open(cache_path, "r", encoding="utf-8") as f:
+                    cached = json.load(f)
+                if cached.get("_no_holdings"):
+                    reason = cached.get("_reason", "")
+                    fn = cached.get("fund_name", "")
+                    # 旧缓存可能无 _reason 或 fund_name，需重新诊断
+                    if not reason or reason == "无持仓数据" or reason == "未知":
+                        if not fn:
+                            fn = get_fund_name(code) or ""
+                        reason = _diagnose_holdings_failure(code, fn)
+                        # 回写修正后的缓存
+                        cached["_reason"] = reason
+                        cached["fund_name"] = fn
+                        try:
+                            with open(cache_path, "w", encoding="utf-8") as fw:
+                                json.dump(cached, fw, ensure_ascii=False, indent=2)
+                        except Exception:
+                            pass
+                    skipped_no_holdings[code] = reason
+                    cache_path.touch()
+                    continue
+            except Exception:
+                pass
+
         remaining = _holdings_cache_remaining_days(code)
 
         if remaining is not None and remaining > _REFRESH_AHEAD_DAYS:
@@ -673,7 +705,6 @@ def refresh_stale_holdings() -> dict:
         try:
             data = _fetch_holdings_combined(code)
             if data and data.get("positions"):
-                cache_path = _get_holdings_cache_path(code)
                 with open(cache_path, "w", encoding="utf-8") as f:
                     json.dump(data, f, ensure_ascii=False, indent=2)
                 refreshed.append(code)
@@ -683,40 +714,149 @@ def refresh_stale_holdings() -> dict:
                 print(f"[AutoRefresh] {code} OK, {n} positions, {pw:.1f}% (src={src})")
             else:
                 failed.append(code)
-                print(f"[AutoRefresh] {code} FAILED: no positions returned")
+                # 获取基金名用于诊断
+                fn = data.get("fund_name", "") if data else ""
+                if not fn:
+                    fn = get_fund_name(code) or ""
+                reason = _diagnose_holdings_failure(code, fn)
+                failed_detail[code] = f"{fn} | {reason}"
+                # 写入标记缓存，下次静默跳过
+                no_hold_cache = {
+                    "fund_code": code,
+                    "fund_name": fn,
+                    "_no_holdings": True,
+                    "_reason": reason,
+                    "positions": [],
+                    "fetched_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                }
+                try:
+                    with open(cache_path, "w", encoding="utf-8") as f:
+                        json.dump(no_hold_cache, f, ensure_ascii=False, indent=2)
+                except Exception:
+                    pass
         except Exception as e:
             failed.append(code)
+            failed_detail[code] = f"ERROR: {e}"
             print(f"[AutoRefresh] {code} ERROR: {e}")
 
         if code != fund_codes[-1]:
             time.sleep(_REFRESH_INTERVAL_SEC)
 
-    # 打印未配映射的ETF联接基金（方便用户补充etf_links.json）
+    # === 汇总日志 ===
+    if failed:
+        by_reason = {}
+        for code, detail in failed_detail.items():
+            reason = detail.split(" | ")[-1] if " | " in detail else detail
+            by_reason.setdefault(reason, []).append(code)
+        print(f"\n[AutoRefresh] === {len(failed)} 只基金无持仓数据（按原因分类）===")
+        for reason, codes in by_reason.items():
+            print(f"  [{reason}] ({len(codes)}只): {', '.join(codes[:5])}{'...' if len(codes) > 5 else ''}")
+        print(f"[AutoRefresh] 这些基金的盘中估值将依赖 fundgz 接口或纯净值模式")
+
+    if skipped_no_holdings:
+        by_reason = {}
+        for code, reason in skipped_no_holdings.items():
+            by_reason.setdefault(reason, []).append(code)
+        print(f"\n[AutoRefresh] === 非标准估值基金 ({len(skipped_no_holdings)}只，走 fundgz/净值模式) ===")
+        for reason, codes in by_reason.items():
+            print(f"  [{reason}] ({len(codes)}只): {', '.join(codes)}")
+
+    # 打印未配映射的ETF联接基金
     unmapped = []
     for code in fund_codes:
-        # 已在 etf_links.json 中配置的直接跳过（即使缓存中无 is_etf_link 标记）
         if get_etf_link_target(code):
             continue
-        cache_path = _get_holdings_cache_path(code)
-        if cache_path.exists():
+        cache_path_check = _get_holdings_cache_path(code)
+        if cache_path_check.exists():
             try:
-                with open(cache_path, "r", encoding="utf-8") as f:
+                with open(cache_path_check, "r", encoding="utf-8") as f:
                     data = json.load(f)
                 fn = data.get("fund_name", "")
-                if "联接" in fn and not data.get("is_etf_link"):
+                if "联接" in fn and not data.get("is_etf_link") and not data.get("_no_holdings"):
                     unmapped.append(f"{code} {fn}")
             except Exception:
                 pass
 
     if unmapped:
-        print(f"\n[AutoRefresh] === 以下{len(unmapped)}只ETF联接基金未配置etf_links映射 ===")
+        print(f"\n[AutoRefresh] === {len(unmapped)}只ETF联接基金未配置映射 ===")
         for item in unmapped:
             print(f"  {item}")
-        print("[AutoRefresh] 请在 cache/etf_links.json 中添加映射以提高估值覆盖率")
 
-    summary = {"refreshed": refreshed, "failed": failed, "skipped": skipped, "unmapped_etf_links": unmapped}
-    print(f"[AutoRefresh] Done: {len(refreshed)} refreshed, {len(failed)} failed, {skipped} skipped")
+    summary = {
+        "refreshed": refreshed, "failed": failed,
+        "skipped": skipped, "skipped_no_holdings": len(skipped_no_holdings),
+        "unmapped_etf_links": unmapped,
+    }
+    print(f"\n[AutoRefresh] Done: {len(refreshed)} refreshed, {len(failed)} failed, "
+          f"{skipped} cached, {len(skipped_no_holdings)} no-holdings-skipped")
     return summary
+
+
+def _diagnose_holdings_failure(fund_code: str, fund_name: str) -> str:
+    """诊断持仓获取失败的原因，返回分类标签"""
+    fn = fund_name or ""
+    # QDII基金投资海外，天天基金无A股持仓
+    if "QDII" in fn or "标普" in fn or "道琼斯" in fn or "纳斯达克" in fn:
+        return "QDII海外投资"
+    # 原油类基金（FOF结构，持仓为其他基金份额）
+    if "原油" in fn or "石油" in fn or "油气" in fn:
+        return "原油/油气FOF"
+    # 黄金ETF联接（持仓为黄金合约，非A股）
+    if "黄金" in fn or "上海金" in fn or "金ETF" in fn:
+        return "黄金ETF/合约"
+    # 抗通胀FOF
+    if "抗通胀" in fn:
+        return "抗通胀FOF"
+    # 其他联接基金
+    if "联接" in fn:
+        return "ETF联接无持仓"
+    # 通用
+    return "无持仓数据"
+
+
+# ============================================================
+# 天天基金盘中估值接口（fundgz）
+# 用于无法获取持仓的基金（QDII/指数/FOF等）的备用估值源
+# ============================================================
+
+_fundgz_cache: Dict[str, dict] = {}
+_FUNDGZ_TTL = 60  # 缓存60秒
+
+def get_fundgz_estimation(fund_code: str) -> Optional[dict]:
+    """
+    从天天基金 fundgz 接口获取盘中估值。
+    返回 {"gsz": 估算净值, "gszzl": 估算涨跌幅%, "dwjz": 上日净值,
+           "gztime": 估值时间, "name": 基金名称} 或 None
+    注意：非交易时段返回的是上一次估值快照，QDII基金24小时更新。
+    """
+    # 缓存检查
+    if fund_code in _fundgz_cache:
+        cached = _fundgz_cache[fund_code]
+        if time.time() - cached["ts"] < _FUNDGZ_TTL:
+            return cached["data"]
+
+    try:
+        url = f"http://fundgz.1234567.com.cn/js/{fund_code}.js?rt={int(time.time()*1000)}"
+        req = Request(url, headers={
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            "Referer": "https://fund.eastmoney.com/",
+        })
+        with urlopen(req, timeout=8) as resp:
+            content = resp.read().decode("utf-8")
+
+        match = re.search(r'jsonpgz\((.*)\)', content)
+        if match:
+            data = json.loads(match.group(1))
+            gszzl = data.get("gszzl", "")
+            if gszzl and gszzl.strip():
+                _fundgz_cache[fund_code] = {"data": data, "ts": time.time()}
+                return data
+    except Exception:
+        pass
+
+    # 标记无数据，避免短时间内重复请求
+    _fundgz_cache[fund_code] = {"data": None, "ts": time.time()}
+    return None
 
 
 # ============================================================
@@ -795,7 +935,7 @@ def get_fund_nav_history(fund_code: str, days: int = 15) -> list:
 
         # 写入缓存
         _nav_history_cache[cache_key] = {"data": result, "ts": time.time()}
-        print(f"[NavHistory] {fund_code} 获取到 {len(result)} 条净值记录")
+        # 静默成功，仅失败时输出日志
         return result[:days]
 
     except Exception as e:

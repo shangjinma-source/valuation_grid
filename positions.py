@@ -114,7 +114,7 @@ def load_positions() -> dict:
 
 
 def save_positions(data: dict) -> bool:
-    """原子写入（tmp+rename）"""
+    """原子写入（tmp+rename），Windows 下含重试"""
     _ensure_data_dir()
     data["updated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     with _pos_lock:
@@ -122,8 +122,19 @@ def save_positions(data: dict) -> bool:
             tmp_file = POS_FILE.with_suffix(".tmp")
             with open(tmp_file, "w", encoding="utf-8") as f:
                 json.dump(data, f, ensure_ascii=False, indent=2)
-            tmp_file.replace(POS_FILE)
-            return True
+            # Windows 上 replace 可能因文件被短暂锁定而失败，重试几次
+            import platform
+            max_retries = 3 if platform.system() == "Windows" else 1
+            for attempt in range(max_retries):
+                try:
+                    tmp_file.replace(POS_FILE)
+                    return True
+                except PermissionError:
+                    if attempt < max_retries - 1:
+                        import time as _time
+                        _time.sleep(0.1)
+                    else:
+                        raise
         except Exception as e:
             print(f"[Position] 保存 positions.json 失败: {e}")
             return False
@@ -197,6 +208,46 @@ def add_batch(fund_code: str, amount: float, nav: float, note: str = "",
     print(f"[Position] 新增批次 {fund_code} {batch['id']}: {amount}元 @ {nav} ({date_str})"
           f"{' [补仓]' if _is_supp else ''}")
     return batch
+
+
+def add_watch_fund(fund_code: str, max_position: float = 5000, note: str = "") -> dict:
+    """
+    添加空仓观察基金（不创建batch，仅创建fund entry）。
+    用于"空仓待建仓"工作流：先观察，让策略引擎给出建仓时机建议。
+    如果fund_code已存在则不覆盖，返回现有entry信息。
+    """
+    data = load_positions()
+    funds = data.setdefault("funds", {})
+
+    if fund_code in funds:
+        # 已存在，返回现有信息
+        fund = funds[fund_code]
+        return {
+            "fund_code": fund_code,
+            "status": "already_exists",
+            "fund_name": fund.get("fund_name", ""),
+            "max_position": fund.get("max_position", 5000),
+            "batches_count": len(fund.get("batches", [])),
+        }
+
+    funds[fund_code] = {
+        "fund_name": "",
+        "max_position": max_position,
+        "batches": [],
+        "supplement_count": 0,
+        "cooldown_until": None,
+    }
+    if note:
+        funds[fund_code]["watch_note"] = note
+
+    save_positions(data)
+    print(f"[Position] 新增空仓观察 {fund_code}: max_position={max_position}, note={note}")
+    return {
+        "fund_code": fund_code,
+        "status": "created",
+        "max_position": max_position,
+        "note": note,
+    }
 
 
 def _is_valid_date(s: str) -> bool:

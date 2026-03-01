@@ -33,6 +33,7 @@ from .config import (
     PASSTHROUGH_MIN_NET_PROFIT_RATIO,
     DISASTER_CONSECUTIVE_DOWN, DISASTER_SELL_PCT_DAILY, DISASTER_SELL_PCT_EXTREME,
     TRAIL_DD_BASE,
+    TREND_BUILD_TRIGGER_5D, TREND_BUILD_TRIGGER_10D,
 )
 from .helpers import (
     _vol_adaptive_thresholds, _classify_volatility,

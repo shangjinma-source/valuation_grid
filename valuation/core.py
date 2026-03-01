@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional
 
-from .providers import get_holdings, get_quotes, get_fund_5day_change, get_etf_realtime_change
+from .providers import get_holdings, get_quotes, get_fund_5day_change, get_etf_realtime_change, get_fundgz_estimation
 
 # === 配置 ===
 DATA_DIR = Path(__file__).parent.parent / "data"
@@ -206,6 +206,66 @@ def _try_etf_realtime_fallback(result: dict, fund_code: str) -> dict:
     return result
 
 
+def _try_fundgz_fallback(result: dict, fund_code: str) -> dict:
+    """当持仓穿透失败时，尝试用天天基金 fundgz 盘中估值接口。
+    适用于QDII、指数基金等天天基金有官方估值但无持仓数据的基金。
+    返回填充后的 result（原地修改），estimation_change 仍为 None 表示不可用。"""
+    from .providers import get_fundgz_estimation, get_fund_nav_history
+
+    gz = get_fundgz_estimation(fund_code)
+    if not gz:
+        return result
+
+    try:
+        gszzl = float(gz["gszzl"])
+    except (ValueError, TypeError, KeyError):
+        return result
+
+    gztime = gz.get("gztime", "")
+    fund_name = gz.get("name", "")
+
+    # 检查估值是否过期：如果估值日期不是今天也不是昨天（QDII凌晨更新），可能是陈旧数据
+    # QDII基金的gztime可能是凌晨（如 "2026-02-28 05:00"），属于正常
+    if gztime:
+        try:
+            gz_date = datetime.strptime(gztime[:10], "%Y-%m-%d")
+            days_old = (datetime.now() - gz_date).days
+            if days_old > 3:
+                # 超过3天的估值太旧，不使用
+                return result
+        except Exception:
+            pass
+
+    result["estimation_change"] = round(gszzl, 4)
+    result["asof_time"] = gztime
+    result["confidence"] = 0.6  # fundgz 可靠度中等（天天基金官方估值）
+    result["_source"] = "fundgz"
+    result["fund_name"] = fund_name or result.get("fund_name")
+    result["notes"].append(f"天天基金估值: {gszzl:+.2f}% ({gztime})")
+
+    # 附带近几日真实涨跌幅
+    history = get_fund_nav_history(fund_code, 5)
+    today_str = datetime.now().strftime("%Y-%m-%d")
+    result["recent_changes"] = [
+        {"date": h["date"], "change": h["change"]}
+        for h in history if h.get("change") is not None
+    ][:5]
+
+    # 收盘后优先用真实净值
+    if _is_market_closed():
+        today_nav = next(
+            (h for h in history if h["date"] == today_str and h.get("change") is not None),
+            None
+        )
+        if today_nav:
+            result["estimation_change"] = round(today_nav["change"], 4)
+            result["_source"] = "nav"
+            result["_nav_date"] = today_str
+            result["notes"].append(f"收盘后使用真实净值 {today_str}")
+
+    return result
+
+
 def calculate_valuation(fund_code: str) -> dict:
     """计算单基金盘中估值涨跌幅"""
     result = {
@@ -238,10 +298,18 @@ def calculate_valuation(fund_code: str) -> dict:
 
     if holdings.get("error"):
         result["notes"].append(f"持仓获取失败: {holdings['error']}")
+        # 尝试 fundgz 估值 → 再降级到纯净值
+        result = _try_fundgz_fallback(result, fund_code)
+        if result.get("estimation_change") is not None:
+            return result
         return _try_nav_fallback(result, fund_code)
 
     if not holdings.get("positions"):
         result["notes"].append("无持仓数据")
+        # 尝试 fundgz 估值 → 再降级到纯净值
+        result = _try_fundgz_fallback(result, fund_code)
+        if result.get("estimation_change") is not None:
+            return result
         return _try_nav_fallback(result, fund_code)
 
     result["fund_name"] = holdings.get("fund_name")
@@ -264,6 +332,9 @@ def calculate_valuation(fund_code: str) -> dict:
     if not quotes:
         result["notes"].append("无法获取任何行情数据")
         result["coverage"]["missing_tickers"] = missing
+        result = _try_fundgz_fallback(result, fund_code)
+        if result.get("estimation_change") is not None:
+            return result
         return _try_nav_fallback(result, fund_code)
 
     # 3. 计算估值涨跌幅

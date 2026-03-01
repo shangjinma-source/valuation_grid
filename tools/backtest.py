@@ -1835,7 +1835,7 @@ DEFAULT_FUNDS = [
 
 def load_funds_from_cache() -> List[str]:
     """从 data/cache/ 目录扫描所有 holdings_*.json 提取基金代码"""
-    cache_dir = Path(__file__).parent / "data" / "cache"
+    cache_dir = Path(__file__).parent.parent / "cache"
     if not cache_dir.exists():
         return []
     codes = []
@@ -1849,7 +1849,7 @@ def load_funds_from_cache() -> List[str]:
 
 def load_funds_from_state() -> List[str]:
     """从 data/state.json 读取所有自选基金代码"""
-    state_file = Path(__file__).parent / "data" / "state.json"
+    state_file = Path(__file__).parent.parent / "data" / "state.json"
     if not state_file.exists():
         return []
     try:
@@ -2010,7 +2010,7 @@ def _write_fitness_cache(results: List[dict], fund_names: Dict[str, str]):
             "sharpe": s.get("sharpe_ratio"),
             "max_drawdown": s.get("max_drawdown_pct"),
         }
-    cache_path = Path(__file__).parent / "data" / "fitness_cache.json"
+    cache_path = Path(__file__).parent.parent / "data" / "fitness_cache.json"
     cache_path.parent.mkdir(exist_ok=True)
     try:
         with open(cache_path, "w", encoding="utf-8") as f:

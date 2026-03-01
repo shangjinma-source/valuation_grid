@@ -23,7 +23,8 @@ from positions import (
     get_fund_position, get_all_positions, remove_fund, update_sell_nav,
     delete_sell_record, update_fee_schedule, sell_fifo,
     get_groups, add_group, update_group, delete_group,
-    make_fund_key, parse_fund_key, rename_fund_key
+    make_fund_key, parse_fund_key, rename_fund_key,
+    add_watch_fund
 )
 from grid import (
     generate_signal, generate_all_signals, get_signal_history,
@@ -248,6 +249,20 @@ def buy_fund(fund_code: str, req: BuyRequest):
     batch = add_batch(fund_key, req.amount, req.nav, req.note or "",
                       req.buy_date, req.is_supplement)
     return {"success": True, "batch": batch, "fund_key": fund_key}
+
+
+class WatchFundRequest(BaseModel):
+    max_position: Optional[float] = 5000
+    note: Optional[str] = ""
+    owner: Optional[str] = ""
+
+
+@app.post("/v1/position/{fund_code}/watch")
+def watch_fund(fund_code: str, req: WatchFundRequest):
+    """添加空仓观察基金（不创建batch，仅创建fund entry，用于空仓待建仓）"""
+    fund_key = make_fund_key(fund_code, req.owner or "")
+    result = add_watch_fund(fund_key, req.max_position, req.note or "")
+    return {"success": True, **result}
 
 
 @app.post("/v1/position/{fund_code}/sell")

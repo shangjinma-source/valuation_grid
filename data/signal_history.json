@@ -1,19 +1,59 @@
 {
-  "025500__老爸": [
+  "022084__老婆": [
     {
-      "date": "2026-02-28",
-      "time": "22:06:05",
+      "date": "2026-03-01",
+      "time": "20:52:21",
       "source": "nav",
       "signal_name": "持有等待",
       "action": "hold",
       "priority": 8,
-      "reason": "总浮盈-10.78%, 今日-0.96%, 趋势:震荡, 风险系数1.5×, 波动状态:extreme_vol, 无触发条件",
+      "reason": "总浮盈10.64%, 今日3.7%, 趋势:偏强, 风险系数1.49×, 波动状态:high_vol, 无触发条件",
       "amount": null,
       "sell_pct": null,
-      "today_change": -0.96,
-      "total_profit_pct": -10.78,
-      "current_nav": 1.248,
-      "nav_at_signal": 1.248,
+      "today_change": 3.7,
+      "total_profit_pct": 10.64,
+      "current_nav": 2.3252,
+      "nav_at_signal": 2.3252,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    }
+  ],
+  "023159__实战": [
+    {
+      "date": "2026-03-01",
+      "time": "20:52:21",
+      "source": "nav",
+      "signal_name": "连跌低吸",
+      "action": "buy",
+      "priority": 7,
+      "reason": "今日跌-0.95% ≤ -0.9%, 昨日跌-0.95%, 连跌低吸1417.5元",
+      "amount": 1417.5,
+      "sell_pct": null,
+      "today_change": -0.95,
+      "total_profit_pct": null,
+      "current_nav": null,
+      "nav_at_signal": null,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    }
+  ],
+  "023829__实战": [
+    {
+      "date": "2026-03-01",
+      "time": "20:52:21",
+      "source": "nav",
+      "signal_name": "温和回调建仓",
+      "action": "buy",
+      "priority": 7,
+      "reason": "3日累跌-3.63%>波动率1.7%, 温和回调建仓1125.0元",
+      "amount": 1125.0,
+      "sell_pct": null,
+      "today_change": -2.36,
+      "total_profit_pct": null,
+      "current_nav": null,
+      "nav_at_signal": null,
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
@@ -21,8 +61,8 @@
   ],
   "025209__老婆": [
     {
-      "date": "2026-02-28",
-      "time": "22:06:05",
+      "date": "2026-03-01",
+      "time": "20:52:21",
       "source": "nav",
       "signal_name": "持有等待",
       "action": "hold",
@@ -39,21 +79,21 @@
       "outcome_t10": null
     }
   ],
-  "017811__老爸": [
+  "025500__老爸": [
     {
-      "date": "2026-02-28",
-      "time": "22:06:04",
+      "date": "2026-03-01",
+      "time": "20:52:21",
       "source": "nav",
       "signal_name": "持有等待",
       "action": "hold",
       "priority": 8,
-      "reason": "总浮盈-1.4%, 今日-2.67%, 趋势:偏弱, 风险系数1.27×, 波动状态:high_vol, 无触发条件",
+      "reason": "总浮盈-10.78%, 今日-0.96%, 趋势:震荡, 风险系数1.5×, 波动状态:extreme_vol, 无触发条件",
       "amount": null,
       "sell_pct": null,
-      "today_change": -2.67,
-      "total_profit_pct": -1.4,
-      "current_nav": 2.0199,
-      "nav_at_signal": 2.0199,
+      "today_change": -0.96,
+      "total_profit_pct": -10.78,
+      "current_nav": 1.248,
+      "nav_at_signal": 1.248,
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
@@ -61,8 +101,8 @@
   ],
   "017193__宇宙第一咆哮虎": [
     {
-      "date": "2026-02-28",
-      "time": "22:06:04",
+      "date": "2026-03-01",
+      "time": "20:52:07",
       "source": "nav",
       "signal_name": "持有等待",
       "action": "hold",
@@ -79,30 +119,10 @@
       "outcome_t10": null
     }
   ],
-  "015968__宇宙第一咆哮虎": [
-    {
-      "date": "2026-02-28",
-      "time": "22:06:04",
-      "source": "nav",
-      "signal_name": "持有等待",
-      "action": "hold",
-      "priority": 8,
-      "reason": "总浮盈-3.4%, 今日0.07%, 趋势:连涨, 风险系数1.33×, 无触发条件",
-      "amount": null,
-      "sell_pct": null,
-      "today_change": 0.07,
-      "total_profit_pct": -3.4,
-      "current_nav": 1.8797,
-      "nav_at_signal": 1.8797,
-      "outcome_t3": null,
-      "outcome_t5": null,
-      "outcome_t10": null
-    }
-  ],
   "017811__老婆": [
     {
-      "date": "2026-02-28",
-      "time": "22:06:04",
+      "date": "2026-03-01",
+      "time": "20:52:21",
       "source": "nav",
       "signal_name": "持有等待",
       "action": "hold",
@@ -119,10 +139,50 @@
       "outcome_t10": null
     }
   ],
-  "022084__老婆": [
+  "017811__老爸": [
     {
-      "date": "2026-02-28",
-      "time": "22:06:04",
+      "date": "2026-03-01",
+      "time": "20:52:21",
+      "source": "nav",
+      "signal_name": "持有等待",
+      "action": "hold",
+      "priority": 8,
+      "reason": "总浮盈-1.4%, 今日-2.67%, 趋势:偏弱, 风险系数1.27×, 波动状态:high_vol, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": -2.67,
+      "total_profit_pct": -1.4,
+      "current_nav": 2.0199,
+      "nav_at_signal": 2.0199,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    }
+  ],
+  "015968__宇宙第一咆哮虎": [
+    {
+      "date": "2026-03-01",
+      "time": "20:52:21",
+      "source": "nav",
+      "signal_name": "持有等待",
+      "action": "hold",
+      "priority": 8,
+      "reason": "总浮盈-3.4%, 今日0.07%, 趋势:连涨, 风险系数1.33×, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": 0.07,
+      "total_profit_pct": -3.4,
+      "current_nav": 1.8797,
+      "nav_at_signal": 1.8797,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    }
+  ],
+  "022084__老爸": [
+    {
+      "date": "2026-03-01",
+      "time": "20:52:21",
       "source": "nav",
       "signal_name": "持有等待",
       "action": "hold",
@@ -139,10 +199,50 @@
       "outcome_t10": null
     }
   ],
+  "023145__实战": [
+    {
+      "date": "2026-03-01",
+      "time": "20:52:21",
+      "source": "nav",
+      "signal_name": "观望",
+      "action": "hold",
+      "priority": 8,
+      "reason": "今日1.68%, 趋势:连涨, 波动状态:normal_vol, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": 1.68,
+      "total_profit_pct": null,
+      "current_nav": null,
+      "nav_at_signal": null,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    }
+  ],
+  "021615": [
+    {
+      "date": "2026-03-01",
+      "time": "20:43:13",
+      "source": "nav",
+      "signal_name": "观望",
+      "action": "hold",
+      "priority": 8,
+      "reason": "今日1.56%, 趋势:偏强, 波动状态:high_vol, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": 1.56,
+      "total_profit_pct": null,
+      "current_nav": null,
+      "nav_at_signal": null,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    }
+  ],
   "025500__宇宙第一咆哮虎": [
     {
-      "date": "2026-02-28",
-      "time": "22:06:05",
+      "date": "2026-03-01",
+      "time": "20:52:21",
       "source": "nav",
       "signal_name": "持有等待",
       "action": "hold",
@@ -159,21 +259,101 @@
       "outcome_t10": null
     }
   ],
-  "022084__老爸": [
+  "021615__实战": [
     {
-      "date": "2026-02-28",
-      "time": "22:06:04",
+      "date": "2026-03-01",
+      "time": "20:52:21",
       "source": "nav",
-      "signal_name": "持有等待",
+      "signal_name": "观望",
       "action": "hold",
       "priority": 8,
-      "reason": "总浮盈10.64%, 今日3.7%, 趋势:偏强, 风险系数1.49×, 波动状态:high_vol, 无触发条件",
+      "reason": "今日1.56%, 趋势:偏强, 波动状态:high_vol, 无触发条件",
       "amount": null,
       "sell_pct": null,
-      "today_change": 3.7,
-      "total_profit_pct": 10.64,
-      "current_nav": 2.3252,
-      "nav_at_signal": 2.3252,
+      "today_change": 1.56,
+      "total_profit_pct": null,
+      "current_nav": null,
+      "nav_at_signal": null,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    }
+  ],
+  "015401": [
+    {
+      "date": "2026-03-01",
+      "time": "20:44:00",
+      "source": "nav",
+      "signal_name": "温和回调建仓",
+      "action": "buy",
+      "priority": 7,
+      "reason": "3日累跌-1.94%>波动率1.8%, 温和回调建仓900.0元",
+      "amount": 900.0,
+      "sell_pct": null,
+      "today_change": -0.87,
+      "total_profit_pct": null,
+      "current_nav": null,
+      "nav_at_signal": null,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    }
+  ],
+  "015401__实战": [
+    {
+      "date": "2026-03-01",
+      "time": "20:52:21",
+      "source": "nav",
+      "signal_name": "温和回调建仓",
+      "action": "buy",
+      "priority": 7,
+      "reason": "3日累跌-1.94%>波动率1.8%, 温和回调建仓900.0元",
+      "amount": 900.0,
+      "sell_pct": null,
+      "today_change": -0.87,
+      "total_profit_pct": null,
+      "current_nav": null,
+      "nav_at_signal": null,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    }
+  ],
+  "023385": [
+    {
+      "date": "2026-03-01",
+      "time": "20:47:40",
+      "source": "nav",
+      "signal_name": "观望",
+      "action": "hold",
+      "priority": 8,
+      "reason": "今日-0.38%, 趋势:中期走强, 波动状态:normal_vol, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": -0.38,
+      "total_profit_pct": null,
+      "current_nav": null,
+      "nav_at_signal": null,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    }
+  ],
+  "023385__实战": [
+    {
+      "date": "2026-03-01",
+      "time": "20:52:21",
+      "source": "nav",
+      "signal_name": "观望",
+      "action": "hold",
+      "priority": 8,
+      "reason": "今日-0.38%, 趋势:中期走强, 波动状态:normal_vol, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": -0.38,
+      "total_profit_pct": null,
+      "current_nav": null,
+      "nav_at_signal": null,
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null

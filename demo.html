@@ -766,7 +766,8 @@
                 </div>
                 <div>
                     <label>买入金额（元）</label>
-                    <input type="number" id="buyAmount" placeholder="支付宝显示的买入金额" step="100">
+                    <input type="number" id="buyAmount" placeholder="支付宝显示的买入金额（填0=空仓观察）" step="100">
+                    <div class="hint" style="color:#6366f1;">💡 金额填0：加入空仓观察，策略引擎将提供建仓时机建议</div>
                 </div>
                 <div>
                     <label>确认净值</label>
@@ -1408,17 +1409,18 @@
 
         // ============ 加入策略持仓 ============
         async function addToStrategy(fundCode) {
-            // 先检查是否已在持仓中
+            // 先检查是否已在持仓中（包括空仓观察）
             try {
-                const res = await fetch(`${API_BASE}/v1/position/${encodeURIComponent(fundCode)}`);
-                const pos = await res.json();
-                if (pos.has_position) {
+                const posRes = await fetch(`${API_BASE}/v1/positions`);
+                const posData = await posRes.json();
+                const funds = posData.funds || {};
+                if (funds[fundCode]) {
                     showStatus(`${fundCode} 已在低频网格中`, 'info');
                     switchTab('strategy');
                     return;
                 }
             } catch {}
-            // 直接打开买入弹窗
+            // 打开买入弹窗（支持空仓观察录入）
             showBuyModal(fundCode);
         }
 
@@ -1970,6 +1972,15 @@
                             <div class="item"><span class="label">上限:</span><span class="value" style="cursor:pointer;border-bottom:1px dashed #9ca3af;" onclick="editMaxPosition('${code}',${maxPos})" title="点击修改上限">¥${maxPos}</span></div>
                             <div class="item"><span class="label">费率:</span><span class="value" style="cursor:pointer;border-bottom:1px dashed #9ca3af;" onclick="editFeeSchedule('${code}')" title="点击修改费率">${feeDisplay}</span></div>
                         </div>`;
+                    } else if (fundPos) {
+                        // 空仓待建仓状态
+                        const maxPos = fundPos.max_position || 5000;
+                        const watchNote = fundPos.watch_note || '空仓待建仓';
+                        html += `<div class="pos-summary" style="background:#eef2ff;border:1px solid #c7d2fe;">
+                            <div class="item"><span class="label" style="color:#4338ca;">📡 状态:</span><span class="value" style="color:#4338ca;font-weight:600;">${watchNote}</span></div>
+                            <div class="item"><span class="label">上限:</span><span class="value" style="cursor:pointer;border-bottom:1px dashed #9ca3af;" onclick="editMaxPosition('${code}',${maxPos})" title="点击修改上限">¥${maxPos}</span></div>
+                            <div class="item"><span class="label" style="color:#6b7280;">提示:</span><span class="value" style="color:#6b7280;">策略引擎正在监控建仓时机，实际买入后请录入批次</span></div>
+                        </div>`;
                     }
 
                     // 批次表格
@@ -2189,12 +2200,43 @@
             const code = document.getElementById('buyFundCode').value;
             const owner = document.getElementById('buyOwner').value;
             const buyDate = document.getElementById('buyDate').value;
-            const amount = parseFloat(document.getElementById('buyAmount').value);
-            const nav = parseFloat(document.getElementById('buyNav').value);
+            const amount = parseFloat(document.getElementById('buyAmount').value) || 0;
+            const nav = parseFloat(document.getElementById('buyNav').value) || 0;
             const note = document.getElementById('buyNote').value.trim();
 
             if (!buyDate) { showStatus('请选择买入日期', 'error'); return; }
-            if (!amount || amount <= 0) { showStatus('请输入有效金额', 'error'); return; }
+
+            // 空仓观察模式：金额=0时走watch接口
+            if (amount === 0) {
+                try {
+                    const fundKey = owner ? `${code}__${owner}` : code;
+                    const res = await fetch(`${API_BASE}/v1/position/${encodeURIComponent(code)}/watch`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ max_position: 5000, note: note || '空仓待建仓', owner: owner })
+                    });
+                    if (!res.ok) {
+                        const err = await res.json();
+                        throw new Error(err.detail || '添加失败');
+                    }
+                    const data = await res.json();
+                    const ownerLabel = owner ? ` [${owner}]` : '';
+                    if (data.status === 'already_exists') {
+                        showStatus(`${code}${ownerLabel} 已在低频网格中`, 'info');
+                    } else {
+                        showStatus(`${code}${ownerLabel} 已加入空仓观察，等待建仓信号`, 'success');
+                    }
+                    closeModal('buyModal');
+                    switchTab('strategy');
+                    loadStrategyPanel();
+                } catch (e) {
+                    showStatus('添加观察失败: ' + e.message, 'error');
+                }
+                return;
+            }
+
+            // 正常买入模式：金额>0时需要有效净值
+            if (amount < 0) { showStatus('请输入有效金额', 'error'); return; }
             if (!nav || nav <= 0) { showStatus('请输入有效确认净值', 'error'); return; }
 
             try {
@@ -2573,11 +2615,21 @@
             }
 
             // 3. 自动分配（overrides优先）
-            // 先清空所有自动分组的fund_codes，重新填充
+            // 只清空自动分组的fund_codes，保留手动分组不变
             for (const grp of data.groups) {
-                grp.fund_codes = [];
+                if (grp.id.startsWith('grp_auto_')) {
+                    grp.fund_codes = [];
+                }
             }
+            // 重建 fund_group_map：先保留手动分组中的映射
             data.fund_group_map = {};
+            for (const grp of data.groups) {
+                if (!grp.id.startsWith('grp_auto_')) {
+                    for (const code of grp.fund_codes) {
+                        data.fund_group_map[code] = grp.id;
+                    }
+                }
+            }
 
             for (const code of allFundCodes) {
                 // 手动覆盖优先
@@ -2586,13 +2638,16 @@
                     if (overrideGroupId) {
                         const grp = data.groups.find(g => g.id === overrideGroupId);
                         if (grp) {
-                            grp.fund_codes.push(code);
+                            if (!grp.fund_codes.includes(code)) grp.fund_codes.push(code);
                             data.fund_group_map[code] = overrideGroupId;
                         }
                     }
                     // overrideGroupId === "" 表示用户手动设为"不分组"
                     continue;
                 }
+
+                // 已在手动分组中的基金，跳过自动分配
+                if (data.fund_group_map[code]) continue;
 
                 // 自动：按 owner tag 归类
                 if (code.includes('__')) {
@@ -2638,6 +2693,13 @@
                 const grp = data.groups.find(g => g.id === editId);
                 if (grp) grp.name = name;
             } else {
+                // 检查是否已存在同名分组，避免重复创建
+                const existing = data.groups.find(g => g.name === name);
+                if (existing) {
+                    showStatus(`分组"${name}"已存在，无需重复创建`, 'info');
+                    closeModal('groupModal');
+                    return;
+                }
                 const id = 'grp_' + Date.now();
                 data.groups.push({ id, name, fund_codes: [] });
             }
@@ -2689,18 +2751,78 @@
 
             for (const grp of data.groups) {
                 const isCurrent = currentGroupId === grp.id;
-                html += `<div style="padding:8px 10px;border-bottom:1px solid #f1f5f9;cursor:pointer;border-radius:4px;${isCurrent ? 'background:#eff6ff;' : ''}" onclick="assignFundToGroup('${fundCode}','${grp.id}')">
-                    <span style="font-size:12px;color:#374151;">📁 ${grp.name}</span>
-                    <span style="font-size:11px;color:#9ca3af;margin-left:8px;">${grp.fund_codes.length}只基金</span>
-                    ${isCurrent ? '<span style="float:right;color:#4f46e5;font-size:11px;">✓ 当前</span>' : ''}
+                const isEmpty = grp.fund_codes.length === 0;
+                html += `<div style="padding:8px 10px;border-bottom:1px solid #f1f5f9;cursor:pointer;border-radius:4px;display:flex;align-items:center;justify-content:space-between;${isCurrent ? 'background:#eff6ff;' : ''}${isEmpty ? 'opacity:0.7;' : ''}" onclick="assignFundToGroup('${fundCode}','${grp.id}')">
+                    <span>
+                        <span style="font-size:12px;color:#374151;">📁 ${grp.name}</span>
+                        <span style="font-size:11px;color:#9ca3af;margin-left:8px;">${grp.fund_codes.length}只基金</span>
+                        ${isCurrent ? '<span style="color:#4f46e5;font-size:11px;margin-left:8px;">✓ 当前</span>' : ''}
+                    </span>
+                    ${isEmpty ? `<button onclick="event.stopPropagation();deleteGroupFromModal('${grp.id}','${fundCode}')" title="删除空分组" style="background:none;border:none;color:#ef4444;cursor:pointer;font-size:14px;padding:2px 4px;">🗑</button>` : ''}
                 </div>`;
             }
 
-            // 快捷新建分组
-            html += `<div style="padding:10px 10px 4px;"><button class="btn-primary" onclick="closeModal('assignGroupModal');showGroupModal()" style="width:100%;padding:6px;font-size:12px;">➕ 新建分组</button></div>`;
+            // 快捷新建分组 + 清理按钮
+            html += `<div style="padding:10px 10px 4px;">
+                <button class="btn-primary" onclick="closeModal('assignGroupModal');showGroupModal()" style="width:100%;padding:6px;font-size:12px;">➕ 新建分组</button>
+            </div>`;
+            // 如果存在空分组，显示一键清理按钮
+            const emptyCount = data.groups.filter(g => g.fund_codes.length === 0).length;
+            if (emptyCount > 0) {
+                html += `<div style="padding:4px 10px 4px;"><button onclick="cleanupDuplicateGroups();closeModal('assignGroupModal');" style="width:100%;padding:6px;font-size:12px;background:#fef3c7;border:1px solid #f59e0b;border-radius:6px;cursor:pointer;color:#92400e;">🧹 清理重复/空分组 (${emptyCount}个)</button></div>`;
+            }
 
             document.getElementById('assignGroupList').innerHTML = html;
             document.getElementById('assignGroupModal').classList.add('show');
+        }
+
+        // v5.5: 从分配弹窗中删除分组，然后刷新弹窗
+        function deleteGroupFromModal(groupId, currentFundCode) {
+            const data = loadStrategyGroups();
+            const grp = data.groups.find(g => g.id === groupId);
+            if (grp) {
+                for (const code of grp.fund_codes) {
+                    delete data.fund_group_map[code];
+                    delete data.overrides[code];
+                }
+                data.groups = data.groups.filter(g => g.id !== groupId);
+            }
+            saveStrategyGroups(data);
+            // 刷新弹窗内容
+            showAssignGroupModal(currentFundCode);
+        }
+
+        // v5.5: 一次性清理已有的重复/空分组（可在控制台调用 cleanupDuplicateGroups()）
+        function cleanupDuplicateGroups() {
+            const data = loadStrategyGroups();
+            const seen = new Map(); // name → first group
+            const toRemove = [];
+            for (const grp of data.groups) {
+                if (seen.has(grp.name)) {
+                    const first = seen.get(grp.name);
+                    // 合并 fund_codes 到第一个同名分组
+                    for (const code of grp.fund_codes) {
+                        if (!first.fund_codes.includes(code)) {
+                            first.fund_codes.push(code);
+                        }
+                        data.fund_group_map[code] = first.id;
+                    }
+                    // 合并 overrides 引用
+                    if (data.overrides) {
+                        for (const [code, gid] of Object.entries(data.overrides)) {
+                            if (gid === grp.id) data.overrides[code] = first.id;
+                        }
+                    }
+                    toRemove.push(grp.id);
+                } else {
+                    seen.set(grp.name, grp);
+                }
+            }
+            data.groups = data.groups.filter(g => !toRemove.includes(g.id));
+            saveStrategyGroups(data);
+            console.log(`清理完成: 合并了 ${toRemove.length} 个重复分组`);
+            showStatus(`清理完成: 合并了 ${toRemove.length} 个重复分组`, 'success');
+            loadStrategyPanel();
         }
 
         // v5.4: 恢复自动归类（删除手动覆盖）
