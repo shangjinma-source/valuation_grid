@@ -24,7 +24,8 @@ from positions import (
     delete_sell_record, update_fee_schedule, sell_fifo,
     get_groups, add_group, update_group, delete_group,
     make_fund_key, parse_fund_key, rename_fund_key,
-    add_watch_fund
+    add_watch_fund,
+    confirm_buy_nav
 )
 from grid import (
     generate_signal, generate_all_signals, get_signal_history,
@@ -204,7 +205,7 @@ def health():
 
 class BuyRequest(BaseModel):
     amount: float
-    nav: float
+    nav: Optional[float] = None   # 确认净值（选填，T+1确认后补录）
     note: Optional[str] = ""
     buy_date: Optional[str] = None  # 格式 YYYY-MM-DD，默认今天
     is_supplement: Optional[bool] = False  # 是否为补仓买入
@@ -243,8 +244,10 @@ def get_position(fund_code: str):
 @app.post("/v1/position/{fund_code}/buy")
 def buy_fund(fund_code: str, req: BuyRequest):
     """新增买入批次（支持 owner 参数实现同基金多人持仓）"""
-    if req.amount <= 0 or req.nav <= 0:
-        raise HTTPException(status_code=400, detail="amount和nav必须大于0")
+    if req.amount <= 0:
+        raise HTTPException(status_code=400, detail="amount必须大于0")
+    if req.nav is not None and req.nav <= 0:
+        raise HTTPException(status_code=400, detail="nav必须大于0或留空")
     fund_key = make_fund_key(fund_code, req.owner or "")
     batch = add_batch(fund_key, req.amount, req.nav, req.note or "",
                       req.buy_date, req.is_supplement)
@@ -365,6 +368,23 @@ def update_sell_nav_api(fund_code: str, req: UpdateSellNavRequest):
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))
 
+
+
+
+class UpdateBuyNavRequest(BaseModel):
+    batch_id: str
+    nav: float
+
+@app.put("/v1/position/{fund_code}/buy-nav")
+def update_buy_nav_api(fund_code: str, req: UpdateBuyNavRequest):
+    """补录买入确认净值"""
+    if req.nav <= 0:
+        raise HTTPException(status_code=400, detail="净值必须大于0")
+    try:
+        batch = confirm_buy_nav(fund_code, req.batch_id, req.nav)
+        return {"success": True, "batch": batch}
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
 
 @app.delete("/v1/position/{fund_code}/sell-record/{sell_record_id}")
 def delete_sell_record_api(fund_code: str, sell_record_id: str):

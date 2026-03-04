@@ -1322,7 +1322,7 @@ def generate_all_signals() -> dict:
         # 修正折扣公式
         if total_buy_count > 1:
             discount = max(0.85, 1.0 - (total_buy_count - 1) * 0.05)  # v5.5 优化: 折扣更温和（原0.75/0.10→0.85/0.05），允许更多资金入场
-            confidences = [s.get("_confidence", 1.0) for s in buy_signals]
+            confidences = [s.get("_confidence") or 1.0 for s in buy_signals]
             avg_conf = sum(confidences) / len(confidences) if confidences else 1.0
             if avg_conf < 0.6:
                 discount *= 0.7

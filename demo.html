@@ -770,9 +770,9 @@
                     <div class="hint" style="color:#6366f1;">💡 金额填0：加入空仓观察，策略引擎将提供建仓时机建议</div>
                 </div>
                 <div>
-                    <label>确认净值</label>
-                    <input type="number" id="buyNav" placeholder="份额确认页显示的净值" step="0.0001">
-                    <div class="hint" id="buyNavHint">在支付宝→持仓→交易记录中查看「确认净值」</div>
+                    <label>确认净值（选填）</label>
+                    <input type="number" id="buyNav" placeholder="份额确认后补录，可先留空" step="0.0001">
+                    <div class="hint" id="buyNavHint">净值通常T+1确认，可先留空后续补录</div>
                 </div>
                 <div>
                     <label>备注（可选）</label>
@@ -1555,6 +1555,10 @@
                     </div>
                 </div>`;
 
+                // sigMap moved here so calcGroupBudget and renderSignalCard can access it
+                const sigMap = {};
+                for (const sig of signals) sigMap[sig.fund_code] = sig;
+
                 // 按分组计算预算的辅助函数（预算用成本口径）
                 function calcGroupBudget(fundCodes) {
                     let maxInvest = 0, invested = 0;
@@ -1596,10 +1600,6 @@
                 for (const grp of groupData.groups) {
                     for (const c of grp.fund_codes) groupedCodes.add(c);
                 }
-
-                // 信号转为map方便查找
-                const sigMap = {};
-                for (const sig of signals) sigMap[sig.fund_code] = sig;
 
                 // 渲染一个分组
                 function renderGroupSection(groupId, groupName, fundCodes, showHeader) {
@@ -1648,11 +1648,6 @@
                         html += renderSignalCard(code, sigMap[code], funds[code]);
                     }
                 }
-
-                panel.innerHTML = html;
-            } catch (e) {
-                panel.innerHTML = `<div style="text-align:center;padding:20px;color:#ef4444;">加载失败: ${e.message}</div>`;
-            }
 
                 // 渲染单个信号卡片的函数（在上面被 renderGroupSection 调用）
                 function renderSignalCard(code, sig, fundPos) {
@@ -1997,14 +1992,14 @@
                         for (const b of holdingBatches) {
                             let amountDisplay = `¥${b.amount.toFixed(2)}`;
                             if (b.original_amount && Math.abs(b.original_amount - b.amount) > 0.01) {
-                                amountDisplay = `¥${b.amount.toFixed(2)} <span style="color:#9ca3af;font-size:9px;text-decoration:line-through;">¥${b.original_amount.toFixed(0)}</span>`;
+                                amountDisplay = `¥${b.amount.toFixed(2)} <span style="color:#9ca3af;font-size:9px;text-decoration:line-through;">¥${b.original_amount.toFixed(2)}</span>`;
                             }
                             html += `<tr>
                                 <td style="font-family:monospace;font-size:10px;">${b.id}</td>
                                 <td>${b.buy_date}</td>
                                 <td>${amountDisplay}</td>
-                                <td>${b.nav.toFixed(4)}</td>
-                                <td>${b.shares.toFixed(2)}</td>
+                                <td>${b.nav ? b.nav.toFixed(4) : `<button onclick="promptBuyNav('${code}','${b.id}')" style="background:none;border:1px solid #f59e0b;color:#f59e0b;font-size:9px;padding:1px 6px;border-radius:3px;cursor:pointer;">补录</button>`}</td>
+                                <td>${b.shares ? b.shares.toFixed(2) : '--'}</td>
                                 <td style="color:#9ca3af;">${b.note || ''}</td>
                                 <td style="text-align:right;">
                                     <button onclick="showSellModal('${code}','${b.id}',${b.nav})" title="卖出" style="color:#ef4444;background:none;border:none;cursor:pointer;font-size:12px;">卖</button>
@@ -2037,7 +2032,7 @@
                                 html += `<tr style="color:#9ca3af;">
                                     <td style="font-family:monospace;font-size:9px;">${sr.batch_id}</td>
                                     <td>${sr.sell_date}</td>
-                                    <td>${sr.buy_nav.toFixed(4)}</td>
+                                    <td>${sr.buy_nav ? sr.buy_nav.toFixed(4) : '--'}</td>
                                     <td>${navCell}</td>
                                     <td>${sr.sell_shares.toFixed(2)}</td>
                                     <td>${sr.hold_days}天</td>
@@ -2062,6 +2057,11 @@
                     html += '</div>';
                     return html;
                 }
+                panel.innerHTML = html;
+            } catch (e) {
+                panel.innerHTML = `<div style="text-align:center;padding:20px;color:#ef4444;">加载失败: ${e.message}</div>`;
+            }
+
         }
 
         // ============ 买入/卖出操作 ============
@@ -2201,7 +2201,7 @@
             const owner = document.getElementById('buyOwner').value;
             const buyDate = document.getElementById('buyDate').value;
             const amount = parseFloat(document.getElementById('buyAmount').value) || 0;
-            const nav = parseFloat(document.getElementById('buyNav').value) || 0;
+            // nav handled below in validation
             const note = document.getElementById('buyNote').value.trim();
 
             if (!buyDate) { showStatus('请选择买入日期', 'error'); return; }
@@ -2235,16 +2235,19 @@
                 return;
             }
 
-            // 正常买入模式：金额>0时需要有效净值
+            // 正常买入模式：金额>0时
             if (amount < 0) { showStatus('请输入有效金额', 'error'); return; }
-            if (!nav || nav <= 0) { showStatus('请输入有效确认净值', 'error'); return; }
+            // nav 允许为空（T+1确认后补录），但如果填了必须>0
+            const navRaw = document.getElementById('buyNav').value.trim();
+            const navVal = navRaw ? parseFloat(navRaw) : null;
+            if (navRaw && (!navVal || navVal <= 0)) { showStatus('净值必须大于0，或留空后续补录', 'error'); return; }
 
             try {
                 const isSupplement = document.getElementById('buySupplement').checked;
                 const res = await fetch(`${API_BASE}/v1/position/${encodeURIComponent(code)}/buy`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ amount, nav, note, buy_date: buyDate, is_supplement: isSupplement, owner: owner })
+                    body: JSON.stringify({ amount, nav: navVal, note, buy_date: buyDate, is_supplement: isSupplement, owner: owner })
                 });
                 if (!res.ok) {
                     const err = await res.json();
@@ -2351,7 +2354,7 @@
                         opts = '<option value="">请选择批次...</option>';
                         for (const b of batches) {
                             const sel = b.id === preselectedBatchId ? ' selected' : '';
-                            opts += `<option value="${b.id}"${sel}>${b.id} · ${b.buy_date} · ${b.shares.toFixed(2)}份 · 净值${b.nav.toFixed(4)}${b.note ? ' · ' + b.note : ''}</option>`;
+                            opts += `<option value="${b.id}"${sel}>${b.id} · ${b.buy_date} · ${b.shares ? b.shares.toFixed(2) + '份' : '份额待定'} · 净值${b.nav ? b.nav.toFixed(4) : '待补录'}${b.note ? ' · ' + b.note : ''}</option>`;
                         }
                     }
                     select.innerHTML = opts;
@@ -2378,7 +2381,7 @@
                 const buyDate = new Date(batch.buy_date);
                 const today = new Date();
                 const holdDays = Math.floor((today - buyDate) / 86400000);
-                hint.textContent = `买入 ¥${batch.amount.toFixed(2)}，净值 ${batch.nav.toFixed(4)}，持有${holdDays}天`;
+                hint.textContent = `买入 ¥${batch.amount.toFixed(2)}，净值 ${batch.nav ? batch.nav.toFixed(4) : '待补录'}，持有${holdDays}天`;
                 sharesHint.textContent = `该批次持有 ${batch.shares.toFixed(2)} 份，全部卖出填 ${batch.shares.toFixed(2)}`;
                 // 预填全部份额
                 document.getElementById('sellShares').value = batch.shares.toFixed(2);
@@ -2477,6 +2480,29 @@
                 loadStrategyPanel();
             } catch (e) {
                 showStatus('删除失败: ' + e.message, 'error');
+            }
+        }
+
+        async function promptBuyNav(fundCode, batchId) {
+            const navStr = prompt('请输入买入确认净值（在支付宝→交易记录→买入详情中查看「确认净值」）:');
+            if (!navStr) return;
+            const nav = parseFloat(navStr);
+            if (!nav || nav <= 0) { showStatus('请输入有效净值', 'error'); return; }
+            try {
+                const res = await fetch(`${API_BASE}/v1/position/${encodeURIComponent(fundCode)}/buy-nav`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ batch_id: batchId, nav: nav })
+                });
+                if (!res.ok) {
+                    const err = await res.json();
+                    throw new Error(err.detail || '补录失败');
+                }
+                const data = await res.json();
+                showStatus(`买入净值已补录: ${data.batch.nav.toFixed(4)} · 份额 ${data.batch.shares.toFixed(2)}`, 'success');
+                loadStrategyPanel();
+            } catch (e) {
+                showStatus('补录失败: ' + e.message, 'error');
             }
         }
 

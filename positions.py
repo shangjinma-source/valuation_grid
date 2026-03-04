@@ -153,7 +153,7 @@ def _next_batch_id(batches: list, date_str: str) -> str:
     return f"b{date_part}{letter}"
 
 
-def add_batch(fund_code: str, amount: float, nav: float, note: str = "",
+def add_batch(fund_code: str, amount: float, nav: float = None, note: str = "",
               buy_date: str = None, is_supplement: bool = False) -> dict:
     """
     新增一笔买入批次。
@@ -182,7 +182,8 @@ def add_batch(fund_code: str, amount: float, nav: float, note: str = "",
     else:
         date_str = datetime.now().strftime("%Y-%m-%d")
 
-    shares = round(amount / nav, 2) if nav > 0 else 0.0
+    _nav = nav if nav and nav > 0 else 0.0
+    shares = round(amount / _nav, 2) if _nav > 0 else 0.0
 
     # 自动识别补仓：显式标记 或 note 以"补仓"开头
     _is_supp = is_supplement or (note and note.startswith("补仓"))
@@ -191,7 +192,7 @@ def add_batch(fund_code: str, amount: float, nav: float, note: str = "",
         "id": _next_batch_id(fund["batches"], date_str),
         "buy_date": date_str,
         "amount": round(amount, 2),
-        "nav": round(nav, 4),
+        "nav": round(_nav, 4),
         "shares": shares,
         "status": "holding",
         "note": note,
@@ -205,8 +206,35 @@ def add_batch(fund_code: str, amount: float, nav: float, note: str = "",
         print(f"[Position] 补仓计数 {fund_code}: {fund['supplement_count']}")
 
     save_positions(data)
-    print(f"[Position] 新增批次 {fund_code} {batch['id']}: {amount}元 @ {nav} ({date_str})"
+    print(f"[Position] 新增批次 {fund_code} {batch['id']}: {amount}元 @ {_nav or '待确认'} ({date_str})"
           f"{' [补仓]' if _is_supp else ''}")
+    return batch
+
+
+
+def confirm_buy_nav(fund_code: str, batch_id: str, nav: float) -> dict:
+    """补录买入确认净值，重新计算份额"""
+    if not nav or nav <= 0:
+        raise ValueError("净值必须大于0")
+
+    data = load_positions()
+    fund = data.get("funds", {}).get(fund_code)
+    if not fund:
+        raise ValueError(f"基金 {fund_code} 不存在")
+
+    batch = None
+    for b in fund["batches"]:
+        if b["id"] == batch_id:
+            batch = b
+            break
+    if not batch:
+        raise ValueError(f"批次 {batch_id} 不存在")
+
+    batch["nav"] = round(nav, 4)
+    batch["shares"] = round(batch["amount"] / nav, 2)
+
+    save_positions(data)
+    print(f"[Position] 补录买入净值 {fund_code} {batch_id}: nav={nav}")
     return batch
 
 
