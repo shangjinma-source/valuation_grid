@@ -25,7 +25,8 @@ from positions import (
     get_groups, add_group, update_group, delete_group,
     make_fund_key, parse_fund_key, rename_fund_key,
     add_watch_fund,
-    confirm_buy_nav
+    confirm_buy_nav,
+    auto_fill_nav
 )
 from grid import (
     generate_signal, generate_all_signals, get_signal_history,
@@ -42,6 +43,11 @@ from grid import (
 
 @asynccontextmanager
 async def lifespan(app):
+    # v5.19: 启动时自动补录缺失净值
+    try:
+        auto_fill_nav()
+    except Exception as e:
+        print(f"[Startup] 净值自动补录异常: {e}")
     t = threading.Thread(target=refresh_stale_holdings, daemon=True)
     t.start()
     yield

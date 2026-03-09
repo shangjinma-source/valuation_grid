@@ -889,3 +889,104 @@ def delete_group(group_id: str) -> bool:
     data["groups"] = new_groups
     save_positions(data)
     return True
+
+
+# ============================================================
+# 净值自动补录（启动时检查并填入缺失净值）
+# ============================================================
+
+def auto_fill_nav():
+    """
+    遍历所有基金的 batches 和 sell_records，
+    对 nav/sell_nav 为空或0的记录，根据日期从天天基金拉取真实净值并自动填入。
+    仅补录净值，不改其他字段。
+    """
+    from valuation.providers import get_fund_nav_history
+
+    data = load_positions()
+    funds = data.get("funds", {})
+    if not funds:
+        return
+
+    filled_count = 0
+    changed = False
+
+    for fund_key, fund in funds.items():
+        real_code, _ = parse_fund_key(fund_key)
+        # 收集需要补录的日期
+        need_dates = set()
+
+        for batch in fund.get("batches", []):
+            if not batch.get("nav") or batch["nav"] <= 0:
+                if batch.get("buy_date"):
+                    need_dates.add(batch["buy_date"])
+
+        for record in fund.get("sell_records", []):
+            if not record.get("sell_nav") or record["sell_nav"] <= 0:
+                if record.get("sell_date"):
+                    need_dates.add(record["sell_date"])
+
+        if not need_dates:
+            continue
+
+        # 拉取足够天数的净值历史（最多60天覆盖）
+        try:
+            nav_history = get_fund_nav_history(real_code, 60)
+        except Exception as e:
+            print(f"[AutoFillNav] 获取 {real_code} 净值历史失败: {e}")
+            continue
+
+        # 构建日期→净值映射
+        date_nav_map = {}
+        for h in nav_history:
+            if h.get("date") and h.get("nav") and h["nav"] > 0:
+                date_nav_map[h["date"]] = h["nav"]
+
+        # 补录 batches
+        for batch in fund.get("batches", []):
+            if not batch.get("nav") or batch["nav"] <= 0:
+                buy_date = batch.get("buy_date", "")
+                nav_val = date_nav_map.get(buy_date)
+                if nav_val and nav_val > 0:
+                    batch["nav"] = round(nav_val, 4)
+                    batch["shares"] = round(batch["amount"] / nav_val, 2)
+                    filled_count += 1
+                    changed = True
+                    print(f"[AutoFillNav] 补录买入净值 {fund_key} {batch['id']}: "
+                          f"date={buy_date}, nav={nav_val}, shares={batch['shares']}")
+
+        # 补录 sell_records
+        for record in fund.get("sell_records", []):
+            if not record.get("sell_nav") or record["sell_nav"] <= 0:
+                sell_date = record.get("sell_date", "")
+                nav_val = date_nav_map.get(sell_date)
+                if nav_val and nav_val > 0:
+                    record["sell_nav"] = round(nav_val, 4)
+                    # 重算卖出收益
+                    gross = round(record["sell_shares"] * nav_val, 2)
+                    fee = round(gross * record.get("sell_fee_rate", 0) / 100, 2)
+                    net = round(gross - fee, 2)
+                    cost = record.get("cost", 0)
+                    profit = round(net - cost, 2)
+                    profit_pct = round(profit / cost * 100, 1) if cost > 0 else 0.0
+                    record["gross"] = gross
+                    record["fee"] = fee
+                    record["net"] = net
+                    record["profit"] = profit
+                    record["profit_pct"] = profit_pct
+                    filled_count += 1
+                    changed = True
+                    print(f"[AutoFillNav] 补录卖出净值 {fund_key} {record['id']}: "
+                          f"date={sell_date}, nav={nav_val}, profit={profit}")
+
+                    # 同步更新对应 batch 的 sell_nav（全卖时）
+                    for b in fund.get("batches", []):
+                        if b["id"] == record.get("batch_id") and b.get("status") == "sold":
+                            b["sell_nav"] = round(nav_val, 4)
+
+    if changed:
+        save_positions(data)
+
+    if filled_count > 0:
+        print(f"[AutoFillNav] 共补录 {filled_count} 条净值记录")
+    # filled_count == 0 时静默

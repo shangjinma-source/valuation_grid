@@ -23,7 +23,8 @@ _hist_lock = threading.Lock()
 MAX_HISTORY_PER_FUND = 90
 
 
-def _load_history() -> dict:
+def _load_history_unlocked() -> dict:
+    """内部加载（调用方需自行持有 _hist_lock）"""
     if not HISTORY_FILE.exists():
         return {}
     try:
@@ -33,53 +34,80 @@ def _load_history() -> dict:
         return {}
 
 
-def _save_history(data: dict):
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
+def _load_history() -> dict:
+    """外部安全加载（自动加锁）"""
     with _hist_lock:
+        return _load_history_unlocked()
+
+
+def _save_history_unlocked(data: dict):
+    """内部保存（调用方需自行持有 _hist_lock）
+    Windows 上 Path.replace() 在目标文件被占用时会抛 WinError 5，
+    因此先尝试 replace，失败后用 os.replace 或直接覆盖写入兜底。
+    """
+    import os
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    tmp = HISTORY_FILE.with_suffix(".tmp")
+    try:
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        # Windows 兼容：os.replace 是原子操作，能覆盖已存在的目标文件
+        os.replace(str(tmp), str(HISTORY_FILE))
+    except OSError:
+        # 极端情况：rename 仍失败，直接写目标文件（非原子但保证数据不丢）
         try:
-            tmp = HISTORY_FILE.with_suffix(".tmp")
-            with open(tmp, "w", encoding="utf-8") as f:
+            with open(HISTORY_FILE, "w", encoding="utf-8") as f:
                 json.dump(data, f, ensure_ascii=False, indent=2)
-            tmp.replace(HISTORY_FILE)
-        except Exception as e:
-            print(f"[Strategy] 保存信号历史失败: {e}")
+            if tmp.exists():
+                tmp.unlink()
+        except Exception as e2:
+            print(f"[Strategy] 保存信号历史失败(fallback): {e2}")
+    except Exception as e:
+        print(f"[Strategy] 保存信号历史失败: {e}")
+
+
+def _save_history(data: dict):
+    """外部安全保存（自动加锁）"""
+    with _hist_lock:
+        _save_history_unlocked(data)
 
 
 def _append_signal_history(fund_code: str, signal: dict, market: dict):
-    """追加一条信号记录，同一天同一来源覆盖"""
-    history = _load_history()
-    records = history.setdefault(fund_code, [])
+    """追加一条信号记录，同一天同一来源覆盖（全程持锁，避免并发冲突）"""
+    with _hist_lock:
+        history = _load_history_unlocked()
+        records = history.setdefault(fund_code, [])
 
-    today_str = datetime.now().strftime("%Y-%m-%d")
-    source = signal.get("_source") or market.get("_source") or "estimation"
-    entry = {
-        "date": today_str,
-        "time": datetime.now().strftime("%H:%M:%S"),
-        "source": source,
-        "signal_name": signal.get("signal_name"),
-        "action": signal.get("action"),
-        "priority": signal.get("priority"),
-        "reason": signal.get("reason"),
-        "amount": signal.get("amount"),
-        "sell_pct": signal.get("sell_pct"),
-        "today_change": market.get("today_change"),
-        "total_profit_pct": market.get("total_profit_pct"),
-        "current_nav": market.get("current_nav"),
-        "nav_at_signal": market.get("current_nav"),
-        "outcome_t3": None,
-        "outcome_t5": None,
-        "outcome_t10": None,
-    }
+        today_str = datetime.now().strftime("%Y-%m-%d")
+        source = signal.get("_source") or market.get("_source") or "estimation"
+        entry = {
+            "date": today_str,
+            "time": datetime.now().strftime("%H:%M:%S"),
+            "source": source,
+            "signal_name": signal.get("signal_name"),
+            "action": signal.get("action"),
+            "priority": signal.get("priority"),
+            "reason": signal.get("reason"),
+            "amount": signal.get("amount"),
+            "sell_pct": signal.get("sell_pct"),
+            "today_change": market.get("today_change"),
+            "total_profit_pct": market.get("total_profit_pct"),
+            "current_nav": market.get("current_nav"),
+            "nav_at_signal": market.get("current_nav"),
+            "outcome_t3": None,
+            "outcome_t5": None,
+            "outcome_t10": None,
+        }
 
-    records = [r for r in records
-               if not (r.get("date") == today_str and r.get("source", "estimation") == source)]
-    records.append(entry)
+        records = [r for r in records
+                   if not (r.get("date") == today_str and r.get("source", "estimation") == source)]
+        records.append(entry)
 
-    if len(records) > MAX_HISTORY_PER_FUND:
-        records = records[-MAX_HISTORY_PER_FUND:]
+        if len(records) > MAX_HISTORY_PER_FUND:
+            records = records[-MAX_HISTORY_PER_FUND:]
 
-    history[fund_code] = records
-    _save_history(history)
+        history[fund_code] = records
+        _save_history_unlocked(history)
 
 
 def backfill_signal_outcomes():
