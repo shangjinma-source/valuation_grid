@@ -268,6 +268,20 @@ def add_watch_fund(fund_code: str, max_position: float = 5000, note: str = "") -
     if note:
         funds[fund_code]["watch_note"] = note
 
+    # v5.18: 自动从 fitness_cache.json 读取最优灵敏度
+    try:
+        import json as _json
+        _cache_path = Path(__file__).parent / "data" / "fitness_cache.json"
+        if _cache_path.exists():
+            with open(_cache_path, "r", encoding="utf-8") as _f:
+                _fc = _json.load(_f)
+            _fi = _fc.get(fund_code, {})
+            if _fi.get("vol_sensitivity") is not None:
+                funds[fund_code]["vol_sensitivity"] = _fi["vol_sensitivity"]
+                print(f"[Position] 自动设置灵敏度 {fund_code}: vol_sensitivity={_fi['vol_sensitivity']} (来自sweep回测)")
+    except Exception:
+        pass
+
     save_positions(data)
     print(f"[Position] 新增空仓观察 {fund_code}: max_position={max_position}, note={note}")
     return {

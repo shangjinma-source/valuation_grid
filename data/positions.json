@@ -101,8 +101,8 @@
           "rate": 0.0
         }
       ],
-      "vol_sensitivity_auto": 1.08,
-      "vol_sensitivity_auto_at": "2026-03-04 23:59:08",
+      "vol_sensitivity_auto": 1.04,
+      "vol_sensitivity_auto_at": "2026-03-09 21:41:08",
       "cooldown_sell_date": "2026-02-25",
       "cooldown_trade_days": 2
     },
@@ -113,9 +113,9 @@
         {
           "id": "b20260116a",
           "buy_date": "2026-01-16",
-          "amount": 2351.08,
+          "amount": 1528.2,
           "nav": 2.0485,
-          "shares": 1147.71,
+          "shares": 746.01,
           "status": "holding",
           "note": "建仓",
           "is_supplement": false,
@@ -145,14 +145,14 @@
           "status": "holding",
           "note": "补仓",
           "is_supplement": true,
-          "peak_nav": 1.8915,
-          "peak_date": "2026-03-04"
+          "peak_nav": 1.9077,
+          "peak_date": "2026-03-06"
         }
       ],
       "supplement_count": 1,
-      "cooldown_until": "2026-03-08",
-      "vol_sensitivity_auto": 1.2,
-      "vol_sensitivity_auto_at": "2026-03-04 23:59:27",
+      "cooldown_until": "2026-03-09",
+      "vol_sensitivity_auto": 1.08,
+      "vol_sensitivity_auto_at": "2026-03-09 22:03:12",
       "sell_records": [
         {
           "id": "s20260226a",
@@ -187,9 +187,26 @@
           "hold_days": 47,
           "sell_fee_rate": 0.0,
           "note": "建仓"
+        },
+        {
+          "id": "s20260305a",
+          "batch_id": "b20260116a",
+          "sell_date": "2026-03-05",
+          "sell_shares": 401.7,
+          "buy_nav": 2.0485,
+          "sell_nav": null,
+          "cost": 822.88,
+          "gross": null,
+          "fee": null,
+          "net": null,
+          "profit": null,
+          "profit_pct": null,
+          "hold_days": 48,
+          "sell_fee_rate": 0.0,
+          "note": "建仓"
         }
       ],
-      "cooldown_sell_date": "2026-03-04",
+      "cooldown_sell_date": "2026-03-05",
       "cooldown_trade_days": 2
     },
     "025500__老爸": {
@@ -312,8 +329,8 @@
           "note": "测试补仓"
         }
       ],
-      "vol_sensitivity_auto": 0.95,
-      "vol_sensitivity_auto_at": "2026-03-04 23:59:28",
+      "vol_sensitivity_auto": 1.05,
+      "vol_sensitivity_auto_at": "2026-03-09 21:41:08",
       "cooldown_sell_date": "2026-03-03",
       "cooldown_trade_days": 2
     },
@@ -338,8 +355,8 @@
       ],
       "supplement_count": 0,
       "cooldown_until": "2026-02-28",
-      "vol_sensitivity_auto": 1.08,
-      "vol_sensitivity_auto_at": "2026-03-04 23:59:53",
+      "vol_sensitivity_auto": 1.06,
+      "vol_sensitivity_auto_at": "2026-03-08 19:42:06",
       "fee_schedule": [
         {
           "days": 7,
@@ -391,7 +408,8 @@
         }
       ],
       "cooldown_sell_date": "2026-02-24",
-      "cooldown_trade_days": 2
+      "cooldown_trade_days": 2,
+      "vol_sensitivity": 1.0
     },
     "025209__老婆": {
       "fund_name": "",
@@ -420,8 +438,9 @@
       ],
       "supplement_count": 0,
       "cooldown_until": null,
-      "vol_sensitivity_auto": 1.01,
-      "vol_sensitivity_auto_at": "2026-03-04 23:59:28"
+      "vol_sensitivity_auto": 1.17,
+      "vol_sensitivity_auto_at": "2026-03-08 19:42:06",
+      "vol_sensitivity": 0.8
     },
     "017811__老婆": {
       "fund_name": "",
@@ -453,7 +472,7 @@
       "supplement_count": 0,
       "cooldown_until": "2026-03-02",
       "vol_sensitivity_auto": 1.2,
-      "vol_sensitivity_auto_at": "2026-03-04 23:59:08",
+      "vol_sensitivity_auto_at": "2026-03-08 19:42:39",
       "sell_records": [
         {
           "id": "s20260224a",
@@ -491,11 +510,12 @@
         }
       ],
       "cooldown_sell_date": "2026-02-26",
-      "cooldown_trade_days": 2
+      "cooldown_trade_days": 2,
+      "vol_sensitivity": 0.95
     },
     "017193__宇宙第一咆哮虎": {
       "fund_name": "",
-      "max_position": 6000,
+      "max_position": 5000,
       "batches": [
         {
           "id": "b20260122a",
@@ -589,12 +609,13 @@
           "note": "转入"
         }
       ],
-      "vol_sensitivity_auto": 1.3,
-      "vol_sensitivity_auto_at": "2026-03-04 23:59:52"
+      "vol_sensitivity_auto": 1.11,
+      "vol_sensitivity_auto_at": "2026-03-08 19:42:10",
+      "vol_sensitivity": 1.2
     },
     "025500__宇宙第一咆哮虎": {
       "fund_name": "",
-      "max_position": 3000,
+      "max_position": 1000,
       "batches": [
         {
           "id": "b20260122a",
@@ -737,10 +758,11 @@
           "note": "补仓"
         }
       ],
-      "vol_sensitivity_auto": 0.95,
-      "vol_sensitivity_auto_at": "2026-03-04 23:59:09",
+      "vol_sensitivity_auto": 1.03,
+      "vol_sensitivity_auto_at": "2026-03-08 19:41:59",
       "cooldown_sell_date": "2026-02-25",
-      "cooldown_trade_days": 2
+      "cooldown_trade_days": 2,
+      "vol_sensitivity": 0.8
     },
     "015968__宇宙第一咆哮虎": {
       "fund_name": "",
@@ -777,8 +799,8 @@
           "status": "holding",
           "note": "补仓",
           "is_supplement": true,
-          "peak_nav": 1.7682,
-          "peak_date": "2026-03-04"
+          "peak_nav": 1.9727,
+          "peak_date": "2026-03-06"
         }
       ],
       "supplement_count": 1,
@@ -807,46 +829,27 @@
           "sell_date": "2026-03-04",
           "sell_shares": 335.32,
           "buy_nav": 1.9727,
-          "sell_nav": null,
+          "sell_nav": 1.7444,
           "cost": 661.48,
-          "gross": null,
-          "fee": null,
-          "net": null,
-          "profit": null,
-          "profit_pct": null,
+          "gross": 584.93,
+          "fee": 0.0,
+          "net": 584.93,
+          "profit": -76.55,
+          "profit_pct": -11.6,
           "hold_days": 41,
           "sell_fee_rate": 0.0,
           "note": "建仓"
         }
       ],
       "vol_sensitivity_auto": 1.2,
-      "vol_sensitivity_auto_at": "2026-03-04 23:59:27",
+      "vol_sensitivity_auto_at": "2026-03-08 19:41:39",
       "cooldown_sell_date": "2026-03-04",
-      "cooldown_trade_days": 2
+      "cooldown_trade_days": 2,
+      "vol_sensitivity": 1.15
     },
-    "023159__实战": {
+    "023829__宇宙第一咆哮虎": {
       "fund_name": "",
-      "max_position": 3000,
-      "batches": [],
-      "supplement_count": 0,
-      "cooldown_until": null,
-      "watch_note": "空仓待建仓",
-      "vol_sensitivity_auto": 1.3,
-      "vol_sensitivity_auto_at": "2026-03-04 23:59:27"
-    },
-    "023145__实战": {
-      "fund_name": "",
-      "max_position": 3000,
-      "batches": [],
-      "supplement_count": 0,
-      "cooldown_until": null,
-      "watch_note": "空仓待建仓",
-      "vol_sensitivity_auto": 1.3,
-      "vol_sensitivity_auto_at": "2026-03-04 23:59:27"
-    },
-    "023829__实战": {
-      "fund_name": "",
-      "max_position": 3000,
+      "max_position": 1000,
       "batches": [
         {
           "id": "b20260302a",
@@ -863,54 +866,50 @@
       "cooldown_until": null,
       "watch_note": "空仓待建仓",
       "vol_sensitivity_auto": 1.3,
-      "vol_sensitivity_auto_at": "2026-03-04 23:59:09"
+      "vol_sensitivity_auto_at": "2026-03-08 19:42:11",
+      "vol_sensitivity": 0.8
     },
-    "021615__实战": {
+    "017560__宇宙第一咆哮虎": {
       "fund_name": "",
-      "max_position": 3000,
+      "max_position": 42000,
       "batches": [],
       "supplement_count": 0,
       "cooldown_until": null,
       "watch_note": "空仓待建仓",
-      "vol_sensitivity_auto": 0.88,
-      "vol_sensitivity_auto_at": "2026-03-04 23:59:27"
-    },
-    "015401__实战": {
-      "fund_name": "",
-      "max_position": 3000,
-      "batches": [
+      "vol_sensitivity_auto": 1.25,
+      "vol_sensitivity_auto_at": "2026-03-08 19:44:16",
+      "vol_sensitivity": 1.15,
+      "fee_schedule": [
         {
-          "id": "b20260302a",
-          "buy_date": "2026-03-02",
-          "amount": 436.05,
-          "nav": 1.2799,
-          "shares": 340.69,
-          "status": "holding",
-          "note": "建仓",
-          "is_supplement": false
+          "days": 7,
+          "rate": 1.5
+        },
+        {
+          "days": 30,
+          "rate": 0.0
+        },
+        {
+          "days": null,
+          "rate": 0.0
         }
-      ],
-      "supplement_count": 0,
-      "cooldown_until": null,
-      "watch_note": "空仓待建仓",
-      "vol_sensitivity_auto": 1.06,
-      "vol_sensitivity_auto_at": "2026-03-04 13:55:10"
+      ]
     },
-    "023385__实战": {
+    "015395__宇宙第一咆哮虎": {
       "fund_name": "",
-      "max_position": 3000,
+      "max_position": 18000,
       "batches": [],
       "supplement_count": 0,
       "cooldown_until": null,
       "watch_note": "空仓待建仓",
-      "vol_sensitivity_auto": 1.12,
-      "vol_sensitivity_auto_at": "2026-03-04 23:59:09"
+      "vol_sensitivity_auto": 1.3,
+      "vol_sensitivity_auto_at": "2026-03-09 01:18:53",
+      "vol_sensitivity": 1.05
     }
   },
   "cash_reserve_ratio": 0.3,
-  "updated_at": "2026-03-04 23:59:53",
+  "updated_at": "2026-03-09 22:03:12",
   "market_regime": "neutral",
   "regime_auto": true,
   "regime_auto_result": "neutral",
-  "regime_auto_at": "2026-03-04 23:59:08"
+  "regime_auto_at": "2026-03-09 21:41:08"
 }
