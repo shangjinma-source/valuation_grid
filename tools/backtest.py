@@ -463,8 +463,10 @@ def bt_vol_adaptive_thresholds(vol: float, sensitivity: float = 1.0) -> dict:
     }
 
 
-def bt_calc_dynamic_thresholds(trend_ctx: dict) -> dict:
-    """简化版动态阈值（回测不需要信号胜率自适应）"""
+def bt_calc_dynamic_thresholds(trend_ctx: dict, sensitivity: float = 1.0) -> dict:
+    """简化版动态阈值（回测不需要信号胜率自适应）
+    v5.18: 支持sensitivity参数传入，与线上_vol_adaptive_thresholds一致
+    """
     mdd_20 = trend_ctx.get("max_drawdown") or 0.0
     mdd = mdd_20
     if mdd <= 5:
@@ -478,7 +480,7 @@ def bt_calc_dynamic_thresholds(trend_ctx: dict) -> dict:
     vol = trend_ctx.get("volatility_robust") or trend_ctx.get("volatility") or 1.0
     vol_state = "low_vol" if vol < VOL_LOW else "normal_vol" if vol < VOL_NORMAL_HIGH else "high_vol" if vol < VOL_EXTREME else "extreme_vol"
 
-    va = bt_vol_adaptive_thresholds(vol)
+    va = bt_vol_adaptive_thresholds(vol, sensitivity)
 
     dip_threshold = round(va["dip_threshold"] * risk_mul, 2)
     tp_trigger = round(va["tp_trigger"], 2)
@@ -538,12 +540,14 @@ class BacktestSimulator:
                  initial_capital: float = 10000.0,
                  max_position: float = 10000.0,
                  fee_schedule=None,
-                 regime: str = "auto"):
+                 regime: str = "auto",
+                 sensitivity: float = 1.0):
         self.fund_code = fund_code
         self.nav_data = nav_data  # 升序
         self.initial_capital = initial_capital
         self.max_position = max_position
         self.fee_schedule = fee_schedule or DEFAULT_FEE_SCHEDULE
+        self.sensitivity = sensitivity  # v5.18: 灵敏度参数
         # v5.13: 行情模式（"auto"为逐日动态切换）
         self.regime_mode = regime  # "auto" / "bull" / "neutral" / "bear"
         self.regime = regime if regime != "auto" else "neutral"
@@ -770,7 +774,7 @@ class BacktestSimulator:
             hist_changes = self._get_hist_changes(day_idx)
             nav_window = self._get_history_window(day_idx, 60)
             trend_ctx = bt_analyze_trend(today_change, hist_changes, nav_window)
-            dyn = bt_calc_dynamic_thresholds(trend_ctx)
+            dyn = bt_calc_dynamic_thresholds(trend_ctx, self.sensitivity)
 
             # v5.13: 动态行情模式更新（auto模式逐日切换）
             self._update_regime(trend_ctx)
@@ -1866,6 +1870,153 @@ def load_funds_from_state() -> List[str]:
         return []
 
 
+def load_sector_map() -> Dict[str, str]:
+    """从 data/state.json 构建 {基金代码: 所属板块} 映射表"""
+    state_file = Path(__file__).parent.parent / "data" / "state.json"
+    if not state_file.exists():
+        return {}
+    try:
+        with open(state_file, "r", encoding="utf-8") as f:
+            state = json.load(f)
+        sector_map = {}
+        for sector in state.get("sectors", []):
+            sector_name = sector.get("name", "")
+            for fund in sector.get("funds", []):
+                code = fund.get("code", "")
+                if code:
+                    # 一个基金可能出现在多个板块，用/拼接
+                    if code in sector_map:
+                        if sector_name not in sector_map[code]:
+                            sector_map[code] += f"/{sector_name}"
+                    else:
+                        sector_map[code] = sector_name
+        return sector_map
+    except Exception:
+        return {}
+
+
+def _pick_sector_recommendations(results: List[dict], fund_names: Dict[str, str],
+                                  sector_map: Dict[str, str]) -> List[list]:
+    """
+    综合评估每个板块最建议建仓的基金。
+    评估维度（非纯适配评分排序）：
+      1. 回测周期充足性（trading_days >= 500 优先，< 200 降权）
+      2. 适配评分
+      3. 年化收益为正
+      4. 超额收益
+      5. 最大回撤可控
+      6. 夏普比率
+      7. 胜率
+    返回: [[板块, 推荐代码, 推荐名称, 综合评语], ...]
+    """
+    # 按板块分组
+    sector_funds: Dict[str, List[dict]] = {}
+    for s in results:
+        code = s["fund_code"]
+        sector = sector_map.get(code, "")
+        if not sector:
+            continue
+        # 处理多板块归属：每个板块都放一份
+        for sec in sector.split("/"):
+            if sec not in sector_funds:
+                sector_funds[sec] = []
+            sector_funds[sec].append(s)
+
+    recommendations = []
+    for sector_name in sorted(sector_funds.keys()):
+        funds = sector_funds[sector_name]
+        if not funds:
+            continue
+
+        # 综合打分：加权排序
+        scored = []
+        for s in funds:
+            code = s["fund_code"]
+            days = s.get("trading_days", 0)
+            fitness = s.get("fitness_score", 0) or 0
+            annual_ret = s.get("annual_return_pct", 0) or 0
+            excess = s.get("excess_return_pct", 0) or 0
+            sharpe = s.get("sharpe_ratio", 0) or 0
+            max_dd = abs(s.get("max_drawdown_pct", 0) or 0)
+            win_rate = s.get("win_rate_pct", 0) or 0
+            monthly_wr = s.get("monthly_win_rate", 0) or 0
+            env_label = s.get("env_label", "")
+
+            # --- 周期充足性评估 ---
+            if days >= 800:
+                period_factor = 1.0
+                period_tag = "长期验证"
+            elif days >= 500:
+                period_factor = 0.90
+                period_tag = "中期验证"
+            elif days >= 300:
+                period_factor = 0.75
+                period_tag = "短期数据"
+            elif days >= 200:
+                period_factor = 0.60
+                period_tag = "数据偏少"
+            else:
+                period_factor = 0.40
+                period_tag = "数据不足"
+
+            # --- 综合得分 ---
+            # 适配评分占40%，但受周期因子调节
+            score_fit = fitness * 0.40 * period_factor
+            # 年化收益正向加分（上限15分）
+            score_ret = min(15, max(-5, annual_ret)) * 0.8
+            # 超额收益加分（上限10分）
+            score_excess = min(10, max(-5, excess)) * 0.6
+            # 夏普（上限2.0映射到10分）
+            score_sharpe = min(10, max(0, sharpe * 5))
+            # 回撤惩罚（回撤>15%开始扣分）
+            dd_penalty = max(0, (max_dd - 15)) * 0.3
+            # 胜率加分
+            score_wr = monthly_wr * 0.08
+            # 全天候/多环境适配加分
+            env_bonus = 3 if "全天候" in env_label else (1.5 if env_label.count("/") >= 1 else 0)
+
+            composite = round(score_fit + score_ret + score_excess + score_sharpe
+                              - dd_penalty + score_wr + env_bonus, 2)
+
+            reasons = []
+            if period_factor < 0.75:
+                reasons.append(f"⚠{period_tag}({days}天)")
+            elif period_factor >= 0.90:
+                reasons.append(f"✓{period_tag}({days}天)")
+            reasons.append(f"适配{fitness}")
+            if annual_ret > 0:
+                reasons.append(f"年化{annual_ret}%")
+            else:
+                reasons.append(f"年化{annual_ret}%(负)")
+            if excess > 0:
+                reasons.append(f"超额+{excess}%")
+            if sharpe > 0.5:
+                reasons.append(f"夏普{sharpe}")
+            if max_dd > 15:
+                reasons.append(f"回撤{max_dd}%偏大")
+            if env_label and env_label != "待观察":
+                reasons.append(env_label)
+
+            scored.append({
+                "code": code,
+                "name": fund_names.get(code, code),
+                "composite": composite,
+                "reasons": reasons,
+                "period_factor": period_factor,
+                "fitness": fitness,
+            })
+
+        # 按综合得分排序
+        scored.sort(key=lambda x: x["composite"], reverse=True)
+        best = scored[0]
+        reason_str = " | ".join(best["reasons"])
+        recommendations.append([
+            sector_name, best["code"], best["name"], round(best["composite"], 1), reason_str
+        ])
+
+    return recommendations
+
+
 # ============================================================
 # 主函数
 # ============================================================
@@ -1893,7 +2044,17 @@ def main():
     parser.add_argument("--regime", type=str, default="auto",
                         choices=["bull", "neutral", "bear", "auto"],
                         help="行情模式: bull/neutral/bear/auto(默认,逐日动态切换)")
+    parser.add_argument("--sensitivity", type=float, default=1.0,
+                        help="波动率灵敏度系数 (默认1.0, 范围0.5~1.5)")
     args = parser.parse_args()
+
+    # ================================================================
+    # v5.18 灵敏度扫描开关（PyCharm直接改这里，改完Ctrl+Z可revert）
+    # ================================================================
+    SWEEP_ENABLED = True     # True=扫描模式, False=普通回测
+    COARSE_ENABLED = True    # True=扫描所有基金, False=只扫FINE_SCAN_CODES(6只)
+    SWEEP_ONLY_MODE = False  # True=只扫SCAN_SECTORS板块, False=全量基金
+    # ================================================================
 
     # 基金列表: --default > --funds > cache目录 > state.json > 默认
     if args.default:  # v5.4 优化: --default 直接用内置10只，跳过state.json
@@ -1916,10 +2077,389 @@ def main():
 
     max_position = args.max_position or args.capital
     regime = args.regime  # v5.13
+    sensitivity = max(0.5, min(1.5, args.sensitivity))  # v5.18
+
+    # === v5.18: 灵敏度扫描模式 ===
+    if SWEEP_ENABLED:
+        import csv as _csv
+
+        SWEEP_VALUES = [0.80, 0.85, 0.90, 0.95, 1.00, 1.05, 1.10, 1.15, 1.20, 1.25, 1.30]
+
+        sector_map = load_sector_map()
+
+        # 决定扫描范围
+        if SWEEP_ONLY_MODE:
+            SCAN_SECTORS = {'半导体', '机器人', '商业航天', '传媒游戏'}
+            scan_codes = [c for c in fund_codes if sector_map.get(c, '') in SCAN_SECTORS]
+        else:
+            scan_codes = list(fund_codes)
+
+        if not COARSE_ENABLED:
+            # 只扫精扫名单
+            FINE_SCAN_CODES = {
+                '017560', '017470',                        # 半导体
+                '019412', '018095',                        # 机器人
+                '004321',                                  # 商业航天
+                '015395',                                  # 传媒游戏
+            }
+            scan_codes = [c for c in scan_codes if c in FINE_SCAN_CODES]
+
+        print(f"\n 🔍 灵敏度扫描模式 v5.18")
+        scope_label = f"限{len(SCAN_SECTORS)}板块" if SWEEP_ONLY_MODE else "全量"
+        print(f"    扫描: {len(scan_codes)}只 × {len(SWEEP_VALUES)}灵敏度(步长0.05) = {len(scan_codes)*len(SWEEP_VALUES)}次回测 [{scope_label}]")
+        print(f"{'─'*80}")
+
+        # 存储所有结果
+        all_sweep_results = []  # [{code, name, sector, sensitivity, result_dict, score}]
+        best_per_fund = {}      # {code: {sens, score, result, name, sector}}
+
+        total_funds = len(scan_codes)
+        processed = 0
+
+        for code in scan_codes:
+            fund_name = fetch_fund_name(code)
+            sector = sector_map.get(code, '未知')
+            processed += 1
+
+            nav_data = fetch_nav_history(code)
+            if not nav_data or len(nav_data) < 30:
+                print(f" [{processed}/{total_funds}] ⚠ {fund_name}({code}) 数据不足，跳过")
+                continue
+
+            if not args.all_history:
+                nav_data = nav_data[-args.days:] if len(nav_data) > args.days else nav_data
+
+            sys.stdout.write(f"\r [{processed}/{total_funds}] {fund_name}({code}) {sector} ...")
+            sys.stdout.flush()
+
+            best_score = -9999
+            best_sens = 1.0
+            best_result_for_fund = None
+
+            for sv in SWEEP_VALUES:
+                sim = BacktestSimulator(
+                    fund_code=code, nav_data=deepcopy(nav_data),
+                    initial_capital=args.capital, max_position=max_position,
+                    regime=regime, sensitivity=sv,
+                )
+                result = sim.run(start_idx=min(20, len(nav_data) - 1))
+                if "error" in result:
+                    continue
+
+                ann = result.get("annual_return_pct", 0)
+                sharpe = result.get("sharpe_ratio", 0)
+                exc = result.get("excess_return_pct", 0)
+                dd = result.get("max_drawdown_pct", 0)
+
+                score = ann * 2 + sharpe * 5 + exc * 0.5 - max(dd - 10, 0) * 2
+
+                all_sweep_results.append({
+                    "code": code, "name": fund_name, "sector": sector,
+                    "sensitivity": sv, "score": score,
+                    "result": result,
+                })
+
+                if score > best_score:
+                    best_score = score
+                    best_sens = sv
+                    best_result_for_fund = result
+
+            if best_result_for_fund:
+                best_per_fund[code] = {
+                    "sens": best_sens, "score": best_score,
+                    "result": best_result_for_fund,
+                    "name": fund_name, "sector": sector,
+                }
+
+            time.sleep(0.3)
+
+        sys.stdout.write("\r" + " " * 80 + "\r")
+        sys.stdout.flush()
+
+        # === 终端输出汇总 ===
+        print(f"\n{'='*100}")
+        print(f" 灵敏度扫描结果汇总 ({len(best_per_fund)}只基金)")
+        print(f"{'─'*100}")
+        print(f" {'代码':>8} {'名称':<28} {'板块':<6} {'最优灵敏度':>8} {'年化%':>6} {'策略%':>6} {'夏普':>5} {'回撤%':>5} {'综合分':>5}")
+        print(f" {'─'*100}")
+
+        cur_sector = ''
+        for code in scan_codes:
+            if code not in best_per_fund:
+                continue
+            b = best_per_fund[code]
+            r = b["result"]
+            sec = b["sector"]
+            if sec != cur_sector:
+                if cur_sector:
+                    print()
+                cur_sector = sec
+            print(f" {code:>8} {b['name']:<28} {sec:<6} {b['sens']:>8.2f} "
+                  f"{r.get('annual_return_pct',0):>6.1f} {r.get('total_return_pct',0):>6.1f} "
+                  f"{r.get('sharpe_ratio',0):>5.2f} {r.get('max_drawdown_pct',0):>5.1f} {b['score']:>5.0f}")
+
+        # === 板块汇总 ===
+        print(f"\n{'='*100}")
+        print(f" 板块汇总")
+        print(f"{'─'*100}")
+        sector_stats = {}
+        for code, b in best_per_fund.items():
+            sec = b["sector"]
+            if sec not in sector_stats:
+                sector_stats[sec] = []
+            sector_stats[sec].append(b)
+
+        print(f" {'板块':<8} {'基金数':>4} {'平均最优灵敏度':>10} {'平均年化%':>8} {'平均夏普':>7} {'平均回撤%':>8} {'平均综合分':>8}")
+        print(f" {'─'*65}")
+        for sec in sorted(sector_stats.keys(), key=lambda s: -sum(b['score'] for b in sector_stats[s])/len(sector_stats[s])):
+            bs = sector_stats[sec]
+            n = len(bs)
+            avg_sens = sum(b['sens'] for b in bs) / n
+            avg_ann = sum(b['result'].get('annual_return_pct', 0) for b in bs) / n
+            avg_sharpe = sum(b['result'].get('sharpe_ratio', 0) for b in bs) / n
+            avg_dd = sum(b['result'].get('max_drawdown_pct', 0) for b in bs) / n
+            avg_score = sum(b['score'] for b in bs) / n
+            print(f" {sec:<8} {n:>4} {avg_sens:>10.2f} {avg_ann:>8.1f} {avg_sharpe:>7.2f} {avg_dd:>8.1f} {avg_score:>8.0f}")
+
+        # === 自动写入 positions.json ===
+        print(f"\n{'='*100}")
+        print(f" 写入 positions.json ...")
+        try:
+            from positions import load_positions, save_positions, parse_fund_key
+            pos_data = load_positions()
+            funds_dict = pos_data.setdefault("funds", {})
+            # 建立 纯代码 → fund_key 的映射（支持复合key如 "017560:宇宙第一咆哮虎"）
+            code_to_key = {}
+            for fk in funds_dict:
+                real_code, _ = parse_fund_key(fk)
+                code_to_key[real_code] = fk
+            written = 0
+            for code, b in best_per_fund.items():
+                fk = code_to_key.get(code)
+                if fk and fk in funds_dict:
+                    funds_dict[fk]["vol_sensitivity"] = round(b["sens"], 2)
+                    written += 1
+            if written > 0:
+                save_positions(pos_data)
+                print(f" ✅ 已写入 {written} 只基金的最优灵敏度到 positions.json (vol_sensitivity字段)")
+            else:
+                print(f" ⚠ positions.json 中未找到匹配的基金代码，未写入")
+                print(f"   扫描结果已保存到CSV，可手动设置 vol_sensitivity")
+        except Exception as e:
+            print(f" ⚠ 写入 positions.json 失败: {e}")
+            print(f"   扫描结果已保存到CSV，可手动设置")
+
+        # === CSV 输出（复用 export_csv 完整字段） ===
+        csv_path = Path(args.csv).with_suffix('')  # 去掉后缀，用作前缀
+        summary_path = Path(f"{csv_path}_sweep_summary.csv")
+
+        # --- 收集所有最优result用于构建动态信号列 ---
+        best_results_ordered = []  # [(code, b)] 按扫描顺序
+        for code in scan_codes:
+            if code in best_per_fund:
+                best_results_ordered.append((code, best_per_fund[code]))
+
+        all_best_results = [b["result"] for _, b in best_results_ordered]
+
+        # 收集信号名称（和 export_csv 相同逻辑）
+        all_sig_names = set()
+        all_sig_pnl_names = set()
+        # 从最优结果 + 全部精扫明细结果中收集信号名称（确保覆盖全）
+        _all_results_for_sigs = all_best_results + [e["result"] for e in all_sweep_results]
+        for s in _all_results_for_sigs:
+            all_sig_names.update(s.get("signal_distribution", {}).keys())
+            all_sig_pnl_names.update(s.get("signal_pnl", {}).keys())
+        sig_names_sorted = sorted(all_sig_names)
+        sig_pnl_sorted = sorted(all_sig_pnl_names)
+
+        # --- 构建 headers（= export_csv 的完整 headers，前面插入2列）---
+        sweep_extra_headers = ["最优灵敏度"]
+        base_headers = [
+            "适配评分", "适配等级", "环境适配", "趋势捕获率%",
+            "效率分", "回撤控分", "资金分", "胜率分", "波动分",
+            "基金代码", "基金名称", "所属板块", "回测区间", "交易天数",
+            "策略收益%", "年化收益%", "买入持有%", "买持年化%", "超额收益%",
+            "最大回撤%", "买持最大回撤%", "回撤起始", "回撤结束", "回撤持续天数",
+            "夏普比率", "卡尔马比率",
+            "日均波动%", "最大单日涨%", "最大单日跌%", "均值回归率%",
+            "买入次数", "卖出次数", "胜率%", "月度胜率%",
+            "平均盈利", "平均亏损", "盈亏比",
+            "中位盈亏", "P10盈亏", "P90盈亏",
+            "最大单笔盈利", "最大单笔亏损",
+            "最大连续亏损次数", "最大连续盈利次数",
+            "平均仓位%", "持仓天数占比%", "空仓天数占比%",
+            "平均持仓天数", "中位持仓天数", "最长持仓天数",
+            "已实现盈亏", "剩余现金", "持仓市值", "期末总值",
+            "牛市半年数", "牛市策略收益%", "牛市买持收益%",
+            "熊市半年数", "熊市策略收益%", "熊市买持收益%",
+            "震荡半年数", "震荡策略收益%", "震荡买持收益%",
+            "牛市天数", "震荡天数", "熊市天数",
+        ]
+        base_headers += [f"信号:{n}" for n in sig_names_sorted]
+        for sn in sig_pnl_sorted:
+            base_headers += [f"{sn}:次数", f"{sn}:胜率%", f"{sn}:总盈亏", f"{sn}:平均盈亏"]
+
+        summary_headers = sweep_extra_headers + base_headers
+
+        def _build_base_row(s, code, name, sector):
+            """构建与 export_csv 完全一致的基础行（不含 sweep 额外列）"""
+            sig = s.get("signal_distribution", {})
+            sp = s.get("signal_pnl", {})
+            pnl_ratio = round(abs(s["avg_win_amount"] / s["avg_lose_amount"]), 2) if s.get("avg_lose_amount", 0) != 0 else 999
+            row = [
+                s.get("fitness_score", ""), s.get("fitness_grade", ""),
+                s.get("env_label", ""), s.get("capture_rate", ""),
+                s.get("score_efficiency", ""), s.get("score_dd_control", ""),
+                s.get("score_capital", ""), s.get("score_winrate", ""),
+                s.get("score_vol_fit", ""),
+                code, name, sector, s["backtest_period"], s["trading_days"],
+                s["total_return_pct"], s["annual_return_pct"],
+                s["buy_hold_return_pct"], s.get("buy_hold_annual_pct", ""),
+                s["excess_return_pct"],
+                s["max_drawdown_pct"], s.get("bh_max_drawdown_pct", ""),
+                s.get("max_dd_start", ""), s.get("max_dd_end", ""),
+                s.get("max_dd_duration_days", ""),
+                s.get("sharpe_ratio", ""), s.get("calmar_ratio", ""),
+                s.get("avg_daily_vol", ""), s.get("max_daily_gain", ""),
+                s.get("max_daily_loss", ""), s.get("mean_revert_ratio", ""),
+                s["buy_count"], s["sell_count"], s["win_rate_pct"],
+                s.get("monthly_win_rate", ""),
+                s["avg_win_amount"], s["avg_lose_amount"], pnl_ratio,
+                s.get("median_profit", ""), s.get("p10_profit", ""), s.get("p90_profit", ""),
+                s.get("max_single_win", ""), s.get("max_single_loss", ""),
+                s.get("max_consec_loss", ""), s.get("max_consec_win", ""),
+                s.get("avg_position_pct", ""), s.get("holding_day_ratio", ""),
+                s.get("empty_day_ratio", ""),
+                s.get("avg_hold_days", ""), s.get("median_hold_days", ""),
+                s.get("max_hold_days", ""),
+                s["realized_pnl"], s["remaining_cash"],
+                s["remaining_position"], s["final_value"],
+                s.get("bull_half_years", ""), s.get("bull_strat_return", ""),
+                s.get("bull_bh_return", ""),
+                s.get("bear_half_years", ""), s.get("bear_strat_return", ""),
+                s.get("bear_bh_return", ""),
+                s.get("neutral_half_years", ""), s.get("neutral_strat_return", ""),
+                s.get("neutral_bh_return", ""),
+                s.get("regime_day_counts", {}).get("bull", 0),
+                s.get("regime_day_counts", {}).get("neutral", 0),
+                s.get("regime_day_counts", {}).get("bear", 0),
+            ]
+            row += [sig.get(n, 0) for n in sig_names_sorted]
+            for sn in sig_pnl_sorted:
+                d = sp.get(sn, {})
+                cnt = d.get("count", 0)
+                wr = round(d["wins"] / cnt * 100, 1) if cnt > 0 else 0
+                tp = round(d.get("total_profit", 0), 2)
+                ap = round(tp / cnt, 2) if cnt > 0 else 0
+                row += [cnt, wr, tp, ap]
+            return row
+
+        # --- 汇总sheet: 每只基金一行 + 板块汇总行 ---
+        summary_rows = []
+        # 按板块分组输出，板块内按综合评分降序
+        from collections import OrderedDict
+        sector_groups = OrderedDict()  # {sector: [(code, b), ...]}
+        for code, b in best_results_ordered:
+            sec = b["sector"]
+            sector_groups.setdefault(sec, []).append((code, b))
+
+        # 板块排序：按板块平均综合评分降序
+        sorted_sectors = sorted(sector_groups.keys(),
+                                key=lambda s: -sum(b_["score"] for _, b_ in sector_groups[s]) / len(sector_groups[s]))
+
+        for sec in sorted_sectors:
+            group = sector_groups[sec]
+            # 板块内按综合评分降序
+            group_sorted = sorted(group, key=lambda x: -x[1]["score"])
+            for code, b in group_sorted:
+                r = b["result"]
+                sweep_cols = [b["sens"]]
+                base_row = _build_base_row(r, code, b["name"], b["sector"])
+                summary_rows.append(sweep_cols + base_row)
+
+            # 板块汇总行
+            bs = [b_ for _, b_ in group]
+            n = len(bs)
+            def _s_avg(key, _bs=bs):
+                vals = [b_["result"].get(key, 0) for b_ in _bs if b_["result"].get(key) is not None and b_["result"].get(key) != ""]
+                return round(sum(vals) / max(1, len(vals)), 2) if vals else ""
+            pnl_ratio_avg = round(abs(_s_avg("avg_win_amount") / _s_avg("avg_lose_amount")), 2) if _s_avg("avg_lose_amount") else 999
+            avg_row_sweep = [
+                round(sum(b_["sens"] for b_ in bs) / n, 2),
+            ]
+            avg_row_base = [
+                _s_avg("fitness_score"), "", "", _s_avg("capture_rate"),
+                _s_avg("score_efficiency"), _s_avg("score_dd_control"),
+                _s_avg("score_capital"), _s_avg("score_winrate"), _s_avg("score_vol_fit"),
+                "---", f"【{sec}】平均", sec, "", "",
+                _s_avg("total_return_pct"), _s_avg("annual_return_pct"),
+                _s_avg("buy_hold_return_pct"), _s_avg("buy_hold_annual_pct"),
+                _s_avg("excess_return_pct"),
+                _s_avg("max_drawdown_pct"), _s_avg("bh_max_drawdown_pct"),
+                "", "", _s_avg("max_dd_duration_days"),
+                _s_avg("sharpe_ratio"), _s_avg("calmar_ratio"),
+                _s_avg("avg_daily_vol"), _s_avg("max_daily_gain"),
+                _s_avg("max_daily_loss"), _s_avg("mean_revert_ratio"),
+                round(sum(b_["result"]["buy_count"] for b_ in bs) / n, 1),
+                round(sum(b_["result"]["sell_count"] for b_ in bs) / n, 1),
+                _s_avg("win_rate_pct"), _s_avg("monthly_win_rate"),
+                _s_avg("avg_win_amount"), _s_avg("avg_lose_amount"), pnl_ratio_avg,
+                _s_avg("median_profit"), _s_avg("p10_profit"), _s_avg("p90_profit"),
+                _s_avg("max_single_win"), _s_avg("max_single_loss"),
+                _s_avg("max_consec_loss"), _s_avg("max_consec_win"),
+                _s_avg("avg_position_pct"), _s_avg("holding_day_ratio"), _s_avg("empty_day_ratio"),
+                _s_avg("avg_hold_days"), _s_avg("median_hold_days"), _s_avg("max_hold_days"),
+                _s_avg("realized_pnl"), "", "", _s_avg("final_value"),
+                _s_avg("bull_half_years"), _s_avg("bull_strat_return"), _s_avg("bull_bh_return"),
+                _s_avg("bear_half_years"), _s_avg("bear_strat_return"), _s_avg("bear_bh_return"),
+                _s_avg("neutral_half_years"), _s_avg("neutral_strat_return"), _s_avg("neutral_bh_return"),
+            ]
+            # 板块汇总行的信号列：取平均
+            all_results_in_sec = [b_["result"] for b_ in bs]
+            avg_row_base += [round(sum(s_.get("signal_distribution", {}).get(sn, 0) for s_ in all_results_in_sec) / n, 1)
+                             for sn in sig_names_sorted]
+            for sn in sig_pnl_sorted:
+                all_cnt = sum(s_.get("signal_pnl", {}).get(sn, {}).get("count", 0) for s_ in all_results_in_sec)
+                all_wins = sum(s_.get("signal_pnl", {}).get(sn, {}).get("wins", 0) for s_ in all_results_in_sec)
+                all_tp = sum(s_.get("signal_pnl", {}).get(sn, {}).get("total_profit", 0) for s_ in all_results_in_sec)
+                avg_wr = round(all_wins / max(1, all_cnt) * 100, 1)
+                avg_ap = round(all_tp / max(1, all_cnt), 2)
+                avg_row_base += [round(all_cnt / n, 1), avg_wr, round(all_tp / n, 2), avg_ap]
+
+            summary_rows.append(avg_row_sweep + avg_row_base)
+
+        with open(summary_path, "w", newline="", encoding="utf-8-sig") as f:
+            writer = _csv.writer(f)
+            writer.writerow(summary_headers)
+            writer.writerows(summary_rows)
+        total_fund_rows = sum(len(g) for g in sector_groups.values())
+        print(f"\n 📄 汇总CSV: {summary_path.resolve()} ({total_fund_rows}只基金 + {len(sector_groups)}个板块汇总, {len(summary_headers)}列)")
+
+        # === 适配评分缓存写入（用每只基金最优灵敏度的结果）===
+        sweep_fund_names = {code: b["name"] for code, b in best_per_fund.items()}
+        sweep_best_results = [b["result"] for b in best_per_fund.values()]
+        sweep_sens_map = {code: round(b["sens"], 2) for code, b in best_per_fund.items()}
+        if sweep_best_results:
+            _write_fitness_cache(sweep_best_results, sweep_fund_names, sens_map=sweep_sens_map)
+
+        print(f"\n{'='*100}")
+        print(f" ✅ 扫描完成")
+        return
 
     regime_label = {"bull": "🐂牛市", "neutral": "⚖️震荡", "bear": "🐻熊市", "auto": "🔄自动"}.get(regime, regime)
+    sens_label = f" | 灵敏度={sensitivity:.2f}" if sensitivity != 1.0 else ""
+
+    # v5.18: SWEEP_ONLY_MODE=True时，普通回测也只跑扫描相关板块的基金
+    if SWEEP_ONLY_MODE:
+        _sweep_sectors = {'半导体', '机器人', 'AI应用', '商业航天', '军工', '传媒游戏', '煤炭'}
+        _sector_map = load_sector_map()
+        _before = len(fund_codes)
+        fund_codes = [c for c in fund_codes if _sector_map.get(c, '') in _sweep_sectors]
+        if len(fund_codes) < _before:
+            print(f" ⚡ SWEEP_ONLY_MODE: {_before}只 → {len(fund_codes)}只 (只保留扫描板块)")
+
     print(f" 回测 v1.0 | {source} | 资金{args.capital:.0f}元 | "
-          f"{'全历史' if args.all_history else f'近{args.days}天'} | {len(fund_codes)}只 | 模式:{regime_label}")
+          f"{'全历史' if args.all_history else f'近{args.days}天'} | {len(fund_codes)}只 | 模式:{regime_label}{sens_label}")
     print(f"{'─'*60}")
 
     all_results = []
@@ -1955,6 +2495,7 @@ def main():
             initial_capital=args.capital,
             max_position=max_position,
             regime=regime,  # v5.13
+            sensitivity=sensitivity,  # v5.18
         )
         result = sim.run(start_idx=min(20, len(nav_data) - 1))
 
@@ -1986,15 +2527,18 @@ def main():
     # === CSV 输出 ===
     if all_results and not args.no_csv:
         csv_path = Path(args.csv)
-        export_csv(all_results, fund_names, csv_path)
+        sector_map = load_sector_map()
+        export_csv(all_results, fund_names, csv_path, sector_map)
 
     # === v5.13: 适配评分缓存写入（供前端展示）===
     if all_results:
         _write_fitness_cache(all_results, fund_names)
 
 
-def _write_fitness_cache(results: List[dict], fund_names: Dict[str, str]):
-    """v5.13: 将适配评分写入 data/fitness_cache.json 供前端读取"""
+def _write_fitness_cache(results: List[dict], fund_names: Dict[str, str],
+                         sens_map: Dict[str, float] = None):
+    """v5.13: 将适配评分写入 data/fitness_cache.json 供前端读取
+    sens_map: {code: optimal_sensitivity} sweep模式下传入最优灵敏度"""
     import json as _json
     cache = {}
     for s in results:
@@ -2010,6 +2554,8 @@ def _write_fitness_cache(results: List[dict], fund_names: Dict[str, str]):
             "sharpe": s.get("sharpe_ratio"),
             "max_drawdown": s.get("max_drawdown_pct"),
         }
+        if sens_map and code in sens_map:
+            cache[code]["vol_sensitivity"] = sens_map[code]
     cache_path = Path(__file__).parent.parent / "data" / "fitness_cache.json"
     cache_path.parent.mkdir(exist_ok=True)
     try:
@@ -2020,7 +2566,8 @@ def _write_fitness_cache(results: List[dict], fund_names: Dict[str, str]):
         print(f" ⚠️ 适配评分缓存写入失败: {e}")
 
 
-def export_csv(results: List[dict], fund_names: Dict[str, str], csv_path: Path):
+def export_csv(results: List[dict], fund_names: Dict[str, str], csv_path: Path,
+               sector_map: Dict[str, str] = None):
     """v5.4: 输出完整策略诊断CSV，包含资金效率、牛熊分段、信号盈亏等核心指标"""
     import csv
 
@@ -2038,7 +2585,7 @@ def export_csv(results: List[dict], fund_names: Dict[str, str], csv_path: Path):
         "适配评分", "适配等级", "环境适配", "趋势捕获率%",
         "效率分", "回撤控分", "资金分", "胜率分", "波动分",
         # --- 基础信息 ---
-        "基金代码", "基金名称", "回测区间", "交易天数",
+        "基金代码", "基金名称", "所属板块", "回测区间", "交易天数",
         # --- 收益指标 ---
         "策略收益%", "年化收益%", "买入持有%", "买持年化%", "超额收益%",
         # --- 风险指标 ---
@@ -2071,12 +2618,16 @@ def export_csv(results: List[dict], fund_names: Dict[str, str], csv_path: Path):
         headers += [f"{sn}:次数", f"{sn}:胜率%", f"{sn}:总盈亏", f"{sn}:平均盈亏"]
 
     # 按适配评分降序排序（最适合的基金排最前面）
+    if sector_map is None:
+        sector_map = {}
+
     results_sorted = sorted(results, key=lambda s: s.get("fitness_score", 0), reverse=True)
 
     rows = []
     for s in results_sorted:
         code = s["fund_code"]
         name = fund_names.get(code, "")
+        sector = sector_map.get(code, "")
         sig = s.get("signal_distribution", {})
         sp = s.get("signal_pnl", {})
         pnl_ratio = round(abs(s["avg_win_amount"] / s["avg_lose_amount"]), 2) if s["avg_lose_amount"] != 0 else 999
@@ -2089,7 +2640,7 @@ def export_csv(results: List[dict], fund_names: Dict[str, str], csv_path: Path):
             s.get("score_capital", ""), s.get("score_winrate", ""),
             s.get("score_vol_fit", ""),
             # 基础信息
-            code, name, s["backtest_period"], s["trading_days"],
+            code, name, sector, s["backtest_period"], s["trading_days"],
             s["total_return_pct"], s["annual_return_pct"],
             s["buy_hold_return_pct"], s.get("buy_hold_annual_pct", ""),
             s["excess_return_pct"],
@@ -2147,7 +2698,7 @@ def export_csv(results: List[dict], fund_names: Dict[str, str], csv_path: Path):
         avg("fitness_score"), "", "", avg("capture_rate"),
         avg("score_efficiency"), avg("score_dd_control"),
         avg("score_capital"), avg("score_winrate"), avg("score_vol_fit"),
-        "AVG", f"平均({n}只)", "", "",
+        "AVG", f"平均({n}只)", "", "", "",
         avg("total_return_pct"), avg("annual_return_pct"),
         avg("buy_hold_return_pct"), avg("buy_hold_annual_pct"),
         avg("excess_return_pct"),
@@ -2186,9 +2737,31 @@ def export_csv(results: List[dict], fund_names: Dict[str, str], csv_path: Path):
         writer.writerow(headers)
         writer.writerows(rows)
 
+        # === 板块建仓推荐汇总 ===
+        if sector_map:
+            recs = _pick_sector_recommendations(results, fund_names, sector_map)
+            if recs:
+                writer.writerow([])  # 空行分隔
+                # 推荐表头：复用前几列位置
+                rec_header = ["", "", "", "", "", "", "", "", "",
+                              "【板块建仓推荐】", "", "", "", "", ""]
+                writer.writerow(rec_header)
+                rec_col_header = ["综合得分", "", "", "", "", "", "", "", "",
+                                  "板块", "推荐基金名称", "推荐板块", "推荐代码", "", "综合评语"]
+                writer.writerow(rec_col_header)
+                for rec in sorted(recs, key=lambda x: x[3], reverse=True):
+                    # rec = [板块, 代码, 名称, 综合得分, 评语]
+                    rec_row = [rec[3], "", "", "", "", "", "", "", "",
+                               rec[0], rec[2], rec[0], rec[1], "", rec[4]]
+                    writer.writerow(rec_row)
+
+    rec_count = len(_pick_sector_recommendations(results, fund_names, sector_map)) if sector_map else 0
     print(f"\n 📄 CSV已保存: {csv_path.resolve()}")
     print(f"    {len(results)}只基金 + 汇总行, {len(headers)}列")
-    print(f"    含: 收益风险指标 | 资金效率 | 牛熊分段 | {len(sig_names_sorted)}种信号频次 | {len(sig_pnl_sorted)}种信号盈亏分析")
+    if rec_count:
+        print(f"    含: {rec_count}个板块建仓推荐 | 收益风险指标 | 资金效率 | 牛熊分段 | {len(sig_names_sorted)}种信号频次 | {len(sig_pnl_sorted)}种信号盈亏分析")
+    else:
+        print(f"    含: 收益风险指标 | 资金效率 | 牛熊分段 | {len(sig_names_sorted)}种信号频次 | {len(sig_pnl_sorted)}种信号盈亏分析")
 
 
 if __name__ == "__main__":

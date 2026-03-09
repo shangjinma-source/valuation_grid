@@ -1297,7 +1297,11 @@ def generate_all_signals() -> dict:
     negative_weight = 0
     for s in signals:
         ma = s.get("market_analysis", {})
-        fund_amount = ma.get("total_cost", 0) or ma.get("market_value", 0) or 1000
+        fund_amount = ma.get("total_cost", 0) or ma.get("market_value", 0)
+        if not fund_amount or fund_amount <= 0:
+            # v5.18: 空仓基金用max_position作为权重，避免等权重1000导致误判
+            real_code, _ = parse_fund_key(s.get("fund_code", ""))
+            fund_amount = funds_data.get(real_code, {}).get("max_position", 5000)
         total_weight += fund_amount
         if ma.get("today_change", 0) < 0:
             negative_weight += fund_amount
@@ -1316,7 +1320,6 @@ def generate_all_signals() -> dict:
     buy_signals = [s for s in signals if s.get("action") == "buy" and s.get("amount")]
 
     if buy_signals:
-        remaining_budget = effective_budget
         total_buy_count = len(buy_signals)
 
         # 修正折扣公式
@@ -1331,6 +1334,23 @@ def generate_all_signals() -> dict:
         else:
             discount = 1.0
 
+        # v5.18: 区分首次建仓 vs 补仓信号
+        FIRST_BUILD_SIGNAL_NAMES = {
+            "大跌抄底", "低位建仓", "反弹建仓", "跌势放缓建仓",
+            "温和回调建仓", "连跌低吸", "冷却期后建仓",
+        }
+        first_build_signals = []
+        supplement_signals = []
+        for sig in buy_signals:
+            sig_name = sig.get("signal_name", "")
+            ma = sig.get("market_analysis", {})
+            total_cost = ma.get("total_cost", 0) or 0
+            # 首次建仓：信号名匹配 且 该基金当前空仓(total_cost==0)
+            if sig_name in FIRST_BUILD_SIGNAL_NAMES and total_cost <= 0:
+                first_build_signals.append(sig)
+            else:
+                supplement_signals.append(sig)
+
         # 同赛道集中度约束
         state = load_state()
         sector_map = {}
@@ -1339,41 +1359,87 @@ def generate_all_signals() -> dict:
                 sector_map[fund.get("code", "")] = sector["name"]
 
         sector_spent = {}
+        remaining_budget = daily_budget  # v5.18: 总剩余从daily_budget开始，首次建仓不受daily_buy_cap
 
-        for sig in buy_signals:
-            original = sig["amount"]
-            discounted = round(original * discount, 2)
+        # --- 首次建仓：按max_position比例分配，不受daily_buy_cap限制 ---
+        if first_build_signals:
+            total_max_pos = sum(
+                funds_data.get(parse_fund_key(s["fund_code"])[0], {}).get("max_position", 5000)
+                for s in first_build_signals
+            )
+            for sig in first_build_signals:
+                original = sig["amount"]
+                discounted = round(original * discount, 2)
 
-            real_code, _ = parse_fund_key(sig["fund_code"])
-            sector_name = sector_map.get(real_code, "默认")
-            sector_cap = effective_budget * SECTOR_BUY_CAP_RATIO
-            sector_used = sector_spent.get(sector_name, 0)
-            sector_remaining = max(0, sector_cap - sector_used)
+                real_code, _ = parse_fund_key(sig["fund_code"])
+                fund_max = funds_data.get(real_code, {}).get("max_position", 5000)
+                # v5.18: 按max_position比例分配预算份额
+                fund_budget_share = round(remaining_budget * (fund_max / max(1, total_max_pos)), 2)
 
-            if remaining_budget <= 0:
-                sig["action"] = "hold"
-                sig["signal_name"] = sig["signal_name"] + "(预算不足)"
-                sig["reason"] += f" (组合现金预算已耗尽)"
-                sig["alert"] = True
-            elif discounted > remaining_budget or discounted > sector_remaining:
-                actual = round(min(remaining_budget, sector_remaining), 2)
+                sector_name = sector_map.get(real_code, "默认")
+                sector_cap = daily_budget * SECTOR_BUY_CAP_RATIO  # 首次建仓赛道cap基于daily_budget
+                sector_used = sector_spent.get(sector_name, 0)
+                sector_remaining = max(0, sector_cap - sector_used)
+
+                actual = round(min(discounted, fund_budget_share, sector_remaining), 2)
                 if actual <= 0:
                     sig["action"] = "hold"
-                    sig["signal_name"] = sig["signal_name"] + "(赛道集中度限制)"
-                    sig["reason"] += f" (同赛道{sector_name}买入已达上限)"
+                    sig["signal_name"] = sig["signal_name"] + "(预算不足)"
+                    sig["reason"] += f" (组合现金预算已耗尽)"
                     sig["alert"] = True
                 else:
                     sig["amount"] = actual
-                    sig["reason"] += f" (预算截断→{actual:.0f}元)"
+                    if actual < discounted:
+                        sig["reason"] += f" (首次建仓预算分配→{actual:.0f}元)"
                     remaining_budget -= actual
                     sector_spent[sector_name] = sector_used + actual
-            else:
-                sig["amount"] = discounted
-                remaining_budget -= discounted
-                sector_spent[sector_name] = sector_used + discounted
 
-            if total_buy_count > 1 and sig["action"] == "buy":
-                sig["reason"] += f" (组合风控: {total_buy_count}只, 折扣{discount:.0%})"
+                if total_buy_count > 1 and sig["action"] == "buy":
+                    sig["reason"] += f" (组合风控: {total_buy_count}只, 折扣{discount:.0%})"
+
+        # --- 补仓信号：继续受daily_buy_cap限制（原逻辑） ---
+        if supplement_signals:
+            # 补仓预算 = 剩余预算 与 effective_budget扣除首次建仓已用 取较小值
+            first_build_spent = (daily_budget - remaining_budget)
+            supplement_cap = max(0, effective_budget - first_build_spent)
+            supplement_remaining = min(remaining_budget, supplement_cap)
+
+            for sig in supplement_signals:
+                original = sig["amount"]
+                discounted = round(original * discount, 2)
+
+                real_code, _ = parse_fund_key(sig["fund_code"])
+                sector_name = sector_map.get(real_code, "默认")
+                sector_cap = effective_budget * SECTOR_BUY_CAP_RATIO
+                sector_used = sector_spent.get(sector_name, 0)
+                sector_remaining = max(0, sector_cap - sector_used)
+
+                if supplement_remaining <= 0:
+                    sig["action"] = "hold"
+                    sig["signal_name"] = sig["signal_name"] + "(预算不足)"
+                    sig["reason"] += f" (组合现金预算已耗尽)"
+                    sig["alert"] = True
+                elif discounted > supplement_remaining or discounted > sector_remaining:
+                    actual = round(min(supplement_remaining, sector_remaining), 2)
+                    if actual <= 0:
+                        sig["action"] = "hold"
+                        sig["signal_name"] = sig["signal_name"] + "(赛道集中度限制)"
+                        sig["reason"] += f" (同赛道{sector_name}买入已达上限)"
+                        sig["alert"] = True
+                    else:
+                        sig["amount"] = actual
+                        sig["reason"] += f" (预算截断→{actual:.0f}元)"
+                        supplement_remaining -= actual
+                        remaining_budget -= actual
+                        sector_spent[sector_name] = sector_used + actual
+                else:
+                    sig["amount"] = discounted
+                    supplement_remaining -= discounted
+                    remaining_budget -= discounted
+                    sector_spent[sector_name] = sector_used + discounted
+
+                if total_buy_count > 1 and sig["action"] == "buy":
+                    sig["reason"] += f" (组合风控: {total_buy_count}只, 折扣{discount:.0%})"
 
     return {
         "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),

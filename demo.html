@@ -742,6 +742,17 @@
     </div>
 
     <!-- 净值历史弹窗 -->
+    <div class="modal" id="moveFundModal">
+        <div class="modal-content">
+            <h3 id="moveFundTitle">移动基金到板块</h3>
+            <div id="moveFundList" style="max-height:300px;overflow-y:auto;"></div>
+            <div class="modal-actions">
+                <button class="btn-secondary" onclick="closeModal('moveFundModal')">关闭</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 净值历史弹窗（原） -->
     <div class="modal" id="navHistoryModal">
         <div class="modal-content wide">
             <h3 id="navHistoryTitle">净值历史</h3>
@@ -1005,11 +1016,15 @@
             btn.disabled = true;
 
             try {
-                const res = await fetch(`${API_BASE}/v1/valuation/batch`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ fund_codes: allCodes })
-                });
+                const [res, _sigRes] = await Promise.all([
+                    fetch(`${API_BASE}/v1/valuation/batch`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ fund_codes: allCodes })
+                    }),
+                    // 同步刷新低频网格信号（静默，不阻塞主流程）
+                    loadStrategyPanel().catch(() => {}),
+                ]);
 
                 if (!res.ok) throw new Error('请求失败');
 
@@ -1088,6 +1103,42 @@
             state.sectors[sectorIndex].funds.splice(fundIndex, 1);
             saveState();
             render();
+        }
+
+        function showMoveFundModal(sectorIndex, fundIndex) {
+            const fund = state.sectors[sectorIndex].funds[fundIndex];
+            if (!fund) return;
+            const displayName = valuations[fund.code]?.fund_name || fund.alias || fund.code;
+            document.getElementById('moveFundTitle').textContent = `移动 ${fund.code} ${displayName}`;
+
+            let html = '';
+            state.sectors.forEach((sector, si) => {
+                const isCurrent = si === sectorIndex;
+                html += `<div style="padding:8px 10px;border-bottom:1px solid #f1f5f9;cursor:${isCurrent ? 'default' : 'pointer'};border-radius:4px;${isCurrent ? 'background:#eff6ff;' : ''}" ${isCurrent ? '' : `onclick="moveFund(${sectorIndex},${fundIndex},${si})"`}>
+                    <span style="font-size:12px;color:#374151;">📁 ${sector.name}</span>
+                    <span style="font-size:11px;color:#9ca3af;margin-left:8px;">${sector.funds.length}只基金</span>
+                    ${isCurrent ? '<span style="float:right;color:#4f46e5;font-size:11px;">✓ 当前</span>' : ''}
+                </div>`;
+            });
+            document.getElementById('moveFundList').innerHTML = html;
+            document.getElementById('moveFundModal').classList.add('show');
+        }
+
+        function moveFund(fromSector, fundIndex, toSector) {
+            if (fromSector === toSector) return;
+            const fund = state.sectors[fromSector].funds[fundIndex];
+            if (!fund) return;
+            // 检查目标板块是否已有同代码基金
+            if (state.sectors[toSector].funds.some(f => f.code === fund.code)) {
+                showStatus('目标板块已存在该基金', 'error');
+                return;
+            }
+            state.sectors[fromSector].funds.splice(fundIndex, 1);
+            state.sectors[toSector].funds.push(fund);
+            saveState();
+            closeModal('moveFundModal');
+            render();
+            showStatus(`已移动到「${state.sectors[toSector].name}」`, 'success');
         }
 
         async function deleteSector(sectorIndex) {
@@ -1272,6 +1323,7 @@
                                     <th>名称</th>
                                     <th style="text-align:right">涨跌幅</th>
                                     <th style="text-align:right">近5日</th>
+                                    <th style="text-align:right">近20日</th>
                                     <th style="text-align:right">置信度</th>
                                     <th></th>
                                 </tr>
@@ -1300,6 +1352,8 @@
             let confidence = '--';
             let weekText = '--';
             let weekClass = 'flat';
+            let monthText = '--';
+            let monthClass = 'flat';
             let displayName = fund.alias || '';
             let needsEtfLink = false;
             let isNav = false;
@@ -1315,6 +1369,11 @@
                     const wc = val.week_change;
                     weekText = (wc >= 0 ? '+' : '') + wc.toFixed(2) + '%';
                     weekClass = wc > 0 ? 'up' : wc < 0 ? 'down' : 'flat';
+                }
+                if (val.month_change !== null && val.month_change !== undefined) {
+                    const mc = val.month_change;
+                    monthText = (mc >= 0 ? '+' : '') + mc.toFixed(2) + '%';
+                    monthClass = mc > 0 ? 'up' : mc < 0 ? 'down' : 'flat';
                 }
                 confidence = (val.confidence * 100).toFixed(0) + '%';
                 if (!displayName && val.fund_name) {
@@ -1348,10 +1407,12 @@
                     <td class="td-name" title="${displayName}">${displayName}</td>
                     <td class="td-change ${changeClass}" style="white-space:nowrap;">${changeText}${navMark}</td>
                     <td class="td-change ${weekClass}">${weekText}</td>
+                    <td class="td-change ${monthClass}">${monthText}</td>
                     <td class="td-confidence">${confidence}</td>
                     <td class="td-action" style="white-space:nowrap;">
                         ${etfBtn}
                         <button onclick="addToStrategy('${fund.code}')" title="加入低频网格" style="color:#10b981;">📌</button>
+                        <button onclick="showMoveFundModal(${sectorIndex}, ${fundIndex})" title="移动到其他板块" style="color:#6366f1;">↗</button>
                         <button onclick="deleteFund(${sectorIndex}, ${fundIndex})" title="删除">×</button>
                     </td>
                 </tr>
@@ -2998,14 +3059,15 @@
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
 
-            const P = 16, rowH = 26, headH = 36, thH = 22, W = 480;
+            const P = 16, rowH = 26, headH = 36, thH = 22, W = 560;
             const H = headH + thH + sortedFunds.length * rowH + P;
 
             // 列位置（右对齐基准点）
             const colCodeL = P;
             const colNameL = P + 58;
-            const colChangeR = W - P - 75;   // 估值涨幅右边界
-            const col5dayR = W - P;           // 近5日右边界
+            const colChangeR = W - P - 155;  // 估值涨幅右边界
+            const col5dayR = W - P - 78;     // 近5日右边界
+            const col20dayR = W - P;          // 近20日右边界
 
             canvas.width = W * 2;
             canvas.height = H * 2;
@@ -3036,6 +3098,8 @@
             ctx.fillText('估值涨幅', colChangeR - tw, headH + 15);
             tw = ctx.measureText('近5日').width;
             ctx.fillText('近5日', col5dayR - tw, headH + 15);
+            tw = ctx.measureText('近20日').width;
+            ctx.fillText('近20日', col20dayR - tw, headH + 15);
 
             // 数据行
             sortedFunds.forEach((fund, i) => {
@@ -3089,6 +3153,17 @@
                 ctx.fillStyle = wClr;
                 ctx.font = 'bold 12px -apple-system, BlinkMacSystemFont, sans-serif';
                 ctx.fillText(wTxt, col5dayR - ctx.measureText(wTxt).width, textY);
+
+                // 近20日（右对齐）
+                let mTxt = '--', mClr = '#64748b';
+                if (val?.month_change != null) {
+                    const m = val.month_change;
+                    mTxt = (m >= 0 ? '+' : '') + m.toFixed(2) + '%';
+                    mClr = m > 0 ? '#ef4444' : m < 0 ? '#22c55e' : '#64748b';
+                }
+                ctx.fillStyle = mClr;
+                ctx.font = 'bold 12px -apple-system, BlinkMacSystemFont, sans-serif';
+                ctx.fillText(mTxt, col20dayR - ctx.measureText(mTxt).width, textY);
             });
 
             const link = document.createElement('a');

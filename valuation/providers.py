@@ -8,9 +8,12 @@ import time
 import re
 from datetime import datetime, timedelta
 from pathlib import Path
-from urllib.request import urlopen, Request
+from urllib.request import urlopen, Request, install_opener, build_opener, ProxyHandler
 from urllib.error import URLError, HTTPError
 from typing import Dict, List, Optional, Tuple
+
+# 强制所有 urlopen 请求不走系统代理，避免梯子干扰
+install_opener(build_opener(ProxyHandler({})))
 
 # === 配置常量 ===
 CACHE_DIR = Path(__file__).parent.parent / "cache"

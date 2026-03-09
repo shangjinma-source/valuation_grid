@@ -470,16 +470,33 @@ def _is_market_closed() -> bool:
 
 def calculate_valuation_batch(fund_codes: List[str]) -> List[dict]:
     from concurrent.futures import ThreadPoolExecutor
-    from .providers import get_fund_5day_change
+    from .providers import get_fund_5day_change, get_fund_nav_history
+
+    def _calc_20day_change(code):
+        """用近20+1日净值计算20日复利涨跌幅"""
+        try:
+            hist = get_fund_nav_history(code, 22)
+            changes = [h["change"] for h in hist if h.get("change") is not None][:20]
+            if len(changes) < 5:
+                return None
+            product = 1.0
+            for c in changes:
+                product *= (1 + c / 100)
+            return round((product - 1) * 100, 2)
+        except Exception:
+            return None
 
     # 1. 并发计算估值
     results_map = {}
     week_data = {}
+    month_data = {}
     with ThreadPoolExecutor(max_workers=8) as pool:
         # 估值并发
         val_futures = {pool.submit(calculate_valuation, code): code for code in fund_codes}
         # 5日涨幅并发
         week_futures = {pool.submit(get_fund_5day_change, code): code for code in fund_codes}
+        # 20日涨幅并发
+        month_futures = {pool.submit(_calc_20day_change, code): code for code in fund_codes}
 
         for future in val_futures:
             code = val_futures[future]
@@ -495,10 +512,18 @@ def calculate_valuation_batch(fund_codes: List[str]) -> List[dict]:
             except:
                 week_data[code] = None
 
+        for future in month_futures:
+            code = month_futures[future]
+            try:
+                month_data[code] = future.result(timeout=20)
+            except:
+                month_data[code] = None
+
     # 2. 按原始顺序组装结果并合并
     results = [results_map.get(code, {"fund_code": code}) for code in fund_codes]
     for r in results:
         r["week_change"] = week_data.get(r["fund_code"])
+        r["month_change"] = month_data.get(r["fund_code"])
 
     return results
 
