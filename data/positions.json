@@ -363,16 +363,16 @@
           "is_supplement": false
         },
         {
-          "id": "b20260309a",
+          "id": "b20260309b",
           "buy_date": "2026-03-09",
           "amount": 438.98,
           "nav": 1.8297,
           "shares": 239.92,
           "status": "holding",
-          "note": "加仓",
+          "note": "冷却期后加仓",
           "is_supplement": false,
-          "peak_nav": 1.8297,
-          "peak_date": "2026-03-09"
+          "peak_nav": 1.8623,
+          "peak_date": "2026-03-10"
         }
       ],
       "supplement_count": 0,
@@ -773,9 +773,9 @@
     }
   },
   "cash_reserve_ratio": 0.3,
-  "updated_at": "2026-03-10 02:22:18",
+  "updated_at": "2026-03-10 23:18:56",
   "market_regime": "neutral",
   "regime_auto": true,
   "regime_auto_result": "neutral",
-  "regime_auto_at": "2026-03-09 21:41:08"
+  "regime_auto_at": "2026-03-10 23:18:56"
 }

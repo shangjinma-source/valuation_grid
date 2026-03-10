@@ -242,12 +242,22 @@ def _analyze_trend(today_change: float, hist_changes: list,
     long_20d = None
     if nav_history and len(nav_history) >= 2:
         navs = [h["nav"] for h in nav_history if h.get("nav") is not None]
+        # v5.18 fix: 盘中时 navs[0] 是昨日净值，不含今日变动；
+        # 用 navs[0] * (1 + today_change/100) 估算"今日净值"参与 mid/long 计算，
+        # 使盘中 mid_10d 与收盘后语义一致。
+        # 收盘后 navs[0] 已是今日真实净值，today_change 与之一致，修正量≈0 无副作用。
+        today_str = datetime.now().strftime("%Y-%m-%d")
+        _latest_is_today = (nav_history[0].get("date") == today_str) if nav_history else False
+        if navs and not _latest_is_today:
+            nav0_adj = navs[0] * (1 + today_change / 100)
+        else:
+            nav0_adj = navs[0] if navs else 0
         if len(navs) >= 10:
-            mid_10d = round((navs[0] / navs[9] - 1) * 100, 2)
+            mid_10d = round((nav0_adj / navs[9] - 1) * 100, 2)
         elif len(navs) >= 2:
-            mid_10d = round((navs[0] / navs[-1] - 1) * 100, 2)
+            mid_10d = round((nav0_adj / navs[-1] - 1) * 100, 2)
         if len(navs) >= 20:
-            long_20d = round((navs[0] / navs[19] - 1) * 100, 2)
+            long_20d = round((nav0_adj / navs[19] - 1) * 100, 2)
     else:
         mid_10d = _compound_return(all_changes[:10]) if len(all_changes) >= 10 else None
         long_20d = _compound_return(all_changes[:20]) if len(all_changes) >= 20 else None
@@ -1077,6 +1087,16 @@ def generate_signal(fund_code: str) -> dict:
 
     can_buy_empty = (source == "nav" or confidence >= 0.55)
 
+    # v5.18 诊断日志：空仓信号生成关键指标（仅打印不改逻辑）
+    print(f"[DIAG空仓] {fund_code} | source={source}, conf={confidence:.2f}, "
+          f"today_chg={today_change:.2f}%, can_buy={can_buy_empty}")
+    print(f"  trend: 3d={trend_ctx.get('short_3d')}, 5d={trend_ctx.get('short_5d')}, "
+          f"10d={trend_ctx.get('mid_10d')}, consec_down={trend_ctx.get('consecutive_down',0)}, "
+          f"vol_robust={trend_ctx.get('volatility_robust')}")
+    print(f"  dyn: dip_thresh={dip_threshold}, risk_mul={dyn['risk_multiplier']}, "
+          f"vol_state={vol_state}")
+    print(f"  size_mul={size_mul}, regime={regime}")
+
     # 极端波动禁止买入
     if vol_state == "extreme_vol":
         sig = _make_signal(
@@ -1106,6 +1126,7 @@ def generate_signal(fund_code: str) -> dict:
             amount=buy_amount,
             reason=f"今日跌{today_change}% ≤ 动态阈值{dip_threshold}%, 买入{buy_amount}元{vol_note}",
         )
+        print(f"  → 分支: 大跌抄底, amount={buy_amount}")
         sig["market_analysis"] = market_analysis
         _append_signal_history(fund_code, sig, market_ctx)
         return _stamp(sig, confidence, source)
@@ -1127,6 +1148,7 @@ def generate_signal(fund_code: str) -> dict:
                 amount=buy_amount,
                 reason=f"10日累跌{mid_10d}%, 今日企稳, 中期低位建仓{buy_amount}元",
             )
+            print(f"  → 分支: 低位建仓, mid_10d={mid_10d}, today_chg={today_change}, amount={buy_amount}")
         elif (short_5d is not None and short_5d <= TREND_BUILD_TRIGGER_5D
                 and today_change > 0):
             buy_amount = round(max_pos * 0.45 * size_mul, 2)  # v5.5 优化: 反弹建仓从30%→45%
@@ -1135,6 +1157,7 @@ def generate_signal(fund_code: str) -> dict:
                 amount=buy_amount,
                 reason=f"5日累跌{short_5d}%, 今日反弹, 逢低建仓{buy_amount}元",
             )
+            print(f"  → 分支: 反弹建仓, short_5d={short_5d}, today_chg={today_change}, amount={buy_amount}")
         elif (consecutive_down >= 3 and today_change < 0
                 and len(hist_changes) >= 1
                 and abs(today_change) < abs(hist_changes[0]) * 0.6):
@@ -1166,6 +1189,7 @@ def generate_signal(fund_code: str) -> dict:
                 amount=buy_amount,
                 reason=f"3日累跌{short_3d}%>波动率{vol_for_mild:.1f}%, 温和回调建仓{buy_amount}元",
             )
+            print(f"  → 分支: 温和回调建仓, short_3d={short_3d}, vol={vol_for_mild}, amount={buy_amount}")
             sig["market_analysis"] = market_analysis
             _append_signal_history(fund_code, sig, market_ctx)
             return _stamp(sig, confidence, source)
@@ -1224,6 +1248,7 @@ def generate_signal(fund_code: str) -> dict:
         obs_parts.append(f"趋势:{trend_ctx['trend_label']}")
     obs_parts.append(f"波动状态:{vol_state}")
     obs_parts.append("无触发条件")
+    print(f"  → 分支: 观望")
     sig = _make_signal(
         fund_code, signal_name="观望", action="hold", priority=8,
         reason=", ".join(obs_parts),
@@ -1282,192 +1307,198 @@ def generate_all_signals() -> dict:
     cash_reserve_ratio = pos_data.get("cash_reserve_ratio", 0.30)
     funds_data = pos_data.get("funds", {})
 
-    # 按 owner tag 分组
-    code_to_owner = {}   # fund_code → owner_tag
-    owner_codes = {}     # owner_tag → [fund_code, ...]
-    for fund_key in funds_data.keys():
-        _, owner = parse_fund_key(fund_key)
-        code_to_owner[fund_key] = owner
-        owner_codes.setdefault(owner, []).append(fund_key)
+    try:
+          # 按 owner tag 分组
+        code_to_owner = {}   # fund_code → owner_tag
+        owner_codes = {}     # owner_tag → [fund_code, ...]
+        for fund_key in funds_data.keys():
+            _, owner = parse_fund_key(fund_key)
+            code_to_owner[fund_key] = owner
+            owner_codes.setdefault(owner, []).append(fund_key)
 
-    # 按 owner 分桶信号
-    group_signals = {}  # owner_tag → [signal, ...]
-    for s in signals:
-        owner = code_to_owner.get(s.get("fund_code", ""), "")
-        group_signals.setdefault(owner, []).append(s)
+        # 按 owner 分桶信号
+        group_signals = {}  # owner_tag → [signal, ...]
+        for s in signals:
+            owner = code_to_owner.get(s.get("fund_code", ""), "")
+            group_signals.setdefault(owner, []).append(s)
 
-    # 同赛道集中度约束（全局）
-    state = load_state()
-    sector_map = {}
-    for sector in state.get("sectors", []):
-        for fund in sector.get("funds", []):
-            sector_map[fund.get("code", "")] = sector["name"]
+        # 同赛道集中度约束（全局）
+        state = load_state()
+        sector_map = {}
+        for sector in state.get("sectors", []):
+            for fund in sector.get("funds", []):
+                sector_map[fund.get("code", "")] = sector["name"]
 
-    FIRST_BUILD_SIGNAL_NAMES = {
-        "大跌抄底", "低位建仓", "反弹建仓", "跌势放缓建仓",
-        "温和回调建仓", "连跌低吸", "冷却期后建仓",
-    }
+        FIRST_BUILD_SIGNAL_NAMES = {
+            "大跌抄底", "低位建仓", "反弹建仓", "跌势放缓建仓",
+            "温和回调建仓", "连跌低吸", "冷却期后建仓",
+        }
 
-    # === 逐 owner 组应用组合风控 ===
-    for owner_tag, grp_signals in group_signals.items():
-        grp_fund_codes = owner_codes.get(owner_tag, [])
-        # 本组的预算计算（fund_key 是完整复合键，直接在 funds_data 中查找）
-        grp_max_invest = sum(
-            funds_data.get(c, {}).get("max_position", 5000) for c in grp_fund_codes
-        ) * (1 - cash_reserve_ratio)
+        # === 逐 owner 组应用组合风控 ===
+        for owner_tag, grp_signals in group_signals.items():
+            grp_fund_codes = owner_codes.get(owner_tag, [])
+            # 本组的预算计算（fund_key 是完整复合键，直接在 funds_data 中查找）
+            grp_max_invest = sum(
+                funds_data.get(c, {}).get("max_position", 5000) for c in grp_fund_codes
+            ) * (1 - cash_reserve_ratio)
 
-        grp_invested = 0
-        for c in grp_fund_codes:
-            fund = funds_data.get(c, {})
-            holding = [b for b in fund.get("batches", []) if b.get("status") == "holding"]
-            grp_invested += sum(b.get("amount", 0) for b in holding)
+            grp_invested = 0
+            for c in grp_fund_codes:
+                fund = funds_data.get(c, {})
+                holding = [b for b in fund.get("batches", []) if b.get("status") == "holding"]
+                grp_invested += sum(b.get("amount", 0) for b in holding)
 
-        grp_daily_budget = max(0, grp_max_invest - grp_invested)
+            grp_daily_budget = max(0, grp_max_invest - grp_invested)
 
-        # 动态 daily_buy_cap（本组内加权 negative_ratio）
-        total_weight = 0
-        negative_weight = 0
-        for s in grp_signals:
-            ma = s.get("market_analysis", {})
-            fund_amount = ma.get("total_cost", 0) or ma.get("market_value", 0)
-            if not fund_amount or fund_amount <= 0:
-                _fc = s.get("fund_code", "")
-                fund_amount = (funds_data.get(_fc) or funds_data.get(parse_fund_key(_fc)[0], {})).get("max_position", 5000)
-            total_weight += fund_amount
-            if ma.get("today_change", 0) < 0:
-                negative_weight += fund_amount
-        negative_ratio = negative_weight / max(1, total_weight)
+            # 动态 daily_buy_cap（本组内加权 negative_ratio）
+            total_weight = 0
+            negative_weight = 0
+            for s in grp_signals:
+                ma = s.get("market_analysis", {})
+                fund_amount = ma.get("total_cost", 0) or ma.get("market_value", 0)
+                if not fund_amount or fund_amount <= 0:
+                    _fc = s.get("fund_code", "")
+                    fund_amount = (funds_data.get(_fc) or funds_data.get(parse_fund_key(_fc)[0], {})).get("max_position", 5000)
+                total_weight += fund_amount
+                if ma.get("today_change", 0) < 0:
+                    negative_weight += fund_amount
+            negative_ratio = negative_weight / max(1, total_weight)
 
-        if negative_ratio > 0.6:
-            cap_ratio = DAILY_BUY_CAP_RATIO_CONSERVATIVE
-        elif negative_ratio < 0.3:
-            cap_ratio = DAILY_BUY_CAP_RATIO_AGGRESSIVE
-        else:
-            cap_ratio = DAILY_BUY_CAP_RATIO_BASE
-
-        grp_daily_buy_cap = round(grp_max_invest * cap_ratio, 2)
-        grp_effective_budget = min(grp_daily_budget, grp_daily_buy_cap) if grp_daily_buy_cap > 0 else grp_daily_budget
-
-        grp_buy_signals = [s for s in grp_signals if s.get("action") == "buy" and s.get("amount")]
-        grp_buy_peer_codes = [parse_fund_key(s.get("fund_code", ""))[0] for s in grp_buy_signals]
-
-        if not grp_buy_signals:
-            continue
-
-        total_buy_count = len(grp_buy_signals)
-
-        # 折扣公式（仅本组内的买入数量）
-        if total_buy_count > 1:
-            discount = max(0.85, 1.0 - (total_buy_count - 1) * 0.05)
-            confidences = [s.get("_confidence") or 1.0 for s in grp_buy_signals]
-            avg_conf = sum(confidences) / len(confidences) if confidences else 1.0
-            if avg_conf < 0.6:
-                discount *= 0.7
-            elif avg_conf < 0.75:
-                discount *= 0.85
-        else:
-            discount = 1.0
-
-        # 区分首次建仓 vs 补仓信号
-        first_build_signals = []
-        supplement_signals = []
-        for sig in grp_buy_signals:
-            sig_name = sig.get("signal_name", "")
-            ma = sig.get("market_analysis", {})
-            total_cost = ma.get("total_cost", 0) or 0
-            if sig_name in FIRST_BUILD_SIGNAL_NAMES and total_cost <= 0:
-                first_build_signals.append(sig)
+            if negative_ratio > 0.6:
+                cap_ratio = DAILY_BUY_CAP_RATIO_CONSERVATIVE
+            elif negative_ratio < 0.3:
+                cap_ratio = DAILY_BUY_CAP_RATIO_AGGRESSIVE
             else:
-                supplement_signals.append(sig)
+                cap_ratio = DAILY_BUY_CAP_RATIO_BASE
 
-        sector_spent = {}
-        remaining_budget = grp_daily_budget
+            grp_daily_buy_cap = round(grp_max_invest * cap_ratio, 2)
+            grp_effective_budget = min(grp_daily_budget, grp_daily_buy_cap) if grp_daily_buy_cap > 0 else grp_daily_budget
 
-        # --- 首次建仓：按max_position比例分配，不受daily_buy_cap限制 ---
-        if first_build_signals:
-            total_max_pos = sum(
-                (funds_data.get(s["fund_code"]) or funds_data.get(parse_fund_key(s["fund_code"])[0], {})).get("max_position", 5000)
-                for s in first_build_signals
-            )
-            for sig in first_build_signals:
-                original = sig["amount"]
-                discounted = round(original * discount, 2)
+            grp_buy_signals = [s for s in grp_signals if s.get("action") == "buy" and s.get("amount")]
+            grp_buy_peer_codes = [parse_fund_key(s.get("fund_code", ""))[0] for s in grp_buy_signals]
 
-                real_code, _ = parse_fund_key(sig["fund_code"])
-                fund_max = (funds_data.get(sig["fund_code"]) or funds_data.get(real_code, {})).get("max_position", 5000)
-                fund_budget_share = round(remaining_budget * (fund_max / max(1, total_max_pos)), 2)
+            if not grp_buy_signals:
+                continue
 
-                sector_name = sector_map.get(real_code, "默认")
-                sector_cap = grp_daily_budget * SECTOR_BUY_CAP_RATIO
-                sector_used = sector_spent.get(sector_name, 0)
-                sector_remaining = max(0, sector_cap - sector_used)
+            total_buy_count = len(grp_buy_signals)
 
-                actual = round(min(discounted, fund_budget_share, sector_remaining), 2)
-                if actual <= 0:
-                    sig["action"] = "hold"
-                    sig["signal_name"] = sig["signal_name"] + "(预算不足)"
-                    sig["reason"] += f" (组合现金预算已耗尽)"
-                    sig["alert"] = True
+            # 折扣公式（仅本组内的买入数量）
+            if total_buy_count > 1:
+                discount = max(0.85, 1.0 - (total_buy_count - 1) * 0.05)
+                confidences = [s.get("_confidence") or 1.0 for s in grp_buy_signals]
+                avg_conf = sum(confidences) / len(confidences) if confidences else 1.0
+                if avg_conf < 0.6:
+                    discount *= 0.7
+                elif avg_conf < 0.75:
+                    discount *= 0.85
+            else:
+                discount = 1.0
+
+            # 区分首次建仓 vs 补仓信号
+            first_build_signals = []
+            supplement_signals = []
+            for sig in grp_buy_signals:
+                sig_name = sig.get("signal_name", "")
+                ma = sig.get("market_analysis", {})
+                total_cost = ma.get("total_cost", 0) or 0
+                if sig_name in FIRST_BUILD_SIGNAL_NAMES and total_cost <= 0:
+                    first_build_signals.append(sig)
                 else:
-                    sig["amount"] = actual
-                    if actual < discounted:
-                        sig["reason"] += f" (首次建仓预算分配→{actual:.0f}元)"
-                    remaining_budget -= actual
-                    sector_spent[sector_name] = sector_used + actual
+                    supplement_signals.append(sig)
 
-                if sig["action"] == "buy":
-                    if total_buy_count > 1:
-                        sig["reason"] += f" (组合风控: {total_buy_count}只, 折扣{discount:.0%})"
-                    sig["_portfolio_discount"] = discount
-                    sig["_portfolio_buy_count"] = total_buy_count
-                    sig["_portfolio_buy_peers"] = grp_buy_peer_codes
+            sector_spent = {}
+            remaining_budget = grp_daily_budget
 
-        # --- 补仓信号：继续受daily_buy_cap限制 ---
-        if supplement_signals:
-            first_build_spent = (grp_daily_budget - remaining_budget)
-            supplement_cap = max(0, grp_effective_budget - first_build_spent)
-            supplement_remaining = min(remaining_budget, supplement_cap)
+            # --- 首次建仓：按max_position比例分配，不受daily_buy_cap限制 ---
+            if first_build_signals:
+                total_max_pos = sum(
+                    (funds_data.get(s["fund_code"]) or funds_data.get(parse_fund_key(s["fund_code"])[0], {})).get("max_position", 5000)
+                    for s in first_build_signals
+                )
+                for sig in first_build_signals:
+                    original = sig["amount"]
+                    discounted = round(original * discount, 2)
 
-            for sig in supplement_signals:
-                original = sig["amount"]
-                discounted = round(original * discount, 2)
+                    real_code, _ = parse_fund_key(sig["fund_code"])
+                    fund_max = (funds_data.get(sig["fund_code"]) or funds_data.get(real_code, {})).get("max_position", 5000)
+                    fund_budget_share = round(remaining_budget * (fund_max / max(1, total_max_pos)), 2)
 
-                real_code, _ = parse_fund_key(sig["fund_code"])
-                sector_name = sector_map.get(real_code, "默认")
-                sector_cap = grp_effective_budget * SECTOR_BUY_CAP_RATIO
-                sector_used = sector_spent.get(sector_name, 0)
-                sector_remaining = max(0, sector_cap - sector_used)
+                    sector_name = sector_map.get(real_code, "默认")
+                    sector_cap = grp_daily_budget * SECTOR_BUY_CAP_RATIO
+                    sector_used = sector_spent.get(sector_name, 0)
+                    sector_remaining = max(0, sector_cap - sector_used)
 
-                if supplement_remaining <= 0:
-                    sig["action"] = "hold"
-                    sig["signal_name"] = sig["signal_name"] + "(预算不足)"
-                    sig["reason"] += f" (组合现金预算已耗尽)"
-                    sig["alert"] = True
-                elif discounted > supplement_remaining or discounted > sector_remaining:
-                    actual = round(min(supplement_remaining, sector_remaining), 2)
+                    actual = round(min(discounted, fund_budget_share, sector_remaining), 2)
                     if actual <= 0:
                         sig["action"] = "hold"
-                        sig["signal_name"] = sig["signal_name"] + "(赛道集中度限制)"
-                        sig["reason"] += f" (同赛道{sector_name}买入已达上限)"
+                        sig["signal_name"] = sig["signal_name"] + "(预算不足)"
+                        sig["reason"] += f" (组合现金预算已耗尽)"
                         sig["alert"] = True
                     else:
                         sig["amount"] = actual
-                        sig["reason"] += f" (预算截断→{actual:.0f}元)"
-                        supplement_remaining -= actual
+                        if actual < discounted:
+                            sig["reason"] += f" (首次建仓预算分配→{actual:.0f}元)"
                         remaining_budget -= actual
                         sector_spent[sector_name] = sector_used + actual
-                else:
-                    sig["amount"] = discounted
-                    supplement_remaining -= discounted
-                    remaining_budget -= discounted
-                    sector_spent[sector_name] = sector_used + discounted
 
-                if sig["action"] == "buy":
-                    if total_buy_count > 1:
-                        sig["reason"] += f" (组合风控: {total_buy_count}只, 折扣{discount:.0%})"
-                    sig["_portfolio_discount"] = discount
-                    sig["_portfolio_buy_count"] = total_buy_count
-                    sig["_portfolio_buy_peers"] = grp_buy_peer_codes
+                    if sig["action"] == "buy":
+                        if total_buy_count > 1:
+                            sig["reason"] += f" (组合风控: {total_buy_count}只, 折扣{discount:.0%})"
+                        sig["_portfolio_discount"] = discount
+                        sig["_portfolio_buy_count"] = total_buy_count
+                        sig["_portfolio_buy_peers"] = grp_buy_peer_codes
+
+            # --- 补仓信号：继续受daily_buy_cap限制 ---
+            if supplement_signals:
+                first_build_spent = (grp_daily_budget - remaining_budget)
+                supplement_cap = max(0, grp_effective_budget - first_build_spent)
+                supplement_remaining = min(remaining_budget, supplement_cap)
+
+                for sig in supplement_signals:
+                    original = sig["amount"]
+                    discounted = round(original * discount, 2)
+
+                    real_code, _ = parse_fund_key(sig["fund_code"])
+                    sector_name = sector_map.get(real_code, "默认")
+                    sector_cap = grp_effective_budget * SECTOR_BUY_CAP_RATIO
+                    sector_used = sector_spent.get(sector_name, 0)
+                    sector_remaining = max(0, sector_cap - sector_used)
+
+                    if supplement_remaining <= 0:
+                        sig["action"] = "hold"
+                        sig["signal_name"] = sig["signal_name"] + "(预算不足)"
+                        sig["reason"] += f" (组合现金预算已耗尽)"
+                        sig["alert"] = True
+                    elif discounted > supplement_remaining or discounted > sector_remaining:
+                        actual = round(min(supplement_remaining, sector_remaining), 2)
+                        if actual <= 0:
+                            sig["action"] = "hold"
+                            sig["signal_name"] = sig["signal_name"] + "(赛道集中度限制)"
+                            sig["reason"] += f" (同赛道{sector_name}买入已达上限)"
+                            sig["alert"] = True
+                        else:
+                            sig["amount"] = actual
+                            sig["reason"] += f" (预算截断→{actual:.0f}元)"
+                            supplement_remaining -= actual
+                            remaining_budget -= actual
+                            sector_spent[sector_name] = sector_used + actual
+                    else:
+                        sig["amount"] = discounted
+                        supplement_remaining -= discounted
+                        remaining_budget -= discounted
+                        sector_spent[sector_name] = sector_used + discounted
+
+                    if sig["action"] == "buy":
+                        if total_buy_count > 1:
+                            sig["reason"] += f" (组合风控: {total_buy_count}只, 折扣{discount:.0%})"
+                        sig["_portfolio_discount"] = discount
+                        sig["_portfolio_buy_count"] = total_buy_count
+                        sig["_portfolio_buy_peers"] = grp_buy_peer_codes
+
+    except Exception as _prc_err:
+        import traceback
+        print(f"[Strategy] 组合风控异常(降级跳过): {_prc_err}")
+        traceback.print_exc()
 
     # === 全局汇总（向后兼容：portfolio_budget 仍返回全局数据） ===
     total_max_invest = sum(
