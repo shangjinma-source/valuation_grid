@@ -226,7 +226,8 @@ def _build_market_analysis(fund_code: str, val: dict, nav_history: list,
 
 def _analyze_trend(today_change: float, hist_changes: list,
                    nav_history: list = None,
-                   nav_history_60: list = None) -> dict:
+                   nav_history_60: list = None,
+                   source: str = "estimation") -> dict:
     all_changes = [today_change] + hist_changes
 
     def _compound_return(changes):
@@ -245,7 +246,8 @@ def _analyze_trend(today_change: float, hist_changes: list,
         # v5.18 fix: 盘中时 navs[0] 是昨日净值，不含今日变动；
         # 用 navs[0] * (1 + today_change/100) 估算"今日净值"参与 mid/long 计算，
         # 使盘中 mid_10d 与收盘后语义一致。
-        # 收盘后 navs[0] 已是今日真实净值，today_change 与之一致，修正量≈0 无副作用。
+        # v5.19 fix: 收盘后调用方已从 nav_history 中过滤掉今日记录，
+        # 此时 navs[0] 也是昨日净值，与盘中行为一致，两种模式统一。
         today_str = datetime.now().strftime("%Y-%m-%d")
         _latest_is_today = (nav_history[0].get("date") == today_str) if nav_history else False
         if navs and not _latest_is_today:
@@ -327,18 +329,24 @@ def _analyze_trend(today_change: float, hist_changes: list,
                         max_drawdown_60 = dd
     max_drawdown_60 = round(max_drawdown_60, 2)
 
+    # v5.19: 估值模式下趋势边界加容差 (hysteresis)
+    # 盘中估值与真实净值通常有 0.1~0.5% 的误差,
+    # 在边界值附近可能导致趋势标签翻转 → 信号不一致
+    # 容差仅影响趋势标签判定, 不影响具体数值 (short_3d/mid_10d 等原值不变)
+    _hyst = 0.3 if source == "estimation" else 0.0
+
     trend_label = "震荡"
     if consecutive_down >= 3:
         trend_label = "连跌"
     elif consecutive_up >= 3:
         trend_label = "连涨"
-    elif short_3d and short_3d < -2:
+    elif short_3d and short_3d < -(2 + _hyst):
         trend_label = "偏弱"
-    elif short_3d and short_3d > 2:
+    elif short_3d and short_3d > (2 + _hyst):
         trend_label = "偏强"
-    elif mid_10d is not None and mid_10d < -5:
+    elif mid_10d is not None and mid_10d < -(5 + _hyst):
         trend_label = "中期走弱"
-    elif mid_10d is not None and mid_10d > 5:
+    elif mid_10d is not None and mid_10d > (5 + _hyst):
         trend_label = "中期走强"
 
     return {
@@ -374,9 +382,42 @@ def generate_signal(fund_code: str) -> dict:
     confidence = val.get("confidence", 0.0)
     source = val.get("_source", "estimation")
 
-    hist_changes = [h["change"] for h in nav_history if h.get("change") is not None]
-    trend_ctx = _analyze_trend(today_change, hist_changes, nav_history,
-                               nav_history_60=nav_history_60)
+    # v5.19 fix: 防止收盘后"今日涨跌"被双重计入趋势分析
+    # 问题: 收盘后 source=nav 时, today_change 来自今日真实净值,
+    #        而 nav_history 也包含今日记录 → _analyze_trend 的
+    #        all_changes = [today_change] + hist_changes 会把今天算两次,
+    #        导致 short_3d/consecutive_down/mid_10d 等指标偏差,
+    #        最终造成盘中信号和收盘信号不一致 (如0.03%差异翻转信号)
+    # 额外处理: _nav_date 可能不是今天 (收盘后净值未公布时回退到最近交易日),
+    #           此时也需要从 hist_changes 中过滤掉该日, 避免 today_change 与之重复
+    today_str = datetime.now().strftime("%Y-%m-%d")
+    _nav_date = val.get("_nav_date", today_str)  # today_change 对应的实际日期
+    _nav_date_set = set()
+    if source == "nav":
+        # 收盘后: today_change 已经是 _nav_date 的涨跌, 从 hist_changes 中去掉该日
+        _exclude_date = _nav_date  # 要排除的日期 (可能是今天, 也可能是最近一个有净值的交易日)
+        hist_changes = []
+        for h in nav_history:
+            if h.get("change") is None:
+                continue
+            if h.get("date") == _exclude_date:
+                continue  # 跳过 today_change 对应的日期, 避免重复
+            if h["date"] in _nav_date_set:
+                continue  # 去重
+            _nav_date_set.add(h["date"])
+            hist_changes.append(h["change"])
+        # nav_history_for_trend: 也需要去掉该日, 供 mid_10d/long_20d 的 nav 计算使用
+        nav_history_for_trend = [h for h in nav_history if h.get("date") != _exclude_date]
+        nav_history_60_for_trend = [h for h in nav_history_60 if h.get("date") != _exclude_date]
+    else:
+        # 盘中: nav_history 不含今日, 直接使用
+        hist_changes = [h["change"] for h in nav_history if h.get("change") is not None]
+        nav_history_for_trend = nav_history
+        nav_history_60_for_trend = nav_history_60
+
+    trend_ctx = _analyze_trend(today_change, hist_changes, nav_history_for_trend,
+                               nav_history_60=nav_history_60_for_trend,
+                               source=source)
 
     # === v5.13: 行情模式参数注入 ===
     regime = _resolve_regime(trend_ctx)

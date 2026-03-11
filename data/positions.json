@@ -707,6 +707,18 @@
           "is_supplement": true,
           "peak_nav": 1.9727,
           "peak_date": "2026-03-06"
+        },
+        {
+          "id": "b20260311a",
+          "buy_date": "2026-03-11",
+          "amount": 401.4,
+          "nav": 1.7518,
+          "shares": 229.14,
+          "status": "holding",
+          "note": "冷却期后加仓",
+          "is_supplement": false,
+          "peak_nav": 1.7518,
+          "peak_date": "2026-03-12"
         }
       ],
       "supplement_count": 1,
@@ -765,7 +777,20 @@
     "017560__自选": {
       "fund_name": "",
       "max_position": 48000,
-      "batches": [],
+      "batches": [
+        {
+          "id": "b20260310a",
+          "buy_date": "2026-03-10",
+          "amount": 14784.0,
+          "nav": 2.3397,
+          "shares": 6318.76,
+          "status": "holding",
+          "note": "建仓",
+          "is_supplement": false,
+          "peak_nav": 2.3397,
+          "peak_date": "2026-03-11"
+        }
+      ],
       "supplement_count": 0,
       "cooldown_until": null,
       "watch_note": "空仓待建仓",
@@ -773,9 +798,9 @@
     }
   },
   "cash_reserve_ratio": 0.3,
-  "updated_at": "2026-03-10 23:18:56",
+  "updated_at": "2026-03-12 01:37:45",
   "market_regime": "neutral",
   "regime_auto": true,
   "regime_auto_result": "neutral",
-  "regime_auto_at": "2026-03-10 23:18:56"
+  "regime_auto_at": "2026-03-11 23:24:41"
 }
