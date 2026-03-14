@@ -1375,11 +1375,11 @@
                     monthText = (mc >= 0 ? '+' : '') + mc.toFixed(2) + '%';
                     monthClass = mc > 0 ? 'up' : mc < 0 ? 'down' : 'flat';
                 }
-                confidence = (val.confidence * 100).toFixed(0) + '%';
+                confidence = ((val.calibrated_confidence ?? val.confidence) * 100).toFixed(0) + '%';
                 if (!displayName && val.fund_name) {
                     displayName = val.fund_name;
                 }
-                if (val.confidence < 0.15) {
+                if ((val.calibrated_confidence ?? val.confidence) < 0.15) {
                     needsEtfLink = true;
                 }
             }
@@ -3042,8 +3042,8 @@
                     if (!v) return false;
                     // 净值来源（有✓标记）无视置信度判断，直接输出
                     if (v._source === 'nav') return true;
-                    // 盘中估值：置信度低于60%不输出
-                    return v.confidence >= 0.60;
+                    // 盘中估值：校准后置信度低于60%不输出
+                    return (v.calibrated_confidence ?? v.confidence) >= 0.60;
                 })
                 .sort((a, b) => {
                 const valA = valuations[a.code];

@@ -1,0 +1,87 @@
+{
+  "fund_code": "020900",
+  "fund_name": "天弘中证全指通信设备指数发起C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 94.93,
+  "parsed_weight": 64.31,
+  "missing_weight": 30.62,
+  "positions": [
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 14.52
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 14.45
+    },
+    {
+      "stock_code": "601138",
+      "stock_name": "工业富联",
+      "weight": 12.48
+    },
+    {
+      "stock_code": "000063",
+      "stock_name": "中兴通讯",
+      "weight": 6.17
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 4.8
+    },
+    {
+      "stock_code": "300136",
+      "stock_name": "信维通信",
+      "weight": 3.04
+    },
+    {
+      "stock_code": "600522",
+      "stock_name": "中天科技",
+      "weight": 2.5
+    },
+    {
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 2.47
+    },
+    {
+      "stock_code": "688036",
+      "stock_name": "传音控股",
+      "weight": 1.93
+    },
+    {
+      "stock_code": "603083",
+      "stock_name": "剑桥科技",
+      "weight": 1.88
+    },
+    {
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "688783",
+      "stock_name": "西安奕材",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "688765",
+      "stock_name": "禾元生物",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301656",
+      "stock_name": "联合动力",
+      "weight": 0.01
+    }
+  ],
+  "fetched_at": "2026-03-04 01:02:34",
+  "data_source": "eastmoney"
+}

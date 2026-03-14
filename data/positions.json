@@ -328,9 +328,21 @@
           "status": "holding",
           "note": "测试补仓",
           "is_supplement": false
+        },
+        {
+          "id": "b20260312a",
+          "buy_date": "2026-03-12",
+          "amount": 940.1,
+          "nav": 1.6496,
+          "shares": 569.9,
+          "status": "holding",
+          "note": "补仓",
+          "is_supplement": true,
+          "peak_nav": 1.6657,
+          "peak_date": "2026-03-14"
         }
       ],
-      "supplement_count": 0,
+      "supplement_count": 1,
       "cooldown_until": null,
       "vol_sensitivity_auto": 1.17,
       "vol_sensitivity_auto_at": "2026-03-08 19:42:06",
@@ -343,24 +355,29 @@
         {
           "id": "b20260116a",
           "buy_date": "2026-01-16",
-          "amount": 1805.67,
+          "amount": 709.62,
           "nav": 2.0485,
-          "shares": 881.46,
-          "status": "holding",
+          "shares": 346.41,
+          "status": "sold",
           "note": "建仓",
           "is_supplement": false,
           "original_amount": 3224.42,
-          "original_shares": 1574.04
+          "original_shares": 1574.04,
+          "sell_date": "2026-03-13",
+          "sell_nav": 1.7818,
+          "sell_shares": 346.41
         },
         {
           "id": "b20260116b",
           "buy_date": "2026-01-16",
-          "amount": 1326.35,
+          "amount": 1323.54,
           "nav": 2.0492,
-          "shares": 647.25,
+          "shares": 645.88,
           "status": "holding",
           "note": "建仓",
-          "is_supplement": false
+          "is_supplement": false,
+          "original_amount": 1326.35,
+          "original_shares": 647.25
         },
         {
           "id": "b20260309b",
@@ -373,10 +390,22 @@
           "is_supplement": false,
           "peak_nav": 1.8623,
           "peak_date": "2026-03-10"
+        },
+        {
+          "id": "b20260312a",
+          "buy_date": "2026-03-12",
+          "amount": 314.38,
+          "nav": 1.8044,
+          "shares": 174.23,
+          "status": "holding",
+          "note": "冷却期后加仓",
+          "is_supplement": false,
+          "peak_nav": 1.8044,
+          "peak_date": "2026-03-13"
         }
       ],
       "supplement_count": 0,
-      "cooldown_until": "2026-03-02",
+      "cooldown_until": "2026-03-17",
       "vol_sensitivity_auto": 1.2,
       "vol_sensitivity_auto_at": "2026-03-08 19:42:39",
       "sell_records": [
@@ -413,9 +442,60 @@
           "hold_days": 41,
           "sell_fee_rate": 0.0,
           "note": "建仓"
+        },
+        {
+          "id": "s20260312a",
+          "batch_id": "b20260116a",
+          "sell_date": "2026-03-12",
+          "sell_shares": 535.05,
+          "buy_nav": 2.0485,
+          "sell_nav": 1.8044,
+          "cost": 1096.05,
+          "gross": 965.44,
+          "fee": 0.0,
+          "net": 965.44,
+          "profit": -130.61,
+          "profit_pct": -11.9,
+          "hold_days": 55,
+          "sell_fee_rate": 0.0,
+          "note": "建仓"
+        },
+        {
+          "id": "s20260313a",
+          "batch_id": "b20260116a",
+          "sell_date": "2026-03-13",
+          "sell_shares": 346.41,
+          "buy_nav": 2.0485,
+          "sell_nav": 1.7818,
+          "cost": 709.62,
+          "gross": 617.23,
+          "fee": 0.0,
+          "net": 617.23,
+          "profit": -92.39,
+          "profit_pct": -13.0,
+          "hold_days": 56,
+          "sell_fee_rate": 0.0,
+          "note": "建仓"
+        },
+        {
+          "id": "s20260313b",
+          "batch_id": "b20260116b",
+          "sell_date": "2026-03-13",
+          "sell_shares": 1.37,
+          "buy_nav": 2.0492,
+          "sell_nav": 1.7818,
+          "cost": 2.81,
+          "gross": 2.44,
+          "fee": 0.0,
+          "net": 2.44,
+          "profit": -0.37,
+          "profit_pct": -13.2,
+          "hold_days": 56,
+          "sell_fee_rate": 0.0,
+          "note": "建仓"
         }
       ],
-      "cooldown_sell_date": "2026-02-26",
+      "cooldown_sell_date": "2026-03-13",
       "cooldown_trade_days": 2,
       "vol_sensitivity": 0.95
     },
@@ -688,9 +768,9 @@
         {
           "id": "b20260122a",
           "buy_date": "2026-01-22",
-          "amount": 1228.48,
+          "amount": 601.95,
           "nav": 1.9727,
-          "shares": 622.74,
+          "shares": 305.14,
           "status": "holding",
           "note": "建仓",
           "original_amount": 3000.0,
@@ -719,10 +799,22 @@
           "is_supplement": false,
           "peak_nav": 1.7518,
           "peak_date": "2026-03-12"
+        },
+        {
+          "id": "b20260312a",
+          "buy_date": "2026-03-12",
+          "amount": 199.67,
+          "nav": 1.7226,
+          "shares": 115.91,
+          "status": "holding",
+          "note": "冷却期后加仓",
+          "is_supplement": false,
+          "peak_nav": 1.7226,
+          "peak_date": "2026-03-13"
         }
       ],
       "supplement_count": 1,
-      "cooldown_until": "2026-03-08",
+      "cooldown_until": "2026-03-17",
       "sell_records": [
         {
           "id": "s20260213a",
@@ -757,11 +849,45 @@
           "hold_days": 41,
           "sell_fee_rate": 0.0,
           "note": "建仓"
+        },
+        {
+          "id": "s20260312a",
+          "batch_id": "b20260122a",
+          "sell_date": "2026-03-12",
+          "sell_shares": 186.82,
+          "buy_nav": 1.9727,
+          "sell_nav": 1.7226,
+          "cost": 368.54,
+          "gross": 321.82,
+          "fee": 0.0,
+          "net": 321.82,
+          "profit": -46.72,
+          "profit_pct": -12.7,
+          "hold_days": 49,
+          "sell_fee_rate": 0.0,
+          "note": "建仓"
+        },
+        {
+          "id": "s20260313a",
+          "batch_id": "b20260122a",
+          "sell_date": "2026-03-13",
+          "sell_shares": 130.78,
+          "buy_nav": 1.9727,
+          "sell_nav": 1.7034,
+          "cost": 257.99,
+          "gross": 222.77,
+          "fee": 0.0,
+          "net": 222.77,
+          "profit": -35.22,
+          "profit_pct": -13.7,
+          "hold_days": 50,
+          "sell_fee_rate": 0.0,
+          "note": "建仓"
         }
       ],
       "vol_sensitivity_auto": 1.2,
       "vol_sensitivity_auto_at": "2026-03-08 19:41:39",
-      "cooldown_sell_date": "2026-03-04",
+      "cooldown_sell_date": "2026-03-13",
       "cooldown_trade_days": 2,
       "vol_sensitivity": 1.15
     },
@@ -798,9 +924,9 @@
     }
   },
   "cash_reserve_ratio": 0.3,
-  "updated_at": "2026-03-12 01:37:45",
+  "updated_at": "2026-03-14 23:25:09",
   "market_regime": "neutral",
   "regime_auto": true,
   "regime_auto_result": "neutral",
-  "regime_auto_at": "2026-03-11 23:24:41"
+  "regime_auto_at": "2026-03-14 22:35:09"
 }

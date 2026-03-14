@@ -1,0 +1,67 @@
+{
+  "fund_code": "017836",
+  "fund_name": "信澳匠心回报混合C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 89.95,
+  "parsed_weight": 74.68,
+  "missing_weight": 15.27,
+  "positions": [
+    {
+      "stock_code": "600160",
+      "stock_name": "巨化股份",
+      "weight": 9.64
+    },
+    {
+      "stock_code": "00189",
+      "stock_name": "东岳集团",
+      "weight": 9.63
+    },
+    {
+      "stock_code": "603379",
+      "stock_name": "三美股份",
+      "weight": 9.57
+    },
+    {
+      "stock_code": "600378",
+      "stock_name": "昊华科技",
+      "weight": 9.56
+    },
+    {
+      "stock_code": "605020",
+      "stock_name": "永和股份",
+      "weight": 9.5
+    },
+    {
+      "stock_code": "300779",
+      "stock_name": "惠城环保",
+      "weight": 8.13
+    },
+    {
+      "stock_code": "002683",
+      "stock_name": "广东宏大",
+      "weight": 6.84
+    },
+    {
+      "stock_code": "688196",
+      "stock_name": "卓越新能",
+      "weight": 5.31
+    },
+    {
+      "stock_code": "603799",
+      "stock_name": "华友钴业",
+      "weight": 3.5
+    },
+    {
+      "stock_code": "600547",
+      "stock_name": "山东黄金",
+      "weight": 1.51
+    },
+    {
+      "stock_code": "01787",
+      "stock_name": "山东黄金",
+      "weight": 1.49
+    }
+  ],
+  "fetched_at": "2026-03-12 01:40:10",
+  "data_source": "eastmoney"
+}
