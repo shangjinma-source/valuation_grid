@@ -1,0 +1,62 @@
+{
+  "fund_code": "006533",
+  "fund_name": "易方达科融混合",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 81.96,
+  "parsed_weight": 44.91,
+  "missing_weight": 37.05,
+  "positions": [
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 7.45
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 7.17
+    },
+    {
+      "stock_code": "300274",
+      "stock_name": "阳光电源",
+      "weight": 6.2
+    },
+    {
+      "stock_code": "601138",
+      "stock_name": "工业富联",
+      "weight": 5.3
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 3.88
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 3.77
+    },
+    {
+      "stock_code": "00700",
+      "stock_name": "腾讯控股",
+      "weight": 3.06
+    },
+    {
+      "stock_code": "002475",
+      "stock_name": "立讯精密",
+      "weight": 2.78
+    },
+    {
+      "stock_code": "002916",
+      "stock_name": "深南电路",
+      "weight": 2.76
+    },
+    {
+      "stock_code": "600030",
+      "stock_name": "中信证券",
+      "weight": 2.54
+    }
+  ],
+  "fetched_at": "2026-03-04 01:01:59",
+  "data_source": "eastmoney"
+}

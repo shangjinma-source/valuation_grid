@@ -1,0 +1,72 @@
+{
+  "fund_code": "008327",
+  "fund_name": "东财通信C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 94.94,
+  "parsed_weight": 53.54,
+  "missing_weight": 41.4,
+  "positions": [
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.65
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.6
+    },
+    {
+      "stock_code": "000063",
+      "stock_name": "中兴通讯",
+      "weight": 6.09
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 5.42
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 4.91
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 4.73
+    },
+    {
+      "stock_code": "000988",
+      "stock_name": "华工科技",
+      "weight": 3.98
+    },
+    {
+      "stock_code": "002916",
+      "stock_name": "深南电路",
+      "weight": 3.09
+    },
+    {
+      "stock_code": "300408",
+      "stock_name": "三环集团",
+      "weight": 3.06
+    },
+    {
+      "stock_code": "300136",
+      "stock_name": "信维通信",
+      "weight": 2.99
+    },
+    {
+      "stock_code": "001280",
+      "stock_name": "中国铀业",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "688809",
+      "stock_name": "强一股份",
+      "weight": 0.01
+    }
+  ],
+  "fetched_at": "2026-03-04 01:02:10",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,83 @@
+{
+  "007119": {
+    "score": 45.8,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "睿远成长价值混合A",
+    "annual_return": 1.27,
+    "sharpe": 0.2,
+    "max_drawdown": 20.79
+  },
+  "001938": {
+    "score": 35.6,
+    "grade": "D-偏差",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "中欧时代先锋股票A",
+    "annual_return": -2.02,
+    "sharpe": -0.19,
+    "max_drawdown": 35.48
+  },
+  "005827": {
+    "score": 39.6,
+    "grade": "D-偏差",
+    "env_label": "熊市优",
+    "name": "易方达蓝筹精选混合",
+    "annual_return": -1.06,
+    "sharpe": -0.1,
+    "max_drawdown": 28.92
+  },
+  "110011": {
+    "score": 37.0,
+    "grade": "D-偏差",
+    "env_label": "熊市优",
+    "name": "易方达优质精选混合(QDII)",
+    "annual_return": -1.63,
+    "sharpe": -0.09,
+    "max_drawdown": 39.07
+  },
+  "161725": {
+    "score": 40.4,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "招商中证白酒指数(LOF)A",
+    "annual_return": -3.59,
+    "sharpe": -0.23,
+    "max_drawdown": 30.72
+  },
+  "000961": {
+    "score": 38.4,
+    "grade": "D-偏差",
+    "env_label": "熊市优",
+    "name": "天弘沪深300ETF联接A",
+    "annual_return": 0.12,
+    "sharpe": 0.05,
+    "max_drawdown": 15.45
+  },
+  "519674": {
+    "score": 44.9,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "银河创新成长混合A",
+    "annual_return": 2.64,
+    "sharpe": 0.29,
+    "max_drawdown": 24.03
+  },
+  "003745": {
+    "score": 42.9,
+    "grade": "C-一般",
+    "env_label": "全天候/熊市优/震荡优",
+    "name": "广发多元新兴股票",
+    "annual_return": 1.17,
+    "sharpe": 0.18,
+    "max_drawdown": 25.91
+  },
+  "008701": {
+    "score": 59.5,
+    "grade": "B-良好",
+    "env_label": "待观察",
+    "name": "华夏黄金ETF联接A",
+    "annual_return": 4.36,
+    "sharpe": 0.96,
+    "max_drawdown": 6.93
+  }
+}

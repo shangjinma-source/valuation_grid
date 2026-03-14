@@ -210,7 +210,7 @@ def _build_market_analysis(fund_code: str, val: dict, nav_history: list,
         "realized_pnl": realized_pnl,                # 已实现盈亏（历史卖出）
         "cumulative_pnl": cumulative_pnl,            # 累计盈亏（对标支付宝"累计盈亏"）
         "total_profit_pct": round(total_profit_pct, 2) if total_profit_pct is not None else None,
-        "confidence": val.get("confidence"),
+        "confidence": val.get("calibrated_confidence", val.get("confidence")),
         "strategy_params": strategy_params,
         "market_regime": regime or "neutral",  # v5.13: 当前行情模式
         "regime_source": regime_source,  # v5.13: 模式来源 (manual/auto)
@@ -260,6 +260,21 @@ def _analyze_trend(today_change: float, hist_changes: list,
             mid_10d = round((nav0_adj / navs[-1] - 1) * 100, 2)
         if len(navs) >= 20:
             long_20d = round((nav0_adj / navs[19] - 1) * 100, 2)
+        else:
+            # v5.20 fix: nav_history 可能不够20条（收盘过滤/新基金/缓存竞争）
+            # 优先用 nav_history_60，再退回到 all_changes 复合收益率
+            if nav_history_60:
+                navs_long = [h["nav"] for h in nav_history_60 if h.get("nav") is not None]
+                if len(navs_long) >= 20:
+                    _latest_is_today_60 = (nav_history_60[0].get("date") == today_str) if nav_history_60 else False
+                    if navs_long and not _latest_is_today_60:
+                        nav0_adj_60 = navs_long[0] * (1 + today_change / 100)
+                    else:
+                        nav0_adj_60 = navs_long[0]
+                    long_20d = round((nav0_adj_60 / navs_long[19] - 1) * 100, 2)
+            # 最终退路：用涨跌幅序列复合计算
+            if long_20d is None and len(all_changes) >= 20:
+                long_20d = _compound_return(all_changes[:20])
     else:
         mid_10d = _compound_return(all_changes[:10]) if len(all_changes) >= 10 else None
         long_20d = _compound_return(all_changes[:20]) if len(all_changes) >= 20 else None
@@ -377,10 +392,16 @@ def generate_signal(fund_code: str) -> dict:
     today_change = val.get("estimation_change") or 0.0
     recent = val.get("recent_changes", [])
     pos = get_fund_position(fund_code)
-    nav_history = get_fund_nav_history(real_code, 20)
+    nav_history = get_fund_nav_history(real_code, 21)  # v5.20 fix: 多取1条，收盘后过滤今日仍剩20条供 long_20d 计算
     nav_history_60 = get_fund_nav_history(real_code, 60)
     confidence = val.get("confidence", 0.0)
     source = val.get("_source", "estimation")
+
+    # v5.20: 使用校准后的置信度（由 valuation/core.py 基于历史偏差计算）
+    _raw_confidence = confidence
+    confidence = val.get("calibrated_confidence", confidence)
+    if confidence != _raw_confidence:
+        print(f"[CALIB] {fund_code} confidence {_raw_confidence:.3f} → {confidence:.3f}")
 
     # v5.19 fix: 防止收盘后"今日涨跌"被双重计入趋势分析
     # 问题: 收盘后 source=nav 时, today_change 来自今日真实净值,
@@ -1132,7 +1153,7 @@ def generate_signal(fund_code: str) -> dict:
     print(f"[DIAG空仓] {fund_code} | source={source}, conf={confidence:.2f}, "
           f"today_chg={today_change:.2f}%, can_buy={can_buy_empty}")
     print(f"  trend: 3d={trend_ctx.get('short_3d')}, 5d={trend_ctx.get('short_5d')}, "
-          f"10d={trend_ctx.get('mid_10d')}, consec_down={trend_ctx.get('consecutive_down',0)}, "
+          f"10d={trend_ctx.get('mid_10d')}, 20d={trend_ctx.get('long_20d')}, consec_down={trend_ctx.get('consecutive_down',0)}, "
           f"vol_robust={trend_ctx.get('volatility_robust')}")
     print(f"  dyn: dip_thresh={dip_threshold}, risk_mul={dyn['risk_multiplier']}, "
           f"vol_state={vol_state}")

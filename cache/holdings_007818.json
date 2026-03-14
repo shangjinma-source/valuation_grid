@@ -1,0 +1,17 @@
+{
+  "fund_code": "007818",
+  "fund_name": "国泰中证全指通信设备ETF联接C",
+  "holdings_asof_date": "2025-09-30",
+  "stock_total_weight": 0.0,
+  "parsed_weight": 0.03,
+  "missing_weight": 0,
+  "positions": [
+    {
+      "stock_code": "603496",
+      "stock_name": "恒为科技",
+      "weight": 0.03
+    }
+  ],
+  "fetched_at": "2026-03-15 01:28:07",
+  "data_source": "eastmoney"
+}

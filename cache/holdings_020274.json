@@ -1,0 +1,62 @@
+{
+  "fund_code": "020274",
+  "fund_name": "富国中证细分化工产业主题ETF发起式联接C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 1.13,
+  "parsed_weight": 0.82,
+  "missing_weight": 0.31,
+  "positions": [
+    {
+      "stock_code": "600309",
+      "stock_name": "万华化学",
+      "weight": 0.24
+    },
+    {
+      "stock_code": "600346",
+      "stock_name": "恒力石化",
+      "weight": 0.08
+    },
+    {
+      "stock_code": "600426",
+      "stock_name": "华鲁恒升",
+      "weight": 0.08
+    },
+    {
+      "stock_code": "600160",
+      "stock_name": "巨化股份",
+      "weight": 0.08
+    },
+    {
+      "stock_code": "600989",
+      "stock_name": "宝丰能源",
+      "weight": 0.07
+    },
+    {
+      "stock_code": "600143",
+      "stock_name": "金发科技",
+      "weight": 0.07
+    },
+    {
+      "stock_code": "600096",
+      "stock_name": "云天化",
+      "weight": 0.07
+    },
+    {
+      "stock_code": "688065",
+      "stock_name": "凯赛生物",
+      "weight": 0.05
+    },
+    {
+      "stock_code": "600352",
+      "stock_name": "浙江龙盛",
+      "weight": 0.04
+    },
+    {
+      "stock_code": "600486",
+      "stock_name": "扬农化工",
+      "weight": 0.04
+    }
+  ],
+  "fetched_at": "2026-03-15 01:28:07",
+  "data_source": "eastmoney"
+}

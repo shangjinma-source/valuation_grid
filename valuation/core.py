@@ -13,6 +13,80 @@ from .providers import get_holdings, get_quotes, get_fund_5day_change, get_etf_r
 DATA_DIR = Path(__file__).parent.parent / "data"
 STATE_FILE = DATA_DIR / "state.json"
 
+# === 置信度校准：估值偏差历史 ===
+DEVIATION_FILE = DATA_DIR / "confidence_deviations.json"
+_MAX_DEVIATION_RECORDS = 200  # 每基金最多保留条数
+
+def _load_deviations() -> dict:
+    """加载偏差历史 {fund_code: [{date, est, nav, deviation}, ...]}"""
+    _ensure_data_dir()
+    if not DEVIATION_FILE.exists():
+        return {}
+    try:
+        with open(DEVIATION_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+def _save_deviations(data: dict):
+    _ensure_data_dir()
+    try:
+        tmp = DEVIATION_FILE.with_suffix(".tmp")
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        tmp.replace(DEVIATION_FILE)
+    except Exception:
+        pass
+
+def record_deviation(fund_code: str, date: str, est_change: float, nav_change: float):
+    """记录一条估值 vs 净值偏差"""
+    devs = _load_deviations()
+    records = devs.setdefault(fund_code, [])
+    # 去重：同一天不重复记录
+    if any(r["date"] == date for r in records):
+        return
+    records.insert(0, {
+        "date": date,
+        "est": round(est_change, 4),
+        "nav": round(nav_change, 4),
+        "deviation": round(abs(est_change - nav_change), 4)
+    })
+    # 截断
+    devs[fund_code] = records[:_MAX_DEVIATION_RECORDS]
+    _save_deviations(devs)
+
+def calibrate_confidence(fund_code: str, raw_confidence: float) -> float:
+    """基于历史偏差校准置信度。
+    思路：如果历史偏差中位数很小（估值很准），则向上修正 confidence。
+    数据不足（<5条）时不校准，返回原值。
+    """
+    devs = _load_deviations()
+    records = devs.get(fund_code, [])
+    if len(records) < 5:
+        return raw_confidence
+
+    # 取最近30条偏差
+    recent = [r["deviation"] for r in records[:30]]
+    recent.sort()
+    median_dev = recent[len(recent) // 2]
+
+    # 偏差越小 → 校准后 confidence 越高
+    # median_dev < 0.3pp → 估值非常准，confidence 至少 0.85
+    # median_dev < 0.5pp → 估值较准，confidence 至少 0.70
+    # median_dev < 1.0pp → 一般准，confidence 至少 0.60
+    # median_dev >= 1.0pp → 不太准，不上调
+    if median_dev < 0.3:
+        floor = 0.85
+    elif median_dev < 0.5:
+        floor = 0.70
+    elif median_dev < 1.0:
+        floor = 0.60
+    else:
+        floor = raw_confidence  # 不校准
+
+    calibrated = max(raw_confidence, floor)
+    return round(calibrated, 3)
+
 # === 文件锁 ===
 _state_lock = threading.Lock()
 
@@ -408,6 +482,9 @@ def calculate_valuation(fund_code: str) -> dict:
     #    （尤其含港股持仓时，A股/港股收盘时间不同导致偏差更大）
     #    替换条件：当天已收盘（15:05后、或非交易日）且有真实净值数据
     if _is_market_closed():
+        # v5.20: 保留盘中估值原始值，用于偏差记录
+        _est_raw = result["estimation_change"]
+
         # 优先查找今天的真实净值（收盘后基金公司已公布当日净值）
         today_nav_entry = next(
             (h for h in history if h["date"] == today_str and h.get("change") is not None),
@@ -418,6 +495,10 @@ def calculate_valuation(fund_code: str) -> dict:
             result["_source"] = "nav"
             result["_nav_date"] = today_str
             result["notes"].append(f"使用真实净值涨跌 {today_str}")
+            # v5.20: 记录偏差（仅当盘中有过有效估值时）
+            if _est_raw is not None and _est_raw != 0:
+                result["_estimation_change_raw"] = _est_raw
+                record_deviation(fund_code, today_str, _est_raw, today_nav_entry["change"])
         elif result["recent_changes"]:
             # 今天的净值尚未公布，退回到最近一个交易日的真实净值
             latest = result["recent_changes"][0]
@@ -432,6 +513,9 @@ def calculate_valuation(fund_code: str) -> dict:
             result["_source"] = "estimation"
     else:
         result["_source"] = "estimation"
+
+    # v5.20: 附带校准后的置信度（供前端和 engine 统一使用）
+    result["calibrated_confidence"] = calibrate_confidence(fund_code, result["confidence"])
 
     return result
 

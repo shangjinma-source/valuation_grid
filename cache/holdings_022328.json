@@ -1,0 +1,62 @@
+{
+  "fund_code": "022328",
+  "fund_name": "宏利高端装备股票C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 81.24,
+  "parsed_weight": 50.24,
+  "missing_weight": 31.0,
+  "positions": [
+    {
+      "stock_code": "600426",
+      "stock_name": "华鲁恒升",
+      "weight": 9.26
+    },
+    {
+      "stock_code": "600075",
+      "stock_name": "新疆天业",
+      "weight": 7.28
+    },
+    {
+      "stock_code": "002493",
+      "stock_name": "荣盛石化",
+      "weight": 6.1
+    },
+    {
+      "stock_code": "603225",
+      "stock_name": "新凤鸣",
+      "weight": 5.82
+    },
+    {
+      "stock_code": "000703",
+      "stock_name": "恒逸石化",
+      "weight": 4.69
+    },
+    {
+      "stock_code": "000683",
+      "stock_name": "博源化工",
+      "weight": 3.99
+    },
+    {
+      "stock_code": "002585",
+      "stock_name": "双星新材",
+      "weight": 3.53
+    },
+    {
+      "stock_code": "603260",
+      "stock_name": "合盛硅业",
+      "weight": 3.28
+    },
+    {
+      "stock_code": "600623",
+      "stock_name": "华谊集团",
+      "weight": 3.21
+    },
+    {
+      "stock_code": "002092",
+      "stock_name": "中泰化学",
+      "weight": 3.08
+    }
+  ],
+  "fetched_at": "2026-03-12 01:39:04",
+  "data_source": "eastmoney"
+}

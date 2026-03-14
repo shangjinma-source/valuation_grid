@@ -1,0 +1,62 @@
+{
+  "fund_code": "017668",
+  "fund_name": "鹏华新材料混合发起式C",
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 83.78,
+  "parsed_weight": 57.92,
+  "missing_weight": 25.86,
+  "positions": [
+    {
+      "stock_code": "300487",
+      "stock_name": "蓝晓科技",
+      "weight": 9.43
+    },
+    {
+      "stock_code": "688625",
+      "stock_name": "呈和科技",
+      "weight": 8.61
+    },
+    {
+      "stock_code": "300596",
+      "stock_name": "利安隆",
+      "weight": 8.01
+    },
+    {
+      "stock_code": "605183",
+      "stock_name": "确成股份",
+      "weight": 6.6
+    },
+    {
+      "stock_code": "600389",
+      "stock_name": "江山股份",
+      "weight": 5.4
+    },
+    {
+      "stock_code": "000975",
+      "stock_name": "山金国际",
+      "weight": 4.69
+    },
+    {
+      "stock_code": "600988",
+      "stock_name": "赤峰黄金",
+      "weight": 3.84
+    },
+    {
+      "stock_code": "600141",
+      "stock_name": "兴发集团",
+      "weight": 3.82
+    },
+    {
+      "stock_code": "000830",
+      "stock_name": "鲁西化工",
+      "weight": 3.79
+    },
+    {
+      "stock_code": "603067",
+      "stock_name": "振华股份",
+      "weight": 3.73
+    }
+  ],
+  "fetched_at": "2026-03-12 01:39:35",
+  "data_source": "eastmoney"
+}
