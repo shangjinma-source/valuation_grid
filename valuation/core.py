@@ -17,6 +17,10 @@ STATE_FILE = DATA_DIR / "state.json"
 DEVIATION_FILE = DATA_DIR / "confidence_deviations.json"
 _MAX_DEVIATION_RECORDS = 200  # 每基金最多保留条数
 
+# === 盘中估值缓存（用于收盘后偏差记录） ===
+# {fund_code: {"date": "2026-03-16", "est": -1.91}}
+_intraday_estimation_cache: Dict[str, dict] = {}
+
 def _load_deviations() -> dict:
     """加载偏差历史 {fund_code: [{date, est, nav, deviation}, ...]}"""
     _ensure_data_dir()
@@ -62,7 +66,7 @@ def calibrate_confidence(fund_code: str, raw_confidence: float) -> float:
     """
     devs = _load_deviations()
     records = devs.get(fund_code, [])
-    if len(records) < 5:
+    if len(records) < 1:
         return raw_confidence
 
     # 取最近30条偏差
@@ -482,8 +486,13 @@ def calculate_valuation(fund_code: str) -> dict:
     #    （尤其含港股持仓时，A股/港股收盘时间不同导致偏差更大）
     #    替换条件：当天已收盘（15:05后、或非交易日）且有真实净值数据
     if _is_market_closed():
-        # v5.20: 保留盘中估值原始值，用于偏差记录
-        _est_raw = result["estimation_change"]
+        # v5.20: 收盘后优先从盘中缓存取估值（比当前重算的更准确）
+        _cached = _intraday_estimation_cache.get(fund_code)
+        _est_raw = (
+            _cached["est"]
+            if _cached and _cached["date"] == today_str and _cached["est"] is not None
+            else result["estimation_change"]  # fallback: 用当前重算的值
+        )
 
         # 优先查找今天的真实净值（收盘后基金公司已公布当日净值）
         today_nav_entry = next(
@@ -513,6 +522,12 @@ def calculate_valuation(fund_code: str) -> dict:
             result["_source"] = "estimation"
     else:
         result["_source"] = "estimation"
+        # v5.20: 盘中缓存当前估值，供收盘后偏差记录使用
+        if result["estimation_change"] is not None:
+            _intraday_estimation_cache[fund_code] = {
+                "date": today_str,
+                "est": result["estimation_change"]
+            }
 
     # v5.20: 附带校准后的置信度（供前端和 engine 统一使用）
     result["calibrated_confidence"] = calibrate_confidence(fund_code, result["confidence"])
