@@ -20,6 +20,7 @@ _MAX_DEVIATION_RECORDS = 200  # 每基金最多保留条数
 # === 盘中估值缓存（用于收盘后偏差记录） ===
 # {fund_code: {"date": "2026-03-16", "est": -1.91}}
 _intraday_estimation_cache: Dict[str, dict] = {}
+_INTRADAY_CACHE_FILE = DATA_DIR / "intraday_cache.json"
 
 def _load_deviations() -> dict:
     """加载偏差历史 {fund_code: [{date, est, nav, deviation}, ...]}"""
@@ -488,6 +489,14 @@ def calculate_valuation(fund_code: str) -> dict:
     if _is_market_closed():
         # v5.20: 收盘后优先从盘中缓存取估值（比当前重算的更准确）
         _cached = _intraday_estimation_cache.get(fund_code)
+        # 内存缓存为空时（进程重启），尝试从文件恢复
+        if not _cached and _INTRADAY_CACHE_FILE.exists():
+            try:
+                with open(_INTRADAY_CACHE_FILE, "r", encoding="utf-8") as f:
+                    _intraday_estimation_cache.update(json.load(f))
+                _cached = _intraday_estimation_cache.get(fund_code)
+            except Exception:
+                pass
         _est_raw = (
             _cached["est"]
             if _cached and _cached["date"] == today_str and _cached["est"] is not None
@@ -528,6 +537,15 @@ def calculate_valuation(fund_code: str) -> dict:
                 "date": today_str,
                 "est": result["estimation_change"]
             }
+            # 同时持久化到文件，方便查看和进程重启恢复
+            try:
+                _ensure_data_dir()
+                tmp = _INTRADAY_CACHE_FILE.with_suffix(".tmp")
+                with open(tmp, "w", encoding="utf-8") as f:
+                    json.dump(_intraday_estimation_cache, f, ensure_ascii=False, indent=2)
+                tmp.replace(_INTRADAY_CACHE_FILE)
+            except Exception:
+                pass
 
     # v5.20: 附带校准后的置信度（供前端和 engine 统一使用）
     result["calibrated_confidence"] = calibrate_confidence(fund_code, result["confidence"])
