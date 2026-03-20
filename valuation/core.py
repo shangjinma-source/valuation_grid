@@ -20,10 +20,40 @@ _MAX_DEVIATION_RECORDS = 200  # 每基金最多保留条数
 # === 盘中估值缓存（用于收盘后偏差记录） ===
 # {fund_code: {"date": "2026-03-16", "est": -1.91}}
 _intraday_estimation_cache: Dict[str, dict] = {}
+_intraday_cache_loaded = False  # v5.22: 防止并发重复加载
 _INTRADAY_CACHE_FILE = DATA_DIR / "intraday_cache.json"
 
+# v5.22: deviation 文件读写锁，防止并发 load/save 导致历史数据丢失
+_deviation_lock = threading.Lock()
+
+# v5.22: 盘中缓存文件锁（保护 intraday_cache.json 的读写）
+_intraday_cache_lock = threading.Lock()
+
+def _ensure_intraday_cache_loaded():
+    """进程重启后从文件恢复盘中估值缓存（线程安全，只加载一次）。
+    v5.22: 从 calculate_valuation 内部提取出来，由 batch 入口统一调用，
+    确保在任何并发估值计算之前完成加载。"""
+    global _intraday_cache_loaded
+    if _intraday_cache_loaded:
+        return
+    with _intraday_cache_lock:
+        if _intraday_cache_loaded:  # double-check
+            return
+        if _INTRADAY_CACHE_FILE.exists():
+            try:
+                with open(_INTRADAY_CACHE_FILE, "r", encoding="utf-8") as f:
+                    _intraday_estimation_cache.update(json.load(f))
+            except Exception:
+                pass
+        _intraday_cache_loaded = True
+
+# v5.22: 批量偏差缓冲区，收盘后先收集所有偏差，最后一次性写入
+# {fund_code: {"date": ..., "est": ..., "nav": ..., "deviation": ...}}
+_deviation_buffer: Dict[str, dict] = {}
+
 def _load_deviations() -> dict:
-    """加载偏差历史 {fund_code: [{date, est, nav, deviation}, ...]}"""
+    """加载偏差历史 {fund_code: [{date, est, nav, deviation}, ...]}
+    调用方需自行持有 _deviation_lock"""
     _ensure_data_dir()
     if not DEVIATION_FILE.exists():
         return {}
@@ -34,6 +64,7 @@ def _load_deviations() -> dict:
         return {}
 
 def _save_deviations(data: dict):
+    """全量写入偏差文件。调用方需自行持有 _deviation_lock"""
     _ensure_data_dir()
     try:
         tmp = DEVIATION_FILE.with_suffix(".tmp")
@@ -44,28 +75,45 @@ def _save_deviations(data: dict):
         pass
 
 def record_deviation(fund_code: str, date: str, est_change: float, nav_change: float):
-    """记录一条估值 vs 净值偏差"""
-    devs = _load_deviations()
-    records = devs.setdefault(fund_code, [])
-    # 去重：同一天不重复记录
-    if any(r["date"] == date for r in records):
-        return
-    records.insert(0, {
+    """收集一条估值 vs 净值偏差到缓冲区（线程安全，不立即写文件）。
+    v5.22: 改为先缓冲，由 flush_deviations() 统一写入，
+    避免并发逐只写文件导致 load 到不完整数据覆盖历史。"""
+    record = {
         "date": date,
         "est": round(est_change, 4),
         "nav": round(nav_change, 4),
         "deviation": round(abs(est_change - nav_change), 4)
-    })
-    # 截断
-    devs[fund_code] = records[:_MAX_DEVIATION_RECORDS]
-    _save_deviations(devs)
+    }
+    with _deviation_lock:
+        # 用 fund_code+date 作为 key 去重
+        buf_key = f"{fund_code}__{date}"
+        _deviation_buffer[buf_key] = (fund_code, record)
+
+def flush_deviations():
+    """将缓冲区中的偏差记录一次性合并写入文件（线程安全）。
+    v5.22: 收盘后由 calculate_valuation_batch 在所有估值计算完成后统一调用。"""
+    with _deviation_lock:
+        if not _deviation_buffer:
+            return
+        devs = _load_deviations()
+        for buf_key, (fund_code, record) in _deviation_buffer.items():
+            records = devs.setdefault(fund_code, [])
+            # 去重：同一天不重复记录
+            if any(r["date"] == record["date"] for r in records):
+                continue
+            records.insert(0, record)
+            # 截断
+            devs[fund_code] = records[:_MAX_DEVIATION_RECORDS]
+        _save_deviations(devs)
+        _deviation_buffer.clear()
 
 def calibrate_confidence(fund_code: str, raw_confidence: float) -> float:
     """基于历史偏差校准置信度。
     思路：如果历史偏差中位数很小（估值很准），则向上修正 confidence。
     数据不足（<5条）时不校准，返回原值。
     """
-    devs = _load_deviations()
+    with _deviation_lock:
+        devs = _load_deviations()
     records = devs.get(fund_code, [])
     if len(records) < 1:
         return raw_confidence
@@ -265,6 +313,13 @@ def _try_etf_realtime_fallback(result: dict, fund_code: str) -> dict:
 
     # 收盘后仍用真实净值替代
     if _is_market_closed():
+        # v5.22: ETF路径也从盘中缓存取估值
+        _cached = _intraday_estimation_cache.get(fund_code)
+        _est_raw = (
+            _cached["est"]
+            if _cached and _cached["date"] == today_str and _cached["est"] is not None
+            else pct  # fallback: 用当前ETF实时值
+        )
         today_nav = next(
             (h for h in history if h["date"] == today_str and h.get("change") is not None),
             None
@@ -274,6 +329,10 @@ def _try_etf_realtime_fallback(result: dict, fund_code: str) -> dict:
             result["_source"] = "nav"
             result["_nav_date"] = today_str
             result["notes"].append(f"收盘后使用真实净值 {today_str}")
+            # v5.22: ETF路径也记录偏差（0%也是有效值）
+            if _est_raw is not None:
+                result["_estimation_change_raw"] = _est_raw
+                record_deviation(fund_code, today_str, _est_raw, today_nav["change"])
         elif result["recent_changes"]:
             latest = result["recent_changes"][0]
             if latest["change"] is not None:
@@ -281,6 +340,12 @@ def _try_etf_realtime_fallback(result: dict, fund_code: str) -> dict:
                 result["_source"] = "nav"
                 result["_nav_date"] = latest["date"]
                 result["notes"].append(f"收盘后使用真实净值 {latest['date']}")
+    else:
+        # v5.22: 盘中缓存ETF估值
+        _intraday_estimation_cache[fund_code] = {
+            "date": today_str,
+            "est": pct
+        }
 
     return result
 
@@ -332,6 +397,13 @@ def _try_fundgz_fallback(result: dict, fund_code: str) -> dict:
 
     # 收盘后优先用真实净值
     if _is_market_closed():
+        # v5.22: fundgz路径也从盘中缓存取估值
+        _cached = _intraday_estimation_cache.get(fund_code)
+        _est_raw = (
+            _cached["est"]
+            if _cached and _cached["date"] == today_str and _cached["est"] is not None
+            else gszzl  # fallback: 用当前fundgz估值
+        )
         today_nav = next(
             (h for h in history if h["date"] == today_str and h.get("change") is not None),
             None
@@ -341,6 +413,16 @@ def _try_fundgz_fallback(result: dict, fund_code: str) -> dict:
             result["_source"] = "nav"
             result["_nav_date"] = today_str
             result["notes"].append(f"收盘后使用真实净值 {today_str}")
+            # v5.22: fundgz路径也记录偏差（0%也是有效值）
+            if _est_raw is not None:
+                result["_estimation_change_raw"] = _est_raw
+                record_deviation(fund_code, today_str, _est_raw, today_nav["change"])
+    else:
+        # v5.22: 盘中缓存fundgz估值
+        _intraday_estimation_cache[fund_code] = {
+            "date": today_str,
+            "est": gszzl
+        }
 
     return result
 
@@ -487,15 +569,7 @@ def calculate_valuation(fund_code: str) -> dict:
     #    （尤其含港股持仓时，A股/港股收盘时间不同导致偏差更大）
     #    替换条件：当天已收盘（15:05后、或非交易日）且有真实净值数据
     if _is_market_closed():
-        # v5.21: 收盘后如果内存缓存为空（进程重启），一次性全量加载文件缓存
-        # 必须在任何 record_deviation 之前完成，因为 _save_deviations 是全量覆盖写入，
-        # 逐基金懒加载会导致只恢复部分基金时就触发写入，丢失其他基金的偏差历史
-        if not _intraday_estimation_cache and _INTRADAY_CACHE_FILE.exists():
-            try:
-                with open(_INTRADAY_CACHE_FILE, "r", encoding="utf-8") as f:
-                    _intraday_estimation_cache.update(json.load(f))
-            except Exception:
-                pass
+        # v5.22: intraday_cache 已由 batch 入口的 _ensure_intraday_cache_loaded() 统一加载
         # v5.20: 收盘后优先从盘中缓存取估值（比当前重算的更准确）
         _cached = _intraday_estimation_cache.get(fund_code)
         _est_raw = (
@@ -514,8 +588,8 @@ def calculate_valuation(fund_code: str) -> dict:
             result["_source"] = "nav"
             result["_nav_date"] = today_str
             result["notes"].append(f"使用真实净值涨跌 {today_str}")
-            # v5.20: 记录偏差（仅当盘中有过有效估值时）
-            if _est_raw is not None and _est_raw != 0:
+            # v5.22: 记录偏差（仅当盘中有过有效估值时，0%也是有效值）
+            if _est_raw is not None:
                 result["_estimation_change_raw"] = _est_raw
                 record_deviation(fund_code, today_str, _est_raw, today_nav_entry["change"])
         elif result["recent_changes"]:
@@ -533,20 +607,12 @@ def calculate_valuation(fund_code: str) -> dict:
     else:
         result["_source"] = "estimation"
         # v5.20: 盘中缓存当前估值，供收盘后偏差记录使用
+        # v5.22: 仅写内存缓存，文件持久化由 calculate_valuation_batch 统一完成
         if result["estimation_change"] is not None:
             _intraday_estimation_cache[fund_code] = {
                 "date": today_str,
                 "est": result["estimation_change"]
             }
-            # 同时持久化到文件，方便查看和进程重启恢复
-            try:
-                _ensure_data_dir()
-                tmp = _INTRADAY_CACHE_FILE.with_suffix(".tmp")
-                with open(tmp, "w", encoding="utf-8") as f:
-                    json.dump(_intraday_estimation_cache, f, ensure_ascii=False, indent=2)
-                tmp.replace(_INTRADAY_CACHE_FILE)
-            except Exception:
-                pass
 
     # v5.20: 附带校准后的置信度（供前端和 engine 统一使用）
     result["calibrated_confidence"] = calibrate_confidence(fund_code, result["confidence"])
@@ -604,6 +670,9 @@ def calculate_valuation_batch(fund_codes: List[str]) -> List[dict]:
         except Exception:
             return None
 
+    # v5.22: 在并发计算之前统一加载盘中缓存（进程重启恢复场景）
+    _ensure_intraday_cache_loaded()
+
     # 1. 并发计算估值
     results_map = {}
     week_data = {}
@@ -643,9 +712,26 @@ def calculate_valuation_batch(fund_codes: List[str]) -> List[dict]:
         r["week_change"] = week_data.get(r["fund_code"])
         r["month_change"] = month_data.get(r["fund_code"])
 
+    # v5.22: 所有并发估值计算完成后，一次性将缓冲区偏差写入文件
+    # 避免并发逐只写文件导致 load 到不完整数据覆盖历史
+    flush_deviations()
+
+    # v5.22: 盘中缓存也在并发结束后统一持久化一次（而非每只基金写一次）
+    if _intraday_estimation_cache:
+        try:
+            _ensure_data_dir()
+            tmp = _INTRADAY_CACHE_FILE.with_suffix(".tmp")
+            with open(tmp, "w", encoding="utf-8") as f:
+                json.dump(_intraday_estimation_cache, f, ensure_ascii=False, indent=2)
+            tmp.replace(_INTRADAY_CACHE_FILE)
+        except Exception:
+            pass
+
     return results
 
 def calculate_valuation_by_state() -> dict:
+    # v5.22: 统一加载盘中缓存
+    _ensure_intraday_cache_loaded()
     state = load_state()
     result = {
         "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -664,6 +750,9 @@ def calculate_valuation_by_state() -> dict:
                 val["alias"] = fund.get("alias", "")
                 sector_result["funds"].append(val)
         result["sectors"].append(sector_result)
+
+    # v5.22: 非batch路径也统一flush偏差
+    flush_deviations()
 
     return result
 
