@@ -422,7 +422,7 @@
       ],
       "cooldown_sell_date": "2026-03-19",
       "cooldown_trade_days": 2,
-      "vol_sensitivity": 1.1
+      "vol_sensitivity": 1.0
     },
     "017811__老婆": {
       "fund_name": "",
@@ -588,7 +588,7 @@
       ],
       "cooldown_sell_date": "2026-03-19",
       "cooldown_trade_days": 2,
-      "vol_sensitivity": 0.8
+      "vol_sensitivity": 1.25
     },
     "015395__自选": {
       "fund_name": "",
@@ -610,7 +610,7 @@
       "supplement_count": 0,
       "cooldown_until": null,
       "watch_note": "空仓待建仓",
-      "vol_sensitivity": 1.1
+      "vol_sensitivity": 1.3
     },
     "017560__自选": {
       "fund_name": "",
@@ -644,7 +644,7 @@
       "supplement_count": 1,
       "cooldown_until": null,
       "watch_note": "空仓待建仓",
-      "vol_sensitivity": 0.9
+      "vol_sensitivity": 1.15
     },
     "015566__自选": {
       "fund_name": "",
@@ -653,11 +653,11 @@
       "supplement_count": 0,
       "cooldown_until": null,
       "watch_note": "空仓待建仓",
-      "vol_sensitivity": 1.0
+      "vol_sensitivity": 0.8
     }
   },
   "cash_reserve_ratio": 0.3,
-  "updated_at": "2026-03-23 14:49:58",
+  "updated_at": "2026-03-24 00:54:15",
   "market_regime": "neutral",
   "regime_auto": true,
   "regime_auto_result": "neutral",

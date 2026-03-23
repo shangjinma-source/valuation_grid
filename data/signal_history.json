@@ -667,6 +667,24 @@
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
+    },
+    {
+      "date": "2026-03-24",
+      "time": "01:31:56",
+      "source": "nav",
+      "signal_name": "极端止损(L3)",
+      "action": "sell",
+      "priority": 1,
+      "reason": "极端止损: 浮亏-18.38%, 持仓67天, 清仓100%",
+      "amount": null,
+      "sell_pct": 100,
+      "today_change": -4.1,
+      "total_profit_pct": -13.72,
+      "current_nav": 1.6719,
+      "nav_at_signal": 1.6719,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
     }
   ],
   "022084__老婆": [
@@ -1029,6 +1047,24 @@
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
+    },
+    {
+      "date": "2026-03-24",
+      "time": "01:31:56",
+      "source": "nav",
+      "signal_name": "极端止损(L3)",
+      "action": "sell",
+      "priority": 1,
+      "reason": "极端止损: 浮亏-15.3%, 连跌9天, 持仓67天, 清仓100%",
+      "amount": null,
+      "sell_pct": 100,
+      "today_change": -4.74,
+      "total_profit_pct": -15.3,
+      "current_nav": 1.7799,
+      "nav_at_signal": 1.7799,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
     }
   ],
   "022084__老爸": [
@@ -1388,6 +1424,24 @@
       "total_profit_pct": -11.09,
       "current_nav": 1.8684,
       "nav_at_signal": 1.8684,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    },
+    {
+      "date": "2026-03-24",
+      "time": "01:31:56",
+      "source": "nav",
+      "signal_name": "极端止损(L3)",
+      "action": "sell",
+      "priority": 1,
+      "reason": "极端止损: 浮亏-15.3%, 连跌9天, 持仓67天, 清仓100%",
+      "amount": null,
+      "sell_pct": 100,
+      "today_change": -4.74,
+      "total_profit_pct": -15.3,
+      "current_nav": 1.7799,
+      "nav_at_signal": 1.7799,
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
@@ -2533,6 +2587,24 @@
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
+    },
+    {
+      "date": "2026-03-24",
+      "time": "01:31:56",
+      "source": "nav",
+      "signal_name": "持有等待",
+      "action": "hold",
+      "priority": 8,
+      "reason": "总浮盈-8.39%, 今日-5.12%, 趋势:连跌, 风险系数1.46×, 波动状态:high_vol, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": -5.12,
+      "total_profit_pct": -8.39,
+      "current_nav": 1.725,
+      "nav_at_signal": 1.725,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
     }
   ],
   "017560__自选": [
@@ -2874,6 +2946,24 @@
       "total_profit_pct": -4.55,
       "current_nav": 2.1926,
       "nav_at_signal": 2.1926,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    },
+    {
+      "date": "2026-03-24",
+      "time": "01:31:56",
+      "source": "nav",
+      "signal_name": "持有等待",
+      "action": "hold",
+      "priority": 8,
+      "reason": "总浮盈-8.95%, 今日-4.61%, 趋势:连跌, 风险系数1.33×, 波动状态:high_vol, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": -4.61,
+      "total_profit_pct": -8.95,
+      "current_nav": 2.0915,
+      "nav_at_signal": 2.0915,
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
@@ -3221,6 +3311,24 @@
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
+    },
+    {
+      "date": "2026-03-24",
+      "time": "01:31:56",
+      "source": "nav",
+      "signal_name": "极端止损(L3)",
+      "action": "sell",
+      "priority": 1,
+      "reason": "极端止损: 浮亏-18.41%, 持仓67天, 清仓100%",
+      "amount": null,
+      "sell_pct": 100,
+      "today_change": -4.1,
+      "total_profit_pct": -15.47,
+      "current_nav": 1.6719,
+      "nav_at_signal": 1.6719,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
     }
   ],
   "008701": [
@@ -3293,6 +3401,24 @@
       "amount": 5184.0,
       "sell_pct": null,
       "today_change": 0.21,
+      "total_profit_pct": null,
+      "current_nav": null,
+      "nav_at_signal": null,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    },
+    {
+      "date": "2026-03-24",
+      "time": "01:31:56",
+      "source": "nav",
+      "signal_name": "观望",
+      "action": "hold",
+      "priority": 8,
+      "reason": "今日0.42%, 趋势:连涨, 波动状态:normal_vol, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": 0.42,
       "total_profit_pct": null,
       "current_nav": null,
       "nav_at_signal": null,

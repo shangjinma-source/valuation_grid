@@ -313,13 +313,35 @@ def get_fund_max_history_range(nav_data: List[dict]) -> dict:
 # ============================================================
 
 def bt_analyze_trend(today_change: float, hist_changes: List[float],
-                     nav_list: List[dict] = None) -> dict:
-    """与 strategy._analyze_trend 等价的纯净值版本"""
+                     nav_list: List[dict] = None,
+                     nav_list_60: List[dict] = None,
+                     backtest_date: str = None) -> dict:
+    """
+    与 strategy._analyze_trend 等价的回测版本。
+    nav_list: 20日窗口（降序，最新在前）——对应线上 nav_history (21条)
+    nav_list_60: 60日窗口（降序，最新在前）——对应线上 nav_history_60 (60条)
+    backtest_date: 回测当日日期字符串(YYYY-MM-DD)，用于正确适配 _analyze_trend
+    """
     if STRATEGY_IMPORTED:
-        # 直接用 strategy.py 的实现
+        # _analyze_trend 内部用 datetime.now() 判断 _latest_is_today,
+        # 回测跑历史数据时 now() ≠ 历史日期 → 永远 False → nav0_adj 重复计算。
+        # 修复: 将 nav_list[0]["date"] 临时设为 now() 的日期,
+        # 使 _latest_is_today=True → nav0_adj = navs[0] (不重复乘 today_change)
+        # 因为回测的 nav_list[0] 已经是当日真实净值。
+        _now_str = datetime.now().strftime("%Y-%m-%d")
+        _nav_list = nav_list
+        if nav_list and nav_list[0].get("date"):
+            if nav_list[0]["date"] != _now_str:
+                _nav_list = [dict(nav_list[0], date=_now_str)] + list(nav_list[1:])
+        _nav_list_60 = nav_list_60 or nav_list
+        if _nav_list_60 and _nav_list_60[0].get("date"):
+            if _nav_list_60[0]["date"] != _now_str:
+                _nav_list_60 = [dict(_nav_list_60[0], date=_now_str)] + list(_nav_list_60[1:])
+        # source="nav": 回测用真实净值,不加估值容差(v5.19 _hyst=0)
         return _analyze_trend(today_change, hist_changes,
-                              nav_history=nav_list,
-                              nav_history_60=nav_list)
+                              nav_history=_nav_list,
+                              nav_history_60=_nav_list_60,
+                              source="nav")
     # 内置简化版（结构与 strategy.py 一致）
     all_changes = [today_change] + hist_changes
 
@@ -464,21 +486,32 @@ def bt_vol_adaptive_thresholds(vol: float, sensitivity: float = 1.0) -> dict:
 
 
 def bt_calc_dynamic_thresholds(trend_ctx: dict, sensitivity: float = 1.0) -> dict:
-    """简化版动态阈值（回测不需要信号胜率自适应）
-    v5.18: 支持sensitivity参数传入，与线上_vol_adaptive_thresholds一致
+    """动态阈值计算。
+    STRATEGY_IMPORTED=True 时复用 helpers 的 _calc_risk_multiplier / _calc_momentum_score / _classify_volatility,
+    确保与线上策略行为一致（包括 max_drawdown_60 对 risk_mul 的影响）。
+    回测不使用 win_rate_adj（无信号历史），等价于线上 signal_stats=None。
     """
-    mdd_20 = trend_ctx.get("max_drawdown") or 0.0
-    mdd = mdd_20
-    if mdd <= 5:
-        mdd_term = 0.0
-    elif mdd <= 10:
-        mdd_term = (mdd - 5) * 0.06
+    # --- risk_mul ---
+    if STRATEGY_IMPORTED:
+        risk_mul = _calc_risk_multiplier(trend_ctx)
     else:
-        mdd_term = 0.30 + (mdd - 10) * 0.03
-    risk_mul = max(0.85, min(1.5, 1.0 + mdd_term))
+        mdd_20 = trend_ctx.get("max_drawdown") or 0.0
+        mdd = mdd_20
+        if mdd <= 5:
+            mdd_term = 0.0
+        elif mdd <= 10:
+            mdd_term = (mdd - 5) * 0.06
+        else:
+            mdd_term = 0.30 + (mdd - 10) * 0.03
+        risk_mul = max(0.85, min(1.5, 1.0 + mdd_term))
 
     vol = trend_ctx.get("volatility_robust") or trend_ctx.get("volatility") or 1.0
-    vol_state = "low_vol" if vol < VOL_LOW else "normal_vol" if vol < VOL_NORMAL_HIGH else "high_vol" if vol < VOL_EXTREME else "extreme_vol"
+
+    # --- vol_state ---
+    if STRATEGY_IMPORTED:
+        vol_state = _classify_volatility(vol)
+    else:
+        vol_state = "low_vol" if vol < VOL_LOW else "normal_vol" if vol < VOL_NORMAL_HIGH else "high_vol" if vol < VOL_EXTREME else "extreme_vol"
 
     va = bt_vol_adaptive_thresholds(vol, sensitivity)
 
@@ -499,14 +532,18 @@ def bt_calc_dynamic_thresholds(trend_ctx: dict, sensitivity: float = 1.0) -> dic
     stop_loss_adj = max(-12.0, stop_loss_adj)
     rebuy_step = max(0.8, vol * 0.8) if vol else SUPPLEMENT_REBUY_STEP_PCT
 
-    momentum = 0.0
-    s5 = trend_ctx.get("short_5d")
-    m10 = trend_ctx.get("mid_10d")
-    l20 = trend_ctx.get("long_20d")
-    if s5 is not None:
-        momentum = round(max(-1.0, min(1.0, 0.5 * math.tanh(s5 / 4.0) +
-                                        0.3 * math.tanh((m10 or 0) / 6.0) +
-                                        0.2 * math.tanh((l20 or 0) / 10.0))), 3)
+    # --- momentum ---
+    if STRATEGY_IMPORTED:
+        momentum = _calc_momentum_score(trend_ctx)
+    else:
+        momentum = 0.0
+        s5 = trend_ctx.get("short_5d")
+        m10 = trend_ctx.get("mid_10d")
+        l20 = trend_ctx.get("long_20d")
+        if s5 is not None:
+            momentum = round(max(-1.0, min(1.0, 0.5 * math.tanh(s5 / 4.0) +
+                                            0.3 * math.tanh((m10 or 0) / 6.0) +
+                                            0.2 * math.tanh((l20 or 0) / 10.0))), 3)
 
     return {
         "risk_multiplier": round(risk_mul, 2),
@@ -772,8 +809,9 @@ class BacktestSimulator:
 
             # 趋势分析
             hist_changes = self._get_hist_changes(day_idx)
-            nav_window = self._get_history_window(day_idx, 60)
-            trend_ctx = bt_analyze_trend(today_change, hist_changes, nav_window)
+            nav_window_20 = self._get_history_window(day_idx, 20)
+            nav_window_60 = self._get_history_window(day_idx, 60)
+            trend_ctx = bt_analyze_trend(today_change, hist_changes, nav_window_20, nav_window_60)
             dyn = bt_calc_dynamic_thresholds(trend_ctx, self.sensitivity)
 
             # v5.13: 动态行情模式更新（auto模式逐日切换）
@@ -937,6 +975,12 @@ class BacktestSimulator:
                         momentum_score = max(0, -momentum * 15)
                         fee_drag = -fee_rate * 5
 
+                        # 流动性评分（与线上 helpers._calc_sell_score 一致）
+                        liquidity_score = 0
+                        liquidity_trigger = max(1.5, vol * TAKE_PROFIT_VOL_MULTIPLE)
+                        if today_change >= liquidity_trigger:
+                            liquidity_score = min(15, (today_change - liquidity_trigger) * 5)
+
                         # v5.10 重构P1: 撤销v5.9的hold_time_bonus
                         # v5.9 hold_time_bonus是全部恶化的罪魁祸首:
                         # 止盈卖出-67%, 强势止盈-100%, 利润-172k
@@ -952,7 +996,7 @@ class BacktestSimulator:
                             if oldest_hd_nz < 15:
                                 nz_bonus *= 0.5
 
-                        total_score = profit_score + trail_score + momentum_score + fee_drag + nz_bonus
+                        total_score = profit_score + trail_score + momentum_score + liquidity_score + fee_drag + nz_bonus
 
                         sell_pct = 0
                         signal_name = None
@@ -972,6 +1016,12 @@ class BacktestSimulator:
                         if trend_label in ("连涨", "偏强", "中期走强") and total_score < _tp_suppress:
                             sell_pct = 0
                             signal_name = None
+
+                        # 流动性溢价加成（与线上 helpers._calc_sell_score 一致）
+                        vol_liq = trend_ctx.get("volatility_robust") or trend_ctx.get("volatility") or 1.2
+                        liquidity_trigger_liq = max(1.5, vol_liq * TAKE_PROFIT_VOL_MULTIPLE)
+                        if today_change >= liquidity_trigger_liq and sell_pct > 0 and sell_pct < 100:
+                            sell_pct = min(100, sell_pct + 15)  # LIQUIDITY_PREMIUM_EXTRA_PCT=15
 
                         if sell_pct > 0:
                             # v5.10 重构P0: 扭亏止盈走评分通道，标记信号名称
@@ -1139,7 +1189,12 @@ class BacktestSimulator:
                             forbidden = True
                         mid_10d = trend_ctx.get("mid_10d")
                         consec_down = trend_ctx.get("consecutive_down", 0)
+                        max_drawdown_val = trend_ctx.get("max_drawdown", 0)
+                        vol_forbidden = trend_ctx.get("volatility") or 0
                         if mid_10d is not None and mid_10d <= -10 and consec_down >= 5:  # v5.5: -7/3→-10/5
+                            forbidden = True
+                        # Fix #9: 与线上 _is_supplement_forbidden 一致
+                        if max_drawdown_val >= 15 and vol_forbidden >= 2.5:
                             forbidden = True
 
                         # v5.8 重构P3: 豁免期内趋势恶化冻结补仓（放宽条件: 3/5→4/7）
@@ -1176,21 +1231,76 @@ class BacktestSimulator:
                                 dynamic_gap = min(5, dynamic_gap + 2)
 
                             if gap >= dynamic_gap:
-                                adj_tiers = dyn.get("supplement_tiers", SUPPLEMENT_TIERS)
-                                for tier_count, tier_ratio, tier_trigger, tier_loss_min in adj_tiers:
-                                    if self.supplement_count == tier_count:
-                                        if (total_profit_pct <= tier_loss_min
-                                                and today_change <= tier_trigger):
-                                            risk_budget = self.max_position - total_cost
-                                            supplement_amount = round(risk_budget * tier_ratio * size_mul, 2)
-                                            cap = self.max_position * SUPPLEMENT_CAP_RATIO
-                                            supplement_amount = round(min(supplement_amount, cap, risk_budget, self.cash), 2)
-                                            if supplement_amount >= 10:
-                                                self._buy(day_idx, supplement_amount,
-                                                          f"补仓(第{self.supplement_count+1}次)",
-                                                          f"总浮亏{total_profit_pct}%, 今跌{today_change}%, 补仓{supplement_amount}元",
-                                                          is_supplement=True)
-                                        break
+                                # Fix #8: rebuy_step 净值跌幅阀检查（与线上 _check_supplement_rate_limit 一致）
+                                rebuy_step_val = dyn.get("rebuy_step", SUPPLEMENT_REBUY_STEP_PCT)
+                                rate_blocked_by_nav = False
+                                supp_batches = [b for b in self._holding_batches() if b.get("is_supplement")]
+                                if supp_batches:
+                                    latest_supp = max(supp_batches, key=lambda b: b["buy_idx"])
+                                    last_supp_nav = latest_supp.get("nav", 0)
+                                    if last_supp_nav > 0 and current_nav > 0:
+                                        drop_from_last = (current_nav / last_supp_nav - 1) * 100
+                                        if drop_from_last > -rebuy_step_val:
+                                            rate_blocked_by_nav = True
+
+                                # Fix #7: tier_factor 计算（与线上 _check_supplement_rate_limit 一致）
+                                tier_factor = 1.0
+                                mid_10d_tf = trend_ctx.get("mid_10d")
+                                if (mid_10d_tf is not None and mid_10d_tf < -5) or consec_down >= 4:
+                                    tier_factor *= 0.7
+                                vol_tf = trend_ctx.get("volatility_robust") or trend_ctx.get("volatility") or 1.0
+                                if vol_tf > 2.2:
+                                    tier_factor *= 0.8
+
+                                if not rate_blocked_by_nav:
+                                    adj_tiers = dyn.get("supplement_tiers", SUPPLEMENT_TIERS)
+                                    for tier_count, tier_ratio, tier_trigger, tier_loss_min in adj_tiers:
+                                        if self.supplement_count == tier_count:
+                                            if (total_profit_pct <= tier_loss_min
+                                                    and today_change <= tier_trigger):
+                                                risk_budget = self.max_position - total_cost
+                                                effective_ratio = tier_ratio * tier_factor
+                                                supplement_amount = round(risk_budget * effective_ratio, 2)
+                                                cap = self.max_position * SUPPLEMENT_CAP_RATIO
+                                                supplement_amount = round(min(supplement_amount, cap, risk_budget), 2)
+                                                supplement_amount = round(supplement_amount * size_mul, 2)
+                                                supplement_amount = round(min(supplement_amount, self.cash), 2)
+
+                                                # Fix #6: cost_repair_efficiency 检查（与线上一致）
+                                                if supplement_amount > 500 and total_profit_pct > -5.0:
+                                                    _batches_sorted_eff = sorted(self._holding_batches(), key=lambda b: b["buy_date"])
+                                                    _tc = sum(b["amount"] for b in _batches_sorted_eff)
+                                                    _ts = sum(b["shares"] for b in _batches_sorted_eff)
+                                                    if _ts > 0 and current_nav > 0:
+                                                        _avg_before = _tc / _ts
+                                                        _new_shares = supplement_amount / current_nav
+                                                        _avg_after = (_tc + supplement_amount) / (_ts + _new_shares)
+                                                        _cost_drop = (_avg_before - _avg_after) / _avg_before * 100
+                                                        _efficiency = round(_cost_drop / (supplement_amount / 1000), 4)
+                                                        _min_eff = 0.025 * (5000 / max(1000, self.max_position))
+                                                        if _efficiency < _min_eff:
+                                                            supplement_amount = 0  # 效率过低，跳过
+
+                                                if supplement_amount >= 10:
+                                                    self._buy(day_idx, supplement_amount,
+                                                              f"补仓(第{self.supplement_count+1}次)",
+                                                              f"总浮亏{total_profit_pct}%, 今跌{today_change}%, 补仓{supplement_amount}元",
+                                                              is_supplement=True)
+                                            break
+
+                    # --- 冷却期后加仓（有持仓路径，与线上 engine.py 一致）---
+                    if (not executed_sell
+                            and not in_cooldown
+                            and self.cooldown_sell_idx >= 0
+                            and self._total_cost() < self.max_position * 0.8
+                            and total_profit_pct < -2.0
+                            and today_change <= 0.3
+                            and not forbidden):
+                        remaining = self.max_position - self._total_cost()
+                        rebuy_amount = round(min(remaining * 0.5, self._total_cost() * 0.5) * size_mul, 2)
+                        if rebuy_amount >= 100:
+                            self._buy(day_idx, rebuy_amount, "冷却期后加仓",
+                                      f"冷却期结束, 总浮亏{total_profit_pct}%, 加仓{rebuy_amount}元")
 
             # ========== 空仓逻辑 ==========
             else:
