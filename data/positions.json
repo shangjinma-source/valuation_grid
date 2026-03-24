@@ -614,7 +614,7 @@
     },
     "017560__自选": {
       "fund_name": "",
-      "max_position": 15000,
+      "max_position": 32000,
       "batches": [
         {
           "id": "b20260310a",
@@ -645,19 +645,10 @@
       "cooldown_until": null,
       "watch_note": "空仓待建仓",
       "vol_sensitivity": 1.15
-    },
-    "015566__自选": {
-      "fund_name": "",
-      "max_position": 12000,
-      "batches": [],
-      "supplement_count": 0,
-      "cooldown_until": null,
-      "watch_note": "空仓待建仓",
-      "vol_sensitivity": 0.8
     }
   },
   "cash_reserve_ratio": 0.3,
-  "updated_at": "2026-03-24 00:54:15",
+  "updated_at": "2026-03-24 15:02:20",
   "market_regime": "neutral",
   "regime_auto": true,
   "regime_auto_result": "neutral",

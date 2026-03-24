@@ -494,8 +494,8 @@ def generate_signal(fund_code: str) -> dict:
         )
 
         # === 同日卖出抑制：检测今天是否已执行过卖出操作 ===
-        # 若今天已卖出，抑制所有新的卖出信号（含L2/L3/灾难保护），避免重复建议
-        # fifo_sell_plan 已保证一次性统计全部应卖份额，执行一次即可
+        # 若今天已卖出，抑制新的卖出信号，避免重复建议
+        # （止损信号L2/L3除外——风险优先级高于重复抑制）
         today_str = datetime.now().strftime("%Y-%m-%d")
         _sold_today = (pos.get("cooldown_sell_date") == today_str)
 
@@ -526,19 +526,18 @@ def generate_signal(fund_code: str) -> dict:
                 l3_sell_shares = round(batch["shares"] * l3_sell_pct / 100, 2)
                 sig = _make_signal(
                     fund_code,
-                    signal_name="极端止损(L3)" + ("(今日已操作)" if _sold_today else ""),
-                    action="hold" if _sold_today else "sell",
+                    signal_name="极端止损(L3)",
+                    action="sell",
                     priority=1,
                     target_batch_id=batch["id"],
                     sell_shares=l3_sell_shares,
                     sell_pct=l3_sell_pct,
-                    reason=stop_eval["reason"] + (" (今日已执行卖出，次日再评估)" if _sold_today else ""),
+                    reason=stop_eval["reason"],
                     fee_info={
                         "sell_fee_rate": fee_rate,
                         "estimated_fee": round(l3_sell_shares * current_nav * fee_rate / 100, 2),
                         "estimated_net_profit": round(l3_sell_shares * current_nav * (1 - fee_rate / 100) - batch["amount"] * l3_sell_pct / 100, 2),
                     },
-                    alert=_sold_today,
                 )
                 all_signals.append(sig)
                 if best_signal is None or _is_higher_priority(sig, best_signal):
@@ -549,20 +548,19 @@ def generate_signal(fund_code: str) -> dict:
                 sell_shares = round(batch["shares"] * stop_eval["sell_pct"] / 100, 2)
                 sig = _make_signal(
                     fund_code,
-                    signal_name="常规止损(L2)" + ("(今日已操作)" if _sold_today else ""),
-                    action="hold" if _sold_today else "sell",
+                    signal_name="常规止损(L2)",
+                    action="sell",
                     priority=1,
                     sub_priority=1,
                     target_batch_id=batch["id"],
                     sell_shares=sell_shares,
                     sell_pct=stop_eval["sell_pct"],
-                    reason=stop_eval["reason"] + (" (今日已执行卖出，次日再评估)" if _sold_today else ""),
+                    reason=stop_eval["reason"],
                     fee_info={
                         "sell_fee_rate": fee_rate,
                         "estimated_fee": round(sell_shares * current_nav * fee_rate / 100, 2),
                         "estimated_net_profit": round(sell_shares * current_nav * (1 - fee_rate / 100) - batch["amount"] * stop_eval["sell_pct"] / 100, 2),
                     },
-                    alert=_sold_today,
                 )
                 all_signals.append(sig)
                 if best_signal is None or _is_higher_priority(sig, best_signal):
@@ -599,13 +597,13 @@ def generate_signal(fund_code: str) -> dict:
                     sell_shares = round(batch["shares"] * disaster_sell_pct / 100, 2)
                     sig = _make_signal(
                         fund_code,
-                        signal_name="灾难保护(未满7天)" + ("(今日已操作)" if _sold_today else ""),
-                        action="hold" if _sold_today else "sell",
+                        signal_name="灾难保护(未满7天)",
+                        action="sell",
                         priority=1.2,
                         target_batch_id=batch["id"],
                         sell_shares=sell_shares,
                         sell_pct=disaster_sell_pct,
-                        reason=disaster_reason + (" (今日已执行卖出，次日再评估)" if _sold_today else ""),
+                        reason=disaster_reason,
                         fee_info={"sell_fee_rate": fee_rate},
                         alert=True,
                         alert_msg=f"灾难保护卖出将产生{fee_rate}%高费率",
@@ -624,14 +622,13 @@ def generate_signal(fund_code: str) -> dict:
                     sell_shares_sn = round(batch["shares"] * safety_sell_pct / 100, 2)
                     sig = _make_signal(
                         fund_code,
-                        signal_name="短期深亏止损(安全网)" + ("(今日已操作)" if _sold_today else ""),
-                        action="hold" if _sold_today else "sell",
+                        signal_name="短期深亏止损(安全网)",
+                        action="sell",
                         priority=1.5,
                         target_batch_id=batch["id"],
                         sell_shares=sell_shares_sn,
                         sell_pct=safety_sell_pct,
-                        reason=f"批次{batch['id']}仅{hold_days}天, 亏损{profit_pct}%已超6%, 安全网减仓{safety_sell_pct}%"
-                               + (" (今日已执行卖出，次日再评估)" if _sold_today else ""),
+                        reason=f"批次{batch['id']}仅{hold_days}天, 亏损{profit_pct}%已超6%, 安全网减仓{safety_sell_pct}%",
                         fee_info={"sell_fee_rate": fee_rate},
                         alert=True,
                         alert_msg=f"短期深亏安全网：仅持有{hold_days}天即亏损{profit_pct}%，建议减仓止损",

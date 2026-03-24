@@ -333,6 +333,15 @@ def _try_etf_realtime_fallback(result: dict, fund_code: str) -> dict:
             if _est_raw is not None:
                 result["_estimation_change_raw"] = _est_raw
                 record_deviation(fund_code, today_str, _est_raw, today_nav["change"])
+        # v5.23: 次日补录——缓存日期非今日但NAV历史中有该日净值，补录偏差
+        if _cached and _cached["date"] != today_str and _cached["est"] is not None:
+            _cache_date = _cached["date"]
+            _cache_nav = next(
+                (h for h in history if h["date"] == _cache_date and h.get("change") is not None),
+                None
+            )
+            if _cache_nav:
+                record_deviation(fund_code, _cache_date, _cached["est"], _cache_nav["change"])
         elif result["recent_changes"]:
             latest = result["recent_changes"][0]
             if latest["change"] is not None:
@@ -417,6 +426,15 @@ def _try_fundgz_fallback(result: dict, fund_code: str) -> dict:
             if _est_raw is not None:
                 result["_estimation_change_raw"] = _est_raw
                 record_deviation(fund_code, today_str, _est_raw, today_nav["change"])
+        # v5.23: 次日补录——缓存日期非今日但NAV历史中有该日净值，补录偏差
+        if _cached and _cached["date"] != today_str and _cached["est"] is not None:
+            _cache_date = _cached["date"]
+            _cache_nav = next(
+                (h for h in history if h["date"] == _cache_date and h.get("change") is not None),
+                None
+            )
+            if _cache_nav:
+                record_deviation(fund_code, _cache_date, _cached["est"], _cache_nav["change"])
     else:
         # v5.22: 盘中缓存fundgz估值
         _intraday_estimation_cache[fund_code] = {
@@ -592,7 +610,16 @@ def calculate_valuation(fund_code: str) -> dict:
             if _est_raw is not None:
                 result["_estimation_change_raw"] = _est_raw
                 record_deviation(fund_code, today_str, _est_raw, today_nav_entry["change"])
-        elif result["recent_changes"]:
+        # v5.23: 次日补录——缓存日期非今日但NAV历史中有该日净值，补录偏差
+        if _cached and _cached["date"] != today_str and _cached["est"] is not None:
+            _cache_date = _cached["date"]
+            _cache_nav = next(
+                (h for h in history if h["date"] == _cache_date and h.get("change") is not None),
+                None
+            )
+            if _cache_nav:
+                record_deviation(fund_code, _cache_date, _cached["est"], _cache_nav["change"])
+        if today_nav_entry is None and result["recent_changes"]:
             # 今天的净值尚未公布，退回到最近一个交易日的真实净值
             latest = result["recent_changes"][0]
             if latest["change"] is not None:
@@ -602,7 +629,7 @@ def calculate_valuation(fund_code: str) -> dict:
                 result["notes"].append(f"使用真实净值涨跌 {latest['date']}")
             else:
                 result["_source"] = "estimation"
-        else:
+        elif today_nav_entry is None:
             result["_source"] = "estimation"
     else:
         result["_source"] = "estimation"

@@ -731,7 +731,7 @@ class BacktestSimulator:
         self.total_received += net
         self.realized_pnl += profit
         self.sell_count += 1
-        self.cooldown_until_idx = day_idx + COOLDOWN_DAYS + 1  # 简化：用自然日索引近似
+        self.cooldown_until_idx = day_idx + 2  # 2个交易日冷却期，与线上 COOLDOWN_TRADE_DAYS=2 一致
         self.cooldown_sell_idx = day_idx
         self.last_sell_idx = day_idx
 
@@ -764,11 +764,15 @@ class BacktestSimulator:
         return changes
 
     def _is_in_cooldown(self, day_idx: int) -> bool:
-        """冷却期判断（简化版：用索引间隔近似交易日）"""
+        """冷却期判断 — 与线上 helpers._is_in_cooldown 对齐。
+        线上用 _count_trade_days_between(cooldown_sell_date, today, nav_history)
+        对比 pos["cooldown_trade_days"](默认2)。
+        回测中 nav_data 索引即交易日索引（每条=1个交易日，无周末/节假日），
+        所以索引差 = 交易日差，直接用 gap <= 2 即可精确等价。"""
         if self.cooldown_sell_idx < 0:
             return False
         gap = day_idx - self.cooldown_sell_idx
-        return gap < COOLDOWN_DAYS + 1  # +1 因为是交易日间隔
+        return gap <= 2  # 2个交易日冷却期，与 positions.COOLDOWN_TRADE_DAYS=2 一致
 
     def _auto_detect_regime(self, trend_ctx: dict) -> str:
         """
@@ -1289,6 +1293,8 @@ class BacktestSimulator:
                                             break
 
                     # --- 冷却期后加仓（有持仓路径，与线上 engine.py 一致）---
+                    # engine.py 中此信号每天都会生成（只要条件满足），但用户通常只手动执行一次；
+                    # 回测通过执行后重置 cooldown_sell_idx 来模拟"每轮冷却周期只加仓一次"的实盘行为。
                     if (not executed_sell
                             and not in_cooldown
                             and self.cooldown_sell_idx >= 0
@@ -1301,6 +1307,7 @@ class BacktestSimulator:
                         if rebuy_amount >= 100:
                             self._buy(day_idx, rebuy_amount, "冷却期后加仓",
                                       f"冷却期结束, 总浮亏{total_profit_pct}%, 加仓{rebuy_amount}元")
+                            self.cooldown_sell_idx = -1  # 每轮冷却周期只执行一次，下次卖出时重新设置
 
             # ========== 空仓逻辑 ==========
             else:
@@ -1361,6 +1368,8 @@ class BacktestSimulator:
                                       f"今跌{today_change}%≤{consec_dip_thresh}%, 昨跌{hist_changes[0]}%")
 
                     # 冷却期后建仓
+                    # 线上 engine.py 每次只生成信号，用户手动确认执行一次；
+                    # 回测自动执行，因此买入后需重置 cooldown_sell_idx 防止每日重复触发
                     if (not self._holding_batches()
                             and not in_cooldown
                             and self.cooldown_sell_idx >= 0
@@ -1374,6 +1383,7 @@ class BacktestSimulator:
                             buy_amount = round(self.max_position * 0.50 * size_mul, 2)  # v5.5: 0.3→0.50
                             self._buy(day_idx, buy_amount, "冷却期后建仓",
                                       f"冷却结束, 今{today_change}%")
+                            self.cooldown_sell_idx = -1  # 一次性信号，执行后重置
 
             # 记录每日快照
             pos_val = self._position_value(current_nav)
@@ -2199,7 +2209,7 @@ def main():
 
         # 决定扫描范围
         if SWEEP_ONLY_MODE:
-            SCAN_SECTORS = {'半导体', '机器人', '商业航天', '传媒游戏'}
+            SCAN_SECTORS = {'传媒游戏', '半导体', 'AI应用', '人工智能', '煤炭', '电网设备'}
             scan_codes = [c for c in fund_codes if sector_map.get(c, '') in SCAN_SECTORS]
         else:
             scan_codes = list(fund_codes)
@@ -2232,8 +2242,8 @@ def main():
             processed += 1
 
             nav_data = fetch_nav_history(code)
-            if not nav_data or len(nav_data) < 30:
-                print(f" [{processed}/{total_funds}] ⚠ {fund_name}({code}) 数据不足，跳过")
+            if not nav_data or len(nav_data) < 750:
+                print(f" [{processed}/{total_funds}] ⚠ {fund_name}({code}) 交易天数{len(nav_data) if nav_data else 0}<750，跳过")
                 continue
 
             if not args.all_history:
