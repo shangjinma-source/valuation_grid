@@ -357,7 +357,20 @@
     "017560__老爸": {
       "fund_name": "",
       "max_position": 12000,
-      "batches": [],
+      "batches": [
+        {
+          "id": "b20260325a",
+          "buy_date": "2026-03-25",
+          "amount": 2214.0,
+          "nav": 0.0,
+          "shares": 0.0,
+          "status": "holding",
+          "note": "",
+          "is_supplement": "",
+          "peak_nav": 2.1935,
+          "peak_date": "2026-03-25"
+        }
+      ],
       "supplement_count": 0,
       "cooldown_until": null,
       "watch_note": "空仓待建仓",
@@ -383,7 +396,7 @@
     }
   },
   "cash_reserve_ratio": 0.3,
-  "updated_at": "2026-03-25 14:40:09",
+  "updated_at": "2026-03-25 22:08:12",
   "market_regime": "neutral",
   "regime_auto": true,
   "regime_auto_result": "neutral",
