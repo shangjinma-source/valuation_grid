@@ -1,6 +1,6 @@
 {
   "fund_code": "022084",
-  "fund_name": "华安中证有色金属矿业主题指数发起式C",
+  "fund_name": "华安中证有色金属矿业主题ETF发起式联接C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 90.32,
   "parsed_weight": 50.2,
@@ -57,6 +57,6 @@
       "weight": 2.84
     }
   ],
-  "fetched_at": "2026-02-28 10:42:47",
+  "fetched_at": "2026-03-29 23:10:41",
   "data_source": "eastmoney"
 }

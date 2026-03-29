@@ -3,8 +3,8 @@
   "fund_name": "长盛航天海工混合C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 93.85,
-  "parsed_weight": 34.9,
-  "missing_weight": 58.95,
+  "parsed_weight": 93.76,
+  "missing_weight": 0.09,
   "positions": [
     {
       "stock_code": "300810",
@@ -55,8 +55,198 @@
       "stock_code": "300855",
       "stock_name": "图南股份",
       "weight": 2.92
+    },
+    {
+      "stock_code": "000962",
+      "stock_name": "东方钽业",
+      "weight": 2.82
+    },
+    {
+      "stock_code": "300922",
+      "stock_name": "天秦装备",
+      "weight": 2.76
+    },
+    {
+      "stock_code": "600562",
+      "stock_name": "国睿科技",
+      "weight": 2.74
+    },
+    {
+      "stock_code": "600760",
+      "stock_name": "中航沈飞",
+      "weight": 2.73
+    },
+    {
+      "stock_code": "688231",
+      "stock_name": "隆达股份",
+      "weight": 2.72
+    },
+    {
+      "stock_code": "688510",
+      "stock_name": "航亚科技",
+      "weight": 2.67
+    },
+    {
+      "stock_code": "002246",
+      "stock_name": "北化股份",
+      "weight": 2.66
+    },
+    {
+      "stock_code": "688552",
+      "stock_name": "航天南湖",
+      "weight": 2.64
+    },
+    {
+      "stock_code": "688375",
+      "stock_name": "国博电子",
+      "weight": 2.64
+    },
+    {
+      "stock_code": "688103",
+      "stock_name": "国力电子",
+      "weight": 2.6
+    },
+    {
+      "stock_code": "603267",
+      "stock_name": "鸿远电子",
+      "weight": 2.47
+    },
+    {
+      "stock_code": "688070",
+      "stock_name": "纵横股份",
+      "weight": 2.42
+    },
+    {
+      "stock_code": "688311",
+      "stock_name": "盟升电子",
+      "weight": 2.31
+    },
+    {
+      "stock_code": "688143",
+      "stock_name": "长盈通",
+      "weight": 2.21
+    },
+    {
+      "stock_code": "002414",
+      "stock_name": "高德红外",
+      "weight": 2.15
+    },
+    {
+      "stock_code": "300726",
+      "stock_name": "宏达电子",
+      "weight": 2.14
+    },
+    {
+      "stock_code": "302132",
+      "stock_name": "中航成飞",
+      "weight": 2.07
+    },
+    {
+      "stock_code": "000576",
+      "stock_name": "甘化科工",
+      "weight": 1.97
+    },
+    {
+      "stock_code": "300395",
+      "stock_name": "菲利华",
+      "weight": 1.89
+    },
+    {
+      "stock_code": "603678",
+      "stock_name": "火炬电子",
+      "weight": 1.88
+    },
+    {
+      "stock_code": "688385",
+      "stock_name": "复旦微电",
+      "weight": 1.88
+    },
+    {
+      "stock_code": "688122",
+      "stock_name": "西部超导",
+      "weight": 1.87
+    },
+    {
+      "stock_code": "300593",
+      "stock_name": "新雷能",
+      "weight": 1.74
+    },
+    {
+      "stock_code": "688084",
+      "stock_name": "晶品特装",
+      "weight": 1.48
+    },
+    {
+      "stock_code": "002683",
+      "stock_name": "广东宏大",
+      "weight": 1.08
+    },
+    {
+      "stock_code": "688543",
+      "stock_name": "国科军工",
+      "weight": 0.65
+    },
+    {
+      "stock_code": "688011",
+      "stock_name": "新光光电",
+      "weight": 0.61
+    },
+    {
+      "stock_code": "300589",
+      "stock_name": "江龙船艇",
+      "weight": 0.35
+    },
+    {
+      "stock_code": "300516",
+      "stock_name": "久之洋",
+      "weight": 0.35
+    },
+    {
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
+      "weight": 0.11
+    },
+    {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
+      "weight": 0.09
+    },
+    {
+      "stock_code": "688783",
+      "stock_name": "西安奕材",
+      "weight": 0.08
+    },
+    {
+      "stock_code": "688790",
+      "stock_name": "昂瑞微",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "688765",
+      "stock_name": "禾元生物",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "001280",
+      "stock_name": "中国铀业",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301656",
+      "stock_name": "联合动力",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "688759",
+      "stock_name": "必贝特",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "688729",
+      "stock_name": "屹唐股份",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-28 10:46:18",
+  "fetched_at": "2026-03-29 23:21:39",
   "data_source": "eastmoney"
 }

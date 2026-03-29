@@ -3,8 +3,8 @@
   "fund_name": "银华数字经济股票发起式C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 92.81,
-  "parsed_weight": 61.83,
-  "missing_weight": 30.98,
+  "parsed_weight": 92.85,
+  "missing_weight": 0,
   "positions": [
     {
       "stock_code": "09992",
@@ -55,8 +55,158 @@
       "stock_code": "002558",
       "stock_name": "巨人网络",
       "weight": 3.74
+    },
+    {
+      "stock_code": "002222",
+      "stock_name": "福晶科技",
+      "weight": 3.05
+    },
+    {
+      "stock_code": "02228",
+      "stock_name": "晶泰控股",
+      "weight": 2.82
+    },
+    {
+      "stock_code": "688068",
+      "stock_name": "热景生物",
+      "weight": 2.76
+    },
+    {
+      "stock_code": "688258",
+      "stock_name": "卓易信息",
+      "weight": 2.63
+    },
+    {
+      "stock_code": "301201",
+      "stock_name": "诚达药业",
+      "weight": 1.81
+    },
+    {
+      "stock_code": "688221",
+      "stock_name": "前沿生物",
+      "weight": 1.63
+    },
+    {
+      "stock_code": "301608",
+      "stock_name": "博实结",
+      "weight": 1.53
+    },
+    {
+      "stock_code": "300433",
+      "stock_name": "蓝思科技",
+      "weight": 1.51
+    },
+    {
+      "stock_code": "603319",
+      "stock_name": "美湖股份",
+      "weight": 1.43
+    },
+    {
+      "stock_code": "002008",
+      "stock_name": "大族激光",
+      "weight": 1.2
+    },
+    {
+      "stock_code": "301611",
+      "stock_name": "珂玛科技",
+      "weight": 1.13
+    },
+    {
+      "stock_code": "002851",
+      "stock_name": "麦格米特",
+      "weight": 1.09
+    },
+    {
+      "stock_code": "688676",
+      "stock_name": "金盘科技",
+      "weight": 1.09
+    },
+    {
+      "stock_code": "603341",
+      "stock_name": "龙旗科技",
+      "weight": 1.02
+    },
+    {
+      "stock_code": "300836",
+      "stock_name": "佰奥智能",
+      "weight": 0.93
+    },
+    {
+      "stock_code": "300604",
+      "stock_name": "长川科技",
+      "weight": 0.92
+    },
+    {
+      "stock_code": "688696",
+      "stock_name": "极米科技",
+      "weight": 0.72
+    },
+    {
+      "stock_code": "688448",
+      "stock_name": "磁谷科技",
+      "weight": 0.68
+    },
+    {
+      "stock_code": "688658",
+      "stock_name": "悦康药业",
+      "weight": 0.6
+    },
+    {
+      "stock_code": "000973",
+      "stock_name": "佛塑科技",
+      "weight": 0.53
+    },
+    {
+      "stock_code": "301217",
+      "stock_name": "铜冠铜箔",
+      "weight": 0.52
+    },
+    {
+      "stock_code": "688392",
+      "stock_name": "骄成超声",
+      "weight": 0.49
+    },
+    {
+      "stock_code": "301529",
+      "stock_name": "福赛科技",
+      "weight": 0.36
+    },
+    {
+      "stock_code": "002241",
+      "stock_name": "歌尔股份",
+      "weight": 0.13
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 0.12
+    },
+    {
+      "stock_code": "01810",
+      "stock_name": "小米集团-W",
+      "weight": 0.09
+    },
+    {
+      "stock_code": "688525",
+      "stock_name": "佰维存储",
+      "weight": 0.09
+    },
+    {
+      "stock_code": "688691",
+      "stock_name": "灿芯股份",
+      "weight": 0.08
+    },
+    {
+      "stock_code": "00981",
+      "stock_name": "中芯国际",
+      "weight": 0.05
+    },
+    {
+      "stock_code": "01347",
+      "stock_name": "华虹半导体",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-28 10:46:07",
+  "fetched_at": "2026-03-29 23:15:04",
   "data_source": "eastmoney"
 }

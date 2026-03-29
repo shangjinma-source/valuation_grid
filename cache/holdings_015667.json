@@ -3,8 +3,8 @@
   "fund_name": "银河文体娱乐混合C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 89.3,
-  "parsed_weight": 57.79,
-  "missing_weight": 31.51,
+  "parsed_weight": 89.3,
+  "missing_weight": 0,
   "positions": [
     {
       "stock_code": "301110",
@@ -55,8 +55,123 @@
       "stock_code": "301231",
       "stock_name": "荣信文化",
       "weight": 4.8
+    },
+    {
+      "stock_code": "002558",
+      "stock_name": "巨人网络",
+      "weight": 4.67
+    },
+    {
+      "stock_code": "300170",
+      "stock_name": "汉得信息",
+      "weight": 4.26
+    },
+    {
+      "stock_code": "603171",
+      "stock_name": "税友股份",
+      "weight": 4.14
+    },
+    {
+      "stock_code": "601595",
+      "stock_name": "上海电影",
+      "weight": 4.03
+    },
+    {
+      "stock_code": "300291",
+      "stock_name": "百纳千成",
+      "weight": 3.66
+    },
+    {
+      "stock_code": "603199",
+      "stock_name": "九华旅游",
+      "weight": 2.76
+    },
+    {
+      "stock_code": "300063",
+      "stock_name": "天龙集团",
+      "weight": 1.93
+    },
+    {
+      "stock_code": "300010",
+      "stock_name": "豆神教育",
+      "weight": 1.78
+    },
+    {
+      "stock_code": "688365",
+      "stock_name": "光云科技",
+      "weight": 1.58
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 0.92
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 0.89
+    },
+    {
+      "stock_code": "300476",
+      "stock_name": "胜宏科技",
+      "weight": 0.76
+    },
+    {
+      "stock_code": "301656",
+      "stock_name": "联合动力",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "001280",
+      "stock_name": "中国铀业",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "301563",
+      "stock_name": "云汉芯城",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301584",
+      "stock_name": "建发致新",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301638",
+      "stock_name": "南网数字",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301632",
+      "stock_name": "广东建科",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301491",
+      "stock_name": "汉桑科技",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301667",
+      "stock_name": "纳百川",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301609",
+      "stock_name": "山大电力",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "001221",
+      "stock_name": "悍高集团",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301687",
+      "stock_name": "新广益",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-28 10:46:06",
+  "fetched_at": "2026-03-29 23:14:54",
   "data_source": "eastmoney"
 }

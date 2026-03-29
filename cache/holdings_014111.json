@@ -3,8 +3,8 @@
   "fund_name": "嘉实中证稀有金属主题ETF发起联接C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 99.65,
-  "parsed_weight": 59.35,
-  "missing_weight": 40.3,
+  "parsed_weight": 99.62,
+  "missing_weight": 0.03,
   "positions": [
     {
       "stock_code": "603993",
@@ -57,6 +57,206 @@
       "weight": 2.54
     },
     {
+      "stock_code": "300390",
+      "stock_name": "天华新能",
+      "weight": 2.4
+    },
+    {
+      "stock_code": "600392",
+      "stock_name": "盛和资源",
+      "weight": 2.28
+    },
+    {
+      "stock_code": "002497",
+      "stock_name": "雅化集团",
+      "weight": 2.16
+    },
+    {
+      "stock_code": "000960",
+      "stock_name": "锡业股份",
+      "weight": 2.08
+    },
+    {
+      "stock_code": "000657",
+      "stock_name": "中钨高新",
+      "weight": 1.91
+    },
+    {
+      "stock_code": "002240",
+      "stock_name": "盛新锂能",
+      "weight": 1.91
+    },
+    {
+      "stock_code": "300748",
+      "stock_name": "金力永磁",
+      "weight": 1.77
+    },
+    {
+      "stock_code": "002756",
+      "stock_name": "永兴材料",
+      "weight": 1.55
+    },
+    {
+      "stock_code": "000060",
+      "stock_name": "中金岭南",
+      "weight": 1.38
+    },
+    {
+      "stock_code": "002176",
+      "stock_name": "江特电机",
+      "weight": 1.26
+    },
+    {
+      "stock_code": "002428",
+      "stock_name": "云南锗业",
+      "weight": 1.26
+    },
+    {
+      "stock_code": "002056",
+      "stock_name": "横店东磁",
+      "weight": 1.2
+    },
+    {
+      "stock_code": "002149",
+      "stock_name": "西部材料",
+      "weight": 1.18
+    },
+    {
+      "stock_code": "601958",
+      "stock_name": "金钼股份",
+      "weight": 1.14
+    },
+    {
+      "stock_code": "000155",
+      "stock_name": "川能动力",
+      "weight": 1.14
+    },
+    {
+      "stock_code": "000629",
+      "stock_name": "钒钛股份",
+      "weight": 1.09
+    },
+    {
+      "stock_code": "600259",
+      "stock_name": "中稀有色",
+      "weight": 1.0
+    },
+    {
+      "stock_code": "000970",
+      "stock_name": "中科三环",
+      "weight": 1.0
+    },
+    {
+      "stock_code": "300811",
+      "stock_name": "铂科新材",
+      "weight": 0.94
+    },
+    {
+      "stock_code": "600206",
+      "stock_name": "有研新材",
+      "weight": 0.91
+    },
+    {
+      "stock_code": "600456",
+      "stock_name": "宝钛股份",
+      "weight": 0.86
+    },
+    {
+      "stock_code": "000762",
+      "stock_name": "西藏矿业",
+      "weight": 0.83
+    },
+    {
+      "stock_code": "002192",
+      "stock_name": "融捷股份",
+      "weight": 0.81
+    },
+    {
+      "stock_code": "600366",
+      "stock_name": "宁波韵升",
+      "weight": 0.8
+    },
+    {
+      "stock_code": "000962",
+      "stock_name": "东方钽业",
+      "weight": 0.76
+    },
+    {
+      "stock_code": "600478",
+      "stock_name": "科力远",
+      "weight": 0.69
+    },
+    {
+      "stock_code": "600961",
+      "stock_name": "株冶集团",
+      "weight": 0.65
+    },
+    {
+      "stock_code": "300224",
+      "stock_name": "正海磁材",
+      "weight": 0.65
+    },
+    {
+      "stock_code": "002378",
+      "stock_name": "章源钨业",
+      "weight": 0.64
+    },
+    {
+      "stock_code": "002167",
+      "stock_name": "东方锆业",
+      "weight": 0.58
+    },
+    {
+      "stock_code": "603663",
+      "stock_name": "三祥新材",
+      "weight": 0.57
+    },
+    {
+      "stock_code": "000795",
+      "stock_name": "英洛华",
+      "weight": 0.51
+    },
+    {
+      "stock_code": "002057",
+      "stock_name": "中钢天源",
+      "weight": 0.41
+    },
+    {
+      "stock_code": "002978",
+      "stock_name": "安宁股份",
+      "weight": 0.35
+    },
+    {
+      "stock_code": "688190",
+      "stock_name": "云路股份",
+      "weight": 0.35
+    },
+    {
+      "stock_code": "300066",
+      "stock_name": "三川智慧",
+      "weight": 0.34
+    },
+    {
+      "stock_code": "300127",
+      "stock_name": "银河磁体",
+      "weight": 0.3
+    },
+    {
+      "stock_code": "603072",
+      "stock_name": "天和磁材",
+      "weight": 0.24
+    },
+    {
+      "stock_code": "301141",
+      "stock_name": "中科磁业",
+      "weight": 0.2
+    },
+    {
+      "stock_code": "301622",
+      "stock_name": "英思特",
+      "weight": 0.17
+    },
+    {
       "stock_code": "688795",
       "stock_name": "摩尔线程",
       "weight": 0.12
@@ -67,7 +267,7 @@
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-28 10:46:21",
+  "fetched_at": "2026-03-29 23:22:19",
   "data_source": "eastmoney",
   "original_fund_code": "014111",
   "etf_target": "562800",

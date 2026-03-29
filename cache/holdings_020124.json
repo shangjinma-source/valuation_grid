@@ -3,8 +3,8 @@
   "fund_name": "银华沪深股通精选混合C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 68.84,
-  "parsed_weight": 40.67,
-  "missing_weight": 28.17,
+  "parsed_weight": 68.83,
+  "missing_weight": 0.01,
   "positions": [
     {
       "stock_code": "600030",
@@ -55,8 +55,118 @@
       "stock_code": "300413",
       "stock_name": "芒果超媒",
       "weight": 2.33
+    },
+    {
+      "stock_code": "600547",
+      "stock_name": "山东黄金",
+      "weight": 2.3
+    },
+    {
+      "stock_code": "300674",
+      "stock_name": "宇信科技",
+      "weight": 2.27
+    },
+    {
+      "stock_code": "000617",
+      "stock_name": "中油资本",
+      "weight": 2.25
+    },
+    {
+      "stock_code": "601788",
+      "stock_name": "光大证券",
+      "weight": 2.18
+    },
+    {
+      "stock_code": "300498",
+      "stock_name": "温氏股份",
+      "weight": 1.91
+    },
+    {
+      "stock_code": "002987",
+      "stock_name": "京北方",
+      "weight": 1.82
+    },
+    {
+      "stock_code": "603501",
+      "stock_name": "豪威集团",
+      "weight": 1.63
+    },
+    {
+      "stock_code": "300408",
+      "stock_name": "三环集团",
+      "weight": 1.57
+    },
+    {
+      "stock_code": "601985",
+      "stock_name": "中国核电",
+      "weight": 1.5
+    },
+    {
+      "stock_code": "000538",
+      "stock_name": "云南白药",
+      "weight": 1.44
+    },
+    {
+      "stock_code": "000898",
+      "stock_name": "鞍钢股份",
+      "weight": 1.41
+    },
+    {
+      "stock_code": "601066",
+      "stock_name": "中信建投",
+      "weight": 1.36
+    },
+    {
+      "stock_code": "002926",
+      "stock_name": "华西证券",
+      "weight": 1.27
+    },
+    {
+      "stock_code": "601688",
+      "stock_name": "华泰证券",
+      "weight": 1.04
+    },
+    {
+      "stock_code": "300059",
+      "stock_name": "东方财富",
+      "weight": 0.95
+    },
+    {
+      "stock_code": "600085",
+      "stock_name": "同仁堂",
+      "weight": 0.65
+    },
+    {
+      "stock_code": "300142",
+      "stock_name": "沃森生物",
+      "weight": 0.64
+    },
+    {
+      "stock_code": "601600",
+      "stock_name": "中国铝业",
+      "weight": 0.59
+    },
+    {
+      "stock_code": "600760",
+      "stock_name": "中航沈飞",
+      "weight": 0.55
+    },
+    {
+      "stock_code": "300122",
+      "stock_name": "智飞生物",
+      "weight": 0.46
+    },
+    {
+      "stock_code": "688172",
+      "stock_name": "燕东微",
+      "weight": 0.31
+    },
+    {
+      "stock_code": "002532",
+      "stock_name": "天山铝业",
+      "weight": 0.06
     }
   ],
-  "fetched_at": "2026-02-28 10:43:01",
+  "fetched_at": "2026-03-29 23:10:59",
   "data_source": "eastmoney"
 }

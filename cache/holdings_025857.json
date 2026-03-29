@@ -3,8 +3,8 @@
   "fund_name": "华夏中证电网设备主题ETF发起式联接C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 99.42,
-  "parsed_weight": 53.7,
-  "missing_weight": 45.72,
+  "parsed_weight": 54.24,
+  "missing_weight": 45.18,
   "positions": [
     {
       "stock_code": "600089",
@@ -55,9 +55,14 @@
       "stock_code": "601179",
       "stock_name": "中国西电",
       "weight": 2.37
+    },
+    {
+      "stock_code": "600268",
+      "stock_name": "国电南自",
+      "weight": 0.54
     }
   ],
-  "fetched_at": "2026-02-28 10:46:14",
+  "fetched_at": "2026-03-29 23:19:34",
   "data_source": "eastmoney",
   "original_fund_code": "025857",
   "etf_target": "159326",

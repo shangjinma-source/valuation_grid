@@ -1,10 +1,10 @@
 {
   "fund_code": "016186",
-  "fund_name": "广发中证全指电力ETF发起式联接C",
+  "fund_name": "广发电力ETF联接C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 99.86,
-  "parsed_weight": 51.99,
-  "missing_weight": 47.87,
+  "parsed_weight": 99.89,
+  "missing_weight": 0,
   "positions": [
     {
       "stock_code": "600900",
@@ -55,9 +55,249 @@
       "stock_code": "600674",
       "stock_name": "川投能源",
       "weight": 3.18
+    },
+    {
+      "stock_code": "600023",
+      "stock_name": "浙能电力",
+      "weight": 2.34
+    },
+    {
+      "stock_code": "600027",
+      "stock_name": "华电国际",
+      "weight": 2.3
+    },
+    {
+      "stock_code": "600930",
+      "stock_name": "华电新能",
+      "weight": 2.15
+    },
+    {
+      "stock_code": "600025",
+      "stock_name": "华能水电",
+      "weight": 1.98
+    },
+    {
+      "stock_code": "600642",
+      "stock_name": "申能股份",
+      "weight": 1.79
+    },
+    {
+      "stock_code": "000155",
+      "stock_name": "川能动力",
+      "weight": 1.77
+    },
+    {
+      "stock_code": "600863",
+      "stock_name": "华能蒙电",
+      "weight": 1.71
+    },
+    {
+      "stock_code": "000875",
+      "stock_name": "电投绿能",
+      "weight": 1.68
+    },
+    {
+      "stock_code": "601991",
+      "stock_name": "大唐发电",
+      "weight": 1.52
+    },
+    {
+      "stock_code": "000591",
+      "stock_name": "太阳能",
+      "weight": 1.43
+    },
+    {
+      "stock_code": "600995",
+      "stock_name": "南网储能",
+      "weight": 1.41
+    },
+    {
+      "stock_code": "601016",
+      "stock_name": "节能风电",
+      "weight": 1.34
+    },
+    {
+      "stock_code": "601778",
+      "stock_name": "晶科科技",
+      "weight": 1.25
+    },
+    {
+      "stock_code": "600483",
+      "stock_name": "福能股份",
+      "weight": 1.24
+    },
+    {
+      "stock_code": "600578",
+      "stock_name": "京能电力",
+      "weight": 1.2
+    },
+    {
+      "stock_code": "002015",
+      "stock_name": "协鑫能科",
+      "weight": 1.14
+    },
+    {
+      "stock_code": "000883",
+      "stock_name": "湖北能源",
+      "weight": 1.13
+    },
+    {
+      "stock_code": "000027",
+      "stock_name": "深圳能源",
+      "weight": 1.09
+    },
+    {
+      "stock_code": "000690",
+      "stock_name": "宝新能源",
+      "weight": 1.07
+    },
+    {
+      "stock_code": "000543",
+      "stock_name": "皖能电力",
+      "weight": 1.06
+    },
+    {
+      "stock_code": "600236",
+      "stock_name": "桂冠电力",
+      "weight": 1.01
+    },
+    {
+      "stock_code": "600452",
+      "stock_name": "涪陵电力",
+      "weight": 1.01
+    },
+    {
+      "stock_code": "600821",
+      "stock_name": "金开新能",
+      "weight": 0.96
+    },
+    {
+      "stock_code": "600509",
+      "stock_name": "天富能源",
+      "weight": 0.93
+    },
+    {
+      "stock_code": "601222",
+      "stock_name": "林洋能源",
+      "weight": 0.93
+    },
+    {
+      "stock_code": "001286",
+      "stock_name": "陕西能源",
+      "weight": 0.82
+    },
+    {
+      "stock_code": "600098",
+      "stock_name": "广州发展",
+      "weight": 0.81
+    },
+    {
+      "stock_code": "000537",
+      "stock_name": "绿发电力",
+      "weight": 0.8
+    },
+    {
+      "stock_code": "601619",
+      "stock_name": "嘉泽新能",
+      "weight": 0.76
+    },
+    {
+      "stock_code": "000791",
+      "stock_name": "甘肃能源",
+      "weight": 0.74
+    },
+    {
+      "stock_code": "000600",
+      "stock_name": "建投能源",
+      "weight": 0.72
+    },
+    {
+      "stock_code": "600744",
+      "stock_name": "华银电力",
+      "weight": 0.7
+    },
+    {
+      "stock_code": "000966",
+      "stock_name": "长源电力",
+      "weight": 0.7
+    },
+    {
+      "stock_code": "002608",
+      "stock_name": "江苏国信",
+      "weight": 0.65
+    },
+    {
+      "stock_code": "002039",
+      "stock_name": "黔源电力",
+      "weight": 0.64
+    },
+    {
+      "stock_code": "600032",
+      "stock_name": "浙江新能",
+      "weight": 0.63
+    },
+    {
+      "stock_code": "000767",
+      "stock_name": "晋控电力",
+      "weight": 0.61
+    },
+    {
+      "stock_code": "600292",
+      "stock_name": "电投水电",
+      "weight": 0.6
+    },
+    {
+      "stock_code": "000539",
+      "stock_name": "粤电力A",
+      "weight": 0.46
+    },
+    {
+      "stock_code": "600979",
+      "stock_name": "广安爱众",
+      "weight": 0.46
+    },
+    {
+      "stock_code": "600101",
+      "stock_name": "明星电力",
+      "weight": 0.42
+    },
+    {
+      "stock_code": "001896",
+      "stock_name": "豫能控股",
+      "weight": 0.37
+    },
+    {
+      "stock_code": "000899",
+      "stock_name": "赣能股份",
+      "weight": 0.34
+    },
+    {
+      "stock_code": "600644",
+      "stock_name": "乐山电力",
+      "weight": 0.33
+    },
+    {
+      "stock_code": "600310",
+      "stock_name": "广西能源",
+      "weight": 0.33
+    },
+    {
+      "stock_code": "001258",
+      "stock_name": "立新能源",
+      "weight": 0.31
+    },
+    {
+      "stock_code": "603693",
+      "stock_name": "江苏新能",
+      "weight": 0.25
+    },
+    {
+      "stock_code": "301656",
+      "stock_name": "联合动力",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-28 10:46:21",
+  "fetched_at": "2026-03-29 23:22:33",
   "data_source": "eastmoney",
   "original_fund_code": "016186",
   "etf_target": "159611",

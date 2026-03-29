@@ -3,8 +3,8 @@
   "fund_name": "华泰柏瑞中证稀土产业ETF发起式联接C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 99.57,
-  "parsed_weight": 60.21,
-  "missing_weight": 39.36,
+  "parsed_weight": 61.16,
+  "missing_weight": 38.41,
   "positions": [
     {
       "stock_code": "600111",
@@ -57,6 +57,11 @@
       "weight": 4.25
     },
     {
+      "stock_code": "000795",
+      "stock_name": "英洛华",
+      "weight": 0.95
+    },
+    {
       "stock_code": "688802",
       "stock_name": "沐曦股份",
       "weight": 0.06
@@ -82,7 +87,7 @@
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-28 10:46:20",
+  "fetched_at": "2026-03-29 23:22:14",
   "data_source": "eastmoney",
   "original_fund_code": "014332",
   "etf_target": "516780",

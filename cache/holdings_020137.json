@@ -3,8 +3,8 @@
   "fund_name": "平安医疗健康混合C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 94.07,
-  "parsed_weight": 83.72,
-  "missing_weight": 10.35,
+  "parsed_weight": 94.05,
+  "missing_weight": 0.02,
   "positions": [
     {
       "stock_code": "09926",
@@ -57,11 +57,41 @@
       "weight": 4.87
     },
     {
+      "stock_code": "688382",
+      "stock_name": "益方生物",
+      "weight": 4.18
+    },
+    {
+      "stock_code": "688578",
+      "stock_name": "艾力斯",
+      "weight": 4.09
+    },
+    {
       "stock_code": "02315",
       "stock_name": "百奥赛图-B",
       "weight": 2.91
+    },
+    {
+      "stock_code": "688192",
+      "stock_name": "迪哲医药",
+      "weight": 1.88
+    },
+    {
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
+      "weight": 0.12
+    },
+    {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
+      "weight": 0.04
+    },
+    {
+      "stock_code": "688783",
+      "stock_name": "西安奕材",
+      "weight": 0.02
     }
   ],
-  "fetched_at": "2026-02-28 10:46:14",
+  "fetched_at": "2026-03-29 23:19:46",
   "data_source": "eastmoney"
 }

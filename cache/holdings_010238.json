@@ -3,8 +3,8 @@
   "fund_name": "安信创新先锋混合发起C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 94.8,
-  "parsed_weight": 70.72,
-  "missing_weight": 24.08,
+  "parsed_weight": 94.78,
+  "missing_weight": 0.02,
   "positions": [
     {
       "stock_code": "300502",
@@ -55,8 +55,98 @@
       "stock_code": "300476",
       "stock_name": "胜宏科技",
       "weight": 5.12
+    },
+    {
+      "stock_code": "002916",
+      "stock_name": "深南电路",
+      "weight": 4.84
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 4.28
+    },
+    {
+      "stock_code": "300548",
+      "stock_name": "长芯博创",
+      "weight": 3.33
+    },
+    {
+      "stock_code": "600105",
+      "stock_name": "永鼎股份",
+      "weight": 2.9
+    },
+    {
+      "stock_code": "06166",
+      "stock_name": "剑桥科技",
+      "weight": 2.18
+    },
+    {
+      "stock_code": "603228",
+      "stock_name": "景旺电子",
+      "weight": 1.43
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 1.22
+    },
+    {
+      "stock_code": "688630",
+      "stock_name": "芯碁微装",
+      "weight": 1.07
+    },
+    {
+      "stock_code": "01385",
+      "stock_name": "上海复旦",
+      "weight": 0.67
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 0.63
+    },
+    {
+      "stock_code": "300395",
+      "stock_name": "菲利华",
+      "weight": 0.62
+    },
+    {
+      "stock_code": "301377",
+      "stock_name": "鼎泰高科",
+      "weight": 0.44
+    },
+    {
+      "stock_code": "01729",
+      "stock_name": "汇聚科技",
+      "weight": 0.33
+    },
+    {
+      "stock_code": "00981",
+      "stock_name": "中芯国际",
+      "weight": 0.08
+    },
+    {
+      "stock_code": "301563",
+      "stock_name": "云汉芯城",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301638",
+      "stock_name": "南网数字",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301584",
+      "stock_name": "建发致新",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301656",
+      "stock_name": "联合动力",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-28 10:46:05",
+  "fetched_at": "2026-03-29 23:14:10",
   "data_source": "eastmoney"
 }

@@ -3,8 +3,8 @@
   "fund_name": "广发国证新能源车电池ETF联接C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 99.65,
-  "parsed_weight": 67.26,
-  "missing_weight": 32.39,
+  "parsed_weight": 99.64,
+  "missing_weight": 0.01,
   "positions": [
     {
       "stock_code": "002594",
@@ -55,9 +55,114 @@
       "stock_code": "600549",
       "stock_name": "厦门钨业",
       "weight": 2.77
+    },
+    {
+      "stock_code": "002340",
+      "stock_name": "格林美",
+      "weight": 2.67
+    },
+    {
+      "stock_code": "002407",
+      "stock_name": "多氟多",
+      "weight": 2.37
+    },
+    {
+      "stock_code": "300207",
+      "stock_name": "欣旺达",
+      "weight": 2.35
+    },
+    {
+      "stock_code": "002812",
+      "stock_name": "恩捷股份",
+      "weight": 2.2
+    },
+    {
+      "stock_code": "300390",
+      "stock_name": "天华新能",
+      "weight": 2.09
+    },
+    {
+      "stock_code": "603659",
+      "stock_name": "璞泰来",
+      "weight": 1.88
+    },
+    {
+      "stock_code": "002850",
+      "stock_name": "科达利",
+      "weight": 1.88
+    },
+    {
+      "stock_code": "002130",
+      "stock_name": "沃尔核材",
+      "weight": 1.79
+    },
+    {
+      "stock_code": "301358",
+      "stock_name": "湖南裕能",
+      "weight": 1.71
+    },
+    {
+      "stock_code": "300037",
+      "stock_name": "新宙邦",
+      "weight": 1.67
+    },
+    {
+      "stock_code": "002080",
+      "stock_name": "中材科技",
+      "weight": 1.67
+    },
+    {
+      "stock_code": "600884",
+      "stock_name": "杉杉股份",
+      "weight": 1.54
+    },
+    {
+      "stock_code": "300073",
+      "stock_name": "当升科技",
+      "weight": 1.54
+    },
+    {
+      "stock_code": "300919",
+      "stock_name": "中伟新材",
+      "weight": 1.3
+    },
+    {
+      "stock_code": "300001",
+      "stock_name": "特锐德",
+      "weight": 1.23
+    },
+    {
+      "stock_code": "000009",
+      "stock_name": "中国宝安",
+      "weight": 1.08
+    },
+    {
+      "stock_code": "002056",
+      "stock_name": "横店东磁",
+      "weight": 1.07
+    },
+    {
+      "stock_code": "688778",
+      "stock_name": "厦钨新能",
+      "weight": 0.91
+    },
+    {
+      "stock_code": "688567",
+      "stock_name": "孚能科技",
+      "weight": 0.77
+    },
+    {
+      "stock_code": "920185",
+      "stock_name": "贝特瑞",
+      "weight": 0.65
+    },
+    {
+      "stock_code": "600930",
+      "stock_name": "华电新能",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-28 10:46:09",
+  "fetched_at": "2026-03-29 23:16:26",
   "data_source": "eastmoney",
   "original_fund_code": "013180",
   "etf_target": "159755",

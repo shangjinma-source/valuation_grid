@@ -3,8 +3,8 @@
   "fund_name": "汇添富中证电池主题ETF发起式联接C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 99.24,
-  "parsed_weight": 51.37,
-  "missing_weight": 47.87,
+  "parsed_weight": 53.11,
+  "missing_weight": 46.13,
   "positions": [
     {
       "stock_code": "300750",
@@ -55,9 +55,19 @@
       "stock_code": "300207",
       "stock_name": "欣旺达",
       "weight": 2.6
+    },
+    {
+      "stock_code": "603063",
+      "stock_name": "禾望电气",
+      "weight": 1.02
+    },
+    {
+      "stock_code": "300457",
+      "stock_name": "赢合科技",
+      "weight": 0.72
     }
   ],
-  "fetched_at": "2026-02-28 10:46:08",
+  "fetched_at": "2026-03-29 23:16:04",
   "data_source": "eastmoney",
   "original_fund_code": "012863",
   "etf_target": "159796",

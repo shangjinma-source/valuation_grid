@@ -3,8 +3,8 @@
   "fund_name": "银华中证光伏ETF发起式联接C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 98.78,
-  "parsed_weight": 54.42,
-  "missing_weight": 44.36,
+  "parsed_weight": 98.76,
+  "missing_weight": 0.02,
   "positions": [
     {
       "stock_code": "600089",
@@ -55,9 +55,209 @@
       "stock_code": "300724",
       "stock_name": "捷佳伟创",
       "weight": 2.31
+    },
+    {
+      "stock_code": "300316",
+      "stock_name": "晶盛机电",
+      "weight": 2.09
+    },
+    {
+      "stock_code": "300757",
+      "stock_name": "罗博特科",
+      "weight": 2.03
+    },
+    {
+      "stock_code": "002459",
+      "stock_name": "晶澳科技",
+      "weight": 1.97
+    },
+    {
+      "stock_code": "688223",
+      "stock_name": "晶科能源",
+      "weight": 1.96
+    },
+    {
+      "stock_code": "688472",
+      "stock_name": "阿特斯",
+      "weight": 1.91
+    },
+    {
+      "stock_code": "688599",
+      "stock_name": "天合光能",
+      "weight": 1.88
+    },
+    {
+      "stock_code": "002335",
+      "stock_name": "科华数据",
+      "weight": 1.74
+    },
+    {
+      "stock_code": "600930",
+      "stock_name": "华电新能",
+      "weight": 1.59
+    },
+    {
+      "stock_code": "688303",
+      "stock_name": "大全能源",
+      "weight": 1.5
+    },
+    {
+      "stock_code": "300763",
+      "stock_name": "锦浪科技",
+      "weight": 1.48
+    },
+    {
+      "stock_code": "600732",
+      "stock_name": "爱旭股份",
+      "weight": 1.48
+    },
+    {
+      "stock_code": "002056",
+      "stock_name": "横店东磁",
+      "weight": 1.38
+    },
+    {
+      "stock_code": "002617",
+      "stock_name": "露笑科技",
+      "weight": 1.35
+    },
+    {
+      "stock_code": "603806",
+      "stock_name": "福斯特",
+      "weight": 1.26
+    },
+    {
+      "stock_code": "000875",
+      "stock_name": "电投绿能",
+      "weight": 1.24
+    },
+    {
+      "stock_code": "300118",
+      "stock_name": "东方日升",
+      "weight": 1.16
+    },
+    {
+      "stock_code": "002506",
+      "stock_name": "协鑫集成",
+      "weight": 1.14
+    },
+    {
+      "stock_code": "603185",
+      "stock_name": "弘元绿能",
+      "weight": 1.08
+    },
+    {
+      "stock_code": "601636",
+      "stock_name": "旗滨集团",
+      "weight": 1.06
+    },
+    {
+      "stock_code": "000591",
+      "stock_name": "太阳能",
+      "weight": 1.06
+    },
+    {
+      "stock_code": "300827",
+      "stock_name": "上能电气",
+      "weight": 1.05
+    },
+    {
+      "stock_code": "601865",
+      "stock_name": "福莱特",
+      "weight": 1.03
+    },
+    {
+      "stock_code": "002518",
+      "stock_name": "科士达",
+      "weight": 0.98
+    },
+    {
+      "stock_code": "601778",
+      "stock_name": "晶科科技",
+      "weight": 0.92
+    },
+    {
+      "stock_code": "688390",
+      "stock_name": "固德威",
+      "weight": 0.92
+    },
+    {
+      "stock_code": "601137",
+      "stock_name": "博威合金",
+      "weight": 0.91
+    },
+    {
+      "stock_code": "688503",
+      "stock_name": "聚和材料",
+      "weight": 0.9
+    },
+    {
+      "stock_code": "603688",
+      "stock_name": "石英股份",
+      "weight": 0.86
+    },
+    {
+      "stock_code": "002865",
+      "stock_name": "钧达股份",
+      "weight": 0.76
+    },
+    {
+      "stock_code": "688147",
+      "stock_name": "微导纳米",
+      "weight": 0.75
+    },
+    {
+      "stock_code": "688516",
+      "stock_name": "奥特维",
+      "weight": 0.74
+    },
+    {
+      "stock_code": "300776",
+      "stock_name": "帝尔激光",
+      "weight": 0.74
+    },
+    {
+      "stock_code": "600821",
+      "stock_name": "金开新能",
+      "weight": 0.71
+    },
+    {
+      "stock_code": "601222",
+      "stock_name": "林洋能源",
+      "weight": 0.68
+    },
+    {
+      "stock_code": "688408",
+      "stock_name": "中信博",
+      "weight": 0.48
+    },
+    {
+      "stock_code": "600032",
+      "stock_name": "浙江新能",
+      "weight": 0.46
+    },
+    {
+      "stock_code": "003035",
+      "stock_name": "南网能源",
+      "weight": 0.45
+    },
+    {
+      "stock_code": "688032",
+      "stock_name": "禾迈股份",
+      "weight": 0.43
+    },
+    {
+      "stock_code": "688726",
+      "stock_name": "拉普拉斯",
+      "weight": 0.11
+    },
+    {
+      "stock_code": "301658",
+      "stock_name": "首航新能",
+      "weight": 0.1
     }
   ],
-  "fetched_at": "2026-02-28 10:46:12",
+  "fetched_at": "2026-03-29 23:18:00",
   "data_source": "eastmoney",
   "original_fund_code": "012929",
   "etf_target": "516880",

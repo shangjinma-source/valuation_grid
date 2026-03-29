@@ -3,8 +3,8 @@
   "fund_name": "嘉实中证软件服务ETF联接C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 99.69,
-  "parsed_weight": 60.7,
-  "missing_weight": 38.99,
+  "parsed_weight": 99.65,
+  "missing_weight": 0.04,
   "positions": [
     {
       "stock_code": "002230",
@@ -57,12 +57,112 @@
       "weight": 3.31
     },
     {
+      "stock_code": "600588",
+      "stock_name": "用友网络",
+      "weight": 3.11
+    },
+    {
+      "stock_code": "600536",
+      "stock_name": "中国软件",
+      "weight": 2.97
+    },
+    {
+      "stock_code": "300496",
+      "stock_name": "中科创达",
+      "weight": 2.85
+    },
+    {
+      "stock_code": "688568",
+      "stock_name": "中科星图",
+      "weight": 2.73
+    },
+    {
+      "stock_code": "002405",
+      "stock_name": "四维图新",
+      "weight": 2.44
+    },
+    {
+      "stock_code": "002410",
+      "stock_name": "广联达",
+      "weight": 2.37
+    },
+    {
+      "stock_code": "002065",
+      "stock_name": "东华软件",
+      "weight": 2.34
+    },
+    {
+      "stock_code": "688343",
+      "stock_name": "云天励飞",
+      "weight": 2.19
+    },
+    {
+      "stock_code": "300383",
+      "stock_name": "光环新网",
+      "weight": 2.06
+    },
+    {
+      "stock_code": "600845",
+      "stock_name": "宝信软件",
+      "weight": 2.04
+    },
+    {
+      "stock_code": "688615",
+      "stock_name": "合合信息",
+      "weight": 1.82
+    },
+    {
+      "stock_code": "300253",
+      "stock_name": "卫宁健康",
+      "weight": 1.78
+    },
+    {
+      "stock_code": "688692",
+      "stock_name": "达梦数据",
+      "weight": 1.69
+    },
+    {
+      "stock_code": "603613",
+      "stock_name": "国联股份",
+      "weight": 1.62
+    },
+    {
+      "stock_code": "688088",
+      "stock_name": "虹软科技",
+      "weight": 1.36
+    },
+    {
+      "stock_code": "002439",
+      "stock_name": "启明星辰",
+      "weight": 1.17
+    },
+    {
+      "stock_code": "688318",
+      "stock_name": "财富趋势",
+      "weight": 1.16
+    },
+    {
+      "stock_code": "300682",
+      "stock_name": "朗新科技",
+      "weight": 1.13
+    },
+    {
+      "stock_code": "688561",
+      "stock_name": "奇安信",
+      "weight": 1.11
+    },
+    {
+      "stock_code": "002153",
+      "stock_name": "石基信息",
+      "weight": 1.01
+    },
+    {
       "stock_code": "688795",
       "stock_name": "摩尔线程",
       "weight": 0.07
     }
   ],
-  "fetched_at": "2026-02-28 10:46:08",
+  "fetched_at": "2026-03-29 23:15:32",
   "data_source": "eastmoney",
   "original_fund_code": "012620",
   "etf_target": "159852",

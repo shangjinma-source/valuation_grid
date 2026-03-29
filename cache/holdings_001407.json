@@ -3,8 +3,8 @@
   "fund_name": "景顺长城稳健回报混合C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 90.63,
-  "parsed_weight": 61.89,
-  "missing_weight": 28.74,
+  "parsed_weight": 90.6,
+  "missing_weight": 0.03,
   "positions": [
     {
       "stock_code": "300502",
@@ -55,8 +55,93 @@
       "stock_code": "601689",
       "stock_name": "拓普集团",
       "weight": 2.97
+    },
+    {
+      "stock_code": "600711",
+      "stock_name": "盛屯矿业",
+      "weight": 2.92
+    },
+    {
+      "stock_code": "688195",
+      "stock_name": "腾景科技",
+      "weight": 2.91
+    },
+    {
+      "stock_code": "688210",
+      "stock_name": "统联精密",
+      "weight": 2.67
+    },
+    {
+      "stock_code": "002602",
+      "stock_name": "世纪华通",
+      "weight": 2.58
+    },
+    {
+      "stock_code": "301225",
+      "stock_name": "恒勃股份",
+      "weight": 2.37
+    },
+    {
+      "stock_code": "002240",
+      "stock_name": "盛新锂能",
+      "weight": 1.95
+    },
+    {
+      "stock_code": "002050",
+      "stock_name": "三花智控",
+      "weight": 1.85
+    },
+    {
+      "stock_code": "000973",
+      "stock_name": "佛塑科技",
+      "weight": 1.84
+    },
+    {
+      "stock_code": "603228",
+      "stock_name": "景旺电子",
+      "weight": 1.75
+    },
+    {
+      "stock_code": "688228",
+      "stock_name": "开普云",
+      "weight": 1.72
+    },
+    {
+      "stock_code": "300390",
+      "stock_name": "天华新能",
+      "weight": 1.52
+    },
+    {
+      "stock_code": "301377",
+      "stock_name": "鼎泰高科",
+      "weight": 1.51
+    },
+    {
+      "stock_code": "002851",
+      "stock_name": "麦格米特",
+      "weight": 1.39
+    },
+    {
+      "stock_code": "301529",
+      "stock_name": "福赛科技",
+      "weight": 0.74
+    },
+    {
+      "stock_code": "002126",
+      "stock_name": "银轮股份",
+      "weight": 0.48
+    },
+    {
+      "stock_code": "002290",
+      "stock_name": "禾盛新材",
+      "weight": 0.4
+    },
+    {
+      "stock_code": "601231",
+      "stock_name": "环旭电子",
+      "weight": 0.11
     }
   ],
-  "fetched_at": "2026-02-28 10:46:06",
+  "fetched_at": "2026-03-29 23:14:35",
   "data_source": "eastmoney"
 }

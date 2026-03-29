@@ -3,8 +3,8 @@
   "fund_name": "华夏中证机器人ETF发起式联接C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 99.81,
-  "parsed_weight": 52.71,
-  "missing_weight": 47.1,
+  "parsed_weight": 56.15,
+  "missing_weight": 43.66,
   "positions": [
     {
       "stock_code": "002230",
@@ -55,9 +55,29 @@
       "stock_code": "300024",
       "stock_name": "机器人",
       "weight": 2.69
+    },
+    {
+      "stock_code": "601608",
+      "stock_name": "中信重工",
+      "weight": 1.43
+    },
+    {
+      "stock_code": "000837",
+      "stock_name": "秦川机床",
+      "weight": 0.94
+    },
+    {
+      "stock_code": "300222",
+      "stock_name": "科大智能",
+      "weight": 0.81
+    },
+    {
+      "stock_code": "600560",
+      "stock_name": "金自天正",
+      "weight": 0.26
     }
   ],
-  "fetched_at": "2026-02-28 10:46:11",
+  "fetched_at": "2026-03-29 23:17:38",
   "data_source": "eastmoney",
   "original_fund_code": "018345",
   "etf_target": "562500",

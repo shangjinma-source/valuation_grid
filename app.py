@@ -28,6 +28,8 @@ from positions import (
     confirm_buy_nav,
     auto_fill_nav
 )
+from export_image import export_all_sector_images
+
 from grid import (
     generate_signal, generate_all_signals, get_signal_history,
     get_vol_sensitivity_info, update_vol_sensitivity, clear_vol_sensitivity,
@@ -195,6 +197,21 @@ def post_holdings_refresh():
     """手动触发持仓缓存刷新（刷新所有即将过期的基金）"""
     summary = refresh_stale_holdings()
     return summary
+
+# ============================================================
+# 导出估值图片 API（供 OpenClaw 定时任务调用）
+# ============================================================
+
+@app.get("/v1/export/images")
+def export_images():
+    """批量导出所有板块估值图片（等同于前端"批量导出"按钮）。
+    返回 [{sector, filename, image_base64}, ...]
+    OpenClaw agent 可直接使用 image_base64 发送图片消息。"""
+    results = export_all_sector_images()
+    if not results:
+        return {"images": [], "message": "没有可导出的板块"}
+    return {"images": results, "count": len(results)}
+
 
 # ============================================================
 # 健康检查

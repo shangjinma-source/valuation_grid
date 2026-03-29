@@ -3,8 +3,8 @@
   "fund_name": "兴业上证科创板人工智能指数C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 93.79,
-  "parsed_weight": 63.0,
-  "missing_weight": 30.79,
+  "parsed_weight": 93.78,
+  "missing_weight": 0.01,
   "positions": [
     {
       "stock_code": "688111",
@@ -57,6 +57,106 @@
       "weight": 3.29
     },
     {
+      "stock_code": "688322",
+      "stock_name": "奥比中光",
+      "weight": 3.1
+    },
+    {
+      "stock_code": "688208",
+      "stock_name": "道通科技",
+      "weight": 2.98
+    },
+    {
+      "stock_code": "688018",
+      "stock_name": "乐鑫科技",
+      "weight": 2.94
+    },
+    {
+      "stock_code": "688615",
+      "stock_name": "合合信息",
+      "weight": 2.75
+    },
+    {
+      "stock_code": "688327",
+      "stock_name": "云从科技",
+      "weight": 2.57
+    },
+    {
+      "stock_code": "688088",
+      "stock_name": "虹软科技",
+      "weight": 2.05
+    },
+    {
+      "stock_code": "688158",
+      "stock_name": "优刻得",
+      "weight": 1.77
+    },
+    {
+      "stock_code": "688400",
+      "stock_name": "凌云光",
+      "weight": 1.68
+    },
+    {
+      "stock_code": "688561",
+      "stock_name": "奇安信",
+      "weight": 1.67
+    },
+    {
+      "stock_code": "688031",
+      "stock_name": "星环科技",
+      "weight": 1.58
+    },
+    {
+      "stock_code": "688100",
+      "stock_name": "威胜信息",
+      "weight": 1.0
+    },
+    {
+      "stock_code": "688003",
+      "stock_name": "天准科技",
+      "weight": 0.99
+    },
+    {
+      "stock_code": "688787",
+      "stock_name": "海天瑞声",
+      "weight": 0.84
+    },
+    {
+      "stock_code": "688095",
+      "stock_name": "福昕软件",
+      "weight": 0.84
+    },
+    {
+      "stock_code": "688475",
+      "stock_name": "萤石网络",
+      "weight": 0.82
+    },
+    {
+      "stock_code": "688686",
+      "stock_name": "奥普特",
+      "weight": 0.78
+    },
+    {
+      "stock_code": "688107",
+      "stock_name": "安路科技",
+      "weight": 0.75
+    },
+    {
+      "stock_code": "688225",
+      "stock_name": "亚信安全",
+      "weight": 0.67
+    },
+    {
+      "stock_code": "688232",
+      "stock_name": "新点软件",
+      "weight": 0.55
+    },
+    {
+      "stock_code": "688583",
+      "stock_name": "思看科技",
+      "weight": 0.43
+    },
+    {
       "stock_code": "688066",
       "stock_name": "航天宏图",
       "weight": 0.15
@@ -80,8 +180,18 @@
       "stock_code": "688802",
       "stock_name": "沐曦股份",
       "weight": 0.02
+    },
+    {
+      "stock_code": "688790",
+      "stock_name": "昂瑞微",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "688809",
+      "stock_name": "强一股份",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-28 10:46:13",
+  "fetched_at": "2026-03-29 23:18:59",
   "data_source": "eastmoney"
 }

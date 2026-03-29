@@ -3,8 +3,8 @@
   "fund_name": "国联中证煤炭指数C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 94.06,
-  "parsed_weight": 62.61,
-  "missing_weight": 31.45,
+  "parsed_weight": 94.03,
+  "missing_weight": 0.03,
   "positions": [
     {
       "stock_code": "601088",
@@ -57,11 +57,111 @@
       "weight": 3.53
     },
     {
+      "stock_code": "601918",
+      "stock_name": "新集能源",
+      "weight": 3.3
+    },
+    {
+      "stock_code": "600546",
+      "stock_name": "山煤国际",
+      "weight": 3.21
+    },
+    {
+      "stock_code": "600985",
+      "stock_name": "淮北矿业",
+      "weight": 2.92
+    },
+    {
+      "stock_code": "000937",
+      "stock_name": "冀中能源",
+      "weight": 2.29
+    },
+    {
+      "stock_code": "600925",
+      "stock_name": "苏能股份",
+      "weight": 2.01
+    },
+    {
+      "stock_code": "600123",
+      "stock_name": "兰花科创",
+      "weight": 1.68
+    },
+    {
+      "stock_code": "600395",
+      "stock_name": "盘江股份",
+      "weight": 1.61
+    },
+    {
+      "stock_code": "000552",
+      "stock_name": "甘肃能化",
+      "weight": 1.59
+    },
+    {
+      "stock_code": "600740",
+      "stock_name": "山西焦化",
+      "weight": 1.55
+    },
+    {
+      "stock_code": "601011",
+      "stock_name": "宝泰隆",
+      "weight": 1.46
+    },
+    {
+      "stock_code": "601101",
+      "stock_name": "昊华能源",
+      "weight": 1.32
+    },
+    {
+      "stock_code": "600971",
+      "stock_name": "恒源煤电",
+      "weight": 1.2
+    },
+    {
+      "stock_code": "600997",
+      "stock_name": "开滦股份",
+      "weight": 1.17
+    },
+    {
+      "stock_code": "600508",
+      "stock_name": "上海能源",
+      "weight": 1.09
+    },
+    {
+      "stock_code": "600403",
+      "stock_name": "大有能源",
+      "weight": 1.07
+    },
+    {
+      "stock_code": "601015",
+      "stock_name": "陕西黑猫",
+      "weight": 0.95
+    },
+    {
+      "stock_code": "600726",
+      "stock_name": "华电能源",
+      "weight": 0.86
+    },
+    {
+      "stock_code": "600121",
+      "stock_name": "郑州煤电",
+      "weight": 0.82
+    },
+    {
+      "stock_code": "600758",
+      "stock_name": "辽宁能源",
+      "weight": 0.77
+    },
+    {
+      "stock_code": "600792",
+      "stock_name": "云煤能源",
+      "weight": 0.55
+    },
+    {
       "stock_code": "301638",
       "stock_name": "南网数字",
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-28 10:46:12",
+  "fetched_at": "2026-03-29 23:18:28",
   "data_source": "eastmoney"
 }

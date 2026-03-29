@@ -1,6 +1,6 @@
 {
   "fund_code": "014565",
-  "fund_name": "天弘沪深港创新药50ETF联接C",
+  "fund_name": "天弘创新药精选50ETF联接C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 99.01,
   "parsed_weight": 71.46,
@@ -97,7 +97,7 @@
       "weight": 0.02
     }
   ],
-  "fetched_at": "2026-02-28 10:46:16",
+  "fetched_at": "2026-03-29 23:20:35",
   "data_source": "eastmoney",
   "original_fund_code": "014565",
   "etf_target": "517380",

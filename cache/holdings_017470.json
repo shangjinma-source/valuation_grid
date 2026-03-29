@@ -3,8 +3,8 @@
   "fund_name": "嘉实上证科创板芯片ETF发起联接C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 99.79,
-  "parsed_weight": 58.54,
-  "missing_weight": 41.25,
+  "parsed_weight": 99.77,
+  "missing_weight": 0.02,
   "positions": [
     {
       "stock_code": "688981",
@@ -57,9 +57,204 @@
       "weight": 2.33
     },
     {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 2.21
+    },
+    {
+      "stock_code": "688525",
+      "stock_name": "佰维存储",
+      "weight": 2.15
+    },
+    {
+      "stock_code": "688120",
+      "stock_name": "华海清科",
+      "weight": 2.13
+    },
+    {
+      "stock_code": "688002",
+      "stock_name": "睿创微纳",
+      "weight": 2.13
+    },
+    {
+      "stock_code": "688249",
+      "stock_name": "晶合集成",
+      "weight": 1.9
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 1.84
+    },
+    {
+      "stock_code": "688099",
+      "stock_name": "晶晨股份",
+      "weight": 1.68
+    },
+    {
+      "stock_code": "688313",
+      "stock_name": "仕佳光子",
+      "weight": 1.63
+    },
+    {
+      "stock_code": "688396",
+      "stock_name": "华润微",
+      "weight": 1.61
+    },
+    {
+      "stock_code": "688385",
+      "stock_name": "复旦微电",
+      "weight": 1.59
+    },
+    {
+      "stock_code": "688608",
+      "stock_name": "恒玄科技",
+      "weight": 1.54
+    },
+    {
+      "stock_code": "688213",
+      "stock_name": "思特威",
+      "weight": 1.53
+    },
+    {
+      "stock_code": "688047",
+      "stock_name": "龙芯中科",
+      "weight": 1.52
+    },
+    {
+      "stock_code": "688019",
+      "stock_name": "安集科技",
+      "weight": 1.47
+    },
+    {
+      "stock_code": "688037",
+      "stock_name": "芯源微",
+      "weight": 1.37
+    },
+    {
+      "stock_code": "688220",
+      "stock_name": "翱捷科技",
+      "weight": 1.19
+    },
+    {
+      "stock_code": "688234",
+      "stock_name": "天岳先进",
+      "weight": 1.09
+    },
+    {
+      "stock_code": "688200",
+      "stock_name": "华峰测控",
+      "weight": 1.03
+    },
+    {
+      "stock_code": "688052",
+      "stock_name": "纳芯微",
+      "weight": 1.03
+    },
+    {
+      "stock_code": "688702",
+      "stock_name": "盛科通信",
+      "weight": 1.0
+    },
+    {
+      "stock_code": "688018",
+      "stock_name": "乐鑫科技",
+      "weight": 0.98
+    },
+    {
       "stock_code": "688082",
       "stock_name": "盛美上海",
       "weight": 0.97
+    },
+    {
+      "stock_code": "688536",
+      "stock_name": "思瑞浦",
+      "weight": 0.88
+    },
+    {
+      "stock_code": "688582",
+      "stock_name": "芯动联科",
+      "weight": 0.76
+    },
+    {
+      "stock_code": "688484",
+      "stock_name": "南芯科技",
+      "weight": 0.7
+    },
+    {
+      "stock_code": "688141",
+      "stock_name": "杰华特",
+      "weight": 0.67
+    },
+    {
+      "stock_code": "688728",
+      "stock_name": "格科微",
+      "weight": 0.67
+    },
+    {
+      "stock_code": "688409",
+      "stock_name": "富创精密",
+      "weight": 0.59
+    },
+    {
+      "stock_code": "688279",
+      "stock_name": "峰岹科技",
+      "weight": 0.54
+    },
+    {
+      "stock_code": "688709",
+      "stock_name": "成都华微",
+      "weight": 0.5
+    },
+    {
+      "stock_code": "688172",
+      "stock_name": "燕东微",
+      "weight": 0.47
+    },
+    {
+      "stock_code": "688798",
+      "stock_name": "艾为电子",
+      "weight": 0.41
+    },
+    {
+      "stock_code": "688153",
+      "stock_name": "唯捷创芯",
+      "weight": 0.37
+    },
+    {
+      "stock_code": "688146",
+      "stock_name": "中船特气",
+      "weight": 0.37
+    },
+    {
+      "stock_code": "688332",
+      "stock_name": "中科蓝讯",
+      "weight": 0.36
+    },
+    {
+      "stock_code": "688352",
+      "stock_name": "颀中科技",
+      "weight": 0.34
+    },
+    {
+      "stock_code": "688432",
+      "stock_name": "有研硅",
+      "weight": 0.27
+    },
+    {
+      "stock_code": "688584",
+      "stock_name": "上海合晶",
+      "weight": 0.25
+    },
+    {
+      "stock_code": "688449",
+      "stock_name": "联芸科技",
+      "weight": 0.24
+    },
+    {
+      "stock_code": "688605",
+      "stock_name": "先锋精科",
+      "weight": 0.22
     },
     {
       "stock_code": "688795",
@@ -67,7 +262,7 @@
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-28 10:43:10",
+  "fetched_at": "2026-03-29 23:11:10",
   "data_source": "eastmoney",
   "original_fund_code": "017470",
   "etf_target": "588200",

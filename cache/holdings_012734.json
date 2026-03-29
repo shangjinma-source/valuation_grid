@@ -3,8 +3,8 @@
   "fund_name": "易方达中证人工智能主题ETF联接C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 99.83,
-  "parsed_weight": 57.97,
-  "missing_weight": 41.86,
+  "parsed_weight": 60.41,
+  "missing_weight": 39.42,
   "positions": [
     {
       "stock_code": "300308",
@@ -55,9 +55,19 @@
       "stock_code": "000977",
       "stock_name": "浪潮信息",
       "weight": 2.56
+    },
+    {
+      "stock_code": "300857",
+      "stock_name": "协创数据",
+      "weight": 1.53
+    },
+    {
+      "stock_code": "300458",
+      "stock_name": "全志科技",
+      "weight": 0.91
     }
   ],
-  "fetched_at": "2026-02-28 10:46:13",
+  "fetched_at": "2026-03-29 23:18:45",
   "data_source": "eastmoney",
   "original_fund_code": "012734",
   "etf_target": "159819",

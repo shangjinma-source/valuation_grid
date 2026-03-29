@@ -3,8 +3,8 @@
   "fund_name": "银河创新成长混合C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 93.86,
-  "parsed_weight": 77.12,
-  "missing_weight": 16.74,
+  "parsed_weight": 93.82,
+  "missing_weight": 0.04,
   "positions": [
     {
       "stock_code": "688981",
@@ -55,8 +55,103 @@
       "stock_code": "688691",
       "stock_name": "灿芯股份",
       "weight": 3.8
+    },
+    {
+      "stock_code": "300223",
+      "stock_name": "北京君正",
+      "weight": 2.93
+    },
+    {
+      "stock_code": "688536",
+      "stock_name": "思瑞浦",
+      "weight": 2.26
+    },
+    {
+      "stock_code": "688147",
+      "stock_name": "微导纳米",
+      "weight": 1.91
+    },
+    {
+      "stock_code": "688123",
+      "stock_name": "聚辰股份",
+      "weight": 1.69
+    },
+    {
+      "stock_code": "688037",
+      "stock_name": "芯源微",
+      "weight": 1.58
+    },
+    {
+      "stock_code": "688525",
+      "stock_name": "佰维存储",
+      "weight": 1.38
+    },
+    {
+      "stock_code": "300782",
+      "stock_name": "卓胜微",
+      "weight": 1.15
+    },
+    {
+      "stock_code": "688234",
+      "stock_name": "天岳先进",
+      "weight": 1.07
+    },
+    {
+      "stock_code": "301269",
+      "stock_name": "华大九天",
+      "weight": 0.83
+    },
+    {
+      "stock_code": "688608",
+      "stock_name": "恒玄科技",
+      "weight": 0.56
+    },
+    {
+      "stock_code": "688627",
+      "stock_name": "精智达",
+      "weight": 0.47
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 0.2
+    },
+    {
+      "stock_code": "600703",
+      "stock_name": "三安光电",
+      "weight": 0.2
+    },
+    {
+      "stock_code": "688120",
+      "stock_name": "华海清科",
+      "weight": 0.18
+    },
+    {
+      "stock_code": "002049",
+      "stock_name": "紫光国微",
+      "weight": 0.11
+    },
+    {
+      "stock_code": "603019",
+      "stock_name": "中科曙光",
+      "weight": 0.09
+    },
+    {
+      "stock_code": "603893",
+      "stock_name": "瑞芯微",
+      "weight": 0.06
+    },
+    {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-02-28 10:43:22",
+  "fetched_at": "2026-03-29 23:11:22",
   "data_source": "eastmoney"
 }
