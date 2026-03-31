@@ -3,8 +3,8 @@
   "fund_name": "诺安油气能源",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 17.45,
-  "parsed_weight": 15.99,
-  "missing_weight": 1.46,
+  "parsed_weight": 17.45,
+  "missing_weight": 0,
   "positions": [
     {
       "stock_code": "00916",
@@ -55,8 +55,23 @@
       "stock_code": "00386",
       "stock_name": "中国石油化工股份",
       "weight": 0.72
+    },
+    {
+      "stock_code": "02883",
+      "stock_name": "中海油田服务",
+      "weight": 0.68
+    },
+    {
+      "stock_code": "02208",
+      "stock_name": "金风科技",
+      "weight": 0.47
+    },
+    {
+      "stock_code": "00883",
+      "stock_name": "中国海洋石油",
+      "weight": 0.31
     }
   ],
-  "fetched_at": "2026-03-30 18:14:17",
+  "fetched_at": "2026-03-31 16:16:27",
   "data_source": "eastmoney"
 }

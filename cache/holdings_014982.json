@@ -1,8 +1,22 @@
 {
   "fund_code": "014982",
   "fund_name": "华安标普全球石油指数(LOF)C",
-  "_no_holdings": true,
-  "_reason": "QDII海外投资",
-  "positions": [],
-  "fetched_at": "2026-03-01 02:51:59"
+  "holdings_asof_date": "2025-12-31",
+  "stock_total_weight": 80.63,
+  "parsed_weight": 0.92,
+  "missing_weight": 79.71,
+  "positions": [
+    {
+      "stock_code": "00857",
+      "stock_name": "中国石油股份",
+      "weight": 0.56
+    },
+    {
+      "stock_code": "00386",
+      "stock_name": "中国石油化工股份",
+      "weight": 0.36
+    }
+  ],
+  "fetched_at": "2026-03-31 16:16:27",
+  "data_source": "eastmoney"
 }
