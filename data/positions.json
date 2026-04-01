@@ -17,6 +17,18 @@
           "peak_date": "2026-03-03",
           "original_amount": 4509.44,
           "original_shares": 2145.82
+        },
+        {
+          "id": "b20260331a",
+          "buy_date": "2026-03-31",
+          "amount": 343.27,
+          "nav": 0.0,
+          "shares": 0.0,
+          "status": "holding",
+          "note": "冷却期后加仓",
+          "is_supplement": false,
+          "peak_nav": 1.9657,
+          "peak_date": "2026-04-01"
         }
       ],
       "supplement_count": 0,
@@ -336,15 +348,6 @@
       "watch_note": "空仓待建仓",
       "vol_sensitivity": 1.15
     },
-    "013596__自选": {
-      "fund_name": "",
-      "max_position": 21000,
-      "batches": [],
-      "supplement_count": 0,
-      "cooldown_until": null,
-      "watch_note": "空仓待建仓",
-      "vol_sensitivity": 0.8
-    },
     "010524__自选": {
       "fund_name": "",
       "max_position": 15000,
@@ -379,24 +382,28 @@
     "010524__老爸": {
       "fund_name": "",
       "max_position": 7500,
-      "batches": [],
+      "batches": [
+        {
+          "id": "b20260330a",
+          "buy_date": "2026-03-30",
+          "amount": 2598.75,
+          "nav": 0.0,
+          "shares": 0.0,
+          "status": "holding",
+          "note": "温和回调建仓",
+          "is_supplement": false,
+          "peak_nav": 1.7615,
+          "peak_date": "2026-04-01"
+        }
+      ],
       "supplement_count": 0,
       "cooldown_until": null,
       "watch_note": "空仓待建仓",
       "vol_sensitivity": 1.1
-    },
-    "013596__老爸": {
-      "fund_name": "",
-      "max_position": 10500,
-      "batches": [],
-      "supplement_count": 0,
-      "cooldown_until": null,
-      "watch_note": "空仓待建仓",
-      "vol_sensitivity": 0.8
     }
   },
   "cash_reserve_ratio": 0.3,
-  "updated_at": "2026-03-30 13:38:11",
+  "updated_at": "2026-04-01 15:04:21",
   "market_regime": "neutral",
   "regime_auto": true,
   "regime_auto_result": "neutral",
