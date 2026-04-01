@@ -1317,6 +1317,24 @@
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
+    },
+    {
+      "date": "2026-04-02",
+      "time": "00:22:28",
+      "source": "nav",
+      "signal_name": "持有等待",
+      "action": "hold",
+      "priority": 8,
+      "reason": "总浮盈-4.04%, 今日2.25%, 趋势:偏强, 风险系数1.5×, 波动状态:high_vol, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": 2.25,
+      "total_profit_pct": -4.04,
+      "current_nav": 1.9591,
+      "nav_at_signal": 1.9591,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
     }
   ],
   "022084__老爸": [
@@ -3109,6 +3127,24 @@
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
+    },
+    {
+      "date": "2026-04-02",
+      "time": "00:22:28",
+      "source": "nav",
+      "signal_name": "持有等待",
+      "action": "hold",
+      "priority": 8,
+      "reason": "总浮盈-3.03%, 今日2.13%, 趋势:震荡, 风险系数1.38×, 波动状态:high_vol, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": 2.13,
+      "total_profit_pct": -3.03,
+      "current_nav": 1.826,
+      "nav_at_signal": 1.826,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
     }
   ],
   "017560__自选": [
@@ -3705,6 +3741,24 @@
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
+    },
+    {
+      "date": "2026-04-02",
+      "time": "00:22:28",
+      "source": "nav",
+      "signal_name": "持有等待",
+      "action": "hold",
+      "priority": 8,
+      "reason": "总浮盈-5.8%, 今日3.48%, 趋势:震荡, 风险系数1.32×, 波动状态:high_vol, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": 3.48,
+      "total_profit_pct": -5.8,
+      "current_nav": 2.1638,
+      "nav_at_signal": 2.1638,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
     }
   ],
   "017811__老婆": [
@@ -4298,6 +4352,24 @@
       "total_profit_pct": -4.63,
       "current_nav": 1.7349,
       "nav_at_signal": 1.7349,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    },
+    {
+      "date": "2026-04-02",
+      "time": "00:22:28",
+      "source": "nav",
+      "signal_name": "持有等待",
+      "action": "hold",
+      "priority": 8,
+      "reason": "总浮盈-2.72%, 今日1.99%, 趋势:震荡, 风险系数1.37×, 波动状态:extreme_vol, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": 1.99,
+      "total_profit_pct": -2.72,
+      "current_nav": 1.7695,
+      "nav_at_signal": 1.7695,
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
@@ -4963,6 +5035,24 @@
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
+    },
+    {
+      "date": "2026-04-02",
+      "time": "00:22:28",
+      "source": "nav",
+      "signal_name": "观望",
+      "action": "hold",
+      "priority": 8,
+      "reason": "今日3.16%, 趋势:震荡, 波动状态:high_vol, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": 3.16,
+      "total_profit_pct": null,
+      "current_nav": null,
+      "nav_at_signal": null,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
     }
   ],
   "017560": [
@@ -5201,6 +5291,24 @@
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
+    },
+    {
+      "date": "2026-04-02",
+      "time": "00:22:28",
+      "source": "nav",
+      "signal_name": "持有等待",
+      "action": "hold",
+      "priority": 8,
+      "reason": "总浮盈-1.35%, 今日3.48%, 趋势:震荡, 风险系数1.32×, 波动状态:high_vol, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": 3.48,
+      "total_profit_pct": -1.35,
+      "current_nav": 2.1638,
+      "nav_at_signal": 2.1638,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
     }
   ],
   "010524__老爸": [
@@ -5416,6 +5524,24 @@
       "total_profit_pct": -100.0,
       "current_nav": 1.6877,
       "nav_at_signal": 1.6877,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    },
+    {
+      "date": "2026-04-02",
+      "time": "00:22:28",
+      "source": "nav",
+      "signal_name": "持有等待",
+      "action": "hold",
+      "priority": 8,
+      "reason": "总浮盈1.27%, 今日3.16%, 趋势:震荡, 风险系数1.05×, 波动状态:high_vol, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": 3.16,
+      "total_profit_pct": 1.27,
+      "current_nav": 1.7411,
+      "nav_at_signal": 1.7411,
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
