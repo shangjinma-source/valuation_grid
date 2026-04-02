@@ -351,7 +351,20 @@
     "010524__自选": {
       "fund_name": "",
       "max_position": 15000,
-      "batches": [],
+      "batches": [
+        {
+          "id": "b20260330a",
+          "buy_date": "2026-03-30",
+          "amount": 5197.5,
+          "nav": 1.7192,
+          "shares": 3023.21,
+          "status": "holding",
+          "note": "建仓",
+          "is_supplement": false,
+          "peak_nav": 1.7411,
+          "peak_date": "2026-04-02"
+        }
+      ],
       "supplement_count": 0,
       "cooldown_until": null,
       "watch_note": "空仓待建仓",
@@ -403,7 +416,7 @@
     }
   },
   "cash_reserve_ratio": 0.3,
-  "updated_at": "2026-04-02 00:02:17",
+  "updated_at": "2026-04-02 15:05:10",
   "market_regime": "neutral",
   "regime_auto": true,
   "regime_auto_result": "neutral",
