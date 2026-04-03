@@ -292,31 +292,9 @@
       "cooldown_trade_days": 2,
       "vol_sensitivity": 1.25
     },
-    "015395__自选": {
-      "fund_name": "",
-      "max_position": 18000,
-      "batches": [
-        {
-          "id": "b20260317a",
-          "buy_date": "2026-03-17",
-          "amount": 2180.25,
-          "nav": 1.883,
-          "shares": 1157.86,
-          "status": "holding",
-          "note": "温和回调建仓",
-          "is_supplement": false,
-          "peak_nav": 1.906,
-          "peak_date": "2026-03-19"
-        }
-      ],
-      "supplement_count": 0,
-      "cooldown_until": null,
-      "watch_note": "空仓待建仓",
-      "vol_sensitivity": 1.3
-    },
     "017560__自选": {
       "fund_name": "",
-      "max_position": 24000,
+      "max_position": 33000,
       "batches": [
         {
           "id": "b20260310a",
@@ -350,7 +328,7 @@
     },
     "010524__自选": {
       "fund_name": "",
-      "max_position": 15000,
+      "max_position": 27000,
       "batches": [
         {
           "id": "b20260330a",
@@ -372,7 +350,7 @@
     },
     "017560__老爸": {
       "fund_name": "",
-      "max_position": 12000,
+      "max_position": 11000,
       "batches": [
         {
           "id": "b20260325a",
@@ -394,7 +372,7 @@
     },
     "010524__老爸": {
       "fund_name": "",
-      "max_position": 7500,
+      "max_position": 9000,
       "batches": [
         {
           "id": "b20260330a",
@@ -416,7 +394,7 @@
     }
   },
   "cash_reserve_ratio": 0.3,
-  "updated_at": "2026-04-02 15:05:10",
+  "updated_at": "2026-04-02 23:56:07",
   "market_regime": "neutral",
   "regime_auto": true,
   "regime_auto_result": "neutral",

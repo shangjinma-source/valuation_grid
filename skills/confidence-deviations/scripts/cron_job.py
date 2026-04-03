@@ -15,7 +15,7 @@ from pathlib import Path
 import sys
 
 # 添加项目根目录到 Python path
-PROJECT_ROOT = Path(__file__).parent
+PROJECT_ROOT = Path(r"E:\Git\valuation_grid")
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from valuation.core import calculate_valuation_batch, load_state
