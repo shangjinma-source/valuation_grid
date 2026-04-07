@@ -339,8 +339,8 @@
           "status": "holding",
           "note": "建仓",
           "is_supplement": false,
-          "peak_nav": 1.7411,
-          "peak_date": "2026-04-02"
+          "peak_nav": 1.7572,
+          "peak_date": "2026-04-03"
         }
       ],
       "supplement_count": 0,
@@ -394,7 +394,7 @@
     }
   },
   "cash_reserve_ratio": 0.3,
-  "updated_at": "2026-04-02 23:56:07",
+  "updated_at": "2026-04-03 10:54:26",
   "market_regime": "neutral",
   "regime_auto": true,
   "regime_auto_result": "neutral",
