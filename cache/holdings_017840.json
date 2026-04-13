@@ -3,8 +3,8 @@
   "fund_name": "银华清洁能源产业混合C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 85.39,
-  "parsed_weight": 76.55,
-  "missing_weight": 8.84,
+  "parsed_weight": 85.39,
+  "missing_weight": 0,
   "positions": [
     {
       "stock_code": "002709",
@@ -60,8 +60,28 @@
       "stock_code": "002202",
       "stock_name": "金风科技",
       "weight": 4.05
+    },
+    {
+      "stock_code": "688411",
+      "stock_name": "海博思创",
+      "weight": 3.04
+    },
+    {
+      "stock_code": "002922",
+      "stock_name": "伊戈尔",
+      "weight": 2.18
+    },
+    {
+      "stock_code": "603659",
+      "stock_name": "璞泰来",
+      "weight": 2.14
+    },
+    {
+      "stock_code": "002150",
+      "stock_name": "正泰电源",
+      "weight": 1.48
     }
   ],
-  "fetched_at": "2026-03-16 23:59:02",
+  "fetched_at": "2026-04-13 01:09:33",
   "data_source": "eastmoney"
 }

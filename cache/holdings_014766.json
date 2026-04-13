@@ -3,8 +3,8 @@
   "fund_name": "中欧碳中和混合发起C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 91.11,
-  "parsed_weight": 53.95,
-  "missing_weight": 37.16,
+  "parsed_weight": 91.06,
+  "missing_weight": 0.05,
   "positions": [
     {
       "stock_code": "300274",
@@ -55,8 +55,143 @@
       "stock_code": "002407",
       "stock_name": "多氟多",
       "weight": 3.52
+    },
+    {
+      "stock_code": "002850",
+      "stock_name": "科达利",
+      "weight": 3.28
+    },
+    {
+      "stock_code": "002466",
+      "stock_name": "天齐锂业",
+      "weight": 3.07
+    },
+    {
+      "stock_code": "605117",
+      "stock_name": "德业股份",
+      "weight": 2.99
+    },
+    {
+      "stock_code": "001301",
+      "stock_name": "尚太科技",
+      "weight": 2.97
+    },
+    {
+      "stock_code": "601689",
+      "stock_name": "拓普集团",
+      "weight": 2.67
+    },
+    {
+      "stock_code": "688275",
+      "stock_name": "万润新能",
+      "weight": 2.61
+    },
+    {
+      "stock_code": "603179",
+      "stock_name": "新泉股份",
+      "weight": 2.56
+    },
+    {
+      "stock_code": "000688",
+      "stock_name": "国城矿业",
+      "weight": 2.31
+    },
+    {
+      "stock_code": "002050",
+      "stock_name": "三花智控",
+      "weight": 2.3
+    },
+    {
+      "stock_code": "300014",
+      "stock_name": "亿纬锂能",
+      "weight": 2.28
+    },
+    {
+      "stock_code": "002812",
+      "stock_name": "恩捷股份",
+      "weight": 1.96
+    },
+    {
+      "stock_code": "002738",
+      "stock_name": "中矿资源",
+      "weight": 1.96
+    },
+    {
+      "stock_code": "002487",
+      "stock_name": "大金重工",
+      "weight": 1.8
+    },
+    {
+      "stock_code": "688472",
+      "stock_name": "阿特斯",
+      "weight": 1.55
+    },
+    {
+      "stock_code": "001203",
+      "stock_name": "大中矿业",
+      "weight": 1.06
+    },
+    {
+      "stock_code": "301358",
+      "stock_name": "湖南裕能",
+      "weight": 0.9
+    },
+    {
+      "stock_code": "688411",
+      "stock_name": "海博思创",
+      "weight": 0.35
+    },
+    {
+      "stock_code": "002594",
+      "stock_name": "比亚迪",
+      "weight": 0.2
+    },
+    {
+      "stock_code": "01810",
+      "stock_name": "小米集团-W",
+      "weight": 0.12
+    },
+    {
+      "stock_code": "000888",
+      "stock_name": "峨眉山A",
+      "weight": 0.07
+    },
+    {
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
+      "weight": 0.03
+    },
+    {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "688783",
+      "stock_name": "西安奕材",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "688765",
+      "stock_name": "禾元生物",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "001280",
+      "stock_name": "中国铀业",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301656",
+      "stock_name": "联合动力",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "688729",
+      "stock_name": "屹唐股份",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-03-16 23:58:48",
+  "fetched_at": "2026-04-13 01:09:28",
   "data_source": "eastmoney"
 }

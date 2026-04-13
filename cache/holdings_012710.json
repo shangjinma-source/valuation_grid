@@ -3,8 +3,8 @@
   "fund_name": "华夏核心成长混合C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 92.86,
-  "parsed_weight": 80.03,
-  "missing_weight": 12.83,
+  "parsed_weight": 92.85,
+  "missing_weight": 0.01,
   "positions": [
     {
       "stock_code": "300390",
@@ -55,8 +55,23 @@
       "stock_code": "01772",
       "stock_name": "赣锋锂业",
       "weight": 5.57
+    },
+    {
+      "stock_code": "600773",
+      "stock_name": "西藏城投",
+      "weight": 4.83
+    },
+    {
+      "stock_code": "000762",
+      "stock_name": "西藏矿业",
+      "weight": 4.15
+    },
+    {
+      "stock_code": "002466",
+      "stock_name": "天齐锂业",
+      "weight": 3.84
     }
   ],
-  "fetched_at": "2026-03-16 23:44:12",
+  "fetched_at": "2026-04-13 01:09:16",
   "data_source": "eastmoney"
 }

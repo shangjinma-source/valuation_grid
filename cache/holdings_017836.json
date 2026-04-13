@@ -3,8 +3,8 @@
   "fund_name": "信澳匠心回报混合C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 89.95,
-  "parsed_weight": 74.68,
-  "missing_weight": 15.27,
+  "parsed_weight": 89.96,
+  "missing_weight": 0,
   "positions": [
     {
       "stock_code": "600160",
@@ -52,6 +52,21 @@
       "weight": 3.5
     },
     {
+      "stock_code": "300037",
+      "stock_name": "新宙邦",
+      "weight": 2.47
+    },
+    {
+      "stock_code": "002637",
+      "stock_name": "赞宇科技",
+      "weight": 2.3
+    },
+    {
+      "stock_code": "002340",
+      "stock_name": "格林美",
+      "weight": 2.0
+    },
+    {
       "stock_code": "600547",
       "stock_name": "山东黄金",
       "weight": 1.51
@@ -60,8 +75,143 @@
       "stock_code": "01787",
       "stock_name": "山东黄金",
       "weight": 1.49
+    },
+    {
+      "stock_code": "600230",
+      "stock_name": "沧州大化",
+      "weight": 1.1
+    },
+    {
+      "stock_code": "000803",
+      "stock_name": "山高环能",
+      "weight": 0.6
+    },
+    {
+      "stock_code": "000807",
+      "stock_name": "云铝股份",
+      "weight": 0.51
+    },
+    {
+      "stock_code": "002246",
+      "stock_name": "北化股份",
+      "weight": 0.51
+    },
+    {
+      "stock_code": "002648",
+      "stock_name": "卫星化学",
+      "weight": 0.5
+    },
+    {
+      "stock_code": "000408",
+      "stock_name": "藏格矿业",
+      "weight": 0.5
+    },
+    {
+      "stock_code": "600489",
+      "stock_name": "中金黄金",
+      "weight": 0.5
+    },
+    {
+      "stock_code": "601899",
+      "stock_name": "紫金矿业",
+      "weight": 0.5
+    },
+    {
+      "stock_code": "02099",
+      "stock_name": "中国黄金国际",
+      "weight": 0.5
+    },
+    {
+      "stock_code": "01208",
+      "stock_name": "五矿资源",
+      "weight": 0.49
+    },
+    {
+      "stock_code": "02259",
+      "stock_name": "紫金黄金国际",
+      "weight": 0.4
+    },
+    {
+      "stock_code": "000975",
+      "stock_name": "山金国际",
+      "weight": 0.39
+    },
+    {
+      "stock_code": "605077",
+      "stock_name": "华康股份",
+      "weight": 0.3
+    },
+    {
+      "stock_code": "600409",
+      "stock_name": "三友化工",
+      "weight": 0.3
+    },
+    {
+      "stock_code": "002092",
+      "stock_name": "中泰化学",
+      "weight": 0.3
+    },
+    {
+      "stock_code": "600075",
+      "stock_name": "新疆天业",
+      "weight": 0.3
+    },
+    {
+      "stock_code": "03993",
+      "stock_name": "洛阳钼业",
+      "weight": 0.29
+    },
+    {
+      "stock_code": "600988",
+      "stock_name": "赤峰黄金",
+      "weight": 0.2
+    },
+    {
+      "stock_code": "00358",
+      "stock_name": "江西铜业股份",
+      "weight": 0.15
+    },
+    {
+      "stock_code": "000565",
+      "stock_name": "渝三峡A",
+      "weight": 0.1
+    },
+    {
+      "stock_code": "600346",
+      "stock_name": "恒力石化",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "002493",
+      "stock_name": "荣盛石化",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "600426",
+      "stock_name": "华鲁恒升",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "000301",
+      "stock_name": "东方盛虹",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "000703",
+      "stock_name": "恒逸石化",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "603225",
+      "stock_name": "新凤鸣",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "000830",
+      "stock_name": "鲁西化工",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-03-12 01:40:10",
+  "fetched_at": "2026-04-13 01:09:09",
   "data_source": "eastmoney"
 }

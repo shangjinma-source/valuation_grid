@@ -3,8 +3,8 @@
   "fund_name": "信澳优势行业混合A",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 91.68,
-  "parsed_weight": 71.69,
-  "missing_weight": 19.99,
+  "parsed_weight": 91.65,
+  "missing_weight": 0.03,
   "positions": [
     {
       "stock_code": "300308",
@@ -55,8 +55,88 @@
       "stock_code": "688668",
       "stock_name": "鼎通科技",
       "weight": 4.14
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 3.9
+    },
+    {
+      "stock_code": "600183",
+      "stock_name": "生益科技",
+      "weight": 3.58
+    },
+    {
+      "stock_code": "300136",
+      "stock_name": "信维通信",
+      "weight": 2.64
+    },
+    {
+      "stock_code": "003031",
+      "stock_name": "中瓷电子",
+      "weight": 2.04
+    },
+    {
+      "stock_code": "301382",
+      "stock_name": "蜂助手",
+      "weight": 2.0
+    },
+    {
+      "stock_code": "301018",
+      "stock_name": "申菱环境",
+      "weight": 1.94
+    },
+    {
+      "stock_code": "601231",
+      "stock_name": "环旭电子",
+      "weight": 1.02
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 1.02
+    },
+    {
+      "stock_code": "688313",
+      "stock_name": "仕佳光子",
+      "weight": 1.0
+    },
+    {
+      "stock_code": "002970",
+      "stock_name": "锐明技术",
+      "weight": 0.35
+    },
+    {
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
+      "weight": 0.26
+    },
+    {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
+      "weight": 0.13
+    },
+    {
+      "stock_code": "688790",
+      "stock_name": "昂瑞微",
+      "weight": 0.04
+    },
+    {
+      "stock_code": "001280",
+      "stock_name": "中国铀业",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "688809",
+      "stock_name": "强一股份",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "001396",
+      "stock_name": "誉帆科技",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-03-16 23:24:43",
+  "fetched_at": "2026-04-13 01:08:35",
   "data_source": "eastmoney"
 }

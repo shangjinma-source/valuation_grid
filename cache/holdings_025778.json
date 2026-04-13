@@ -3,8 +3,8 @@
   "fund_name": "东方阿尔法瑞享混合发起C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 79.01,
-  "parsed_weight": 72.05,
-  "missing_weight": 6.96,
+  "parsed_weight": 79.01,
+  "missing_weight": 0.0,
   "positions": [
     {
       "stock_code": "001203",
@@ -55,8 +55,33 @@
       "stock_code": "002192",
       "stock_name": "融捷股份",
       "weight": 4.02
+    },
+    {
+      "stock_code": "002460",
+      "stock_name": "赣锋锂业",
+      "weight": 3.27
+    },
+    {
+      "stock_code": "002466",
+      "stock_name": "天齐锂业",
+      "weight": 3.13
+    },
+    {
+      "stock_code": "000792",
+      "stock_name": "盐湖股份",
+      "weight": 0.45
+    },
+    {
+      "stock_code": "000762",
+      "stock_name": "西藏矿业",
+      "weight": 0.08
+    },
+    {
+      "stock_code": "002176",
+      "stock_name": "江特电机",
+      "weight": 0.03
     }
   ],
-  "fetched_at": "2026-03-16 23:44:12",
+  "fetched_at": "2026-04-13 01:09:14",
   "data_source": "eastmoney"
 }

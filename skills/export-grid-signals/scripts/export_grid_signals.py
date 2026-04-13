@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 Export Grid Signals Skill (Text Only)
 
@@ -13,6 +14,7 @@ Returns:
     {"success": bool, "count": int, "signals": [{"owner": str, "fund_code": str, "action": str, "amount/shares": float, "reason": str}]}
 """
 
+import sys
 import urllib.request
 import urllib.error
 import json
@@ -21,6 +23,10 @@ import subprocess
 import time
 import os
 from datetime import datetime
+
+# Fix Windows console encoding - force UTF-8 output
+if sys.platform == 'win32':
+    sys.stdout.reconfigure(encoding='utf-8')
 
 
 API_URL = "http://localhost:8000/v1/strategy/signals"
@@ -139,26 +145,60 @@ def get_fund_holding(fund_code_full, positions_data):
     return total_value, total_profit
 
 
-def format_text_message(signals):
+def load_state_data():
+    """Load state data from local file to get sector mapping."""
+    state_file = r"E:\Git\valuation_grid\data\state.json"
+    try:
+        with open(state_file, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        return {"sectors": []}
+
+
+def build_code_to_sector_mapping(state_data):
+    """Build a mapping from fund code to sector name."""
+    code_to_sector = {}
+    sectors = state_data.get("sectors", [])
+    
+    for sector in sectors:
+        sector_name = sector.get("name", "")
+        for fund in sector.get("funds", []):
+            code = fund.get("code", "")
+            if code:
+                code_to_sector[code] = sector_name
+    
+    return code_to_sector
+
+
+def format_messages_by_owner(signals):
     """
-    Format signal data into text message.
+    Format signal data into separate messages by owner.
+    Returns dict: {owner: message_text}
     
     Args:
         signals: List of signal dicts
     
     Returns:
-        str: Formatted text message
+        dict: {owner: str, message: str, count: int}
     """
     if not signals:
-        return "今日暂无网格信号"
+        return {"default": {"owner": "default", "message": "今日暂无网格信号", "count": 0}}
     
     time_str = datetime.now().strftime("%m-%d %H:%M")
-    lines = []
     
-    # Group by owner
+    # Load state data to get fund names
+    state_data = load_state_data()
+    code_to_name = {}
+    for sector in state_data.get("sectors", []):
+        for fund in sector.get("funds", []):
+            code = fund.get("code", "")
+            alias = fund.get("alias", "")
+            if code:
+                code_to_name[code] = alias
+    
+    # Group by owner (from fund_code format: "017193__老婆")
     by_owner = {}
     for sig in signals:
-        # Parse owner from fund_code (format: "017193__老婆")
         fund_code_full = sig.get("fund_code", "")
         if "__" in fund_code_full:
             owner = fund_code_full.split("__")[1]
@@ -169,18 +209,26 @@ def format_text_message(signals):
             by_owner[owner] = []
         by_owner[owner].append(sig)
     
+    # Format each owner's message
+    messages = {}
     for owner, owner_signals in by_owner.items():
+        lines = []
         lines.append(f"📋 {owner} · 网格信号 {time_str}")
         lines.append("-" * 40)
         
         for sig in owner_signals:
-            fund_code = sig.get("fund_code", "").split("__")[0]
+            fund_code_full = sig.get("fund_code", "")
+            fund_code = fund_code_full.split("__")[0] if "__" in fund_code_full else fund_code_full
+            fund_name = code_to_name.get(fund_code, "")
             action = sig.get("action", "hold")
+            
+            # Display format: "022084 华安中证有色金属矿业主题指数 C"
+            display_text = f"{fund_code} {fund_name}" if fund_name else fund_code
             
             if action == "buy":
                 amount = sig.get("amount", 0) or 0
                 reason = sig.get("reason", "")
-                lines.append(f"  [买入] {fund_code}")
+                lines.append(f"  [买入] {display_text}")
                 lines.append(f"     建议：买入 {amount:.2f} 元")
                 if reason:
                     lines.append(f"     原因：{reason}")
@@ -190,7 +238,7 @@ def format_text_message(signals):
                 sell_pct = sig.get("sell_pct", 0) or 0
                 target_batch = sig.get("target_batch_id", "")
                 reason = sig.get("reason", "")
-                lines.append(f"  [卖出] {fund_code}")
+                lines.append(f"  [卖出] {display_text}")
                 lines.append(f"     建议：卖出 {sell_shares} 份 (该批次{sell_pct}%)")
                 if target_batch:
                     lines.append(f"     批次：{target_batch}")
@@ -198,28 +246,32 @@ def format_text_message(signals):
                     lines.append(f"     原因：{reason}")
             
             else:  # hold
-                lines.append(f"  [持有] {fund_code}")
+                lines.append(f"  [持有] {display_text}")
                 lines.append(f"     建议：持有等待")
             
             lines.append("")
         
-        lines.append("")
+        messages[owner] = {
+            "owner": owner,
+            "message": "\n".join(lines),
+            "count": len(owner_signals)
+        }
     
-    return "\n".join(lines)
+    return messages
 
 
 def export_grid_signals(skip_time_check=False, auto_start_backend=True):
     """
     Main export function.
     
-    Fetches grid signals from backend, returns text summary.
+    Fetches grid signals from backend, returns messages by owner.
     
     Args:
         skip_time_check: If True, skip time window validation (for testing)
         auto_start_backend: If True, automatically start backend if not running
     
     Returns:
-        dict: {"success": bool, "count": int, "signals": [...], "message": str}
+        dict: {"success": bool, "count": int, "signals": [...], "messages": {owner: {owner, message, count}}}
     """
     # Ensure backend is running
     if auto_start_backend:
@@ -242,17 +294,17 @@ def export_grid_signals(skip_time_check=False, auto_start_backend=True):
             "success": True,
             "count": 0,
             "signals": [],
-            "message": "今日暂无网格信号"
+            "messages": {"default": {"owner": "default", "message": "今日暂无网格信号", "count": 0}}
         }
     
-    # Format text message
-    message = format_text_message(signals)
+    # Format messages by owner
+    messages = format_messages_by_owner(signals)
     
     return {
         "success": True,
         "count": len(signals),
         "signals": signals,
-        "message": message
+        "messages": messages
     }
 
 

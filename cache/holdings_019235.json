@@ -3,8 +3,8 @@
   "fund_name": "华富策略精选混合C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 77.39,
-  "parsed_weight": 61.01,
-  "missing_weight": 16.38,
+  "parsed_weight": 77.38,
+  "missing_weight": 0.01,
   "positions": [
     {
       "stock_code": "002738",
@@ -55,8 +55,38 @@
       "stock_code": "600711",
       "stock_name": "盛屯矿业",
       "weight": 3.88
+    },
+    {
+      "stock_code": "300390",
+      "stock_name": "天华新能",
+      "weight": 3.82
+    },
+    {
+      "stock_code": "000688",
+      "stock_name": "国城矿业",
+      "weight": 3.58
+    },
+    {
+      "stock_code": "000762",
+      "stock_name": "西藏矿业",
+      "weight": 3.03
+    },
+    {
+      "stock_code": "603799",
+      "stock_name": "华友钴业",
+      "weight": 2.76
+    },
+    {
+      "stock_code": "000155",
+      "stock_name": "川能动力",
+      "weight": 1.66
+    },
+    {
+      "stock_code": "000036",
+      "stock_name": "华联控股",
+      "weight": 1.52
     }
   ],
-  "fetched_at": "2026-03-16 23:44:28",
+  "fetched_at": "2026-04-13 01:09:21",
   "data_source": "eastmoney"
 }

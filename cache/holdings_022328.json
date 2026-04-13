@@ -3,8 +3,8 @@
   "fund_name": "宏利高端装备股票C",
   "holdings_asof_date": "2025-12-31",
   "stock_total_weight": 81.24,
-  "parsed_weight": 50.24,
-  "missing_weight": 31.0,
+  "parsed_weight": 81.24,
+  "missing_weight": 0,
   "positions": [
     {
       "stock_code": "600426",
@@ -55,8 +55,123 @@
       "stock_code": "002092",
       "stock_name": "中泰化学",
       "weight": 3.08
+    },
+    {
+      "stock_code": "000949",
+      "stock_name": "新乡化纤",
+      "weight": 2.98
+    },
+    {
+      "stock_code": "600328",
+      "stock_name": "中盐化工",
+      "weight": 2.71
+    },
+    {
+      "stock_code": "002078",
+      "stock_name": "太阳纸业",
+      "weight": 2.52
+    },
+    {
+      "stock_code": "688550",
+      "stock_name": "瑞联新材",
+      "weight": 2.35
+    },
+    {
+      "stock_code": "600160",
+      "stock_name": "巨化股份",
+      "weight": 2.28
+    },
+    {
+      "stock_code": "600346",
+      "stock_name": "恒力石化",
+      "weight": 1.73
+    },
+    {
+      "stock_code": "601678",
+      "stock_name": "滨化股份",
+      "weight": 1.65
+    },
+    {
+      "stock_code": "600409",
+      "stock_name": "三友化工",
+      "weight": 1.59
+    },
+    {
+      "stock_code": "000333",
+      "stock_name": "美的集团",
+      "weight": 1.53
+    },
+    {
+      "stock_code": "600486",
+      "stock_name": "扬农化工",
+      "weight": 1.53
+    },
+    {
+      "stock_code": "603505",
+      "stock_name": "金石资源",
+      "weight": 1.48
+    },
+    {
+      "stock_code": "603379",
+      "stock_name": "三美股份",
+      "weight": 1.36
+    },
+    {
+      "stock_code": "300596",
+      "stock_name": "利安隆",
+      "weight": 1.29
+    },
+    {
+      "stock_code": "601233",
+      "stock_name": "桐昆股份",
+      "weight": 0.98
+    },
+    {
+      "stock_code": "002409",
+      "stock_name": "雅克科技",
+      "weight": 0.87
+    },
+    {
+      "stock_code": "600970",
+      "stock_name": "中材国际",
+      "weight": 0.82
+    },
+    {
+      "stock_code": "600030",
+      "stock_name": "中信证券",
+      "weight": 0.82
+    },
+    {
+      "stock_code": "300498",
+      "stock_name": "温氏股份",
+      "weight": 0.81
+    },
+    {
+      "stock_code": "000830",
+      "stock_name": "鲁西化工",
+      "weight": 0.5
+    },
+    {
+      "stock_code": "600955",
+      "stock_name": "维远股份",
+      "weight": 0.46
+    },
+    {
+      "stock_code": "000776",
+      "stock_name": "广发证券",
+      "weight": 0.39
+    },
+    {
+      "stock_code": "000822",
+      "stock_name": "山东海化",
+      "weight": 0.22
+    },
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "weight": 0.13
     }
   ],
-  "fetched_at": "2026-03-12 01:39:04",
+  "fetched_at": "2026-04-13 01:09:00",
   "data_source": "eastmoney"
 }
