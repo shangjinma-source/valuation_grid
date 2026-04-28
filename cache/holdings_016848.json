@@ -1,62 +1,62 @@
 {
   "fund_code": "016848",
   "fund_name": "中欧高端装备股票发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 91.13,
-  "parsed_weight": 58.54,
-  "missing_weight": 32.59,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.5,
+  "parsed_weight": 51.09,
+  "missing_weight": 41.41,
   "positions": [
     {
-      "stock_code": "600760",
-      "stock_name": "中航沈飞",
-      "weight": 8.89
+      "stock_code": "300900",
+      "stock_name": "广联航空",
+      "weight": 7.11
     },
     {
       "stock_code": "600316",
       "stock_name": "洪都航空",
-      "weight": 7.37
+      "weight": 7.07
     },
     {
-      "stock_code": "000768",
-      "stock_name": "中航西飞",
-      "weight": 6.69
+      "stock_code": "002025",
+      "stock_name": "航天电器",
+      "weight": 7.02
+    },
+    {
+      "stock_code": "002149",
+      "stock_name": "西部材料",
+      "weight": 5.47
+    },
+    {
+      "stock_code": "301306",
+      "stock_name": "西测测试",
+      "weight": 4.91
     },
     {
       "stock_code": "600893",
       "stock_name": "航发动力",
-      "weight": 6.33
+      "weight": 4.83
     },
     {
-      "stock_code": "688239",
-      "stock_name": "航宇科技",
-      "weight": 5.35
+      "stock_code": "300775",
+      "stock_name": "三角防务",
+      "weight": 4.36
     },
     {
-      "stock_code": "002683",
-      "stock_name": "广东宏大",
-      "weight": 5.04
+      "stock_code": "600343",
+      "stock_name": "航天动力",
+      "weight": 3.55
     },
     {
-      "stock_code": "688282",
-      "stock_name": "理工导航",
-      "weight": 5.02
+      "stock_code": "301005",
+      "stock_name": "超捷股份",
+      "weight": 3.42
     },
     {
-      "stock_code": "688143",
-      "stock_name": "长盈通",
-      "weight": 4.93
-    },
-    {
-      "stock_code": "688543",
-      "stock_name": "国科军工",
-      "weight": 4.91
-    },
-    {
-      "stock_code": "600391",
-      "stock_name": "航发科技",
-      "weight": 4.01
+      "stock_code": "301232",
+      "stock_name": "飞沃科技",
+      "weight": 3.35
     }
   ],
-  "fetched_at": "2026-03-29 23:21:14",
+  "fetched_at": "2026-04-27 14:01:35",
   "data_source": "eastmoney"
 }

@@ -1,60 +1,65 @@
 {
   "fund_code": "015046",
   "fund_name": "前海开源中航军工指数C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.91,
-  "parsed_weight": 57.65,
-  "missing_weight": 37.26,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.45,
+  "parsed_weight": 55.64,
+  "missing_weight": 38.81,
   "positions": [
-    {
-      "stock_code": "600760",
-      "stock_name": "中航沈飞",
-      "weight": 9.54
-    },
     {
       "stock_code": "600879",
       "stock_name": "航天电子",
-      "weight": 8.19
-    },
-    {
-      "stock_code": "600150",
-      "stock_name": "中国船舶",
-      "weight": 7.12
-    },
-    {
-      "stock_code": "002179",
-      "stock_name": "中航光电",
-      "weight": 6.18
+      "weight": 8.36
     },
     {
       "stock_code": "600893",
       "stock_name": "航发动力",
-      "weight": 6.01
+      "weight": 7.94
+    },
+    {
+      "stock_code": "600760",
+      "stock_name": "中航沈飞",
+      "weight": 7.53
+    },
+    {
+      "stock_code": "600150",
+      "stock_name": "中国船舶",
+      "weight": 6.68
+    },
+    {
+      "stock_code": "002179",
+      "stock_name": "中航光电",
+      "weight": 5.62
     },
     {
       "stock_code": "000768",
       "stock_name": "中航西飞",
-      "weight": 5.0
+      "weight": 4.63
     },
     {
       "stock_code": "600372",
       "stock_name": "中航机载",
-      "weight": 4.68
+      "weight": 4.44
     },
     {
-      "stock_code": "300699",
-      "stock_name": "光威复材",
-      "weight": 3.86
+      "stock_code": "688270",
+      "stock_name": "ST臻镭",
+      "weight": 3.68
     },
     {
       "stock_code": "688568",
       "stock_name": "中科星图",
-      "weight": 3.5
+      "weight": 3.54
     },
     {
-      "stock_code": "600765",
-      "stock_name": "中航重机",
-      "weight": 3.48
+      "stock_code": "300699",
+      "stock_name": "光威复材",
+      "weight": 3.12
+    },
+    {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
+      "weight": 0.04
     },
     {
       "stock_code": "688783",
@@ -62,26 +67,21 @@
       "weight": 0.03
     },
     {
-      "stock_code": "688802",
-      "stock_name": "沐曦股份",
-      "weight": 0.02
-    },
-    {
-      "stock_code": "301656",
-      "stock_name": "联合动力",
-      "weight": 0.02
-    },
-    {
-      "stock_code": "688729",
-      "stock_name": "屹唐股份",
+      "stock_code": "301683",
+      "stock_name": "慧谷新材",
       "weight": 0.01
     },
     {
-      "stock_code": "688790",
-      "stock_name": "昂瑞微",
+      "stock_code": "688809",
+      "stock_name": "强一股份",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301682",
+      "stock_name": "宏明电子",
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-03-29 23:21:41",
+  "fetched_at": "2026-04-27 14:02:06",
   "data_source": "eastmoney"
 }

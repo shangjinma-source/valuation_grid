@@ -1,62 +1,62 @@
 {
   "fund_code": "017074",
   "fund_name": "嘉实清洁能源股票发起式C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 93.2,
-  "parsed_weight": 73.87,
-  "missing_weight": 19.33,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 88.4,
+  "parsed_weight": 57.1,
+  "missing_weight": 31.3,
   "positions": [
-    {
-      "stock_code": "603799",
-      "stock_name": "华友钴业",
-      "weight": 10.14
-    },
-    {
-      "stock_code": "002738",
-      "stock_name": "中矿资源",
-      "weight": 9.52
-    },
     {
       "stock_code": "300750",
       "stock_name": "宁德时代",
-      "weight": 9.21
-    },
-    {
-      "stock_code": "300285",
-      "stock_name": "国瓷材料",
-      "weight": 8.27
+      "weight": 8.52
     },
     {
       "stock_code": "002850",
       "stock_name": "科达利",
-      "weight": 8.08
-    },
-    {
-      "stock_code": "002709",
-      "stock_name": "天赐材料",
-      "weight": 7.49
-    },
-    {
-      "stock_code": "002497",
-      "stock_name": "雅化集团",
-      "weight": 6.2
+      "weight": 7.6
     },
     {
       "stock_code": "301358",
       "stock_name": "湖南裕能",
-      "weight": 6.13
+      "weight": 6.83
+    },
+    {
+      "stock_code": "002709",
+      "stock_name": "天赐材料",
+      "weight": 6.49
+    },
+    {
+      "stock_code": "002497",
+      "stock_name": "雅化集团",
+      "weight": 6.19
+    },
+    {
+      "stock_code": "603799",
+      "stock_name": "华友钴业",
+      "weight": 6.15
+    },
+    {
+      "stock_code": "000792",
+      "stock_name": "盐湖股份",
+      "weight": 4.24
+    },
+    {
+      "stock_code": "002203",
+      "stock_name": "海亮股份",
+      "weight": 3.97
+    },
+    {
+      "stock_code": "300285",
+      "stock_name": "国瓷材料",
+      "weight": 3.76
     },
     {
       "stock_code": "300014",
       "stock_name": "亿纬锂能",
-      "weight": 5.89
-    },
-    {
-      "stock_code": "301150",
-      "stock_name": "中一科技",
-      "weight": 2.94
+      "weight": 3.35
     }
   ],
-  "fetched_at": "2026-03-29 23:16:30",
+  "fetched_at": "2026-04-27 13:56:36",
   "data_source": "eastmoney"
 }

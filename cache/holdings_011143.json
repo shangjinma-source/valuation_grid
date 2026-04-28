@@ -1,62 +1,62 @@
 {
   "fund_code": "011143",
   "fund_name": "创金合信新材料新能源股票C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 93.65,
-  "parsed_weight": 52.4,
-  "missing_weight": 41.25,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 87.54,
+  "parsed_weight": 49.67,
+  "missing_weight": 37.87,
   "positions": [
     {
       "stock_code": "300450",
       "stock_name": "先导智能",
-      "weight": 7.52
-    },
-    {
-      "stock_code": "688155",
-      "stock_name": "先惠技术",
-      "weight": 6.13
-    },
-    {
-      "stock_code": "688559",
-      "stock_name": "海目星",
-      "weight": 5.82
-    },
-    {
-      "stock_code": "688778",
-      "stock_name": "厦钨新能",
-      "weight": 5.73
-    },
-    {
-      "stock_code": "600110",
-      "stock_name": "诺德股份",
-      "weight": 5.15
-    },
-    {
-      "stock_code": "603659",
-      "stock_name": "璞泰来",
-      "weight": 5.09
-    },
-    {
-      "stock_code": "920522",
-      "stock_name": "纳科诺尔",
-      "weight": 4.27
-    },
-    {
-      "stock_code": "301150",
-      "stock_name": "中一科技",
-      "weight": 4.25
-    },
-    {
-      "stock_code": "300390",
-      "stock_name": "天华新能",
-      "weight": 4.22
+      "weight": 6.76
     },
     {
       "stock_code": "688388",
       "stock_name": "嘉元科技",
-      "weight": 4.22
+      "weight": 5.9
+    },
+    {
+      "stock_code": "688155",
+      "stock_name": "先惠技术",
+      "weight": 5.76
+    },
+    {
+      "stock_code": "301662",
+      "stock_name": "宏工科技",
+      "weight": 5.49
+    },
+    {
+      "stock_code": "301511",
+      "stock_name": "德福科技",
+      "weight": 5.18
+    },
+    {
+      "stock_code": "002709",
+      "stock_name": "天赐材料",
+      "weight": 4.76
+    },
+    {
+      "stock_code": "688518",
+      "stock_name": "联赢激光",
+      "weight": 4.09
+    },
+    {
+      "stock_code": "600110",
+      "stock_name": "诺德股份",
+      "weight": 4.04
+    },
+    {
+      "stock_code": "301150",
+      "stock_name": "中一科技",
+      "weight": 3.91
+    },
+    {
+      "stock_code": "688778",
+      "stock_name": "厦钨新能",
+      "weight": 3.78
     }
   ],
-  "fetched_at": "2026-03-29 23:16:14",
+  "fetched_at": "2026-04-27 13:56:19",
   "data_source": "eastmoney"
 }

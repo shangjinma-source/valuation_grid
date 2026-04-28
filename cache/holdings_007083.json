@@ -1,167 +1,62 @@
 {
   "fund_code": "007083",
   "fund_name": "平安高端制造混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.0,
-  "parsed_weight": 94.0,
-  "missing_weight": 0.0,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.75,
+  "parsed_weight": 79.43,
+  "missing_weight": 14.32,
   "positions": [
     {
-      "stock_code": "002459",
-      "stock_name": "晶澳科技",
-      "weight": 10.28
+      "stock_code": "600438",
+      "stock_name": "通威股份",
+      "weight": 9.89
     },
     {
       "stock_code": "00968",
       "stock_name": "信义光能",
-      "weight": 10.02
-    },
-    {
-      "stock_code": "688599",
-      "stock_name": "天合光能",
-      "weight": 10.01
+      "weight": 9.79
     },
     {
       "stock_code": "03800",
       "stock_name": "协鑫科技",
-      "weight": 9.93
+      "weight": 9.35
+    },
+    {
+      "stock_code": "002459",
+      "stock_name": "晶澳科技",
+      "weight": 9.25
     },
     {
       "stock_code": "688223",
       "stock_name": "晶科能源",
-      "weight": 9.9
+      "weight": 9.21
     },
     {
-      "stock_code": "600438",
-      "stock_name": "通威股份",
-      "weight": 9.82
+      "stock_code": "688599",
+      "stock_name": "天合光能",
+      "weight": 8.97
     },
     {
       "stock_code": "603185",
       "stock_name": "弘元绿能",
-      "weight": 8.94
-    },
-    {
-      "stock_code": "06865",
-      "stock_name": "福莱特玻璃",
-      "weight": 5.3
+      "weight": 7.66
     },
     {
       "stock_code": "02319",
       "stock_name": "蒙牛乳业",
-      "weight": 4.7
+      "weight": 6.78
+    },
+    {
+      "stock_code": "06865",
+      "stock_name": "福莱特玻璃",
+      "weight": 4.47
     },
     {
       "stock_code": "600690",
       "stock_name": "海尔智家",
-      "weight": 2.88
-    },
-    {
-      "stock_code": "03690",
-      "stock_name": "美团-W",
-      "weight": 2.58
-    },
-    {
-      "stock_code": "09868",
-      "stock_name": "小鹏汽车-W",
-      "weight": 2.57
-    },
-    {
-      "stock_code": "603816",
-      "stock_name": "顾家家居",
-      "weight": 2.28
-    },
-    {
-      "stock_code": "002271",
-      "stock_name": "东方雨虹",
-      "weight": 1.82
-    },
-    {
-      "stock_code": "000100",
-      "stock_name": "TCL科技",
-      "weight": 0.81
-    },
-    {
-      "stock_code": "000858",
-      "stock_name": "五粮液",
-      "weight": 0.28
-    },
-    {
-      "stock_code": "002299",
-      "stock_name": "圣农发展",
-      "weight": 0.28
-    },
-    {
-      "stock_code": "603882",
-      "stock_name": "金域医学",
-      "weight": 0.28
-    },
-    {
-      "stock_code": "603313",
-      "stock_name": "梦百合",
-      "weight": 0.25
-    },
-    {
-      "stock_code": "002511",
-      "stock_name": "中顺洁柔",
-      "weight": 0.16
-    },
-    {
-      "stock_code": "603529",
-      "stock_name": "爱玛科技",
-      "weight": 0.14
-    },
-    {
-      "stock_code": "603833",
-      "stock_name": "欧派家居",
-      "weight": 0.14
-    },
-    {
-      "stock_code": "002928",
-      "stock_name": "华夏航空",
-      "weight": 0.13
-    },
-    {
-      "stock_code": "002714",
-      "stock_name": "牧原股份",
-      "weight": 0.08
-    },
-    {
-      "stock_code": "002648",
-      "stock_name": "卫星化学",
-      "weight": 0.08
-    },
-    {
-      "stock_code": "600267",
-      "stock_name": "海正药业",
-      "weight": 0.08
-    },
-    {
-      "stock_code": "002327",
-      "stock_name": "富安娜",
-      "weight": 0.08
-    },
-    {
-      "stock_code": "600966",
-      "stock_name": "博汇纸业",
-      "weight": 0.06
-    },
-    {
-      "stock_code": "000333",
-      "stock_name": "美的集团",
-      "weight": 0.06
-    },
-    {
-      "stock_code": "002541",
-      "stock_name": "鸿路钢构",
-      "weight": 0.05
-    },
-    {
-      "stock_code": "002920",
-      "stock_name": "德赛西威",
-      "weight": 0.01
+      "weight": 4.06
     }
   ],
-  "fetched_at": "2026-03-29 23:18:17",
+  "fetched_at": "2026-04-27 13:58:29",
   "data_source": "eastmoney"
 }

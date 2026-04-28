@@ -1,62 +1,62 @@
 {
   "fund_code": "017787",
   "fund_name": "万家宏观择时多策略混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.69,
-  "parsed_weight": 81.89,
-  "missing_weight": 12.8,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.3,
+  "parsed_weight": 77.18,
+  "missing_weight": 17.12,
   "positions": [
-    {
-      "stock_code": "600546",
-      "stock_name": "山煤国际",
-      "weight": 9.82
-    },
-    {
-      "stock_code": "601001",
-      "stock_name": "晋控煤业",
-      "weight": 9.46
-    },
-    {
-      "stock_code": "601101",
-      "stock_name": "昊华能源",
-      "weight": 9.21
-    },
-    {
-      "stock_code": "600985",
-      "stock_name": "淮北矿业",
-      "weight": 9.21
-    },
     {
       "stock_code": "601699",
       "stock_name": "潞安环能",
-      "weight": 9.14
-    },
-    {
-      "stock_code": "601918",
-      "stock_name": "新集能源",
-      "weight": 8.76
-    },
-    {
-      "stock_code": "601225",
-      "stock_name": "陕西煤业",
-      "weight": 7.85
-    },
-    {
-      "stock_code": "600971",
-      "stock_name": "恒源煤电",
-      "weight": 6.42
-    },
-    {
-      "stock_code": "601088",
-      "stock_name": "中国神华",
-      "weight": 6.3
+      "weight": 9.0
     },
     {
       "stock_code": "601666",
       "stock_name": "平煤股份",
-      "weight": 5.72
+      "weight": 8.99
+    },
+    {
+      "stock_code": "600985",
+      "stock_name": "淮北矿业",
+      "weight": 8.72
+    },
+    {
+      "stock_code": "600546",
+      "stock_name": "山煤国际",
+      "weight": 8.46
+    },
+    {
+      "stock_code": "000983",
+      "stock_name": "山西焦煤",
+      "weight": 7.88
+    },
+    {
+      "stock_code": "601001",
+      "stock_name": "晋控煤业",
+      "weight": 7.6
+    },
+    {
+      "stock_code": "601101",
+      "stock_name": "昊华能源",
+      "weight": 7.43
+    },
+    {
+      "stock_code": "601918",
+      "stock_name": "新集能源",
+      "weight": 7.39
+    },
+    {
+      "stock_code": "601225",
+      "stock_name": "陕西煤业",
+      "weight": 6.31
+    },
+    {
+      "stock_code": "600595",
+      "stock_name": "中孚实业",
+      "weight": 5.4
     }
   ],
-  "fetched_at": "2026-03-29 23:18:26",
+  "fetched_at": "2026-04-27 13:58:39",
   "data_source": "eastmoney"
 }

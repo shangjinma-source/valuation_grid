@@ -1,62 +1,77 @@
 {
   "fund_code": "002910",
   "fund_name": "易方达供给改革混合",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 88.27,
-  "parsed_weight": 52.88,
-  "missing_weight": 35.39,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.62,
+  "parsed_weight": 67.64,
+  "missing_weight": 24.98,
   "positions": [
     {
-      "stock_code": "002444",
-      "stock_name": "巨星科技",
-      "weight": 6.77
+      "stock_code": "688200",
+      "stock_name": "华峰测控",
+      "weight": 7.74
     },
     {
-      "stock_code": "600348",
-      "stock_name": "华阳股份",
-      "weight": 6.51
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 7.6
+    },
+    {
+      "stock_code": "301018",
+      "stock_name": "申菱环境",
+      "weight": 6.23
     },
     {
       "stock_code": "300604",
       "stock_name": "长川科技",
-      "weight": 6.12
-    },
-    {
-      "stock_code": "688361",
-      "stock_name": "中科飞测",
-      "weight": 5.45
+      "weight": 5.98
     },
     {
       "stock_code": "688372",
       "stock_name": "伟测科技",
-      "weight": 5.1
+      "weight": 5.5
     },
     {
-      "stock_code": "688629",
-      "stock_name": "华丰科技",
-      "weight": 4.86
+      "stock_code": "688409",
+      "stock_name": "富创精密",
+      "weight": 5.42
+    },
+    {
+      "stock_code": "300666",
+      "stock_name": "江丰电子",
+      "weight": 5.37
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 4.95
     },
     {
       "stock_code": "688233",
       "stock_name": "神工股份",
-      "weight": 4.76
+      "weight": 4.91
     },
     {
-      "stock_code": "688652",
-      "stock_name": "京仪装备",
-      "weight": 4.71
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 4.3
+    },
+    {
+      "stock_code": "002536",
+      "stock_name": "飞龙股份",
+      "weight": 3.93
     },
     {
       "stock_code": "603995",
       "stock_name": "甬金股份",
-      "weight": 4.56
+      "weight": 2.92
     },
     {
-      "stock_code": "688392",
-      "stock_name": "骄成超声",
-      "weight": 4.04
+      "stock_code": "002518",
+      "stock_name": "科士达",
+      "weight": 2.79
     }
   ],
-  "fetched_at": "2026-03-29 23:12:43",
+  "fetched_at": "2026-04-27 13:52:42",
   "data_source": "eastmoney"
 }

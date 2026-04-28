@@ -1,273 +1,73 @@
 {
   "fund_code": "004753",
   "fund_name": "广发中证传媒ETF联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.54,
-  "parsed_weight": 99.54,
-  "missing_weight": 0.0,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.49,
+  "parsed_weight": 57.29,
+  "missing_weight": 42.2,
   "positions": [
     {
       "stock_code": "002027",
       "stock_name": "分众传媒",
-      "weight": 9.33
-    },
-    {
-      "stock_code": "002558",
-      "stock_name": "巨人网络",
-      "weight": 7.34
+      "weight": 8.36
     },
     {
       "stock_code": "300058",
       "stock_name": "蓝色光标",
-      "weight": 5.06
-    },
-    {
-      "stock_code": "002195",
-      "stock_name": "岩山科技",
-      "weight": 5.04
-    },
-    {
-      "stock_code": "002517",
-      "stock_name": "恺英网络",
-      "weight": 4.68
+      "weight": 6.71
     },
     {
       "stock_code": "002131",
       "stock_name": "利欧股份",
-      "weight": 4.65
+      "weight": 6.68
+    },
+    {
+      "stock_code": "002195",
+      "stock_name": "岩山科技",
+      "weight": 6.46
     },
     {
       "stock_code": "300418",
       "stock_name": "昆仑万维",
-      "weight": 4.59
+      "weight": 5.44
+    },
+    {
+      "stock_code": "002558",
+      "stock_name": "巨人网络",
+      "weight": 5.4
     },
     {
       "stock_code": "002555",
       "stock_name": "三七互娱",
-      "weight": 4.58
+      "weight": 4.19
     },
     {
-      "stock_code": "300251",
-      "stock_name": "光线传媒",
-      "weight": 3.01
-    },
-    {
-      "stock_code": "300002",
-      "stock_name": "神州泰岳",
-      "weight": 2.84
+      "stock_code": "002517",
+      "stock_name": "恺英网络",
+      "weight": 3.82
     },
     {
       "stock_code": "002624",
       "stock_name": "完美世界",
-      "weight": 2.79
+      "weight": 3.01
     },
     {
-      "stock_code": "600637",
-      "stock_name": "东方明珠",
-      "weight": 2.49
-    },
-    {
-      "stock_code": "603444",
-      "stock_name": "吉比特",
-      "weight": 2.3
+      "stock_code": "300251",
+      "stock_name": "光线传媒",
+      "weight": 2.85
     },
     {
       "stock_code": "300364",
       "stock_name": "中文在线",
-      "weight": 2.29
-    },
-    {
-      "stock_code": "300413",
-      "stock_name": "芒果超媒",
-      "weight": 2.29
-    },
-    {
-      "stock_code": "002739",
-      "stock_name": "万达电影",
-      "weight": 2.1
-    },
-    {
-      "stock_code": "002400",
-      "stock_name": "省广集团",
-      "weight": 1.94
+      "weight": 2.45
     },
     {
       "stock_code": "300182",
       "stock_name": "捷成股份",
-      "weight": 1.84
-    },
-    {
-      "stock_code": "000917",
-      "stock_name": "电广传媒",
-      "weight": 1.83
-    },
-    {
-      "stock_code": "301171",
-      "stock_name": "易点天下",
-      "weight": 1.68
-    },
-    {
-      "stock_code": "300315",
-      "stock_name": "掌趣科技",
-      "weight": 1.67
-    },
-    {
-      "stock_code": "600977",
-      "stock_name": "中国电影",
-      "weight": 1.47
-    },
-    {
-      "stock_code": "000681",
-      "stock_name": "视觉中国",
-      "weight": 1.46
-    },
-    {
-      "stock_code": "600986",
-      "stock_name": "浙文互联",
-      "weight": 1.46
-    },
-    {
-      "stock_code": "300133",
-      "stock_name": "华策影视",
-      "weight": 1.38
-    },
-    {
-      "stock_code": "002354",
-      "stock_name": "天娱数科",
-      "weight": 1.32
-    },
-    {
-      "stock_code": "603000",
-      "stock_name": "人民网",
-      "weight": 1.32
-    },
-    {
-      "stock_code": "600633",
-      "stock_name": "浙数文化",
-      "weight": 1.22
-    },
-    {
-      "stock_code": "002654",
-      "stock_name": "万润科技",
-      "weight": 1.19
-    },
-    {
-      "stock_code": "000676",
-      "stock_name": "智度股份",
-      "weight": 1.09
-    },
-    {
-      "stock_code": "600959",
-      "stock_name": "江苏有线",
-      "weight": 1.08
-    },
-    {
-      "stock_code": "601098",
-      "stock_name": "中南传媒",
-      "weight": 1.01
-    },
-    {
-      "stock_code": "601928",
-      "stock_name": "凤凰传媒",
-      "weight": 0.96
-    },
-    {
-      "stock_code": "600996",
-      "stock_name": "贵广网络",
-      "weight": 0.94
-    },
-    {
-      "stock_code": "600037",
-      "stock_name": "歌华有线",
-      "weight": 0.89
-    },
-    {
-      "stock_code": "000156",
-      "stock_name": "华数传媒",
-      "weight": 0.88
-    },
-    {
-      "stock_code": "600373",
-      "stock_name": "中文传媒",
-      "weight": 0.8
-    },
-    {
-      "stock_code": "601019",
-      "stock_name": "山东出版",
-      "weight": 0.68
-    },
-    {
-      "stock_code": "600757",
-      "stock_name": "长江传媒",
-      "weight": 0.68
-    },
-    {
-      "stock_code": "603888",
-      "stock_name": "新华网",
-      "weight": 0.66
-    },
-    {
-      "stock_code": "601595",
-      "stock_name": "上海电影",
-      "weight": 0.64
-    },
-    {
-      "stock_code": "002605",
-      "stock_name": "姚记科技",
-      "weight": 0.61
-    },
-    {
-      "stock_code": "601900",
-      "stock_name": "南方传媒",
-      "weight": 0.59
-    },
-    {
-      "stock_code": "601801",
-      "stock_name": "皖新传媒",
-      "weight": 0.48
-    },
-    {
-      "stock_code": "301551",
-      "stock_name": "无线传媒",
-      "weight": 0.47
-    },
-    {
-      "stock_code": "601949",
-      "stock_name": "中国出版",
-      "weight": 0.46
-    },
-    {
-      "stock_code": "000719",
-      "stock_name": "中原传媒",
-      "weight": 0.45
-    },
-    {
-      "stock_code": "601921",
-      "stock_name": "浙版传媒",
-      "weight": 0.44
-    },
-    {
-      "stock_code": "601858",
-      "stock_name": "中国科传",
-      "weight": 0.36
-    },
-    {
-      "stock_code": "301262",
-      "stock_name": "海看股份",
-      "weight": 0.14
-    },
-    {
-      "stock_code": "600930",
-      "stock_name": "华电新能",
-      "weight": 0.06
-    },
-    {
-      "stock_code": "301656",
-      "stock_name": "联合动力",
-      "weight": 0.01
+      "weight": 1.92
     }
   ],
-  "fetched_at": "2026-03-29 23:14:47",
+  "fetched_at": "2026-04-27 13:54:45",
   "data_source": "eastmoney",
   "original_fund_code": "004753",
   "etf_target": "512980",

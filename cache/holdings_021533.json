@@ -1,70 +1,75 @@
 {
   "fund_code": "021533",
   "fund_name": "天弘半导体设备指数C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.82,
-  "parsed_weight": 61.62,
-  "missing_weight": 33.2,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 95.15,
+  "parsed_weight": 61.97,
+  "missing_weight": 33.18,
   "positions": [
-    {
-      "stock_code": "002371",
-      "stock_name": "北方华创",
-      "weight": 13.5
-    },
     {
       "stock_code": "688012",
       "stock_name": "中微公司",
-      "weight": 13.04
+      "weight": 14.18
+    },
+    {
+      "stock_code": "002371",
+      "stock_name": "北方华创",
+      "weight": 12.34
     },
     {
       "stock_code": "688072",
       "stock_name": "拓荆科技",
-      "weight": 6.68
+      "weight": 7.03
     },
     {
       "stock_code": "300604",
       "stock_name": "长川科技",
-      "weight": 5.4
-    },
-    {
-      "stock_code": "688126",
-      "stock_name": "沪硅产业",
-      "weight": 4.98
+      "weight": 6.05
     },
     {
       "stock_code": "688120",
       "stock_name": "华海清科",
-      "weight": 4.46
+      "weight": 4.85
+    },
+    {
+      "stock_code": "688126",
+      "stock_name": "沪硅产业",
+      "weight": 3.65
     },
     {
       "stock_code": "688361",
       "stock_name": "中科飞测",
-      "weight": 3.86
+      "weight": 3.6
     },
     {
       "stock_code": "300346",
       "stock_name": "南大光电",
-      "weight": 3.56
+      "weight": 3.51
     },
     {
       "stock_code": "688019",
       "stock_name": "安集科技",
-      "weight": 3.08
+      "weight": 3.33
     },
     {
-      "stock_code": "688037",
-      "stock_name": "芯源微",
-      "weight": 2.88
+      "stock_code": "300666",
+      "stock_name": "江丰电子",
+      "weight": 3.33
     },
     {
       "stock_code": "688795",
       "stock_name": "摩尔线程",
-      "weight": 0.13
+      "weight": 0.05
+    },
+    {
+      "stock_code": "688781",
+      "stock_name": "视涯科技",
+      "weight": 0.02
     },
     {
       "stock_code": "688802",
       "stock_name": "沐曦股份",
-      "weight": 0.02
+      "weight": 0.01
     },
     {
       "stock_code": "001280",
@@ -75,13 +80,8 @@
       "stock_code": "688759",
       "stock_name": "必贝特",
       "weight": 0.01
-    },
-    {
-      "stock_code": "688790",
-      "stock_name": "昂瑞微",
-      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-03-29 23:11:14",
+  "fetched_at": "2026-04-27 13:51:07",
   "data_source": "eastmoney"
 }

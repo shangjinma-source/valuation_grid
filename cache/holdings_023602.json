@@ -1,62 +1,62 @@
 {
   "fund_code": "023602",
   "fund_name": "泰信优势领航混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 90.29,
-  "parsed_weight": 66.54,
-  "missing_weight": 23.75,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 86.17,
+  "parsed_weight": 61.61,
+  "missing_weight": 24.56,
   "positions": [
-    {
-      "stock_code": "688258",
-      "stock_name": "卓易信息",
-      "weight": 8.34
-    },
     {
       "stock_code": "603171",
       "stock_name": "税友股份",
-      "weight": 8.12
+      "weight": 9.79
     },
     {
-      "stock_code": "603859",
-      "stock_name": "能科科技",
+      "stock_code": "603108",
+      "stock_name": "润达医疗",
       "weight": 7.85
     },
     {
-      "stock_code": "688615",
-      "stock_name": "合合信息",
-      "weight": 7.24
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 7.62
+    },
+    {
+      "stock_code": "688258",
+      "stock_name": "卓易信息",
+      "weight": 7.23
     },
     {
       "stock_code": "300378",
       "stock_name": "鼎捷数智",
-      "weight": 6.34
+      "weight": 6.21
     },
     {
-      "stock_code": "688095",
-      "stock_name": "福昕软件",
-      "weight": 6.09
+      "stock_code": "688365",
+      "stock_name": "光云科技",
+      "weight": 5.49
     },
     {
-      "stock_code": "688088",
-      "stock_name": "虹软科技",
-      "weight": 5.95
-    },
-    {
-      "stock_code": "603918",
-      "stock_name": "金桥信息",
-      "weight": 5.94
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 5.12
     },
     {
       "stock_code": "300454",
       "stock_name": "深信服",
-      "weight": 5.89
+      "weight": 4.24
     },
     {
-      "stock_code": "688256",
-      "stock_name": "寒武纪",
-      "weight": 4.78
+      "stock_code": "301378",
+      "stock_name": "通达海",
+      "weight": 4.21
+    },
+    {
+      "stock_code": "688777",
+      "stock_name": "中控技术",
+      "weight": 3.85
     }
   ],
-  "fetched_at": "2026-03-29 23:15:06",
+  "fetched_at": "2026-04-27 13:55:05",
   "data_source": "eastmoney"
 }

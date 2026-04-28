@@ -1,62 +1,62 @@
 {
   "fund_code": "007114",
   "fund_name": "永赢高端制造混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 92.08,
-  "parsed_weight": 62.97,
-  "missing_weight": 29.11,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.5,
+  "parsed_weight": 54.94,
+  "missing_weight": 38.56,
   "positions": [
-    {
-      "stock_code": "300308",
-      "stock_name": "中际旭创",
-      "weight": 9.32
-    },
     {
       "stock_code": "300502",
       "stock_name": "新易盛",
-      "weight": 9.17
+      "weight": 9.39
     },
     {
-      "stock_code": "300394",
-      "stock_name": "天孚通信",
-      "weight": 8.14
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.21
     },
     {
-      "stock_code": "002463",
-      "stock_name": "沪电股份",
-      "weight": 6.66
+      "stock_code": "601138",
+      "stock_name": "工业富联",
+      "weight": 5.63
+    },
+    {
+      "stock_code": "000534",
+      "stock_name": "万泽股份",
+      "weight": 5.21
+    },
+    {
+      "stock_code": "688388",
+      "stock_name": "嘉元科技",
+      "weight": 5.16
     },
     {
       "stock_code": "688498",
       "stock_name": "源杰科技",
-      "weight": 5.71
+      "weight": 5.14
     },
     {
-      "stock_code": "001309",
-      "stock_name": "德明利",
-      "weight": 5.47
+      "stock_code": "002916",
+      "stock_name": "深南电路",
+      "weight": 4.23
     },
     {
-      "stock_code": "600183",
-      "stock_name": "生益科技",
-      "weight": 5.27
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 3.72
     },
     {
-      "stock_code": "300475",
-      "stock_name": "香农芯创",
-      "weight": 4.77
+      "stock_code": "002796",
+      "stock_name": "世嘉科技",
+      "weight": 3.68
     },
     {
-      "stock_code": "300476",
-      "stock_name": "胜宏科技",
-      "weight": 4.45
-    },
-    {
-      "stock_code": "688313",
-      "stock_name": "仕佳光子",
-      "weight": 4.01
+      "stock_code": "605060",
+      "stock_name": "联德股份",
+      "weight": 3.57
     }
   ],
-  "fetched_at": "2026-03-29 23:14:38",
+  "fetched_at": "2026-04-27 13:54:35",
   "data_source": "eastmoney"
 }

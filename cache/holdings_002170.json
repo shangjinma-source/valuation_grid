@@ -1,62 +1,62 @@
 {
   "fund_code": "002170",
   "fund_name": "东吴移动互联混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 93.57,
-  "parsed_weight": 80.89,
-  "missing_weight": 12.68,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.74,
+  "parsed_weight": 78.96,
+  "missing_weight": 14.78,
   "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.82
+    },
     {
       "stock_code": "002475",
       "stock_name": "立讯精密",
-      "weight": 9.5
+      "weight": 9.77
     },
     {
       "stock_code": "300308",
       "stock_name": "中际旭创",
-      "weight": 9.46
-    },
-    {
-      "stock_code": "300502",
-      "stock_name": "新易盛",
-      "weight": 9.36
-    },
-    {
-      "stock_code": "603986",
-      "stock_name": "兆易创新",
-      "weight": 9.1
-    },
-    {
-      "stock_code": "002920",
-      "stock_name": "德赛西威",
-      "weight": 9.09
-    },
-    {
-      "stock_code": "603501",
-      "stock_name": "豪威集团",
-      "weight": 8.98
+      "weight": 9.53
     },
     {
       "stock_code": "002463",
       "stock_name": "沪电股份",
-      "weight": 6.7
+      "weight": 9.32
     },
     {
-      "stock_code": "002273",
-      "stock_name": "水晶光电",
-      "weight": 6.5
+      "stock_code": "002920",
+      "stock_name": "德赛西威",
+      "weight": 8.45
     },
     {
-      "stock_code": "300433",
-      "stock_name": "蓝思科技",
-      "weight": 6.31
+      "stock_code": "300476",
+      "stock_name": "胜宏科技",
+      "weight": 7.16
     },
     {
       "stock_code": "601138",
       "stock_name": "工业富联",
-      "weight": 5.89
+      "weight": 6.7
+    },
+    {
+      "stock_code": "002460",
+      "stock_name": "赣锋锂业",
+      "weight": 6.61
+    },
+    {
+      "stock_code": "002273",
+      "stock_name": "水晶光电",
+      "weight": 6.01
+    },
+    {
+      "stock_code": "002709",
+      "stock_name": "天赐材料",
+      "weight": 5.59
     }
   ],
-  "fetched_at": "2026-03-29 23:14:40",
+  "fetched_at": "2026-04-27 13:54:38",
   "data_source": "eastmoney"
 }

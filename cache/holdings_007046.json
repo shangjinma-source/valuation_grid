@@ -1,62 +1,62 @@
 {
   "fund_code": "007046",
   "fund_name": "方正富邦创新动力混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.42,
-  "parsed_weight": 63.63,
-  "missing_weight": 30.79,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.62,
+  "parsed_weight": 56.05,
+  "missing_weight": 37.57,
   "positions": [
     {
-      "stock_code": "688568",
-      "stock_name": "中科星图",
-      "weight": 9.24
+      "stock_code": "001400",
+      "stock_name": "江顺科技",
+      "weight": 12.31
     },
     {
-      "stock_code": "600118",
-      "stock_name": "中国卫星",
-      "weight": 7.99
-    },
-    {
-      "stock_code": "600580",
-      "stock_name": "卧龙电驱",
-      "weight": 7.69
-    },
-    {
-      "stock_code": "601698",
-      "stock_name": "中国卫通",
-      "weight": 6.72
-    },
-    {
-      "stock_code": "000801",
-      "stock_name": "四川九洲",
-      "weight": 6.64
-    },
-    {
-      "stock_code": "688333",
-      "stock_name": "铂力特",
-      "weight": 5.46
-    },
-    {
-      "stock_code": "300762",
-      "stock_name": "上海瀚讯",
-      "weight": 5.3
+      "stock_code": "688433",
+      "stock_name": "华曙高科",
+      "weight": 7.93
     },
     {
       "stock_code": "300900",
       "stock_name": "广联航空",
-      "weight": 5.05
+      "weight": 5.43
+    },
+    {
+      "stock_code": "600498",
+      "stock_name": "烽火通信",
+      "weight": 5.33
+    },
+    {
+      "stock_code": "002149",
+      "stock_name": "西部材料",
+      "weight": 4.71
+    },
+    {
+      "stock_code": "688568",
+      "stock_name": "中科星图",
+      "weight": 4.29
     },
     {
       "stock_code": "600879",
       "stock_name": "航天电子",
-      "weight": 5.01
+      "weight": 4.26
     },
     {
-      "stock_code": "600435",
-      "stock_name": "北方导航",
-      "weight": 4.53
+      "stock_code": "600118",
+      "stock_name": "中国卫星",
+      "weight": 4.15
+    },
+    {
+      "stock_code": "301232",
+      "stock_name": "飞沃科技",
+      "weight": 3.86
+    },
+    {
+      "stock_code": "688387",
+      "stock_name": "信科移动",
+      "weight": 3.78
     }
   ],
-  "fetched_at": "2026-03-29 23:12:52",
+  "fetched_at": "2026-04-27 13:52:49",
   "data_source": "eastmoney"
 }

@@ -1,60 +1,60 @@
 {
   "fund_code": "020485",
   "fund_name": "中欧中证全指软件开发指数发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.75,
-  "parsed_weight": 37.64,
-  "missing_weight": 57.11,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.9,
+  "parsed_weight": 37.68,
+  "missing_weight": 57.22,
   "positions": [
     {
       "stock_code": "002230",
       "stock_name": "科大讯飞",
-      "weight": 8.31
-    },
-    {
-      "stock_code": "688111",
-      "stock_name": "金山办公",
-      "weight": 5.09
+      "weight": 8.71
     },
     {
       "stock_code": "300033",
       "stock_name": "同花顺",
-      "weight": 4.96
+      "weight": 5.23
     },
     {
-      "stock_code": "300803",
-      "stock_name": "指南针",
-      "weight": 3.36
-    },
-    {
-      "stock_code": "600570",
-      "stock_name": "恒生电子",
-      "weight": 3.27
+      "stock_code": "688111",
+      "stock_name": "金山办公",
+      "weight": 4.41
     },
     {
       "stock_code": "002261",
       "stock_name": "拓维信息",
-      "weight": 2.98
+      "weight": 3.51
     },
     {
-      "stock_code": "300339",
-      "stock_name": "润和软件",
-      "weight": 2.82
+      "stock_code": "600570",
+      "stock_name": "恒生电子",
+      "weight": 3.15
     },
     {
       "stock_code": "601360",
       "stock_name": "三六零",
-      "weight": 2.8
+      "weight": 3.05
+    },
+    {
+      "stock_code": "300803",
+      "stock_name": "指南针",
+      "weight": 2.85
+    },
+    {
+      "stock_code": "300339",
+      "stock_name": "润和软件",
+      "weight": 2.52
     },
     {
       "stock_code": "300454",
       "stock_name": "深信服",
-      "weight": 2.08
+      "weight": 2.09
     },
     {
-      "stock_code": "600536",
-      "stock_name": "中国软件",
-      "weight": 1.85
+      "stock_code": "688568",
+      "stock_name": "中科星图",
+      "weight": 2.01
     },
     {
       "stock_code": "688795",
@@ -62,26 +62,26 @@
       "weight": 0.04
     },
     {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
+      "weight": 0.03
+    },
+    {
+      "stock_code": "001280",
+      "stock_name": "中国铀业",
+      "weight": 0.03
+    },
+    {
       "stock_code": "688783",
       "stock_name": "西安奕材",
       "weight": 0.03
     },
     {
-      "stock_code": "688802",
-      "stock_name": "沐曦股份",
+      "stock_code": "301683",
+      "stock_name": "慧谷新材",
       "weight": 0.02
-    },
-    {
-      "stock_code": "001280",
-      "stock_name": "中国铀业",
-      "weight": 0.02
-    },
-    {
-      "stock_code": "688759",
-      "stock_name": "必贝特",
-      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-03-29 23:15:22",
+  "fetched_at": "2026-04-27 13:55:23",
   "data_source": "eastmoney"
 }

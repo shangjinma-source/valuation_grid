@@ -1,62 +1,62 @@
 {
   "fund_code": "016371",
   "fund_name": "信澳业绩驱动混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.29,
-  "parsed_weight": 75.32,
-  "missing_weight": 18.97,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.44,
+  "parsed_weight": 66.2,
+  "missing_weight": 28.24,
   "positions": [
     {
       "stock_code": "300308",
       "stock_name": "中际旭创",
-      "weight": 9.69
+      "weight": 9.43
     },
     {
       "stock_code": "300502",
       "stock_name": "新易盛",
-      "weight": 9.44
+      "weight": 9.26
     },
     {
       "stock_code": "300394",
       "stock_name": "天孚通信",
-      "weight": 9.16
+      "weight": 9.12
     },
     {
       "stock_code": "688498",
       "stock_name": "源杰科技",
-      "weight": 8.16
+      "weight": 8.43
     },
     {
-      "stock_code": "002463",
-      "stock_name": "沪电股份",
-      "weight": 7.64
-    },
-    {
-      "stock_code": "300548",
-      "stock_name": "长芯博创",
-      "weight": 7.47
-    },
-    {
-      "stock_code": "603083",
-      "stock_name": "剑桥科技",
-      "weight": 7.15
-    },
-    {
-      "stock_code": "300476",
-      "stock_name": "胜宏科技",
-      "weight": 7.15
+      "stock_code": "601869",
+      "stock_name": "长飞光纤",
+      "weight": 7.06
     },
     {
       "stock_code": "002851",
       "stock_name": "麦格米特",
-      "weight": 4.78
+      "weight": 4.95
     },
     {
-      "stock_code": "603228",
-      "stock_name": "景旺电子",
-      "weight": 4.68
+      "stock_code": "300548",
+      "stock_name": "长芯博创",
+      "weight": 4.69
+    },
+    {
+      "stock_code": "600105",
+      "stock_name": "永鼎股份",
+      "weight": 4.66
+    },
+    {
+      "stock_code": "688205",
+      "stock_name": "德科立",
+      "weight": 4.41
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 4.19
     }
   ],
-  "fetched_at": "2026-03-29 23:14:26",
+  "fetched_at": "2026-04-27 13:54:21",
   "data_source": "eastmoney"
 }

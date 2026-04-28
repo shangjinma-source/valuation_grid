@@ -1,62 +1,62 @@
 {
   "fund_code": "021490",
   "fund_name": "中航趋势领航混合发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 91.43,
-  "parsed_weight": 49.97,
-  "missing_weight": 41.46,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.14,
+  "parsed_weight": 55.37,
+  "missing_weight": 37.77,
   "positions": [
     {
       "stock_code": "301550",
       "stock_name": "斯菱智驱",
-      "weight": 6.28
-    },
-    {
-      "stock_code": "603119",
-      "stock_name": "浙江荣泰",
-      "weight": 5.74
-    },
-    {
-      "stock_code": "688698",
-      "stock_name": "伟创电气",
-      "weight": 5.36
-    },
-    {
-      "stock_code": "603179",
-      "stock_name": "新泉股份",
-      "weight": 5.34
+      "weight": 8.21
     },
     {
       "stock_code": "300953",
       "stock_name": "震裕科技",
-      "weight": 4.82
+      "weight": 7.13
     },
     {
-      "stock_code": "300007",
-      "stock_name": "汉威科技",
-      "weight": 4.77
-    },
-    {
-      "stock_code": "301225",
-      "stock_name": "恒勃股份",
-      "weight": 4.48
-    },
-    {
-      "stock_code": "002126",
-      "stock_name": "银轮股份",
-      "weight": 4.47
+      "stock_code": "603179",
+      "stock_name": "新泉股份",
+      "weight": 6.59
     },
     {
       "stock_code": "603667",
       "stock_name": "五洲新春",
-      "weight": 4.44
+      "weight": 6.36
+    },
+    {
+      "stock_code": "603119",
+      "stock_name": "浙江荣泰",
+      "weight": 5.44
+    },
+    {
+      "stock_code": "301413",
+      "stock_name": "安培龙",
+      "weight": 4.77
     },
     {
       "stock_code": "603319",
       "stock_name": "美湖股份",
-      "weight": 4.27
+      "weight": 4.45
+    },
+    {
+      "stock_code": "300007",
+      "stock_name": "汉威科技",
+      "weight": 4.39
+    },
+    {
+      "stock_code": "603286",
+      "stock_name": "日盈电子",
+      "weight": 4.1
+    },
+    {
+      "stock_code": "002126",
+      "stock_name": "银轮股份",
+      "weight": 3.93
     }
   ],
-  "fetched_at": "2026-03-29 23:16:59",
+  "fetched_at": "2026-04-27 13:57:05",
   "data_source": "eastmoney"
 }

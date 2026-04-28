@@ -1,152 +1,62 @@
 {
   "fund_code": "017103",
   "fund_name": "大摩数字经济混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 93.47,
-  "parsed_weight": 93.44,
-  "missing_weight": 0.03,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.15,
+  "parsed_weight": 56.83,
+  "missing_weight": 36.32,
   "positions": [
-    {
-      "stock_code": "300308",
-      "stock_name": "中际旭创",
-      "weight": 8.8
-    },
     {
       "stock_code": "300502",
       "stock_name": "新易盛",
-      "weight": 8.54
+      "weight": 9.43
     },
     {
-      "stock_code": "002916",
-      "stock_name": "深南电路",
-      "weight": 7.77
-    },
-    {
-      "stock_code": "300394",
-      "stock_name": "天孚通信",
-      "weight": 6.77
-    },
-    {
-      "stock_code": "600183",
-      "stock_name": "生益科技",
-      "weight": 6.73
-    },
-    {
-      "stock_code": "300136",
-      "stock_name": "信维通信",
-      "weight": 4.7
-    },
-    {
-      "stock_code": "002475",
-      "stock_name": "立讯精密",
-      "weight": 4.58
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 8.76
     },
     {
       "stock_code": "002384",
       "stock_name": "东山精密",
-      "weight": 4.33
+      "weight": 6.99
+    },
+    {
+      "stock_code": "002916",
+      "stock_name": "深南电路",
+      "weight": 6.37
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 5.51
     },
     {
       "stock_code": "601231",
       "stock_name": "环旭电子",
+      "weight": 4.63
+    },
+    {
+      "stock_code": "600183",
+      "stock_name": "生益科技",
+      "weight": 4.35
+    },
+    {
+      "stock_code": "688777",
+      "stock_name": "中控技术",
       "weight": 3.83
-    },
-    {
-      "stock_code": "002837",
-      "stock_name": "英维克",
-      "weight": 3.63
-    },
-    {
-      "stock_code": "300476",
-      "stock_name": "胜宏科技",
-      "weight": 3.08
-    },
-    {
-      "stock_code": "603083",
-      "stock_name": "剑桥科技",
-      "weight": 3.05
-    },
-    {
-      "stock_code": "688313",
-      "stock_name": "仕佳光子",
-      "weight": 3.01
-    },
-    {
-      "stock_code": "688256",
-      "stock_name": "寒武纪",
-      "weight": 2.96
     },
     {
       "stock_code": "688498",
       "stock_name": "源杰科技",
-      "weight": 2.89
+      "weight": 3.51
     },
     {
-      "stock_code": "688208",
-      "stock_name": "道通科技",
-      "weight": 2.26
-    },
-    {
-      "stock_code": "688183",
-      "stock_name": "生益电子",
-      "weight": 2.18
-    },
-    {
-      "stock_code": "688519",
-      "stock_name": "南亚新材",
-      "weight": 2.18
-    },
-    {
-      "stock_code": "603986",
-      "stock_name": "兆易创新",
-      "weight": 2.16
-    },
-    {
-      "stock_code": "688041",
-      "stock_name": "海光信息",
-      "weight": 1.97
-    },
-    {
-      "stock_code": "603228",
-      "stock_name": "景旺电子",
-      "weight": 1.92
-    },
-    {
-      "stock_code": "688521",
-      "stock_name": "芯原股份",
-      "weight": 1.48
-    },
-    {
-      "stock_code": "002609",
-      "stock_name": "捷顺科技",
-      "weight": 1.37
-    },
-    {
-      "stock_code": "002938",
-      "stock_name": "鹏鼎控股",
-      "weight": 1.02
-    },
-    {
-      "stock_code": "000988",
-      "stock_name": "华工科技",
-      "weight": 0.96
-    },
-    {
-      "stock_code": "601138",
-      "stock_name": "工业富联",
-      "weight": 0.93
-    },
-    {
-      "stock_code": "688661",
-      "stock_name": "和林微纳",
-      "weight": 0.33
-    },
-    {
-      "stock_code": "688802",
-      "stock_name": "沐曦股份",
-      "weight": 0.01
+      "stock_code": "002837",
+      "stock_name": "英维克",
+      "weight": 3.45
     }
   ],
-  "fetched_at": "2026-03-29 23:14:14",
+  "fetched_at": "2026-04-27 13:54:09",
   "data_source": "eastmoney"
 }

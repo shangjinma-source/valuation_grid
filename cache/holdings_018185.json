@@ -1,62 +1,62 @@
 {
   "fund_code": "018185",
   "fund_name": "万家先进制造混合发起式C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.7,
-  "parsed_weight": 59.79,
-  "missing_weight": 34.91,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 74.51,
+  "parsed_weight": 40.49,
+  "missing_weight": 34.02,
   "positions": [
     {
-      "stock_code": "300810",
-      "stock_name": "中科海讯",
-      "weight": 9.53
+      "stock_code": "002179",
+      "stock_name": "中航光电",
+      "weight": 6.41
     },
     {
       "stock_code": "600760",
       "stock_name": "中航沈飞",
-      "weight": 8.23
-    },
-    {
-      "stock_code": "688750",
-      "stock_name": "金天钛业",
-      "weight": 7.79
+      "weight": 6.14
     },
     {
       "stock_code": "600482",
       "stock_name": "中国动力",
-      "weight": 7.34
+      "weight": 4.31
     },
     {
-      "stock_code": "600764",
-      "stock_name": "中国海防",
-      "weight": 6.36
+      "stock_code": "920394",
+      "stock_name": "民士达",
+      "weight": 4.01
     },
     {
-      "stock_code": "601890",
-      "stock_name": "亚星锚链",
-      "weight": 5.02
+      "stock_code": "603606",
+      "stock_name": "东方电缆",
+      "weight": 3.65
     },
     {
-      "stock_code": "300065",
-      "stock_name": "海兰信",
-      "weight": 4.43
+      "stock_code": "601615",
+      "stock_name": "明阳智能",
+      "weight": 3.43
     },
     {
-      "stock_code": "300922",
-      "stock_name": "天秦装备",
-      "weight": 3.87
+      "stock_code": "000807",
+      "stock_name": "云铝股份",
+      "weight": 3.17
     },
     {
-      "stock_code": "688084",
-      "stock_name": "晶品特装",
-      "weight": 3.63
+      "stock_code": "002465",
+      "stock_name": "海格通信",
+      "weight": 3.16
     },
     {
-      "stock_code": "688510",
-      "stock_name": "航亚科技",
-      "weight": 3.59
+      "stock_code": "600150",
+      "stock_name": "中国船舶",
+      "weight": 3.12
+    },
+    {
+      "stock_code": "300337",
+      "stock_name": "银邦股份",
+      "weight": 3.09
     }
   ],
-  "fetched_at": "2026-03-29 23:21:20",
+  "fetched_at": "2026-04-27 14:01:42",
   "data_source": "eastmoney"
 }

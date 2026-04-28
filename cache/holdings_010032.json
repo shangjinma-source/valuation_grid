@@ -1,62 +1,62 @@
 {
   "fund_code": "010032",
   "fund_name": "华泰柏瑞新兴产业混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 92.6,
-  "parsed_weight": 63.3,
-  "missing_weight": 29.3,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 89.98,
+  "parsed_weight": 61.96,
+  "missing_weight": 28.02,
   "positions": [
     {
       "stock_code": "688778",
       "stock_name": "厦钨新能",
-      "weight": 8.84
+      "weight": 8.78
     },
     {
       "stock_code": "300073",
       "stock_name": "当升科技",
-      "weight": 8.27
-    },
-    {
-      "stock_code": "920522",
-      "stock_name": "纳科诺尔",
-      "weight": 7.71
-    },
-    {
-      "stock_code": "301662",
-      "stock_name": "宏工科技",
-      "weight": 6.94
+      "weight": 7.39
     },
     {
       "stock_code": "688155",
       "stock_name": "先惠技术",
-      "weight": 6.62
+      "weight": 7.18
     },
     {
-      "stock_code": "688518",
-      "stock_name": "联赢激光",
-      "weight": 6.04
+      "stock_code": "301662",
+      "stock_name": "宏工科技",
+      "weight": 6.97
     },
     {
-      "stock_code": "920284",
-      "stock_name": "灵鸽科技",
-      "weight": 4.97
+      "stock_code": "920522",
+      "stock_name": "纳科诺尔",
+      "weight": 6.3
     },
     {
       "stock_code": "301150",
       "stock_name": "中一科技",
-      "weight": 4.86
+      "weight": 6.25
     },
     {
-      "stock_code": "301617",
-      "stock_name": "博苑股份",
-      "weight": 4.73
+      "stock_code": "002859",
+      "stock_name": "洁美科技",
+      "weight": 5.61
     },
     {
-      "stock_code": "001332",
-      "stock_name": "锡装股份",
-      "weight": 4.32
+      "stock_code": "688518",
+      "stock_name": "联赢激光",
+      "weight": 5.06
+    },
+    {
+      "stock_code": "300450",
+      "stock_name": "先导智能",
+      "weight": 4.83
+    },
+    {
+      "stock_code": "002497",
+      "stock_name": "雅化集团",
+      "weight": 3.59
     }
   ],
-  "fetched_at": "2026-03-29 23:15:59",
+  "fetched_at": "2026-04-27 13:56:02",
   "data_source": "eastmoney"
 }

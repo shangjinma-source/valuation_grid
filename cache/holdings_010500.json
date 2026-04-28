@@ -1,62 +1,67 @@
 {
   "fund_code": "010500",
   "fund_name": "中银创新医疗混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 88.36,
-  "parsed_weight": 64.5,
-  "missing_weight": 23.86,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.96,
+  "parsed_weight": 71.44,
+  "missing_weight": 21.52,
   "positions": [
     {
-      "stock_code": "600276",
-      "stock_name": "恒瑞医药",
-      "weight": 8.7
+      "stock_code": "06990",
+      "stock_name": "科伦博泰生物",
+      "weight": 10.02
     },
     {
       "stock_code": "09926",
       "stock_name": "康方生物",
-      "weight": 8.55
+      "weight": 9.98
     },
     {
-      "stock_code": "06990",
-      "stock_name": "科伦博泰生物-B",
-      "weight": 8.14
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 8.17
     },
     {
       "stock_code": "01801",
       "stock_name": "信达生物",
-      "weight": 7.93
+      "weight": 7.89
     },
     {
-      "stock_code": "688235",
-      "stock_name": "百济神州",
+      "stock_code": "688331",
+      "stock_name": "荣昌生物",
+      "weight": 7.82
+    },
+    {
+      "stock_code": "300765",
+      "stock_name": "新诺威",
       "weight": 6.39
     },
     {
       "stock_code": "688506",
       "stock_name": "百利天恒",
-      "weight": 6.17
+      "weight": 5.88
+    },
+    {
+      "stock_code": "688235",
+      "stock_name": "百济神州",
+      "weight": 5.83
     },
     {
       "stock_code": "09606",
       "stock_name": "映恩生物-B",
-      "weight": 5.29
+      "weight": 4.45
     },
     {
-      "stock_code": "300765",
-      "stock_name": "新诺威",
-      "weight": 5.09
+      "stock_code": "002294",
+      "stock_name": "信立泰",
+      "weight": 3.99
     },
     {
-      "stock_code": "03692",
-      "stock_name": "翰森制药",
-      "weight": 4.13
-    },
-    {
-      "stock_code": "688331",
+      "stock_code": "09995",
       "stock_name": "荣昌生物",
-      "weight": 4.11
+      "weight": 1.02
     }
   ],
-  "fetched_at": "2026-03-29 23:19:48",
+  "fetched_at": "2026-04-27 14:00:04",
   "data_source": "eastmoney"
 }

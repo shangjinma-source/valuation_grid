@@ -1,62 +1,62 @@
 {
   "fund_code": "015945",
   "fund_name": "易方达国防军工混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.14,
-  "parsed_weight": 54.67,
-  "missing_weight": 39.47,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.5,
+  "parsed_weight": 58.99,
+  "missing_weight": 33.51,
   "positions": [
     {
       "stock_code": "688002",
       "stock_name": "睿创微纳",
-      "weight": 9.23
-    },
-    {
-      "stock_code": "600760",
-      "stock_name": "中航沈飞",
-      "weight": 6.48
-    },
-    {
-      "stock_code": "600879",
-      "stock_name": "航天电子",
-      "weight": 6.22
-    },
-    {
-      "stock_code": "600482",
-      "stock_name": "中国动力",
-      "weight": 5.1
-    },
-    {
-      "stock_code": "002025",
-      "stock_name": "航天电器",
-      "weight": 4.98
-    },
-    {
-      "stock_code": "002179",
-      "stock_name": "中航光电",
-      "weight": 4.95
-    },
-    {
-      "stock_code": "300604",
-      "stock_name": "长川科技",
-      "weight": 4.67
-    },
-    {
-      "stock_code": "600862",
-      "stock_name": "中航高科",
-      "weight": 4.53
+      "weight": 9.91
     },
     {
       "stock_code": "600893",
       "stock_name": "航发动力",
-      "weight": 4.31
+      "weight": 9.67
+    },
+    {
+      "stock_code": "600482",
+      "stock_name": "中国动力",
+      "weight": 9.61
+    },
+    {
+      "stock_code": "300604",
+      "stock_name": "长川科技",
+      "weight": 6.46
     },
     {
       "stock_code": "000768",
       "stock_name": "中航西飞",
-      "weight": 4.2
+      "weight": 4.42
+    },
+    {
+      "stock_code": "688563",
+      "stock_name": "航材股份",
+      "weight": 4.12
+    },
+    {
+      "stock_code": "688239",
+      "stock_name": "航宇科技",
+      "weight": 4.1
+    },
+    {
+      "stock_code": "600760",
+      "stock_name": "中航沈飞",
+      "weight": 3.59
+    },
+    {
+      "stock_code": "603308",
+      "stock_name": "应流股份",
+      "weight": 3.56
+    },
+    {
+      "stock_code": "002246",
+      "stock_name": "北化股份",
+      "weight": 3.55
     }
   ],
-  "fetched_at": "2026-03-29 23:21:09",
+  "fetched_at": "2026-04-27 14:01:30",
   "data_source": "eastmoney"
 }

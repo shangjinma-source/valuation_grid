@@ -1,63 +1,63 @@
 {
   "fund_code": "019059",
   "fund_name": "易方达中证绿色电力ETF联接发起式C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.49,
-  "parsed_weight": 54.43,
-  "missing_weight": 45.06,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.61,
+  "parsed_weight": 50.45,
+  "missing_weight": 49.16,
   "positions": [
-    {
-      "stock_code": "600900",
-      "stock_name": "长江电力",
-      "weight": 9.95
-    },
     {
       "stock_code": "601985",
       "stock_name": "中国核电",
-      "weight": 9.49
+      "weight": 9.06
+    },
+    {
+      "stock_code": "600900",
+      "stock_name": "长江电力",
+      "weight": 9.04
     },
     {
       "stock_code": "600905",
       "stock_name": "三峡能源",
-      "weight": 7.79
+      "weight": 7.41
     },
     {
       "stock_code": "600795",
       "stock_name": "国电电力",
-      "weight": 5.99
-    },
-    {
-      "stock_code": "600011",
-      "stock_name": "华能国际",
-      "weight": 4.37
+      "weight": 5.23
     },
     {
       "stock_code": "600886",
       "stock_name": "国投电力",
-      "weight": 4.2
+      "weight": 4.14
     },
     {
-      "stock_code": "600021",
-      "stock_name": "上海电力",
+      "stock_code": "600011",
+      "stock_name": "华能国际",
       "weight": 3.76
     },
     {
       "stock_code": "600674",
       "stock_name": "川投能源",
-      "weight": 3.61
+      "weight": 3.53
+    },
+    {
+      "stock_code": "600021",
+      "stock_name": "上海电力",
+      "weight": 3.13
     },
     {
       "stock_code": "600023",
       "stock_name": "浙能电力",
-      "weight": 2.65
+      "weight": 2.66
     },
     {
-      "stock_code": "600027",
-      "stock_name": "华电国际",
-      "weight": 2.62
+      "stock_code": "000155",
+      "stock_name": "川能动力",
+      "weight": 2.49
     }
   ],
-  "fetched_at": "2026-03-29 23:22:50",
+  "fetched_at": "2026-04-27 14:03:21",
   "data_source": "eastmoney",
   "original_fund_code": "019059",
   "etf_target": "562960",

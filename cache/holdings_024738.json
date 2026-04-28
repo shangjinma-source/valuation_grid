@@ -1,62 +1,62 @@
 {
   "fund_code": "024738",
   "fund_name": "永赢新材料智选混合发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.24,
-  "parsed_weight": 70.8,
-  "missing_weight": 23.44,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.16,
+  "parsed_weight": 70.76,
+  "missing_weight": 23.4,
   "positions": [
+    {
+      "stock_code": "688155",
+      "stock_name": "先惠技术",
+      "weight": 9.73
+    },
+    {
+      "stock_code": "300450",
+      "stock_name": "先导智能",
+      "weight": 8.93
+    },
     {
       "stock_code": "688778",
       "stock_name": "厦钨新能",
-      "weight": 9.12
-    },
-    {
-      "stock_code": "688353",
-      "stock_name": "华盛锂电",
-      "weight": 9.02
+      "weight": 8.82
     },
     {
       "stock_code": "300073",
       "stock_name": "当升科技",
-      "weight": 8.59
+      "weight": 7.51
     },
     {
-      "stock_code": "301617",
-      "stock_name": "博苑股份",
-      "weight": 8.31
-    },
-    {
-      "stock_code": "300587",
-      "stock_name": "天铁科技",
-      "weight": 7.56
+      "stock_code": "301662",
+      "stock_name": "宏工科技",
+      "weight": 7.18
     },
     {
       "stock_code": "920522",
       "stock_name": "纳科诺尔",
-      "weight": 6.41
+      "weight": 6.42
     },
     {
-      "stock_code": "002709",
-      "stock_name": "天赐材料",
-      "weight": 5.8
+      "stock_code": "002058",
+      "stock_name": "*ST威尔",
+      "weight": 6.18
     },
     {
-      "stock_code": "002460",
-      "stock_name": "赣锋锂业",
-      "weight": 5.64
+      "stock_code": "688006",
+      "stock_name": "杭可科技",
+      "weight": 5.51
     },
     {
-      "stock_code": "002203",
-      "stock_name": "海亮股份",
-      "weight": 5.41
+      "stock_code": "002859",
+      "stock_name": "洁美科技",
+      "weight": 5.46
     },
     {
       "stock_code": "688147",
       "stock_name": "微导纳米",
-      "weight": 4.94
+      "weight": 5.02
     }
   ],
-  "fetched_at": "2026-03-29 23:16:16",
+  "fetched_at": "2026-04-27 13:56:21",
   "data_source": "eastmoney"
 }

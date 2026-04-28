@@ -1,62 +1,62 @@
 {
   "fund_code": "023159",
   "fund_name": "上银先进制造混合发起式C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 93.33,
-  "parsed_weight": 56.13,
-  "missing_weight": 37.2,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 89.16,
+  "parsed_weight": 47.83,
+  "missing_weight": 41.33,
   "positions": [
     {
-      "stock_code": "688778",
-      "stock_name": "厦钨新能",
-      "weight": 8.08
+      "stock_code": "688518",
+      "stock_name": "联赢激光",
+      "weight": 5.3
     },
     {
-      "stock_code": "300285",
-      "stock_name": "国瓷材料",
-      "weight": 7.85
+      "stock_code": "300450",
+      "stock_name": "先导智能",
+      "weight": 5.2
+    },
+    {
+      "stock_code": "688155",
+      "stock_name": "先惠技术",
+      "weight": 5.2
     },
     {
       "stock_code": "002738",
       "stock_name": "中矿资源",
-      "weight": 6.06
-    },
-    {
-      "stock_code": "002460",
-      "stock_name": "赣锋锂业",
-      "weight": 5.95
-    },
-    {
-      "stock_code": "301662",
-      "stock_name": "宏工科技",
-      "weight": 5.08
-    },
-    {
-      "stock_code": "603799",
-      "stock_name": "华友钴业",
-      "weight": 5.01
-    },
-    {
-      "stock_code": "002203",
-      "stock_name": "海亮股份",
-      "weight": 4.86
-    },
-    {
-      "stock_code": "301360",
-      "stock_name": "荣旗科技",
-      "weight": 4.49
+      "weight": 5.16
     },
     {
       "stock_code": "301150",
       "stock_name": "中一科技",
-      "weight": 4.43
+      "weight": 5.01
     },
     {
-      "stock_code": "688518",
-      "stock_name": "联赢激光",
-      "weight": 4.32
+      "stock_code": "688778",
+      "stock_name": "厦钨新能",
+      "weight": 5.01
+    },
+    {
+      "stock_code": "300490",
+      "stock_name": "华自科技",
+      "weight": 4.83
+    },
+    {
+      "stock_code": "301662",
+      "stock_name": "宏工科技",
+      "weight": 4.47
+    },
+    {
+      "stock_code": "688559",
+      "stock_name": "海目星",
+      "weight": 4.36
+    },
+    {
+      "stock_code": "301511",
+      "stock_name": "德福科技",
+      "weight": 3.29
     }
   ],
-  "fetched_at": "2026-03-29 23:16:21",
+  "fetched_at": "2026-04-27 13:56:26",
   "data_source": "eastmoney"
 }

@@ -1,97 +1,72 @@
 {
   "fund_code": "020137",
   "fund_name": "平安医疗健康混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.07,
-  "parsed_weight": 94.05,
-  "missing_weight": 0.02,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.41,
+  "parsed_weight": 81.46,
+  "missing_weight": 12.95,
   "positions": [
     {
       "stock_code": "09926",
       "stock_name": "康方生物",
-      "weight": 9.47
-    },
-    {
-      "stock_code": "688235",
-      "stock_name": "百济神州",
-      "weight": 9.36
-    },
-    {
-      "stock_code": "06990",
-      "stock_name": "科伦博泰生物-B",
-      "weight": 9.09
-    },
-    {
-      "stock_code": "01530",
-      "stock_name": "三生制药",
-      "weight": 9.08
-    },
-    {
-      "stock_code": "300049",
-      "stock_name": "福瑞医科",
-      "weight": 8.98
-    },
-    {
-      "stock_code": "01801",
-      "stock_name": "信达生物",
-      "weight": 8.9
-    },
-    {
-      "stock_code": "688506",
-      "stock_name": "百利天恒",
-      "weight": 8.84
+      "weight": 10.21
     },
     {
       "stock_code": "002294",
       "stock_name": "信立泰",
-      "weight": 6.24
+      "weight": 9.01
     },
     {
-      "stock_code": "02268",
-      "stock_name": "药明合联",
-      "weight": 5.98
+      "stock_code": "06990",
+      "stock_name": "科伦博泰生物",
+      "weight": 8.62
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 8.03
+    },
+    {
+      "stock_code": "300049",
+      "stock_name": "福瑞医科",
+      "weight": 7.96
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 7.67
+    },
+    {
+      "stock_code": "688710",
+      "stock_name": "益诺思",
+      "weight": 5.8
     },
     {
       "stock_code": "688796",
       "stock_name": "百奥赛图",
-      "weight": 4.87
+      "weight": 5.71
     },
     {
-      "stock_code": "688382",
-      "stock_name": "益方生物",
-      "weight": 4.18
+      "stock_code": "688331",
+      "stock_name": "荣昌生物",
+      "weight": 5.29
     },
     {
-      "stock_code": "688578",
-      "stock_name": "艾力斯",
-      "weight": 4.09
+      "stock_code": "688235",
+      "stock_name": "百济神州",
+      "weight": 4.82
     },
     {
       "stock_code": "02315",
       "stock_name": "百奥赛图-B",
-      "weight": 2.91
+      "weight": 4.23
     },
     {
-      "stock_code": "688192",
-      "stock_name": "迪哲医药",
-      "weight": 1.88
-    },
-    {
-      "stock_code": "688795",
-      "stock_name": "摩尔线程",
-      "weight": 0.12
-    },
-    {
-      "stock_code": "688802",
-      "stock_name": "沐曦股份",
-      "weight": 0.04
-    },
-    {
-      "stock_code": "688783",
-      "stock_name": "西安奕材",
-      "weight": 0.02
+      "stock_code": "09995",
+      "stock_name": "荣昌生物",
+      "weight": 4.11
     }
   ],
-  "fetched_at": "2026-03-29 23:19:46",
+  "fetched_at": "2026-04-27 14:00:01",
   "data_source": "eastmoney"
 }

@@ -1,62 +1,62 @@
 {
   "fund_code": "020486",
   "fund_name": "华富智慧城市灵活配置混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 91.36,
-  "parsed_weight": 44.31,
-  "missing_weight": 47.05,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 85.36,
+  "parsed_weight": 64.71,
+  "missing_weight": 20.65,
   "positions": [
     {
-      "stock_code": "688041",
-      "stock_name": "海光信息",
-      "weight": 5.6
+      "stock_code": "688787",
+      "stock_name": "海天瑞声",
+      "weight": 9.13
     },
     {
-      "stock_code": "688256",
-      "stock_name": "寒武纪",
-      "weight": 4.84
-    },
-    {
-      "stock_code": "688292",
-      "stock_name": "浩瀚深度",
-      "weight": 4.66
-    },
-    {
-      "stock_code": "300502",
-      "stock_name": "新易盛",
-      "weight": 4.61
-    },
-    {
-      "stock_code": "300454",
-      "stock_name": "深信服",
-      "weight": 4.52
-    },
-    {
-      "stock_code": "603171",
-      "stock_name": "税友股份",
-      "weight": 4.33
-    },
-    {
-      "stock_code": "603859",
-      "stock_name": "能科科技",
-      "weight": 4.05
-    },
-    {
-      "stock_code": "301396",
-      "stock_name": "宏景科技",
-      "weight": 4.02
-    },
-    {
-      "stock_code": "688031",
-      "stock_name": "星环科技",
-      "weight": 3.86
+      "stock_code": "601858",
+      "stock_name": "中国科传",
+      "weight": 8.67
     },
     {
       "stock_code": "688258",
       "stock_name": "卓易信息",
-      "weight": 3.82
+      "weight": 6.97
+    },
+    {
+      "stock_code": "300378",
+      "stock_name": "鼎捷数智",
+      "weight": 6.46
+    },
+    {
+      "stock_code": "603000",
+      "stock_name": "人民网",
+      "weight": 6.42
+    },
+    {
+      "stock_code": "300170",
+      "stock_name": "汉得信息",
+      "weight": 6.32
+    },
+    {
+      "stock_code": "300454",
+      "stock_name": "深信服",
+      "weight": 5.96
+    },
+    {
+      "stock_code": "688031",
+      "stock_name": "星环科技",
+      "weight": 5.39
+    },
+    {
+      "stock_code": "603171",
+      "stock_name": "税友股份",
+      "weight": 4.71
+    },
+    {
+      "stock_code": "301093",
+      "stock_name": "华兰股份",
+      "weight": 4.68
     }
   ],
-  "fetched_at": "2026-03-29 23:15:13",
+  "fetched_at": "2026-04-27 13:55:12",
   "data_source": "eastmoney"
 }

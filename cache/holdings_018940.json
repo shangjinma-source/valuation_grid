@@ -1,62 +1,62 @@
 {
   "fund_code": "018940",
   "fund_name": "长城景气成长混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.81,
-  "parsed_weight": 75.23,
-  "missing_weight": 19.58,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 96.08,
+  "parsed_weight": 77.42,
+  "missing_weight": 18.66,
   "positions": [
     {
       "stock_code": "600760",
       "stock_name": "中航沈飞",
-      "weight": 8.91
+      "weight": 9.1
+    },
+    {
+      "stock_code": "688552",
+      "stock_name": "航天南湖",
+      "weight": 8.58
     },
     {
       "stock_code": "600893",
       "stock_name": "航发动力",
-      "weight": 8.28
-    },
-    {
-      "stock_code": "600562",
-      "stock_name": "国睿科技",
       "weight": 8.2
     },
     {
       "stock_code": "600316",
       "stock_name": "洪都航空",
-      "weight": 8.15
+      "weight": 8.07
     },
     {
-      "stock_code": "600879",
-      "stock_name": "航天电子",
-      "weight": 8.06
+      "stock_code": "301571",
+      "stock_name": "国科天成",
+      "weight": 7.96
     },
     {
-      "stock_code": "688552",
-      "stock_name": "航天南湖",
-      "weight": 7.89
+      "stock_code": "600391",
+      "stock_name": "航发科技",
+      "weight": 7.59
     },
     {
-      "stock_code": "302132",
-      "stock_name": "中航成飞",
-      "weight": 7.46
+      "stock_code": "600562",
+      "stock_name": "国睿科技",
+      "weight": 7.55
     },
     {
       "stock_code": "000768",
       "stock_name": "中航西飞",
-      "weight": 6.95
+      "weight": 7.31
     },
     {
-      "stock_code": "688297",
-      "stock_name": "中无人机",
-      "weight": 5.67
+      "stock_code": "600879",
+      "stock_name": "航天电子",
+      "weight": 6.6
     },
     {
-      "stock_code": "002389",
-      "stock_name": "航天彩虹",
-      "weight": 5.66
+      "stock_code": "302132",
+      "stock_name": "中航成飞",
+      "weight": 6.46
     }
   ],
-  "fetched_at": "2026-03-29 23:21:23",
+  "fetched_at": "2026-04-27 14:01:45",
   "data_source": "eastmoney"
 }

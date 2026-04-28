@@ -1,60 +1,60 @@
 {
   "fund_code": "021608",
   "fund_name": "南方上证科创板芯片ETF发起联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.91,
-  "parsed_weight": 57.63,
-  "missing_weight": 42.28,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.96,
+  "parsed_weight": 60.96,
+  "missing_weight": 39.0,
   "positions": [
     {
       "stock_code": "688981",
       "stock_name": "中芯国际",
-      "weight": 10.35
+      "weight": 9.8
     },
     {
       "stock_code": "688041",
       "stock_name": "海光信息",
-      "weight": 10.05
+      "weight": 9.66
     },
     {
       "stock_code": "688256",
       "stock_name": "寒武纪",
-      "weight": 9.47
+      "weight": 9.56
     },
     {
       "stock_code": "688008",
       "stock_name": "澜起科技",
-      "weight": 7.73
+      "weight": 7.8
     },
     {
       "stock_code": "688012",
       "stock_name": "中微公司",
-      "weight": 6.73
-    },
-    {
-      "stock_code": "688072",
-      "stock_name": "拓荆科技",
-      "weight": 3.17
+      "weight": 7.3
     },
     {
       "stock_code": "688521",
       "stock_name": "芯原股份",
-      "weight": 2.88
+      "weight": 4.05
+    },
+    {
+      "stock_code": "688525",
+      "stock_name": "佰维存储",
+      "weight": 3.76
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 3.39
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 3.28
     },
     {
       "stock_code": "688347",
       "stock_name": "华虹公司",
-      "weight": 2.53
-    },
-    {
-      "stock_code": "688126",
-      "stock_name": "沪硅产业",
-      "weight": 2.38
-    },
-    {
-      "stock_code": "688110",
-      "stock_name": "东芯股份",
-      "weight": 2.33
+      "weight": 2.35
     },
     {
       "stock_code": "688795",
@@ -62,7 +62,7 @@
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-03-29 23:12:05",
+  "fetched_at": "2026-04-27 13:52:02",
   "data_source": "eastmoney",
   "original_fund_code": "021608",
   "etf_target": "588890",

@@ -1,68 +1,213 @@
 {
   "fund_code": "025857",
   "fund_name": "华夏中证电网设备主题ETF发起式联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.42,
-  "parsed_weight": 54.24,
-  "missing_weight": 45.18,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.65,
+  "parsed_weight": 77.8,
+  "missing_weight": 21.85,
   "positions": [
     {
       "stock_code": "600089",
       "stock_name": "特变电工",
-      "weight": 11.4
+      "weight": 10.94
     },
     {
       "stock_code": "002028",
       "stock_name": "思源电气",
-      "weight": 9.76
+      "weight": 10.28
     },
     {
       "stock_code": "600406",
       "stock_name": "国电南瑞",
-      "weight": 9.16
-    },
-    {
-      "stock_code": "600522",
-      "stock_name": "中天科技",
-      "weight": 5.02
+      "weight": 8.53
     },
     {
       "stock_code": "600487",
       "stock_name": "亨通光电",
-      "weight": 4.95
+      "weight": 8.49
     },
     {
-      "stock_code": "600885",
-      "stock_name": "宏发股份",
-      "weight": 3.15
-    },
-    {
-      "stock_code": "601877",
-      "stock_name": "正泰电器",
-      "weight": 2.86
-    },
-    {
-      "stock_code": "688676",
-      "stock_name": "金盘科技",
-      "weight": 2.53
-    },
-    {
-      "stock_code": "603606",
-      "stock_name": "东方电缆",
-      "weight": 2.5
+      "stock_code": "600522",
+      "stock_name": "中天科技",
+      "weight": 6.71
     },
     {
       "stock_code": "601179",
       "stock_name": "中国西电",
-      "weight": 2.37
+      "weight": 3.19
+    },
+    {
+      "stock_code": "601877",
+      "stock_name": "正泰电器",
+      "weight": 2.7
+    },
+    {
+      "stock_code": "600885",
+      "stock_name": "宏发股份",
+      "weight": 2.31
+    },
+    {
+      "stock_code": "603606",
+      "stock_name": "东方电缆",
+      "weight": 2.04
+    },
+    {
+      "stock_code": "601208",
+      "stock_name": "东材科技",
+      "weight": 1.95
+    },
+    {
+      "stock_code": "688676",
+      "stock_name": "金盘科技",
+      "weight": 1.68
+    },
+    {
+      "stock_code": "000400",
+      "stock_name": "许继电气",
+      "weight": 1.58
+    },
+    {
+      "stock_code": "601567",
+      "stock_name": "三星电气",
+      "weight": 1.5
+    },
+    {
+      "stock_code": "600312",
+      "stock_name": "平高电气",
+      "weight": 1.35
+    },
+    {
+      "stock_code": "600869",
+      "stock_name": "远东股份",
+      "weight": 1.23
+    },
+    {
+      "stock_code": "002270",
+      "stock_name": "华明装备",
+      "weight": 1.19
+    },
+    {
+      "stock_code": "600550",
+      "stock_name": "保变电气",
+      "weight": 1.13
+    },
+    {
+      "stock_code": "600131",
+      "stock_name": "国网信通",
+      "weight": 0.9
+    },
+    {
+      "stock_code": "603618",
+      "stock_name": "杭电股份",
+      "weight": 0.8
+    },
+    {
+      "stock_code": "002063",
+      "stock_name": "远光软件",
+      "weight": 0.8
+    },
+    {
+      "stock_code": "002121",
+      "stock_name": "科陆电子",
+      "weight": 0.74
+    },
+    {
+      "stock_code": "002706",
+      "stock_name": "良信股份",
+      "weight": 0.73
+    },
+    {
+      "stock_code": "002169",
+      "stock_name": "智光电气",
+      "weight": 0.73
+    },
+    {
+      "stock_code": "301031",
+      "stock_name": "中熔电气",
+      "weight": 0.66
     },
     {
       "stock_code": "600268",
       "stock_name": "国电南自",
+      "weight": 0.64
+    },
+    {
+      "stock_code": "002298",
+      "stock_name": "中电鑫龙",
+      "weight": 0.63
+    },
+    {
+      "stock_code": "300444",
+      "stock_name": "双杰电气",
+      "weight": 0.6
+    },
+    {
+      "stock_code": "300222",
+      "stock_name": "科大智能",
       "weight": 0.54
+    },
+    {
+      "stock_code": "300265",
+      "stock_name": "通光线缆",
+      "weight": 0.51
+    },
+    {
+      "stock_code": "300018",
+      "stock_name": "中元股份",
+      "weight": 0.4
+    },
+    {
+      "stock_code": "603861",
+      "stock_name": "白云电器",
+      "weight": 0.35
+    },
+    {
+      "stock_code": "300062",
+      "stock_name": "中能电气",
+      "weight": 0.29
+    },
+    {
+      "stock_code": "002882",
+      "stock_name": "金龙羽",
+      "weight": 0.29
+    },
+    {
+      "stock_code": "002606",
+      "stock_name": "大连电瓷",
+      "weight": 0.28
+    },
+    {
+      "stock_code": "300831",
+      "stock_name": "派瑞股份",
+      "weight": 0.25
+    },
+    {
+      "stock_code": "300215",
+      "stock_name": "电科院",
+      "weight": 0.24
+    },
+    {
+      "stock_code": "605066",
+      "stock_name": "天正电气",
+      "weight": 0.2
+    },
+    {
+      "stock_code": "300880",
+      "stock_name": "迦南智能",
+      "weight": 0.17
+    },
+    {
+      "stock_code": "001382",
+      "stock_name": "新亚电缆",
+      "weight": 0.15
+    },
+    {
+      "stock_code": "001388",
+      "stock_name": "信通电子",
+      "weight": 0.1
     }
   ],
-  "fetched_at": "2026-03-29 23:19:34",
+  "fetched_at": "2026-04-27 13:59:52",
   "data_source": "eastmoney",
   "original_fund_code": "025857",
   "etf_target": "159326",

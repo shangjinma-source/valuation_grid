@@ -27,8 +27,8 @@
           "status": "holding",
           "note": "冷却期后加仓",
           "is_supplement": false,
-          "peak_nav": 2.0227,
-          "peak_date": "2026-04-10"
+          "peak_nav": 2.0747,
+          "peak_date": "2026-04-16"
         },
         {
           "id": "b20260403a",
@@ -39,8 +39,8 @@
           "status": "holding",
           "note": "",
           "is_supplement": "",
-          "peak_nav": 2.0166,
-          "peak_date": "2026-04-14"
+          "peak_nav": 2.0747,
+          "peak_date": "2026-04-16"
         }
       ],
       "supplement_count": 0,
@@ -131,8 +131,8 @@
           "status": "holding",
           "note": "建仓",
           "is_supplement": false,
-          "peak_nav": 2.3547,
-          "peak_date": "2026-04-13"
+          "peak_nav": 2.6502,
+          "peak_date": "2026-04-27"
         },
         {
           "id": "b20260317a",
@@ -143,8 +143,8 @@
           "status": "holding",
           "note": "补仓",
           "is_supplement": true,
-          "peak_nav": 2.3547,
-          "peak_date": "2026-04-13"
+          "peak_nav": 2.6502,
+          "peak_date": "2026-04-27"
         }
       ],
       "supplement_count": 1,
@@ -159,20 +159,43 @@
         {
           "id": "b20260330a",
           "buy_date": "2026-03-30",
-          "amount": 5197.5,
+          "amount": 1559.24,
           "nav": 1.7192,
-          "shares": 3023.21,
+          "shares": 906.96,
           "status": "holding",
           "note": "建仓",
           "is_supplement": false,
-          "peak_nav": 1.9389,
-          "peak_date": "2026-04-14"
+          "peak_nav": 2.1357,
+          "peak_date": "2026-04-28",
+          "original_amount": 5197.5,
+          "original_shares": 3023.21
         }
       ],
       "supplement_count": 0,
-      "cooldown_until": null,
+      "cooldown_until": "2026-05-02",
       "watch_note": "空仓待建仓",
-      "vol_sensitivity": 1.1
+      "vol_sensitivity": 1.1,
+      "sell_records": [
+        {
+          "id": "s20260428a",
+          "batch_id": "b20260330a",
+          "sell_date": "2026-04-28",
+          "sell_shares": 2116.25,
+          "buy_nav": 1.7192,
+          "sell_nav": null,
+          "cost": 3638.26,
+          "gross": null,
+          "fee": null,
+          "net": null,
+          "profit": null,
+          "profit_pct": null,
+          "hold_days": 29,
+          "sell_fee_rate": 0.5,
+          "note": "建仓"
+        }
+      ],
+      "cooldown_sell_date": "2026-04-28",
+      "cooldown_trade_days": 2
     },
     "017560__老爸": {
       "fund_name": "",
@@ -187,8 +210,8 @@
           "status": "holding",
           "note": "低位建仓",
           "is_supplement": false,
-          "peak_nav": 2.3475,
-          "peak_date": "2026-04-14"
+          "peak_nav": 2.607,
+          "peak_date": "2026-04-28"
         }
       ],
       "supplement_count": 0,
@@ -203,20 +226,43 @@
         {
           "id": "b20260330a",
           "buy_date": "2026-03-30",
-          "amount": 2598.75,
+          "amount": 779.63,
           "nav": 1.7192,
-          "shares": 1511.6,
+          "shares": 453.48,
           "status": "holding",
           "note": "温和回调建仓",
           "is_supplement": false,
-          "peak_nav": 1.965,
-          "peak_date": "2026-04-10"
+          "peak_nav": 2.2042,
+          "peak_date": "2026-04-23",
+          "original_amount": 2598.75,
+          "original_shares": 1511.6
         }
       ],
       "supplement_count": 0,
-      "cooldown_until": null,
+      "cooldown_until": "2026-05-02",
       "watch_note": "空仓待建仓",
-      "vol_sensitivity": 1.1
+      "vol_sensitivity": 1.1,
+      "sell_records": [
+        {
+          "id": "s20260428a",
+          "batch_id": "b20260330a",
+          "sell_date": "2026-04-28",
+          "sell_shares": 1058.12,
+          "buy_nav": 1.7192,
+          "sell_nav": null,
+          "cost": 1819.12,
+          "gross": null,
+          "fee": null,
+          "net": null,
+          "profit": null,
+          "profit_pct": null,
+          "hold_days": 29,
+          "sell_fee_rate": 0.5,
+          "note": "温和回调建仓"
+        }
+      ],
+      "cooldown_sell_date": "2026-04-28",
+      "cooldown_trade_days": 2
     },
     "017811__老婆": {
       "fund_name": "",
@@ -280,8 +326,8 @@
           "status": "holding",
           "note": "",
           "is_supplement": "",
-          "peak_nav": 1.8319,
-          "peak_date": "2026-04-14",
+          "peak_nav": 2.0629,
+          "peak_date": "2026-04-27",
           "original_amount": 438.98,
           "original_shares": 239.92
         },
@@ -294,13 +340,13 @@
           "status": "holding",
           "note": "",
           "is_supplement": "",
-          "peak_nav": 1.8319,
-          "peak_date": "2026-04-14"
+          "peak_nav": 2.0629,
+          "peak_date": "2026-04-27"
         }
       ],
       "supplement_count": 0,
-      "vol_sensitivity_auto": 1.17,
-      "vol_sensitivity_auto_at": "2026-04-14 01:30:22",
+      "vol_sensitivity_auto": 1.19,
+      "vol_sensitivity_auto_at": "2026-04-28 23:30:17",
       "sell_records": [
         {
           "id": "s20260224a",
@@ -648,8 +694,8 @@
           "status": "holding",
           "note": "",
           "is_supplement": "",
-          "peak_nav": 4.5436,
-          "peak_date": "2026-04-14",
+          "peak_nav": 5.2446,
+          "peak_date": "2026-04-22",
           "original_amount": 30.0,
           "original_shares": 7.5
         },
@@ -662,8 +708,8 @@
           "status": "holding",
           "note": "",
           "is_supplement": "",
-          "peak_nav": 4.5436,
-          "peak_date": "2026-04-14"
+          "peak_nav": 5.2446,
+          "peak_date": "2026-04-22"
         },
         {
           "id": "b20260312a",
@@ -674,8 +720,8 @@
           "status": "holding",
           "note": "",
           "is_supplement": "",
-          "peak_nav": 4.5436,
-          "peak_date": "2026-04-14"
+          "peak_nav": 5.2446,
+          "peak_date": "2026-04-22"
         },
         {
           "id": "b20260317a",
@@ -686,8 +732,8 @@
           "status": "holding",
           "note": "",
           "is_supplement": "",
-          "peak_nav": 4.5436,
-          "peak_date": "2026-04-14"
+          "peak_nav": 5.2446,
+          "peak_date": "2026-04-22"
         },
         {
           "id": "b20260331a",
@@ -698,8 +744,8 @@
           "status": "holding",
           "note": "",
           "is_supplement": "",
-          "peak_nav": 4.5436,
-          "peak_date": "2026-04-14"
+          "peak_nav": 5.2446,
+          "peak_date": "2026-04-22"
         },
         {
           "id": "b20260402a",
@@ -710,8 +756,8 @@
           "status": "holding",
           "note": "",
           "is_supplement": "",
-          "peak_nav": 4.5436,
-          "peak_date": "2026-04-14"
+          "peak_nav": 5.2446,
+          "peak_date": "2026-04-22"
         },
         {
           "id": "b20260407a",
@@ -722,13 +768,13 @@
           "status": "holding",
           "note": "",
           "is_supplement": "",
-          "peak_nav": 4.5436,
-          "peak_date": "2026-04-14"
+          "peak_nav": 5.2446,
+          "peak_date": "2026-04-22"
         }
       ],
       "supplement_count": 0,
-      "vol_sensitivity_auto": 1.1,
-      "vol_sensitivity_auto_at": "2026-04-14 01:48:25",
+      "vol_sensitivity_auto": 0.88,
+      "vol_sensitivity_auto_at": "2026-04-28 23:30:17",
       "sell_records": [
         {
           "id": "s20260127a",
@@ -1060,7 +1106,7 @@
     }
   },
   "cash_reserve_ratio": 0.3,
-  "updated_at": "2026-04-14 02:06:48",
+  "updated_at": "2026-04-28 23:31:39",
   "market_regime": "neutral",
   "regime_auto": true,
   "regime_auto_result": "neutral",

@@ -1,148 +1,103 @@
 {
   "fund_code": "012729",
   "fund_name": "国泰中证动漫游戏ETF联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.65,
-  "parsed_weight": 99.63,
-  "missing_weight": 0.02,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.23,
+  "parsed_weight": 82.02,
+  "missing_weight": 17.21,
   "positions": [
     {
       "stock_code": "002558",
       "stock_name": "巨人网络",
-      "weight": 15.48
-    },
-    {
-      "stock_code": "002517",
-      "stock_name": "恺英网络",
-      "weight": 11.41
+      "weight": 12.75
     },
     {
       "stock_code": "002555",
       "stock_name": "三七互娱",
-      "weight": 11.15
+      "weight": 11.44
     },
     {
-      "stock_code": "300251",
-      "stock_name": "光线传媒",
-      "weight": 7.33
-    },
-    {
-      "stock_code": "300002",
-      "stock_name": "神州泰岳",
-      "weight": 6.92
+      "stock_code": "002517",
+      "stock_name": "恺英网络",
+      "weight": 10.44
     },
     {
       "stock_code": "002624",
       "stock_name": "完美世界",
-      "weight": 6.8
+      "weight": 8.24
+    },
+    {
+      "stock_code": "300251",
+      "stock_name": "光线传媒",
+      "weight": 7.79
+    },
+    {
+      "stock_code": "300002",
+      "stock_name": "神州泰岳",
+      "weight": 6.33
     },
     {
       "stock_code": "603444",
       "stock_name": "吉比特",
-      "weight": 5.58
+      "weight": 5.42
     },
     {
       "stock_code": "300315",
       "stock_name": "掌趣科技",
-      "weight": 4.08
-    },
-    {
-      "stock_code": "002174",
-      "stock_name": "游族网络",
-      "weight": 3.67
-    },
-    {
-      "stock_code": "600633",
-      "stock_name": "浙数文化",
-      "weight": 2.99
+      "weight": 4.48
     },
     {
       "stock_code": "300113",
       "stock_name": "顺网科技",
-      "weight": 2.96
+      "weight": 4.36
     },
     {
-      "stock_code": "002292",
-      "stock_name": "奥飞娱乐",
-      "weight": 2.4
-    },
-    {
-      "stock_code": "300031",
-      "stock_name": "宝通科技",
-      "weight": 2.32
-    },
-    {
-      "stock_code": "300533",
-      "stock_name": "冰川网络",
-      "weight": 1.74
+      "stock_code": "002174",
+      "stock_name": "游族网络",
+      "weight": 3.24
     },
     {
       "stock_code": "300043",
       "stock_name": "星辉娱乐",
-      "weight": 1.5
-    },
-    {
-      "stock_code": "002605",
-      "stock_name": "姚记科技",
-      "weight": 1.49
+      "weight": 1.63
     },
     {
       "stock_code": "300494",
       "stock_name": "盛天网络",
-      "weight": 1.46
-    },
-    {
-      "stock_code": "300467",
-      "stock_name": "迅游科技",
-      "weight": 1.43
+      "weight": 1.51
     },
     {
       "stock_code": "600640",
       "stock_name": "国脉文化",
-      "weight": 1.22
-    },
-    {
-      "stock_code": "002148",
-      "stock_name": "北纬科技",
-      "weight": 1.21
-    },
-    {
-      "stock_code": "300299",
-      "stock_name": "富春股份",
-      "weight": 1.2
+      "weight": 1.3
     },
     {
       "stock_code": "600880",
       "stock_name": "博瑞传播",
-      "weight": 1.16
-    },
-    {
-      "stock_code": "002919",
-      "stock_name": "名臣健康",
-      "weight": 1.12
+      "weight": 1.28
     },
     {
       "stock_code": "300148",
       "stock_name": "天舟文化",
-      "weight": 1.12
-    },
-    {
-      "stock_code": "603258",
-      "stock_name": "电魂网络",
-      "weight": 0.69
-    },
-    {
-      "stock_code": "301011",
-      "stock_name": "华立科技",
-      "weight": 0.6
+      "weight": 1.24
     },
     {
       "stock_code": "002862",
       "stock_name": "实丰文化",
-      "weight": 0.6
+      "weight": 0.55
+    },
+    {
+      "stock_code": "001280",
+      "stock_name": "中国铀业",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "001257",
+      "stock_name": "盛龙股份",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-03-29 23:20:59",
+  "fetched_at": "2026-04-27 14:01:20",
   "data_source": "eastmoney",
   "original_fund_code": "012729",
   "etf_target": "516010",

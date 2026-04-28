@@ -1,62 +1,67 @@
 {
   "fund_code": "025793",
   "fund_name": "东方阿尔法科技甄选混合发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 93.7,
-  "parsed_weight": 74.13,
-  "missing_weight": 19.57,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 86.35,
+  "parsed_weight": 63.27,
+  "missing_weight": 23.08,
   "positions": [
-    {
-      "stock_code": "002851",
-      "stock_name": "麦格米特",
-      "weight": 9.78
-    },
-    {
-      "stock_code": "002922",
-      "stock_name": "伊戈尔",
-      "weight": 9.33
-    },
-    {
-      "stock_code": "688676",
-      "stock_name": "金盘科技",
-      "weight": 9.18
-    },
-    {
-      "stock_code": "002518",
-      "stock_name": "科士达",
-      "weight": 8.59
-    },
-    {
-      "stock_code": "601126",
-      "stock_name": "四方股份",
-      "weight": 7.91
-    },
     {
       "stock_code": "603067",
       "stock_name": "振华股份",
-      "weight": 7.28
+      "weight": 8.55
     },
     {
       "stock_code": "603308",
       "stock_name": "应流股份",
-      "weight": 5.85
+      "weight": 8.48
     },
     {
-      "stock_code": "688234",
-      "stock_name": "天岳先进",
-      "weight": 5.68
+      "stock_code": "300274",
+      "stock_name": "阳光电源",
+      "weight": 7.93
     },
     {
-      "stock_code": "688239",
-      "stock_name": "航宇科技",
-      "weight": 5.48
+      "stock_code": "01072",
+      "stock_name": "东方电气",
+      "weight": 6.32
     },
     {
-      "stock_code": "300593",
-      "stock_name": "新雷能",
-      "weight": 5.05
+      "stock_code": "002028",
+      "stock_name": "思源电气",
+      "weight": 5.54
+    },
+    {
+      "stock_code": "002353",
+      "stock_name": "杰瑞股份",
+      "weight": 5.33
+    },
+    {
+      "stock_code": "000338",
+      "stock_name": "潍柴动力",
+      "weight": 5.21
+    },
+    {
+      "stock_code": "000962",
+      "stock_name": "东方钽业",
+      "weight": 4.57
+    },
+    {
+      "stock_code": "02577",
+      "stock_name": "英诺赛科",
+      "weight": 4.31
+    },
+    {
+      "stock_code": "002851",
+      "stock_name": "麦格米特",
+      "weight": 3.6
+    },
+    {
+      "stock_code": "600875",
+      "stock_name": "东方电气",
+      "weight": 3.43
     }
   ],
-  "fetched_at": "2026-03-29 23:19:38",
+  "fetched_at": "2026-04-27 13:59:57",
   "data_source": "eastmoney"
 }

@@ -1,70 +1,70 @@
 {
   "fund_code": "017223",
   "fund_name": "富国中证电池主题ETF发起式联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.17,
-  "parsed_weight": 51.49,
-  "missing_weight": 47.68,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.5,
+  "parsed_weight": 49.64,
+  "missing_weight": 49.86,
   "positions": [
     {
       "stock_code": "300750",
       "stock_name": "宁德时代",
-      "weight": 9.19
+      "weight": 10.1
     },
     {
       "stock_code": "300274",
       "stock_name": "阳光电源",
-      "weight": 9.05
+      "weight": 8.12
     },
     {
       "stock_code": "002050",
       "stock_name": "三花智控",
-      "weight": 8.32
+      "weight": 6.47
     },
     {
       "stock_code": "300014",
       "stock_name": "亿纬锂能",
-      "weight": 5.48
+      "weight": 5.28
     },
     {
       "stock_code": "002709",
       "stock_name": "天赐材料",
-      "weight": 4.44
+      "weight": 4.45
     },
     {
       "stock_code": "300450",
       "stock_name": "先导智能",
-      "weight": 3.69
+      "weight": 3.55
+    },
+    {
+      "stock_code": "605117",
+      "stock_name": "德业股份",
+      "weight": 3.24
     },
     {
       "stock_code": "002340",
       "stock_name": "格林美",
-      "weight": 2.87
+      "weight": 2.75
+    },
+    {
+      "stock_code": "002812",
+      "stock_name": "恩捷股份",
+      "weight": 2.72
     },
     {
       "stock_code": "002074",
       "stock_name": "国轩高科",
-      "weight": 2.85
-    },
-    {
-      "stock_code": "002407",
-      "stock_name": "多氟多",
-      "weight": 2.72
-    },
-    {
-      "stock_code": "300207",
-      "stock_name": "欣旺达",
-      "weight": 2.59
+      "weight": 2.63
     },
     {
       "stock_code": "688795",
       "stock_name": "摩尔线程",
-      "weight": 0.17
+      "weight": 0.19
     },
     {
       "stock_code": "688802",
       "stock_name": "沐曦股份",
-      "weight": 0.07
+      "weight": 0.09
     },
     {
       "stock_code": "688783",
@@ -77,12 +77,12 @@
       "weight": 0.01
     },
     {
-      "stock_code": "688765",
-      "stock_name": "禾元生物",
+      "stock_code": "688781",
+      "stock_name": "视涯科技",
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-03-29 23:16:06",
+  "fetched_at": "2026-04-27 13:56:11",
   "data_source": "eastmoney",
   "original_fund_code": "017223",
   "etf_target": "561160",

@@ -1,62 +1,62 @@
 {
   "fund_code": "019244",
   "fund_name": "汇丰晋信龙腾混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.64,
-  "parsed_weight": 85.07,
-  "missing_weight": 9.57,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.73,
+  "parsed_weight": 91.71,
+  "missing_weight": 2.02,
   "positions": [
     {
-      "stock_code": "002459",
-      "stock_name": "晶澳科技",
-      "weight": 9.63
+      "stock_code": "601012",
+      "stock_name": "隆基绿能",
+      "weight": 9.82
     },
     {
-      "stock_code": "688599",
-      "stock_name": "天合光能",
-      "weight": 9.46
+      "stock_code": "002129",
+      "stock_name": "TCL中环",
+      "weight": 9.64
     },
     {
       "stock_code": "600438",
       "stock_name": "通威股份",
+      "weight": 9.62
+    },
+    {
+      "stock_code": "002459",
+      "stock_name": "晶澳科技",
+      "weight": 9.59
+    },
+    {
+      "stock_code": "600732",
+      "stock_name": "爱旭股份",
+      "weight": 9.44
+    },
+    {
+      "stock_code": "688599",
+      "stock_name": "天合光能",
       "weight": 9.4
     },
     {
       "stock_code": "601865",
       "stock_name": "福莱特",
-      "weight": 9.38
-    },
-    {
-      "stock_code": "688303",
-      "stock_name": "大全能源",
-      "weight": 8.8
-    },
-    {
-      "stock_code": "000803",
-      "stock_name": "山高环能",
-      "weight": 8.74
-    },
-    {
-      "stock_code": "600732",
-      "stock_name": "爱旭股份",
-      "weight": 8.46
-    },
-    {
-      "stock_code": "601012",
-      "stock_name": "隆基绿能",
-      "weight": 8.19
-    },
-    {
-      "stock_code": "002129",
-      "stock_name": "TCL中环",
-      "weight": 6.63
+      "weight": 9.33
     },
     {
       "stock_code": "688223",
       "stock_name": "晶科能源",
-      "weight": 6.38
+      "weight": 9.29
+    },
+    {
+      "stock_code": "688303",
+      "stock_name": "大全能源",
+      "weight": 9.12
+    },
+    {
+      "stock_code": "603185",
+      "stock_name": "弘元绿能",
+      "weight": 6.46
     }
   ],
-  "fetched_at": "2026-03-29 23:18:24",
+  "fetched_at": "2026-04-27 13:58:36",
   "data_source": "eastmoney"
 }

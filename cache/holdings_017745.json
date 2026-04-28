@@ -1,62 +1,62 @@
 {
   "fund_code": "017745",
   "fund_name": "嘉实绿色主题股票发起式C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 93.42,
-  "parsed_weight": 82.51,
-  "missing_weight": 10.91,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.06,
+  "parsed_weight": 68.24,
+  "missing_weight": 23.82,
   "positions": [
     {
       "stock_code": "603986",
       "stock_name": "兆易创新",
-      "weight": 9.9
-    },
-    {
-      "stock_code": "688008",
-      "stock_name": "澜起科技",
-      "weight": 9.81
-    },
-    {
-      "stock_code": "688123",
-      "stock_name": "聚辰股份",
-      "weight": 8.88
+      "weight": 9.01
     },
     {
       "stock_code": "688766",
       "stock_name": "普冉股份",
-      "weight": 8.67
-    },
-    {
-      "stock_code": "688521",
-      "stock_name": "芯原股份",
-      "weight": 8.49
-    },
-    {
-      "stock_code": "688041",
-      "stock_name": "海光信息",
-      "weight": 8.29
+      "weight": 8.27
     },
     {
       "stock_code": "300223",
       "stock_name": "北京君正",
-      "weight": 8.04
+      "weight": 7.88
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 7.87
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 7.19
+    },
+    {
+      "stock_code": "688008",
+      "stock_name": "澜起科技",
+      "weight": 6.91
     },
     {
       "stock_code": "688256",
       "stock_name": "寒武纪",
-      "weight": 7.92
-    },
-    {
-      "stock_code": "688249",
-      "stock_name": "晶合集成",
-      "weight": 7.52
+      "weight": 6.64
     },
     {
       "stock_code": "688536",
       "stock_name": "思瑞浦",
-      "weight": 4.99
+      "weight": 5.91
+    },
+    {
+      "stock_code": "300661",
+      "stock_name": "圣邦股份",
+      "weight": 5.42
+    },
+    {
+      "stock_code": "300236",
+      "stock_name": "上海新阳",
+      "weight": 3.14
     }
   ],
-  "fetched_at": "2026-03-29 23:12:25",
+  "fetched_at": "2026-04-27 13:52:22",
   "data_source": "eastmoney"
 }

@@ -1,62 +1,62 @@
 {
   "fund_code": "018463",
   "fund_name": "德邦稳盈增长灵活配置混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.0,
-  "parsed_weight": 68.29,
-  "missing_weight": 25.71,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.92,
+  "parsed_weight": 62.53,
+  "missing_weight": 31.39,
   "positions": [
+    {
+      "stock_code": "688777",
+      "stock_name": "中控技术",
+      "weight": 9.32
+    },
     {
       "stock_code": "688615",
       "stock_name": "合合信息",
-      "weight": 10.21
+      "weight": 8.75
+    },
+    {
+      "stock_code": "300418",
+      "stock_name": "昆仑万维",
+      "weight": 6.87
+    },
+    {
+      "stock_code": "300017",
+      "stock_name": "网宿科技",
+      "weight": 6.68
+    },
+    {
+      "stock_code": "300454",
+      "stock_name": "深信服",
+      "weight": 6.18
     },
     {
       "stock_code": "688258",
       "stock_name": "卓易信息",
-      "weight": 9.8
-    },
-    {
-      "stock_code": "300624",
-      "stock_name": "万兴科技",
-      "weight": 7.94
-    },
-    {
-      "stock_code": "603171",
-      "stock_name": "税友股份",
-      "weight": 7.39
-    },
-    {
-      "stock_code": "300364",
-      "stock_name": "中文在线",
-      "weight": 6.27
+      "weight": 5.7
     },
     {
       "stock_code": "300170",
       "stock_name": "汉得信息",
-      "weight": 6.13
+      "weight": 5.51
     },
     {
-      "stock_code": "688500",
-      "stock_name": "慧辰股份",
-      "weight": 5.31
+      "stock_code": "603171",
+      "stock_name": "税友股份",
+      "weight": 4.78
     },
     {
-      "stock_code": "301171",
-      "stock_name": "易点天下",
-      "weight": 5.12
+      "stock_code": "300624",
+      "stock_name": "万兴科技",
+      "weight": 4.63
     },
     {
-      "stock_code": "603039",
-      "stock_name": "泛微网络",
-      "weight": 5.09
-    },
-    {
-      "stock_code": "688365",
-      "stock_name": "光云科技",
-      "weight": 5.03
+      "stock_code": "688787",
+      "stock_name": "海天瑞声",
+      "weight": 4.11
     }
   ],
-  "fetched_at": "2026-03-29 23:15:08",
+  "fetched_at": "2026-04-27 13:55:07",
   "data_source": "eastmoney"
 }

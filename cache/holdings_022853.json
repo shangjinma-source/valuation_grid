@@ -1,62 +1,62 @@
 {
   "fund_code": "022853",
   "fund_name": "中航优选领航混合发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 93.84,
-  "parsed_weight": 92.79,
-  "missing_weight": 1.05,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.33,
+  "parsed_weight": 91.87,
+  "missing_weight": 0.46,
   "positions": [
-    {
-      "stock_code": "688321",
-      "stock_name": "微芯生物",
-      "weight": 9.63
-    },
-    {
-      "stock_code": "688192",
-      "stock_name": "迪哲医药",
-      "weight": 9.55
-    },
     {
       "stock_code": "688331",
       "stock_name": "荣昌生物",
-      "weight": 9.54
+      "weight": 10.46
     },
     {
       "stock_code": "688062",
       "stock_name": "迈威生物",
-      "weight": 9.54
-    },
-    {
-      "stock_code": "688068",
-      "stock_name": "热景生物",
-      "weight": 9.44
+      "weight": 9.84
     },
     {
       "stock_code": "688428",
       "stock_name": "诺诚健华",
-      "weight": 9.4
+      "weight": 9.83
     },
     {
-      "stock_code": "688176",
-      "stock_name": "亚虹医药",
-      "weight": 9.33
+      "stock_code": "688068",
+      "stock_name": "热景生物",
+      "weight": 9.83
     },
     {
-      "stock_code": "688382",
-      "stock_name": "益方生物",
-      "weight": 9.18
+      "stock_code": "688192",
+      "stock_name": "迪哲医药",
+      "weight": 9.8
     },
     {
       "stock_code": "688266",
       "stock_name": "泽璟制药",
-      "weight": 9.09
+      "weight": 9.56
     },
     {
-      "stock_code": "300723",
-      "stock_name": "一品红",
-      "weight": 8.09
+      "stock_code": "688382",
+      "stock_name": "益方生物",
+      "weight": 9.16
+    },
+    {
+      "stock_code": "688321",
+      "stock_name": "微芯生物",
+      "weight": 9.05
+    },
+    {
+      "stock_code": "688176",
+      "stock_name": "亚虹医药",
+      "weight": 7.51
+    },
+    {
+      "stock_code": "688513",
+      "stock_name": "苑东生物",
+      "weight": 6.83
     }
   ],
-  "fetched_at": "2026-03-29 23:20:33",
+  "fetched_at": "2026-04-27 14:00:52",
   "data_source": "eastmoney"
 }

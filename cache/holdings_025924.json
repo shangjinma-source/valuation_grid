@@ -1,67 +1,67 @@
 {
   "fund_code": "025924",
   "fund_name": "平安新能源精选混合发起式C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 89.11,
-  "parsed_weight": 48.57,
-  "missing_weight": 40.54,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.45,
+  "parsed_weight": 46.48,
+  "missing_weight": 45.97,
   "positions": [
     {
-      "stock_code": "688005",
-      "stock_name": "容百科技",
-      "weight": 4.97
-    },
-    {
-      "stock_code": "688170",
-      "stock_name": "德龙激光",
-      "weight": 4.96
+      "stock_code": "603876",
+      "stock_name": "鼎胜新材",
+      "weight": 5.91
     },
     {
       "stock_code": "02465",
       "stock_name": "龙蟠科技",
-      "weight": 4.93
-    },
-    {
-      "stock_code": "301662",
-      "stock_name": "宏工科技",
-      "weight": 4.78
-    },
-    {
-      "stock_code": "001332",
-      "stock_name": "锡装股份",
-      "weight": 4.56
-    },
-    {
-      "stock_code": "603659",
-      "stock_name": "璞泰来",
-      "weight": 4.46
+      "weight": 5.57
     },
     {
       "stock_code": "300919",
       "stock_name": "中伟新材",
-      "weight": 4.43
+      "weight": 4.57
     },
     {
-      "stock_code": "603200",
-      "stock_name": "上海洗霸",
-      "weight": 4.31
+      "stock_code": "300390",
+      "stock_name": "天华新能",
+      "weight": 4.4
     },
     {
-      "stock_code": "300073",
-      "stock_name": "当升科技",
-      "weight": 4.05
+      "stock_code": "001203",
+      "stock_name": "大中矿业",
+      "weight": 4.19
+    },
+    {
+      "stock_code": "688170",
+      "stock_name": "德龙激光",
+      "weight": 3.95
+    },
+    {
+      "stock_code": "301662",
+      "stock_name": "宏工科技",
+      "weight": 3.79
+    },
+    {
+      "stock_code": "688155",
+      "stock_name": "先惠技术",
+      "weight": 3.73
+    },
+    {
+      "stock_code": "002756",
+      "stock_name": "永兴材料",
+      "weight": 3.7
     },
     {
       "stock_code": "688778",
       "stock_name": "厦钨新能",
-      "weight": 3.92
+      "weight": 3.66
     },
     {
       "stock_code": "02579",
       "stock_name": "中伟新材",
-      "weight": 3.2
+      "weight": 3.01
     }
   ],
-  "fetched_at": "2026-03-29 23:16:23",
+  "fetched_at": "2026-04-27 13:56:28",
   "data_source": "eastmoney"
 }

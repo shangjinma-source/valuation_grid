@@ -1,227 +1,62 @@
 {
   "fund_code": "017736",
   "fund_name": "融通明锐混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 92.66,
-  "parsed_weight": 92.67,
-  "missing_weight": 0,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.93,
+  "parsed_weight": 61.99,
+  "missing_weight": 31.94,
   "positions": [
     {
-      "stock_code": "688365",
-      "stock_name": "光云科技",
-      "weight": 5.45
-    },
-    {
-      "stock_code": "688590",
-      "stock_name": "新致软件",
-      "weight": 5.45
+      "stock_code": "688258",
+      "stock_name": "卓易信息",
+      "weight": 9.84
     },
     {
       "stock_code": "300785",
       "stock_name": "值得买",
-      "weight": 5.45
-    },
-    {
-      "stock_code": "01024",
-      "stock_name": "快手-W",
-      "weight": 4.86
+      "weight": 9.49
     },
     {
       "stock_code": "301162",
       "stock_name": "国能日新",
-      "weight": 4.68
-    },
-    {
-      "stock_code": "688111",
-      "stock_name": "金山办公",
-      "weight": 3.91
-    },
-    {
-      "stock_code": "688615",
-      "stock_name": "合合信息",
-      "weight": 3.74
-    },
-    {
-      "stock_code": "688095",
-      "stock_name": "福昕软件",
-      "weight": 3.51
+      "weight": 9.32
     },
     {
       "stock_code": "603171",
       "stock_name": "税友股份",
-      "weight": 3.43
-    },
-    {
-      "stock_code": "688031",
-      "stock_name": "星环科技",
-      "weight": 3.18
-    },
-    {
-      "stock_code": "688692",
-      "stock_name": "达梦数据",
-      "weight": 2.86
-    },
-    {
-      "stock_code": "03738",
-      "stock_name": "阜博集团",
-      "weight": 2.78
+      "weight": 6.09
     },
     {
       "stock_code": "301171",
       "stock_name": "易点天下",
-      "weight": 2.59
+      "weight": 5.87
     },
     {
-      "stock_code": "09636",
-      "stock_name": "九方智投控股",
-      "weight": 2.43
-    },
-    {
-      "stock_code": "603859",
-      "stock_name": "能科科技",
-      "weight": 2.31
-    },
-    {
-      "stock_code": "688258",
-      "stock_name": "卓易信息",
-      "weight": 2.1
-    },
-    {
-      "stock_code": "02556",
-      "stock_name": "迈富时",
-      "weight": 2.08
+      "stock_code": "688615",
+      "stock_name": "合合信息",
+      "weight": 5.58
     },
     {
       "stock_code": "300170",
       "stock_name": "汉得信息",
-      "weight": 2.07
+      "weight": 4.65
     },
     {
-      "stock_code": "688039",
-      "stock_name": "当虹科技",
-      "weight": 2.04
+      "stock_code": "300017",
+      "stock_name": "网宿科技",
+      "weight": 4.52
     },
     {
-      "stock_code": "000657",
-      "stock_name": "中钨高新",
-      "weight": 2.03
+      "stock_code": "300378",
+      "stock_name": "鼎捷数智",
+      "weight": 3.6
     },
     {
-      "stock_code": "920037",
-      "stock_name": "广信科技",
-      "weight": 2.0
-    },
-    {
-      "stock_code": "300624",
-      "stock_name": "万兴科技",
-      "weight": 1.94
-    },
-    {
-      "stock_code": "09926",
-      "stock_name": "康方生物",
-      "weight": 1.87
-    },
-    {
-      "stock_code": "300454",
-      "stock_name": "深信服",
-      "weight": 1.77
-    },
-    {
-      "stock_code": "920493",
-      "stock_name": "并行科技",
-      "weight": 1.7
-    },
-    {
-      "stock_code": "01357",
-      "stock_name": "美图公司",
-      "weight": 1.62
-    },
-    {
-      "stock_code": "300525",
-      "stock_name": "博思软件",
-      "weight": 1.55
-    },
-    {
-      "stock_code": "920227",
-      "stock_name": "美登科技",
-      "weight": 1.31
-    },
-    {
-      "stock_code": "603680",
-      "stock_name": "今创集团",
-      "weight": 1.27
-    },
-    {
-      "stock_code": "688411",
-      "stock_name": "海博思创",
-      "weight": 1.18
-    },
-    {
-      "stock_code": "002335",
-      "stock_name": "科华数据",
-      "weight": 1.01
-    },
-    {
-      "stock_code": "603345",
-      "stock_name": "安井食品",
-      "weight": 1.01
-    },
-    {
-      "stock_code": "300130",
-      "stock_name": "新国都",
-      "weight": 1.01
-    },
-    {
-      "stock_code": "02013",
-      "stock_name": "微盟集团",
-      "weight": 0.91
-    },
-    {
-      "stock_code": "002315",
-      "stock_name": "焦点科技",
-      "weight": 0.84
-    },
-    {
-      "stock_code": "002987",
-      "stock_name": "京北方",
-      "weight": 0.79
-    },
-    {
-      "stock_code": "06166",
-      "stock_name": "剑桥科技",
-      "weight": 0.77
-    },
-    {
-      "stock_code": "01888",
-      "stock_name": "建滔积层板",
-      "weight": 0.65
-    },
-    {
-      "stock_code": "02192",
-      "stock_name": "医脉通",
-      "weight": 0.64
-    },
-    {
-      "stock_code": "02228",
-      "stock_name": "晶泰控股",
-      "weight": 0.62
-    },
-    {
-      "stock_code": "01860",
-      "stock_name": "汇量科技",
-      "weight": 0.5
-    },
-    {
-      "stock_code": "603031",
-      "stock_name": "安孚科技",
-      "weight": 0.4
-    },
-    {
-      "stock_code": "301330",
-      "stock_name": "熵基科技",
-      "weight": 0.36
+      "stock_code": "688031",
+      "stock_name": "星环科技",
+      "weight": 3.03
     }
   ],
-  "fetched_at": "2026-03-29 23:14:50",
+  "fetched_at": "2026-04-27 13:54:48",
   "data_source": "eastmoney"
 }

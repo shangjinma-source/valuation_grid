@@ -1,63 +1,63 @@
 {
   "fund_code": "019062",
   "fund_name": "易方达中证软件服务ETF联接发起式C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.26,
-  "parsed_weight": 60.29,
-  "missing_weight": 38.97,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.72,
+  "parsed_weight": 59.18,
+  "missing_weight": 40.54,
   "positions": [
     {
       "stock_code": "002230",
       "stock_name": "科大讯飞",
-      "weight": 13.22
-    },
-    {
-      "stock_code": "688111",
-      "stock_name": "金山办公",
-      "weight": 8.09
+      "weight": 13.72
     },
     {
       "stock_code": "300033",
       "stock_name": "同花顺",
-      "weight": 7.88
+      "weight": 8.27
     },
     {
-      "stock_code": "300803",
-      "stock_name": "指南针",
-      "weight": 5.34
-    },
-    {
-      "stock_code": "600570",
-      "stock_name": "恒生电子",
-      "weight": 5.19
+      "stock_code": "688111",
+      "stock_name": "金山办公",
+      "weight": 6.98
     },
     {
       "stock_code": "002261",
       "stock_name": "拓维信息",
-      "weight": 4.74
+      "weight": 5.53
     },
     {
-      "stock_code": "300339",
-      "stock_name": "润和软件",
-      "weight": 4.48
+      "stock_code": "600570",
+      "stock_name": "恒生电子",
+      "weight": 4.97
     },
     {
       "stock_code": "601360",
       "stock_name": "三六零",
-      "weight": 4.44
+      "weight": 4.81
     },
     {
-      "stock_code": "301236",
-      "stock_name": "软通动力",
-      "weight": 3.6
+      "stock_code": "300803",
+      "stock_name": "指南针",
+      "weight": 4.48
+    },
+    {
+      "stock_code": "300339",
+      "stock_name": "润和软件",
+      "weight": 3.96
     },
     {
       "stock_code": "300454",
       "stock_name": "深信服",
-      "weight": 3.31
+      "weight": 3.29
+    },
+    {
+      "stock_code": "688568",
+      "stock_name": "中科星图",
+      "weight": 3.17
     }
   ],
-  "fetched_at": "2026-03-29 23:15:35",
+  "fetched_at": "2026-04-27 13:55:37",
   "data_source": "eastmoney",
   "original_fund_code": "019062",
   "etf_target": "562930",

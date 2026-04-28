@@ -1,87 +1,87 @@
 {
   "fund_code": "014855",
   "fund_name": "嘉实中证半导体指数增强发起式C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 93.86,
-  "parsed_weight": 69.49,
-  "missing_weight": 24.37,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.3,
+  "parsed_weight": 70.05,
+  "missing_weight": 24.25,
   "positions": [
     {
       "stock_code": "688012",
       "stock_name": "中微公司",
-      "weight": 10.6
+      "weight": 9.94
     },
     {
       "stock_code": "002371",
       "stock_name": "北方华创",
-      "weight": 9.84
-    },
-    {
-      "stock_code": "688256",
-      "stock_name": "寒武纪",
-      "weight": 9.26
-    },
-    {
-      "stock_code": "688981",
-      "stock_name": "中芯国际",
-      "weight": 7.88
+      "weight": 9.76
     },
     {
       "stock_code": "688072",
       "stock_name": "拓荆科技",
-      "weight": 7.08
-    },
-    {
-      "stock_code": "688041",
-      "stock_name": "海光信息",
-      "weight": 6.71
+      "weight": 8.07
     },
     {
       "stock_code": "300604",
       "stock_name": "长川科技",
-      "weight": 4.71
+      "weight": 7.08
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 6.55
+    },
+    {
+      "stock_code": "688981",
+      "stock_name": "中芯国际",
+      "weight": 5.5
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 5.35
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 4.99
     },
     {
       "stock_code": "688120",
       "stock_name": "华海清科",
-      "weight": 4.46
+      "weight": 4.93
     },
     {
       "stock_code": "688200",
       "stock_name": "华峰测控",
-      "weight": 3.03
+      "weight": 4.21
     },
     {
-      "stock_code": "688019",
-      "stock_name": "安集科技",
-      "weight": 3.01
+      "stock_code": "002049",
+      "stock_name": "紫光国微",
+      "weight": 1.32
+    },
+    {
+      "stock_code": "301297",
+      "stock_name": "富乐德",
+      "weight": 1.05
+    },
+    {
+      "stock_code": "688123",
+      "stock_name": "聚辰股份",
+      "weight": 0.72
+    },
+    {
+      "stock_code": "002436",
+      "stock_name": "兴森科技",
+      "weight": 0.38
     },
     {
       "stock_code": "603986",
       "stock_name": "兆易创新",
-      "weight": 0.78
-    },
-    {
-      "stock_code": "688008",
-      "stock_name": "澜起科技",
-      "weight": 0.59
-    },
-    {
-      "stock_code": "002008",
-      "stock_name": "大族激光",
-      "weight": 0.57
-    },
-    {
-      "stock_code": "003043",
-      "stock_name": "华亚智能",
-      "weight": 0.5
-    },
-    {
-      "stock_code": "000066",
-      "stock_name": "中国长城",
-      "weight": 0.47
+      "weight": 0.2
     }
   ],
-  "fetched_at": "2026-03-29 23:11:12",
+  "fetched_at": "2026-04-27 13:51:05",
   "data_source": "eastmoney"
 }

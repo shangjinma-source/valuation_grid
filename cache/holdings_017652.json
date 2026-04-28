@@ -1,62 +1,62 @@
 {
   "fund_code": "017652",
   "fund_name": "中航华证商飞高端制造产业指数发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 93.0,
-  "parsed_weight": 51.84,
-  "missing_weight": 41.16,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.85,
+  "parsed_weight": 53.79,
+  "missing_weight": 39.06,
   "positions": [
     {
       "stock_code": "000768",
       "stock_name": "中航西飞",
-      "weight": 8.23
+      "weight": 8.81
     },
     {
       "stock_code": "600893",
       "stock_name": "航发动力",
-      "weight": 6.28
-    },
-    {
-      "stock_code": "600760",
-      "stock_name": "中航沈飞",
-      "weight": 5.59
-    },
-    {
-      "stock_code": "302132",
-      "stock_name": "中航成飞",
-      "weight": 5.47
+      "weight": 8.25
     },
     {
       "stock_code": "002179",
       "stock_name": "中航光电",
-      "weight": 5.34
+      "weight": 5.54
+    },
+    {
+      "stock_code": "600760",
+      "stock_name": "中航沈飞",
+      "weight": 5.24
+    },
+    {
+      "stock_code": "302132",
+      "stock_name": "中航成飞",
+      "weight": 5.03
     },
     {
       "stock_code": "600765",
       "stock_name": "中航重机",
-      "weight": 4.99
+      "weight": 4.61
     },
     {
       "stock_code": "600862",
       "stock_name": "中航高科",
-      "weight": 4.64
+      "weight": 4.59
     },
     {
       "stock_code": "688122",
       "stock_name": "西部超导",
-      "weight": 4.02
+      "weight": 4.12
     },
     {
       "stock_code": "600372",
       "stock_name": "中航机载",
-      "weight": 3.79
+      "weight": 4.03
     },
     {
       "stock_code": "600038",
       "stock_name": "中直股份",
-      "weight": 3.49
+      "weight": 3.57
     }
   ],
-  "fetched_at": "2026-03-29 23:21:18",
+  "fetched_at": "2026-04-27 14:01:40",
   "data_source": "eastmoney"
 }

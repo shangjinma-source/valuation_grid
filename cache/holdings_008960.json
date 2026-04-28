@@ -1,62 +1,62 @@
 {
   "fund_code": "008960",
   "fund_name": "长信国防军工量化混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 93.81,
-  "parsed_weight": 54.08,
-  "missing_weight": 39.73,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.97,
+  "parsed_weight": 50.76,
+  "missing_weight": 43.21,
   "positions": [
-    {
-      "stock_code": "688311",
-      "stock_name": "盟升电子",
-      "weight": 6.18
-    },
     {
       "stock_code": "688002",
       "stock_name": "睿创微纳",
-      "weight": 6.14
+      "weight": 6.12
+    },
+    {
+      "stock_code": "603678",
+      "stock_name": "火炬电子",
+      "weight": 5.2
+    },
+    {
+      "stock_code": "688311",
+      "stock_name": "盟升电子",
+      "weight": 5.09
     },
     {
       "stock_code": "002414",
       "stock_name": "高德红外",
-      "weight": 5.97
+      "weight": 5.09
     },
     {
-      "stock_code": "603267",
-      "stock_name": "鸿远电子",
-      "weight": 5.76
-    },
-    {
-      "stock_code": "688522",
-      "stock_name": "纳睿雷达",
-      "weight": 5.15
-    },
-    {
-      "stock_code": "002049",
-      "stock_name": "紫光国微",
-      "weight": 5.05
-    },
-    {
-      "stock_code": "688708",
-      "stock_name": "佳驰科技",
-      "weight": 5.02
+      "stock_code": "600372",
+      "stock_name": "中航机载",
+      "weight": 5.03
     },
     {
       "stock_code": "600893",
       "stock_name": "航发动力",
-      "weight": 5.01
+      "weight": 4.97
     },
     {
-      "stock_code": "600482",
-      "stock_name": "中国动力",
-      "weight": 4.91
+      "stock_code": "002985",
+      "stock_name": "北摩高科",
+      "weight": 4.87
     },
     {
-      "stock_code": "000733",
-      "stock_name": "振华科技",
-      "weight": 4.89
+      "stock_code": "300726",
+      "stock_name": "宏达电子",
+      "weight": 4.85
+    },
+    {
+      "stock_code": "600685",
+      "stock_name": "中船防务",
+      "weight": 4.81
+    },
+    {
+      "stock_code": "688708",
+      "stock_name": "佳驰科技",
+      "weight": 4.73
     }
   ],
-  "fetched_at": "2026-03-29 23:21:16",
+  "fetched_at": "2026-04-27 14:01:37",
   "data_source": "eastmoney"
 }

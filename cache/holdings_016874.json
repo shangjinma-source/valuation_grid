@@ -1,62 +1,62 @@
 {
   "fund_code": "016874",
   "fund_name": "广发远见智选混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 92.35,
-  "parsed_weight": 74.86,
-  "missing_weight": 17.49,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.15,
+  "parsed_weight": 69.61,
+  "missing_weight": 23.54,
   "positions": [
+    {
+      "stock_code": "601869",
+      "stock_name": "长飞光纤",
+      "weight": 9.28
+    },
+    {
+      "stock_code": "600522",
+      "stock_name": "中天科技",
+      "weight": 8.92
+    },
+    {
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 8.68
+    },
+    {
+      "stock_code": "300857",
+      "stock_name": "协创数据",
+      "weight": 6.5
+    },
     {
       "stock_code": "688525",
       "stock_name": "佰维存储",
-      "weight": 9.58
-    },
-    {
-      "stock_code": "301308",
-      "stock_name": "江波龙",
-      "weight": 8.89
-    },
-    {
-      "stock_code": "688766",
-      "stock_name": "普冉股份",
-      "weight": 8.89
-    },
-    {
-      "stock_code": "688031",
-      "stock_name": "星环科技",
-      "weight": 8.5
+      "weight": 6.34
     },
     {
       "stock_code": "001309",
       "stock_name": "德明利",
-      "weight": 7.9
-    },
-    {
-      "stock_code": "300604",
-      "stock_name": "长川科技",
-      "weight": 7.63
-    },
-    {
-      "stock_code": "300223",
-      "stock_name": "北京君正",
-      "weight": 6.28
-    },
-    {
-      "stock_code": "688627",
-      "stock_name": "精智达",
-      "weight": 6.09
+      "weight": 6.29
     },
     {
       "stock_code": "603929",
       "stock_name": "亚翔集成",
-      "weight": 5.89
+      "weight": 6.11
     },
     {
-      "stock_code": "603986",
-      "stock_name": "兆易创新",
-      "weight": 5.21
+      "stock_code": "301396",
+      "stock_name": "宏景科技",
+      "weight": 6.09
+    },
+    {
+      "stock_code": "603618",
+      "stock_name": "杭电股份",
+      "weight": 5.95
+    },
+    {
+      "stock_code": "300672",
+      "stock_name": "国科微",
+      "weight": 5.45
     }
   ],
-  "fetched_at": "2026-03-29 23:12:20",
+  "fetched_at": "2026-04-27 13:52:17",
   "data_source": "eastmoney"
 }

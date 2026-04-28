@@ -1,63 +1,73 @@
 {
   "fund_code": "016708",
   "fund_name": "华夏有色金属ETF联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.66,
-  "parsed_weight": 52.8,
-  "missing_weight": 46.86,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.77,
+  "parsed_weight": 52.36,
+  "missing_weight": 47.41,
   "positions": [
     {
       "stock_code": "601899",
       "stock_name": "紫金矿业",
-      "weight": 15.3
+      "weight": 14.17
     },
     {
       "stock_code": "603993",
       "stock_name": "洛阳钼业",
-      "weight": 7.92
+      "weight": 6.62
     },
     {
       "stock_code": "600111",
       "stock_name": "北方稀土",
-      "weight": 5.3
-    },
-    {
-      "stock_code": "603799",
-      "stock_name": "华友钴业",
-      "weight": 4.69
+      "weight": 5.33
     },
     {
       "stock_code": "601600",
       "stock_name": "中国铝业",
-      "weight": 4.39
+      "weight": 3.99
+    },
+    {
+      "stock_code": "603799",
+      "stock_name": "华友钴业",
+      "weight": 3.94
     },
     {
       "stock_code": "002460",
       "stock_name": "赣锋锂业",
-      "weight": 3.23
+      "weight": 3.92
+    },
+    {
+      "stock_code": "600489",
+      "stock_name": "中金黄金",
+      "weight": 3.44
     },
     {
       "stock_code": "600547",
       "stock_name": "山东黄金",
+      "weight": 3.22
+    },
+    {
+      "stock_code": "600988",
+      "stock_name": "赤峰黄金",
       "weight": 3.18
     },
     {
       "stock_code": "000807",
       "stock_name": "云铝股份",
-      "weight": 3.11
+      "weight": 2.85
     },
     {
-      "stock_code": "600489",
-      "stock_name": "中金黄金",
-      "weight": 3.08
+      "stock_code": "000878",
+      "stock_name": "云南铜业",
+      "weight": 1.16
     },
     {
-      "stock_code": "002466",
-      "stock_name": "天齐锂业",
-      "weight": 2.6
+      "stock_code": "600206",
+      "stock_name": "有研新材",
+      "weight": 0.54
     }
   ],
-  "fetched_at": "2026-03-29 23:10:24",
+  "fetched_at": "2026-04-27 13:50:23",
   "data_source": "eastmoney",
   "original_fund_code": "016708",
   "etf_target": "516650",

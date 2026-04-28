@@ -1,72 +1,62 @@
 {
   "fund_code": "019127",
   "fund_name": "华泰柏瑞港股通医疗精选混合发起式C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 88.57,
-  "parsed_weight": 76.2,
-  "missing_weight": 12.37,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 84.25,
+  "parsed_weight": 67.83,
+  "missing_weight": 16.42,
   "positions": [
-    {
-      "stock_code": "01276",
-      "stock_name": "恒瑞医药",
-      "weight": 9.68
-    },
-    {
-      "stock_code": "09606",
-      "stock_name": "映恩生物-B",
-      "weight": 9.44
-    },
     {
       "stock_code": "01801",
       "stock_name": "信达生物",
-      "weight": 9.21
-    },
-    {
-      "stock_code": "03692",
-      "stock_name": "翰森制药",
-      "weight": 8.95
+      "weight": 8.44
     },
     {
       "stock_code": "01530",
       "stock_name": "三生制药",
-      "weight": 8.84
-    },
-    {
-      "stock_code": "06160",
-      "stock_name": "百济神州",
-      "weight": 8.76
+      "weight": 8.22
     },
     {
       "stock_code": "06990",
-      "stock_name": "科伦博泰生物-B",
-      "weight": 8.53
-    },
-    {
-      "stock_code": "01093",
-      "stock_name": "石药集团",
-      "weight": 4.54
-    },
-    {
-      "stock_code": "02096",
-      "stock_name": "先声药业",
-      "weight": 2.87
+      "stock_name": "科伦博泰生物",
+      "weight": 8.2
     },
     {
       "stock_code": "09926",
       "stock_name": "康方生物",
-      "weight": 2.59
+      "weight": 7.07
     },
     {
-      "stock_code": "600276",
+      "stock_code": "03692",
+      "stock_name": "翰森制药",
+      "weight": 6.8
+    },
+    {
+      "stock_code": "09995",
+      "stock_name": "荣昌生物",
+      "weight": 6.72
+    },
+    {
+      "stock_code": "09606",
+      "stock_name": "映恩生物-B",
+      "weight": 6.21
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 5.8
+    },
+    {
+      "stock_code": "02162",
+      "stock_name": "康诺亚-B",
+      "weight": 5.65
+    },
+    {
+      "stock_code": "01276",
       "stock_name": "恒瑞医药",
-      "weight": 1.54
-    },
-    {
-      "stock_code": "688235",
-      "stock_name": "百济神州",
-      "weight": 1.25
+      "weight": 4.72
     }
   ],
-  "fetched_at": "2026-03-29 23:20:38",
+  "fetched_at": "2026-04-27 14:00:57",
   "data_source": "eastmoney"
 }

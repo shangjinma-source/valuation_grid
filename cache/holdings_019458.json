@@ -1,67 +1,67 @@
 {
   "fund_code": "019458",
   "fund_name": "平安先进制造主题股票发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 91.09,
-  "parsed_weight": 52.11,
-  "missing_weight": 38.98,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.55,
+  "parsed_weight": 52.55,
+  "missing_weight": 40.0,
   "positions": [
     {
       "stock_code": "601100",
       "stock_name": "恒立液压",
-      "weight": 8.3
+      "weight": 7.91
     },
     {
       "stock_code": "00425",
       "stock_name": "敏实集团",
-      "weight": 7.28
-    },
-    {
-      "stock_code": "688279",
-      "stock_name": "峰岹科技",
-      "weight": 5.01
+      "weight": 7.27
     },
     {
       "stock_code": "603337",
       "stock_name": "杰克科技",
-      "weight": 4.9
+      "weight": 5.42
     },
     {
       "stock_code": "688322",
       "stock_name": "奥比中光",
-      "weight": 4.83
+      "weight": 5.22
     },
     {
-      "stock_code": "603013",
-      "stock_name": "亚普股份",
-      "weight": 4.37
+      "stock_code": "688279",
+      "stock_name": "峰岹科技",
+      "weight": 5.17
     },
     {
-      "stock_code": "001306",
-      "stock_name": "夏厦精密",
-      "weight": 3.76
-    },
-    {
-      "stock_code": "605128",
-      "stock_name": "上海沿浦",
-      "weight": 3.57
-    },
-    {
-      "stock_code": "688320",
-      "stock_name": "禾川科技",
-      "weight": 3.54
-    },
-    {
-      "stock_code": "300115",
-      "stock_name": "长盈精密",
-      "weight": 3.28
+      "stock_code": "003021",
+      "stock_name": "兆威机电",
+      "weight": 4.61
     },
     {
       "stock_code": "01304",
       "stock_name": "FORTIOR",
+      "weight": 3.76
+    },
+    {
+      "stock_code": "688320",
+      "stock_name": "禾川科技",
+      "weight": 3.7
+    },
+    {
+      "stock_code": "688585",
+      "stock_name": "上纬新材",
       "weight": 3.27
+    },
+    {
+      "stock_code": "605488",
+      "stock_name": "福莱新材",
+      "weight": 3.13
+    },
+    {
+      "stock_code": "06600",
+      "stock_name": "卧安机器人",
+      "weight": 3.09
     }
   ],
-  "fetched_at": "2026-03-29 23:17:14",
+  "fetched_at": "2026-04-27 13:57:23",
   "data_source": "eastmoney"
 }

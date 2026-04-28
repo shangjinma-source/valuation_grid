@@ -1,62 +1,62 @@
 {
   "fund_code": "000796",
   "fund_name": "宝盈睿丰创新混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 92.42,
-  "parsed_weight": 49.73,
-  "missing_weight": 42.69,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.78,
+  "parsed_weight": 53.52,
+  "missing_weight": 39.26,
   "positions": [
-    {
-      "stock_code": "601689",
-      "stock_name": "拓普集团",
-      "weight": 6.43
-    },
-    {
-      "stock_code": "603667",
-      "stock_name": "五洲新春",
-      "weight": 5.73
-    },
     {
       "stock_code": "601100",
       "stock_name": "恒立液压",
-      "weight": 5.62
-    },
-    {
-      "stock_code": "300680",
-      "stock_name": "隆盛科技",
-      "weight": 5.44
-    },
-    {
-      "stock_code": "603119",
-      "stock_name": "浙江荣泰",
-      "weight": 4.99
+      "weight": 7.57
     },
     {
       "stock_code": "300953",
       "stock_name": "震裕科技",
-      "weight": 4.62
+      "weight": 7.41
     },
     {
-      "stock_code": "688698",
-      "stock_name": "伟创电气",
-      "weight": 4.57
-    },
-    {
-      "stock_code": "301225",
-      "stock_name": "恒勃股份",
-      "weight": 4.28
-    },
-    {
-      "stock_code": "688210",
-      "stock_name": "统联精密",
-      "weight": 4.2
+      "stock_code": "601689",
+      "stock_name": "拓普集团",
+      "weight": 6.83
     },
     {
       "stock_code": "603179",
       "stock_name": "新泉股份",
-      "weight": 3.85
+      "weight": 5.27
+    },
+    {
+      "stock_code": "603009",
+      "stock_name": "北特科技",
+      "weight": 4.73
+    },
+    {
+      "stock_code": "300680",
+      "stock_name": "隆盛科技",
+      "weight": 4.51
+    },
+    {
+      "stock_code": "603119",
+      "stock_name": "浙江荣泰",
+      "weight": 4.43
+    },
+    {
+      "stock_code": "301225",
+      "stock_name": "恒勃股份",
+      "weight": 4.35
+    },
+    {
+      "stock_code": "300115",
+      "stock_name": "长盈精密",
+      "weight": 4.25
+    },
+    {
+      "stock_code": "002048",
+      "stock_name": "宁波华翔",
+      "weight": 4.17
     }
   ],
-  "fetched_at": "2026-03-29 23:16:54",
+  "fetched_at": "2026-04-27 13:57:00",
   "data_source": "eastmoney"
 }

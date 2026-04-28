@@ -1,62 +1,62 @@
 {
   "fund_code": "025500",
   "fund_name": "东方阿尔法科技智选混合发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 90.85,
-  "parsed_weight": 76.8,
-  "missing_weight": 14.05,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.35,
+  "parsed_weight": 77.03,
+  "missing_weight": 16.32,
   "positions": [
-    {
-      "stock_code": "688525",
-      "stock_name": "佰维存储",
-      "weight": 9.14
-    },
-    {
-      "stock_code": "603986",
-      "stock_name": "兆易创新",
-      "weight": 9.06
-    },
     {
       "stock_code": "001309",
       "stock_name": "德明利",
-      "weight": 8.79
-    },
-    {
-      "stock_code": "300475",
-      "stock_name": "香农芯创",
-      "weight": 8.74
+      "weight": 9.66
     },
     {
       "stock_code": "301308",
       "stock_name": "江波龙",
+      "weight": 9.03
+    },
+    {
+      "stock_code": "688525",
+      "stock_name": "佰维存储",
+      "weight": 8.81
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 8.8
+    },
+    {
+      "stock_code": "300475",
+      "stock_name": "香农芯创",
+      "weight": 8.76
+    },
+    {
+      "stock_code": "300223",
+      "stock_name": "北京君正",
       "weight": 7.97
     },
     {
       "stock_code": "688766",
       "stock_name": "普冉股份",
-      "weight": 7.9
+      "weight": 7.61
     },
     {
-      "stock_code": "688123",
-      "stock_name": "聚辰股份",
-      "weight": 7.65
+      "stock_code": "688416",
+      "stock_name": "恒烁股份",
+      "weight": 6.14
     },
     {
-      "stock_code": "300223",
-      "stock_name": "北京君正",
-      "weight": 6.19
+      "stock_code": "688627",
+      "stock_name": "精智达",
+      "weight": 5.25
     },
     {
-      "stock_code": "688110",
-      "stock_name": "东芯股份",
-      "weight": 5.8
-    },
-    {
-      "stock_code": "688249",
-      "stock_name": "晶合集成",
-      "weight": 5.56
+      "stock_code": "688008",
+      "stock_name": "澜起科技",
+      "weight": 5.0
     }
   ],
-  "fetched_at": "2026-03-29 23:12:32",
+  "fetched_at": "2026-04-27 13:52:30",
   "data_source": "eastmoney"
 }

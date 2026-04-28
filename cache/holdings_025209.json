@@ -1,62 +1,62 @@
 {
   "fund_code": "025209",
   "fund_name": "永赢先锋半导体智选混合发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.6,
-  "parsed_weight": 79.32,
-  "missing_weight": 15.28,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 67.44,
+  "parsed_weight": 60.45,
+  "missing_weight": 6.99,
   "positions": [
     {
       "stock_code": "001309",
       "stock_name": "德明利",
-      "weight": 11.44
-    },
-    {
-      "stock_code": "688525",
-      "stock_name": "佰维存储",
-      "weight": 10.83
-    },
-    {
-      "stock_code": "300475",
-      "stock_name": "香农芯创",
-      "weight": 10.52
+      "weight": 9.51
     },
     {
       "stock_code": "301308",
       "stock_name": "江波龙",
-      "weight": 9.71
+      "weight": 8.25
     },
     {
-      "stock_code": "300223",
-      "stock_name": "北京君正",
-      "weight": 7.05
+      "stock_code": "688525",
+      "stock_name": "佰维存储",
+      "weight": 8.25
     },
     {
       "stock_code": "603986",
       "stock_name": "兆易创新",
-      "weight": 6.89
+      "weight": 7.68
     },
     {
-      "stock_code": "688627",
-      "stock_name": "精智达",
-      "weight": 6.23
+      "stock_code": "300475",
+      "stock_name": "香农芯创",
+      "weight": 6.35
     },
     {
-      "stock_code": "688233",
-      "stock_name": "神工股份",
-      "weight": 6.01
-    },
-    {
-      "stock_code": "688228",
-      "stock_name": "开普云",
-      "weight": 5.84
+      "stock_code": "300223",
+      "stock_name": "北京君正",
+      "weight": 5.8
     },
     {
       "stock_code": "688008",
       "stock_name": "澜起科技",
-      "weight": 4.8
+      "weight": 4.73
+    },
+    {
+      "stock_code": "688766",
+      "stock_name": "普冉股份",
+      "weight": 4.38
+    },
+    {
+      "stock_code": "688233",
+      "stock_name": "神工股份",
+      "weight": 2.92
+    },
+    {
+      "stock_code": "688123",
+      "stock_name": "聚辰股份",
+      "weight": 2.58
     }
   ],
-  "fetched_at": "2026-03-29 23:12:18",
+  "fetched_at": "2026-04-27 13:52:15",
   "data_source": "eastmoney"
 }

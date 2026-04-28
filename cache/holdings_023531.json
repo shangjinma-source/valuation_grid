@@ -1,78 +1,78 @@
 {
   "fund_code": "023531",
   "fund_name": "永赢国证通用航空产业ETF发起联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.71,
-  "parsed_weight": 33.83,
-  "missing_weight": 65.88,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.93,
+  "parsed_weight": 35.65,
+  "missing_weight": 64.28,
   "positions": [
     {
       "stock_code": "002085",
       "stock_name": "万丰奥威",
-      "weight": 5.37
-    },
-    {
-      "stock_code": "002389",
-      "stock_name": "航天彩虹",
-      "weight": 3.79
-    },
-    {
-      "stock_code": "600038",
-      "stock_name": "中直股份",
-      "weight": 3.57
-    },
-    {
-      "stock_code": "300045",
-      "stock_name": "华力创通",
-      "weight": 3.55
-    },
-    {
-      "stock_code": "600118",
-      "stock_name": "中国卫星",
-      "weight": 3.43
-    },
-    {
-      "stock_code": "600316",
-      "stock_name": "洪都航空",
-      "weight": 3.39
-    },
-    {
-      "stock_code": "600879",
-      "stock_name": "航天电子",
-      "weight": 2.82
-    },
-    {
-      "stock_code": "688297",
-      "stock_name": "中无人机",
-      "weight": 2.69
+      "weight": 5.03
     },
     {
       "stock_code": "300342",
       "stock_name": "天银机电",
-      "weight": 2.64
+      "weight": 4.34
     },
     {
-      "stock_code": "002151",
-      "stock_name": "北斗星通",
-      "weight": 2.54
+      "stock_code": "600316",
+      "stock_name": "洪都航空",
+      "weight": 4.1
     },
     {
-      "stock_code": "301656",
-      "stock_name": "联合动力",
-      "weight": 0.02
+      "stock_code": "002389",
+      "stock_name": "航天彩虹",
+      "weight": 3.68
     },
     {
-      "stock_code": "688729",
-      "stock_name": "屹唐股份",
+      "stock_code": "600038",
+      "stock_name": "中直股份",
+      "weight": 3.56
+    },
+    {
+      "stock_code": "600118",
+      "stock_name": "中国卫星",
+      "weight": 3.17
+    },
+    {
+      "stock_code": "600879",
+      "stock_name": "航天电子",
+      "weight": 3.14
+    },
+    {
+      "stock_code": "688297",
+      "stock_name": "中无人机",
+      "weight": 2.97
+    },
+    {
+      "stock_code": "300045",
+      "stock_name": "华力创通",
+      "weight": 2.85
+    },
+    {
+      "stock_code": "603308",
+      "stock_name": "应流股份",
+      "weight": 2.78
+    },
+    {
+      "stock_code": "301638",
+      "stock_name": "南网数字",
       "weight": 0.01
     },
     {
       "stock_code": "688795",
       "stock_name": "摩尔线程",
       "weight": 0.01
+    },
+    {
+      "stock_code": "688783",
+      "stock_name": "西安奕材",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-03-29 23:13:34",
+  "fetched_at": "2026-04-27 13:53:27",
   "data_source": "eastmoney",
   "original_fund_code": "023531",
   "etf_target": "159378",

@@ -1,263 +1,108 @@
 {
   "fund_code": "023639",
   "fund_name": "国泰A股电网设备ETF联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.15,
-  "parsed_weight": 99.17,
-  "missing_weight": 0,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.77,
+  "parsed_weight": 68.59,
+  "missing_weight": 31.18,
   "positions": [
     {
-      "stock_code": "600089",
-      "stock_name": "特变电工",
-      "weight": 9.76
-    },
-    {
-      "stock_code": "600406",
-      "stock_name": "国电南瑞",
-      "weight": 9.51
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 9.78
     },
     {
       "stock_code": "002028",
       "stock_name": "思源电气",
-      "weight": 9.49
+      "weight": 9.74
+    },
+    {
+      "stock_code": "600406",
+      "stock_name": "国电南瑞",
+      "weight": 9.48
+    },
+    {
+      "stock_code": "600089",
+      "stock_name": "特变电工",
+      "weight": 9.43
     },
     {
       "stock_code": "600522",
       "stock_name": "中天科技",
-      "weight": 6.02
-    },
-    {
-      "stock_code": "600487",
-      "stock_name": "亨通光电",
-      "weight": 5.56
-    },
-    {
-      "stock_code": "600885",
-      "stock_name": "宏发股份",
-      "weight": 4.06
-    },
-    {
-      "stock_code": "603119",
-      "stock_name": "浙江荣泰",
-      "weight": 3.05
-    },
-    {
-      "stock_code": "603606",
-      "stock_name": "东方电缆",
-      "weight": 2.99
-    },
-    {
-      "stock_code": "688676",
-      "stock_name": "金盘科技",
-      "weight": 2.78
-    },
-    {
-      "stock_code": "600577",
-      "stock_name": "精达股份",
-      "weight": 2.76
-    },
-    {
-      "stock_code": "300001",
-      "stock_name": "特锐德",
-      "weight": 2.3
+      "weight": 8.24
     },
     {
       "stock_code": "601179",
       "stock_name": "中国西电",
-      "weight": 2.27
+      "weight": 3.54
     },
     {
-      "stock_code": "000400",
-      "stock_name": "许继电气",
-      "weight": 2.07
+      "stock_code": "600885",
+      "stock_name": "宏发股份",
+      "weight": 3.25
     },
     {
-      "stock_code": "601567",
-      "stock_name": "三星医疗",
-      "weight": 1.97
+      "stock_code": "603606",
+      "stock_name": "东方电缆",
+      "weight": 2.52
+    },
+    {
+      "stock_code": "600577",
+      "stock_name": "精达股份",
+      "weight": 2.44
     },
     {
       "stock_code": "601126",
       "stock_name": "四方股份",
-      "weight": 1.83
+      "weight": 2.17
     },
     {
-      "stock_code": "600312",
-      "stock_name": "平高电气",
-      "weight": 1.71
-    },
-    {
-      "stock_code": "300638",
-      "stock_name": "广和通",
-      "weight": 1.65
-    },
-    {
-      "stock_code": "688102",
-      "stock_name": "斯瑞新材",
-      "weight": 1.64
-    },
-    {
-      "stock_code": "002270",
-      "stock_name": "华明装备",
-      "weight": 1.63
-    },
-    {
-      "stock_code": "002276",
-      "stock_name": "万马股份",
-      "weight": 1.57
-    },
-    {
-      "stock_code": "603063",
-      "stock_name": "禾望电气",
-      "weight": 1.56
-    },
-    {
-      "stock_code": "300682",
-      "stock_name": "朗新科技",
-      "weight": 1.4
-    },
-    {
-      "stock_code": "300827",
-      "stock_name": "上能电气",
-      "weight": 1.36
-    },
-    {
-      "stock_code": "605196",
-      "stock_name": "华通线缆",
-      "weight": 1.33
-    },
-    {
-      "stock_code": "000682",
-      "stock_name": "东方电子",
-      "weight": 1.16
+      "stock_code": "000400",
+      "stock_name": "许继电气",
+      "weight": 1.81
     },
     {
       "stock_code": "600550",
       "stock_name": "保变电气",
-      "weight": 1.07
+      "weight": 1.25
     },
     {
-      "stock_code": "600517",
-      "stock_name": "国网英大",
-      "weight": 1.04
+      "stock_code": "300638",
+      "stock_name": "广和通",
+      "weight": 1.15
     },
     {
       "stock_code": "002121",
       "stock_name": "科陆电子",
-      "weight": 1.01
-    },
-    {
-      "stock_code": "600353",
-      "stock_name": "旭光电子",
-      "weight": 0.98
-    },
-    {
-      "stock_code": "300319",
-      "stock_name": "麦捷科技",
-      "weight": 0.94
-    },
-    {
-      "stock_code": "688248",
-      "stock_name": "南网科技",
-      "weight": 0.93
-    },
-    {
-      "stock_code": "601222",
-      "stock_name": "林洋能源",
-      "weight": 0.89
-    },
-    {
-      "stock_code": "301291",
-      "stock_name": "明阳电气",
-      "weight": 0.88
-    },
-    {
-      "stock_code": "300252",
-      "stock_name": "金信诺",
-      "weight": 0.84
-    },
-    {
-      "stock_code": "300222",
-      "stock_name": "科大智能",
-      "weight": 0.83
-    },
-    {
-      "stock_code": "600973",
-      "stock_name": "宝胜股份",
-      "weight": 0.73
-    },
-    {
-      "stock_code": "002533",
-      "stock_name": "金杯电工",
-      "weight": 0.72
-    },
-    {
-      "stock_code": "603556",
-      "stock_name": "海兴电力",
-      "weight": 0.72
-    },
-    {
-      "stock_code": "300360",
-      "stock_name": "炬华科技",
-      "weight": 0.71
-    },
-    {
-      "stock_code": "300153",
-      "stock_name": "科泰电源",
-      "weight": 0.7
-    },
-    {
-      "stock_code": "003035",
-      "stock_name": "南网能源",
-      "weight": 0.63
+      "weight": 0.85
     },
     {
       "stock_code": "600268",
       "stock_name": "国电南自",
-      "weight": 0.61
+      "weight": 0.79
     },
     {
-      "stock_code": "600590",
-      "stock_name": "泰豪科技",
-      "weight": 0.6
+      "stock_code": "300319",
+      "stock_name": "麦捷科技",
+      "weight": 0.75
     },
     {
-      "stock_code": "002498",
-      "stock_name": "汉缆股份",
+      "stock_code": "300222",
+      "stock_name": "科大智能",
+      "weight": 0.67
+    },
+    {
+      "stock_code": "300153",
+      "stock_name": "科泰电源",
       "weight": 0.54
-    },
-    {
-      "stock_code": "002782",
-      "stock_name": "可立克",
-      "weight": 0.49
-    },
-    {
-      "stock_code": "002882",
-      "stock_name": "金龙羽",
-      "weight": 0.48
-    },
-    {
-      "stock_code": "001359",
-      "stock_name": "平安电工",
-      "weight": 0.46
-    },
-    {
-      "stock_code": "603530",
-      "stock_name": "神马电力",
-      "weight": 0.42
-    },
-    {
-      "stock_code": "605222",
-      "stock_name": "起帆电缆",
-      "weight": 0.32
     },
     {
       "stock_code": "001382",
       "stock_name": "新亚电缆",
-      "weight": 0.2
+      "weight": 0.19
     }
   ],
-  "fetched_at": "2026-03-29 23:19:36",
+  "fetched_at": "2026-04-27 13:59:54",
   "data_source": "eastmoney",
   "original_fund_code": "023639",
   "etf_target": "561380",

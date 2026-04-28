@@ -1,87 +1,87 @@
 {
   "fund_code": "013943",
   "fund_name": "华宝中证稀有金属指数增强发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.61,
-  "parsed_weight": 54.15,
-  "missing_weight": 40.46,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.62,
+  "parsed_weight": 57.21,
+  "missing_weight": 37.41,
   "positions": [
     {
       "stock_code": "603993",
       "stock_name": "洛阳钼业",
-      "weight": 10.01
+      "weight": 9.19
     },
     {
       "stock_code": "000792",
       "stock_name": "盐湖股份",
-      "weight": 8.72
-    },
-    {
-      "stock_code": "603799",
-      "stock_name": "华友钴业",
-      "weight": 7.9
+      "weight": 9.18
     },
     {
       "stock_code": "600111",
       "stock_name": "北方稀土",
-      "weight": 7.42
+      "weight": 7.06
     },
     {
       "stock_code": "002460",
       "stock_name": "赣锋锂业",
-      "weight": 4.4
+      "weight": 6.97
+    },
+    {
+      "stock_code": "603799",
+      "stock_name": "华友钴业",
+      "weight": 6.29
     },
     {
       "stock_code": "002466",
       "stock_name": "天齐锂业",
-      "weight": 3.64
-    },
-    {
-      "stock_code": "002738",
-      "stock_name": "中矿资源",
-      "weight": 3.6
-    },
-    {
-      "stock_code": "600392",
-      "stock_name": "盛和资源",
-      "weight": 2.91
+      "weight": 4.62
     },
     {
       "stock_code": "600549",
       "stock_name": "厦门钨业",
-      "weight": 2.9
+      "weight": 3.88
     },
     {
-      "stock_code": "601958",
-      "stock_name": "金钼股份",
-      "weight": 2.33
+      "stock_code": "002738",
+      "stock_name": "中矿资源",
+      "weight": 3.31
+    },
+    {
+      "stock_code": "000657",
+      "stock_name": "中钨高新",
+      "weight": 2.62
+    },
+    {
+      "stock_code": "002756",
+      "stock_name": "永兴材料",
+      "weight": 2.23
+    },
+    {
+      "stock_code": "601899",
+      "stock_name": "紫金矿业",
+      "weight": 1.09
+    },
+    {
+      "stock_code": "600362",
+      "stock_name": "江西铜业",
+      "weight": 0.35
+    },
+    {
+      "stock_code": "000426",
+      "stock_name": "兴业银锡",
+      "weight": 0.28
     },
     {
       "stock_code": "688795",
       "stock_name": "摩尔线程",
-      "weight": 0.15
+      "weight": 0.08
     },
     {
       "stock_code": "688802",
       "stock_name": "沐曦股份",
-      "weight": 0.1
-    },
-    {
-      "stock_code": "688759",
-      "stock_name": "必贝特",
-      "weight": 0.03
-    },
-    {
-      "stock_code": "688790",
-      "stock_name": "昂瑞微",
-      "weight": 0.03
-    },
-    {
-      "stock_code": "001280",
-      "stock_name": "中国铀业",
-      "weight": 0.01
+      "weight": 0.06
     }
   ],
-  "fetched_at": "2026-03-29 23:22:23",
+  "fetched_at": "2026-04-27 14:02:50",
   "data_source": "eastmoney"
 }

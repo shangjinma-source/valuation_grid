@@ -1,62 +1,62 @@
 {
   "fund_code": "016074",
   "fund_name": "创金合信软件产业股票发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 92.91,
-  "parsed_weight": 53.11,
-  "missing_weight": 39.8,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 79.8,
+  "parsed_weight": 49.42,
+  "missing_weight": 30.38,
   "positions": [
     {
       "stock_code": "09988",
       "stock_name": "阿里巴巴-W",
-      "weight": 8.23
+      "weight": 7.22
     },
     {
       "stock_code": "00700",
       "stock_name": "腾讯控股",
-      "weight": 6.16
-    },
-    {
-      "stock_code": "603039",
-      "stock_name": "泛微网络",
-      "weight": 5.35
-    },
-    {
-      "stock_code": "300170",
-      "stock_name": "汉得信息",
-      "weight": 5.17
-    },
-    {
-      "stock_code": "688507",
-      "stock_name": "索辰科技",
-      "weight": 4.99
+      "weight": 6.91
     },
     {
       "stock_code": "300378",
       "stock_name": "鼎捷数智",
-      "weight": 4.95
+      "weight": 5.05
     },
     {
-      "stock_code": "01024",
-      "stock_name": "快手-W",
-      "weight": 4.74
+      "stock_code": "688507",
+      "stock_name": "索辰科技",
+      "weight": 5.04
     },
     {
-      "stock_code": "688111",
-      "stock_name": "金山办公",
-      "weight": 4.59
+      "stock_code": "002027",
+      "stock_name": "分众传媒",
+      "weight": 4.75
     },
     {
-      "stock_code": "00268",
-      "stock_name": "金蝶国际",
-      "weight": 4.47
+      "stock_code": "300033",
+      "stock_name": "同花顺",
+      "weight": 4.56
     },
     {
       "stock_code": "688318",
       "stock_name": "财富趋势",
-      "weight": 4.46
+      "weight": 4.19
+    },
+    {
+      "stock_code": "00268",
+      "stock_name": "金蝶国际",
+      "weight": 4.18
+    },
+    {
+      "stock_code": "688258",
+      "stock_name": "卓易信息",
+      "weight": 3.8
+    },
+    {
+      "stock_code": "01024",
+      "stock_name": "快手-W",
+      "weight": 3.72
     }
   ],
-  "fetched_at": "2026-03-29 23:15:20",
+  "fetched_at": "2026-04-27 13:55:20",
   "data_source": "eastmoney"
 }

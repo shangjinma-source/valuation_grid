@@ -1,62 +1,62 @@
 {
   "fund_code": "022365",
   "fund_name": "永赢科技智选混合发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 80.34,
-  "parsed_weight": 65.48,
-  "missing_weight": 14.86,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 85.27,
+  "parsed_weight": 54.55,
+  "missing_weight": 30.72,
   "positions": [
-    {
-      "stock_code": "600183",
-      "stock_name": "生益科技",
-      "weight": 9.11
-    },
     {
       "stock_code": "300308",
       "stock_name": "中际旭创",
-      "weight": 8.85
-    },
-    {
-      "stock_code": "002463",
-      "stock_name": "沪电股份",
-      "weight": 8.84
+      "weight": 9.85
     },
     {
       "stock_code": "300502",
       "stock_name": "新易盛",
-      "weight": 8.75
+      "weight": 9.73
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 8.8
     },
     {
       "stock_code": "002916",
       "stock_name": "深南电路",
-      "weight": 8.72
-    },
-    {
-      "stock_code": "300394",
-      "stock_name": "天孚通信",
-      "weight": 8.56
+      "weight": 7.37
     },
     {
       "stock_code": "002384",
       "stock_name": "东山精密",
-      "weight": 3.98
+      "weight": 4.24
     },
     {
-      "stock_code": "603228",
-      "stock_name": "景旺电子",
-      "weight": 2.98
+      "stock_code": "688195",
+      "stock_name": "腾景科技",
+      "weight": 3.4
     },
     {
-      "stock_code": "601138",
-      "stock_name": "工业富联",
-      "weight": 2.86
+      "stock_code": "300666",
+      "stock_name": "江丰电子",
+      "weight": 2.91
     },
     {
-      "stock_code": "603083",
-      "stock_name": "剑桥科技",
-      "weight": 2.83
+      "stock_code": "605376",
+      "stock_name": "博迁新材",
+      "weight": 2.81
+    },
+    {
+      "stock_code": "600176",
+      "stock_name": "中国巨石",
+      "weight": 2.77
+    },
+    {
+      "stock_code": "301377",
+      "stock_name": "鼎泰高科",
+      "weight": 2.67
     }
   ],
-  "fetched_at": "2026-03-29 23:14:28",
+  "fetched_at": "2026-04-27 13:54:24",
   "data_source": "eastmoney"
 }

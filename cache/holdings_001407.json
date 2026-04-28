@@ -1,147 +1,62 @@
 {
   "fund_code": "001407",
   "fund_name": "景顺长城稳健回报混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 90.63,
-  "parsed_weight": 90.6,
-  "missing_weight": 0.03,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.06,
+  "parsed_weight": 61.34,
+  "missing_weight": 30.72,
   "positions": [
-    {
-      "stock_code": "300502",
-      "stock_name": "新易盛",
-      "weight": 9.31
-    },
     {
       "stock_code": "300308",
       "stock_name": "中际旭创",
-      "weight": 8.7
+      "weight": 9.39
     },
     {
-      "stock_code": "002384",
-      "stock_name": "东山精密",
-      "weight": 8.36
-    },
-    {
-      "stock_code": "688256",
-      "stock_name": "寒武纪",
-      "weight": 7.64
-    },
-    {
-      "stock_code": "603179",
-      "stock_name": "新泉股份",
-      "weight": 6.46
-    },
-    {
-      "stock_code": "601138",
-      "stock_name": "工业富联",
-      "weight": 5.39
-    },
-    {
-      "stock_code": "688676",
-      "stock_name": "金盘科技",
-      "weight": 4.85
-    },
-    {
-      "stock_code": "301550",
-      "stock_name": "斯菱智驱",
-      "weight": 4.47
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.33
     },
     {
       "stock_code": "688498",
       "stock_name": "源杰科技",
-      "weight": 3.74
+      "weight": 8.55
     },
     {
-      "stock_code": "601689",
-      "stock_name": "拓普集团",
-      "weight": 2.97
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 7.99
     },
     {
-      "stock_code": "600711",
-      "stock_name": "盛屯矿业",
-      "weight": 2.92
+      "stock_code": "301550",
+      "stock_name": "斯菱智驱",
+      "weight": 5.95
     },
     {
       "stock_code": "688195",
       "stock_name": "腾景科技",
-      "weight": 2.91
+      "weight": 4.39
     },
     {
-      "stock_code": "688210",
-      "stock_name": "统联精密",
-      "weight": 2.67
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 4.3
     },
     {
-      "stock_code": "002602",
-      "stock_name": "世纪华通",
-      "weight": 2.58
-    },
-    {
-      "stock_code": "301225",
-      "stock_name": "恒勃股份",
-      "weight": 2.37
-    },
-    {
-      "stock_code": "002240",
-      "stock_name": "盛新锂能",
-      "weight": 1.95
-    },
-    {
-      "stock_code": "002050",
-      "stock_name": "三花智控",
-      "weight": 1.85
-    },
-    {
-      "stock_code": "000973",
-      "stock_name": "佛塑科技",
-      "weight": 1.84
-    },
-    {
-      "stock_code": "603228",
-      "stock_name": "景旺电子",
-      "weight": 1.75
-    },
-    {
-      "stock_code": "688228",
-      "stock_name": "开普云",
-      "weight": 1.72
-    },
-    {
-      "stock_code": "300390",
-      "stock_name": "天华新能",
-      "weight": 1.52
+      "stock_code": "603626",
+      "stock_name": "科森科技",
+      "weight": 4.12
     },
     {
       "stock_code": "301377",
       "stock_name": "鼎泰高科",
-      "weight": 1.51
+      "weight": 3.68
     },
     {
-      "stock_code": "002851",
-      "stock_name": "麦格米特",
-      "weight": 1.39
-    },
-    {
-      "stock_code": "301529",
-      "stock_name": "福赛科技",
-      "weight": 0.74
-    },
-    {
-      "stock_code": "002126",
-      "stock_name": "银轮股份",
-      "weight": 0.48
-    },
-    {
-      "stock_code": "002290",
-      "stock_name": "禾盛新材",
-      "weight": 0.4
-    },
-    {
-      "stock_code": "601231",
-      "stock_name": "环旭电子",
-      "weight": 0.11
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 3.64
     }
   ],
-  "fetched_at": "2026-03-29 23:14:35",
+  "fetched_at": "2026-04-27 13:54:33",
   "data_source": "eastmoney"
 }

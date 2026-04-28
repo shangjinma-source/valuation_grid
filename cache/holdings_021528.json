@@ -1,62 +1,62 @@
 {
   "fund_code": "021528",
   "fund_name": "财通成长优选混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 92.36,
-  "parsed_weight": 90.09,
-  "missing_weight": 2.27,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.51,
+  "parsed_weight": 87.84,
+  "missing_weight": 5.67,
   "positions": [
     {
       "stock_code": "300502",
       "stock_name": "新易盛",
-      "weight": 9.69
+      "weight": 9.9
     },
     {
       "stock_code": "301377",
       "stock_name": "鼎泰高科",
-      "weight": 9.64
+      "weight": 9.83
     },
     {
       "stock_code": "300308",
       "stock_name": "中际旭创",
-      "weight": 9.58
+      "weight": 9.81
     },
     {
       "stock_code": "688498",
       "stock_name": "源杰科技",
-      "weight": 9.5
-    },
-    {
-      "stock_code": "600183",
-      "stock_name": "生益科技",
-      "weight": 9.41
-    },
-    {
-      "stock_code": "002463",
-      "stock_name": "沪电股份",
-      "weight": 9.14
-    },
-    {
-      "stock_code": "688195",
-      "stock_name": "腾景科技",
-      "weight": 9.03
-    },
-    {
-      "stock_code": "300476",
-      "stock_name": "胜宏科技",
-      "weight": 8.77
+      "weight": 9.8
     },
     {
       "stock_code": "688183",
       "stock_name": "生益电子",
-      "weight": 8.61
+      "weight": 9.8
     },
     {
-      "stock_code": "601138",
-      "stock_name": "工业富联",
-      "weight": 6.72
+      "stock_code": "301200",
+      "stock_name": "大族数控",
+      "weight": 9.77
+    },
+    {
+      "stock_code": "600105",
+      "stock_name": "永鼎股份",
+      "weight": 8.75
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 8.31
+    },
+    {
+      "stock_code": "600183",
+      "stock_name": "生益科技",
+      "weight": 6.2
+    },
+    {
+      "stock_code": "600498",
+      "stock_name": "烽火通信",
+      "weight": 5.67
     }
   ],
-  "fetched_at": "2026-03-29 23:14:31",
+  "fetched_at": "2026-04-27 13:54:27",
   "data_source": "eastmoney"
 }

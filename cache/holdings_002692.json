@@ -1,62 +1,72 @@
 {
   "fund_code": "002692",
   "fund_name": "富国创新科技混合A",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.68,
-  "parsed_weight": 62.32,
-  "missing_weight": 32.36,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.8,
+  "parsed_weight": 68.81,
+  "missing_weight": 24.99,
   "positions": [
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 9.53
+    },
     {
       "stock_code": "300308",
       "stock_name": "中际旭创",
-      "weight": 9.88
+      "weight": 9.42
     },
     {
       "stock_code": "300502",
       "stock_name": "新易盛",
-      "weight": 9.41
+      "weight": 9.3
     },
     {
-      "stock_code": "002384",
-      "stock_name": "东山精密",
-      "weight": 7.71
-    },
-    {
-      "stock_code": "300394",
-      "stock_name": "天孚通信",
-      "weight": 6.84
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 8.04
     },
     {
       "stock_code": "002463",
       "stock_name": "沪电股份",
-      "weight": 6.65
+      "weight": 7.25
     },
     {
-      "stock_code": "688256",
-      "stock_name": "寒武纪",
-      "weight": 6.42
+      "stock_code": "601869",
+      "stock_name": "长飞光纤",
+      "weight": 6.69
     },
     {
-      "stock_code": "603920",
-      "stock_name": "世运电路",
-      "weight": 4.41
+      "stock_code": "300548",
+      "stock_name": "长芯博创",
+      "weight": 5.16
     },
     {
-      "stock_code": "688313",
-      "stock_name": "仕佳光子",
-      "weight": 4.04
+      "stock_code": "600498",
+      "stock_name": "烽火通信",
+      "weight": 3.85
     },
     {
-      "stock_code": "688110",
-      "stock_name": "东芯股份",
+      "stock_code": "600522",
+      "stock_name": "中天科技",
       "weight": 3.83
     },
     {
-      "stock_code": "688388",
-      "stock_name": "嘉元科技",
-      "weight": 3.13
+      "stock_code": "002796",
+      "stock_name": "世嘉科技",
+      "weight": 3.2
+    },
+    {
+      "stock_code": "603186",
+      "stock_name": "华正新材",
+      "weight": 1.52
+    },
+    {
+      "stock_code": "002957",
+      "stock_name": "科瑞技术",
+      "weight": 1.02
     }
   ],
-  "fetched_at": "2026-03-29 23:12:00",
+  "fetched_at": "2026-04-27 13:51:57",
   "data_source": "eastmoney"
 }

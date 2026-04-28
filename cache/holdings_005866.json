@@ -1,122 +1,62 @@
 {
   "fund_code": "005866",
   "fund_name": "浦银安盛量化多策略混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 30.33,
-  "parsed_weight": 30.34,
-  "missing_weight": 0,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.78,
+  "parsed_weight": 55.57,
+  "missing_weight": 38.21,
   "positions": [
     {
-      "stock_code": "300762",
-      "stock_name": "上海瀚讯",
-      "weight": 2.94
-    },
-    {
-      "stock_code": "300699",
-      "stock_name": "光威复材",
-      "weight": 2.93
-    },
-    {
-      "stock_code": "002149",
-      "stock_name": "西部材料",
-      "weight": 2.86
-    },
-    {
-      "stock_code": "688568",
-      "stock_name": "中科星图",
-      "weight": 2.86
-    },
-    {
-      "stock_code": "300395",
-      "stock_name": "菲利华",
-      "weight": 2.58
-    },
-    {
-      "stock_code": "688311",
-      "stock_name": "盟升电子",
-      "weight": 2.54
-    },
-    {
-      "stock_code": "300627",
-      "stock_name": "华测导航",
-      "weight": 2.54
-    },
-    {
-      "stock_code": "300136",
-      "stock_name": "信维通信",
-      "weight": 2.14
-    },
-    {
-      "stock_code": "002465",
-      "stock_name": "海格通信",
-      "weight": 2.05
-    },
-    {
-      "stock_code": "605090",
-      "stock_name": "九丰能源",
-      "weight": 2.0
-    },
-    {
-      "stock_code": "601899",
-      "stock_name": "紫金矿业",
-      "weight": 1.01
-    },
-    {
-      "stock_code": "600096",
-      "stock_name": "云天化",
-      "weight": 0.62
-    },
-    {
-      "stock_code": "000408",
-      "stock_name": "藏格矿业",
-      "weight": 0.61
-    },
-    {
-      "stock_code": "002353",
-      "stock_name": "杰瑞股份",
-      "weight": 0.55
-    },
-    {
-      "stock_code": "601058",
-      "stock_name": "赛轮轮胎",
-      "weight": 0.54
-    },
-    {
-      "stock_code": "000830",
-      "stock_name": "鲁西化工",
-      "weight": 0.48
-    },
-    {
-      "stock_code": "300124",
-      "stock_name": "汇川技术",
-      "weight": 0.39
-    },
-    {
-      "stock_code": "002517",
-      "stock_name": "恺英网络",
-      "weight": 0.34
-    },
-    {
-      "stock_code": "600690",
-      "stock_name": "海尔智家",
-      "weight": 0.28
-    },
-    {
-      "stock_code": "600118",
-      "stock_name": "中国卫星",
-      "weight": 0.05
-    },
-    {
-      "stock_code": "601698",
-      "stock_name": "中国卫通",
-      "weight": 0.02
+      "stock_code": "301005",
+      "stock_name": "超捷股份",
+      "weight": 7.28
     },
     {
       "stock_code": "600879",
       "stock_name": "航天电子",
-      "weight": 0.01
+      "weight": 6.55
+    },
+    {
+      "stock_code": "300136",
+      "stock_name": "信维通信",
+      "weight": 6.54
+    },
+    {
+      "stock_code": "002149",
+      "stock_name": "西部材料",
+      "weight": 6.15
+    },
+    {
+      "stock_code": "300775",
+      "stock_name": "三角防务",
+      "weight": 6.02
+    },
+    {
+      "stock_code": "688270",
+      "stock_name": "ST臻镭",
+      "weight": 4.89
+    },
+    {
+      "stock_code": "301232",
+      "stock_name": "飞沃科技",
+      "weight": 4.79
+    },
+    {
+      "stock_code": "688239",
+      "stock_name": "航宇科技",
+      "weight": 4.78
+    },
+    {
+      "stock_code": "300900",
+      "stock_name": "广联航空",
+      "weight": 4.32
+    },
+    {
+      "stock_code": "688385",
+      "stock_name": "复旦微电",
+      "weight": 4.25
     }
   ],
-  "fetched_at": "2026-03-31 13:56:08",
+  "fetched_at": "2026-04-28 13:50:23",
   "data_source": "eastmoney"
 }

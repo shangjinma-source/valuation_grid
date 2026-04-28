@@ -1,62 +1,62 @@
 {
   "fund_code": "019114",
-  "fund_name": "东财慧心优选C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 92.23,
-  "parsed_weight": 72.36,
-  "missing_weight": 19.87,
+  "fund_name": "东财慧心优选混合发起式C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.8,
+  "parsed_weight": 83.43,
+  "missing_weight": 11.37,
   "positions": [
-    {
-      "stock_code": "01347",
-      "stock_name": "华虹半导体",
-      "weight": 8.67
-    },
-    {
-      "stock_code": "00981",
-      "stock_name": "中芯国际",
-      "weight": 8.57
-    },
     {
       "stock_code": "300661",
       "stock_name": "圣邦股份",
-      "weight": 7.9
+      "weight": 10.03
     },
     {
       "stock_code": "688141",
       "stock_name": "杰华特",
-      "weight": 7.79
+      "weight": 9.13
     },
     {
-      "stock_code": "688536",
-      "stock_name": "思瑞浦",
-      "weight": 6.88
-    },
-    {
-      "stock_code": "688484",
-      "stock_name": "南芯科技",
-      "weight": 6.8
+      "stock_code": "01347",
+      "stock_name": "华虹半导体",
+      "weight": 8.95
     },
     {
       "stock_code": "301099",
       "stock_name": "雅创电子",
-      "weight": 6.6
+      "weight": 8.5
     },
     {
-      "stock_code": "688798",
-      "stock_name": "艾为电子",
-      "weight": 6.44
+      "stock_code": "688484",
+      "stock_name": "南芯科技",
+      "weight": 8.0
     },
     {
       "stock_code": "688052",
       "stock_name": "纳芯微",
-      "weight": 6.39
+      "weight": 7.92
     },
     {
-      "stock_code": "603501",
-      "stock_name": "豪威集团",
-      "weight": 6.32
+      "stock_code": "688798",
+      "stock_name": "艾为电子",
+      "weight": 7.79
+    },
+    {
+      "stock_code": "688591",
+      "stock_name": "泰凌微",
+      "weight": 7.74
+    },
+    {
+      "stock_code": "00981",
+      "stock_name": "中芯国际",
+      "weight": 7.7
+    },
+    {
+      "stock_code": "688368",
+      "stock_name": "晶丰明源",
+      "weight": 7.67
     }
   ],
-  "fetched_at": "2026-03-29 23:12:46",
+  "fetched_at": "2026-04-27 13:52:44",
   "data_source": "eastmoney"
 }

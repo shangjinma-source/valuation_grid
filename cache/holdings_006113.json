@@ -1,72 +1,72 @@
 {
   "fund_code": "006113",
   "fund_name": "汇添富创新医药混合A",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 90.51,
-  "parsed_weight": 71.28,
-  "missing_weight": 19.23,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 89.74,
+  "parsed_weight": 75.84,
+  "missing_weight": 13.9,
   "positions": [
     {
       "stock_code": "06990",
-      "stock_name": "科伦博泰生物-B",
-      "weight": 9.67
+      "stock_name": "科伦博泰生物",
+      "weight": 9.71
     },
     {
       "stock_code": "01801",
       "stock_name": "信达生物",
-      "weight": 9.27
+      "weight": 9.69
     },
     {
       "stock_code": "600276",
       "stock_name": "恒瑞医药",
-      "weight": 9.2
-    },
-    {
-      "stock_code": "01093",
-      "stock_name": "石药集团",
-      "weight": 8.66
+      "weight": 9.54
     },
     {
       "stock_code": "01530",
       "stock_name": "三生制药",
-      "weight": 8.48
+      "weight": 9.36
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 8.42
     },
     {
       "stock_code": "002653",
       "stock_name": "海思科",
-      "weight": 6.09
-    },
-    {
-      "stock_code": "688266",
-      "stock_name": "泽璟制药",
-      "weight": 5.31
+      "weight": 7.63
     },
     {
       "stock_code": "688506",
       "stock_name": "百利天恒",
-      "weight": 4.5
+      "weight": 6.71
+    },
+    {
+      "stock_code": "688266",
+      "stock_name": "泽璟制药",
+      "weight": 5.35
+    },
+    {
+      "stock_code": "002294",
+      "stock_name": "信立泰",
+      "weight": 4.01
     },
     {
       "stock_code": "688068",
       "stock_name": "热景生物",
-      "weight": 3.47
-    },
-    {
-      "stock_code": "300765",
-      "stock_name": "新诺威",
-      "weight": 3.29
+      "weight": 2.51
     },
     {
       "stock_code": "688331",
       "stock_name": "荣昌生物",
-      "weight": 2.33
+      "weight": 1.95
     },
     {
-      "stock_code": "688428",
-      "stock_name": "诺诚健华",
-      "weight": 1.01
+      "stock_code": "09995",
+      "stock_name": "荣昌生物",
+      "weight": 0.96
     }
   ],
-  "fetched_at": "2026-03-29 23:19:41",
+  "fetched_at": "2026-04-27 13:59:59",
   "data_source": "eastmoney"
 }

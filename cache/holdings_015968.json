@@ -1,62 +1,62 @@
 {
   "fund_code": "015968",
   "fund_name": "永赢半导体产业智选混合发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 80.2,
-  "parsed_weight": 71.98,
-  "missing_weight": 8.22,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 75.02,
+  "parsed_weight": 67.71,
+  "missing_weight": 7.31,
   "positions": [
     {
       "stock_code": "00981",
       "stock_name": "中芯国际",
-      "weight": 9.92
-    },
-    {
-      "stock_code": "688502",
-      "stock_name": "茂莱光学",
-      "weight": 9.21
-    },
-    {
-      "stock_code": "002338",
-      "stock_name": "奥普光电",
-      "weight": 8.98
-    },
-    {
-      "stock_code": "301392",
-      "stock_name": "汇成真空",
-      "weight": 8.82
+      "weight": 9.4
     },
     {
       "stock_code": "002222",
       "stock_name": "福晶科技",
-      "weight": 7.7
+      "weight": 9.25
     },
     {
-      "stock_code": "301308",
-      "stock_name": "江波龙",
-      "weight": 6.28
+      "stock_code": "688502",
+      "stock_name": "茂莱光学",
+      "weight": 8.39
     },
     {
-      "stock_code": "001309",
-      "stock_name": "德明利",
-      "weight": 5.94
+      "stock_code": "002156",
+      "stock_name": "通富微电",
+      "weight": 8.27
     },
     {
-      "stock_code": "688256",
-      "stock_name": "寒武纪",
-      "weight": 5.79
+      "stock_code": "600584",
+      "stock_name": "长电科技",
+      "weight": 7.75
     },
     {
-      "stock_code": "688172",
-      "stock_name": "燕东微",
-      "weight": 4.95
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 7.28
     },
     {
       "stock_code": "603986",
       "stock_name": "兆易创新",
-      "weight": 4.39
+      "weight": 7.14
+    },
+    {
+      "stock_code": "688372",
+      "stock_name": "伟测科技",
+      "weight": 4.09
+    },
+    {
+      "stock_code": "003043",
+      "stock_name": "华亚智能",
+      "weight": 3.34
+    },
+    {
+      "stock_code": "688362",
+      "stock_name": "甬矽电子",
+      "weight": 2.8
     }
   ],
-  "fetched_at": "2026-03-29 23:11:16",
+  "fetched_at": "2026-04-27 13:51:10",
   "data_source": "eastmoney"
 }

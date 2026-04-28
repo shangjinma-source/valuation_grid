@@ -1,72 +1,77 @@
 {
   "fund_code": "023037",
   "fund_name": "中欧资源精选混合发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 93.95,
-  "parsed_weight": 55.49,
-  "missing_weight": 38.46,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.26,
+  "parsed_weight": 49.42,
+  "missing_weight": 43.84,
   "positions": [
     {
       "stock_code": "601899",
       "stock_name": "紫金矿业",
-      "weight": 10.22
+      "weight": 9.58
+    },
+    {
+      "stock_code": "000792",
+      "stock_name": "盐湖股份",
+      "weight": 6.57
+    },
+    {
+      "stock_code": "600219",
+      "stock_name": "南山铝业",
+      "weight": 5.15
     },
     {
       "stock_code": "603993",
       "stock_name": "洛阳钼业",
-      "weight": 10.1
+      "weight": 4.78
     },
     {
-      "stock_code": "02600",
-      "stock_name": "中国铝业",
-      "weight": 6.51
+      "stock_code": "600988",
+      "stock_name": "赤峰黄金",
+      "weight": 4.37
     },
     {
       "stock_code": "600549",
       "stock_name": "厦门钨业",
-      "weight": 4.46
+      "weight": 4.11
     },
     {
-      "stock_code": "00358",
-      "stock_name": "江西铜业股份",
-      "weight": 4.31
-    },
-    {
-      "stock_code": "000807",
-      "stock_name": "云铝股份",
-      "weight": 4.1
-    },
-    {
-      "stock_code": "01772",
-      "stock_name": "赣锋锂业",
-      "weight": 3.96
-    },
-    {
-      "stock_code": "02099",
-      "stock_name": "中国黄金国际",
-      "weight": 3.55
-    },
-    {
-      "stock_code": "000408",
-      "stock_name": "藏格矿业",
-      "weight": 3.53
+      "stock_code": "00883",
+      "stock_name": "中国海洋石油",
+      "weight": 3.68
     },
     {
       "stock_code": "000933",
       "stock_name": "神火股份",
-      "weight": 3.52
+      "weight": 3.62
     },
     {
-      "stock_code": "600362",
-      "stock_name": "江西铜业",
-      "weight": 1.16
+      "stock_code": "000688",
+      "stock_name": "国城矿业",
+      "weight": 3.41
     },
     {
-      "stock_code": "601600",
-      "stock_name": "中国铝业",
-      "weight": 0.07
+      "stock_code": "01898",
+      "stock_name": "中煤能源",
+      "weight": 3.14
+    },
+    {
+      "stock_code": "06693",
+      "stock_name": "赤峰黄金",
+      "weight": 0.94
+    },
+    {
+      "stock_code": "601898",
+      "stock_name": "中煤能源",
+      "weight": 0.05
+    },
+    {
+      "stock_code": "600938",
+      "stock_name": "中国海油",
+      "weight": 0.02
     }
   ],
-  "fetched_at": "2026-03-29 23:10:56",
+  "fetched_at": "2026-04-27 13:50:51",
   "data_source": "eastmoney"
 }

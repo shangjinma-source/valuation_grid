@@ -1,62 +1,62 @@
 {
   "fund_code": "018049",
   "fund_name": "申万菱信数字产业股票型发起式C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 91.86,
-  "parsed_weight": 69.36,
-  "missing_weight": 22.5,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 86.68,
+  "parsed_weight": 72.02,
+  "missing_weight": 14.66,
   "positions": [
     {
-      "stock_code": "688258",
-      "stock_name": "卓易信息",
-      "weight": 8.97
+      "stock_code": "300624",
+      "stock_name": "万兴科技",
+      "weight": 8.98
     },
     {
-      "stock_code": "688365",
-      "stock_name": "光云科技",
-      "weight": 8.31
+      "stock_code": "688232",
+      "stock_name": "新点软件",
+      "weight": 8.17
     },
     {
-      "stock_code": "603171",
-      "stock_name": "税友股份",
-      "weight": 7.33
-    },
-    {
-      "stock_code": "688369",
-      "stock_name": "致远互联",
-      "weight": 7.14
-    },
-    {
-      "stock_code": "300378",
-      "stock_name": "鼎捷数智",
-      "weight": 6.55
-    },
-    {
-      "stock_code": "300454",
-      "stock_name": "深信服",
-      "weight": 6.55
-    },
-    {
-      "stock_code": "300170",
-      "stock_name": "汉得信息",
-      "weight": 6.29
+      "stock_code": "300687",
+      "stock_name": "赛意信息",
+      "weight": 8.0
     },
     {
       "stock_code": "603039",
       "stock_name": "泛微网络",
-      "weight": 6.22
+      "weight": 7.33
     },
     {
-      "stock_code": "300624",
-      "stock_name": "万兴科技",
-      "weight": 6.14
+      "stock_code": "002970",
+      "stock_name": "锐明技术",
+      "weight": 7.03
     },
     {
-      "stock_code": "688111",
-      "stock_name": "金山办公",
-      "weight": 5.86
+      "stock_code": "688095",
+      "stock_name": "福昕软件",
+      "weight": 6.97
+    },
+    {
+      "stock_code": "688258",
+      "stock_name": "卓易信息",
+      "weight": 6.87
+    },
+    {
+      "stock_code": "300253",
+      "stock_name": "卫宁健康",
+      "weight": 6.59
+    },
+    {
+      "stock_code": "300170",
+      "stock_name": "汉得信息",
+      "weight": 6.51
+    },
+    {
+      "stock_code": "300378",
+      "stock_name": "鼎捷数智",
+      "weight": 5.57
     }
   ],
-  "fetched_at": "2026-03-29 23:15:18",
+  "fetched_at": "2026-04-27 13:55:18",
   "data_source": "eastmoney"
 }

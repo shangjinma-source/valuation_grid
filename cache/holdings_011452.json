@@ -1,25 +1,25 @@
 {
   "fund_code": "011452",
   "fund_name": "华泰柏瑞质量成长C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 88.32,
-  "parsed_weight": 71.5,
-  "missing_weight": 16.82,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 86.86,
+  "parsed_weight": 64.59,
+  "missing_weight": 22.27,
   "positions": [
     {
       "stock_code": "300502",
       "stock_name": "新易盛",
-      "weight": 10.02
+      "weight": 10.05
     },
     {
       "stock_code": "300308",
       "stock_name": "中际旭创",
-      "weight": 10.02
+      "weight": 10.01
     },
     {
-      "stock_code": "300394",
-      "stock_name": "天孚通信",
-      "weight": 8.83
+      "stock_code": "06869",
+      "stock_name": "长飞光纤光缆",
+      "weight": 8.46
     },
     {
       "stock_code": "688498",
@@ -27,41 +27,36 @@
       "weight": 7.53
     },
     {
-      "stock_code": "600183",
-      "stock_name": "生益科技",
-      "weight": 7.3
-    },
-    {
-      "stock_code": "06869",
-      "stock_name": "长飞光纤光缆",
-      "weight": 6.52
-    },
-    {
-      "stock_code": "002916",
-      "stock_name": "深南电路",
-      "weight": 6.13
-    },
-    {
-      "stock_code": "688313",
-      "stock_name": "仕佳光子",
-      "weight": 5.92
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 7.01
     },
     {
       "stock_code": "002384",
       "stock_name": "东山精密",
-      "weight": 4.69
+      "weight": 6.54
     },
     {
       "stock_code": "688205",
       "stock_name": "德科立",
-      "weight": 3.15
+      "weight": 4.41
     },
     {
-      "stock_code": "601869",
-      "stock_name": "长飞光纤",
-      "weight": 1.39
+      "stock_code": "688195",
+      "stock_name": "腾景科技",
+      "weight": 3.76
+    },
+    {
+      "stock_code": "300620",
+      "stock_name": "光库科技",
+      "weight": 3.42
+    },
+    {
+      "stock_code": "002916",
+      "stock_name": "深南电路",
+      "weight": 3.4
     }
   ],
-  "fetched_at": "2026-03-29 23:13:58",
+  "fetched_at": "2026-04-27 13:53:52",
   "data_source": "eastmoney"
 }

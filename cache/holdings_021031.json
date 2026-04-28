@@ -1,63 +1,63 @@
 {
   "fund_code": "021031",
   "fund_name": "汇添富国证港股通创新药ETF发起式联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 98.33,
-  "parsed_weight": 72.02,
-  "missing_weight": 26.31,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 98.66,
+  "parsed_weight": 72.41,
+  "missing_weight": 26.25,
   "positions": [
-    {
-      "stock_code": "01093",
-      "stock_name": "石药集团",
-      "weight": 10.52
-    },
-    {
-      "stock_code": "06160",
-      "stock_name": "百济神州",
-      "weight": 9.97
-    },
     {
       "stock_code": "09926",
       "stock_name": "康方生物",
-      "weight": 9.79
-    },
-    {
-      "stock_code": "01177",
-      "stock_name": "中国生物制药",
-      "weight": 9.73
+      "weight": 11.88
     },
     {
       "stock_code": "01801",
       "stock_name": "信达生物",
-      "weight": 9.6
+      "weight": 9.82
     },
     {
-      "stock_code": "01530",
-      "stock_name": "三生制药",
-      "weight": 7.0
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 9.41
+    },
+    {
+      "stock_code": "06160",
+      "stock_name": "百济神州",
+      "weight": 9.07
+    },
+    {
+      "stock_code": "01177",
+      "stock_name": "中国生物制药",
+      "weight": 9.03
     },
     {
       "stock_code": "03692",
       "stock_name": "翰森制药",
-      "weight": 6.98
+      "weight": 6.94
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 6.63
     },
     {
       "stock_code": "06990",
-      "stock_name": "科伦博泰生物-B",
-      "weight": 3.5
+      "stock_name": "科伦博泰生物",
+      "weight": 4.15
+    },
+    {
+      "stock_code": "09995",
+      "stock_name": "荣昌生物",
+      "weight": 2.78
     },
     {
       "stock_code": "00867",
       "stock_name": "康哲药业",
-      "weight": 2.57
-    },
-    {
-      "stock_code": "06855",
-      "stock_name": "亚盛医药-B",
-      "weight": 2.36
+      "weight": 2.7
     }
   ],
-  "fetched_at": "2026-03-29 23:20:23",
+  "fetched_at": "2026-04-27 14:00:42",
   "data_source": "eastmoney",
   "original_fund_code": "021031",
   "etf_target": "159570",

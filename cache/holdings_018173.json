@@ -1,73 +1,78 @@
 {
   "fund_code": "018173",
   "fund_name": "华泰柏瑞中证电力全指ETF发起式联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.13,
-  "parsed_weight": 51.88,
-  "missing_weight": 47.25,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.57,
+  "parsed_weight": 49.83,
+  "missing_weight": 49.74,
   "positions": [
     {
       "stock_code": "600900",
       "stock_name": "长江电力",
-      "weight": 9.85
+      "weight": 9.0
     },
     {
       "stock_code": "601985",
       "stock_name": "中国核电",
-      "weight": 8.35
+      "weight": 7.91
     },
     {
       "stock_code": "600905",
       "stock_name": "三峡能源",
-      "weight": 6.86
+      "weight": 6.47
     },
     {
       "stock_code": "600795",
       "stock_name": "国电电力",
-      "weight": 5.27
+      "weight": 4.57
     },
     {
       "stock_code": "600157",
       "stock_name": "永泰能源",
-      "weight": 4.02
+      "weight": 4.17
     },
     {
-      "stock_code": "600011",
-      "stock_name": "华能国际",
+      "stock_code": "003816",
+      "stock_name": "中国广核",
       "weight": 3.85
     },
     {
       "stock_code": "600886",
       "stock_name": "国投电力",
-      "weight": 3.7
+      "weight": 3.6
     },
     {
-      "stock_code": "003816",
-      "stock_name": "中国广核",
-      "weight": 3.47
-    },
-    {
-      "stock_code": "600021",
-      "stock_name": "上海电力",
-      "weight": 3.31
+      "stock_code": "600011",
+      "stock_name": "华能国际",
+      "weight": 3.27
     },
     {
       "stock_code": "600674",
       "stock_name": "川投能源",
-      "weight": 3.18
+      "weight": 3.09
+    },
+    {
+      "stock_code": "600021",
+      "stock_name": "上海电力",
+      "weight": 2.73
+    },
+    {
+      "stock_code": "600744",
+      "stock_name": "华银电力",
+      "weight": 0.81
+    },
+    {
+      "stock_code": "600644",
+      "stock_name": "乐山电力",
+      "weight": 0.35
     },
     {
       "stock_code": "001280",
       "stock_name": "中国铀业",
       "weight": 0.01
-    },
-    {
-      "stock_code": "301656",
-      "stock_name": "联合动力",
-      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-03-29 23:22:45",
+  "fetched_at": "2026-04-27 14:03:16",
   "data_source": "eastmoney",
   "original_fund_code": "018173",
   "etf_target": "561560",

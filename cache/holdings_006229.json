@@ -1,77 +1,67 @@
 {
   "fund_code": "006229",
   "fund_name": "中欧医疗创新股票C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 93.67,
-  "parsed_weight": 65.53,
-  "missing_weight": 28.14,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.93,
+  "parsed_weight": 70.65,
+  "missing_weight": 24.28,
   "positions": [
     {
       "stock_code": "603259",
       "stock_name": "药明康德",
-      "weight": 9.28
-    },
-    {
-      "stock_code": "02268",
-      "stock_name": "药明合联",
-      "weight": 8.15
-    },
-    {
-      "stock_code": "06990",
-      "stock_name": "科伦博泰生物-B",
-      "weight": 7.13
+      "weight": 9.62
     },
     {
       "stock_code": "09926",
       "stock_name": "康方生物",
-      "weight": 6.97
+      "weight": 8.21
     },
     {
-      "stock_code": "01530",
-      "stock_name": "三生制药",
-      "weight": 6.44
+      "stock_code": "02268",
+      "stock_name": "药明合联",
+      "weight": 7.46
     },
     {
-      "stock_code": "02269",
-      "stock_name": "药明生物",
-      "weight": 6.2
+      "stock_code": "06990",
+      "stock_name": "科伦博泰生物",
+      "weight": 7.44
     },
     {
       "stock_code": "688506",
       "stock_name": "百利天恒",
-      "weight": 5.42
+      "weight": 7.03
+    },
+    {
+      "stock_code": "002653",
+      "stock_name": "海思科",
+      "weight": 6.92
     },
     {
       "stock_code": "002821",
       "stock_name": "凯莱英",
-      "weight": 5.3
+      "weight": 6.66
     },
     {
-      "stock_code": "300759",
-      "stock_name": "康龙化成",
-      "weight": 4.64
+      "stock_code": "02269",
+      "stock_name": "药明生物",
+      "weight": 5.94
     },
     {
-      "stock_code": "603127",
-      "stock_name": "昭衍新药",
-      "weight": 4.03
+      "stock_code": "002294",
+      "stock_name": "信立泰",
+      "weight": 5.47
     },
     {
-      "stock_code": "06127",
-      "stock_name": "昭衍新药",
-      "weight": 1.39
-    },
-    {
-      "stock_code": "03759",
-      "stock_name": "康龙化成",
-      "weight": 0.38
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 4.96
     },
     {
       "stock_code": "06821",
       "stock_name": "凯莱英",
-      "weight": 0.2
+      "weight": 0.94
     }
   ],
-  "fetched_at": "2026-03-29 23:20:14",
+  "fetched_at": "2026-04-27 14:00:31",
   "data_source": "eastmoney"
 }

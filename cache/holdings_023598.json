@@ -1,203 +1,63 @@
 {
   "fund_code": "023598",
   "fund_name": "景顺长城中证港股通创新药ETF联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 98.96,
-  "parsed_weight": 98.95,
-  "missing_weight": 0.01,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.15,
+  "parsed_weight": 70.97,
+  "missing_weight": 28.18,
   "positions": [
     {
       "stock_code": "02269",
       "stock_name": "药明生物",
-      "weight": 10.24
-    },
-    {
-      "stock_code": "06160",
-      "stock_name": "百济神州",
-      "weight": 9.93
+      "weight": 10.37
     },
     {
       "stock_code": "01801",
       "stock_name": "信达生物",
-      "weight": 9.55
+      "weight": 10.26
+    },
+    {
+      "stock_code": "06160",
+      "stock_name": "百济神州",
+      "weight": 9.16
     },
     {
       "stock_code": "09926",
       "stock_name": "康方生物",
-      "weight": 8.14
-    },
-    {
-      "stock_code": "01177",
-      "stock_name": "中国生物制药",
-      "weight": 6.81
+      "weight": 9.04
     },
     {
       "stock_code": "01093",
       "stock_name": "石药集团",
-      "weight": 6.64
+      "weight": 6.91
+    },
+    {
+      "stock_code": "01177",
+      "stock_name": "中国生物制药",
+      "weight": 6.26
     },
     {
       "stock_code": "03692",
       "stock_name": "翰森制药",
-      "weight": 6.4
+      "weight": 6.07
     },
     {
       "stock_code": "02359",
       "stock_name": "药明康德",
-      "weight": 4.92
+      "weight": 5.65
     },
     {
       "stock_code": "01530",
       "stock_name": "三生制药",
-      "weight": 4.8
+      "weight": 4.33
     },
     {
       "stock_code": "02228",
       "stock_name": "晶泰控股",
-      "weight": 3.18
-    },
-    {
-      "stock_code": "02268",
-      "stock_name": "药明合联",
-      "weight": 2.98
-    },
-    {
-      "stock_code": "06990",
-      "stock_name": "科伦博泰生物-B",
-      "weight": 2.49
-    },
-    {
-      "stock_code": "01548",
-      "stock_name": "金斯瑞生物科技",
-      "weight": 1.86
-    },
-    {
-      "stock_code": "00867",
-      "stock_name": "康哲药业",
-      "weight": 1.85
-    },
-    {
-      "stock_code": "09969",
-      "stock_name": "诺诚健华",
-      "weight": 1.8
-    },
-    {
-      "stock_code": "06855",
-      "stock_name": "亚盛医药-B",
-      "weight": 1.52
-    },
-    {
-      "stock_code": "09688",
-      "stock_name": "再鼎医药",
-      "weight": 1.49
-    },
-    {
-      "stock_code": "09995",
-      "stock_name": "荣昌生物",
-      "weight": 1.47
-    },
-    {
-      "stock_code": "01276",
-      "stock_name": "恒瑞医药",
-      "weight": 1.26
-    },
-    {
-      "stock_code": "02162",
-      "stock_name": "康诺亚-B",
-      "weight": 1.25
-    },
-    {
-      "stock_code": "00013",
-      "stock_name": "和黄医药",
-      "weight": 1.23
-    },
-    {
-      "stock_code": "02096",
-      "stock_name": "先声药业",
-      "weight": 1.21
-    },
-    {
-      "stock_code": "00512",
-      "stock_name": "远大医药",
-      "weight": 1.09
-    },
-    {
-      "stock_code": "02196",
-      "stock_name": "复星医药",
-      "weight": 1.03
-    },
-    {
-      "stock_code": "01952",
-      "stock_name": "云顶新耀",
-      "weight": 1.02
-    },
-    {
-      "stock_code": "02186",
-      "stock_name": "绿叶制药",
-      "weight": 0.75
-    },
-    {
-      "stock_code": "03759",
-      "stock_name": "康龙化成",
-      "weight": 0.56
-    },
-    {
-      "stock_code": "00460",
-      "stock_name": "四环医药",
-      "weight": 0.55
-    },
-    {
-      "stock_code": "03347",
-      "stock_name": "泰格医药",
-      "weight": 0.51
-    },
-    {
-      "stock_code": "02157",
-      "stock_name": "乐普生物-B",
-      "weight": 0.44
-    },
-    {
-      "stock_code": "01877",
-      "stock_name": "君实生物",
-      "weight": 0.43
-    },
-    {
-      "stock_code": "01513",
-      "stock_name": "丽珠医药",
-      "weight": 0.42
-    },
-    {
-      "stock_code": "06185",
-      "stock_name": "康希诺生物",
-      "weight": 0.36
-    },
-    {
-      "stock_code": "06127",
-      "stock_name": "昭衍新药",
-      "weight": 0.24
-    },
-    {
-      "stock_code": "06821",
-      "stock_name": "凯莱英",
-      "weight": 0.19
-    },
-    {
-      "stock_code": "06955",
-      "stock_name": "博安生物",
-      "weight": 0.16
-    },
-    {
-      "stock_code": "09989",
-      "stock_name": "海普瑞",
-      "weight": 0.11
-    },
-    {
-      "stock_code": "01349",
-      "stock_name": "复旦张江",
-      "weight": 0.07
+      "weight": 2.92
     }
   ],
-  "fetched_at": "2026-03-29 23:20:04",
+  "fetched_at": "2026-04-27 14:00:21",
   "data_source": "eastmoney",
   "original_fund_code": "023598",
   "etf_target": "513780",

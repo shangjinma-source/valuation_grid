@@ -1,63 +1,63 @@
 {
   "fund_code": "020105",
   "fund_name": "易方达石油化工ETF联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.59,
-  "parsed_weight": 56.5,
-  "missing_weight": 43.09,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.61,
+  "parsed_weight": 57.8,
+  "missing_weight": 41.81,
   "positions": [
     {
       "stock_code": "600309",
       "stock_name": "万华化学",
-      "weight": 10.58
+      "weight": 10.04
     },
     {
       "stock_code": "601857",
       "stock_name": "中国石油",
-      "weight": 8.67
-    },
-    {
-      "stock_code": "600028",
-      "stock_name": "中国石化",
-      "weight": 6.61
+      "weight": 9.3
     },
     {
       "stock_code": "000792",
       "stock_name": "盐湖股份",
-      "weight": 6.57
+      "weight": 7.91
     },
     {
       "stock_code": "600938",
       "stock_name": "中国海油",
-      "weight": 5.3
+      "weight": 6.44
     },
     {
-      "stock_code": "000408",
-      "stock_name": "藏格矿业",
-      "weight": 4.87
-    },
-    {
-      "stock_code": "600160",
-      "stock_name": "巨化股份",
-      "weight": 3.81
-    },
-    {
-      "stock_code": "600346",
-      "stock_name": "恒力石化",
-      "weight": 3.49
-    },
-    {
-      "stock_code": "600426",
-      "stock_name": "华鲁恒升",
-      "weight": 3.43
+      "stock_code": "600028",
+      "stock_name": "中国石化",
+      "weight": 5.77
     },
     {
       "stock_code": "600989",
       "stock_name": "宝丰能源",
-      "weight": 3.17
+      "weight": 4.3
+    },
+    {
+      "stock_code": "000408",
+      "stock_name": "藏格矿业",
+      "weight": 4.19
+    },
+    {
+      "stock_code": "600426",
+      "stock_name": "华鲁恒升",
+      "weight": 3.62
+    },
+    {
+      "stock_code": "002648",
+      "stock_name": "卫星化学",
+      "weight": 3.13
+    },
+    {
+      "stock_code": "600160",
+      "stock_name": "巨化股份",
+      "weight": 3.1
     }
   ],
-  "fetched_at": "2026-03-29 23:22:06",
+  "fetched_at": "2026-04-27 14:02:32",
   "data_source": "eastmoney",
   "original_fund_code": "020105",
   "etf_target": "516570",

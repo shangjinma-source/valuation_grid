@@ -1,67 +1,67 @@
 {
   "fund_code": "020232",
   "fund_name": "嘉实互融精选股票C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 89.39,
-  "parsed_weight": 66.03,
-  "missing_weight": 23.36,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.09,
+  "parsed_weight": 73.19,
+  "missing_weight": 20.9,
   "positions": [
+    {
+      "stock_code": "06990",
+      "stock_name": "科伦博泰生物",
+      "weight": 9.99
+    },
     {
       "stock_code": "01801",
       "stock_name": "信达生物",
-      "weight": 8.8
-    },
-    {
-      "stock_code": "600276",
-      "stock_name": "恒瑞医药",
-      "weight": 7.52
-    },
-    {
-      "stock_code": "06990",
-      "stock_name": "科伦博泰生物-B",
-      "weight": 6.77
+      "weight": 9.39
     },
     {
       "stock_code": "688266",
       "stock_name": "泽璟制药",
-      "weight": 6.58
+      "weight": 8.37
+    },
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 7.92
     },
     {
       "stock_code": "688192",
       "stock_name": "迪哲医药",
-      "weight": 6.52
-    },
-    {
-      "stock_code": "688235",
-      "stock_name": "百济神州",
-      "weight": 6.03
+      "weight": 6.86
     },
     {
       "stock_code": "01530",
       "stock_name": "三生制药",
-      "weight": 5.64
+      "weight": 6.06
     },
     {
       "stock_code": "01093",
       "stock_name": "石药集团",
-      "weight": 5.19
+      "weight": 5.69
+    },
+    {
+      "stock_code": "688235",
+      "stock_name": "百济神州",
+      "weight": 5.54
+    },
+    {
+      "stock_code": "02162",
+      "stock_name": "康诺亚-B",
+      "weight": 5.43
     },
     {
       "stock_code": "688382",
       "stock_name": "益方生物",
-      "weight": 4.98
-    },
-    {
-      "stock_code": "300765",
-      "stock_name": "新诺威",
-      "weight": 4.85
+      "weight": 4.72
     },
     {
       "stock_code": "06160",
       "stock_name": "百济神州",
-      "weight": 3.15
+      "weight": 3.22
     }
   ],
-  "fetched_at": "2026-03-29 23:20:11",
+  "fetched_at": "2026-04-27 14:00:29",
   "data_source": "eastmoney"
 }

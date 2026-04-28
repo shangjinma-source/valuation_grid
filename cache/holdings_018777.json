@@ -1,112 +1,62 @@
 {
   "fund_code": "018777",
   "fund_name": "金信精选成长混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 89.77,
-  "parsed_weight": 89.77,
-  "missing_weight": 0,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 89.72,
+  "parsed_weight": 80.96,
+  "missing_weight": 8.76,
   "positions": [
     {
-      "stock_code": "688012",
-      "stock_name": "中微公司",
-      "weight": 10.23
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 9.82
     },
     {
       "stock_code": "688037",
       "stock_name": "芯源微",
-      "weight": 9.92
-    },
-    {
-      "stock_code": "688502",
-      "stock_name": "茂莱光学",
-      "weight": 9.89
-    },
-    {
-      "stock_code": "688361",
-      "stock_name": "中科飞测",
-      "weight": 9.73
-    },
-    {
-      "stock_code": "688072",
-      "stock_name": "拓荆科技",
-      "weight": 9.63
+      "weight": 9.79
     },
     {
       "stock_code": "002222",
       "stock_name": "福晶科技",
-      "weight": 8.91
+      "weight": 9.71
     },
     {
-      "stock_code": "301421",
-      "stock_name": "波长光电",
-      "weight": 7.44
+      "stock_code": "688502",
+      "stock_name": "茂莱光学",
+      "weight": 9.68
     },
     {
-      "stock_code": "301392",
-      "stock_name": "汇成真空",
-      "weight": 6.35
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 9.67
     },
     {
-      "stock_code": "688195",
-      "stock_name": "腾景科技",
-      "weight": 5.26
-    },
-    {
-      "stock_code": "301021",
-      "stock_name": "英诺激光",
-      "weight": 5.22
-    },
-    {
-      "stock_code": "603800",
-      "stock_name": "洪田股份",
-      "weight": 4.03
-    },
-    {
-      "stock_code": "301183",
-      "stock_name": "东田微",
-      "weight": 1.91
-    },
-    {
-      "stock_code": "688205",
-      "stock_name": "德科立",
-      "weight": 1.0
-    },
-    {
-      "stock_code": "688802",
-      "stock_name": "沐曦股份",
-      "weight": 0.1
-    },
-    {
-      "stock_code": "688783",
-      "stock_name": "西安奕材",
-      "weight": 0.07
-    },
-    {
-      "stock_code": "688790",
-      "stock_name": "昂瑞微",
-      "weight": 0.03
-    },
-    {
-      "stock_code": "688759",
-      "stock_name": "必贝特",
-      "weight": 0.02
-    },
-    {
-      "stock_code": "301656",
-      "stock_name": "联合动力",
-      "weight": 0.01
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 9.5
     },
     {
       "stock_code": "688809",
       "stock_name": "强一股份",
-      "weight": 0.01
+      "weight": 8.12
     },
     {
-      "stock_code": "301563",
-      "stock_name": "云汉芯城",
-      "weight": 0.01
+      "stock_code": "300331",
+      "stock_name": "苏大维格",
+      "weight": 5.07
+    },
+    {
+      "stock_code": "688172",
+      "stock_name": "燕东微",
+      "weight": 4.89
+    },
+    {
+      "stock_code": "301021",
+      "stock_name": "英诺激光",
+      "weight": 4.71
     }
   ],
-  "fetched_at": "2026-03-29 23:11:29",
+  "fetched_at": "2026-04-27 13:51:22",
   "data_source": "eastmoney"
 }

@@ -1,62 +1,62 @@
 {
   "fund_code": "005165",
   "fund_name": "富荣福锦混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 71.72,
-  "parsed_weight": 62.3,
-  "missing_weight": 9.42,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.83,
+  "parsed_weight": 71.45,
+  "missing_weight": 22.38,
   "positions": [
-    {
-      "stock_code": "603119",
-      "stock_name": "浙江荣泰",
-      "weight": 7.99
-    },
-    {
-      "stock_code": "002050",
-      "stock_name": "三花智控",
-      "weight": 7.09
-    },
-    {
-      "stock_code": "601689",
-      "stock_name": "拓普集团",
-      "weight": 6.95
-    },
-    {
-      "stock_code": "301550",
-      "stock_name": "斯菱智驱",
-      "weight": 6.01
-    },
-    {
-      "stock_code": "300984",
-      "stock_name": "金沃股份",
-      "weight": 5.98
-    },
     {
       "stock_code": "688698",
       "stock_name": "伟创电气",
-      "weight": 5.94
-    },
-    {
-      "stock_code": "300421",
-      "stock_name": "力星股份",
-      "weight": 5.94
-    },
-    {
-      "stock_code": "603009",
-      "stock_name": "北特科技",
-      "weight": 5.59
+      "weight": 8.6
     },
     {
       "stock_code": "300953",
       "stock_name": "震裕科技",
-      "weight": 5.51
+      "weight": 7.73
     },
     {
-      "stock_code": "688017",
-      "stock_name": "绿的谐波",
-      "weight": 5.3
+      "stock_code": "603119",
+      "stock_name": "浙江荣泰",
+      "weight": 7.69
+    },
+    {
+      "stock_code": "002050",
+      "stock_name": "三花智控",
+      "weight": 7.6
+    },
+    {
+      "stock_code": "301413",
+      "stock_name": "安培龙",
+      "weight": 7.34
+    },
+    {
+      "stock_code": "603667",
+      "stock_name": "五洲新春",
+      "weight": 7.18
+    },
+    {
+      "stock_code": "301550",
+      "stock_name": "斯菱智驱",
+      "weight": 6.99
+    },
+    {
+      "stock_code": "601100",
+      "stock_name": "恒立液压",
+      "weight": 6.77
+    },
+    {
+      "stock_code": "601689",
+      "stock_name": "拓普集团",
+      "weight": 5.84
+    },
+    {
+      "stock_code": "300952",
+      "stock_name": "恒辉安防",
+      "weight": 5.71
     }
   ],
-  "fetched_at": "2026-03-29 23:16:37",
+  "fetched_at": "2026-04-27 13:56:43",
   "data_source": "eastmoney"
 }

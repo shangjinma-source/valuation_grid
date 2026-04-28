@@ -1,62 +1,62 @@
 {
   "fund_code": "005967",
   "fund_name": "鹏华创新驱动混合A",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.19,
-  "parsed_weight": 85.85,
-  "missing_weight": 8.34,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.77,
+  "parsed_weight": 86.39,
+  "missing_weight": 7.38,
   "positions": [
-    {
-      "stock_code": "688041",
-      "stock_name": "海光信息",
-      "weight": 10.06
-    },
     {
       "stock_code": "688521",
       "stock_name": "芯原股份",
-      "weight": 9.92
-    },
-    {
-      "stock_code": "688256",
-      "stock_name": "寒武纪",
-      "weight": 9.76
-    },
-    {
-      "stock_code": "002837",
-      "stock_name": "英维克",
-      "weight": 9.44
-    },
-    {
-      "stock_code": "603986",
-      "stock_name": "兆易创新",
-      "weight": 9.24
-    },
-    {
-      "stock_code": "300308",
-      "stock_name": "中际旭创",
-      "weight": 9.24
-    },
-    {
-      "stock_code": "300502",
-      "stock_name": "新易盛",
-      "weight": 9.16
-    },
-    {
-      "stock_code": "688498",
-      "stock_name": "源杰科技",
-      "weight": 9.05
-    },
-    {
-      "stock_code": "688072",
-      "stock_name": "拓荆科技",
-      "weight": 5.07
+      "weight": 9.59
     },
     {
       "stock_code": "300604",
       "stock_name": "长川科技",
-      "weight": 4.91
+      "weight": 9.5
+    },
+    {
+      "stock_code": "001309",
+      "stock_name": "德明利",
+      "weight": 9.46
+    },
+    {
+      "stock_code": "688627",
+      "stock_name": "精智达",
+      "weight": 9.37
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 9.28
+    },
+    {
+      "stock_code": "300223",
+      "stock_name": "北京君正",
+      "weight": 9.12
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 9.03
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 9.02
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 8.96
+    },
+    {
+      "stock_code": "688048",
+      "stock_name": "长光华芯",
+      "weight": 3.06
     }
   ],
-  "fetched_at": "2026-03-29 23:12:23",
+  "fetched_at": "2026-04-27 13:52:20",
   "data_source": "eastmoney"
 }

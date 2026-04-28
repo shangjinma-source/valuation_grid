@@ -1,62 +1,62 @@
 {
   "fund_code": "013275",
   "fund_name": "富国中证煤炭指数(LOF)C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.11,
-  "parsed_weight": 62.03,
-  "missing_weight": 32.08,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.32,
+  "parsed_weight": 63.21,
+  "missing_weight": 31.11,
   "positions": [
     {
       "stock_code": "601088",
       "stock_name": "中国神华",
-      "weight": 9.71
-    },
-    {
-      "stock_code": "601225",
-      "stock_name": "陕西煤业",
-      "weight": 9.38
+      "weight": 10.15
     },
     {
       "stock_code": "600188",
       "stock_name": "兖矿能源",
-      "weight": 7.67
+      "weight": 9.44
+    },
+    {
+      "stock_code": "601225",
+      "stock_name": "陕西煤业",
+      "weight": 9.41
     },
     {
       "stock_code": "601898",
       "stock_name": "中煤能源",
-      "weight": 7.43
+      "weight": 8.59
     },
     {
       "stock_code": "000983",
       "stock_name": "山西焦煤",
-      "weight": 5.94
-    },
-    {
-      "stock_code": "600348",
-      "stock_name": "华阳股份",
-      "weight": 4.86
-    },
-    {
-      "stock_code": "000723",
-      "stock_name": "美锦能源",
-      "weight": 4.73
+      "weight": 5.17
     },
     {
       "stock_code": "601699",
       "stock_name": "潞安环能",
-      "weight": 4.61
+      "weight": 4.42
+    },
+    {
+      "stock_code": "600348",
+      "stock_name": "华阳股份",
+      "weight": 4.34
     },
     {
       "stock_code": "600985",
       "stock_name": "淮北矿业",
-      "weight": 3.9
+      "weight": 3.98
     },
     {
-      "stock_code": "601666",
-      "stock_name": "平煤股份",
-      "weight": 3.8
+      "stock_code": "000723",
+      "stock_name": "美锦能源",
+      "weight": 3.96
+    },
+    {
+      "stock_code": "601001",
+      "stock_name": "晋控煤业",
+      "weight": 3.75
     }
   ],
-  "fetched_at": "2026-03-29 23:18:31",
+  "fetched_at": "2026-04-27 13:58:43",
   "data_source": "eastmoney"
 }

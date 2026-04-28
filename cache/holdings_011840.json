@@ -1,75 +1,70 @@
 {
   "fund_code": "011840",
   "fund_name": "天弘中证人工智能C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 95.15,
-  "parsed_weight": 55.37,
-  "missing_weight": 39.78,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.97,
+  "parsed_weight": 54.59,
+  "missing_weight": 40.38,
   "positions": [
-    {
-      "stock_code": "300308",
-      "stock_name": "中际旭创",
-      "weight": 10.04
-    },
     {
       "stock_code": "300502",
       "stock_name": "新易盛",
+      "weight": 10.96
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
       "weight": 10.0
     },
     {
       "stock_code": "688256",
       "stock_name": "寒武纪",
-      "weight": 8.99
+      "weight": 6.95
     },
     {
       "stock_code": "688008",
       "stock_name": "澜起科技",
-      "weight": 4.81
+      "weight": 5.45
     },
     {
       "stock_code": "603019",
       "stock_name": "中科曙光",
-      "weight": 4.46
-    },
-    {
-      "stock_code": "002230",
-      "stock_name": "科大讯飞",
-      "weight": 4.14
+      "weight": 4.37
     },
     {
       "stock_code": "002415",
       "stock_name": "海康威视",
-      "weight": 3.9
+      "weight": 4.24
+    },
+    {
+      "stock_code": "002230",
+      "stock_name": "科大讯飞",
+      "weight": 4.06
     },
     {
       "stock_code": "603501",
       "stock_name": "豪威集团",
-      "weight": 3.8
+      "weight": 3.06
     },
     {
-      "stock_code": "688111",
-      "stock_name": "金山办公",
-      "weight": 2.54
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 2.83
     },
     {
-      "stock_code": "000977",
-      "stock_name": "浪潮信息",
-      "weight": 2.44
+      "stock_code": "300442",
+      "stock_name": "润泽科技",
+      "weight": 2.51
     },
     {
       "stock_code": "688795",
       "stock_name": "摩尔线程",
-      "weight": 0.13
+      "weight": 0.1
     },
     {
       "stock_code": "688802",
       "stock_name": "沐曦股份",
-      "weight": 0.05
-    },
-    {
-      "stock_code": "600930",
-      "stock_name": "华电新能",
-      "weight": 0.05
+      "weight": 0.04
     },
     {
       "stock_code": "688783",
@@ -77,11 +72,11 @@
       "weight": 0.01
     },
     {
-      "stock_code": "301656",
-      "stock_name": "联合动力",
+      "stock_code": "688765",
+      "stock_name": "禾元生物",
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-03-29 23:18:50",
+  "fetched_at": "2026-04-27 13:59:04",
   "data_source": "eastmoney"
 }

@@ -1,62 +1,62 @@
 {
   "fund_code": "015566",
   "fund_name": "万家精选混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.28,
-  "parsed_weight": 73.1,
-  "missing_weight": 21.18,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.69,
+  "parsed_weight": 65.47,
+  "missing_weight": 29.22,
   "positions": [
-    {
-      "stock_code": "600546",
-      "stock_name": "山煤国际",
-      "weight": 9.66
-    },
     {
       "stock_code": "601699",
       "stock_name": "潞安环能",
-      "weight": 9.63
+      "weight": 8.69
+    },
+    {
+      "stock_code": "600546",
+      "stock_name": "山煤国际",
+      "weight": 8.16
     },
     {
       "stock_code": "601001",
       "stock_name": "晋控煤业",
-      "weight": 9.36
+      "weight": 7.53
     },
     {
       "stock_code": "601225",
       "stock_name": "陕西煤业",
-      "weight": 7.78
+      "weight": 7.09
     },
     {
       "stock_code": "600985",
       "stock_name": "淮北矿业",
-      "weight": 7.43
+      "weight": 7.08
     },
     {
       "stock_code": "601918",
       "stock_name": "新集能源",
-      "weight": 7.0
+      "weight": 6.34
     },
     {
       "stock_code": "000983",
       "stock_name": "山西焦煤",
-      "weight": 6.32
+      "weight": 5.78
     },
     {
-      "stock_code": "601088",
-      "stock_name": "中国神华",
-      "weight": 5.77
+      "stock_code": "601666",
+      "stock_name": "平煤股份",
+      "weight": 5.37
     },
     {
-      "stock_code": "600863",
-      "stock_name": "内蒙华电",
-      "weight": 5.43
+      "stock_code": "300274",
+      "stock_name": "阳光电源",
+      "weight": 5.08
     },
     {
-      "stock_code": "688503",
-      "stock_name": "聚和材料",
-      "weight": 4.72
+      "stock_code": "601101",
+      "stock_name": "昊华能源",
+      "weight": 4.35
     }
   ],
-  "fetched_at": "2026-03-29 23:18:38",
+  "fetched_at": "2026-04-27 13:58:51",
   "data_source": "eastmoney"
 }

@@ -1,62 +1,62 @@
 {
   "fund_code": "023754",
   "fund_name": "永赢信息产业智选混合发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 91.9,
-  "parsed_weight": 64.94,
-  "missing_weight": 26.96,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 86.81,
+  "parsed_weight": 57.27,
+  "missing_weight": 29.54,
   "positions": [
     {
-      "stock_code": "300170",
-      "stock_name": "汉得信息",
-      "weight": 8.69
+      "stock_code": "002429",
+      "stock_name": "兆驰股份",
+      "weight": 7.0
     },
     {
-      "stock_code": "688111",
-      "stock_name": "金山办公",
-      "weight": 8.22
+      "stock_code": "002624",
+      "stock_name": "完美世界",
+      "weight": 6.94
     },
     {
-      "stock_code": "603171",
-      "stock_name": "税友股份",
-      "weight": 8.07
+      "stock_code": "688777",
+      "stock_name": "中控技术",
+      "weight": 6.86
     },
     {
-      "stock_code": "300454",
-      "stock_name": "深信服",
-      "weight": 7.37
+      "stock_code": "301093",
+      "stock_name": "华兰股份",
+      "weight": 6.33
     },
     {
-      "stock_code": "688095",
-      "stock_name": "福昕软件",
-      "weight": 6.62
+      "stock_code": "300364",
+      "stock_name": "中文在线",
+      "weight": 5.87
     },
     {
-      "stock_code": "688615",
-      "stock_name": "合合信息",
-      "weight": 5.55
+      "stock_code": "002044",
+      "stock_name": "美年健康",
+      "weight": 5.67
     },
     {
-      "stock_code": "002315",
-      "stock_name": "焦点科技",
-      "weight": 5.4
+      "stock_code": "300785",
+      "stock_name": "值得买",
+      "weight": 4.92
     },
     {
-      "stock_code": "00268",
-      "stock_name": "金蝶国际",
-      "weight": 5.35
+      "stock_code": "300418",
+      "stock_name": "昆仑万维",
+      "weight": 4.65
     },
     {
-      "stock_code": "300378",
-      "stock_name": "鼎捷数智",
-      "weight": 5.31
+      "stock_code": "300113",
+      "stock_name": "顺网科技",
+      "weight": 4.55
     },
     {
-      "stock_code": "688258",
-      "stock_name": "卓易信息",
-      "weight": 4.36
+      "stock_code": "300792",
+      "stock_name": "壹网壹创",
+      "weight": 4.48
     }
   ],
-  "fetched_at": "2026-03-29 23:14:57",
+  "fetched_at": "2026-04-27 13:54:55",
   "data_source": "eastmoney"
 }

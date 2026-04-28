@@ -1,73 +1,78 @@
 {
   "fund_code": "012863",
   "fund_name": "汇添富中证电池主题ETF发起式联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.24,
-  "parsed_weight": 53.11,
-  "missing_weight": 46.13,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.3,
+  "parsed_weight": 53.75,
+  "missing_weight": 45.55,
   "positions": [
     {
       "stock_code": "300750",
       "stock_name": "宁德时代",
-      "weight": 9.21
+      "weight": 10.18
     },
     {
       "stock_code": "300274",
       "stock_name": "阳光电源",
-      "weight": 9.13
+      "weight": 8.13
     },
     {
       "stock_code": "002050",
       "stock_name": "三花智控",
-      "weight": 8.33
+      "weight": 6.49
     },
     {
       "stock_code": "300014",
       "stock_name": "亿纬锂能",
-      "weight": 5.52
+      "weight": 5.28
     },
     {
       "stock_code": "002709",
       "stock_name": "天赐材料",
-      "weight": 4.45
+      "weight": 4.47
     },
     {
       "stock_code": "300450",
       "stock_name": "先导智能",
-      "weight": 3.7
+      "weight": 3.57
+    },
+    {
+      "stock_code": "605117",
+      "stock_name": "德业股份",
+      "weight": 3.26
     },
     {
       "stock_code": "002340",
       "stock_name": "格林美",
-      "weight": 2.87
+      "weight": 2.75
+    },
+    {
+      "stock_code": "002812",
+      "stock_name": "恩捷股份",
+      "weight": 2.72
     },
     {
       "stock_code": "002074",
       "stock_name": "国轩高科",
-      "weight": 2.85
+      "weight": 2.64
     },
     {
       "stock_code": "002407",
       "stock_name": "多氟多",
-      "weight": 2.71
+      "weight": 2.26
     },
     {
-      "stock_code": "300207",
-      "stock_name": "欣旺达",
-      "weight": 2.6
-    },
-    {
-      "stock_code": "603063",
-      "stock_name": "禾望电气",
-      "weight": 1.02
+      "stock_code": "300409",
+      "stock_name": "道氏技术",
+      "weight": 1.31
     },
     {
       "stock_code": "300457",
       "stock_name": "赢合科技",
-      "weight": 0.72
+      "weight": 0.69
     }
   ],
-  "fetched_at": "2026-03-29 23:16:04",
+  "fetched_at": "2026-04-27 13:56:08",
   "data_source": "eastmoney",
   "original_fund_code": "012863",
   "etf_target": "159796",

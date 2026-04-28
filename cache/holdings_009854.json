@@ -1,102 +1,62 @@
 {
   "fund_code": "009854",
   "fund_name": "中加优势企业混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 88.46,
-  "parsed_weight": 88.47,
-  "missing_weight": 0,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 85.47,
+  "parsed_weight": 63.94,
+  "missing_weight": 21.53,
   "positions": [
     {
-      "stock_code": "301005",
-      "stock_name": "超捷股份",
-      "weight": 10.08
-    },
-    {
-      "stock_code": "688333",
-      "stock_name": "铂力特",
-      "weight": 10.07
-    },
-    {
       "stock_code": "688270",
-      "stock_name": "臻镭科技",
-      "weight": 9.42
-    },
-    {
-      "stock_code": "600343",
-      "stock_name": "航天动力",
-      "weight": 8.92
-    },
-    {
-      "stock_code": "688102",
-      "stock_name": "斯瑞新材",
-      "weight": 7.43
-    },
-    {
-      "stock_code": "600118",
-      "stock_name": "中国卫星",
-      "weight": 7.21
-    },
-    {
-      "stock_code": "300900",
-      "stock_name": "广联航空",
-      "weight": 4.55
-    },
-    {
-      "stock_code": "601698",
-      "stock_name": "中国卫通",
-      "weight": 4.4
+      "stock_name": "ST臻镭",
+      "weight": 9.44
     },
     {
       "stock_code": "300136",
       "stock_name": "信维通信",
-      "weight": 3.65
+      "weight": 9.22
+    },
+    {
+      "stock_code": "600498",
+      "stock_name": "烽火通信",
+      "weight": 7.9
+    },
+    {
+      "stock_code": "300751",
+      "stock_name": "迈为股份",
+      "weight": 7.41
+    },
+    {
+      "stock_code": "301005",
+      "stock_name": "超捷股份",
+      "weight": 6.4
+    },
+    {
+      "stock_code": "688387",
+      "stock_name": "信科移动",
+      "weight": 5.38
+    },
+    {
+      "stock_code": "002149",
+      "stock_name": "西部材料",
+      "weight": 5.23
+    },
+    {
+      "stock_code": "000338",
+      "stock_name": "潍柴动力",
+      "weight": 4.78
     },
     {
       "stock_code": "600879",
       "stock_name": "航天电子",
-      "weight": 3.5
+      "weight": 4.48
     },
     {
-      "stock_code": "300102",
-      "stock_name": "乾照光电",
-      "weight": 3.28
-    },
-    {
-      "stock_code": "600151",
-      "stock_name": "航天机电",
-      "weight": 2.66
-    },
-    {
-      "stock_code": "603698",
-      "stock_name": "航天工程",
-      "weight": 2.65
-    },
-    {
-      "stock_code": "001270",
-      "stock_name": "*ST铖昌",
-      "weight": 2.52
-    },
-    {
-      "stock_code": "000547",
-      "stock_name": "航天发展",
-      "weight": 2.47
-    },
-    {
-      "stock_code": "300762",
-      "stock_name": "上海瀚讯",
-      "weight": 2.12
-    },
-    {
-      "stock_code": "002465",
-      "stock_name": "海格通信",
-      "weight": 2.01
-    },
-    {
-      "stock_code": "600105",
-      "stock_name": "永鼎股份",
-      "weight": 1.53
+      "stock_code": "002342",
+      "stock_name": "巨力索具",
+      "weight": 3.7
     }
   ],
-  "fetched_at": "2026-03-29 23:13:27",
+  "fetched_at": "2026-04-27 13:53:22",
   "data_source": "eastmoney"
 }

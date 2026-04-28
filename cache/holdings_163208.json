@@ -2,7 +2,7 @@
   "fund_code": "163208",
   "fund_name": "诺安油气能源",
   "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 17.45,
+  "stock_total_weight": 0.0,
   "parsed_weight": 17.45,
   "missing_weight": 0,
   "positions": [
@@ -72,6 +72,6 @@
       "weight": 0.31
     }
   ],
-  "fetched_at": "2026-04-14 02:13:54",
+  "fetched_at": "2026-04-28 23:30:25",
   "data_source": "eastmoney"
 }

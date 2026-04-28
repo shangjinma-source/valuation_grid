@@ -1,8 +1,22 @@
 {
   "fund_code": "160723",
   "fund_name": "嘉实原油(QDII-LOF)",
-  "_no_holdings": true,
-  "_reason": "QDII海外投资",
-  "positions": [],
-  "fetched_at": "2026-03-01 02:52:05"
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 6.41,
+  "parsed_weight": 6.42,
+  "missing_weight": 0,
+  "positions": [
+    {
+      "stock_code": "00883",
+      "stock_name": "中国海洋石油",
+      "weight": 3.43
+    },
+    {
+      "stock_code": "00857",
+      "stock_name": "中国石油股份",
+      "weight": 2.99
+    }
+  ],
+  "fetched_at": "2026-04-28 23:30:25",
+  "data_source": "eastmoney"
 }

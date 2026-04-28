@@ -1,205 +1,60 @@
 {
   "fund_code": "018168",
   "fund_name": "国泰有色矿业ETF联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.81,
-  "parsed_weight": 99.81,
-  "missing_weight": 0,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.59,
+  "parsed_weight": 52.49,
+  "missing_weight": 47.1,
   "positions": [
     {
       "stock_code": "601899",
       "stock_name": "紫金矿业",
-      "weight": 10.21
+      "weight": 9.26
     },
     {
       "stock_code": "603993",
       "stock_name": "洛阳钼业",
-      "weight": 9.57
+      "weight": 7.84
     },
     {
       "stock_code": "600111",
       "stock_name": "北方稀土",
-      "weight": 6.4
-    },
-    {
-      "stock_code": "603799",
-      "stock_name": "华友钴业",
-      "weight": 5.68
+      "weight": 6.32
     },
     {
       "stock_code": "601600",
       "stock_name": "中国铝业",
-      "weight": 5.31
+      "weight": 4.73
+    },
+    {
+      "stock_code": "603799",
+      "stock_name": "华友钴业",
+      "weight": 4.67
     },
     {
       "stock_code": "002460",
       "stock_name": "赣锋锂业",
-      "weight": 3.89
-    },
-    {
-      "stock_code": "600547",
-      "stock_name": "山东黄金",
-      "weight": 3.83
-    },
-    {
-      "stock_code": "000807",
-      "stock_name": "云铝股份",
-      "weight": 3.75
+      "weight": 4.64
     },
     {
       "stock_code": "600489",
       "stock_name": "中金黄金",
-      "weight": 3.73
+      "weight": 4.07
     },
     {
-      "stock_code": "002466",
-      "stock_name": "天齐锂业",
-      "weight": 3.14
-    },
-    {
-      "stock_code": "600362",
-      "stock_name": "江西铜业",
-      "weight": 3.12
-    },
-    {
-      "stock_code": "002738",
-      "stock_name": "中矿资源",
-      "weight": 3.11
+      "stock_code": "600547",
+      "stock_name": "山东黄金",
+      "weight": 3.81
     },
     {
       "stock_code": "600988",
       "stock_name": "赤峰黄金",
-      "weight": 2.85
+      "weight": 3.76
     },
     {
-      "stock_code": "000426",
-      "stock_name": "兴业银锡",
-      "weight": 2.77
-    },
-    {
-      "stock_code": "000630",
-      "stock_name": "铜陵有色",
-      "weight": 2.65
-    },
-    {
-      "stock_code": "601168",
-      "stock_name": "西部矿业",
-      "weight": 2.53
-    },
-    {
-      "stock_code": "600549",
-      "stock_name": "厦门钨业",
-      "weight": 2.5
-    },
-    {
-      "stock_code": "002532",
-      "stock_name": "天山铝业",
-      "weight": 2.47
-    },
-    {
-      "stock_code": "000975",
-      "stock_name": "山金国际",
-      "weight": 2.22
-    },
-    {
-      "stock_code": "000831",
-      "stock_name": "中国稀土",
-      "weight": 1.89
-    },
-    {
-      "stock_code": "600392",
-      "stock_name": "盛和资源",
-      "weight": 1.66
-    },
-    {
-      "stock_code": "000878",
-      "stock_name": "云南铜业",
-      "weight": 1.58
-    },
-    {
-      "stock_code": "000960",
-      "stock_name": "锡业股份",
-      "weight": 1.51
-    },
-    {
-      "stock_code": "000657",
-      "stock_name": "中钨高新",
-      "weight": 1.39
-    },
-    {
-      "stock_code": "002155",
-      "stock_name": "湖南黄金",
-      "weight": 1.27
-    },
-    {
-      "stock_code": "600497",
-      "stock_name": "驰宏锌锗",
-      "weight": 1.21
-    },
-    {
-      "stock_code": "002756",
-      "stock_name": "永兴材料",
-      "weight": 1.12
-    },
-    {
-      "stock_code": "000060",
-      "stock_name": "中金岭南",
-      "weight": 1.0
-    },
-    {
-      "stock_code": "601020",
-      "stock_name": "华钰矿业",
-      "weight": 0.97
-    },
-    {
-      "stock_code": "601212",
-      "stock_name": "白银有色",
-      "weight": 0.95
-    },
-    {
-      "stock_code": "002428",
-      "stock_name": "云南锗业",
-      "weight": 0.91
-    },
-    {
-      "stock_code": "601958",
-      "stock_name": "金钼股份",
-      "weight": 0.83
-    },
-    {
-      "stock_code": "000737",
-      "stock_name": "北方铜业",
-      "weight": 0.8
-    },
-    {
-      "stock_code": "002716",
-      "stock_name": "湖南白银",
-      "weight": 0.75
-    },
-    {
-      "stock_code": "600456",
-      "stock_name": "宝钛股份",
-      "weight": 0.62
-    },
-    {
-      "stock_code": "600301",
-      "stock_name": "华锡有色",
-      "weight": 0.54
-    },
-    {
-      "stock_code": "002167",
-      "stock_name": "东方锆业",
-      "weight": 0.42
-    },
-    {
-      "stock_code": "601069",
-      "stock_name": "西部黄金",
-      "weight": 0.4
-    },
-    {
-      "stock_code": "002978",
-      "stock_name": "安宁股份",
-      "weight": 0.25
+      "stock_code": "000807",
+      "stock_name": "云铝股份",
+      "weight": 3.38
     },
     {
       "stock_code": "001280",
@@ -207,7 +62,7 @@
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-03-29 23:10:49",
+  "fetched_at": "2026-04-27 13:50:46",
   "data_source": "eastmoney",
   "original_fund_code": "018168",
   "etf_target": "561330",

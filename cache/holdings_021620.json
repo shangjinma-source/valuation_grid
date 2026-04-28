@@ -1,62 +1,62 @@
 {
   "fund_code": "021620",
   "fund_name": "天弘石油天然气指数C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.16,
-  "parsed_weight": 57.42,
-  "missing_weight": 36.74,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.88,
+  "parsed_weight": 60.45,
+  "missing_weight": 34.43,
   "positions": [
     {
       "stock_code": "600938",
       "stock_name": "中国海油",
-      "weight": 9.92
+      "weight": 10.32
     },
     {
       "stock_code": "601857",
       "stock_name": "中国石油",
-      "weight": 9.74
-    },
-    {
-      "stock_code": "600028",
-      "stock_name": "中国石化",
-      "weight": 9.53
+      "weight": 9.11
     },
     {
       "stock_code": "002353",
       "stock_name": "杰瑞股份",
-      "weight": 8.06
+      "weight": 8.58
     },
     {
       "stock_code": "601872",
       "stock_name": "招商轮船",
-      "weight": 5.22
+      "weight": 7.63
     },
     {
-      "stock_code": "600256",
-      "stock_name": "广汇能源",
-      "weight": 3.98
+      "stock_code": "600028",
+      "stock_name": "中国石化",
+      "weight": 7.26
     },
     {
       "stock_code": "600026",
       "stock_name": "中远海能",
-      "weight": 3.54
+      "weight": 5.3
     },
     {
-      "stock_code": "600346",
-      "stock_name": "恒力石化",
-      "weight": 2.85
-    },
-    {
-      "stock_code": "002493",
-      "stock_name": "荣盛石化",
-      "weight": 2.37
+      "stock_code": "600256",
+      "stock_name": "广汇能源",
+      "weight": 4.31
     },
     {
       "stock_code": "600759",
       "stock_name": "洲际油气",
-      "weight": 2.21
+      "weight": 3.39
+    },
+    {
+      "stock_code": "601975",
+      "stock_name": "招商南油",
+      "weight": 2.4
+    },
+    {
+      "stock_code": "600346",
+      "stock_name": "恒力石化",
+      "weight": 2.15
     }
   ],
-  "fetched_at": "2026-03-29 23:21:53",
+  "fetched_at": "2026-04-27 14:02:18",
   "data_source": "eastmoney"
 }

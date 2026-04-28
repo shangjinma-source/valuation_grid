@@ -1,73 +1,83 @@
 {
   "fund_code": "016020",
   "fund_name": "招商中证电池主题ETF联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.42,
-  "parsed_weight": 51.79,
-  "missing_weight": 47.63,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.75,
+  "parsed_weight": 51.19,
+  "missing_weight": 48.56,
   "positions": [
-    {
-      "stock_code": "300274",
-      "stock_name": "阳光电源",
-      "weight": 9.5
-    },
     {
       "stock_code": "300750",
       "stock_name": "宁德时代",
-      "weight": 9.19
+      "weight": 10.22
+    },
+    {
+      "stock_code": "300274",
+      "stock_name": "阳光电源",
+      "weight": 8.3
     },
     {
       "stock_code": "002050",
       "stock_name": "三花智控",
-      "weight": 8.34
+      "weight": 6.5
     },
     {
       "stock_code": "300014",
       "stock_name": "亿纬锂能",
-      "weight": 5.53
+      "weight": 5.3
     },
     {
       "stock_code": "002709",
       "stock_name": "天赐材料",
-      "weight": 4.45
+      "weight": 4.48
     },
     {
       "stock_code": "300450",
       "stock_name": "先导智能",
-      "weight": 3.7
+      "weight": 3.59
+    },
+    {
+      "stock_code": "605117",
+      "stock_name": "德业股份",
+      "weight": 3.28
     },
     {
       "stock_code": "002340",
       "stock_name": "格林美",
-      "weight": 2.88
+      "weight": 2.75
+    },
+    {
+      "stock_code": "002812",
+      "stock_name": "恩捷股份",
+      "weight": 2.74
     },
     {
       "stock_code": "002074",
       "stock_name": "国轩高科",
-      "weight": 2.85
+      "weight": 2.65
     },
     {
-      "stock_code": "002407",
-      "stock_name": "多氟多",
-      "weight": 2.72
-    },
-    {
-      "stock_code": "300207",
-      "stock_name": "欣旺达",
-      "weight": 2.6
+      "stock_code": "300409",
+      "stock_name": "道氏技术",
+      "weight": 1.33
     },
     {
       "stock_code": "688795",
       "stock_name": "摩尔线程",
-      "weight": 0.02
+      "weight": 0.03
     },
     {
-      "stock_code": "600930",
-      "stock_name": "华电新能",
+      "stock_code": "688790",
+      "stock_name": "昂瑞微",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "688765",
+      "stock_name": "禾元生物",
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-03-29 23:16:01",
+  "fetched_at": "2026-04-27 13:56:06",
   "data_source": "eastmoney",
   "original_fund_code": "016020",
   "etf_target": "561910",

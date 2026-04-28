@@ -1,67 +1,87 @@
 {
   "fund_code": "021964",
   "fund_name": "天弘储能电池指数C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.58,
-  "parsed_weight": 56.41,
-  "missing_weight": 38.17,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.8,
+  "parsed_weight": 54.88,
+  "missing_weight": 39.92,
   "positions": [
     {
       "stock_code": "300750",
       "stock_name": "宁德时代",
-      "weight": 8.85
-    },
-    {
-      "stock_code": "300274",
-      "stock_name": "阳光电源",
-      "weight": 8.79
+      "weight": 9.44
     },
     {
       "stock_code": "300014",
       "stock_name": "亿纬锂能",
-      "weight": 8.64
+      "weight": 7.96
+    },
+    {
+      "stock_code": "300274",
+      "stock_name": "阳光电源",
+      "weight": 7.54
     },
     {
       "stock_code": "002837",
       "stock_name": "英维克",
-      "weight": 7.32
-    },
-    {
-      "stock_code": "002074",
-      "stock_name": "国轩高科",
-      "weight": 4.9
-    },
-    {
-      "stock_code": "002851",
-      "stock_name": "麦格米特",
-      "weight": 4.28
-    },
-    {
-      "stock_code": "300207",
-      "stock_name": "欣旺达",
-      "weight": 4.1
+      "weight": 5.62
     },
     {
       "stock_code": "605117",
       "stock_name": "德业股份",
-      "weight": 3.69
+      "weight": 5.49
+    },
+    {
+      "stock_code": "002851",
+      "stock_name": "麦格米特",
+      "weight": 4.49
+    },
+    {
+      "stock_code": "002074",
+      "stock_name": "国轩高科",
+      "weight": 4.35
+    },
+    {
+      "stock_code": "300207",
+      "stock_name": "欣旺达",
+      "weight": 3.84
     },
     {
       "stock_code": "002850",
       "stock_name": "科达利",
-      "weight": 3.24
+      "weight": 3.6
     },
     {
-      "stock_code": "688676",
-      "stock_name": "金盘科技",
-      "weight": 2.58
+      "stock_code": "300763",
+      "stock_name": "锦浪科技",
+      "weight": 2.48
     },
     {
       "stock_code": "001280",
       "stock_name": "中国铀业",
       "weight": 0.02
+    },
+    {
+      "stock_code": "301683",
+      "stock_name": "慧谷新材",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "301696",
+      "stock_name": "三瑞智能",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "001257",
+      "stock_name": "盛龙股份",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301682",
+      "stock_name": "宏明电子",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-03-29 23:15:54",
+  "fetched_at": "2026-04-27 13:55:57",
   "data_source": "eastmoney"
 }

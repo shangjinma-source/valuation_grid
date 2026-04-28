@@ -1,268 +1,83 @@
 {
   "fund_code": "025493",
   "fund_name": "国泰创业板人工智能ETF发起联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.48,
-  "parsed_weight": 99.47,
-  "missing_weight": 0.01,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.57,
+  "parsed_weight": 60.89,
+  "missing_weight": 38.68,
   "positions": [
-    {
-      "stock_code": "300308",
-      "stock_name": "中际旭创",
-      "weight": 15.57
-    },
     {
       "stock_code": "300502",
       "stock_name": "新易盛",
-      "weight": 15.45
+      "weight": 15.24
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 13.89
     },
     {
       "stock_code": "300394",
       "stock_name": "天孚通信",
-      "weight": 6.79
-    },
-    {
-      "stock_code": "300058",
-      "stock_name": "蓝色光标",
-      "weight": 3.16
-    },
-    {
-      "stock_code": "300857",
-      "stock_name": "协创数据",
-      "weight": 2.9
-    },
-    {
-      "stock_code": "300339",
-      "stock_name": "润和软件",
-      "weight": 2.83
-    },
-    {
-      "stock_code": "300033",
-      "stock_name": "同花顺",
-      "weight": 2.83
-    },
-    {
-      "stock_code": "300223",
-      "stock_name": "北京君正",
-      "weight": 2.77
+      "weight": 9.68
     },
     {
       "stock_code": "300442",
       "stock_name": "润泽科技",
-      "weight": 2.75
+      "weight": 4.02
+    },
+    {
+      "stock_code": "300058",
+      "stock_name": "蓝色光标",
+      "weight": 3.89
+    },
+    {
+      "stock_code": "300857",
+      "stock_name": "协创数据",
+      "weight": 3.43
     },
     {
       "stock_code": "300418",
       "stock_name": "昆仑万维",
-      "weight": 2.71
-    },
-    {
-      "stock_code": "300548",
-      "stock_name": "长芯博创",
-      "weight": 2.38
-    },
-    {
-      "stock_code": "301236",
-      "stock_name": "软通动力",
-      "weight": 2.21
-    },
-    {
-      "stock_code": "300454",
-      "stock_name": "深信服",
-      "weight": 2.08
-    },
-    {
-      "stock_code": "300458",
-      "stock_name": "全志科技",
-      "weight": 1.9
-    },
-    {
-      "stock_code": "300474",
-      "stock_name": "景嘉微",
-      "weight": 1.88
-    },
-    {
-      "stock_code": "300496",
-      "stock_name": "中科创达",
-      "weight": 1.8
-    },
-    {
-      "stock_code": "300002",
-      "stock_name": "神州泰岳",
-      "weight": 1.65
+      "weight": 3.04
     },
     {
       "stock_code": "300017",
       "stock_name": "网宿科技",
-      "weight": 1.64
+      "weight": 2.59
     },
     {
-      "stock_code": "300620",
-      "stock_name": "光库科技",
-      "weight": 1.46
+      "stock_code": "300223",
+      "stock_name": "北京君正",
+      "weight": 2.58
     },
     {
-      "stock_code": "300170",
-      "stock_name": "汉得信息",
-      "weight": 1.43
-    },
-    {
-      "stock_code": "300570",
-      "stock_name": "太辰光",
-      "weight": 1.42
-    },
-    {
-      "stock_code": "300383",
-      "stock_name": "光环新网",
-      "weight": 1.35
-    },
-    {
-      "stock_code": "300628",
-      "stock_name": "亿联网络",
-      "weight": 1.29
-    },
-    {
-      "stock_code": "300413",
-      "stock_name": "芒果超媒",
-      "weight": 1.15
-    },
-    {
-      "stock_code": "300364",
-      "stock_name": "中文在线",
-      "weight": 1.14
-    },
-    {
-      "stock_code": "300290",
-      "stock_name": "荣科科技",
-      "weight": 1.11
-    },
-    {
-      "stock_code": "300229",
-      "stock_name": "拓尔思",
-      "weight": 1.05
-    },
-    {
-      "stock_code": "300738",
-      "stock_name": "奥飞数据",
-      "weight": 1.04
-    },
-    {
-      "stock_code": "301171",
-      "stock_name": "易点天下",
-      "weight": 0.96
-    },
-    {
-      "stock_code": "300348",
-      "stock_name": "长亮科技",
-      "weight": 0.84
-    },
-    {
-      "stock_code": "300133",
-      "stock_name": "华策影视",
-      "weight": 0.84
-    },
-    {
-      "stock_code": "300353",
-      "stock_name": "东土科技",
-      "weight": 0.83
-    },
-    {
-      "stock_code": "300053",
-      "stock_name": "航宇微",
-      "weight": 0.82
-    },
-    {
-      "stock_code": "301536",
-      "stock_name": "星宸科技",
-      "weight": 0.81
-    },
-    {
-      "stock_code": "300624",
-      "stock_name": "万兴科技",
-      "weight": 0.76
-    },
-    {
-      "stock_code": "301205",
-      "stock_name": "联特科技",
-      "weight": 0.76
-    },
-    {
-      "stock_code": "300166",
-      "stock_name": "东方国信",
-      "weight": 0.68
-    },
-    {
-      "stock_code": "301165",
-      "stock_name": "锐捷网络",
-      "weight": 0.66
-    },
-    {
-      "stock_code": "300846",
-      "stock_name": "首都在线",
-      "weight": 0.65
-    },
-    {
-      "stock_code": "300212",
-      "stock_name": "易华录",
-      "weight": 0.62
-    },
-    {
-      "stock_code": "300598",
-      "stock_name": "诚迈科技",
-      "weight": 0.57
-    },
-    {
-      "stock_code": "300188",
-      "stock_name": "国投智能",
-      "weight": 0.57
-    },
-    {
-      "stock_code": "301486",
-      "stock_name": "致尚科技",
-      "weight": 0.54
-    },
-    {
-      "stock_code": "300252",
-      "stock_name": "金信诺",
-      "weight": 0.51
-    },
-    {
-      "stock_code": "300287",
-      "stock_name": "飞利信",
-      "weight": 0.5
-    },
-    {
-      "stock_code": "300541",
-      "stock_name": "先进数通",
-      "weight": 0.46
-    },
-    {
-      "stock_code": "300613",
-      "stock_name": "富瀚微",
-      "weight": 0.45
-    },
-    {
-      "stock_code": "300913",
-      "stock_name": "兆龙互连",
-      "weight": 0.35
-    },
-    {
-      "stock_code": "300768",
-      "stock_name": "迪普科技",
-      "weight": 0.3
-    },
-    {
-      "stock_code": "300895",
-      "stock_name": "铜牛信息",
-      "weight": 0.24
+      "stock_code": "300033",
+      "stock_name": "同花顺",
+      "weight": 2.49
     },
     {
       "stock_code": "001280",
       "stock_name": "中国铀业",
       "weight": 0.01
+    },
+    {
+      "stock_code": "301683",
+      "stock_name": "慧谷新材",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301682",
+      "stock_name": "宏明电子",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301696",
+      "stock_name": "三瑞智能",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-03-29 23:19:17",
+  "fetched_at": "2026-04-27 13:59:34",
   "data_source": "eastmoney",
   "original_fund_code": "025493",
   "etf_target": "159388",

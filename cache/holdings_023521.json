@@ -1,63 +1,63 @@
 {
   "fund_code": "023521",
   "fund_name": "博时上证科创板人工智能ETF发起式联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.86,
-  "parsed_weight": 66.92,
-  "missing_weight": 32.94,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.88,
+  "parsed_weight": 67.52,
+  "missing_weight": 32.36,
   "positions": [
     {
-      "stock_code": "688111",
-      "stock_name": "金山办公",
-      "weight": 9.81
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 10.19
     },
     {
       "stock_code": "688256",
       "stock_name": "寒武纪",
-      "weight": 9.34
+      "weight": 10.14
     },
     {
       "stock_code": "688008",
       "stock_name": "澜起科技",
-      "weight": 9.34
+      "weight": 9.82
     },
     {
-      "stock_code": "688521",
-      "stock_name": "芯原股份",
-      "weight": 9.28
-    },
-    {
-      "stock_code": "688169",
-      "stock_name": "石头科技",
-      "weight": 5.8
+      "stock_code": "688111",
+      "stock_name": "金山办公",
+      "weight": 9.65
     },
     {
       "stock_code": "688099",
       "stock_name": "晶晨股份",
-      "weight": 5.41
+      "weight": 5.25
     },
     {
       "stock_code": "688385",
       "stock_name": "复旦微电",
-      "weight": 5.1
+      "weight": 4.94
     },
     {
-      "stock_code": "688608",
-      "stock_name": "恒玄科技",
-      "weight": 4.93
+      "stock_code": "688169",
+      "stock_name": "石头科技",
+      "weight": 4.9
     },
     {
       "stock_code": "688568",
       "stock_name": "中科星图",
-      "weight": 4.39
+      "weight": 4.85
+    },
+    {
+      "stock_code": "688608",
+      "stock_name": "恒玄科技",
+      "weight": 4.09
     },
     {
       "stock_code": "688343",
       "stock_name": "云天励飞",
-      "weight": 3.52
+      "weight": 3.69
     }
   ],
-  "fetched_at": "2026-03-29 23:19:09",
+  "fetched_at": "2026-04-27 13:59:25",
   "data_source": "eastmoney",
   "original_fund_code": "023521",
   "etf_target": "588790",

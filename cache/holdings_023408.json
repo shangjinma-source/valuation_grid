@@ -1,63 +1,68 @@
 {
   "fund_code": "023408",
   "fund_name": "华宝创业板人工智能ETF发起式联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 98.79,
-  "parsed_weight": 57.53,
-  "missing_weight": 41.26,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.47,
+  "parsed_weight": 61.63,
+  "missing_weight": 37.84,
   "positions": [
-    {
-      "stock_code": "300308",
-      "stock_name": "中际旭创",
-      "weight": 15.58
-    },
     {
       "stock_code": "300502",
       "stock_name": "新易盛",
-      "weight": 15.44
+      "weight": 15.29
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 13.96
     },
     {
       "stock_code": "300394",
       "stock_name": "天孚通信",
-      "weight": 6.82
-    },
-    {
-      "stock_code": "300058",
-      "stock_name": "蓝色光标",
-      "weight": 3.08
-    },
-    {
-      "stock_code": "300857",
-      "stock_name": "协创数据",
-      "weight": 2.91
-    },
-    {
-      "stock_code": "300033",
-      "stock_name": "同花顺",
-      "weight": 2.8
-    },
-    {
-      "stock_code": "300339",
-      "stock_name": "润和软件",
-      "weight": 2.77
-    },
-    {
-      "stock_code": "300223",
-      "stock_name": "北京君正",
-      "weight": 2.76
+      "weight": 9.74
     },
     {
       "stock_code": "300442",
       "stock_name": "润泽科技",
-      "weight": 2.71
+      "weight": 4.05
+    },
+    {
+      "stock_code": "300058",
+      "stock_name": "蓝色光标",
+      "weight": 3.87
+    },
+    {
+      "stock_code": "300857",
+      "stock_name": "协创数据",
+      "weight": 3.45
     },
     {
       "stock_code": "300418",
       "stock_name": "昆仑万维",
-      "weight": 2.66
+      "weight": 3.02
+    },
+    {
+      "stock_code": "300223",
+      "stock_name": "北京君正",
+      "weight": 2.61
+    },
+    {
+      "stock_code": "300017",
+      "stock_name": "网宿科技",
+      "weight": 2.58
+    },
+    {
+      "stock_code": "300548",
+      "stock_name": "长芯博创",
+      "weight": 2.55
+    },
+    {
+      "stock_code": "300290",
+      "stock_name": "荣科科技",
+      "weight": 0.51
     }
   ],
-  "fetched_at": "2026-03-29 23:19:14",
+  "fetched_at": "2026-04-27 13:59:31",
   "data_source": "eastmoney",
   "original_fund_code": "023408",
   "etf_target": "159363",

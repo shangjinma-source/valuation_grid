@@ -1,67 +1,62 @@
 {
   "fund_code": "017963",
   "fund_name": "广发医药创新混合发起式C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 93.4,
-  "parsed_weight": 77.53,
-  "missing_weight": 15.87,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 91.06,
+  "parsed_weight": 64.59,
+  "missing_weight": 26.47,
   "positions": [
     {
-      "stock_code": "688266",
-      "stock_name": "泽璟制药",
-      "weight": 10.9
+      "stock_code": "301293",
+      "stock_name": "三博脑科",
+      "weight": 7.01
     },
     {
-      "stock_code": "688506",
-      "stock_name": "百利天恒",
-      "weight": 10.26
+      "stock_code": "300677",
+      "stock_name": "英科医疗",
+      "weight": 6.99
     },
     {
-      "stock_code": "603127",
-      "stock_name": "昭衍新药",
-      "weight": 9.08
+      "stock_code": "002173",
+      "stock_name": "创新医疗",
+      "weight": 6.81
     },
     {
-      "stock_code": "06990",
-      "stock_name": "科伦博泰生物-B",
-      "weight": 7.54
+      "stock_code": "301363",
+      "stock_name": "美好医疗",
+      "weight": 6.8
     },
     {
-      "stock_code": "002294",
-      "stock_name": "信立泰",
-      "weight": 6.96
+      "stock_code": "301033",
+      "stock_name": "迈普医学",
+      "weight": 6.75
     },
     {
-      "stock_code": "688382",
-      "stock_name": "益方生物",
-      "weight": 6.73
+      "stock_code": "688677",
+      "stock_name": "海泰新光",
+      "weight": 6.62
     },
     {
-      "stock_code": "688221",
-      "stock_name": "前沿生物",
-      "weight": 6.44
+      "stock_code": "002432",
+      "stock_name": "九安医疗",
+      "weight": 6.5
     },
     {
-      "stock_code": "01530",
-      "stock_name": "三生制药",
-      "weight": 5.7
+      "stock_code": "02268",
+      "stock_name": "药明合联",
+      "weight": 6.37
     },
     {
-      "stock_code": "01801",
-      "stock_name": "信达生物",
-      "weight": 5.68
+      "stock_code": "301087",
+      "stock_name": "可孚医疗",
+      "weight": 5.57
     },
     {
-      "stock_code": "603590",
-      "stock_name": "康辰药业",
-      "weight": 5.56
-    },
-    {
-      "stock_code": "06127",
-      "stock_name": "昭衍新药",
-      "weight": 2.68
+      "stock_code": "603259",
+      "stock_name": "药明康德",
+      "weight": 5.17
     }
   ],
-  "fetched_at": "2026-03-29 23:20:49",
+  "fetched_at": "2026-04-27 14:01:10",
   "data_source": "eastmoney"
 }

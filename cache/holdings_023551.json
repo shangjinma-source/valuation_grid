@@ -1,163 +1,63 @@
 {
   "fund_code": "023551",
   "fund_name": "银华上证科创板人工智能ETF发起式联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.0,
-  "parsed_weight": 98.97,
-  "missing_weight": 0.03,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.44,
+  "parsed_weight": 67.27,
+  "missing_weight": 32.17,
   "positions": [
     {
-      "stock_code": "688111",
-      "stock_name": "金山办公",
-      "weight": 9.74
-    },
-    {
-      "stock_code": "688008",
-      "stock_name": "澜起科技",
-      "weight": 9.27
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 10.15
     },
     {
       "stock_code": "688256",
       "stock_name": "寒武纪",
-      "weight": 9.27
+      "weight": 10.1
     },
     {
-      "stock_code": "688521",
-      "stock_name": "芯原股份",
-      "weight": 9.21
+      "stock_code": "688008",
+      "stock_name": "澜起科技",
+      "weight": 9.78
     },
     {
-      "stock_code": "688169",
-      "stock_name": "石头科技",
-      "weight": 5.75
+      "stock_code": "688111",
+      "stock_name": "金山办公",
+      "weight": 9.61
     },
     {
       "stock_code": "688099",
       "stock_name": "晶晨股份",
-      "weight": 5.37
+      "weight": 5.24
     },
     {
       "stock_code": "688385",
       "stock_name": "复旦微电",
-      "weight": 5.06
+      "weight": 4.92
     },
     {
-      "stock_code": "688608",
-      "stock_name": "恒玄科技",
-      "weight": 4.89
+      "stock_code": "688169",
+      "stock_name": "石头科技",
+      "weight": 4.88
     },
     {
       "stock_code": "688568",
       "stock_name": "中科星图",
-      "weight": 4.35
+      "weight": 4.84
+    },
+    {
+      "stock_code": "688608",
+      "stock_name": "恒玄科技",
+      "weight": 4.07
     },
     {
       "stock_code": "688343",
       "stock_name": "云天励飞",
-      "weight": 3.49
-    },
-    {
-      "stock_code": "688322",
-      "stock_name": "奥比中光",
-      "weight": 3.29
-    },
-    {
-      "stock_code": "688208",
-      "stock_name": "道通科技",
-      "weight": 3.15
-    },
-    {
-      "stock_code": "688018",
-      "stock_name": "乐鑫科技",
-      "weight": 3.11
-    },
-    {
-      "stock_code": "688615",
-      "stock_name": "合合信息",
-      "weight": 2.91
-    },
-    {
-      "stock_code": "688327",
-      "stock_name": "云从科技",
-      "weight": 2.72
-    },
-    {
-      "stock_code": "688088",
-      "stock_name": "虹软科技",
-      "weight": 2.18
-    },
-    {
-      "stock_code": "688158",
-      "stock_name": "优刻得",
-      "weight": 1.87
-    },
-    {
-      "stock_code": "688400",
-      "stock_name": "凌云光",
-      "weight": 1.78
-    },
-    {
-      "stock_code": "688561",
-      "stock_name": "奇安信",
-      "weight": 1.77
-    },
-    {
-      "stock_code": "688031",
-      "stock_name": "星环科技",
-      "weight": 1.67
-    },
-    {
-      "stock_code": "688100",
-      "stock_name": "威胜信息",
-      "weight": 1.06
-    },
-    {
-      "stock_code": "688003",
-      "stock_name": "天准科技",
-      "weight": 1.04
-    },
-    {
-      "stock_code": "688787",
-      "stock_name": "海天瑞声",
-      "weight": 0.89
-    },
-    {
-      "stock_code": "688095",
-      "stock_name": "福昕软件",
-      "weight": 0.89
-    },
-    {
-      "stock_code": "688475",
-      "stock_name": "萤石网络",
-      "weight": 0.87
-    },
-    {
-      "stock_code": "688686",
-      "stock_name": "奥普特",
-      "weight": 0.83
-    },
-    {
-      "stock_code": "688107",
-      "stock_name": "安路科技",
-      "weight": 0.8
-    },
-    {
-      "stock_code": "688225",
-      "stock_name": "亚信安全",
-      "weight": 0.71
-    },
-    {
-      "stock_code": "688232",
-      "stock_name": "新点软件",
-      "weight": 0.58
-    },
-    {
-      "stock_code": "688583",
-      "stock_name": "思看科技",
-      "weight": 0.45
+      "weight": 3.68
     }
   ],
-  "fetched_at": "2026-03-29 23:19:06",
+  "fetched_at": "2026-04-27 13:59:22",
   "data_source": "eastmoney",
   "original_fund_code": "023551",
   "etf_target": "588930",

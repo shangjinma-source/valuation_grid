@@ -1,63 +1,63 @@
 {
   "fund_code": "024663",
   "fund_name": "富国创业板人工智能ETF发起式联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.93,
-  "parsed_weight": 58.06,
-  "missing_weight": 41.87,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.64,
+  "parsed_weight": 60.98,
+  "missing_weight": 38.66,
   "positions": [
-    {
-      "stock_code": "300308",
-      "stock_name": "中际旭创",
-      "weight": 15.67
-    },
     {
       "stock_code": "300502",
       "stock_name": "新易盛",
-      "weight": 15.56
+      "weight": 15.26
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 13.92
     },
     {
       "stock_code": "300394",
       "stock_name": "天孚通信",
-      "weight": 6.83
-    },
-    {
-      "stock_code": "300058",
-      "stock_name": "蓝色光标",
-      "weight": 3.17
-    },
-    {
-      "stock_code": "300857",
-      "stock_name": "协创数据",
-      "weight": 2.86
-    },
-    {
-      "stock_code": "300339",
-      "stock_name": "润和软件",
-      "weight": 2.86
-    },
-    {
-      "stock_code": "300033",
-      "stock_name": "同花顺",
-      "weight": 2.84
-    },
-    {
-      "stock_code": "300223",
-      "stock_name": "北京君正",
-      "weight": 2.79
+      "weight": 9.7
     },
     {
       "stock_code": "300442",
       "stock_name": "润泽科技",
-      "weight": 2.77
+      "weight": 4.02
+    },
+    {
+      "stock_code": "300058",
+      "stock_name": "蓝色光标",
+      "weight": 3.89
+    },
+    {
+      "stock_code": "300857",
+      "stock_name": "协创数据",
+      "weight": 3.43
     },
     {
       "stock_code": "300418",
       "stock_name": "昆仑万维",
-      "weight": 2.71
+      "weight": 3.05
+    },
+    {
+      "stock_code": "300223",
+      "stock_name": "北京君正",
+      "weight": 2.6
+    },
+    {
+      "stock_code": "300017",
+      "stock_name": "网宿科技",
+      "weight": 2.59
+    },
+    {
+      "stock_code": "300033",
+      "stock_name": "同花顺",
+      "weight": 2.52
     }
   ],
-  "fetched_at": "2026-03-29 23:19:22",
+  "fetched_at": "2026-04-27 13:59:39",
   "data_source": "eastmoney",
   "original_fund_code": "024663",
   "etf_target": "159246",

@@ -1,67 +1,72 @@
 {
   "fund_code": "011103",
   "fund_name": "天弘中证光伏产业指数C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.65,
-  "parsed_weight": 52.17,
-  "missing_weight": 42.48,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.92,
+  "parsed_weight": 50.67,
+  "missing_weight": 44.25,
   "positions": [
     {
       "stock_code": "600089",
       "stock_name": "特变电工",
-      "weight": 9.32
+      "weight": 10.34
     },
     {
       "stock_code": "601012",
       "stock_name": "隆基绿能",
-      "weight": 9.16
+      "weight": 8.21
     },
     {
       "stock_code": "300274",
       "stock_name": "阳光电源",
-      "weight": 8.73
+      "weight": 7.16
     },
     {
       "stock_code": "000100",
       "stock_name": "TCL科技",
-      "weight": 7.84
-    },
-    {
-      "stock_code": "600438",
-      "stock_name": "通威股份",
-      "weight": 4.6
-    },
-    {
-      "stock_code": "300751",
-      "stock_name": "迈为股份",
-      "weight": 2.87
+      "weight": 6.86
     },
     {
       "stock_code": "605117",
       "stock_name": "德业股份",
-      "weight": 2.6
+      "weight": 3.69
+    },
+    {
+      "stock_code": "600438",
+      "stock_name": "通威股份",
+      "weight": 3.45
+    },
+    {
+      "stock_code": "300751",
+      "stock_name": "迈为股份",
+      "weight": 2.96
+    },
+    {
+      "stock_code": "300757",
+      "stock_name": "罗博特科",
+      "weight": 2.96
     },
     {
       "stock_code": "601877",
       "stock_name": "正泰电器",
-      "weight": 2.49
-    },
-    {
-      "stock_code": "002129",
-      "stock_name": "TCL中环",
-      "weight": 2.3
+      "weight": 2.71
     },
     {
       "stock_code": "300724",
       "stock_name": "捷佳伟创",
-      "weight": 2.21
+      "weight": 2.27
     },
     {
       "stock_code": "688795",
       "stock_name": "摩尔线程",
       "weight": 0.05
+    },
+    {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-03-29 23:18:05",
+  "fetched_at": "2026-04-27 13:58:17",
   "data_source": "eastmoney"
 }

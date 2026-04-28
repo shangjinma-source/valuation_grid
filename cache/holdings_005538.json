@@ -1,62 +1,62 @@
 {
   "fund_code": "005538",
   "fund_name": "中航新起航灵活配置混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 91.32,
-  "parsed_weight": 78.22,
-  "missing_weight": 13.1,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.47,
+  "parsed_weight": 77.26,
+  "missing_weight": 15.21,
   "positions": [
     {
-      "stock_code": "301662",
-      "stock_name": "宏工科技",
-      "weight": 9.84
+      "stock_code": "301150",
+      "stock_name": "中一科技",
+      "weight": 9.76
     },
     {
       "stock_code": "688778",
       "stock_name": "厦钨新能",
-      "weight": 9.79
-    },
-    {
-      "stock_code": "688155",
-      "stock_name": "先惠技术",
-      "weight": 9.62
+      "weight": 9.41
     },
     {
       "stock_code": "300450",
       "stock_name": "先导智能",
-      "weight": 9.48
+      "weight": 9.07
     },
     {
-      "stock_code": "301617",
-      "stock_name": "博苑股份",
-      "weight": 7.5
+      "stock_code": "301662",
+      "stock_name": "宏工科技",
+      "weight": 8.77
+    },
+    {
+      "stock_code": "688155",
+      "stock_name": "先惠技术",
+      "weight": 8.65
+    },
+    {
+      "stock_code": "603663",
+      "stock_name": "三祥新材",
+      "weight": 8.19
     },
     {
       "stock_code": "688147",
       "stock_name": "微导纳米",
-      "weight": 7.17
+      "weight": 6.56
     },
     {
-      "stock_code": "688499",
-      "stock_name": "利元亨",
-      "weight": 6.88
+      "stock_code": "002203",
+      "stock_name": "海亮股份",
+      "weight": 6.24
     },
     {
-      "stock_code": "301150",
-      "stock_name": "中一科技",
-      "weight": 6.58
+      "stock_code": "300285",
+      "stock_name": "国瓷材料",
+      "weight": 5.62
     },
     {
       "stock_code": "002846",
       "stock_name": "英联股份",
-      "weight": 6.45
-    },
-    {
-      "stock_code": "300092",
-      "stock_name": "科新机电",
-      "weight": 4.91
+      "weight": 4.99
     }
   ],
-  "fetched_at": "2026-03-29 23:15:51",
+  "fetched_at": "2026-04-27 13:55:55",
   "data_source": "eastmoney"
 }

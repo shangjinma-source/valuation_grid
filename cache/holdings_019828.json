@@ -1,263 +1,63 @@
 {
   "fund_code": "019828",
   "fund_name": "鹏华国证石油天然气ETF联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.64,
-  "parsed_weight": 99.65,
-  "missing_weight": 0,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.69,
+  "parsed_weight": 69.27,
+  "missing_weight": 30.42,
   "positions": [
     {
       "stock_code": "601857",
       "stock_name": "中国石油",
-      "weight": 15.39
-    },
-    {
-      "stock_code": "600028",
-      "stock_name": "中国石化",
-      "weight": 13.41
+      "weight": 14.87
     },
     {
       "stock_code": "600938",
       "stock_name": "中国海油",
-      "weight": 13.09
+      "weight": 14.32
+    },
+    {
+      "stock_code": "600028",
+      "stock_name": "中国石化",
+      "weight": 10.52
     },
     {
       "stock_code": "002353",
       "stock_name": "杰瑞股份",
-      "weight": 7.62
-    },
-    {
-      "stock_code": "600256",
-      "stock_name": "广汇能源",
-      "weight": 3.77
+      "weight": 8.58
     },
     {
       "stock_code": "601872",
       "stock_name": "招商轮船",
-      "weight": 3.14
-    },
-    {
-      "stock_code": "600803",
-      "stock_name": "新奥股份",
-      "weight": 2.81
-    },
-    {
-      "stock_code": "605090",
-      "stock_name": "九丰能源",
-      "weight": 2.77
+      "weight": 4.71
     },
     {
       "stock_code": "600026",
       "stock_name": "中远海能",
-      "weight": 2.74
+      "weight": 4.26
     },
     {
-      "stock_code": "600635",
-      "stock_name": "大众公用",
-      "weight": 2.16
+      "stock_code": "600256",
+      "stock_name": "广汇能源",
+      "weight": 4.22
     },
     {
       "stock_code": "600759",
       "stock_name": "洲际油气",
-      "weight": 2.11
+      "weight": 3.18
     },
     {
-      "stock_code": "600583",
-      "stock_name": "海油工程",
-      "weight": 2.02
+      "stock_code": "600803",
+      "stock_name": "新奥股份",
+      "weight": 2.47
     },
     {
       "stock_code": "601975",
       "stock_name": "招商南油",
-      "weight": 1.82
-    },
-    {
-      "stock_code": "603619",
-      "stock_name": "中曼石油",
-      "weight": 1.5
-    },
-    {
-      "stock_code": "601808",
-      "stock_name": "中海油服",
-      "weight": 1.44
-    },
-    {
-      "stock_code": "002221",
-      "stock_name": "东华能源",
-      "weight": 1.36
-    },
-    {
-      "stock_code": "600968",
-      "stock_name": "海油发展",
-      "weight": 1.33
-    },
-    {
-      "stock_code": "603169",
-      "stock_name": "兰石重装",
-      "weight": 1.24
-    },
-    {
-      "stock_code": "603393",
-      "stock_name": "新天然气",
-      "weight": 1.18
-    },
-    {
-      "stock_code": "600871",
-      "stock_name": "石化油服",
-      "weight": 1.14
-    },
-    {
-      "stock_code": "300228",
-      "stock_name": "富瑞特装",
-      "weight": 1.01
-    },
-    {
-      "stock_code": "300435",
-      "stock_name": "中泰股份",
-      "weight": 1.0
-    },
-    {
-      "stock_code": "603800",
-      "stock_name": "洪田股份",
-      "weight": 1.0
-    },
-    {
-      "stock_code": "600339",
-      "stock_name": "中油工程",
-      "weight": 0.97
-    },
-    {
-      "stock_code": "600688",
-      "stock_name": "上海石化",
-      "weight": 0.97
-    },
-    {
-      "stock_code": "601139",
-      "stock_name": "深圳燃气",
-      "weight": 0.87
-    },
-    {
-      "stock_code": "688377",
-      "stock_name": "迪威尔",
-      "weight": 0.86
-    },
-    {
-      "stock_code": "300471",
-      "stock_name": "厚普股份",
-      "weight": 0.68
-    },
-    {
-      "stock_code": "300332",
-      "stock_name": "天壕能源",
-      "weight": 0.67
-    },
-    {
-      "stock_code": "603036",
-      "stock_name": "如通股份",
-      "weight": 0.64
-    },
-    {
-      "stock_code": "000407",
-      "stock_name": "胜利股份",
-      "weight": 0.61
-    },
-    {
-      "stock_code": "000852",
-      "stock_name": "石化机械",
-      "weight": 0.61
-    },
-    {
-      "stock_code": "300084",
-      "stock_name": "海默科技",
-      "weight": 0.59
-    },
-    {
-      "stock_code": "300191",
-      "stock_name": "潜能恒信",
-      "weight": 0.59
-    },
-    {
-      "stock_code": "002267",
-      "stock_name": "陕天然气",
-      "weight": 0.56
-    },
-    {
-      "stock_code": "600681",
-      "stock_name": "百川能源",
-      "weight": 0.52
-    },
-    {
-      "stock_code": "000968",
-      "stock_name": "蓝焰控股",
-      "weight": 0.51
-    },
-    {
-      "stock_code": "600903",
-      "stock_name": "贵州燃气",
-      "weight": 0.48
-    },
-    {
-      "stock_code": "603223",
-      "stock_name": "恒通股份",
-      "weight": 0.48
-    },
-    {
-      "stock_code": "000096",
-      "stock_name": "广聚能源",
-      "weight": 0.45
-    },
-    {
-      "stock_code": "000554",
-      "stock_name": "泰山石油",
-      "weight": 0.44
-    },
-    {
-      "stock_code": "002911",
-      "stock_name": "佛燃能源",
-      "weight": 0.43
-    },
-    {
-      "stock_code": "605368",
-      "stock_name": "蓝天燃气",
-      "weight": 0.43
-    },
-    {
-      "stock_code": "603209",
-      "stock_name": "兴通股份",
-      "weight": 0.39
-    },
-    {
-      "stock_code": "600956",
-      "stock_name": "新天绿能",
-      "weight": 0.39
-    },
-    {
-      "stock_code": "000421",
-      "stock_name": "南京公用",
-      "weight": 0.34
-    },
-    {
-      "stock_code": "603318",
-      "stock_name": "水发燃气",
-      "weight": 0.33
-    },
-    {
-      "stock_code": "603053",
-      "stock_name": "成都燃气",
-      "weight": 0.3
-    },
-    {
-      "stock_code": "603353",
-      "stock_name": "和顺石油",
-      "weight": 0.28
-    },
-    {
-      "stock_code": "603706",
-      "stock_name": "东方环宇",
-      "weight": 0.21
+      "weight": 2.14
     }
   ],
-  "fetched_at": "2026-03-29 23:21:58",
+  "fetched_at": "2026-04-27 14:02:23",
   "data_source": "eastmoney",
   "original_fund_code": "019828",
   "etf_target": "159697",

@@ -1,167 +1,62 @@
 {
   "fund_code": "020107",
   "fund_name": "兴业安保优选混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 89.02,
-  "parsed_weight": 89.02,
-  "missing_weight": 0,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 88.93,
+  "parsed_weight": 55.23,
+  "missing_weight": 33.7,
   "positions": [
     {
-      "stock_code": "600893",
-      "stock_name": "航发动力",
-      "weight": 7.82
+      "stock_code": "688002",
+      "stock_name": "睿创微纳",
+      "weight": 7.49
     },
     {
       "stock_code": "600760",
       "stock_name": "中航沈飞",
-      "weight": 7.52
-    },
-    {
-      "stock_code": "688708",
-      "stock_name": "佳驰科技",
-      "weight": 7.16
-    },
-    {
-      "stock_code": "600879",
-      "stock_name": "航天电子",
-      "weight": 5.54
-    },
-    {
-      "stock_code": "688002",
-      "stock_name": "睿创微纳",
-      "weight": 5.42
-    },
-    {
-      "stock_code": "600562",
-      "stock_name": "国睿科技",
-      "weight": 5.13
-    },
-    {
-      "stock_code": "600316",
-      "stock_name": "洪都航空",
-      "weight": 5.1
-    },
-    {
-      "stock_code": "688543",
-      "stock_name": "国科军工",
-      "weight": 5.0
-    },
-    {
-      "stock_code": "002414",
-      "stock_name": "高德红外",
-      "weight": 4.75
-    },
-    {
-      "stock_code": "300446",
-      "stock_name": "航天智造",
-      "weight": 4.69
-    },
-    {
-      "stock_code": "302132",
-      "stock_name": "中航成飞",
-      "weight": 4.49
-    },
-    {
-      "stock_code": "002179",
-      "stock_name": "中航光电",
-      "weight": 4.12
-    },
-    {
-      "stock_code": "002389",
-      "stock_name": "航天彩虹",
-      "weight": 3.98
+      "weight": 7.37
     },
     {
       "stock_code": "688552",
       "stock_name": "航天南湖",
-      "weight": 3.42
+      "weight": 6.26
     },
     {
-      "stock_code": "002683",
-      "stock_name": "广东宏大",
-      "weight": 3.35
+      "stock_code": "688708",
+      "stock_name": "佳驰科技",
+      "weight": 5.71
     },
     {
-      "stock_code": "600391",
-      "stock_name": "航发科技",
-      "weight": 2.89
+      "stock_code": "600893",
+      "stock_name": "航发动力",
+      "weight": 4.92
     },
     {
-      "stock_code": "600038",
-      "stock_name": "中直股份",
-      "weight": 2.25
+      "stock_code": "300699",
+      "stock_name": "光威复材",
+      "weight": 4.83
     },
     {
-      "stock_code": "000519",
-      "stock_name": "中兵红箭",
-      "weight": 2.14
+      "stock_code": "600562",
+      "stock_name": "国睿科技",
+      "weight": 4.78
     },
     {
-      "stock_code": "603678",
-      "stock_name": "火炬电子",
-      "weight": 1.91
+      "stock_code": "300900",
+      "stock_name": "广联航空",
+      "weight": 4.73
     },
     {
-      "stock_code": "603267",
-      "stock_name": "鸿远电子",
-      "weight": 1.87
+      "stock_code": "600316",
+      "stock_name": "洪都航空",
+      "weight": 4.58
     },
     {
-      "stock_code": "300726",
-      "stock_name": "宏达电子",
-      "weight": 0.12
-    },
-    {
-      "stock_code": "688084",
-      "stock_name": "晶品特装",
-      "weight": 0.1
-    },
-    {
-      "stock_code": "688758",
-      "stock_name": "赛分科技",
-      "weight": 0.06
-    },
-    {
-      "stock_code": "688583",
-      "stock_name": "思看科技",
-      "weight": 0.06
-    },
-    {
-      "stock_code": "301491",
-      "stock_name": "汉桑科技",
-      "weight": 0.03
-    },
-    {
-      "stock_code": "001221",
-      "stock_name": "悍高集团",
-      "weight": 0.03
-    },
-    {
-      "stock_code": "603072",
-      "stock_name": "天和磁材",
-      "weight": 0.02
-    },
-    {
-      "stock_code": "603370",
-      "stock_name": "华新精科",
-      "weight": 0.02
-    },
-    {
-      "stock_code": "688605",
-      "stock_name": "先锋精科",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "001388",
-      "stock_name": "信通电子",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "688545",
-      "stock_name": "兴福电子",
-      "weight": 0.01
+      "stock_code": "302132",
+      "stock_name": "中航成飞",
+      "weight": 4.56
     }
   ],
-  "fetched_at": "2026-03-29 23:21:37",
+  "fetched_at": "2026-04-27 14:02:01",
   "data_source": "eastmoney"
 }

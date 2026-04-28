@@ -1,62 +1,62 @@
 {
   "fund_code": "011892",
   "fund_name": "易方达先锋成长混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 93.69,
-  "parsed_weight": 60.54,
-  "missing_weight": 33.15,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.57,
+  "parsed_weight": 73.28,
+  "missing_weight": 21.29,
   "positions": [
-    {
-      "stock_code": "300308",
-      "stock_name": "中际旭创",
-      "weight": 9.71
-    },
-    {
-      "stock_code": "300502",
-      "stock_name": "新易盛",
-      "weight": 9.32
-    },
-    {
-      "stock_code": "002837",
-      "stock_name": "英维克",
-      "weight": 8.63
-    },
-    {
-      "stock_code": "300394",
-      "stock_name": "天孚通信",
-      "weight": 6.83
-    },
-    {
-      "stock_code": "688313",
-      "stock_name": "仕佳光子",
-      "weight": 6.11
-    },
     {
       "stock_code": "300548",
       "stock_name": "长芯博创",
-      "weight": 4.92
-    },
-    {
-      "stock_code": "688498",
-      "stock_name": "源杰科技",
-      "weight": 4.01
-    },
-    {
-      "stock_code": "002463",
-      "stock_name": "沪电股份",
-      "weight": 3.91
+      "weight": 9.87
     },
     {
       "stock_code": "06869",
       "stock_name": "长飞光纤光缆",
-      "weight": 3.63
+      "weight": 9.81
     },
     {
-      "stock_code": "688183",
-      "stock_name": "生益电子",
-      "weight": 3.47
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.6
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.59
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 9.08
+    },
+    {
+      "stock_code": "002837",
+      "stock_name": "英维克",
+      "weight": 6.37
+    },
+    {
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 5.86
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 5.25
+    },
+    {
+      "stock_code": "688008",
+      "stock_name": "澜起科技",
+      "weight": 3.96
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 3.89
     }
   ],
-  "fetched_at": "2026-03-29 23:16:05",
+  "fetched_at": "2026-04-27 13:53:50",
   "data_source": "eastmoney"
 }

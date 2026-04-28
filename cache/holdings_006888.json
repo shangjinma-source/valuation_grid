@@ -1,62 +1,62 @@
 {
   "fund_code": "006888",
   "fund_name": "诺德新生活混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 91.21,
-  "parsed_weight": 59.63,
-  "missing_weight": 31.58,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 68.94,
+  "parsed_weight": 27.95,
+  "missing_weight": 40.99,
   "positions": [
-    {
-      "stock_code": "300308",
-      "stock_name": "中际旭创",
-      "weight": 8.1
-    },
     {
       "stock_code": "300502",
       "stock_name": "新易盛",
-      "weight": 7.89
+      "weight": 3.58
     },
     {
-      "stock_code": "300394",
-      "stock_name": "天孚通信",
-      "weight": 7.88
-    },
-    {
-      "stock_code": "002916",
-      "stock_name": "深南电路",
-      "weight": 7.21
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 3.35
     },
     {
       "stock_code": "002463",
       "stock_name": "沪电股份",
-      "weight": 7.12
+      "weight": 3.23
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 2.9
     },
     {
       "stock_code": "300476",
       "stock_name": "胜宏科技",
-      "weight": 6.73
+      "weight": 2.9
     },
     {
-      "stock_code": "300548",
-      "stock_name": "长芯博创",
-      "weight": 3.87
+      "stock_code": "301200",
+      "stock_name": "大族数控",
+      "weight": 2.65
     },
     {
-      "stock_code": "688498",
-      "stock_name": "源杰科技",
-      "weight": 3.75
-    },
-    {
-      "stock_code": "603083",
-      "stock_name": "剑桥科技",
-      "weight": 3.57
+      "stock_code": "603256",
+      "stock_name": "宏和科技",
+      "weight": 2.42
     },
     {
       "stock_code": "301377",
       "stock_name": "鼎泰高科",
-      "weight": 3.51
+      "weight": 2.42
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 2.33
+    },
+    {
+      "stock_code": "688257",
+      "stock_name": "新锐股份",
+      "weight": 2.17
     }
   ],
-  "fetched_at": "2026-03-29 23:14:07",
+  "fetched_at": "2026-04-28 23:30:19",
   "data_source": "eastmoney"
 }

@@ -1,62 +1,62 @@
 {
   "fund_code": "005963",
   "fund_name": "宝盈人工智能股票C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 86.45,
-  "parsed_weight": 43.15,
-  "missing_weight": 43.3,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.35,
+  "parsed_weight": 56.02,
+  "missing_weight": 36.33,
   "positions": [
-    {
-      "stock_code": "603228",
-      "stock_name": "景旺电子",
-      "weight": 8.07
-    },
-    {
-      "stock_code": "00700",
-      "stock_name": "腾讯控股",
-      "weight": 6.44
-    },
     {
       "stock_code": "002080",
       "stock_name": "中材科技",
-      "weight": 4.27
+      "weight": 8.75
     },
     {
-      "stock_code": "600183",
-      "stock_name": "生益科技",
-      "weight": 4.13
-    },
-    {
-      "stock_code": "002475",
-      "stock_name": "立讯精密",
-      "weight": 4.05
-    },
-    {
-      "stock_code": "300308",
-      "stock_name": "中际旭创",
-      "weight": 3.94
-    },
-    {
-      "stock_code": "300502",
-      "stock_name": "新易盛",
-      "weight": 3.18
-    },
-    {
-      "stock_code": "002463",
-      "stock_name": "沪电股份",
-      "weight": 3.17
-    },
-    {
-      "stock_code": "301165",
-      "stock_name": "锐捷网络",
-      "weight": 3.09
+      "stock_code": "603228",
+      "stock_name": "景旺电子",
+      "weight": 8.27
     },
     {
       "stock_code": "09988",
       "stock_name": "阿里巴巴-W",
-      "weight": 2.81
+      "weight": 6.34
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 6.12
+    },
+    {
+      "stock_code": "300395",
+      "stock_name": "菲利华",
+      "weight": 5.85
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 4.23
+    },
+    {
+      "stock_code": "00700",
+      "stock_name": "腾讯控股",
+      "weight": 4.18
+    },
+    {
+      "stock_code": "300476",
+      "stock_name": "胜宏科技",
+      "weight": 4.13
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 4.1
+    },
+    {
+      "stock_code": "002518",
+      "stock_name": "科士达",
+      "weight": 4.05
     }
   ],
-  "fetched_at": "2026-03-29 23:18:40",
+  "fetched_at": "2026-04-27 13:58:53",
   "data_source": "eastmoney"
 }

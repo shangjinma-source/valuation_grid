@@ -1,62 +1,62 @@
 {
   "fund_code": "009751",
   "fund_name": "汇安价值蓝筹混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 90.09,
-  "parsed_weight": 44.13,
-  "missing_weight": 45.96,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.9,
+  "parsed_weight": 52.15,
+  "missing_weight": 40.75,
   "positions": [
-    {
-      "stock_code": "300136",
-      "stock_name": "信维通信",
-      "weight": 5.05
-    },
     {
       "stock_code": "688002",
       "stock_name": "睿创微纳",
-      "weight": 5.01
+      "weight": 8.36
     },
     {
-      "stock_code": "300762",
-      "stock_name": "上海瀚讯",
-      "weight": 4.96
-    },
-    {
-      "stock_code": "002565",
-      "stock_name": "顺灏股份",
-      "weight": 4.69
-    },
-    {
-      "stock_code": "600879",
-      "stock_name": "航天电子",
-      "weight": 4.43
-    },
-    {
-      "stock_code": "600343",
-      "stock_name": "航天动力",
-      "weight": 4.4
-    },
-    {
-      "stock_code": "688270",
-      "stock_name": "臻镭科技",
-      "weight": 4.36
-    },
-    {
-      "stock_code": "600118",
-      "stock_name": "中国卫星",
-      "weight": 4.16
-    },
-    {
-      "stock_code": "300455",
-      "stock_name": "航天智装",
-      "weight": 3.83
+      "stock_code": "600498",
+      "stock_name": "烽火通信",
+      "weight": 8.14
     },
     {
       "stock_code": "002149",
       "stock_name": "西部材料",
-      "weight": 3.24
+      "weight": 6.04
+    },
+    {
+      "stock_code": "300136",
+      "stock_name": "信维通信",
+      "weight": 5.15
+    },
+    {
+      "stock_code": "603067",
+      "stock_name": "振华股份",
+      "weight": 4.85
+    },
+    {
+      "stock_code": "600879",
+      "stock_name": "航天电子",
+      "weight": 4.54
+    },
+    {
+      "stock_code": "688387",
+      "stock_name": "信科移动",
+      "weight": 4.26
+    },
+    {
+      "stock_code": "300762",
+      "stock_name": "上海瀚讯",
+      "weight": 3.97
+    },
+    {
+      "stock_code": "002565",
+      "stock_name": "顺灏股份",
+      "weight": 3.44
+    },
+    {
+      "stock_code": "002792",
+      "stock_name": "通宇通讯",
+      "weight": 3.4
     }
   ],
-  "fetched_at": "2026-03-29 23:13:02",
+  "fetched_at": "2026-04-27 13:52:58",
   "data_source": "eastmoney"
 }

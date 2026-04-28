@@ -1,67 +1,67 @@
 {
   "fund_code": "019917",
   "fund_name": "富国医药创新股票C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 92.13,
-  "parsed_weight": 71.77,
-  "missing_weight": 20.36,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 89.22,
+  "parsed_weight": 72.87,
+  "missing_weight": 16.35,
   "positions": [
     {
       "stock_code": "002653",
       "stock_name": "海思科",
-      "weight": 9.16
-    },
-    {
-      "stock_code": "01093",
-      "stock_name": "石药集团",
-      "weight": 9.01
+      "weight": 9.85
     },
     {
       "stock_code": "688266",
       "stock_name": "泽璟制药",
-      "weight": 9.01
-    },
-    {
-      "stock_code": "06160",
-      "stock_name": "百济神州",
-      "weight": 8.99
+      "weight": 9.82
     },
     {
       "stock_code": "01530",
       "stock_name": "三生制药",
-      "weight": 8.42
+      "weight": 9.48
     },
     {
-      "stock_code": "01801",
-      "stock_name": "信达生物",
-      "weight": 5.84
+      "stock_code": "06160",
+      "stock_name": "百济神州",
+      "weight": 9.38
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 8.45
     },
     {
       "stock_code": "688506",
       "stock_name": "百利天恒",
-      "weight": 5.78
+      "weight": 8.03
+    },
+    {
+      "stock_code": "01801",
+      "stock_name": "信达生物",
+      "weight": 5.52
     },
     {
       "stock_code": "688068",
       "stock_name": "热景生物",
-      "weight": 5.75
+      "weight": 4.44
     },
     {
       "stock_code": "03933",
       "stock_name": "联邦制药",
-      "weight": 5.11
+      "weight": 4.38
     },
     {
       "stock_code": "688658",
       "stock_name": "悦康药业",
-      "weight": 4.6
+      "weight": 3.46
     },
     {
       "stock_code": "688235",
       "stock_name": "百济神州",
-      "weight": 0.1
+      "weight": 0.06
     }
   ],
-  "fetched_at": "2026-03-29 23:19:59",
+  "fetched_at": "2026-04-27 14:00:16",
   "data_source": "eastmoney"
 }

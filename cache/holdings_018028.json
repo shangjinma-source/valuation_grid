@@ -1,278 +1,88 @@
 {
   "fund_code": "018028",
   "fund_name": "嘉实中证高端装备细分50ETF发起联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.68,
-  "parsed_weight": 99.66,
-  "missing_weight": 0.02,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.75,
+  "parsed_weight": 45.49,
+  "missing_weight": 54.26,
   "positions": [
+    {
+      "stock_code": "600893",
+      "stock_name": "航发动力",
+      "weight": 6.78
+    },
     {
       "stock_code": "600879",
       "stock_name": "航天电子",
-      "weight": 5.64
+      "weight": 6.21
     },
     {
       "stock_code": "600118",
       "stock_name": "中国卫星",
-      "weight": 5.62
-    },
-    {
-      "stock_code": "600893",
-      "stock_name": "航发动力",
-      "weight": 5.35
-    },
-    {
-      "stock_code": "600760",
-      "stock_name": "中航沈飞",
-      "weight": 4.78
+      "weight": 5.12
     },
     {
       "stock_code": "002179",
       "stock_name": "中航光电",
-      "weight": 4.5
+      "weight": 4.54
     },
     {
-      "stock_code": "000547",
-      "stock_name": "航天发展",
-      "weight": 4.22
+      "stock_code": "600760",
+      "stock_name": "中航沈飞",
+      "weight": 4.42
     },
     {
       "stock_code": "300395",
       "stock_name": "菲利华",
-      "weight": 4.19
+      "weight": 4.05
+    },
+    {
+      "stock_code": "000547",
+      "stock_name": "航天发展",
+      "weight": 3.85
     },
     {
       "stock_code": "000768",
       "stock_name": "中航西飞",
-      "weight": 3.53
+      "weight": 3.63
     },
     {
       "stock_code": "688122",
       "stock_name": "西部超导",
-      "weight": 3.4
+      "weight": 3.41
     },
     {
       "stock_code": "600372",
       "stock_name": "中航机载",
-      "weight": 3.25
-    },
-    {
-      "stock_code": "002465",
-      "stock_name": "海格通信",
-      "weight": 3.12
-    },
-    {
-      "stock_code": "601698",
-      "stock_name": "中国卫通",
-      "weight": 3.02
-    },
-    {
-      "stock_code": "000066",
-      "stock_name": "中国长城",
-      "weight": 2.79
-    },
-    {
-      "stock_code": "002414",
-      "stock_name": "高德红外",
-      "weight": 2.5
-    },
-    {
-      "stock_code": "688333",
-      "stock_name": "铂力特",
-      "weight": 2.45
-    },
-    {
-      "stock_code": "688568",
-      "stock_name": "中科星图",
-      "weight": 2.39
-    },
-    {
-      "stock_code": "302132",
-      "stock_name": "中航成飞",
-      "weight": 2.32
-    },
-    {
-      "stock_code": "300699",
-      "stock_name": "光威复材",
-      "weight": 2.29
-    },
-    {
-      "stock_code": "600765",
-      "stock_name": "中航重机",
-      "weight": 2.12
-    },
-    {
-      "stock_code": "000733",
-      "stock_name": "振华科技",
-      "weight": 2.03
-    },
-    {
-      "stock_code": "600862",
-      "stock_name": "中航高科",
-      "weight": 1.98
-    },
-    {
-      "stock_code": "000738",
-      "stock_name": "航发控制",
-      "weight": 1.68
-    },
-    {
-      "stock_code": "688375",
-      "stock_name": "国博电子",
-      "weight": 1.67
-    },
-    {
-      "stock_code": "002389",
-      "stock_name": "航天彩虹",
-      "weight": 1.65
-    },
-    {
-      "stock_code": "600435",
-      "stock_name": "北方导航",
-      "weight": 1.63
-    },
-    {
-      "stock_code": "600316",
-      "stock_name": "洪都航空",
-      "weight": 1.51
-    },
-    {
-      "stock_code": "600038",
-      "stock_name": "中直股份",
-      "weight": 1.48
-    },
-    {
-      "stock_code": "002544",
-      "stock_name": "普天科技",
-      "weight": 1.41
-    },
-    {
-      "stock_code": "600562",
-      "stock_name": "国睿科技",
-      "weight": 1.41
-    },
-    {
-      "stock_code": "002025",
-      "stock_name": "航天电器",
-      "weight": 1.37
-    },
-    {
-      "stock_code": "688297",
-      "stock_name": "中无人机",
-      "weight": 1.3
-    },
-    {
-      "stock_code": "002268",
-      "stock_name": "电科网安",
-      "weight": 1.21
-    },
-    {
-      "stock_code": "300455",
-      "stock_name": "航天智装",
-      "weight": 1.08
-    },
-    {
-      "stock_code": "000801",
-      "stock_name": "四川九洲",
-      "weight": 1.03
-    },
-    {
-      "stock_code": "688281",
-      "stock_name": "华秦科技",
-      "weight": 1.01
-    },
-    {
-      "stock_code": "603678",
-      "stock_name": "火炬电子",
-      "weight": 1.01
-    },
-    {
-      "stock_code": "688709",
-      "stock_name": "成都华微",
-      "weight": 0.88
-    },
-    {
-      "stock_code": "688563",
-      "stock_name": "航材股份",
-      "weight": 0.79
-    },
-    {
-      "stock_code": "600764",
-      "stock_name": "中国海防",
-      "weight": 0.78
-    },
-    {
-      "stock_code": "688439",
-      "stock_name": "振华风光",
-      "weight": 0.65
-    },
-    {
-      "stock_code": "300516",
-      "stock_name": "久之洋",
-      "weight": 0.58
-    },
-    {
-      "stock_code": "002935",
-      "stock_name": "天奥电子",
-      "weight": 0.56
-    },
-    {
-      "stock_code": "600990",
-      "stock_name": "四创电子",
-      "weight": 0.52
-    },
-    {
-      "stock_code": "003009",
-      "stock_name": "中天火箭",
-      "weight": 0.49
-    },
-    {
-      "stock_code": "688631",
-      "stock_name": "莱斯信息",
-      "weight": 0.45
-    },
-    {
-      "stock_code": "600184",
-      "stock_name": "光电股份",
-      "weight": 0.44
-    },
-    {
-      "stock_code": "688586",
-      "stock_name": "江航装备",
-      "weight": 0.41
-    },
-    {
-      "stock_code": "688552",
-      "stock_name": "航天南湖",
-      "weight": 0.37
-    },
-    {
-      "stock_code": "002189",
-      "stock_name": "中光学",
-      "weight": 0.36
-    },
-    {
-      "stock_code": "920640",
-      "stock_name": "富士达",
-      "weight": 0.35
+      "weight": 3.33
     },
     {
       "stock_code": "688795",
       "stock_name": "摩尔线程",
-      "weight": 0.07
+      "weight": 0.1
     },
     {
       "stock_code": "688790",
       "stock_name": "昂瑞微",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "688781",
+      "stock_name": "视涯科技",
       "weight": 0.01
     },
     {
       "stock_code": "001280",
       "stock_name": "中国铀业",
       "weight": 0.01
+    },
+    {
+      "stock_code": "301683",
+      "stock_name": "慧谷新材",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-03-29 23:21:46",
+  "fetched_at": "2026-04-27 14:02:11",
   "data_source": "eastmoney",
   "original_fund_code": "018028",
   "etf_target": "159638",

@@ -1,62 +1,62 @@
 {
   "fund_code": "019116",
-  "fund_name": "东财卓越成长C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.77,
-  "parsed_weight": 71.32,
-  "missing_weight": 23.45,
+  "fund_name": "东财卓越成长混合发起式C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 95.09,
+  "parsed_weight": 74.61,
+  "missing_weight": 20.48,
   "positions": [
     {
-      "stock_code": "03896",
-      "stock_name": "金山云",
-      "weight": 8.22
-    },
-    {
-      "stock_code": "300364",
-      "stock_name": "中文在线",
-      "weight": 8.04
+      "stock_code": "01024",
+      "stock_name": "快手-W",
+      "weight": 9.71
     },
     {
       "stock_code": "03888",
       "stock_name": "金山软件",
-      "weight": 7.56
+      "weight": 9.61
     },
     {
-      "stock_code": "00354",
-      "stock_name": "中国软件国际",
-      "weight": 6.99
+      "stock_code": "03896",
+      "stock_name": "金山云",
+      "weight": 9.59
     },
     {
-      "stock_code": "02586",
-      "stock_name": "多点数智",
-      "weight": 6.95
-    },
-    {
-      "stock_code": "920799",
-      "stock_name": "艾融软件",
-      "weight": 6.81
-    },
-    {
-      "stock_code": "300624",
-      "stock_name": "万兴科技",
-      "weight": 6.77
-    },
-    {
-      "stock_code": "02556",
-      "stock_name": "迈富时",
-      "weight": 6.74
+      "stock_code": "300364",
+      "stock_name": "中文在线",
+      "weight": 9.52
     },
     {
       "stock_code": "920493",
       "stock_name": "并行科技",
-      "weight": 6.69
+      "weight": 7.28
+    },
+    {
+      "stock_code": "300766",
+      "stock_name": "每日互动",
+      "weight": 6.37
+    },
+    {
+      "stock_code": "301171",
+      "stock_name": "易点天下",
+      "weight": 6.28
+    },
+    {
+      "stock_code": "603039",
+      "stock_name": "泛微网络",
+      "weight": 5.71
+    },
+    {
+      "stock_code": "301231",
+      "stock_name": "荣信文化",
+      "weight": 5.38
     },
     {
       "stock_code": "603533",
       "stock_name": "掌阅科技",
-      "weight": 6.55
+      "weight": 5.16
     }
   ],
-  "fetched_at": "2026-03-29 23:15:47",
+  "fetched_at": "2026-04-27 13:55:49",
   "data_source": "eastmoney"
 }

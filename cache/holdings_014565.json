@@ -1,85 +1,85 @@
 {
   "fund_code": "014565",
   "fund_name": "天弘创新药精选50ETF联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.01,
-  "parsed_weight": 71.46,
-  "missing_weight": 27.55,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.59,
+  "parsed_weight": 70.74,
+  "missing_weight": 28.85,
   "positions": [
     {
       "stock_code": "600276",
       "stock_name": "恒瑞医药",
-      "weight": 15.03
-    },
-    {
-      "stock_code": "06160",
-      "stock_name": "百济神州",
-      "weight": 11.82
+      "weight": 13.72
     },
     {
       "stock_code": "603259",
       "stock_name": "药明康德",
-      "weight": 11.6
+      "weight": 12.36
+    },
+    {
+      "stock_code": "06160",
+      "stock_name": "百济神州",
+      "weight": 11.0
     },
     {
       "stock_code": "01801",
       "stock_name": "信达生物",
-      "weight": 6.76
+      "weight": 7.4
     },
     {
       "stock_code": "02269",
       "stock_name": "药明生物",
-      "weight": 6.29
+      "weight": 6.5
     },
     {
       "stock_code": "01093",
       "stock_name": "石药集团",
-      "weight": 3.7
+      "weight": 3.88
     },
     {
       "stock_code": "01177",
       "stock_name": "中国生物制药",
-      "weight": 3.47
-    },
-    {
-      "stock_code": "03692",
-      "stock_name": "翰森制药",
-      "weight": 2.97
-    },
-    {
-      "stock_code": "01530",
-      "stock_name": "三生制药",
-      "weight": 2.56
+      "weight": 3.22
     },
     {
       "stock_code": "02359",
       "stock_name": "药明康德",
-      "weight": 2.51
+      "weight": 3.02
+    },
+    {
+      "stock_code": "03692",
+      "stock_name": "翰森制药",
+      "weight": 2.84
     },
     {
       "stock_code": "600196",
       "stock_name": "复星医药",
-      "weight": 2.04
+      "weight": 2.03
     },
     {
       "stock_code": "688235",
       "stock_name": "百济神州",
-      "weight": 1.89
+      "weight": 1.61
+    },
+    {
+      "stock_code": "688331",
+      "stock_name": "荣昌生物",
+      "weight": 1.51
+    },
+    {
+      "stock_code": "09995",
+      "stock_name": "荣昌生物",
+      "weight": 0.95
     },
     {
       "stock_code": "02196",
       "stock_name": "复星医药",
-      "weight": 0.52
+      "weight": 0.51
     },
     {
       "stock_code": "03933",
       "stock_name": "联邦制药",
-      "weight": 0.19
-    },
-    {
-      "stock_code": "600930",
-      "stock_name": "华电新能",
-      "weight": 0.04
+      "weight": 0.11
     },
     {
       "stock_code": "688795",
@@ -95,9 +95,14 @@
       "stock_code": "688783",
       "stock_name": "西安奕材",
       "weight": 0.02
+    },
+    {
+      "stock_code": "688765",
+      "stock_name": "禾元生物",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-03-29 23:20:35",
+  "fetched_at": "2026-04-27 14:00:55",
   "data_source": "eastmoney",
   "original_fund_code": "014565",
   "etf_target": "517380",

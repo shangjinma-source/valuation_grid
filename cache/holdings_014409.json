@@ -1,67 +1,62 @@
 {
   "fund_code": "014409",
   "fund_name": "创金合信兴选产业趋势混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 93.59,
-  "parsed_weight": 66.52,
-  "missing_weight": 27.07,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.23,
+  "parsed_weight": 59.28,
+  "missing_weight": 34.95,
   "positions": [
-    {
-      "stock_code": "601689",
-      "stock_name": "拓普集团",
-      "weight": 7.82
-    },
     {
       "stock_code": "603667",
       "stock_name": "五洲新春",
-      "weight": 7.51
-    },
-    {
-      "stock_code": "603119",
-      "stock_name": "浙江荣泰",
-      "weight": 7.17
-    },
-    {
-      "stock_code": "601100",
-      "stock_name": "恒立液压",
-      "weight": 7.13
-    },
-    {
-      "stock_code": "300115",
-      "stock_name": "长盈精密",
-      "weight": 7.12
-    },
-    {
-      "stock_code": "02050",
-      "stock_name": "三花智控",
-      "weight": 6.94
-    },
-    {
-      "stock_code": "603179",
-      "stock_name": "新泉股份",
-      "weight": 5.58
-    },
-    {
-      "stock_code": "688698",
-      "stock_name": "伟创电气",
-      "weight": 5.41
+      "weight": 7.92
     },
     {
       "stock_code": "301550",
       "stock_name": "斯菱智驱",
-      "weight": 5.01
+      "weight": 7.6
     },
     {
       "stock_code": "688322",
       "stock_name": "奥比中光",
-      "weight": 4.91
+      "weight": 6.09
     },
     {
-      "stock_code": "002050",
-      "stock_name": "三花智控",
-      "weight": 1.92
+      "stock_code": "000559",
+      "stock_name": "万向钱潮",
+      "weight": 6.09
+    },
+    {
+      "stock_code": "601100",
+      "stock_name": "恒立液压",
+      "weight": 5.97
+    },
+    {
+      "stock_code": "603119",
+      "stock_name": "浙江荣泰",
+      "weight": 5.81
+    },
+    {
+      "stock_code": "301413",
+      "stock_name": "安培龙",
+      "weight": 5.11
+    },
+    {
+      "stock_code": "601689",
+      "stock_name": "拓普集团",
+      "weight": 5.02
+    },
+    {
+      "stock_code": "300952",
+      "stock_name": "恒辉安防",
+      "weight": 4.97
+    },
+    {
+      "stock_code": "688017",
+      "stock_name": "绿的谐波",
+      "weight": 4.7
     }
   ],
-  "fetched_at": "2026-03-29 23:16:49",
+  "fetched_at": "2026-04-27 13:56:55",
   "data_source": "eastmoney"
 }

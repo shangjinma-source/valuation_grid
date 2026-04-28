@@ -1,62 +1,62 @@
 {
   "fund_code": "018241",
   "fund_name": "嘉实制造升级股票发起式C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 93.59,
-  "parsed_weight": 61.63,
-  "missing_weight": 31.96,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 86.36,
+  "parsed_weight": 64.01,
+  "missing_weight": 22.35,
   "positions": [
-    {
-      "stock_code": "09880",
-      "stock_name": "优必选",
-      "weight": 9.38
-    },
     {
       "stock_code": "688290",
       "stock_name": "景业智能",
-      "weight": 8.78
-    },
-    {
-      "stock_code": "300969",
-      "stock_name": "恒帅股份",
-      "weight": 7.9
+      "weight": 9.42
     },
     {
       "stock_code": "00425",
       "stock_name": "敏实集团",
-      "weight": 7.0
+      "weight": 9.15
+    },
+    {
+      "stock_code": "300969",
+      "stock_name": "恒帅股份",
+      "weight": 9.06
     },
     {
       "stock_code": "601100",
       "stock_name": "恒立液压",
-      "weight": 6.83
+      "weight": 7.95
     },
     {
-      "stock_code": "688160",
-      "stock_name": "步科股份",
-      "weight": 5.11
-    },
-    {
-      "stock_code": "603040",
-      "stock_name": "新坐标",
-      "weight": 4.32
-    },
-    {
-      "stock_code": "002937",
-      "stock_name": "兴瑞科技",
-      "weight": 4.19
+      "stock_code": "603920",
+      "stock_name": "世运电路",
+      "weight": 5.42
     },
     {
       "stock_code": "688322",
       "stock_name": "奥比中光",
-      "weight": 4.15
+      "weight": 5.32
     },
     {
-      "stock_code": "300354",
-      "stock_name": "东华测试",
-      "weight": 3.97
+      "stock_code": "603040",
+      "stock_name": "新坐标",
+      "weight": 5.02
+    },
+    {
+      "stock_code": "002937",
+      "stock_name": "兴瑞科技",
+      "weight": 4.37
+    },
+    {
+      "stock_code": "603730",
+      "stock_name": "岱美股份",
+      "weight": 4.3
+    },
+    {
+      "stock_code": "301161",
+      "stock_name": "唯万密封",
+      "weight": 4.0
     }
   ],
-  "fetched_at": "2026-03-29 23:17:17",
+  "fetched_at": "2026-04-27 13:57:26",
   "data_source": "eastmoney"
 }

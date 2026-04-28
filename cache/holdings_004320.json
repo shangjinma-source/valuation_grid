@@ -1,62 +1,67 @@
 {
   "fund_code": "004320",
   "fund_name": "前海开源沪港深乐享生活",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.5,
-  "parsed_weight": 84.28,
-  "missing_weight": 10.22,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.33,
+  "parsed_weight": 80.17,
+  "missing_weight": 14.16,
   "positions": [
-    {
-      "stock_code": "300308",
-      "stock_name": "中际旭创",
-      "weight": 9.4
-    },
     {
       "stock_code": "300502",
       "stock_name": "新易盛",
-      "weight": 9.02
+      "weight": 8.8
     },
     {
-      "stock_code": "603083",
-      "stock_name": "剑桥科技",
-      "weight": 8.74
-    },
-    {
-      "stock_code": "300570",
-      "stock_name": "太辰光",
-      "weight": 8.61
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 8.63
     },
     {
       "stock_code": "603306",
       "stock_name": "华懋科技",
-      "weight": 8.58
+      "weight": 7.86
     },
     {
-      "stock_code": "002384",
-      "stock_name": "东山精密",
-      "weight": 8.54
+      "stock_code": "603052",
+      "stock_name": "可川科技",
+      "weight": 7.79
     },
     {
-      "stock_code": "002837",
-      "stock_name": "英维克",
-      "weight": 8.41
-    },
-    {
-      "stock_code": "688668",
-      "stock_name": "鼎通科技",
-      "weight": 8.14
+      "stock_code": "603083",
+      "stock_name": "剑桥科技",
+      "weight": 7.75
     },
     {
       "stock_code": "002222",
       "stock_name": "福晶科技",
-      "weight": 7.91
+      "weight": 7.65
     },
     {
-      "stock_code": "688498",
-      "stock_name": "源杰科技",
-      "weight": 6.93
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 7.54
+    },
+    {
+      "stock_code": "300757",
+      "stock_name": "罗博特科",
+      "weight": 7.53
+    },
+    {
+      "stock_code": "600330",
+      "stock_name": "天通股份",
+      "weight": 7.16
+    },
+    {
+      "stock_code": "603738",
+      "stock_name": "泰晶科技",
+      "weight": 5.22
+    },
+    {
+      "stock_code": "300843",
+      "stock_name": "胜蓝股份",
+      "weight": 4.24
     }
   ],
-  "fetched_at": "2026-03-29 23:13:48",
+  "fetched_at": "2026-04-27 13:53:42",
   "data_source": "eastmoney"
 }

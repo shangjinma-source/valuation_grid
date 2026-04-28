@@ -1,63 +1,63 @@
 {
   "fund_code": "024329",
   "fund_name": "易方达恒生港股通创新药ETF联接发起式C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 98.82,
-  "parsed_weight": 73.35,
-  "missing_weight": 25.47,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.1,
+  "parsed_weight": 70.04,
+  "missing_weight": 29.06,
   "positions": [
     {
       "stock_code": "09926",
       "stock_name": "康方生物",
-      "weight": 10.36
-    },
-    {
-      "stock_code": "01093",
-      "stock_name": "石药集团",
-      "weight": 10.31
-    },
-    {
-      "stock_code": "06160",
-      "stock_name": "百济神州",
-      "weight": 9.82
-    },
-    {
-      "stock_code": "01177",
-      "stock_name": "中国生物制药",
-      "weight": 9.67
+      "weight": 12.05
     },
     {
       "stock_code": "01801",
       "stock_name": "信达生物",
-      "weight": 8.91
+      "weight": 9.77
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 9.11
+    },
+    {
+      "stock_code": "06160",
+      "stock_name": "百济神州",
+      "weight": 8.88
+    },
+    {
+      "stock_code": "01177",
+      "stock_name": "中国生物制药",
+      "weight": 8.0
     },
     {
       "stock_code": "03692",
       "stock_name": "翰森制药",
-      "weight": 8.28
+      "weight": 7.07
     },
     {
       "stock_code": "01530",
       "stock_name": "三生制药",
-      "weight": 7.14
+      "weight": 6.05
     },
     {
       "stock_code": "06990",
-      "stock_name": "科伦博泰生物-B",
-      "weight": 3.87
+      "stock_name": "科伦博泰生物",
+      "weight": 3.95
+    },
+    {
+      "stock_code": "09606",
+      "stock_name": "映恩生物-B",
+      "weight": 2.79
     },
     {
       "stock_code": "00867",
       "stock_name": "康哲药业",
-      "weight": 2.62
-    },
-    {
-      "stock_code": "06855",
-      "stock_name": "亚盛医药-B",
       "weight": 2.37
     }
   ],
-  "fetched_at": "2026-03-29 23:20:31",
+  "fetched_at": "2026-04-27 14:00:50",
   "data_source": "eastmoney",
   "original_fund_code": "024329",
   "etf_target": "159316",

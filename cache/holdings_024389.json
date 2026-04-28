@@ -1,62 +1,62 @@
 {
   "fund_code": "024389",
   "fund_name": "中航智选领航混合发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.69,
-  "parsed_weight": 80.98,
-  "missing_weight": 13.71,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.32,
+  "parsed_weight": 81.97,
+  "missing_weight": 12.35,
   "positions": [
     {
       "stock_code": "688326",
       "stock_name": "经纬恒润",
-      "weight": 9.89
-    },
-    {
-      "stock_code": "603920",
-      "stock_name": "世运电路",
-      "weight": 9.79
-    },
-    {
-      "stock_code": "09660",
-      "stock_name": "地平线机器人-W",
-      "weight": 9.7
-    },
-    {
-      "stock_code": "02533",
-      "stock_name": "黑芝麻智能",
-      "weight": 9.42
-    },
-    {
-      "stock_code": "002920",
-      "stock_name": "德赛西威",
-      "weight": 9.15
+      "weight": 10.2
     },
     {
       "stock_code": "02498",
       "stock_name": "速腾聚创",
-      "weight": 8.18
+      "weight": 10.06
+    },
+    {
+      "stock_code": "09660",
+      "stock_name": "地平线机器人-W",
+      "weight": 9.73
     },
     {
       "stock_code": "09868",
-      "stock_name": "小鹏汽车-W",
-      "weight": 7.5
+      "stock_name": "小鹏集团-W",
+      "weight": 9.06
     },
     {
-      "stock_code": "603179",
-      "stock_name": "新泉股份",
-      "weight": 5.79
+      "stock_code": "02533",
+      "stock_name": "黑芝麻智能",
+      "weight": 8.96
+    },
+    {
+      "stock_code": "002920",
+      "stock_name": "德赛西威",
+      "weight": 8.38
     },
     {
       "stock_code": "688648",
       "stock_name": "中邮科技",
-      "weight": 5.78
+      "weight": 6.77
     },
     {
-      "stock_code": "600699",
-      "stock_name": "均胜电子",
-      "weight": 5.78
+      "stock_code": "603920",
+      "stock_name": "世运电路",
+      "weight": 6.63
+    },
+    {
+      "stock_code": "603179",
+      "stock_name": "新泉股份",
+      "weight": 6.58
+    },
+    {
+      "stock_code": "603596",
+      "stock_name": "伯特利",
+      "weight": 5.6
     }
   ],
-  "fetched_at": "2026-03-29 23:17:45",
+  "fetched_at": "2026-04-27 13:57:57",
   "data_source": "eastmoney"
 }

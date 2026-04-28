@@ -1,172 +1,62 @@
 {
   "fund_code": "020124",
   "fund_name": "银华沪深股通精选混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 68.84,
-  "parsed_weight": 68.83,
-  "missing_weight": 0.01,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 88.69,
+  "parsed_weight": 51.77,
+  "missing_weight": 36.92,
   "positions": [
     {
       "stock_code": "600030",
       "stock_name": "中信证券",
-      "weight": 5.64
-    },
-    {
-      "stock_code": "601198",
-      "stock_name": "东兴证券",
-      "weight": 4.84
-    },
-    {
-      "stock_code": "600958",
-      "stock_name": "东方证券",
-      "weight": 4.75
-    },
-    {
-      "stock_code": "601211",
-      "stock_name": "国泰海通",
-      "weight": 4.41
-    },
-    {
-      "stock_code": "601377",
-      "stock_name": "兴业证券",
-      "weight": 4.07
-    },
-    {
-      "stock_code": "002155",
-      "stock_name": "湖南黄金",
-      "weight": 3.88
-    },
-    {
-      "stock_code": "600999",
-      "stock_name": "招商证券",
-      "weight": 3.63
-    },
-    {
-      "stock_code": "002027",
-      "stock_name": "分众传媒",
-      "weight": 3.58
-    },
-    {
-      "stock_code": "601555",
-      "stock_name": "东吴证券",
-      "weight": 3.54
-    },
-    {
-      "stock_code": "300413",
-      "stock_name": "芒果超媒",
-      "weight": 2.33
-    },
-    {
-      "stock_code": "600547",
-      "stock_name": "山东黄金",
-      "weight": 2.3
-    },
-    {
-      "stock_code": "300674",
-      "stock_name": "宇信科技",
-      "weight": 2.27
-    },
-    {
-      "stock_code": "000617",
-      "stock_name": "中油资本",
-      "weight": 2.25
-    },
-    {
-      "stock_code": "601788",
-      "stock_name": "光大证券",
-      "weight": 2.18
-    },
-    {
-      "stock_code": "300498",
-      "stock_name": "温氏股份",
-      "weight": 1.91
-    },
-    {
-      "stock_code": "002987",
-      "stock_name": "京北方",
-      "weight": 1.82
-    },
-    {
-      "stock_code": "603501",
-      "stock_name": "豪威集团",
-      "weight": 1.63
-    },
-    {
-      "stock_code": "300408",
-      "stock_name": "三环集团",
-      "weight": 1.57
-    },
-    {
-      "stock_code": "601985",
-      "stock_name": "中国核电",
-      "weight": 1.5
-    },
-    {
-      "stock_code": "000538",
-      "stock_name": "云南白药",
-      "weight": 1.44
-    },
-    {
-      "stock_code": "000898",
-      "stock_name": "鞍钢股份",
-      "weight": 1.41
-    },
-    {
-      "stock_code": "601066",
-      "stock_name": "中信建投",
-      "weight": 1.36
-    },
-    {
-      "stock_code": "002926",
-      "stock_name": "华西证券",
-      "weight": 1.27
+      "weight": 7.51
     },
     {
       "stock_code": "601688",
       "stock_name": "华泰证券",
-      "weight": 1.04
+      "weight": 7.11
     },
     {
-      "stock_code": "300059",
-      "stock_name": "东方财富",
-      "weight": 0.95
+      "stock_code": "000728",
+      "stock_name": "国元证券",
+      "weight": 5.6
     },
     {
-      "stock_code": "600085",
-      "stock_name": "同仁堂",
-      "weight": 0.65
+      "stock_code": "601211",
+      "stock_name": "国泰海通",
+      "weight": 5.48
     },
     {
-      "stock_code": "300142",
-      "stock_name": "沃森生物",
-      "weight": 0.64
+      "stock_code": "600958",
+      "stock_name": "东方证券",
+      "weight": 5.42
     },
     {
-      "stock_code": "601600",
-      "stock_name": "中国铝业",
-      "weight": 0.59
+      "stock_code": "000776",
+      "stock_name": "广发证券",
+      "weight": 5.34
     },
     {
-      "stock_code": "600760",
-      "stock_name": "中航沈飞",
-      "weight": 0.55
+      "stock_code": "601377",
+      "stock_name": "兴业证券",
+      "weight": 5.13
     },
     {
-      "stock_code": "300122",
-      "stock_name": "智飞生物",
-      "weight": 0.46
+      "stock_code": "002027",
+      "stock_name": "分众传媒",
+      "weight": 4.26
     },
     {
-      "stock_code": "688172",
-      "stock_name": "燕东微",
-      "weight": 0.31
+      "stock_code": "601888",
+      "stock_name": "中国中免",
+      "weight": 3.0
     },
     {
-      "stock_code": "002532",
-      "stock_name": "天山铝业",
-      "weight": 0.06
+      "stock_code": "600547",
+      "stock_name": "山东黄金",
+      "weight": 2.92
     }
   ],
-  "fetched_at": "2026-03-29 23:10:59",
+  "fetched_at": "2026-04-27 13:50:53",
   "data_source": "eastmoney"
 }

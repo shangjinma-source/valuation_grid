@@ -1,62 +1,62 @@
 {
   "fund_code": "024358",
   "fund_name": "东方阿尔法健康产业混合发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 93.03,
-  "parsed_weight": 71.63,
-  "missing_weight": 21.4,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 88.98,
+  "parsed_weight": 71.74,
+  "missing_weight": 17.24,
   "positions": [
+    {
+      "stock_code": "06990",
+      "stock_name": "科伦博泰生物",
+      "weight": 9.44
+    },
     {
       "stock_code": "002294",
       "stock_name": "信立泰",
-      "weight": 8.34
+      "weight": 9.37
     },
     {
       "stock_code": "01801",
       "stock_name": "信达生物",
-      "weight": 8.12
-    },
-    {
-      "stock_code": "06990",
-      "stock_name": "科伦博泰生物-B",
-      "weight": 8.11
-    },
-    {
-      "stock_code": "09606",
-      "stock_name": "映恩生物-B",
-      "weight": 7.68
-    },
-    {
-      "stock_code": "01530",
-      "stock_name": "三生制药",
-      "weight": 7.57
-    },
-    {
-      "stock_code": "688382",
-      "stock_name": "益方生物",
-      "weight": 7.32
-    },
-    {
-      "stock_code": "688513",
-      "stock_name": "苑东生物",
-      "weight": 7.12
-    },
-    {
-      "stock_code": "688068",
-      "stock_name": "热景生物",
-      "weight": 6.95
-    },
-    {
-      "stock_code": "688658",
-      "stock_name": "悦康药业",
-      "weight": 5.68
+      "weight": 9.13
     },
     {
       "stock_code": "688266",
       "stock_name": "泽璟制药",
-      "weight": 4.74
+      "weight": 8.33
+    },
+    {
+      "stock_code": "09926",
+      "stock_name": "康方生物",
+      "weight": 7.81
+    },
+    {
+      "stock_code": "09606",
+      "stock_name": "映恩生物-B",
+      "weight": 6.93
+    },
+    {
+      "stock_code": "01530",
+      "stock_name": "三生制药",
+      "weight": 6.5
+    },
+    {
+      "stock_code": "688382",
+      "stock_name": "益方生物",
+      "weight": 5.53
+    },
+    {
+      "stock_code": "688513",
+      "stock_name": "苑东生物",
+      "weight": 4.53
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 4.17
     }
   ],
-  "fetched_at": "2026-03-29 23:19:53",
+  "fetched_at": "2026-04-27 14:00:08",
   "data_source": "eastmoney"
 }

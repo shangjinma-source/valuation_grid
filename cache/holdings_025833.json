@@ -1,8 +1,62 @@
 {
   "fund_code": "025833",
-  "fund_name": "天弘中证电网设备主题指数发起C",
-  "_no_holdings": true,
-  "_reason": "无持仓数据",
-  "positions": [],
-  "fetched_at": "2026-03-01 02:51:45"
+  "fund_name": "天弘电网设备特高压指数C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.93,
+  "parsed_weight": 55.32,
+  "missing_weight": 39.61,
+  "positions": [
+    {
+      "stock_code": "600089",
+      "stock_name": "特变电工",
+      "weight": 10.45
+    },
+    {
+      "stock_code": "002028",
+      "stock_name": "思源电气",
+      "weight": 9.94
+    },
+    {
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 8.37
+    },
+    {
+      "stock_code": "600406",
+      "stock_name": "国电南瑞",
+      "weight": 7.94
+    },
+    {
+      "stock_code": "600522",
+      "stock_name": "中天科技",
+      "weight": 6.54
+    },
+    {
+      "stock_code": "601877",
+      "stock_name": "正泰电器",
+      "weight": 2.98
+    },
+    {
+      "stock_code": "601179",
+      "stock_name": "中国西电",
+      "weight": 2.96
+    },
+    {
+      "stock_code": "600885",
+      "stock_name": "宏发股份",
+      "weight": 2.15
+    },
+    {
+      "stock_code": "601126",
+      "stock_name": "四方股份",
+      "weight": 2.09
+    },
+    {
+      "stock_code": "603606",
+      "stock_name": "东方电缆",
+      "weight": 1.9
+    }
+  ],
+  "fetched_at": "2026-04-22 13:50:27",
+  "data_source": "eastmoney"
 }

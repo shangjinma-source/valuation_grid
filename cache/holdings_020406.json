@@ -1,313 +1,93 @@
 {
   "fund_code": "020406",
   "fund_name": "国泰中证油气产业ETF发起联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.6,
-  "parsed_weight": 99.53,
-  "missing_weight": 0.07,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.78,
+  "parsed_weight": 69.13,
+  "missing_weight": 30.65,
   "positions": [
     {
       "stock_code": "600938",
       "stock_name": "中国海油",
-      "weight": 10.11
+      "weight": 10.87
     },
     {
       "stock_code": "601857",
       "stock_name": "中国石油",
-      "weight": 10.11
-    },
-    {
-      "stock_code": "600028",
-      "stock_name": "中国石化",
-      "weight": 9.93
+      "weight": 9.58
     },
     {
       "stock_code": "002353",
       "stock_name": "杰瑞股份",
-      "weight": 8.23
+      "weight": 9.06
     },
     {
       "stock_code": "601872",
       "stock_name": "招商轮船",
-      "weight": 5.43
+      "weight": 8.01
     },
     {
-      "stock_code": "600256",
-      "stock_name": "广汇能源",
-      "weight": 4.12
+      "stock_code": "600028",
+      "stock_name": "中国石化",
+      "weight": 7.63
     },
     {
       "stock_code": "600026",
       "stock_name": "中远海能",
-      "weight": 3.65
+      "weight": 5.58
     },
     {
-      "stock_code": "600346",
-      "stock_name": "恒力石化",
-      "weight": 2.91
-    },
-    {
-      "stock_code": "002493",
-      "stock_name": "荣盛石化",
-      "weight": 2.53
+      "stock_code": "600256",
+      "stock_name": "广汇能源",
+      "weight": 4.54
     },
     {
       "stock_code": "600759",
       "stock_name": "洲际油气",
-      "weight": 2.42
-    },
-    {
-      "stock_code": "600583",
-      "stock_name": "海油工程",
-      "weight": 2.27
+      "weight": 3.56
     },
     {
       "stock_code": "601975",
       "stock_name": "招商南油",
-      "weight": 2.19
+      "weight": 2.53
     },
     {
-      "stock_code": "002639",
-      "stock_name": "雪人集团",
-      "weight": 2.14
+      "stock_code": "600346",
+      "stock_name": "恒力石化",
+      "weight": 2.27
     },
     {
-      "stock_code": "000301",
-      "stock_name": "东方盛虹",
-      "weight": 2.08
-    },
-    {
-      "stock_code": "600871",
-      "stock_name": "石化油服",
-      "weight": 1.64
-    },
-    {
-      "stock_code": "603619",
-      "stock_name": "中曼石油",
-      "weight": 1.61
-    },
-    {
-      "stock_code": "601808",
-      "stock_name": "中海油服",
-      "weight": 1.56
-    },
-    {
-      "stock_code": "600968",
-      "stock_name": "海油发展",
-      "weight": 1.46
-    },
-    {
-      "stock_code": "002221",
-      "stock_name": "东华能源",
-      "weight": 1.43
-    },
-    {
-      "stock_code": "000703",
-      "stock_name": "恒逸石化",
-      "weight": 1.4
-    },
-    {
-      "stock_code": "601969",
-      "stock_name": "海南矿业",
-      "weight": 1.33
-    },
-    {
-      "stock_code": "601216",
-      "stock_name": "君正集团",
-      "weight": 1.17
-    },
-    {
-      "stock_code": "600688",
-      "stock_name": "上海石化",
-      "weight": 1.14
-    },
-    {
-      "stock_code": "300228",
-      "stock_name": "富瑞特装",
-      "weight": 1.11
-    },
-    {
-      "stock_code": "600642",
-      "stock_name": "申能股份",
-      "weight": 1.09
+      "stock_code": "600583",
+      "stock_name": "海油工程",
+      "weight": 2.18
     },
     {
       "stock_code": "600339",
       "stock_name": "中油工程",
-      "weight": 1.05
+      "weight": 1.01
     },
     {
-      "stock_code": "000059",
-      "stock_name": "华锦股份",
-      "weight": 0.96
-    },
-    {
-      "stock_code": "600095",
-      "stock_name": "湘财股份",
-      "weight": 0.91
-    },
-    {
-      "stock_code": "000422",
-      "stock_name": "湖北宜化",
-      "weight": 0.89
-    },
-    {
-      "stock_code": "002094",
-      "stock_name": "青岛金王",
-      "weight": 0.79
-    },
-    {
-      "stock_code": "300191",
-      "stock_name": "潜能恒信",
-      "weight": 0.65
-    },
-    {
-      "stock_code": "000852",
-      "stock_name": "石化机械",
-      "weight": 0.65
-    },
-    {
-      "stock_code": "002549",
-      "stock_name": "凯美特气",
-      "weight": 0.65
-    },
-    {
-      "stock_code": "601678",
-      "stock_name": "滨化股份",
-      "weight": 0.63
-    },
-    {
-      "stock_code": "600063",
-      "stock_name": "皖维高新",
-      "weight": 0.61
-    },
-    {
-      "stock_code": "000968",
-      "stock_name": "蓝焰控股",
-      "weight": 0.6
-    },
-    {
-      "stock_code": "600273",
-      "stock_name": "嘉化能源",
-      "weight": 0.59
-    },
-    {
-      "stock_code": "003022",
-      "stock_name": "联泓新科",
-      "weight": 0.58
+      "stock_code": "300228",
+      "stock_name": "富瑞特装",
+      "weight": 0.85
     },
     {
       "stock_code": "002554",
       "stock_name": "惠博普",
-      "weight": 0.56
-    },
-    {
-      "stock_code": "000096",
-      "stock_name": "广聚能源",
       "weight": 0.51
     },
     {
-      "stock_code": "603223",
-      "stock_name": "恒通股份",
+      "stock_code": "000852",
+      "stock_name": "石化机械",
       "weight": 0.5
     },
     {
-      "stock_code": "600724",
-      "stock_name": "宁波富达",
-      "weight": 0.47
-    },
-    {
-      "stock_code": "603727",
-      "stock_name": "博迈科",
-      "weight": 0.44
-    },
-    {
-      "stock_code": "600269",
-      "stock_name": "赣粤高速",
-      "weight": 0.43
-    },
-    {
-      "stock_code": "603800",
-      "stock_name": "洪田股份",
-      "weight": 0.43
-    },
-    {
-      "stock_code": "600623",
-      "stock_name": "华谊集团",
-      "weight": 0.42
-    },
-    {
-      "stock_code": "300055",
-      "stock_name": "万邦达",
-      "weight": 0.35
-    },
-    {
-      "stock_code": "000819",
-      "stock_name": "岳阳兴长",
-      "weight": 0.3
-    },
-    {
-      "stock_code": "601107",
-      "stock_name": "四川成渝",
-      "weight": 0.29
-    },
-    {
-      "stock_code": "600230",
-      "stock_name": "沧州大化",
-      "weight": 0.27
-    },
-    {
-      "stock_code": "002971",
-      "stock_name": "和远气体",
-      "weight": 0.27
-    },
-    {
-      "stock_code": "002267",
-      "stock_name": "陕天然气",
-      "weight": 0.24
-    },
-    {
-      "stock_code": "002053",
-      "stock_name": "云南能投",
-      "weight": 0.22
-    },
-    {
-      "stock_code": "600506",
-      "stock_name": "统一股份",
-      "weight": 0.22
-    },
-    {
-      "stock_code": "002986",
-      "stock_name": "宇新股份",
-      "weight": 0.2
-    },
-    {
-      "stock_code": "600207",
-      "stock_name": "安彩高科",
-      "weight": 0.2
-    },
-    {
-      "stock_code": "603310",
-      "stock_name": "巍华新材",
-      "weight": 0.16
-    },
-    {
-      "stock_code": "603125",
-      "stock_name": "常青科技",
-      "weight": 0.15
-    },
-    {
-      "stock_code": "603209",
-      "stock_name": "兴通股份",
-      "weight": 0.14
-    },
-    {
-      "stock_code": "688196",
-      "stock_name": "卓越新能",
-      "weight": 0.14
+      "stock_code": "002549",
+      "stock_name": "凯美特气",
+      "weight": 0.45
     }
   ],
-  "fetched_at": "2026-03-29 23:22:03",
+  "fetched_at": "2026-04-27 14:02:29",
   "data_source": "eastmoney",
   "original_fund_code": "020406",
   "etf_target": "561360",

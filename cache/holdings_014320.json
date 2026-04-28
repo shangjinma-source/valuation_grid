@@ -1,62 +1,62 @@
 {
   "fund_code": "014320",
   "fund_name": "德邦半导体产业混合发起式C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 93.89,
-  "parsed_weight": 54.12,
-  "missing_weight": 39.77,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.27,
+  "parsed_weight": 50.43,
+  "missing_weight": 41.84,
   "positions": [
-    {
-      "stock_code": "688041",
-      "stock_name": "海光信息",
-      "weight": 6.95
-    },
     {
       "stock_code": "300476",
       "stock_name": "胜宏科技",
-      "weight": 6.85
+      "weight": 6.05
     },
     {
-      "stock_code": "688256",
-      "stock_name": "寒武纪",
-      "weight": 6.78
-    },
-    {
-      "stock_code": "00981",
-      "stock_name": "中芯国际",
-      "weight": 6.07
-    },
-    {
-      "stock_code": "001309",
-      "stock_name": "德明利",
-      "weight": 5.78
-    },
-    {
-      "stock_code": "301308",
-      "stock_name": "江波龙",
-      "weight": 4.67
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 5.91
     },
     {
       "stock_code": "603986",
       "stock_name": "兆易创新",
-      "weight": 4.59
+      "weight": 5.58
+    },
+    {
+      "stock_code": "688167",
+      "stock_name": "炬光科技",
+      "weight": 5.33
+    },
+    {
+      "stock_code": "00981",
+      "stock_name": "中芯国际",
+      "weight": 5.24
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 5.17
+    },
+    {
+      "stock_code": "688372",
+      "stock_name": "伟测科技",
+      "weight": 4.53
+    },
+    {
+      "stock_code": "01347",
+      "stock_name": "华虹半导体",
+      "weight": 4.33
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 4.3
     },
     {
       "stock_code": "688072",
       "stock_name": "拓荆科技",
-      "weight": 4.27
-    },
-    {
-      "stock_code": "09660",
-      "stock_name": "地平线机器人-W",
-      "weight": 4.14
-    },
-    {
-      "stock_code": "688548",
-      "stock_name": "广钢气体",
-      "weight": 4.02
+      "weight": 3.99
     }
   ],
-  "fetched_at": "2026-03-29 23:12:41",
+  "fetched_at": "2026-04-27 13:52:39",
   "data_source": "eastmoney"
 }

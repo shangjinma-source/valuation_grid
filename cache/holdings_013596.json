@@ -1,77 +1,77 @@
 {
   "fund_code": "013596",
   "fund_name": "招商中证煤炭等权指数(LOF)C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.66,
-  "parsed_weight": 32.84,
-  "missing_weight": 61.82,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.54,
+  "parsed_weight": 37.28,
+  "missing_weight": 57.26,
   "positions": [
     {
-      "stock_code": "600348",
-      "stock_name": "华阳股份",
-      "weight": 3.46
-    },
-    {
-      "stock_code": "601666",
-      "stock_name": "平煤股份",
-      "weight": 3.35
-    },
-    {
-      "stock_code": "601088",
-      "stock_name": "中国神华",
-      "weight": 3.29
-    },
-    {
-      "stock_code": "600395",
-      "stock_name": "盘江股份",
-      "weight": 3.29
-    },
-    {
-      "stock_code": "601101",
-      "stock_name": "昊华能源",
-      "weight": 3.25
-    },
-    {
-      "stock_code": "600546",
-      "stock_name": "山煤国际",
-      "weight": 3.24
+      "stock_code": "600726",
+      "stock_name": "华电能源",
+      "weight": 6.95
     },
     {
       "stock_code": "600188",
       "stock_name": "兖矿能源",
+      "weight": 3.96
+    },
+    {
+      "stock_code": "601898",
+      "stock_name": "中煤能源",
+      "weight": 3.54
+    },
+    {
+      "stock_code": "601088",
+      "stock_name": "中国神华",
+      "weight": 3.42
+    },
+    {
+      "stock_code": "600395",
+      "stock_name": "盘江股份",
+      "weight": 3.33
+    },
+    {
+      "stock_code": "601015",
+      "stock_name": "陕西黑猫",
       "weight": 3.23
     },
     {
-      "stock_code": "601918",
-      "stock_name": "新集能源",
+      "stock_code": "600985",
+      "stock_name": "淮北矿业",
       "weight": 3.23
     },
     {
-      "stock_code": "000983",
-      "stock_name": "山西焦煤",
-      "weight": 3.21
+      "stock_code": "601001",
+      "stock_name": "晋控煤业",
+      "weight": 3.22
     },
     {
-      "stock_code": "600925",
-      "stock_name": "苏能股份",
-      "weight": 3.19
+      "stock_code": "601101",
+      "stock_name": "昊华能源",
+      "weight": 3.2
     },
     {
-      "stock_code": "600930",
-      "stock_name": "华电新能",
-      "weight": 0.08
-    },
-    {
-      "stock_code": "301656",
-      "stock_name": "联合动力",
-      "weight": 0.01
+      "stock_code": "601225",
+      "stock_name": "陕西煤业",
+      "weight": 3.17
     },
     {
       "stock_code": "001280",
       "stock_name": "中国铀业",
       "weight": 0.01
+    },
+    {
+      "stock_code": "301683",
+      "stock_name": "慧谷新材",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301682",
+      "stock_name": "宏明电子",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-03-29 23:18:36",
+  "fetched_at": "2026-04-27 13:58:48",
   "data_source": "eastmoney"
 }

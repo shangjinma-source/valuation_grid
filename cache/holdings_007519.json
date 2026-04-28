@@ -1,62 +1,62 @@
 {
   "fund_code": "007519",
   "fund_name": "东方阿尔法优选混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.39,
-  "parsed_weight": 55.22,
-  "missing_weight": 39.17,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.89,
+  "parsed_weight": 48.21,
+  "missing_weight": 45.68,
   "positions": [
     {
-      "stock_code": "603119",
-      "stock_name": "浙江荣泰",
-      "weight": 8.22
+      "stock_code": "300953",
+      "stock_name": "震裕科技",
+      "weight": 6.49
+    },
+    {
+      "stock_code": "002850",
+      "stock_name": "科达利",
+      "weight": 5.78
+    },
+    {
+      "stock_code": "688257",
+      "stock_name": "新锐股份",
+      "weight": 5.7
     },
     {
       "stock_code": "301550",
       "stock_name": "斯菱智驱",
-      "weight": 6.27
-    },
-    {
-      "stock_code": "688698",
-      "stock_name": "伟创电气",
-      "weight": 5.76
-    },
-    {
-      "stock_code": "300953",
-      "stock_name": "震裕科技",
-      "weight": 5.42
-    },
-    {
-      "stock_code": "301225",
-      "stock_name": "恒勃股份",
-      "weight": 5.34
-    },
-    {
-      "stock_code": "603179",
-      "stock_name": "新泉股份",
-      "weight": 5.32
-    },
-    {
-      "stock_code": "601100",
-      "stock_name": "恒立液压",
-      "weight": 5.08
-    },
-    {
-      "stock_code": "300115",
-      "stock_name": "长盈精密",
-      "weight": 4.84
-    },
-    {
-      "stock_code": "605488",
-      "stock_name": "福莱新材",
-      "weight": 4.6
+      "weight": 5.61
     },
     {
       "stock_code": "603667",
       "stock_name": "五洲新春",
-      "weight": 4.37
+      "weight": 4.83
+    },
+    {
+      "stock_code": "000700",
+      "stock_name": "模塑科技",
+      "weight": 4.42
+    },
+    {
+      "stock_code": "301529",
+      "stock_name": "福赛科技",
+      "weight": 4.0
+    },
+    {
+      "stock_code": "605128",
+      "stock_name": "上海沿浦",
+      "weight": 3.94
+    },
+    {
+      "stock_code": "300680",
+      "stock_name": "隆盛科技",
+      "weight": 3.92
+    },
+    {
+      "stock_code": "605488",
+      "stock_name": "福莱新材",
+      "weight": 3.52
     }
   ],
-  "fetched_at": "2026-03-29 23:16:42",
+  "fetched_at": "2026-04-27 13:56:48",
   "data_source": "eastmoney"
 }

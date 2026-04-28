@@ -1,62 +1,62 @@
 {
   "fund_code": "020594",
   "fund_name": "华夏软件龙头混合发起式C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 86.94,
-  "parsed_weight": 69.1,
-  "missing_weight": 17.84,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 89.06,
+  "parsed_weight": 63.1,
+  "missing_weight": 25.96,
   "positions": [
     {
-      "stock_code": "688095",
-      "stock_name": "福昕软件",
-      "weight": 9.47
-    },
-    {
-      "stock_code": "688615",
-      "stock_name": "合合信息",
-      "weight": 8.62
-    },
-    {
-      "stock_code": "603171",
-      "stock_name": "税友股份",
-      "weight": 8.56
+      "stock_code": "01860",
+      "stock_name": "汇量科技",
+      "weight": 8.68
     },
     {
       "stock_code": "002315",
       "stock_name": "焦点科技",
-      "weight": 8.36
+      "weight": 8.65
     },
     {
-      "stock_code": "01860",
-      "stock_name": "汇量科技",
-      "weight": 6.9
+      "stock_code": "603171",
+      "stock_name": "税友股份",
+      "weight": 8.31
+    },
+    {
+      "stock_code": "301162",
+      "stock_name": "国能日新",
+      "weight": 8.3
+    },
+    {
+      "stock_code": "688095",
+      "stock_name": "福昕软件",
+      "weight": 6.24
+    },
+    {
+      "stock_code": "002432",
+      "stock_name": "九安医疗",
+      "weight": 5.81
+    },
+    {
+      "stock_code": "600845",
+      "stock_name": "宝信软件",
+      "weight": 5.72
     },
     {
       "stock_code": "000977",
       "stock_name": "浪潮信息",
-      "weight": 6.28
+      "weight": 3.99
     },
     {
-      "stock_code": "00268",
-      "stock_name": "金蝶国际",
-      "weight": 6.2
+      "stock_code": "301165",
+      "stock_name": "锐捷网络",
+      "weight": 3.96
     },
     {
-      "stock_code": "688258",
-      "stock_name": "卓易信息",
-      "weight": 5.89
-    },
-    {
-      "stock_code": "01024",
-      "stock_name": "快手-W",
-      "weight": 4.55
-    },
-    {
-      "stock_code": "688369",
-      "stock_name": "致远互联",
-      "weight": 4.27
+      "stock_code": "301269",
+      "stock_name": "华大九天",
+      "weight": 3.44
     }
   ],
-  "fetched_at": "2026-03-29 23:15:24",
+  "fetched_at": "2026-04-27 13:55:26",
   "data_source": "eastmoney"
 }

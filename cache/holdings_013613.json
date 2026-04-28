@@ -1,62 +1,62 @@
 {
   "fund_code": "013613",
   "fund_name": "宝盈国家安全沪港深股票C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 87.77,
-  "parsed_weight": 58.63,
-  "missing_weight": 29.14,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 90.41,
+  "parsed_weight": 53.61,
+  "missing_weight": 36.8,
   "positions": [
     {
       "stock_code": "300502",
       "stock_name": "新易盛",
-      "weight": 7.89
-    },
-    {
-      "stock_code": "600118",
-      "stock_name": "中国卫星",
-      "weight": 7.65
-    },
-    {
-      "stock_code": "688270",
-      "stock_name": "臻镭科技",
-      "weight": 6.89
-    },
-    {
-      "stock_code": "300308",
-      "stock_name": "中际旭创",
-      "weight": 5.9
+      "weight": 8.39
     },
     {
       "stock_code": "300394",
       "stock_name": "天孚通信",
-      "weight": 5.58
+      "weight": 7.72
     },
     {
-      "stock_code": "688668",
-      "stock_name": "鼎通科技",
-      "weight": 5.18
+      "stock_code": "300903",
+      "stock_name": "科翔股份",
+      "weight": 5.72
     },
     {
-      "stock_code": "300136",
-      "stock_name": "信维通信",
-      "weight": 5.13
+      "stock_code": "601869",
+      "stock_name": "长飞光纤",
+      "weight": 5.63
     },
     {
-      "stock_code": "300762",
-      "stock_name": "上海瀚讯",
-      "weight": 5.1
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 5.02
     },
     {
-      "stock_code": "605598",
-      "stock_name": "上海港湾",
-      "weight": 4.76
+      "stock_code": "688627",
+      "stock_name": "精智达",
+      "weight": 4.47
     },
     {
       "stock_code": "01347",
       "stock_name": "华虹半导体",
-      "weight": 4.55
+      "weight": 4.31
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 4.3
+    },
+    {
+      "stock_code": "301018",
+      "stock_name": "申菱环境",
+      "weight": 4.21
+    },
+    {
+      "stock_code": "688270",
+      "stock_name": "ST臻镭",
+      "weight": 3.84
     }
   ],
-  "fetched_at": "2026-03-29 23:21:49",
+  "fetched_at": "2026-04-27 14:02:13",
   "data_source": "eastmoney"
 }

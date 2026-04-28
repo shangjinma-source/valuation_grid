@@ -1,62 +1,62 @@
 {
   "fund_code": "018503",
-  "fund_name": "东财光伏C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.95,
-  "parsed_weight": 52.35,
-  "missing_weight": 42.6,
+  "fund_name": "东财中证光伏指数发起式C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.82,
+  "parsed_weight": 50.58,
+  "missing_weight": 44.24,
   "positions": [
     {
       "stock_code": "600089",
       "stock_name": "特变电工",
-      "weight": 9.36
+      "weight": 10.34
     },
     {
       "stock_code": "601012",
       "stock_name": "隆基绿能",
-      "weight": 9.2
+      "weight": 8.21
     },
     {
       "stock_code": "300274",
       "stock_name": "阳光电源",
-      "weight": 8.77
+      "weight": 7.15
     },
     {
       "stock_code": "000100",
       "stock_name": "TCL科技",
-      "weight": 7.87
-    },
-    {
-      "stock_code": "600438",
-      "stock_name": "通威股份",
-      "weight": 4.62
-    },
-    {
-      "stock_code": "300751",
-      "stock_name": "迈为股份",
-      "weight": 2.89
+      "weight": 6.86
     },
     {
       "stock_code": "605117",
       "stock_name": "德业股份",
-      "weight": 2.61
+      "weight": 3.68
+    },
+    {
+      "stock_code": "600438",
+      "stock_name": "通威股份",
+      "weight": 3.45
+    },
+    {
+      "stock_code": "300751",
+      "stock_name": "迈为股份",
+      "weight": 2.96
+    },
+    {
+      "stock_code": "300757",
+      "stock_name": "罗博特科",
+      "weight": 2.95
     },
     {
       "stock_code": "601877",
       "stock_name": "正泰电器",
-      "weight": 2.5
-    },
-    {
-      "stock_code": "002129",
-      "stock_name": "TCL中环",
-      "weight": 2.31
+      "weight": 2.71
     },
     {
       "stock_code": "300724",
       "stock_name": "捷佳伟创",
-      "weight": 2.22
+      "weight": 2.27
     }
   ],
-  "fetched_at": "2026-03-29 23:18:12",
+  "fetched_at": "2026-04-27 13:58:25",
   "data_source": "eastmoney"
 }

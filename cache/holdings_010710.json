@@ -1,282 +1,62 @@
 {
   "fund_code": "010710",
   "fund_name": "安信医药健康股票C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 91.85,
-  "parsed_weight": 91.81,
-  "missing_weight": 0.04,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 89.06,
+  "parsed_weight": 45.04,
+  "missing_weight": 44.02,
   "positions": [
     {
       "stock_code": "01530",
       "stock_name": "三生制药",
-      "weight": 7.47
-    },
-    {
-      "stock_code": "01093",
-      "stock_name": "石药集团",
-      "weight": 5.89
+      "weight": 8.24
     },
     {
       "stock_code": "01801",
       "stock_name": "信达生物",
-      "weight": 5.56
+      "weight": 5.68
+    },
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 5.15
     },
     {
       "stock_code": "688382",
       "stock_name": "益方生物",
-      "weight": 5.11
-    },
-    {
-      "stock_code": "688621",
-      "stock_name": "阳光诺和",
-      "weight": 5.07
-    },
-    {
-      "stock_code": "600521",
-      "stock_name": "华海药业",
-      "weight": 4.54
-    },
-    {
-      "stock_code": "603233",
-      "stock_name": "大参林",
-      "weight": 4.27
-    },
-    {
-      "stock_code": "688799",
-      "stock_name": "华纳药厂",
-      "weight": 3.47
-    },
-    {
-      "stock_code": "02096",
-      "stock_name": "先声药业",
-      "weight": 3.4
-    },
-    {
-      "stock_code": "300358",
-      "stock_name": "楚天科技",
-      "weight": 2.88
-    },
-    {
-      "stock_code": "301235",
-      "stock_name": "华康洁净",
-      "weight": 2.69
-    },
-    {
-      "stock_code": "301015",
-      "stock_name": "百洋医药",
-      "weight": 2.67
-    },
-    {
-      "stock_code": "09606",
-      "stock_name": "映恩生物-B",
-      "weight": 2.63
-    },
-    {
-      "stock_code": "688513",
-      "stock_name": "苑东生物",
-      "weight": 2.57
-    },
-    {
-      "stock_code": "002773",
-      "stock_name": "康弘药业",
-      "weight": 2.45
-    },
-    {
-      "stock_code": "300244",
-      "stock_name": "迪安诊断",
-      "weight": 2.19
-    },
-    {
-      "stock_code": "300723",
-      "stock_name": "一品红",
-      "weight": 1.89
-    },
-    {
-      "stock_code": "600276",
-      "stock_name": "恒瑞医药",
-      "weight": 1.85
-    },
-    {
-      "stock_code": "603590",
-      "stock_name": "康辰药业",
-      "weight": 1.8
-    },
-    {
-      "stock_code": "03933",
-      "stock_name": "联邦制药",
-      "weight": 1.78
-    },
-    {
-      "stock_code": "002294",
-      "stock_name": "信立泰",
-      "weight": 1.72
-    },
-    {
-      "stock_code": "002020",
-      "stock_name": "京新药业",
-      "weight": 1.55
-    },
-    {
-      "stock_code": "06160",
-      "stock_name": "百济神州",
-      "weight": 1.5
+      "weight": 5.03
     },
     {
       "stock_code": "300677",
       "stock_name": "英科医疗",
-      "weight": 1.36
+      "weight": 4.85
     },
     {
-      "stock_code": "688085",
-      "stock_name": "三友医疗",
-      "weight": 1.31
+      "stock_code": "688621",
+      "stock_name": "阳光诺和",
+      "weight": 4.38
     },
     {
-      "stock_code": "09926",
-      "stock_name": "康方生物",
-      "weight": 1.3
+      "stock_code": "688799",
+      "stock_name": "华纳药厂",
+      "weight": 3.31
     },
     {
-      "stock_code": "06990",
-      "stock_name": "科伦博泰生物-B",
-      "weight": 1.17
+      "stock_code": "301246",
+      "stock_name": "宏源药业",
+      "weight": 2.91
     },
     {
-      "stock_code": "02157",
-      "stock_name": "乐普生物-B",
-      "weight": 1.14
+      "stock_code": "09606",
+      "stock_name": "映恩生物-B",
+      "weight": 2.86
     },
     {
-      "stock_code": "301363",
-      "stock_name": "美好医疗",
-      "weight": 1.12
-    },
-    {
-      "stock_code": "603259",
-      "stock_name": "药明康德",
-      "weight": 1.01
-    },
-    {
-      "stock_code": "300482",
-      "stock_name": "万孚生物",
-      "weight": 0.92
-    },
-    {
-      "stock_code": "000739",
-      "stock_name": "普洛药业",
-      "weight": 0.92
-    },
-    {
-      "stock_code": "301087",
-      "stock_name": "可孚医疗",
-      "weight": 0.88
-    },
-    {
-      "stock_code": "301367",
-      "stock_name": "瑞迈特",
-      "weight": 0.76
-    },
-    {
-      "stock_code": "00013",
-      "stock_name": "和黄医药",
-      "weight": 0.59
-    },
-    {
-      "stock_code": "605116",
-      "stock_name": "奥锐特",
-      "weight": 0.56
-    },
-    {
-      "stock_code": "688677",
-      "stock_name": "海泰新光",
-      "weight": 0.51
-    },
-    {
-      "stock_code": "003020",
-      "stock_name": "立方制药",
-      "weight": 0.5
-    },
-    {
-      "stock_code": "002422",
-      "stock_name": "科伦药业",
-      "weight": 0.49
-    },
-    {
-      "stock_code": "688235",
-      "stock_name": "百济神州",
-      "weight": 0.46
-    },
-    {
-      "stock_code": "02273",
-      "stock_name": "固生堂",
-      "weight": 0.34
-    },
-    {
-      "stock_code": "603998",
-      "stock_name": "方盛制药",
-      "weight": 0.32
-    },
-    {
-      "stock_code": "002250",
-      "stock_name": "联化科技",
-      "weight": 0.25
-    },
-    {
-      "stock_code": "688221",
-      "stock_name": "前沿生物",
-      "weight": 0.21
-    },
-    {
-      "stock_code": "605507",
-      "stock_name": "国邦医药",
-      "weight": 0.2
-    },
-    {
-      "stock_code": "603939",
-      "stock_name": "益丰药房",
-      "weight": 0.19
-    },
-    {
-      "stock_code": "688553",
-      "stock_name": "汇宇制药",
-      "weight": 0.15
-    },
-    {
-      "stock_code": "688266",
-      "stock_name": "泽璟制药",
-      "weight": 0.13
-    },
-    {
-      "stock_code": "300347",
-      "stock_name": "泰格医药",
-      "weight": 0.02
-    },
-    {
-      "stock_code": "688410",
-      "stock_name": "山外山",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "301656",
-      "stock_name": "联合动力",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "600557",
-      "stock_name": "康缘药业",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "688133",
-      "stock_name": "泰坦科技",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "688710",
-      "stock_name": "益诺思",
-      "weight": 0.01
+      "stock_code": "002773",
+      "stock_name": "康弘药业",
+      "weight": 2.63
     }
   ],
-  "fetched_at": "2026-03-29 23:20:47",
+  "fetched_at": "2026-04-27 14:01:07",
   "data_source": "eastmoney"
 }

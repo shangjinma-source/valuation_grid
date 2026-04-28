@@ -1,62 +1,62 @@
 {
   "fund_code": "013346",
   "fund_name": "富荣信息技术混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.47,
-  "parsed_weight": 52.82,
-  "missing_weight": 41.65,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 84.84,
+  "parsed_weight": 58.34,
+  "missing_weight": 26.5,
   "positions": [
     {
-      "stock_code": "688031",
-      "stock_name": "星环科技",
-      "weight": 7.08
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 7.36
     },
     {
-      "stock_code": "603171",
-      "stock_name": "税友股份",
-      "weight": 6.81
-    },
-    {
-      "stock_code": "300454",
-      "stock_name": "深信服",
-      "weight": 5.91
-    },
-    {
-      "stock_code": "688500",
-      "stock_name": "慧辰股份",
-      "weight": 5.26
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 6.93
     },
     {
       "stock_code": "688256",
       "stock_name": "寒武纪",
-      "weight": 4.94
+      "weight": 6.91
     },
     {
-      "stock_code": "688258",
-      "stock_name": "卓易信息",
-      "weight": 4.93
+      "stock_code": "300017",
+      "stock_name": "网宿科技",
+      "weight": 6.78
     },
     {
-      "stock_code": "300058",
-      "stock_name": "蓝色光标",
-      "weight": 4.59
+      "stock_code": "688158",
+      "stock_name": "优刻得",
+      "weight": 6.52
     },
     {
-      "stock_code": "688095",
-      "stock_name": "福昕软件",
-      "weight": 4.49
+      "stock_code": "688702",
+      "stock_name": "盛科通信",
+      "weight": 5.07
     },
     {
-      "stock_code": "688111",
-      "stock_name": "金山办公",
-      "weight": 4.42
+      "stock_code": "300857",
+      "stock_name": "协创数据",
+      "weight": 5.0
     },
     {
-      "stock_code": "688229",
-      "stock_name": "博睿数据",
-      "weight": 4.39
+      "stock_code": "300442",
+      "stock_name": "润泽科技",
+      "weight": 4.72
+    },
+    {
+      "stock_code": "688629",
+      "stock_name": "华丰科技",
+      "weight": 4.62
+    },
+    {
+      "stock_code": "301396",
+      "stock_name": "宏景科技",
+      "weight": 4.43
     }
   ],
-  "fetched_at": "2026-03-29 23:15:02",
+  "fetched_at": "2026-04-27 13:55:00",
   "data_source": "eastmoney"
 }

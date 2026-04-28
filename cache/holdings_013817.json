@@ -1,87 +1,87 @@
 {
   "fund_code": "013817",
   "fund_name": "汇添富中证光伏产业指数增强发起式C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 93.5,
-  "parsed_weight": 65.15,
-  "missing_weight": 28.35,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.36,
+  "parsed_weight": 62.45,
+  "missing_weight": 30.91,
   "positions": [
     {
       "stock_code": "300274",
       "stock_name": "阳光电源",
-      "weight": 9.72
-    },
-    {
-      "stock_code": "601012",
-      "stock_name": "隆基绿能",
-      "weight": 9.55
+      "weight": 9.41
     },
     {
       "stock_code": "600089",
       "stock_name": "特变电工",
-      "weight": 8.74
+      "weight": 9.37
     },
     {
-      "stock_code": "300751",
-      "stock_name": "迈为股份",
-      "weight": 4.95
+      "stock_code": "601012",
+      "stock_name": "隆基绿能",
+      "weight": 6.75
     },
     {
       "stock_code": "000100",
       "stock_name": "TCL科技",
-      "weight": 4.47
+      "weight": 6.22
     },
     {
-      "stock_code": "600438",
-      "stock_name": "通威股份",
-      "weight": 3.81
+      "stock_code": "605117",
+      "stock_name": "德业股份",
+      "weight": 4.92
+    },
+    {
+      "stock_code": "300763",
+      "stock_name": "锦浪科技",
+      "weight": 3.74
+    },
+    {
+      "stock_code": "300757",
+      "stock_name": "罗博特科",
+      "weight": 3.56
     },
     {
       "stock_code": "002518",
       "stock_name": "科士达",
-      "weight": 3.71
+      "weight": 3.28
     },
     {
-      "stock_code": "002335",
-      "stock_name": "科华数据",
-      "weight": 3.52
+      "stock_code": "300751",
+      "stock_name": "迈为股份",
+      "weight": 3.22
     },
     {
-      "stock_code": "688472",
-      "stock_name": "阿特斯",
-      "weight": 3.26
-    },
-    {
-      "stock_code": "300118",
-      "stock_name": "东方日升",
-      "weight": 2.88
-    },
-    {
-      "stock_code": "300593",
-      "stock_name": "新雷能",
-      "weight": 2.28
-    },
-    {
-      "stock_code": "002851",
-      "stock_name": "麦格米特",
-      "weight": 2.17
-    },
-    {
-      "stock_code": "688676",
-      "stock_name": "金盘科技",
-      "weight": 2.07
-    },
-    {
-      "stock_code": "300693",
-      "stock_name": "盛弘股份",
-      "weight": 2.01
+      "stock_code": "688390",
+      "stock_name": "固德威",
+      "weight": 2.95
     },
     {
       "stock_code": "002922",
       "stock_name": "伊戈尔",
-      "weight": 2.01
+      "weight": 2.57
+    },
+    {
+      "stock_code": "688676",
+      "stock_name": "金盘科技",
+      "weight": 2.32
+    },
+    {
+      "stock_code": "002851",
+      "stock_name": "麦格米特",
+      "weight": 2.22
+    },
+    {
+      "stock_code": "300593",
+      "stock_name": "新雷能",
+      "weight": 1.89
+    },
+    {
+      "stock_code": "688781",
+      "stock_name": "视涯科技",
+      "weight": 0.03
     }
   ],
-  "fetched_at": "2026-03-29 23:17:48",
+  "fetched_at": "2026-04-27 13:58:00",
   "data_source": "eastmoney"
 }
