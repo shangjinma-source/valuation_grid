@@ -11,12 +11,23 @@ python cron_job.py
 
 """
 import json
-from pathlib import Path
+import os
 import sys
+from pathlib import Path
 
 # 添加项目根目录到 Python path
 PROJECT_ROOT = Path(r"E:\Git\valuation_grid")
 sys.path.insert(0, str(PROJECT_ROOT))
+
+# 禁用代理，确保定时任务能直连东方财富/新浪财经 API
+# Windows 任务计划程序不继承用户环境变量，需要手动设置
+os.environ['HTTP_PROXY'] = ''
+os.environ['HTTPS_PROXY'] = ''
+os.environ['ALL_PROXY'] = ''
+
+# force no-proxy for urllib
+import urllib.request
+urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler({})))
 
 from valuation.core import calculate_valuation_batch, load_state
 

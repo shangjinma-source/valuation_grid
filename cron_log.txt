@@ -1,0 +1,49 @@
+=== valuation_grid Daily Batch (22:00) ===
+Found 368 funds, computing valuations...
+[Holdings] 006888 fund_name=诺德新生活混合C, is_etf_link=False
+[Holdings] 006888 解析到 10 只持仓, 权重合计 27.95% (report_date=2026-03-31)
+[Holdings] 021654 fund_name=南方中证全指计算机ETF发起联接C, is_etf_link=True
+[Holdings] 使用用户指定的目标ETF: 021654 -> 159586
+[Holdings] 159586 fund_name=计算机ETF南方, is_etf_link=False
+[Holdings] 159586 解析到 15 只持仓, 权重合计 27.90% (report_date=2026-03-31)
+[Holdings] ETF穿透 159586 持仓权重仅 27.9%，质量不足，回退到联接基金 021654 自身持仓
+[Holdings] 021654 是ETF联接基金但未配置etf_links映射, 使用天天基金持仓
+[Holdings] 021654 解析到 1 只持仓, 权重合计 0.01% (report_date=2025-03-31)
+[Holdings] 007509 fund_name=华商润丰灵活配置混合C, is_etf_link=False
+[Holdings] 007509 解析到 10 只持仓, 权重合计 27.92% (report_date=2026-03-31)
+[Holdings] 018853 fund_name=博时标普石油天然气勘探及生产精选行业指数发起(QDII)C人民币, is_etf_link=False
+[Holdings] 007844 fund_name=华宝标普油气上游股票人民币C, is_etf_link=False
+[Holdings] 004243 fund_name=广发道琼斯石油指数人民币C, is_etf_link=False
+[Holdings] 018853 解析到 0 只持仓, 权重合计 0.00% (report_date=2026-03-31)
+[Holdings] 014982 fund_name=华安标普全球石油指数(LOF)C, is_etf_link=False
+[Holdings] 019578 fund_name=摩根全球天然资源混合(QDII)C, is_etf_link=False
+[Holdings] 007844 解析到 0 只持仓, 权重合计 0.00% (report_date=2026-03-31)
+[Holdings] 162411 fund_name=华宝标普油气上游股票人民币A, is_etf_link=False
+[Holdings] 163208 fund_name=诺安油气能源, is_etf_link=False
+[Holdings] 014982 解析到 0 只持仓, 权重合计 0.00% (report_date=2026-03-31)
+[Holdings] 004243 解析到 0 只持仓, 权重合计 0.00% (report_date=2026-03-31)
+[Holdings] 019578 解析到 0 只持仓, 权重合计 0.00% (report_date=2026-03-31)
+[Holdings] 501018 fund_name=南方原油A, is_etf_link=False
+[Holdings] 163208 解析到 13 只持仓, 权重合计 17.45% (report_date=2025-12-31)
+[Holdings] 162411 解析到 0 只持仓, 权重合计 0.00% (report_date=2026-03-31)
+[Holdings] 006476 fund_name=南方原油C, is_etf_link=False
+[Holdings] 160723 fund_name=嘉实原油(QDII-LOF), is_etf_link=False
+[Holdings] 161129 fund_name=易方达原油A类人民币, is_etf_link=False
+[Holdings] 160723 解析到 2 只持仓, 权重合计 6.42% (report_date=2026-03-31)
+[Holdings] 021694 fund_name=银华抗通胀主题(QDII-FOF-LOF)C, is_etf_link=False
+[Holdings] 007818 fund_name=国泰中证全指通信设备ETF联接C, is_etf_link=True
+[Holdings] 007818 是ETF联接基金但未配置etf_links映射, 使用天天基金持仓
+[Holdings] 019237 fund_name=广发国证通信ETF发起式联接C, is_etf_link=True
+[Holdings] 019237 是ETF联接基金但未配置etf_links映射, 使用天天基金持仓
+[Holdings] 008087 fund_name=华夏中证5G通信主题ETF联接C, is_etf_link=True
+[Holdings] 008087 是ETF联接基金但未配置etf_links映射, 使用天天基金持仓
+[Holdings] 007818 解析到 1 只持仓, 权重合计 0.03% (report_date=2025-09-30)
+[Holdings] 019237 解析到 1 只持仓, 权重合计 0.01% (report_date=2026-03-31)
+[Holdings] 008087 解析到 10 只持仓, 权重合计 1.30% (report_date=2026-03-31)
+[Holdings] 020274 fund_name=富国中证细分化工产业主题ETF发起式联接C, is_etf_link=True
+[Holdings] 020274 是ETF联接基金但未配置etf_links映射, 使用天天基金持仓
+[Holdings] 020274 解析到 21 只持仓, 权重合计 1.13% (report_date=2025-12-31)
+Batch completed: 368 success, 0 errors
+confidence_deviations.json updated: 363 funds with history
+=== Done ===
+2026/04/30 周四 14:01:31.28 == Task Completed == 
