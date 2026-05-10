@@ -3,8 +3,8 @@
   "fund_name": "华泰柏瑞光伏ETF联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 98.83,
-  "parsed_weight": 62.44,
-  "missing_weight": 36.39,
+  "parsed_weight": 76.9,
+  "missing_weight": 21.93,
   "positions": [
     {
       "stock_code": "600089",
@@ -62,13 +62,33 @@
       "weight": 1.93
     },
     {
+      "stock_code": "002506",
+      "stock_name": "协鑫集成",
+      "weight": 1.8
+    },
+    {
+      "stock_code": "002459",
+      "stock_name": "晶澳科技",
+      "weight": 1.75
+    },
+    {
       "stock_code": "002335",
       "stock_name": "科华数据",
       "weight": 1.62
     },
     {
+      "stock_code": "688472",
+      "stock_name": "阿特斯",
+      "weight": 1.52
+    },
+    {
       "stock_code": "600930",
       "stock_name": "华电新能",
+      "weight": 1.47
+    },
+    {
+      "stock_code": "603806",
+      "stock_name": "福斯特",
       "weight": 1.47
     },
     {
@@ -82,6 +102,26 @@
       "weight": 1.22
     },
     {
+      "stock_code": "000591",
+      "stock_name": "太阳能",
+      "weight": 1.22
+    },
+    {
+      "stock_code": "300118",
+      "stock_name": "东方日升",
+      "weight": 1.19
+    },
+    {
+      "stock_code": "002617",
+      "stock_name": "露笑科技",
+      "weight": 1.14
+    },
+    {
+      "stock_code": "601778",
+      "stock_name": "晶科科技",
+      "weight": 1.12
+    },
+    {
       "stock_code": "300827",
       "stock_name": "上能电气",
       "weight": 1.04
@@ -90,6 +130,36 @@
       "stock_code": "601636",
       "stock_name": "旗滨集团",
       "weight": 0.97
+    },
+    {
+      "stock_code": "603185",
+      "stock_name": "弘元绿能",
+      "weight": 0.76
+    },
+    {
+      "stock_code": "601222",
+      "stock_name": "林洋能源",
+      "weight": 0.71
+    },
+    {
+      "stock_code": "003035",
+      "stock_name": "南网能源",
+      "weight": 0.69
+    },
+    {
+      "stock_code": "600032",
+      "stock_name": "浙江新能",
+      "weight": 0.56
+    },
+    {
+      "stock_code": "688408",
+      "stock_name": "中信博",
+      "weight": 0.38
+    },
+    {
+      "stock_code": "301658",
+      "stock_name": "首航新能",
+      "weight": 0.15
     },
     {
       "stock_code": "688795",
@@ -102,7 +172,7 @@
       "weight": 0.02
     }
   ],
-  "fetched_at": "2026-04-27 13:58:05",
+  "fetched_at": "2026-05-07 23:14:26",
   "data_source": "eastmoney",
   "original_fund_code": "012680",
   "etf_target": "515790",

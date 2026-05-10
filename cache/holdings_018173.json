@@ -3,8 +3,8 @@
   "fund_name": "华泰柏瑞中证电力全指ETF发起式联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.57,
-  "parsed_weight": 49.83,
-  "missing_weight": 49.74,
+  "parsed_weight": 52.47,
+  "missing_weight": 47.1,
   "positions": [
     {
       "stock_code": "600900",
@@ -57,6 +57,16 @@
       "weight": 2.73
     },
     {
+      "stock_code": "601016",
+      "stock_name": "节能风电",
+      "weight": 1.75
+    },
+    {
+      "stock_code": "000537",
+      "stock_name": "绿发电力",
+      "weight": 0.89
+    },
+    {
       "stock_code": "600744",
       "stock_name": "华银电力",
       "weight": 0.81
@@ -72,7 +82,7 @@
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-04-27 14:03:16",
+  "fetched_at": "2026-05-07 23:14:40",
   "data_source": "eastmoney",
   "original_fund_code": "018173",
   "etf_target": "561560",

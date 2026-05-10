@@ -1,0 +1,857 @@
+﻿{
+    "generated_at":  "2026-05-10 12:32:16",
+    "signals":  [
+                    {
+                        "fund_code":  "002112__é¿é©´ | ä½é¢ç½æ ¼",
+                        "signal_name":  "ææç­å¾\u0085",
+                        "action":  "hold",
+                        "priority":  8,
+                        "sub_priority":  0,
+                        "target_batch_id":  null,
+                        "amount":  null,
+                        "sell_shares":  null,
+                        "sell_pct":  null,
+                        "reason":  "æ»æµ®ç35.51%, ä»æ¥0.67%, è¶å¿:è¿æ¶¨, é£é©ç³»æ°1.09Ã, æ³¢å¨ç¶æ:high_vol, æ è§¦åæ¡ä»¶",
+                        "fee_info":  null,
+                        "alert":  false,
+                        "alert_msg":  null,
+                        "_confidence":  0.739,
+                        "_source":  "nav",
+                        "market_analysis":  {
+                                                "today_change":  0.67,
+                                                "today_source":  "nav",
+                                                "day_changes":  [
+                                                                    {
+                                                                        "date":  "2026-05-08",
+                                                                        "change":  0.67,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-05-07",
+                                                                        "change":  6.09,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-05-06",
+                                                                        "change":  0.67,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-30",
+                                                                        "change":  0.35,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-29",
+                                                                        "change":  1.13,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-28",
+                                                                        "change":  -1.48,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-27",
+                                                                        "change":  0.67,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-24",
+                                                                        "change":  -3.2,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-23",
+                                                                        "change":  -2.56,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-22",
+                                                                        "change":  4.56,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-21",
+                                                                        "change":  0.51,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-20",
+                                                                        "change":  -0.23,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-17",
+                                                                        "change":  4.64,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-16",
+                                                                        "change":  4.02,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-15",
+                                                                        "change":  -2.02,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-14",
+                                                                        "change":  2.3,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-13",
+                                                                        "change":  0.82,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-10",
+                                                                        "change":  2.69,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-09",
+                                                                        "change":  1.05,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-08",
+                                                                        "change":  8.15,
+                                                                        "source":  "nav"
+                                                                    }
+                                                                ],
+                                                "short_3d":  7.52,
+                                                "short_5d":  9.11,
+                                                "mid_10d":  6.73,
+                                                "long_20d":  32.11,
+                                                "trend":  "è¿æ¶¨",
+                                                "volatility":  2.84,
+                                                "volatility_robust":  2.59,
+                                                "volume_proxy":  0.69,
+                                                "consecutive_down":  0,
+                                                "consecutive_up":  5,
+                                                "max_drawdown":  6.45,
+                                                "data_days":  20,
+                                                "current_nav":  5.3056,
+                                                "market_value":  368.37,
+                                                "total_cost":  271.84,
+                                                "unrealized_pnl":  96.53,
+                                                "unrealized_pnl_pct":  35.51,
+                                                "realized_pnl":  87.25,
+                                                "cumulative_pnl":  183.78,
+                                                "total_profit_pct":  35.51,
+                                                "confidence":  0.739,
+                                                "strategy_params":  {
+                                                                        "dip_buy_threshold":  -4.3,
+                                                                        "take_profit_trigger":  5.0,
+                                                                        "stop_loss_base":  -10.87,
+                                                                        "risk_multiplier":  1.09,
+                                                                        "vol_state":  "high_vol",
+                                                                        "momentum_score":  0.931,
+                                                                        "trail_dd":  2.72,
+                                                                        "win_rate_adj":  1.0,
+                                                                        "vol_sensitivity":  0.85,
+                                                                        "vol_sensitivity_source":  "manual",
+                                                                        "consecutive_dip_trigger":  -1.54,
+                                                                        "supplement_max_count":  5,
+                                                                        "supplement_trigger":  -2.64,
+                                                                        "supplement_loss_min":  -4.84,
+                                                                        "total_profit_sell_min":  4.0,
+                                                                        "trend_weak_cumulative":  -3.3,
+                                                                        "disaster_loss_threshold":  -12.0,
+                                                                        "vol_based":  true
+                                                                    },
+                                                "market_regime":  "neutral",
+                                                "regime_source":  "manual",
+                                                "decision_note":  "å½åä½¿ç¨çå®åå¼æ°æ®ï¼é«æ³¢å¨ç¯å¢(é£é©ç³»æ°1.09Ã)ï¼çµæåº¦0.85ï¼éå¼èªéåº(ä¹°â¤-3.96%/æ­¢æâ¤-10.0%)ï¼å¨éä¸å(0.93)ï¼è¿3æ¥ç´¯æ¶¨7.52%ï¼ç­æè¿ç­ï¼10æ¥ç´¯è®¡+6.73%ï¼ä¸­æèµ°å¼ºï¼æ»æµ®ç35.51%ï¼å\u0085³æ³¨æ­¢çï¼ä»ä½ä»\u00855%ï¼å¯æ©æºå ä»",
+                                                "fitness_score":  67.4,
+                                                "fitness_grade":  "B-è¯å¥½"
+                                            }
+                    },
+                    {
+                        "fund_code":  "010524__èç¸",
+                        "signal_name":  "ææç­å¾\u0085",
+                        "action":  "hold",
+                        "priority":  8,
+                        "sub_priority":  0,
+                        "target_batch_id":  null,
+                        "amount":  null,
+                        "sell_shares":  null,
+                        "sell_pct":  null,
+                        "reason":  "æ»æµ®ç32.42%, ä»æ¥0.39%, è¶å¿:è¿æ¶¨, é£é©ç³»æ°1.0Ã, æ³¢å¨ç¶æ:high_vol, æ è§¦åæ¡ä»¶",
+                        "fee_info":  null,
+                        "alert":  false,
+                        "alert_msg":  null,
+                        "_confidence":  0.85,
+                        "_source":  "nav",
+                        "market_analysis":  {
+                                                "today_change":  0.39,
+                                                "today_source":  "nav",
+                                                "day_changes":  [
+                                                                    {
+                                                                        "date":  "2026-05-08",
+                                                                        "change":  0.39,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-05-07",
+                                                                        "change":  3.83,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-05-06",
+                                                                        "change":  2.29,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-30",
+                                                                        "change":  -0.32,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-29",
+                                                                        "change":  0.3,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-28",
+                                                                        "change":  -1.74,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-27",
+                                                                        "change":  1.62,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-24",
+                                                                        "change":  -3.02,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-23",
+                                                                        "change":  -0.69,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-22",
+                                                                        "change":  4.71,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-21",
+                                                                        "change":  0.53,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-20",
+                                                                        "change":  1.34,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-17",
+                                                                        "change":  3.84,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-16",
+                                                                        "change":  2.98,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-15",
+                                                                        "change":  -1.72,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-14",
+                                                                        "change":  2.18,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-13",
+                                                                        "change":  0.41,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-10",
+                                                                        "change":  3.01,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-09",
+                                                                        "change":  1.42,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-08",
+                                                                        "change":  6.89,
+                                                                        "source":  "nav"
+                                                                    }
+                                                                ],
+                                                "short_3d":  6.62,
+                                                "short_5d":  6.6,
+                                                "mid_10d":  7.33,
+                                                "long_20d":  31.68,
+                                                "trend":  "è¿æ¶¨",
+                                                "volatility":  2.34,
+                                                "volatility_robust":  2.39,
+                                                "volume_proxy":  0.6,
+                                                "consecutive_down":  0,
+                                                "consecutive_up":  3,
+                                                "max_drawdown":  3.86,
+                                                "data_days":  20,
+                                                "current_nav":  2.2765,
+                                                "market_value":  1032.35,
+                                                "total_cost":  779.63,
+                                                "unrealized_pnl":  252.72,
+                                                "unrealized_pnl_pct":  32.42,
+                                                "realized_pnl":  429.41,
+                                                "cumulative_pnl":  682.13,
+                                                "total_profit_pct":  32.42,
+                                                "confidence":  0.85,
+                                                "strategy_params":  {
+                                                                        "dip_buy_threshold":  -4.52,
+                                                                        "take_profit_trigger":  5.0,
+                                                                        "stop_loss_base":  -10.0,
+                                                                        "risk_multiplier":  1.0,
+                                                                        "vol_state":  "high_vol",
+                                                                        "momentum_score":  0.916,
+                                                                        "trail_dd":  2.5,
+                                                                        "win_rate_adj":  1.0,
+                                                                        "vol_sensitivity":  1.05,
+                                                                        "vol_sensitivity_source":  "manual",
+                                                                        "consecutive_dip_trigger":  -1.76,
+                                                                        "supplement_max_count":  5,
+                                                                        "supplement_trigger":  -3.01,
+                                                                        "supplement_loss_min":  -5.52,
+                                                                        "total_profit_sell_min":  4.0,
+                                                                        "trend_weak_cumulative":  -3.76,
+                                                                        "disaster_loss_threshold":  -12.0,
+                                                                        "vol_based":  true
+                                                                    },
+                                                "market_regime":  "neutral",
+                                                "regime_source":  "manual",
+                                                "decision_note":  "å½åä½¿ç¨çå®åå¼æ°æ®ï¼é«æ³¢å¨ç¯å¢(é£é©ç³»æ°1.0Ã)ï¼çµæåº¦1.05ï¼éå¼èªéåº(ä¹°â¤-4.52%/æ­¢æâ¤-10.0%)ï¼å¨éä¸å(0.92)ï¼è¿3æ¥ç´¯æ¶¨6.62%ï¼ç­æè¿ç­ï¼10æ¥ç´¯è®¡+7.33%ï¼ä¸­æèµ°å¼ºï¼æ»æµ®ç32.42%ï¼å\u0085³æ³¨æ­¢çï¼ä»ä½ä»\u00859%ï¼å¯æ©æºå ä»",
+                                                "fitness_score":  76.4,
+                                                "fitness_grade":  "A-æä½³"
+                                            }
+                    },
+                    {
+                        "fund_code":  "010524__èªé",
+                        "signal_name":  "ææç­å¾\u0085",
+                        "action":  "hold",
+                        "priority":  8,
+                        "sub_priority":  0,
+                        "target_batch_id":  null,
+                        "amount":  null,
+                        "sell_shares":  null,
+                        "sell_pct":  null,
+                        "reason":  "æ»æµ®ç32.42%, ä»æ¥0.39%, è¶å¿:è¿æ¶¨, é£é©ç³»æ°1.0Ã, æ³¢å¨ç¶æ:high_vol, æ è§¦åæ¡ä»¶",
+                        "fee_info":  null,
+                        "alert":  false,
+                        "alert_msg":  null,
+                        "_confidence":  0.85,
+                        "_source":  "nav",
+                        "market_analysis":  {
+                                                "today_change":  0.39,
+                                                "today_source":  "nav",
+                                                "day_changes":  [
+                                                                    {
+                                                                        "date":  "2026-05-08",
+                                                                        "change":  0.39,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-05-07",
+                                                                        "change":  3.83,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-05-06",
+                                                                        "change":  2.29,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-30",
+                                                                        "change":  -0.32,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-29",
+                                                                        "change":  0.3,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-28",
+                                                                        "change":  -1.74,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-27",
+                                                                        "change":  1.62,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-24",
+                                                                        "change":  -3.02,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-23",
+                                                                        "change":  -0.69,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-22",
+                                                                        "change":  4.71,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-21",
+                                                                        "change":  0.53,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-20",
+                                                                        "change":  1.34,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-17",
+                                                                        "change":  3.84,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-16",
+                                                                        "change":  2.98,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-15",
+                                                                        "change":  -1.72,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-14",
+                                                                        "change":  2.18,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-13",
+                                                                        "change":  0.41,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-10",
+                                                                        "change":  3.01,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-09",
+                                                                        "change":  1.42,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-08",
+                                                                        "change":  6.89,
+                                                                        "source":  "nav"
+                                                                    }
+                                                                ],
+                                                "short_3d":  6.62,
+                                                "short_5d":  6.6,
+                                                "mid_10d":  7.33,
+                                                "long_20d":  31.68,
+                                                "trend":  "è¿æ¶¨",
+                                                "volatility":  2.34,
+                                                "volatility_robust":  2.39,
+                                                "volume_proxy":  0.6,
+                                                "consecutive_down":  0,
+                                                "consecutive_up":  3,
+                                                "max_drawdown":  3.86,
+                                                "data_days":  20,
+                                                "current_nav":  2.2765,
+                                                "market_value":  2064.69,
+                                                "total_cost":  1559.24,
+                                                "unrealized_pnl":  505.45,
+                                                "unrealized_pnl_pct":  32.42,
+                                                "realized_pnl":  858.82,
+                                                "cumulative_pnl":  1364.27,
+                                                "total_profit_pct":  32.42,
+                                                "confidence":  0.85,
+                                                "strategy_params":  {
+                                                                        "dip_buy_threshold":  -4.73,
+                                                                        "take_profit_trigger":  5.0,
+                                                                        "stop_loss_base":  -10.0,
+                                                                        "risk_multiplier":  1.0,
+                                                                        "vol_state":  "high_vol",
+                                                                        "momentum_score":  0.916,
+                                                                        "trail_dd":  2.5,
+                                                                        "win_rate_adj":  1.0,
+                                                                        "vol_sensitivity":  1.1,
+                                                                        "vol_sensitivity_source":  "manual",
+                                                                        "consecutive_dip_trigger":  -1.84,
+                                                                        "supplement_max_count":  5,
+                                                                        "supplement_trigger":  -3.15,
+                                                                        "supplement_loss_min":  -5.78,
+                                                                        "total_profit_sell_min":  4.0,
+                                                                        "trend_weak_cumulative":  -3.94,
+                                                                        "disaster_loss_threshold":  -12.0,
+                                                                        "vol_based":  true
+                                                                    },
+                                                "market_regime":  "neutral",
+                                                "regime_source":  "manual",
+                                                "decision_note":  "å½åä½¿ç¨çå®åå¼æ°æ®ï¼é«æ³¢å¨ç¯å¢(é£é©ç³»æ°1.0Ã)ï¼çµæåº¦1.10ï¼éå¼èªéåº(ä¹°â¤-4.73%/æ­¢æâ¤-10.0%)ï¼å¨éä¸å(0.92)ï¼è¿3æ¥ç´¯æ¶¨6.62%ï¼ç­æè¿ç­ï¼10æ¥ç´¯è®¡+7.33%ï¼ä¸­æèµ°å¼ºï¼æ»æµ®ç32.42%ï¼å\u0085³æ³¨æ­¢çï¼ä»ä½ä»\u00856%ï¼å¯æ©æºå ä»",
+                                                "fitness_score":  76.4,
+                                                "fitness_grade":  "A-æä½³"
+                                            }
+                    },
+                    {
+                        "fund_code":  "017560__èç¸",
+                        "signal_name":  "ææç­å¾\u0085",
+                        "action":  "hold",
+                        "priority":  8,
+                        "sub_priority":  0,
+                        "target_batch_id":  null,
+                        "amount":  null,
+                        "sell_shares":  null,
+                        "sell_pct":  null,
+                        "reason":  "æ»æµ®ç32.41%, ä»æ¥-2.63%, è¶å¿:åå¼º, é£é©ç³»æ°1.0Ã, æ è§¦åæ¡ä»¶",
+                        "fee_info":  null,
+                        "alert":  false,
+                        "alert_msg":  null,
+                        "_confidence":  0.707,
+                        "_source":  "nav",
+                        "market_analysis":  {
+                                                "today_change":  -2.63,
+                                                "today_source":  "nav",
+                                                "day_changes":  [
+                                                                    {
+                                                                        "date":  "2026-05-08",
+                                                                        "change":  -2.63,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-05-07",
+                                                                        "change":  1.88,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-05-06",
+                                                                        "change":  5.77,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-30",
+                                                                        "change":  5.96,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-29",
+                                                                        "change":  0.21,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-28",
+                                                                        "change":  -1.32,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-27",
+                                                                        "change":  4.3,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-24",
+                                                                        "change":  2.41,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-23",
+                                                                        "change":  -1.41,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-22",
+                                                                        "change":  2.36,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-21",
+                                                                        "change":  -1.19,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-20",
+                                                                        "change":  1.5,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-17",
+                                                                        "change":  0.88,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-16",
+                                                                        "change":  1.04,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-15",
+                                                                        "change":  -0.1,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-14",
+                                                                        "change":  2.23,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-13",
+                                                                        "change":  0.8,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-10",
+                                                                        "change":  1.78,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-09",
+                                                                        "change":  0.26,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-08",
+                                                                        "change":  6.18,
+                                                                        "source":  "nav"
+                                                                    }
+                                                                ],
+                                                "short_3d":  4.92,
+                                                "short_5d":  11.41,
+                                                "mid_10d":  18.51,
+                                                "long_20d":  35.13,
+                                                "trend":  "åå¼º",
+                                                "volatility":  2.43,
+                                                "volatility_robust":  1.65,
+                                                "volume_proxy":  1.99,
+                                                "consecutive_down":  1,
+                                                "consecutive_up":  0,
+                                                "max_drawdown":  1.41,
+                                                "data_days":  20,
+                                                "current_nav":  2.9044,
+                                                "market_value":  1074.89,
+                                                "total_cost":  811.8,
+                                                "unrealized_pnl":  263.09,
+                                                "unrealized_pnl_pct":  32.41,
+                                                "realized_pnl":  613.89,
+                                                "cumulative_pnl":  876.98,
+                                                "total_profit_pct":  32.41,
+                                                "confidence":  0.707,
+                                                "strategy_params":  {
+                                                                        "dip_buy_threshold":  -3.86,
+                                                                        "take_profit_trigger":  5.0,
+                                                                        "stop_loss_base":  -10.0,
+                                                                        "risk_multiplier":  1.0,
+                                                                        "vol_state":  "normal_vol",
+                                                                        "momentum_score":  0.995,
+                                                                        "trail_dd":  2.5,
+                                                                        "win_rate_adj":  1.0,
+                                                                        "vol_sensitivity":  1.3,
+                                                                        "vol_sensitivity_source":  "manual",
+                                                                        "consecutive_dip_trigger":  -1.5,
+                                                                        "supplement_max_count":  5,
+                                                                        "supplement_trigger":  -2.57,
+                                                                        "supplement_loss_min":  -4.72,
+                                                                        "total_profit_sell_min":  4.0,
+                                                                        "trend_weak_cumulative":  -3.22,
+                                                                        "disaster_loss_threshold":  -12.0,
+                                                                        "vol_based":  true
+                                                                    },
+                                                "market_regime":  "neutral",
+                                                "regime_source":  "manual",
+                                                "decision_note":  "å½åä½¿ç¨çå®åå¼æ°æ®ï¼çµæåº¦1.30ï¼éå¼èªéåº(ä¹°â¤-3.86%/æ­¢æâ¤-10.0%)ï¼å¨éä¸å(0.99)ï¼è¿3æ¥ç´¯æ¶¨4.92%ï¼ç­æè¿ç­ï¼10æ¥ç´¯è®¡+18.51%ï¼ä¸­æèµ°å¼ºï¼æ»æµ®ç32.41%ï¼å\u0085³æ³¨æ­¢çï¼ä»ä½ä»\u00857%ï¼å¯æ©æºå ä»",
+                                                "fitness_score":  75.2,
+                                                "fitness_grade":  "A-æä½³"
+                                            }
+                    },
+                    {
+                        "fund_code":  "017560__èªé",
+                        "signal_name":  "ææç­å¾\u0085",
+                        "action":  "hold",
+                        "priority":  8,
+                        "sub_priority":  0,
+                        "target_batch_id":  null,
+                        "amount":  null,
+                        "sell_shares":  null,
+                        "sell_pct":  null,
+                        "reason":  "æ»æµ®ç30.67%, ä»æ¥-2.63%, è¶å¿:åå¼º, é£é©ç³»æ°1.0Ã, æ è§¦åæ¡ä»¶",
+                        "fee_info":  null,
+                        "alert":  false,
+                        "alert_msg":  null,
+                        "_confidence":  0.707,
+                        "_source":  "nav",
+                        "market_analysis":  {
+                                                "today_change":  -2.63,
+                                                "today_source":  "nav",
+                                                "day_changes":  [
+                                                                    {
+                                                                        "date":  "2026-05-08",
+                                                                        "change":  -2.63,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-05-07",
+                                                                        "change":  1.88,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-05-06",
+                                                                        "change":  5.77,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-30",
+                                                                        "change":  5.96,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-29",
+                                                                        "change":  0.21,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-28",
+                                                                        "change":  -1.32,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-27",
+                                                                        "change":  4.3,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-24",
+                                                                        "change":  2.41,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-23",
+                                                                        "change":  -1.41,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-22",
+                                                                        "change":  2.36,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-21",
+                                                                        "change":  -1.19,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-20",
+                                                                        "change":  1.5,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-17",
+                                                                        "change":  0.88,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-16",
+                                                                        "change":  1.04,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-15",
+                                                                        "change":  -0.1,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-14",
+                                                                        "change":  2.23,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-13",
+                                                                        "change":  0.8,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-10",
+                                                                        "change":  1.78,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-09",
+                                                                        "change":  0.26,
+                                                                        "source":  "nav"
+                                                                    },
+                                                                    {
+                                                                        "date":  "2026-04-08",
+                                                                        "change":  6.18,
+                                                                        "source":  "nav"
+                                                                    }
+                                                                ],
+                                                "short_3d":  4.92,
+                                                "short_5d":  11.41,
+                                                "mid_10d":  18.51,
+                                                "long_20d":  35.13,
+                                                "trend":  "åå¼º",
+                                                "volatility":  2.43,
+                                                "volatility_robust":  1.65,
+                                                "volume_proxy":  1.99,
+                                                "consecutive_down":  1,
+                                                "consecutive_up":  0,
+                                                "max_drawdown":  1.41,
+                                                "data_days":  20,
+                                                "current_nav":  2.9044,
+                                                "market_value":  10537.22,
+                                                "total_cost":  8064.0,
+                                                "unrealized_pnl":  2473.22,
+                                                "unrealized_pnl_pct":  30.67,
+                                                "realized_pnl":  3693.89,
+                                                "cumulative_pnl":  6167.11,
+                                                "total_profit_pct":  30.67,
+                                                "confidence":  0.707,
+                                                "strategy_params":  {
+                                                                        "dip_buy_threshold":  -2.67,
+                                                                        "take_profit_trigger":  3.71,
+                                                                        "stop_loss_base":  -8.91,
+                                                                        "risk_multiplier":  1.0,
+                                                                        "vol_state":  "normal_vol",
+                                                                        "momentum_score":  0.995,
+                                                                        "trail_dd":  2.5,
+                                                                        "win_rate_adj":  1.0,
+                                                                        "vol_sensitivity":  0.9,
+                                                                        "vol_sensitivity_source":  "manual",
+                                                                        "consecutive_dip_trigger":  -1.04,
+                                                                        "supplement_max_count":  4,
+                                                                        "supplement_trigger":  -1.78,
+                                                                        "supplement_loss_min":  -3.27,
+                                                                        "total_profit_sell_min":  4.0,
+                                                                        "trend_weak_cumulative":  -2.23,
+                                                                        "disaster_loss_threshold":  -9.65,
+                                                                        "vol_based":  true
+                                                                    },
+                                                "market_regime":  "neutral",
+                                                "regime_source":  "manual",
+                                                "decision_note":  "å½åä½¿ç¨çå®åå¼æ°æ®ï¼çµæåº¦0.90ï¼éå¼èªéåº(ä¹°â¤-2.67%/æ­¢æâ¤-8.91%)ï¼å¨éä¸å(0.99)ï¼è¿3æ¥ç´¯æ¶¨4.92%ï¼ç­æè¿ç­ï¼10æ¥ç´¯è®¡+18.51%ï¼ä¸­æèµ°å¼ºï¼æ»æµ®ç30.67%ï¼å\u0085³æ³¨æ­¢çï¼ä»ä½ä»\u008524%ï¼å¯æ©æºå ä»",
+                                                "fitness_score":  75.2,
+                                                "fitness_grade":  "A-æä½³"
+                                            }
+                    }
+                ],
+    "portfolio_budget":  {
+                             "max_invest":  59500.0,
+                             "invested":  11486.51,
+                             "daily_budget":  48013.49,
+                             "cash_reserve_ratio":  0.3,
+                             "scope":  "per_group"
+                         }
+}

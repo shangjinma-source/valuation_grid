@@ -1,142 +1,67 @@
 {
   "fund_code": "017037",
   "fund_name": "嘉实低碳精选混合发起式C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 83.3,
-  "parsed_weight": 83.29,
-  "missing_weight": 0.01,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 60.97,
+  "parsed_weight": 32.9,
+  "missing_weight": 28.07,
   "positions": [
     {
-      "stock_code": "300750",
-      "stock_name": "宁德时代",
-      "weight": 11.57
+      "stock_code": "300772",
+      "stock_name": "运达股份",
+      "weight": 5.06
     },
     {
       "stock_code": "300274",
       "stock_name": "阳光电源",
-      "weight": 11.11
+      "weight": 4.88
     },
     {
-      "stock_code": "603606",
-      "stock_name": "东方电缆",
-      "weight": 9.36
-    },
-    {
-      "stock_code": "688472",
-      "stock_name": "阿特斯",
-      "weight": 4.87
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "weight": 3.37
     },
     {
       "stock_code": "605117",
       "stock_name": "德业股份",
-      "weight": 4.78
-    },
-    {
-      "stock_code": "002202",
-      "stock_name": "金风科技",
-      "weight": 4.36
-    },
-    {
-      "stock_code": "300014",
-      "stock_name": "亿纬锂能",
-      "weight": 3.54
-    },
-    {
-      "stock_code": "300438",
-      "stock_name": "鹏辉能源",
-      "weight": 3.51
-    },
-    {
-      "stock_code": "300772",
-      "stock_name": "运达股份",
-      "weight": 3.49
-    },
-    {
-      "stock_code": "601615",
-      "stock_name": "明阳智能",
-      "weight": 3.41
-    },
-    {
-      "stock_code": "601877",
-      "stock_name": "正泰电器",
-      "weight": 3.32
-    },
-    {
-      "stock_code": "688676",
-      "stock_name": "金盘科技",
-      "weight": 3.31
-    },
-    {
-      "stock_code": "301155",
-      "stock_name": "海力风电",
       "weight": 3.27
     },
     {
-      "stock_code": "688717",
-      "stock_name": "艾罗能源",
-      "weight": 2.81
+      "stock_code": "605305",
+      "stock_name": "中际联合",
+      "weight": 3.02
     },
     {
-      "stock_code": "688390",
-      "stock_name": "固德威",
-      "weight": 1.95
+      "stock_code": "002203",
+      "stock_name": "海亮股份",
+      "weight": 2.61
     },
     {
-      "stock_code": "002850",
-      "stock_name": "科达利",
-      "weight": 1.53
+      "stock_code": "02208",
+      "stock_name": "金风科技",
+      "weight": 2.48
     },
     {
-      "stock_code": "300693",
-      "stock_name": "盛弘股份",
-      "weight": 1.49
+      "stock_code": "688223",
+      "stock_name": "晶科能源",
+      "weight": 2.36
     },
     {
       "stock_code": "002487",
       "stock_name": "大金重工",
-      "weight": 1.49
+      "weight": 2.35
     },
     {
-      "stock_code": "300763",
-      "stock_name": "锦浪科技",
-      "weight": 1.08
+      "stock_code": "001283",
+      "stock_name": "豪鹏科技",
+      "weight": 2.34
     },
     {
-      "stock_code": "300827",
-      "stock_name": "上能电气",
-      "weight": 0.99
-    },
-    {
-      "stock_code": "002518",
-      "stock_name": "科士达",
-      "weight": 0.72
-    },
-    {
-      "stock_code": "603092",
-      "stock_name": "德力佳",
-      "weight": 0.68
-    },
-    {
-      "stock_code": "300207",
-      "stock_name": "欣旺达",
-      "weight": 0.31
-    },
-    {
-      "stock_code": "600522",
-      "stock_name": "中天科技",
-      "weight": 0.14
-    },
-    {
-      "stock_code": "688772",
-      "stock_name": "珠海冠宇",
-      "weight": 0.12
-    },
-    {
-      "stock_code": "301291",
-      "stock_name": "明阳电气",
-      "weight": 0.08
+      "stock_code": "002202",
+      "stock_name": "金风科技",
+      "weight": 1.16
     }
   ],
-  "fetched_at": "2026-04-13 01:09:26",
+  "fetched_at": "2026-05-07 23:14:42",
   "data_source": "eastmoney"
 }

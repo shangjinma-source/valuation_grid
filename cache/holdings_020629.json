@@ -1,6 +1,6 @@
 {
   "fund_code": "020629",
-  "fund_name": "汇添富上证科创板芯片ETF发起式联接C",
+  "fund_name": "汇添富科创芯片ETF联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.55,
   "parsed_weight": 60.72,
@@ -57,7 +57,7 @@
       "weight": 2.34
     }
   ],
-  "fetched_at": "2026-04-27 13:52:05",
+  "fetched_at": "2026-05-07 23:12:36",
   "data_source": "eastmoney",
   "original_fund_code": "020629",
   "etf_target": "588750",

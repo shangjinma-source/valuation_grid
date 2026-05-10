@@ -3,8 +3,8 @@
   "fund_name": "华夏上证科创板半导体材料设备主题ETF发起式联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.78,
-  "parsed_weight": 79.44,
-  "missing_weight": 20.34,
+  "parsed_weight": 94.09,
+  "missing_weight": 5.69,
   "positions": [
     {
       "stock_code": "688072",
@@ -57,6 +57,21 @@
       "weight": 3.41
     },
     {
+      "stock_code": "688082",
+      "stock_name": "盛美上海",
+      "weight": 3.35
+    },
+    {
+      "stock_code": "688652",
+      "stock_name": "京仪装备",
+      "weight": 2.49
+    },
+    {
+      "stock_code": "688106",
+      "stock_name": "金宏气体",
+      "weight": 1.86
+    },
+    {
       "stock_code": "688233",
       "stock_name": "神工股份",
       "weight": 1.7
@@ -67,9 +82,39 @@
       "weight": 1.67
     },
     {
+      "stock_code": "688549",
+      "stock_name": "中巨芯",
+      "weight": 1.25
+    },
+    {
+      "stock_code": "688432",
+      "stock_name": "有研硅",
+      "weight": 1.24
+    },
+    {
+      "stock_code": "688535",
+      "stock_name": "华海诚科",
+      "weight": 1.23
+    },
+    {
       "stock_code": "688720",
       "stock_name": "艾森股份",
       "weight": 1.02
+    },
+    {
+      "stock_code": "688584",
+      "stock_name": "上海合晶",
+      "weight": 0.93
+    },
+    {
+      "stock_code": "688383",
+      "stock_name": "新益昌",
+      "weight": 0.76
+    },
+    {
+      "stock_code": "688001",
+      "stock_name": "华兴源创",
+      "weight": 0.67
     },
     {
       "stock_code": "688530",
@@ -77,12 +122,22 @@
       "weight": 0.57
     },
     {
+      "stock_code": "688478",
+      "stock_name": "晶升股份",
+      "weight": 0.49
+    },
+    {
+      "stock_code": "688721",
+      "stock_name": "龙图光罩",
+      "weight": 0.38
+    },
+    {
       "stock_code": "688419",
       "stock_name": "耐科装备",
       "weight": 0.34
     }
   ],
-  "fetched_at": "2026-04-27 13:51:39",
+  "fetched_at": "2026-05-07 23:12:10",
   "data_source": "eastmoney",
   "original_fund_code": "024418",
   "etf_target": "588170",

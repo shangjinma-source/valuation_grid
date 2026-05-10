@@ -3,8 +3,8 @@
   "fund_name": "招商中证机器人ETF发起联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.73,
-  "parsed_weight": 54.39,
-  "missing_weight": 45.34,
+  "parsed_weight": 56.21,
+  "missing_weight": 43.52,
   "positions": [
     {
       "stock_code": "002230",
@@ -57,6 +57,11 @@
       "weight": 2.47
     },
     {
+      "stock_code": "002031",
+      "stock_name": "巨轮智能",
+      "weight": 1.82
+    },
+    {
       "stock_code": "688795",
       "stock_name": "摩尔线程",
       "weight": 0.06
@@ -82,7 +87,7 @@
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-04-27 13:57:45",
+  "fetched_at": "2026-05-07 23:14:25",
   "data_source": "eastmoney",
   "original_fund_code": "020482",
   "etf_target": "560770",

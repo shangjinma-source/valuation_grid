@@ -1,127 +1,62 @@
 {
   "fund_code": "017668",
   "fund_name": "鹏华新材料混合发起式C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 83.78,
-  "parsed_weight": 83.78,
-  "missing_weight": 0,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 82.18,
+  "parsed_weight": 63.11,
+  "missing_weight": 19.07,
   "positions": [
     {
       "stock_code": "300487",
       "stock_name": "蓝晓科技",
-      "weight": 9.43
-    },
-    {
-      "stock_code": "688625",
-      "stock_name": "呈和科技",
-      "weight": 8.61
+      "weight": 9.37
     },
     {
       "stock_code": "300596",
       "stock_name": "利安隆",
-      "weight": 8.01
-    },
-    {
-      "stock_code": "605183",
-      "stock_name": "确成股份",
-      "weight": 6.6
+      "weight": 8.57
     },
     {
       "stock_code": "600389",
       "stock_name": "江山股份",
-      "weight": 5.4
+      "weight": 8.32
     },
     {
-      "stock_code": "000975",
-      "stock_name": "山金国际",
-      "weight": 4.69
+      "stock_code": "605183",
+      "stock_name": "确成股份",
+      "weight": 7.55
+    },
+    {
+      "stock_code": "688625",
+      "stock_name": "呈和科技",
+      "weight": 5.96
+    },
+    {
+      "stock_code": "603281",
+      "stock_name": "江瀚新材",
+      "weight": 5.77
     },
     {
       "stock_code": "600988",
       "stock_name": "赤峰黄金",
-      "weight": 3.84
+      "weight": 5.01
+    },
+    {
+      "stock_code": "000975",
+      "stock_name": "山金国际",
+      "weight": 4.6
+    },
+    {
+      "stock_code": "600028",
+      "stock_name": "中国石化",
+      "weight": 4.4
     },
     {
       "stock_code": "600141",
       "stock_name": "兴发集团",
-      "weight": 3.82
-    },
-    {
-      "stock_code": "000830",
-      "stock_name": "鲁西化工",
-      "weight": 3.79
-    },
-    {
-      "stock_code": "603067",
-      "stock_name": "振华股份",
-      "weight": 3.73
-    },
-    {
-      "stock_code": "000603",
-      "stock_name": "盛达资源",
-      "weight": 3.39
-    },
-    {
-      "stock_code": "600731",
-      "stock_name": "湖南海利",
-      "weight": 3.01
-    },
-    {
-      "stock_code": "600961",
-      "stock_name": "株冶集团",
-      "weight": 2.98
-    },
-    {
-      "stock_code": "688065",
-      "stock_name": "凯赛生物",
-      "weight": 2.96
-    },
-    {
-      "stock_code": "688269",
-      "stock_name": "凯立新材",
-      "weight": 2.3
-    },
-    {
-      "stock_code": "002258",
-      "stock_name": "利尔化学",
-      "weight": 1.99
-    },
-    {
-      "stock_code": "688639",
-      "stock_name": "华恒生物",
-      "weight": 1.76
-    },
-    {
-      "stock_code": "002078",
-      "stock_name": "太阳纸业",
-      "weight": 1.5
-    },
-    {
-      "stock_code": "000786",
-      "stock_name": "北新建材",
-      "weight": 1.36
-    },
-    {
-      "stock_code": "002588",
-      "stock_name": "史丹利",
-      "weight": 1.29
-    },
-    {
-      "stock_code": "688190",
-      "stock_name": "云路股份",
-      "weight": 1.26
-    },
-    {
-      "stock_code": "002064",
-      "stock_name": "华峰化学",
-      "weight": 1.15
-    },
-    {
-      "stock_code": "002986",
-      "stock_name": "宇新股份",
-      "weight": 0.91
+      "weight": 3.56
     }
   ],
-  "fetched_at": "2026-04-13 01:09:07",
+  "fetched_at": "2026-05-07 23:14:41",
   "data_source": "eastmoney"
 }

@@ -1,297 +1,87 @@
 {
   "fund_code": "006533",
   "fund_name": "易方达科融混合",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 81.96,
-  "parsed_weight": 81.98,
-  "missing_weight": 0,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 85.08,
+  "parsed_weight": 54.98,
+  "missing_weight": 30.1,
   "positions": [
-    {
-      "stock_code": "300308",
-      "stock_name": "中际旭创",
-      "weight": 7.45
-    },
     {
       "stock_code": "300502",
       "stock_name": "新易盛",
-      "weight": 7.17
+      "weight": 9.52
     },
     {
-      "stock_code": "300274",
-      "stock_name": "阳光电源",
-      "weight": 6.2
-    },
-    {
-      "stock_code": "601138",
-      "stock_name": "工业富联",
-      "weight": 5.3
-    },
-    {
-      "stock_code": "002463",
-      "stock_name": "沪电股份",
-      "weight": 3.88
-    },
-    {
-      "stock_code": "002384",
-      "stock_name": "东山精密",
-      "weight": 3.77
-    },
-    {
-      "stock_code": "00700",
-      "stock_name": "腾讯控股",
-      "weight": 3.06
-    },
-    {
-      "stock_code": "002475",
-      "stock_name": "立讯精密",
-      "weight": 2.78
-    },
-    {
-      "stock_code": "002916",
-      "stock_name": "深南电路",
-      "weight": 2.76
-    },
-    {
-      "stock_code": "600030",
-      "stock_name": "中信证券",
-      "weight": 2.54
-    },
-    {
-      "stock_code": "300438",
-      "stock_name": "鹏辉能源",
-      "weight": 1.98
-    },
-    {
-      "stock_code": "300059",
-      "stock_name": "东方财富",
-      "weight": 1.97
-    },
-    {
-      "stock_code": "688256",
-      "stock_name": "寒武纪",
-      "weight": 1.76
-    },
-    {
-      "stock_code": "300750",
-      "stock_name": "宁德时代",
-      "weight": 1.67
-    },
-    {
-      "stock_code": "603659",
-      "stock_name": "璞泰来",
-      "weight": 1.66
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 8.09
     },
     {
       "stock_code": "600522",
       "stock_name": "中天科技",
-      "weight": 1.56
+      "weight": 6.69
     },
     {
-      "stock_code": "002497",
-      "stock_name": "雅化集团",
-      "weight": 1.48
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "weight": 6.21
     },
     {
-      "stock_code": "300033",
-      "stock_name": "同花顺",
-      "weight": 1.41
+      "stock_code": "601138",
+      "stock_name": "工业富联",
+      "weight": 5.72
     },
     {
       "stock_code": "600487",
       "stock_name": "亨通光电",
-      "weight": 1.3
+      "weight": 3.99
     },
     {
-      "stock_code": "002008",
-      "stock_name": "大族激光",
-      "weight": 1.27
-    },
-    {
-      "stock_code": "601377",
-      "stock_name": "兴业证券",
-      "weight": 1.23
-    },
-    {
-      "stock_code": "002466",
-      "stock_name": "天齐锂业",
-      "weight": 1.21
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 2.8
     },
     {
       "stock_code": "601211",
       "stock_name": "国泰海通",
-      "weight": 1.14
-    },
-    {
-      "stock_code": "002396",
-      "stock_name": "星网锐捷",
-      "weight": 1.08
-    },
-    {
-      "stock_code": "002245",
-      "stock_name": "蔚蓝锂芯",
-      "weight": 1.05
-    },
-    {
-      "stock_code": "300693",
-      "stock_name": "盛弘股份",
-      "weight": 1.03
-    },
-    {
-      "stock_code": "002812",
-      "stock_name": "恩捷股份",
-      "weight": 1.03
+      "weight": 2.36
     },
     {
       "stock_code": "601688",
       "stock_name": "华泰证券",
-      "weight": 0.97
+      "weight": 1.99
     },
     {
-      "stock_code": "688372",
-      "stock_name": "伟测科技",
-      "weight": 0.93
+      "stock_code": "688301",
+      "stock_name": "奕瑞科技",
+      "weight": 1.83
+    },
+    {
+      "stock_code": "301511",
+      "stock_name": "德福科技",
+      "weight": 1.46
+    },
+    {
+      "stock_code": "300693",
+      "stock_name": "盛弘股份",
+      "weight": 1.41
     },
     {
       "stock_code": "603380",
       "stock_name": "易德龙",
-      "weight": 0.89
-    },
-    {
-      "stock_code": "002409",
-      "stock_name": "雅克科技",
-      "weight": 0.86
-    },
-    {
-      "stock_code": "001301",
-      "stock_name": "尚太科技",
-      "weight": 0.85
-    },
-    {
-      "stock_code": "600958",
-      "stock_name": "东方证券",
-      "weight": 0.79
-    },
-    {
-      "stock_code": "002236",
-      "stock_name": "大华股份",
-      "weight": 0.78
-    },
-    {
-      "stock_code": "603259",
-      "stock_name": "药明康德",
-      "weight": 0.77
-    },
-    {
-      "stock_code": "000166",
-      "stock_name": "申万宏源",
-      "weight": 0.63
-    },
-    {
-      "stock_code": "300207",
-      "stock_name": "欣旺达",
-      "weight": 0.63
-    },
-    {
-      "stock_code": "603345",
-      "stock_name": "安井食品",
-      "weight": 0.55
-    },
-    {
-      "stock_code": "601988",
-      "stock_name": "中国银行",
-      "weight": 0.5
-    },
-    {
-      "stock_code": "01347",
-      "stock_name": "华虹半导体",
-      "weight": 0.42
-    },
-    {
-      "stock_code": "002315",
-      "stock_name": "焦点科技",
-      "weight": 0.4
-    },
-    {
-      "stock_code": "00819",
-      "stock_name": "天能动力",
-      "weight": 0.4
-    },
-    {
-      "stock_code": "688472",
-      "stock_name": "阿特斯",
-      "weight": 0.38
-    },
-    {
-      "stock_code": "600999",
-      "stock_name": "招商证券",
-      "weight": 0.31
-    },
-    {
-      "stock_code": "01024",
-      "stock_name": "快手-W",
-      "weight": 0.26
-    },
-    {
-      "stock_code": "603013",
-      "stock_name": "亚普股份",
-      "weight": 0.25
-    },
-    {
-      "stock_code": "06865",
-      "stock_name": "福莱特玻璃",
-      "weight": 0.25
-    },
-    {
-      "stock_code": "601615",
-      "stock_name": "明阳智能",
-      "weight": 0.23
-    },
-    {
-      "stock_code": "301486",
-      "stock_name": "致尚科技",
-      "weight": 0.21
-    },
-    {
-      "stock_code": "920522",
-      "stock_name": "纳科诺尔",
-      "weight": 0.2
-    },
-    {
-      "stock_code": "300015",
-      "stock_name": "爱尔眼科",
-      "weight": 0.19
-    },
-    {
-      "stock_code": "600710",
-      "stock_name": "苏美达",
-      "weight": 0.18
-    },
-    {
-      "stock_code": "688258",
-      "stock_name": "卓易信息",
-      "weight": 0.13
-    },
-    {
-      "stock_code": "600988",
-      "stock_name": "赤峰黄金",
-      "weight": 0.13
+      "weight": 1.07
     },
     {
       "stock_code": "300592",
       "stock_name": "华凯易佰",
-      "weight": 0.12
+      "weight": 1.02
     },
     {
-      "stock_code": "688802",
-      "stock_name": "沐曦股份",
-      "weight": 0.02
-    },
-    {
-      "stock_code": "688783",
-      "stock_name": "西安奕材",
-      "weight": 0.01
+      "stock_code": "301191",
+      "stock_name": "菲菱科思",
+      "weight": 0.82
     }
   ],
-  "fetched_at": "2026-04-13 01:08:45",
+  "fetched_at": "2026-05-07 23:14:40",
   "data_source": "eastmoney"
 }

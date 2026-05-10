@@ -3,8 +3,8 @@
   "fund_name": "广发中证传媒ETF联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.49,
-  "parsed_weight": 57.29,
-  "missing_weight": 42.2,
+  "parsed_weight": 74.65,
+  "missing_weight": 24.84,
   "positions": [
     {
       "stock_code": "002027",
@@ -62,12 +62,77 @@
       "weight": 2.45
     },
     {
+      "stock_code": "600637",
+      "stock_name": "东方明珠",
+      "weight": 2.4
+    },
+    {
       "stock_code": "300182",
       "stock_name": "捷成股份",
       "weight": 1.92
+    },
+    {
+      "stock_code": "002400",
+      "stock_name": "省广集团",
+      "weight": 1.88
+    },
+    {
+      "stock_code": "600986",
+      "stock_name": "浙文互联",
+      "weight": 1.83
+    },
+    {
+      "stock_code": "000917",
+      "stock_name": "电广传媒",
+      "weight": 1.67
+    },
+    {
+      "stock_code": "300315",
+      "stock_name": "掌趣科技",
+      "weight": 1.64
+    },
+    {
+      "stock_code": "600977",
+      "stock_name": "中国电影",
+      "weight": 1.27
+    },
+    {
+      "stock_code": "000681",
+      "stock_name": "视觉中国",
+      "weight": 1.25
+    },
+    {
+      "stock_code": "002354",
+      "stock_name": "天娱数科",
+      "weight": 1.19
+    },
+    {
+      "stock_code": "002654",
+      "stock_name": "万润科技",
+      "weight": 1.15
+    },
+    {
+      "stock_code": "600996",
+      "stock_name": "贵广网络",
+      "weight": 0.98
+    },
+    {
+      "stock_code": "000676",
+      "stock_name": "智度股份",
+      "weight": 0.97
+    },
+    {
+      "stock_code": "603888",
+      "stock_name": "新华网",
+      "weight": 0.68
+    },
+    {
+      "stock_code": "601858",
+      "stock_name": "中国科传",
+      "weight": 0.45
     }
   ],
-  "fetched_at": "2026-04-27 13:54:45",
+  "fetched_at": "2026-05-07 23:14:17",
   "data_source": "eastmoney",
   "original_fund_code": "004753",
   "etf_target": "512980",

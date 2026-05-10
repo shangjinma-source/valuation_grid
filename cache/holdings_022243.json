@@ -1,262 +1,62 @@
 {
   "fund_code": "022243",
   "fund_name": "中邮军民融合灵活配置混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 92.87,
-  "parsed_weight": 92.9,
-  "missing_weight": 0,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.16,
+  "parsed_weight": 26.17,
+  "missing_weight": 66.99,
   "positions": [
-    {
-      "stock_code": "600879",
-      "stock_name": "航天电子",
-      "weight": 4.16
-    },
-    {
-      "stock_code": "002683",
-      "stock_name": "广东宏大",
-      "weight": 2.43
-    },
-    {
-      "stock_code": "300101",
-      "stock_name": "振芯科技",
-      "weight": 2.17
-    },
-    {
-      "stock_code": "300699",
-      "stock_name": "光威复材",
-      "weight": 2.14
-    },
-    {
-      "stock_code": "002465",
-      "stock_name": "海格通信",
-      "weight": 2.14
-    },
     {
       "stock_code": "600893",
       "stock_name": "航发动力",
-      "weight": 2.04
+      "weight": 5.16
     },
     {
-      "stock_code": "002297",
-      "stock_name": "博云新材",
-      "weight": 2.03
+      "stock_code": "300900",
+      "stock_name": "广联航空",
+      "weight": 2.76
     },
     {
-      "stock_code": "002935",
-      "stock_name": "天奥电子",
-      "weight": 1.99
+      "stock_code": "301005",
+      "stock_name": "超捷股份",
+      "weight": 2.37
+    },
+    {
+      "stock_code": "000065",
+      "stock_name": "北方国际",
+      "weight": 2.34
+    },
+    {
+      "stock_code": "688081",
+      "stock_name": "兴图新科",
+      "weight": 2.34
+    },
+    {
+      "stock_code": "688270",
+      "stock_name": "ST臻镭",
+      "weight": 2.32
+    },
+    {
+      "stock_code": "600184",
+      "stock_name": "光电股份",
+      "weight": 2.3
     },
     {
       "stock_code": "301571",
       "stock_name": "国科天成",
-      "weight": 1.96
-    },
-    {
-      "stock_code": "002625",
-      "stock_name": "光启技术",
-      "weight": 1.94
-    },
-    {
-      "stock_code": "300593",
-      "stock_name": "新雷能",
-      "weight": 1.94
-    },
-    {
-      "stock_code": "600372",
-      "stock_name": "中航机载",
-      "weight": 1.93
-    },
-    {
-      "stock_code": "688311",
-      "stock_name": "盟升电子",
-      "weight": 1.93
-    },
-    {
-      "stock_code": "600760",
-      "stock_name": "中航沈飞",
-      "weight": 1.9
-    },
-    {
-      "stock_code": "688636",
-      "stock_name": "智明达",
-      "weight": 1.89
-    },
-    {
-      "stock_code": "600391",
-      "stock_name": "航发科技",
-      "weight": 1.89
-    },
-    {
-      "stock_code": "688385",
-      "stock_name": "复旦微电",
-      "weight": 1.88
-    },
-    {
-      "stock_code": "603712",
-      "stock_name": "七一二",
-      "weight": 1.85
-    },
-    {
-      "stock_code": "300719",
-      "stock_name": "安达维尔",
-      "weight": 1.84
-    },
-    {
-      "stock_code": "002023",
-      "stock_name": "海特高新",
-      "weight": 1.84
-    },
-    {
-      "stock_code": "603809",
-      "stock_name": "豪能股份",
-      "weight": 1.83
-    },
-    {
-      "stock_code": "688510",
-      "stock_name": "航亚科技",
-      "weight": 1.83
-    },
-    {
-      "stock_code": "300416",
-      "stock_name": "苏试试验",
-      "weight": 1.82
-    },
-    {
-      "stock_code": "600850",
-      "stock_name": "电科数字",
-      "weight": 1.81
-    },
-    {
-      "stock_code": "600685",
-      "stock_name": "中船防务",
-      "weight": 1.81
+      "weight": 2.26
     },
     {
       "stock_code": "300775",
       "stock_name": "三角防务",
-      "weight": 1.8
+      "weight": 2.2
     },
     {
-      "stock_code": "300667",
-      "stock_name": "必创科技",
-      "weight": 1.8
-    },
-    {
-      "stock_code": "603678",
-      "stock_name": "火炬电子",
-      "weight": 1.8
-    },
-    {
-      "stock_code": "300227",
-      "stock_name": "光韵达",
-      "weight": 1.8
-    },
-    {
-      "stock_code": "688143",
-      "stock_name": "长盈通",
-      "weight": 1.79
-    },
-    {
-      "stock_code": "600765",
-      "stock_name": "中航重机",
-      "weight": 1.79
-    },
-    {
-      "stock_code": "003002",
-      "stock_name": "壶化股份",
-      "weight": 1.78
-    },
-    {
-      "stock_code": "002446",
-      "stock_name": "盛路通信",
-      "weight": 1.78
-    },
-    {
-      "stock_code": "000733",
-      "stock_name": "振华科技",
-      "weight": 1.78
-    },
-    {
-      "stock_code": "300711",
-      "stock_name": "广哈通信",
-      "weight": 1.77
-    },
-    {
-      "stock_code": "603308",
-      "stock_name": "应流股份",
-      "weight": 1.77
-    },
-    {
-      "stock_code": "002085",
-      "stock_name": "万丰奥威",
-      "weight": 1.77
-    },
-    {
-      "stock_code": "002426",
-      "stock_name": "胜利精密",
-      "weight": 1.75
-    },
-    {
-      "stock_code": "301302",
-      "stock_name": "华如科技",
-      "weight": 1.75
-    },
-    {
-      "stock_code": "300353",
-      "stock_name": "东土科技",
-      "weight": 1.73
-    },
-    {
-      "stock_code": "300263",
-      "stock_name": "隆华科技",
-      "weight": 1.72
-    },
-    {
-      "stock_code": "300424",
-      "stock_name": "航新科技",
-      "weight": 1.71
-    },
-    {
-      "stock_code": "300922",
-      "stock_name": "天秦装备",
-      "weight": 1.69
-    },
-    {
-      "stock_code": "300733",
-      "stock_name": "西菱动力",
-      "weight": 1.69
-    },
-    {
-      "stock_code": "000534",
-      "stock_name": "万泽股份",
-      "weight": 1.68
-    },
-    {
-      "stock_code": "300547",
-      "stock_name": "川环科技",
-      "weight": 1.67
-    },
-    {
-      "stock_code": "300589",
-      "stock_name": "江龙船艇",
-      "weight": 1.61
-    },
-    {
-      "stock_code": "688307",
-      "stock_name": "中润光学",
-      "weight": 1.58
-    },
-    {
-      "stock_code": "300395",
-      "stock_name": "菲利华",
-      "weight": 1.45
-    },
-    {
-      "stock_code": "000962",
-      "stock_name": "东方钽业",
-      "weight": 0.45
+      "stock_code": "600316",
+      "stock_name": "洪都航空",
+      "weight": 2.12
     }
   ],
-  "fetched_at": "2026-04-16 22:12:29",
+  "fetched_at": "2026-05-10 22:20:10",
   "data_source": "eastmoney"
 }

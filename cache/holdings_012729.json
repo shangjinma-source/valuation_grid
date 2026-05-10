@@ -3,8 +3,8 @@
   "fund_name": "国泰中证动漫游戏ETF联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.23,
-  "parsed_weight": 82.02,
-  "missing_weight": 17.21,
+  "parsed_weight": 93.76,
+  "missing_weight": 5.47,
   "positions": [
     {
       "stock_code": "002558",
@@ -57,9 +57,29 @@
       "weight": 3.24
     },
     {
+      "stock_code": "600633",
+      "stock_name": "浙数文化",
+      "weight": 3.18
+    },
+    {
+      "stock_code": "002292",
+      "stock_name": "奥飞娱乐",
+      "weight": 2.36
+    },
+    {
+      "stock_code": "300031",
+      "stock_name": "宝通科技",
+      "weight": 2.35
+    },
+    {
       "stock_code": "300043",
       "stock_name": "星辉娱乐",
       "weight": 1.63
+    },
+    {
+      "stock_code": "300533",
+      "stock_name": "冰川网络",
+      "weight": 1.56
     },
     {
       "stock_code": "300494",
@@ -82,6 +102,16 @@
       "weight": 1.24
     },
     {
+      "stock_code": "002148",
+      "stock_name": "北纬科技",
+      "weight": 1.15
+    },
+    {
+      "stock_code": "300299",
+      "stock_name": "富春股份",
+      "weight": 1.14
+    },
+    {
       "stock_code": "002862",
       "stock_name": "实丰文化",
       "weight": 0.55
@@ -97,7 +127,7 @@
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-04-27 14:01:20",
+  "fetched_at": "2026-05-07 23:14:33",
   "data_source": "eastmoney",
   "original_fund_code": "012729",
   "etf_target": "516010",

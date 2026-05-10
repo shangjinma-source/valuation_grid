@@ -3,8 +3,8 @@
   "fund_name": "汇添富中证油气资源ETF发起式联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.79,
-  "parsed_weight": 70.97,
-  "missing_weight": 28.82,
+  "parsed_weight": 71.61,
+  "missing_weight": 28.18,
   "positions": [
     {
       "stock_code": "600938",
@@ -62,6 +62,11 @@
       "weight": 1.62
     },
     {
+      "stock_code": "002094",
+      "stock_name": "青岛金王",
+      "weight": 0.64
+    },
+    {
       "stock_code": "002278",
       "stock_name": "神开股份",
       "weight": 0.59
@@ -72,7 +77,7 @@
       "weight": 0.56
     }
   ],
-  "fetched_at": "2026-04-27 14:02:16",
+  "fetched_at": "2026-05-07 23:14:36",
   "data_source": "eastmoney",
   "original_fund_code": "023145",
   "etf_target": "159309",

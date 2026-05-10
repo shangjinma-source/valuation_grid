@@ -1,142 +1,62 @@
 {
   "fund_code": "024473",
   "fund_name": "信澳优势行业混合A",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 91.68,
-  "parsed_weight": 91.65,
-  "missing_weight": 0.03,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.96,
+  "parsed_weight": 85.01,
+  "missing_weight": 7.95,
   "positions": [
     {
-      "stock_code": "300308",
-      "stock_name": "中际旭创",
-      "weight": 9.91
-    },
-    {
-      "stock_code": "300502",
-      "stock_name": "新易盛",
-      "weight": 9.71
-    },
-    {
-      "stock_code": "002837",
-      "stock_name": "英维克",
-      "weight": 9.61
+      "stock_code": "301338",
+      "stock_name": "凯格精机",
+      "weight": 9.93
     },
     {
       "stock_code": "301128",
       "stock_name": "强瑞技术",
-      "weight": 8.78
-    },
-    {
-      "stock_code": "688519",
-      "stock_name": "南亚新材",
-      "weight": 6.8
-    },
-    {
-      "stock_code": "301338",
-      "stock_name": "凯格精机",
-      "weight": 6.39
-    },
-    {
-      "stock_code": "300394",
-      "stock_name": "天孚通信",
-      "weight": 6.02
-    },
-    {
-      "stock_code": "688183",
-      "stock_name": "生益电子",
-      "weight": 6.01
-    },
-    {
-      "stock_code": "300476",
-      "stock_name": "胜宏科技",
-      "weight": 4.32
-    },
-    {
-      "stock_code": "688668",
-      "stock_name": "鼎通科技",
-      "weight": 4.14
+      "weight": 9.89
     },
     {
       "stock_code": "002384",
       "stock_name": "东山精密",
-      "weight": 3.9
+      "weight": 9.83
     },
     {
-      "stock_code": "600183",
-      "stock_name": "生益科技",
-      "weight": 3.58
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.58
     },
     {
-      "stock_code": "300136",
-      "stock_name": "信维通信",
-      "weight": 2.64
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.53
     },
     {
-      "stock_code": "003031",
-      "stock_name": "中瓷电子",
-      "weight": 2.04
+      "stock_code": "002837",
+      "stock_name": "英维克",
+      "weight": 9.37
     },
     {
-      "stock_code": "301382",
-      "stock_name": "蜂助手",
-      "weight": 2.0
+      "stock_code": "301086",
+      "stock_name": "鸿富瀚",
+      "weight": 8.96
     },
     {
-      "stock_code": "301018",
-      "stock_name": "申菱环境",
-      "weight": 1.94
+      "stock_code": "688668",
+      "stock_name": "鼎通科技",
+      "weight": 8.93
     },
     {
-      "stock_code": "601231",
-      "stock_name": "环旭电子",
-      "weight": 1.02
+      "stock_code": "300857",
+      "stock_name": "协创数据",
+      "weight": 5.02
     },
     {
-      "stock_code": "688498",
-      "stock_name": "源杰科技",
-      "weight": 1.02
-    },
-    {
-      "stock_code": "688313",
-      "stock_name": "仕佳光子",
-      "weight": 1.0
-    },
-    {
-      "stock_code": "002970",
-      "stock_name": "锐明技术",
-      "weight": 0.35
-    },
-    {
-      "stock_code": "688795",
-      "stock_name": "摩尔线程",
-      "weight": 0.26
-    },
-    {
-      "stock_code": "688802",
-      "stock_name": "沐曦股份",
-      "weight": 0.13
-    },
-    {
-      "stock_code": "688790",
-      "stock_name": "昂瑞微",
-      "weight": 0.04
-    },
-    {
-      "stock_code": "001280",
-      "stock_name": "中国铀业",
-      "weight": 0.02
-    },
-    {
-      "stock_code": "688809",
-      "stock_name": "强一股份",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "001396",
-      "stock_name": "誉帆科技",
-      "weight": 0.01
+      "stock_code": "688766",
+      "stock_name": "普冉股份",
+      "weight": 3.97
     }
   ],
-  "fetched_at": "2026-04-13 01:08:35",
+  "fetched_at": "2026-05-07 23:14:17",
   "data_source": "eastmoney"
 }

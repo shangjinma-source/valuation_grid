@@ -3,8 +3,8 @@
   "fund_name": "国泰中证油气产业ETF发起联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.78,
-  "parsed_weight": 69.13,
-  "missing_weight": 30.65,
+  "parsed_weight": 77.97,
+  "missing_weight": 21.81,
   "positions": [
     {
       "stock_code": "600938",
@@ -62,14 +62,49 @@
       "weight": 2.18
     },
     {
+      "stock_code": "600871",
+      "stock_name": "石化油服",
+      "weight": 1.75
+    },
+    {
+      "stock_code": "002639",
+      "stock_name": "雪人集团",
+      "weight": 1.59
+    },
+    {
+      "stock_code": "600968",
+      "stock_name": "海油发展",
+      "weight": 1.38
+    },
+    {
+      "stock_code": "601969",
+      "stock_name": "海南矿业",
+      "weight": 1.04
+    },
+    {
       "stock_code": "600339",
       "stock_name": "中油工程",
       "weight": 1.01
     },
     {
+      "stock_code": "600688",
+      "stock_name": "上海石化",
+      "weight": 0.96
+    },
+    {
       "stock_code": "300228",
       "stock_name": "富瑞特装",
       "weight": 0.85
+    },
+    {
+      "stock_code": "000059",
+      "stock_name": "华锦股份",
+      "weight": 0.77
+    },
+    {
+      "stock_code": "002094",
+      "stock_name": "青岛金王",
+      "weight": 0.55
     },
     {
       "stock_code": "002554",
@@ -85,9 +120,19 @@
       "stock_code": "002549",
       "stock_name": "凯美特气",
       "weight": 0.45
+    },
+    {
+      "stock_code": "600724",
+      "stock_name": "宁波富达",
+      "weight": 0.4
+    },
+    {
+      "stock_code": "000096",
+      "stock_name": "广聚能源",
+      "weight": 0.4
     }
   ],
-  "fetched_at": "2026-04-27 14:02:29",
+  "fetched_at": "2026-05-07 23:14:36",
   "data_source": "eastmoney",
   "original_fund_code": "020406",
   "etf_target": "561360",

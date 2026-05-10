@@ -1,87 +1,62 @@
 {
   "fund_code": "025778",
   "fund_name": "东方阿尔法瑞享混合发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 79.01,
-  "parsed_weight": 79.01,
-  "missing_weight": 0.0,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.69,
+  "parsed_weight": 81.54,
+  "missing_weight": 11.15,
   "positions": [
-    {
-      "stock_code": "001203",
-      "stock_name": "大中矿业",
-      "weight": 8.27
-    },
-    {
-      "stock_code": "300390",
-      "stock_name": "天华新能",
-      "weight": 8.07
-    },
     {
       "stock_code": "002240",
       "stock_name": "盛新锂能",
-      "weight": 7.97
+      "weight": 9.9
     },
     {
-      "stock_code": "000036",
-      "stock_name": "华联控股",
-      "weight": 7.9
-    },
-    {
-      "stock_code": "000408",
-      "stock_name": "藏格矿业",
-      "weight": 7.67
-    },
-    {
-      "stock_code": "002738",
-      "stock_name": "中矿资源",
-      "weight": 7.46
-    },
-    {
-      "stock_code": "000688",
-      "stock_name": "国城矿业",
-      "weight": 7.37
-    },
-    {
-      "stock_code": "002497",
-      "stock_name": "雅化集团",
-      "weight": 6.79
+      "stock_code": "001203",
+      "stock_name": "大中矿业",
+      "weight": 9.86
     },
     {
       "stock_code": "002756",
       "stock_name": "永兴材料",
-      "weight": 6.53
+      "weight": 9.81
+    },
+    {
+      "stock_code": "000688",
+      "stock_name": "国城矿业",
+      "weight": 9.78
+    },
+    {
+      "stock_code": "300390",
+      "stock_name": "天华新能",
+      "weight": 9.52
+    },
+    {
+      "stock_code": "002497",
+      "stock_name": "雅化集团",
+      "weight": 8.74
     },
     {
       "stock_code": "002192",
       "stock_name": "融捷股份",
-      "weight": 4.02
+      "weight": 7.79
+    },
+    {
+      "stock_code": "002738",
+      "stock_name": "中矿资源",
+      "weight": 6.81
+    },
+    {
+      "stock_code": "000408",
+      "stock_name": "藏格矿业",
+      "weight": 5.36
     },
     {
       "stock_code": "002460",
       "stock_name": "赣锋锂业",
-      "weight": 3.27
-    },
-    {
-      "stock_code": "002466",
-      "stock_name": "天齐锂业",
-      "weight": 3.13
-    },
-    {
-      "stock_code": "000792",
-      "stock_name": "盐湖股份",
-      "weight": 0.45
-    },
-    {
-      "stock_code": "000762",
-      "stock_name": "西藏矿业",
-      "weight": 0.08
-    },
-    {
-      "stock_code": "002176",
-      "stock_name": "江特电机",
-      "weight": 0.03
+      "weight": 3.97
     }
   ],
-  "fetched_at": "2026-04-13 01:09:14",
+  "fetched_at": "2026-05-07 23:14:41",
   "data_source": "eastmoney"
 }

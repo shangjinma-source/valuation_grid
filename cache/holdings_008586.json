@@ -3,8 +3,8 @@
   "fund_name": "华夏人工智能ETF联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.78,
-  "parsed_weight": 57.2,
-  "missing_weight": 42.58,
+  "parsed_weight": 60.02,
+  "missing_weight": 39.76,
   "positions": [
     {
       "stock_code": "300502",
@@ -55,9 +55,24 @@
       "stock_code": "300442",
       "stock_name": "润泽科技",
       "weight": 2.62
+    },
+    {
+      "stock_code": "002402",
+      "stock_name": "和而泰",
+      "weight": 1.11
+    },
+    {
+      "stock_code": "600699",
+      "stock_name": "均胜电子",
+      "weight": 0.97
+    },
+    {
+      "stock_code": "600100",
+      "stock_name": "同方股份",
+      "weight": 0.74
     }
   ],
-  "fetched_at": "2026-04-27 13:59:02",
+  "fetched_at": "2026-05-07 23:14:29",
   "data_source": "eastmoney",
   "original_fund_code": "008586",
   "etf_target": "515070",

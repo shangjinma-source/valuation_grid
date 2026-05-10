@@ -3,8 +3,8 @@
   "fund_name": "国泰中证煤炭ETF联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.37,
-  "parsed_weight": 85.71,
-  "missing_weight": 13.66,
+  "parsed_weight": 99.36,
+  "missing_weight": 0.01,
   "positions": [
     {
       "stock_code": "601088",
@@ -57,6 +57,11 @@
       "weight": 3.99
     },
     {
+      "stock_code": "601666",
+      "stock_name": "平煤股份",
+      "weight": 3.51
+    },
+    {
       "stock_code": "601918",
       "stock_name": "新集能源",
       "weight": 3.4
@@ -77,9 +82,24 @@
       "weight": 1.85
     },
     {
+      "stock_code": "600395",
+      "stock_name": "盘江股份",
+      "weight": 1.76
+    },
+    {
+      "stock_code": "000937",
+      "stock_name": "冀中能源",
+      "weight": 1.76
+    },
+    {
       "stock_code": "600123",
       "stock_name": "兰花科创",
       "weight": 1.68
+    },
+    {
+      "stock_code": "000552",
+      "stock_name": "甘肃能化",
+      "weight": 1.64
     },
     {
       "stock_code": "600740",
@@ -102,9 +122,34 @@
       "weight": 1.29
     },
     {
+      "stock_code": "600997",
+      "stock_name": "开滦股份",
+      "weight": 1.15
+    },
+    {
+      "stock_code": "600508",
+      "stock_name": "上海能源",
+      "weight": 1.13
+    },
+    {
+      "stock_code": "601015",
+      "stock_name": "陕西黑猫",
+      "weight": 1.07
+    },
+    {
       "stock_code": "600121",
       "stock_name": "郑州煤电",
       "weight": 0.84
+    },
+    {
+      "stock_code": "600758",
+      "stock_name": "辽宁能源",
+      "weight": 0.83
+    },
+    {
+      "stock_code": "600403",
+      "stock_name": "大有能源",
+      "weight": 0.8
     },
     {
       "stock_code": "600792",
@@ -112,7 +157,7 @@
       "weight": 0.58
     }
   ],
-  "fetched_at": "2026-04-27 13:58:46",
+  "fetched_at": "2026-05-07 23:14:28",
   "data_source": "eastmoney",
   "original_fund_code": "008280",
   "etf_target": "515220",

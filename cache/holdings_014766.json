@@ -1,197 +1,62 @@
 {
   "fund_code": "014766",
   "fund_name": "中欧碳中和混合发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 91.11,
-  "parsed_weight": 91.06,
-  "missing_weight": 0.05,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 90.73,
+  "parsed_weight": 53.09,
+  "missing_weight": 37.64,
   "positions": [
-    {
-      "stock_code": "300274",
-      "stock_name": "阳光电源",
-      "weight": 9.48
-    },
     {
       "stock_code": "300750",
       "stock_name": "宁德时代",
-      "weight": 9.16
-    },
-    {
-      "stock_code": "002497",
-      "stock_name": "雅化集团",
-      "weight": 7.72
-    },
-    {
-      "stock_code": "000973",
-      "stock_name": "佛塑科技",
-      "weight": 4.58
-    },
-    {
-      "stock_code": "300438",
-      "stock_name": "鹏辉能源",
-      "weight": 4.42
-    },
-    {
-      "stock_code": "002759",
-      "stock_name": "天际股份",
-      "weight": 3.86
-    },
-    {
-      "stock_code": "002709",
-      "stock_name": "天赐材料",
-      "weight": 3.85
-    },
-    {
-      "stock_code": "300390",
-      "stock_name": "天华新能",
-      "weight": 3.78
-    },
-    {
-      "stock_code": "002240",
-      "stock_name": "盛新锂能",
-      "weight": 3.58
-    },
-    {
-      "stock_code": "002407",
-      "stock_name": "多氟多",
-      "weight": 3.52
-    },
-    {
-      "stock_code": "002850",
-      "stock_name": "科达利",
-      "weight": 3.28
-    },
-    {
-      "stock_code": "002466",
-      "stock_name": "天齐锂业",
-      "weight": 3.07
+      "weight": 9.85
     },
     {
       "stock_code": "605117",
       "stock_name": "德业股份",
-      "weight": 2.99
+      "weight": 6.73
     },
     {
-      "stock_code": "001301",
-      "stock_name": "尚太科技",
-      "weight": 2.97
+      "stock_code": "300274",
+      "stock_name": "阳光电源",
+      "weight": 6.43
     },
     {
-      "stock_code": "601689",
-      "stock_name": "拓普集团",
-      "weight": 2.67
+      "stock_code": "300390",
+      "stock_name": "天华新能",
+      "weight": 4.99
     },
     {
-      "stock_code": "688275",
-      "stock_name": "万润新能",
-      "weight": 2.61
+      "stock_code": "000973",
+      "stock_name": "佛塑科技",
+      "weight": 4.69
     },
     {
-      "stock_code": "603179",
-      "stock_name": "新泉股份",
-      "weight": 2.56
-    },
-    {
-      "stock_code": "000688",
-      "stock_name": "国城矿业",
-      "weight": 2.31
-    },
-    {
-      "stock_code": "002050",
-      "stock_name": "三花智控",
-      "weight": 2.3
-    },
-    {
-      "stock_code": "300014",
-      "stock_name": "亿纬锂能",
-      "weight": 2.28
-    },
-    {
-      "stock_code": "002812",
-      "stock_name": "恩捷股份",
-      "weight": 1.96
+      "stock_code": "002850",
+      "stock_name": "科达利",
+      "weight": 4.58
     },
     {
       "stock_code": "002738",
       "stock_name": "中矿资源",
-      "weight": 1.96
+      "weight": 4.44
     },
     {
-      "stock_code": "002487",
-      "stock_name": "大金重工",
-      "weight": 1.8
+      "stock_code": "000688",
+      "stock_name": "国城矿业",
+      "weight": 3.98
     },
     {
-      "stock_code": "688472",
-      "stock_name": "阿特斯",
-      "weight": 1.55
+      "stock_code": "002709",
+      "stock_name": "天赐材料",
+      "weight": 3.93
     },
     {
-      "stock_code": "001203",
-      "stock_name": "大中矿业",
-      "weight": 1.06
-    },
-    {
-      "stock_code": "301358",
-      "stock_name": "湖南裕能",
-      "weight": 0.9
-    },
-    {
-      "stock_code": "688411",
-      "stock_name": "海博思创",
-      "weight": 0.35
-    },
-    {
-      "stock_code": "002594",
-      "stock_name": "比亚迪",
-      "weight": 0.2
-    },
-    {
-      "stock_code": "01810",
-      "stock_name": "小米集团-W",
-      "weight": 0.12
-    },
-    {
-      "stock_code": "000888",
-      "stock_name": "峨眉山A",
-      "weight": 0.07
-    },
-    {
-      "stock_code": "688795",
-      "stock_name": "摩尔线程",
-      "weight": 0.03
-    },
-    {
-      "stock_code": "688802",
-      "stock_name": "沐曦股份",
-      "weight": 0.02
-    },
-    {
-      "stock_code": "688783",
-      "stock_name": "西安奕材",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "688765",
-      "stock_name": "禾元生物",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "001280",
-      "stock_name": "中国铀业",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "301656",
-      "stock_name": "联合动力",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "688729",
-      "stock_name": "屹唐股份",
-      "weight": 0.01
+      "stock_code": "002812",
+      "stock_name": "恩捷股份",
+      "weight": 3.47
     }
   ],
-  "fetched_at": "2026-04-13 01:09:28",
+  "fetched_at": "2026-05-07 23:14:42",
   "data_source": "eastmoney"
 }

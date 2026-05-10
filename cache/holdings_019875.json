@@ -3,8 +3,8 @@
   "fund_name": "广发稀有金属ETF联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.67,
-  "parsed_weight": 58.23,
-  "missing_weight": 41.44,
+  "parsed_weight": 59.43,
+  "missing_weight": 40.24,
   "positions": [
     {
       "stock_code": "603993",
@@ -57,12 +57,17 @@
       "weight": 2.5
     },
     {
+      "stock_code": "002176",
+      "stock_name": "江特电机",
+      "weight": 1.2
+    },
+    {
       "stock_code": "000795",
       "stock_name": "英洛华",
       "weight": 0.41
     }
   ],
-  "fetched_at": "2026-04-27 14:02:43",
+  "fetched_at": "2026-05-07 23:14:38",
   "data_source": "eastmoney",
   "original_fund_code": "019875",
   "etf_target": "159608",

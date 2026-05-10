@@ -3,8 +3,8 @@
   "fund_name": "华富中证人工智能产业ETF联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.69,
-  "parsed_weight": 69.81,
-  "missing_weight": 29.88,
+  "parsed_weight": 73.44,
+  "missing_weight": 26.25,
   "positions": [
     {
       "stock_code": "300502",
@@ -57,9 +57,29 @@
       "weight": 2.48
     },
     {
+      "stock_code": "600728",
+      "stock_name": "佳都科技",
+      "weight": 1.18
+    },
+    {
+      "stock_code": "002373",
+      "stock_name": "千方科技",
+      "weight": 1.02
+    },
+    {
+      "stock_code": "002354",
+      "stock_name": "天娱数科",
+      "weight": 0.92
+    },
+    {
       "stock_code": "603881",
       "stock_name": "数据港",
       "weight": 0.75
+    },
+    {
+      "stock_code": "300047",
+      "stock_name": "天源迪科",
+      "weight": 0.51
     },
     {
       "stock_code": "688795",
@@ -82,7 +102,7 @@
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-04-27 13:59:45",
+  "fetched_at": "2026-05-07 23:14:30",
   "data_source": "eastmoney",
   "original_fund_code": "008021",
   "etf_target": "515980",

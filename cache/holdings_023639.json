@@ -3,8 +3,8 @@
   "fund_name": "国泰A股电网设备ETF联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.77,
-  "parsed_weight": 68.59,
-  "missing_weight": 31.18,
+  "parsed_weight": 72.07,
+  "missing_weight": 27.7,
   "positions": [
     {
       "stock_code": "600487",
@@ -72,6 +72,16 @@
       "weight": 1.15
     },
     {
+      "stock_code": "002276",
+      "stock_name": "万马股份",
+      "weight": 1.07
+    },
+    {
+      "stock_code": "002498",
+      "stock_name": "汉缆股份",
+      "weight": 1.03
+    },
+    {
       "stock_code": "002121",
       "stock_name": "科陆电子",
       "weight": 0.85
@@ -87,9 +97,19 @@
       "weight": 0.75
     },
     {
+      "stock_code": "600590",
+      "stock_name": "泰豪科技",
+      "weight": 0.72
+    },
+    {
       "stock_code": "300222",
       "stock_name": "科大智能",
       "weight": 0.67
+    },
+    {
+      "stock_code": "300252",
+      "stock_name": "金信诺",
+      "weight": 0.66
     },
     {
       "stock_code": "300153",
@@ -102,7 +122,7 @@
       "weight": 0.19
     }
   ],
-  "fetched_at": "2026-04-27 13:59:54",
+  "fetched_at": "2026-05-07 23:14:30",
   "data_source": "eastmoney",
   "original_fund_code": "023639",
   "etf_target": "561380",

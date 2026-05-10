@@ -1,112 +1,62 @@
 {
   "fund_code": "290008",
   "fund_name": "泰信发展主题混合",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 80.56,
-  "parsed_weight": 80.55,
-  "missing_weight": 0.01,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.76,
+  "parsed_weight": 83.08,
+  "missing_weight": 10.68,
   "positions": [
     {
       "stock_code": "300390",
       "stock_name": "天华新能",
-      "weight": 8.92
+      "weight": 9.97
     },
     {
       "stock_code": "002738",
       "stock_name": "中矿资源",
-      "weight": 8.8
-    },
-    {
-      "stock_code": "002497",
-      "stock_name": "雅化集团",
-      "weight": 8.65
-    },
-    {
-      "stock_code": "000688",
-      "stock_name": "国城矿业",
-      "weight": 8.34
-    },
-    {
-      "stock_code": "002756",
-      "stock_name": "永兴材料",
-      "weight": 8.21
+      "weight": 9.94
     },
     {
       "stock_code": "002240",
       "stock_name": "盛新锂能",
-      "weight": 8.19
+      "weight": 9.9
     },
     {
-      "stock_code": "002466",
-      "stock_name": "天齐锂业",
-      "weight": 8.08
+      "stock_code": "002497",
+      "stock_name": "雅化集团",
+      "weight": 9.45
     },
     {
-      "stock_code": "002192",
-      "stock_name": "融捷股份",
-      "weight": 7.68
+      "stock_code": "002756",
+      "stock_name": "永兴材料",
+      "weight": 9.33
+    },
+    {
+      "stock_code": "000688",
+      "stock_name": "国城矿业",
+      "weight": 9.04
     },
     {
       "stock_code": "000762",
       "stock_name": "西藏矿业",
-      "weight": 5.53
+      "weight": 8.5
     },
     {
-      "stock_code": "002460",
-      "stock_name": "赣锋锂业",
-      "weight": 5.15
-    },
-    {
-      "stock_code": "001203",
-      "stock_name": "大中矿业",
-      "weight": 2.38
-    },
-    {
-      "stock_code": "600499",
-      "stock_name": "科达制造",
-      "weight": 0.4
-    },
-    {
-      "stock_code": "000155",
-      "stock_name": "川能动力",
-      "weight": 0.06
+      "stock_code": "002192",
+      "stock_name": "融捷股份",
+      "weight": 6.87
     },
     {
       "stock_code": "000792",
       "stock_name": "盐湖股份",
-      "weight": 0.05
+      "weight": 5.74
     },
     {
-      "stock_code": "600773",
-      "stock_name": "西藏城投",
-      "weight": 0.05
-    },
-    {
-      "stock_code": "000962",
-      "stock_name": "东方钽业",
-      "weight": 0.02
-    },
-    {
-      "stock_code": "603200",
-      "stock_name": "上海洗霸",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "688778",
-      "stock_name": "厦钨新能",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "002176",
-      "stock_name": "江特电机",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "001306",
-      "stock_name": "夏厦精密",
-      "weight": 0.01
+      "stock_code": "002460",
+      "stock_name": "赣锋锂业",
+      "weight": 4.34
     }
   ],
-  "fetched_at": "2026-04-13 01:09:19",
+  "fetched_at": "2026-05-07 23:14:42",
   "data_source": "eastmoney"
 }

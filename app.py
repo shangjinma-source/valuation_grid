@@ -233,6 +233,9 @@ class BuyRequest(BaseModel):
     buy_date: Optional[str] = None  # 格式 YYYY-MM-DD，默认今天
     is_supplement: Optional[bool] = False  # 是否为补仓买入
     owner: Optional[str] = ""  # 持仓所有者标签（多人模式）
+    # v5.X: 延迟回补标记
+    is_rebuy: Optional[bool] = False  # 是否为延迟回补触发的买入
+    pending_rebuy_id: Optional[str] = None  # 关联的挂单 ID（用于自动消费）
 
 class SellRequest(BaseModel):
     batch_id: str
@@ -273,7 +276,9 @@ def buy_fund(fund_code: str, req: BuyRequest):
         raise HTTPException(status_code=400, detail="nav必须大于0或留空")
     fund_key = make_fund_key(fund_code, req.owner or "")
     batch = add_batch(fund_key, req.amount, req.nav, req.note or "",
-                      req.buy_date, req.is_supplement)
+                      req.buy_date, req.is_supplement,
+                      is_rebuy=bool(req.is_rebuy),
+                      pending_rebuy_id=req.pending_rebuy_id)
     return {"success": True, "batch": batch, "fund_key": fund_key}
 
 
@@ -586,6 +591,33 @@ def get_single_fitness(fund_code: str):
     if info:
         return {"fund_code": fund_code, **info}
     return {"fund_code": fund_code, "score": None, "grade": None}
+
+
+# ============================================================
+# v5.X: 延迟回补挂单查询/维护接口
+# ============================================================
+
+@app.get("/v1/position/{fund_code}/pending-rebuys")
+def get_pending_rebuys_api(fund_code: str, include_history: bool = False):
+    """查询某基金的延迟回补挂单（include_history=True 返回 triggered/expired 历史）"""
+    from grid.pending_rebuy import get_pending_rebuys
+    items = get_pending_rebuys(fund_code, include_history=include_history)
+    return {"fund_code": fund_code, "pending_rebuys": items, "count": len(items)}
+
+
+@app.get("/v1/pending-rebuys/summary")
+def get_pending_rebuys_summary_api():
+    """全量挂单概览：返回每只基金 {pending, triggered, expired, total} 计数"""
+    from grid.pending_rebuy import get_all_pending_rebuys_summary
+    return get_all_pending_rebuys_summary()
+
+
+@app.post("/v1/pending-rebuys/cleanup")
+def cleanup_pending_rebuys_api():
+    """清理已过期但仍标记为 pending 的挂单（兜底维护接口）"""
+    from grid.pending_rebuy import cleanup_expired_pending_rebuys
+    n = cleanup_expired_pending_rebuys()
+    return {"cleaned": n}
 
 
 if __name__ == "__main__":

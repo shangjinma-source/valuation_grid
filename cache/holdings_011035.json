@@ -3,8 +3,8 @@
   "fund_name": "嘉实中证稀土产业ETF联接A",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.73,
-  "parsed_weight": 75.78,
-  "missing_weight": 23.95,
+  "parsed_weight": 97.3,
+  "missing_weight": 2.43,
   "positions": [
     {
       "stock_code": "600111",
@@ -57,6 +57,31 @@
       "weight": 4.03
     },
     {
+      "stock_code": "600580",
+      "stock_name": "卧龙电驱",
+      "weight": 3.99
+    },
+    {
+      "stock_code": "300748",
+      "stock_name": "金力永磁",
+      "weight": 2.93
+    },
+    {
+      "stock_code": "600259",
+      "stock_name": "中稀有色",
+      "weight": 2.58
+    },
+    {
+      "stock_code": "002249",
+      "stock_name": "大洋电机",
+      "weight": 2.18
+    },
+    {
+      "stock_code": "000969",
+      "stock_name": "安泰科技",
+      "weight": 2.11
+    },
+    {
       "stock_code": "002056",
       "stock_name": "横店东磁",
       "weight": 2.11
@@ -72,9 +97,29 @@
       "weight": 1.69
     },
     {
+      "stock_code": "000612",
+      "stock_name": "焦作万方",
+      "weight": 1.58
+    },
+    {
+      "stock_code": "600416",
+      "stock_name": "湘电股份",
+      "weight": 1.57
+    },
+    {
       "stock_code": "000970",
       "stock_name": "中科三环",
       "weight": 1.56
+    },
+    {
+      "stock_code": "600478",
+      "stock_name": "科力远",
+      "weight": 1.33
+    },
+    {
+      "stock_code": "000758",
+      "stock_name": "中色股份",
+      "weight": 1.27
     },
     {
       "stock_code": "600366",
@@ -90,6 +135,11 @@
       "stock_code": "300224",
       "stock_name": "正海磁材",
       "weight": 1.1
+    },
+    {
+      "stock_code": "601908",
+      "stock_name": "京运通",
+      "weight": 1.0
     },
     {
       "stock_code": "000795",
@@ -112,6 +162,11 @@
       "weight": 0.51
     },
     {
+      "stock_code": "002805",
+      "stock_name": "丰元股份",
+      "weight": 0.48
+    },
+    {
       "stock_code": "600980",
       "stock_name": "北矿科技",
       "weight": 0.34
@@ -127,12 +182,27 @@
       "weight": 0.29
     },
     {
+      "stock_code": "688077",
+      "stock_name": "大地熊",
+      "weight": 0.26
+    },
+    {
+      "stock_code": "920807",
+      "stock_name": "奔朗新材",
+      "weight": 0.14
+    },
+    {
+      "stock_code": "920505",
+      "stock_name": "九菱科技",
+      "weight": 0.1
+    },
+    {
       "stock_code": "688795",
       "stock_name": "摩尔线程",
       "weight": 0.05
     }
   ],
-  "fetched_at": "2026-04-27 14:02:56",
+  "fetched_at": "2026-05-07 23:14:39",
   "data_source": "eastmoney",
   "original_fund_code": "011035",
   "etf_target": "516150",

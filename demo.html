@@ -1796,7 +1796,23 @@
                         </div>`;
                         html += `</div></div>`;
                         for (const s of signalsToShow) {
-                            if (s.action === 'buy' && s.amount) {
+                            if (s.action === 'buy' && s._is_rebuy && s._pending_rebuy_id) {
+                                // v5.X: 延迟回补触发
+                                html += `<div style="background:#eef2ff;border:2px solid #6366f1;border-radius:6px;padding:8px 10px;margin-bottom:4px;">
+                                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                                        <span style="font-size:12px;color:#4338ca;font-weight:700;">🔥 延迟回补已触发</span>
+                                        <span style="font-size:10px;color:#6366f1;">挂单 ${s._pending_rebuy_id}</span>
+                                    </div>
+                                    <div style="font-size:11px;color:#374151;margin-top:3px;">${s.reason || ''}</div>
+                                    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px;">
+                                        <div style="font-size:12px;color:#4f46e5;font-weight:700;">建议买入: ¥${s.amount.toFixed(2)}</div>
+                                        <button onclick="showBuyModalForRebuy('${code}', ${s.amount}, '${s._pending_rebuy_id}', '${(s.signal_name || '').replace(/'/g, '')}')"
+                                                style="padding:3px 12px;background:#4f46e5;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:11px;font-weight:600;">
+                                            一键执行回补
+                                        </button>
+                                    </div>
+                                </div>`;
+                            } else if (s.action === 'buy' && s.amount) {
                                 html += `<div style="background:#ecfdf5;border:1px solid #a7f3d0;border-radius:6px;padding:6px 10px;margin-bottom:4px;">
                                     <div style="font-size:11px;color:#374151;">
                                         <span style="font-weight:600;color:#059669;">${s.signal_name}</span>
@@ -1860,6 +1876,22 @@
                                         </div>
                                     </div>`;
                                 }
+                            } else if (s.action === 'buy' && s._is_rebuy && s._pending_rebuy_id) {
+                                // v5.X: 延迟回补触发——醒目渲染 + 一键回补按钮
+                                html += `<div style="background:#eef2ff;border:2px solid #6366f1;border-radius:6px;padding:8px 10px;margin-bottom:4px;">
+                                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                                        <span style="font-size:12px;color:#4338ca;font-weight:700;">🔥 延迟回补已触发</span>
+                                        <span style="font-size:10px;color:#6366f1;">挂单 ${s._pending_rebuy_id}</span>
+                                    </div>
+                                    <div style="font-size:11px;color:#374151;margin-top:3px;">${s.reason || ''}</div>
+                                    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px;">
+                                        <div style="font-size:12px;color:#4f46e5;font-weight:700;">建议买入: ¥${s.amount.toFixed(2)}</div>
+                                        <button onclick="showBuyModalForRebuy('${code}', ${s.amount}, '${s._pending_rebuy_id}', '${(s.signal_name || '').replace(/'/g, '')}')"
+                                                style="padding:3px 12px;background:#4f46e5;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:11px;font-weight:600;">
+                                            一键执行回补
+                                        </button>
+                                    </div>
+                                </div>`;
                             } else if (s.action === 'buy' && s.amount) {
                                 html += `<div style="background:#ecfdf5;border:1px solid #a7f3d0;border-radius:6px;padding:6px 10px;margin-bottom:4px;">
                                 <div style="font-size:11px;color:#374151;">
@@ -2243,6 +2275,10 @@
             document.getElementById('buySupplement').checked = false;
             // 默认日期为今天
             document.getElementById('buyDate').value = new Date().toISOString().slice(0, 10);
+            // v5.X: 默认清理回补标记（showBuyModalForRebuy 会随后重新设置）
+            const _modal = document.getElementById('buyModal');
+            delete _modal.dataset.isRebuy;
+            delete _modal.dataset.pendingRebuyId;
 
             const val = valuations[realCode];
             const name = val?.fund_name || realCode;
@@ -2309,10 +2345,19 @@
 
             try {
                 const isSupplement = document.getElementById('buySupplement').checked;
+                // v5.X: 透传延迟回补标记（由 showBuyModalForRebuy 设置）
+                const _modal = document.getElementById('buyModal');
+                const isRebuy = _modal.dataset.isRebuy === 'true';
+                const pendingRebuyId = _modal.dataset.pendingRebuyId || null;
                 const res = await fetch(`${API_BASE}/v1/position/${encodeURIComponent(code)}/buy`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ amount, nav: navVal, note, buy_date: buyDate, is_supplement: isSupplement, owner: owner })
+                    body: JSON.stringify({
+                        amount, nav: navVal, note, buy_date: buyDate,
+                        is_supplement: isSupplement, owner: owner,
+                        is_rebuy: isRebuy,
+                        pending_rebuy_id: pendingRebuyId,
+                    })
                 });
                 if (!res.ok) {
                     const err = await res.json();
@@ -2320,12 +2365,35 @@
                 }
                 const data = await res.json();
                 const ownerLabel = owner ? ` [${owner}]` : '';
-                showStatus(`买入成功: ${code}${ownerLabel} · ${data.batch?.id}`, 'success');
+                const rebuyTag = isRebuy ? ' [回补]' : '';
+                showStatus(`买入成功: ${code}${ownerLabel}${rebuyTag} · ${data.batch?.id}`, 'success');
+                // 提交后清理回补标记，避免下次普通买入误带
+                delete _modal.dataset.isRebuy;
+                delete _modal.dataset.pendingRebuyId;
                 closeModal('buyModal');
                 loadStrategyPanel();  // 刷新策略面板
             } catch (e) {
                 showStatus('买入失败: ' + e.message, 'error');
             }
+        }
+
+        // v5.X: 一键执行延迟回补（预填弹窗 + 设置回补标记）
+        function showBuyModalForRebuy(fundCode, amount, pendingRebuyId, sourceLabel) {
+            showBuyModal(fundCode);
+            // 预填回补金额
+            const amtInput = document.getElementById('buyAmount');
+            if (amtInput) amtInput.value = (amount || 0).toFixed(2);
+            const noteInput = document.getElementById('buyNote');
+            if (noteInput) noteInput.value = `延迟回补触发${sourceLabel ? '(' + sourceLabel + ')' : ''}`;
+            // 把回补标记挂在弹窗 dataset，供 submitBuy 取用
+            const modal = document.getElementById('buyModal');
+            modal.dataset.pendingRebuyId = pendingRebuyId || '';
+            modal.dataset.isRebuy = 'true';
+            // 标题加视觉标记
+            const realCode = fundCode.includes('__') ? fundCode.split('__')[0] : fundCode;
+            const fundName = valuations[realCode]?.fund_name || realCode;
+            const titleEl = document.getElementById('buyModalTitle');
+            if (titleEl) titleEl.textContent = `🔥 延迟回补 · ${fundName}`;
         }
 
         // ============ 策略说明折叠 ============

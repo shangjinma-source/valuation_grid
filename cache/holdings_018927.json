@@ -1,6 +1,6 @@
 {
   "fund_code": "018927",
-  "fund_name": "南方储能电池ETF联接C",
+  "fund_name": "南方中证电池ETF联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.97,
   "parsed_weight": 50.81,
@@ -67,7 +67,7 @@
       "weight": 0.49
     }
   ],
-  "fetched_at": "2026-04-27 13:56:16",
+  "fetched_at": "2026-05-07 23:14:21",
   "data_source": "eastmoney",
   "original_fund_code": "018927",
   "etf_target": "159147",

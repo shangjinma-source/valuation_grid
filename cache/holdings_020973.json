@@ -3,8 +3,8 @@
   "fund_name": "易方达机器人ETF联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.7,
-  "parsed_weight": 57.68,
-  "missing_weight": 42.02,
+  "parsed_weight": 99.51,
+  "missing_weight": 0.19,
   "positions": [
     {
       "stock_code": "688017",
@@ -62,14 +62,54 @@
       "weight": 2.86
     },
     {
+      "stock_code": "002747",
+      "stock_name": "埃斯顿",
+      "weight": 2.82
+    },
+    {
+      "stock_code": "002600",
+      "stock_name": "领益智造",
+      "weight": 2.77
+    },
+    {
+      "stock_code": "601689",
+      "stock_name": "拓普集团",
+      "weight": 2.7
+    },
+    {
       "stock_code": "300503",
       "stock_name": "昊志机电",
       "weight": 2.64
     },
     {
+      "stock_code": "688248",
+      "stock_name": "南网科技",
+      "weight": 2.55
+    },
+    {
+      "stock_code": "000967",
+      "stock_name": "盈峰环境",
+      "weight": 2.44
+    },
+    {
+      "stock_code": "300953",
+      "stock_name": "震裕科技",
+      "weight": 2.29
+    },
+    {
+      "stock_code": "003021",
+      "stock_name": "兆威机电",
+      "weight": 2.27
+    },
+    {
       "stock_code": "300455",
       "stock_name": "航天智装",
       "weight": 2.2
+    },
+    {
+      "stock_code": "002896",
+      "stock_name": "中大力德",
+      "weight": 2.19
     },
     {
       "stock_code": "688322",
@@ -82,9 +122,39 @@
       "weight": 2.09
     },
     {
+      "stock_code": "688277",
+      "stock_name": "天智航",
+      "weight": 1.98
+    },
+    {
+      "stock_code": "301510",
+      "stock_name": "固高科技",
+      "weight": 1.89
+    },
+    {
+      "stock_code": "002338",
+      "stock_name": "奥普光电",
+      "weight": 1.87
+    },
+    {
+      "stock_code": "002139",
+      "stock_name": "拓邦股份",
+      "weight": 1.73
+    },
+    {
       "stock_code": "002979",
       "stock_name": "雷赛智能",
       "weight": 1.68
+    },
+    {
+      "stock_code": "300276",
+      "stock_name": "三丰智能",
+      "weight": 1.66
+    },
+    {
+      "stock_code": "300007",
+      "stock_name": "汉威科技",
+      "weight": 1.52
     },
     {
       "stock_code": "300580",
@@ -92,9 +162,34 @@
       "weight": 1.28
     },
     {
+      "stock_code": "688165",
+      "stock_name": "埃夫特",
+      "weight": 1.22
+    },
+    {
       "stock_code": "002892",
       "stock_name": "科力尔",
       "weight": 1.17
+    },
+    {
+      "stock_code": "688400",
+      "stock_name": "凌云光",
+      "weight": 1.13
+    },
+    {
+      "stock_code": "002698",
+      "stock_name": "博实股份",
+      "weight": 1.11
+    },
+    {
+      "stock_code": "603662",
+      "stock_name": "柯力传感",
+      "weight": 1.02
+    },
+    {
+      "stock_code": "300161",
+      "stock_name": "华中数控",
+      "weight": 1.02
     },
     {
       "stock_code": "603416",
@@ -102,14 +197,44 @@
       "weight": 0.98
     },
     {
+      "stock_code": "603915",
+      "stock_name": "国茂股份",
+      "weight": 0.97
+    },
+    {
+      "stock_code": "301368",
+      "stock_name": "丰立智能",
+      "weight": 0.94
+    },
+    {
       "stock_code": "300222",
       "stock_name": "科大智能",
       "weight": 0.91
     },
     {
+      "stock_code": "688160",
+      "stock_name": "步科股份",
+      "weight": 0.84
+    },
+    {
+      "stock_code": "688320",
+      "stock_name": "禾川科技",
+      "weight": 0.8
+    },
+    {
+      "stock_code": "688499",
+      "stock_name": "利元亨",
+      "weight": 0.72
+    },
+    {
       "stock_code": "002917",
       "stock_name": "金奥博",
       "weight": 0.67
+    },
+    {
+      "stock_code": "603015",
+      "stock_name": "弘讯科技",
+      "weight": 0.66
     },
     {
       "stock_code": "300466",
@@ -120,9 +245,19 @@
       "stock_code": "603960",
       "stock_name": "克来机电",
       "weight": 0.47
+    },
+    {
+      "stock_code": "688686",
+      "stock_name": "奥普特",
+      "weight": 0.43
+    },
+    {
+      "stock_code": "920593",
+      "stock_name": "鼎智科技",
+      "weight": 0.29
     }
   ],
-  "fetched_at": "2026-04-27 13:57:42",
+  "fetched_at": "2026-05-07 23:14:25",
   "data_source": "eastmoney",
   "original_fund_code": "020973",
   "etf_target": "159530",

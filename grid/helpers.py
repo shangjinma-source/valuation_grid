@@ -381,7 +381,8 @@ def _evaluate_stop_loss(profit_pct: float, stop_loss_adj: float,
                         trend_ctx: dict, confidence: float,
                         source: str, supplement_count: int = 0,
                         today_change: float = 0.0,
-                        l2_sell_pct_base: int = None) -> dict:  # v5.13: 行情模式覆盖L2基准
+                        l2_sell_pct_base: int = None,
+                        is_rebuy_batch: bool = False) -> dict:  # v5.13: 行情模式覆盖L2基准
     """
     v5.8 重构P0: L3分级减仓 + L2时间梯度微调
 
@@ -389,6 +390,11 @@ def _evaluate_stop_loss(profit_pct: float, stop_loss_adj: float,
     v5.8修复:
       - L3分级: 持仓<20天+当日跌幅>-5%（非极端暴跌）→减仓70%而非清仓
       - L2时间梯度: <15天豁免→<10天豁免，回收5天的L2保护窗口
+
+    v5.X新增: is_rebuy_batch — 延迟回补仓位 L2 保护期
+              （与 backtest.py v5.11 P2 完全对齐）
+      - 回补仓位买在止盈价附近（安全边际仅 1.5%~2.5%），正常波动就触发 L2
+      - <10 天保护期内跳过 L2，只允许 L3/灾难保护（极端风险不豁免）
     """
     if l2_sell_pct_base is None:
         l2_sell_pct_base = STOP_LOSS_L2_SELL_PCT_BASE
@@ -420,6 +426,13 @@ def _evaluate_stop_loss(profit_pct: float, stop_loss_adj: float,
             reason += f", 持仓{hold_days}天, 清仓100%"
 
         return {"level": "L3", "sell_pct": l3_sell_pct, "reason": reason}
+
+    # v5.X: 延迟回补仓位 L2 保护期（与 backtest.py v5.11 P2 完全对齐）
+    # 回补仓位买在止盈价附近（安全边际仅 1.5%~2.5%），正常波动就会触发 L2，
+    # <10 天保护期内跳过 L2，只允许 L3/灾难保护（极端风险不豁免）
+    if is_rebuy_batch and hold_days < 10:
+        return {"level": None, "sell_pct": 0,
+                "reason": f"回补仓位{hold_days}天<10天保护期，跳过L2止损"}
 
     # v5.8 重构P0: L2止损线时间梯度调整（<15天豁免→<10天豁免）
     l2_stop = effective_stop  # 基础止损线

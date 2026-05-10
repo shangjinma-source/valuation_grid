@@ -3,8 +3,8 @@
   "fund_name": "天弘中证机器人ETF发起联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.88,
-  "parsed_weight": 66.22,
-  "missing_weight": 33.66,
+  "parsed_weight": 80.07,
+  "missing_weight": 19.81,
   "positions": [
     {
       "stock_code": "002230",
@@ -62,9 +62,24 @@
       "weight": 2.42
     },
     {
+      "stock_code": "002139",
+      "stock_name": "拓邦股份",
+      "weight": 1.97
+    },
+    {
+      "stock_code": "002031",
+      "stock_name": "巨轮智能",
+      "weight": 1.83
+    },
+    {
       "stock_code": "601608",
       "stock_name": "中信重工",
       "weight": 1.49
+    },
+    {
+      "stock_code": "002747",
+      "stock_name": "埃斯顿",
+      "weight": 1.37
     },
     {
       "stock_code": "300503",
@@ -72,9 +87,24 @@
       "weight": 1.26
     },
     {
+      "stock_code": "002896",
+      "stock_name": "中大力德",
+      "weight": 1.16
+    },
+    {
       "stock_code": "300607",
       "stock_name": "拓斯达",
       "weight": 1.1
+    },
+    {
+      "stock_code": "300660",
+      "stock_name": "江苏雷利",
+      "weight": 0.99
+    },
+    {
+      "stock_code": "300276",
+      "stock_name": "三丰智能",
+      "weight": 0.89
     },
     {
       "stock_code": "002979",
@@ -87,9 +117,24 @@
       "weight": 0.87
     },
     {
+      "stock_code": "000837",
+      "stock_name": "秦川机床",
+      "weight": 0.85
+    },
+    {
+      "stock_code": "002527",
+      "stock_name": "新时达",
+      "weight": 0.82
+    },
+    {
       "stock_code": "002957",
       "stock_name": "科瑞技术",
       "weight": 0.73
+    },
+    {
+      "stock_code": "688306",
+      "stock_name": "均普智能",
+      "weight": 0.72
     },
     {
       "stock_code": "300278",
@@ -100,6 +145,16 @@
       "stock_code": "002892",
       "stock_name": "科力尔",
       "weight": 0.63
+    },
+    {
+      "stock_code": "603915",
+      "stock_name": "国茂股份",
+      "weight": 0.51
+    },
+    {
+      "stock_code": "301368",
+      "stock_name": "丰立智能",
+      "weight": 0.49
     },
     {
       "stock_code": "603960",
@@ -117,9 +172,54 @@
       "weight": 0.48
     },
     {
+      "stock_code": "603015",
+      "stock_name": "弘讯科技",
+      "weight": 0.32
+    },
+    {
+      "stock_code": "600215",
+      "stock_name": "派斯林",
+      "weight": 0.32
+    },
+    {
+      "stock_code": "920593",
+      "stock_name": "鼎智科技",
+      "weight": 0.31
+    },
+    {
+      "stock_code": "688218",
+      "stock_name": "江苏北人",
+      "weight": 0.3
+    },
+    {
+      "stock_code": "600560",
+      "stock_name": "金自天正",
+      "weight": 0.25
+    },
+    {
       "stock_code": "688255",
       "stock_name": "凯尔达",
       "weight": 0.23
+    },
+    {
+      "stock_code": "688022",
+      "stock_name": "瀚川智能",
+      "weight": 0.23
+    },
+    {
+      "stock_code": "301112",
+      "stock_name": "信邦智能",
+      "weight": 0.19
+    },
+    {
+      "stock_code": "001306",
+      "stock_name": "夏厦精密",
+      "weight": 0.17
+    },
+    {
+      "stock_code": "301199",
+      "stock_name": "迈赫股份",
+      "weight": 0.16
     },
     {
       "stock_code": "688795",
@@ -132,7 +232,7 @@
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-04-27 13:57:37",
+  "fetched_at": "2026-05-07 23:14:24",
   "data_source": "eastmoney",
   "original_fund_code": "014881",
   "etf_target": "159770",

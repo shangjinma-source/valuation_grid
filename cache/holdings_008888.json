@@ -3,8 +3,8 @@
   "fund_name": "华夏国证半导体芯片ETF联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.9,
-  "parsed_weight": 76.31,
-  "missing_weight": 23.59,
+  "parsed_weight": 90.44,
+  "missing_weight": 9.46,
   "positions": [
     {
       "stock_code": "688041",
@@ -57,9 +57,29 @@
       "weight": 3.45
     },
     {
+      "stock_code": "600584",
+      "stock_name": "长电科技",
+      "weight": 2.96
+    },
+    {
+      "stock_code": "002156",
+      "stock_name": "通富微电",
+      "weight": 2.54
+    },
+    {
+      "stock_code": "002049",
+      "stock_name": "紫光国微",
+      "weight": 2.29
+    },
+    {
       "stock_code": "600703",
       "stock_name": "三安光电",
       "weight": 2.08
+    },
+    {
+      "stock_code": "300223",
+      "stock_name": "北京君正",
+      "weight": 1.91
     },
     {
       "stock_code": "603893",
@@ -67,9 +87,24 @@
       "weight": 1.69
     },
     {
+      "stock_code": "600460",
+      "stock_name": "士兰微",
+      "weight": 1.6
+    },
+    {
+      "stock_code": "600745",
+      "stock_name": "闻泰科技",
+      "weight": 1.49
+    },
+    {
       "stock_code": "300661",
       "stock_name": "圣邦股份",
       "weight": 1.45
+    },
+    {
+      "stock_code": "300316",
+      "stock_name": "晶盛机电",
+      "weight": 1.34
     },
     {
       "stock_code": "688249",
@@ -82,7 +117,7 @@
       "weight": 1.05
     }
   ],
-  "fetched_at": "2026-04-27 13:52:13",
+  "fetched_at": "2026-05-07 23:12:44",
   "data_source": "eastmoney",
   "original_fund_code": "008888",
   "etf_target": "159995",

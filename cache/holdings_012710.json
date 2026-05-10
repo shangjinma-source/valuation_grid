@@ -1,77 +1,62 @@
 {
   "fund_code": "012710",
   "fund_name": "华夏核心成长混合C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 92.86,
-  "parsed_weight": 92.85,
-  "missing_weight": 0.01,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.09,
+  "parsed_weight": 77.01,
+  "missing_weight": 16.08,
   "positions": [
+    {
+      "stock_code": "01772",
+      "stock_name": "赣锋锂业",
+      "weight": 9.95
+    },
     {
       "stock_code": "300390",
       "stock_name": "天华新能",
-      "weight": 9.73
+      "weight": 9.19
     },
     {
       "stock_code": "001203",
       "stock_name": "大中矿业",
-      "weight": 9.27
-    },
-    {
-      "stock_code": "002497",
-      "stock_name": "雅化集团",
-      "weight": 9.17
-    },
-    {
-      "stock_code": "002738",
-      "stock_name": "中矿资源",
-      "weight": 8.9
+      "weight": 8.77
     },
     {
       "stock_code": "002240",
       "stock_name": "盛新锂能",
-      "weight": 8.51
+      "weight": 8.73
     },
     {
       "stock_code": "000688",
       "stock_name": "国城矿业",
-      "weight": 8.24
+      "weight": 8.29
+    },
+    {
+      "stock_code": "002497",
+      "stock_name": "雅化集团",
+      "weight": 7.23
     },
     {
       "stock_code": "600499",
       "stock_name": "科达制造",
-      "weight": 8.1
+      "weight": 7.2
     },
     {
       "stock_code": "002756",
       "stock_name": "永兴材料",
-      "weight": 6.61
+      "weight": 6.78
     },
     {
-      "stock_code": "000036",
-      "stock_name": "华联控股",
-      "weight": 5.93
-    },
-    {
-      "stock_code": "01772",
-      "stock_name": "赣锋锂业",
-      "weight": 5.57
+      "stock_code": "002738",
+      "stock_name": "中矿资源",
+      "weight": 5.74
     },
     {
       "stock_code": "600773",
       "stock_name": "西藏城投",
-      "weight": 4.83
-    },
-    {
-      "stock_code": "000762",
-      "stock_name": "西藏矿业",
-      "weight": 4.15
-    },
-    {
-      "stock_code": "002466",
-      "stock_name": "天齐锂业",
-      "weight": 3.84
+      "weight": 5.13
     }
   ],
-  "fetched_at": "2026-04-13 01:09:16",
+  "fetched_at": "2026-05-07 23:14:41",
   "data_source": "eastmoney"
 }

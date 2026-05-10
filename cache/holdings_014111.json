@@ -3,8 +3,8 @@
   "fund_name": "嘉实中证稀有金属主题ETF发起联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.59,
-  "parsed_weight": 60.59,
-  "missing_weight": 39.0,
+  "parsed_weight": 63.83,
+  "missing_weight": 35.76,
   "positions": [
     {
       "stock_code": "603993",
@@ -57,9 +57,24 @@
       "weight": 2.51
     },
     {
+      "stock_code": "002378",
+      "stock_name": "章源钨业",
+      "weight": 1.33
+    },
+    {
+      "stock_code": "002176",
+      "stock_name": "江特电机",
+      "weight": 1.23
+    },
+    {
       "stock_code": "000762",
       "stock_name": "西藏矿业",
       "weight": 0.85
+    },
+    {
+      "stock_code": "600456",
+      "stock_name": "宝钛股份",
+      "weight": 0.68
     },
     {
       "stock_code": "600366",
@@ -92,7 +107,7 @@
       "weight": 0.06
     }
   ],
-  "fetched_at": "2026-04-27 14:02:45",
+  "fetched_at": "2026-05-07 23:14:39",
   "data_source": "eastmoney",
   "original_fund_code": "014111",
   "etf_target": "562800",

@@ -48,6 +48,9 @@ from .helpers import (
     _get_trail_profit_sell_pct, _calc_peak_profit, _update_batch_peak_nav,
     _build_fifo_sell_plan, _make_signal, _is_higher_priority, _stamp,
 )
+from .pending_rebuy import (
+    add_pending_rebuy, check_pending_rebuy_trigger,
+)
 
 # ============================================================
 # 决策依据说明
@@ -468,6 +471,71 @@ def generate_signal(fund_code: str) -> dict:
 
     in_cooldown = _is_in_cooldown(pos, nav_history)
 
+    # ================================================================
+    # v5.X: 延迟回补挂单触发检查（与 backtest.py 主循环开头完全对齐）
+    # 在所有其他信号判断之前执行：净值跌到挂单 trigger_nav 时立即触发回补
+    # 触发后直接返回 buy 信号，跳过当日其他判断
+    # ================================================================
+    # 估算当前净值用于触发检查
+    if pos["has_position"]:
+        _holding_for_check = sorted(
+            [b for b in pos["batches"] if b.get("status") == "holding"],
+            key=lambda b: b["buy_date"]
+        )
+        if _holding_for_check:
+            _nav_for_check = _estimate_current_nav(
+                _holding_for_check[0]["nav"], today_change, nav_history
+            )
+        elif nav_history and nav_history[0].get("nav"):
+            _nav_for_check = nav_history[0]["nav"] * (1 + today_change / 100)
+        else:
+            _nav_for_check = None
+    elif nav_history and nav_history[0].get("nav"):
+        _nav_for_check = nav_history[0]["nav"] * (1 + today_change / 100)
+    else:
+        _nav_for_check = None
+
+    if _nav_for_check is not None and _nav_for_check > 0:
+        _triggered_pr = check_pending_rebuy_trigger(fund_code, _nav_for_check)
+        if _triggered_pr:
+            # 触发！金额按持仓上限/可用空间截断（非空仓时）
+            _amount = round(_triggered_pr["amount"], 2)
+            # 如果该基金有持仓，确保不超出 max_position
+            if pos["has_position"]:
+                _remaining_cap = pos["max_position"] - pos["total_cost"]
+                if _remaining_cap > 0:
+                    _amount = round(min(_amount, _remaining_cap), 2)
+                else:
+                    _amount = 0
+            if _amount >= 10:
+                _market_analysis_pre = _build_market_analysis(
+                    fund_code, val, nav_history, pos,
+                    current_nav=_nav_for_check, total_profit_pct=None,
+                    trend_ctx=trend_ctx, dynamic_thresholds=dyn,
+                    regime=regime, regime_source=_regime_source,
+                )
+                _sig = _make_signal(
+                    fund_code,
+                    signal_name=_triggered_pr.get("signal_label", "延迟回补"),
+                    action="buy",
+                    priority=5,  # 高于常规建仓(6/7)，低于止损(1)
+                    amount=_amount,
+                    reason=(f"净值{_nav_for_check:.4f}≤触发价{_triggered_pr['trigger_nav']:.4f}"
+                            f"(卖出价{_triggered_pr['sell_nav']:.4f}), "
+                            f"延迟回补{_amount:.0f}元 (源自{_triggered_pr['created_date']}的"
+                            f"{_triggered_pr['source_signal']})"),
+                )
+                _sig["_pending_rebuy_id"] = _triggered_pr["id"]  # 关键: 透传给前端→buy接口
+                _sig["_is_rebuy"] = True
+                _sig["market_analysis"] = _market_analysis_pre
+                _append_signal_history(fund_code, _sig, {
+                    "today_change": today_change,
+                    "total_profit_pct": None,
+                    "current_nav": _nav_for_check,
+                    "_source": source,
+                })
+                return _stamp(_sig, confidence, source)
+
     size_mul = _calc_size_multiplier(
         dyn["risk_multiplier"], confidence,
         trend_ctx.get("trend_label", "震荡"),
@@ -518,7 +586,8 @@ def generate_signal(fund_code: str) -> dict:
                 trend_ctx, confidence, source,
                 supplement_count=supplement_count,
                 today_change=today_change,  # v5.8 重构P0: 传入当日跌幅用于L3分级判断
-                l2_sell_pct_base=regime_params["l2_stop_loss_base"]  # v5.13: 行情模式覆盖
+                l2_sell_pct_base=regime_params["l2_stop_loss_base"],  # v5.13: 行情模式覆盖
+                is_rebuy_batch=batch.get("is_rebuy", False),  # v5.X: 回补仓位L2保护期
             )
 
             if stop_eval["level"] == "L3":
@@ -1052,6 +1121,16 @@ def generate_signal(fund_code: str) -> dict:
                     _rebuy_amount = round(min(_rebuy_amount, _rebuy_cap * 0.8), 2)
                     if _rebuy_amount >= 100:
                         _trigger_nav = round(current_nav * (1 - _rebuy_discount), 4)
+                        # v5.X: 持久化挂单到 positions.json（与 backtest.py 对齐）
+                        _pr_id = add_pending_rebuy(
+                            fund_code=fund_code,
+                            trigger_nav=_trigger_nav,
+                            amount=_rebuy_amount,
+                            ratio=_rebuy_ratio,
+                            trend_at_creation=_rebuy_trend,
+                            source_signal=best_signal.get("signal_name", ""),
+                            sell_nav=current_nav,
+                        )
                         best_signal["rebuy_recommendation"] = {
                             "action": "buy",
                             "amount": _rebuy_amount,
@@ -1060,6 +1139,7 @@ def generate_signal(fund_code: str) -> dict:
                             "trigger_nav": _trigger_nav,
                             "discount": _rebuy_discount,
                             "window_days": 20,  # 20天内有效
+                            "pending_rebuy_id": _pr_id,  # v5.X: 关联到挂单
                             "reason": (f"v5.11延迟回补: 趋势{_rebuy_trend}, "
                                       f"净值回落{_rebuy_discount:.0%}至{_trigger_nav:.4f}时"
                                       f"回补{_rebuy_ratio:.0%}={_rebuy_amount:.0f}元(20天内有效)"),

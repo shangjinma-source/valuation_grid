@@ -3,8 +3,8 @@
   "fund_name": "富国创新科技混合A",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 93.8,
-  "parsed_weight": 68.81,
-  "missing_weight": 24.99,
+  "parsed_weight": 85.82,
+  "missing_weight": 7.98,
   "positions": [
     {
       "stock_code": "002384",
@@ -57,6 +57,36 @@
       "weight": 3.2
     },
     {
+      "stock_code": "301205",
+      "stock_name": "联特科技",
+      "weight": 3.19
+    },
+    {
+      "stock_code": "301338",
+      "stock_name": "凯格精机",
+      "weight": 2.69
+    },
+    {
+      "stock_code": "688519",
+      "stock_name": "南亚新材",
+      "weight": 2.64
+    },
+    {
+      "stock_code": "688630",
+      "stock_name": "芯碁微装",
+      "weight": 2.46
+    },
+    {
+      "stock_code": "920045",
+      "stock_name": "蘅东光",
+      "weight": 2.46
+    },
+    {
+      "stock_code": "002290",
+      "stock_name": "禾盛新材",
+      "weight": 2.31
+    },
+    {
       "stock_code": "603186",
       "stock_name": "华正新材",
       "weight": 1.52
@@ -65,8 +95,18 @@
       "stock_code": "002957",
       "stock_name": "科瑞技术",
       "weight": 1.02
+    },
+    {
+      "stock_code": "002980",
+      "stock_name": "华盛昌",
+      "weight": 0.8
+    },
+    {
+      "stock_code": "688807",
+      "stock_name": "优迅股份",
+      "weight": 0.46
     }
   ],
-  "fetched_at": "2026-04-27 13:51:57",
+  "fetched_at": "2026-05-07 23:12:28",
   "data_source": "eastmoney"
 }

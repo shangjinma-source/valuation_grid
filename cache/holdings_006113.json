@@ -3,8 +3,8 @@
   "fund_name": "汇添富创新医药混合A",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 89.74,
-  "parsed_weight": 75.84,
-  "missing_weight": 13.9,
+  "parsed_weight": 80.64,
+  "missing_weight": 9.1,
   "positions": [
     {
       "stock_code": "06990",
@@ -57,9 +57,24 @@
       "weight": 2.51
     },
     {
+      "stock_code": "300765",
+      "stock_name": "新诺威",
+      "weight": 2.21
+    },
+    {
       "stock_code": "688331",
       "stock_name": "荣昌生物",
       "weight": 1.95
+    },
+    {
+      "stock_code": "688382",
+      "stock_name": "益方生物",
+      "weight": 1.51
+    },
+    {
+      "stock_code": "688658",
+      "stock_name": "悦康药业",
+      "weight": 1.08
     },
     {
       "stock_code": "09995",
@@ -67,6 +82,6 @@
       "weight": 0.96
     }
   ],
-  "fetched_at": "2026-04-27 13:59:59",
+  "fetched_at": "2026-05-07 23:14:30",
   "data_source": "eastmoney"
 }

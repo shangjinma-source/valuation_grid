@@ -1,264 +1,69 @@
 {
   "fund_code": "020900",
   "fund_name": "天弘中证全指通信设备指数发起C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 94.93,
-  "parsed_weight": 94.91,
-  "missing_weight": 0.02,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.9,
+  "parsed_weight": 66.1,
+  "missing_weight": 28.8,
   "positions": [
-    {
-      "stock_code": "300308",
-      "stock_name": "中际旭创",
-      "weight": 14.52
-    },
     {
       "stock_code": "300502",
       "stock_name": "新易盛",
-      "weight": 14.45
+      "weight": 14.3
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 13.09
     },
     {
       "stock_code": "601138",
       "stock_name": "工业富联",
-      "weight": 12.48
-    },
-    {
-      "stock_code": "000063",
-      "stock_name": "中兴通讯",
-      "weight": 6.17
+      "weight": 9.86
     },
     {
       "stock_code": "300394",
       "stock_name": "天孚通信",
-      "weight": 4.8
-    },
-    {
-      "stock_code": "300136",
-      "stock_name": "信维通信",
-      "weight": 3.04
-    },
-    {
-      "stock_code": "600522",
-      "stock_name": "中天科技",
-      "weight": 2.5
+      "weight": 6.92
     },
     {
       "stock_code": "600487",
       "stock_name": "亨通光电",
-      "weight": 2.47
+      "weight": 5.37
     },
     {
-      "stock_code": "688036",
-      "stock_name": "传音控股",
-      "weight": 1.93
+      "stock_code": "000063",
+      "stock_name": "中兴通讯",
+      "weight": 5.04
     },
     {
-      "stock_code": "603083",
-      "stock_name": "剑桥科技",
-      "weight": 1.88
+      "stock_code": "600522",
+      "stock_name": "中天科技",
+      "weight": 4.18
     },
     {
-      "stock_code": "002281",
-      "stock_name": "光迅科技",
-      "weight": 1.71
-    },
-    {
-      "stock_code": "300548",
-      "stock_name": "长芯博创",
-      "weight": 1.68
-    },
-    {
-      "stock_code": "600745",
-      "stock_name": "闻泰科技",
-      "weight": 1.64
-    },
-    {
-      "stock_code": "002465",
-      "stock_name": "海格通信",
-      "weight": 1.58
-    },
-    {
-      "stock_code": "688027",
-      "stock_name": "国盾量子",
-      "weight": 1.57
-    },
-    {
-      "stock_code": "600105",
-      "stock_name": "永鼎股份",
-      "weight": 1.49
-    },
-    {
-      "stock_code": "688313",
-      "stock_name": "仕佳光子",
-      "weight": 1.44
+      "stock_code": "300136",
+      "stock_name": "信维通信",
+      "weight": 2.97
     },
     {
       "stock_code": "600498",
       "stock_name": "烽火通信",
-      "weight": 1.33
+      "weight": 2.34
     },
     {
-      "stock_code": "300620",
-      "stock_name": "光库科技",
-      "weight": 1.11
-    },
-    {
-      "stock_code": "002151",
-      "stock_name": "北斗星通",
-      "weight": 1.0
-    },
-    {
-      "stock_code": "603236",
-      "stock_name": "移远通信",
-      "weight": 0.97
-    },
-    {
-      "stock_code": "300627",
-      "stock_name": "华测导航",
-      "weight": 0.97
-    },
-    {
-      "stock_code": "300570",
-      "stock_name": "太辰光",
-      "weight": 0.93
-    },
-    {
-      "stock_code": "300628",
-      "stock_name": "亿联网络",
-      "weight": 0.92
-    },
-    {
-      "stock_code": "688387",
-      "stock_name": "信科移动",
-      "weight": 0.89
-    },
-    {
-      "stock_code": "002104",
-      "stock_name": "恒宝股份",
-      "weight": 0.78
-    },
-    {
-      "stock_code": "688205",
-      "stock_name": "德科立",
-      "weight": 0.77
-    },
-    {
-      "stock_code": "002396",
-      "stock_name": "星网锐捷",
-      "weight": 0.72
-    },
-    {
-      "stock_code": "601869",
-      "stock_name": "长飞光纤",
-      "weight": 0.72
-    },
-    {
-      "stock_code": "300638",
-      "stock_name": "广和通",
-      "weight": 0.69
-    },
-    {
-      "stock_code": "003031",
-      "stock_name": "中瓷电子",
-      "weight": 0.67
-    },
-    {
-      "stock_code": "300353",
-      "stock_name": "东土科技",
-      "weight": 0.63
-    },
-    {
-      "stock_code": "002583",
-      "stock_name": "海能达",
-      "weight": 0.63
-    },
-    {
-      "stock_code": "301205",
-      "stock_name": "联特科技",
-      "weight": 0.55
-    },
-    {
-      "stock_code": "300098",
-      "stock_name": "高新兴",
-      "weight": 0.54
-    },
-    {
-      "stock_code": "000801",
-      "stock_name": "四川九洲",
-      "weight": 0.52
-    },
-    {
-      "stock_code": "603341",
-      "stock_name": "龙旗科技",
-      "weight": 0.5
-    },
-    {
-      "stock_code": "603712",
-      "stock_name": "七一二",
-      "weight": 0.49
-    },
-    {
-      "stock_code": "301165",
-      "stock_name": "锐捷网络",
-      "weight": 0.43
-    },
-    {
-      "stock_code": "600776",
-      "stock_name": "东方通信",
-      "weight": 0.4
-    },
-    {
-      "stock_code": "000810",
-      "stock_name": "创维数字",
-      "weight": 0.34
-    },
-    {
-      "stock_code": "600198",
-      "stock_name": "大唐电信",
-      "weight": 0.32
-    },
-    {
-      "stock_code": "002881",
-      "stock_name": "美格智能",
-      "weight": 0.3
-    },
-    {
-      "stock_code": "688100",
-      "stock_name": "威胜信息",
-      "weight": 0.29
-    },
-    {
-      "stock_code": "300913",
-      "stock_name": "兆龙互连",
-      "weight": 0.25
-    },
-    {
-      "stock_code": "300134",
-      "stock_name": "大富科技",
-      "weight": 0.24
-    },
-    {
-      "stock_code": "688182",
-      "stock_name": "灿勤科技",
-      "weight": 0.18
-    },
-    {
-      "stock_code": "301678",
-      "stock_name": "新恒汇",
-      "weight": 0.16
-    },
-    {
-      "stock_code": "301339",
-      "stock_name": "通行宝",
-      "weight": 0.13
-    },
-    {
-      "stock_code": "301275",
-      "stock_name": "汉朔科技",
-      "weight": 0.09
+      "stock_code": "002281",
+      "stock_name": "光迅科技",
+      "weight": 1.93
     },
     {
       "stock_code": "688795",
       "stock_name": "摩尔线程",
+      "weight": 0.03
+    },
+    {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
       "weight": 0.02
     },
     {
@@ -267,36 +72,16 @@
       "weight": 0.02
     },
     {
-      "stock_code": "688802",
-      "stock_name": "沐曦股份",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "688765",
-      "stock_name": "禾元生物",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "301656",
-      "stock_name": "联合动力",
-      "weight": 0.01
+      "stock_code": "688781",
+      "stock_name": "视涯科技",
+      "weight": 0.02
     },
     {
       "stock_code": "001280",
       "stock_name": "中国铀业",
       "weight": 0.01
-    },
-    {
-      "stock_code": "688759",
-      "stock_name": "必贝特",
-      "weight": 0.01
-    },
-    {
-      "stock_code": "688790",
-      "stock_name": "昂瑞微",
-      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-04-13 01:08:50",
+  "fetched_at": "2026-05-07 23:14:40",
   "data_source": "eastmoney"
 }

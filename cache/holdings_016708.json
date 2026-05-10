@@ -3,8 +3,8 @@
   "fund_name": "华夏有色金属ETF联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.77,
-  "parsed_weight": 52.36,
-  "missing_weight": 47.41,
+  "parsed_weight": 66.12,
+  "missing_weight": 33.65,
   "positions": [
     {
       "stock_code": "601899",
@@ -57,17 +57,67 @@
       "weight": 2.85
     },
     {
+      "stock_code": "002466",
+      "stock_name": "天齐锂业",
+      "weight": 2.54
+    },
+    {
+      "stock_code": "002738",
+      "stock_name": "中矿资源",
+      "weight": 2.37
+    },
+    {
+      "stock_code": "000630",
+      "stock_name": "铜陵有色",
+      "weight": 2.07
+    },
+    {
+      "stock_code": "600362",
+      "stock_name": "江西铜业",
+      "weight": 1.97
+    },
+    {
       "stock_code": "000878",
       "stock_name": "云南铜业",
       "weight": 1.16
     },
     {
+      "stock_code": "002428",
+      "stock_name": "云南锗业",
+      "weight": 1.13
+    },
+    {
+      "stock_code": "600497",
+      "stock_name": "驰宏锌锗",
+      "weight": 1.05
+    },
+    {
+      "stock_code": "000060",
+      "stock_name": "中金岭南",
+      "weight": 0.84
+    },
+    {
+      "stock_code": "601958",
+      "stock_name": "金钼股份",
+      "weight": 0.8
+    },
+    {
+      "stock_code": "000737",
+      "stock_name": "北方铜业",
+      "weight": 0.56
+    },
+    {
       "stock_code": "600206",
       "stock_name": "有研新材",
       "weight": 0.54
+    },
+    {
+      "stock_code": "600456",
+      "stock_name": "宝钛股份",
+      "weight": 0.43
     }
   ],
-  "fetched_at": "2026-04-27 13:50:23",
+  "fetched_at": "2026-05-07 23:10:56",
   "data_source": "eastmoney",
   "original_fund_code": "016708",
   "etf_target": "516650",

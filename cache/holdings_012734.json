@@ -3,8 +3,8 @@
   "fund_name": "易方达中证人工智能主题ETF联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.84,
-  "parsed_weight": 66.95,
-  "missing_weight": 32.89,
+  "parsed_weight": 84.79,
+  "missing_weight": 15.05,
   "positions": [
     {
       "stock_code": "300502",
@@ -57,9 +57,39 @@
       "weight": 2.64
     },
     {
+      "stock_code": "000977",
+      "stock_name": "浪潮信息",
+      "weight": 2.31
+    },
+    {
+      "stock_code": "300857",
+      "stock_name": "协创数据",
+      "weight": 2.03
+    },
+    {
+      "stock_code": "000938",
+      "stock_name": "紫光股份",
+      "weight": 1.99
+    },
+    {
+      "stock_code": "300418",
+      "stock_name": "昆仑万维",
+      "weight": 1.72
+    },
+    {
+      "stock_code": "002261",
+      "stock_name": "拓维信息",
+      "weight": 1.72
+    },
+    {
       "stock_code": "002281",
       "stock_name": "光迅科技",
       "weight": 1.63
+    },
+    {
+      "stock_code": "601360",
+      "stock_name": "三六零",
+      "weight": 1.5
     },
     {
       "stock_code": "002236",
@@ -67,9 +97,29 @@
       "weight": 1.33
     },
     {
+      "stock_code": "002555",
+      "stock_name": "三七互娱",
+      "weight": 1.33
+    },
+    {
       "stock_code": "603893",
       "stock_name": "瑞芯微",
       "weight": 1.28
+    },
+    {
+      "stock_code": "002402",
+      "stock_name": "和而泰",
+      "weight": 1.11
+    },
+    {
+      "stock_code": "300383",
+      "stock_name": "光环新网",
+      "weight": 0.98
+    },
+    {
+      "stock_code": "600699",
+      "stock_name": "均胜电子",
+      "weight": 0.97
     },
     {
       "stock_code": "300496",
@@ -97,9 +147,24 @@
       "weight": 0.79
     },
     {
+      "stock_code": "600100",
+      "stock_name": "同方股份",
+      "weight": 0.74
+    },
+    {
       "stock_code": "603160",
       "stock_name": "汇顶科技",
       "weight": 0.74
+    },
+    {
+      "stock_code": "300002",
+      "stock_name": "神州泰岳",
+      "weight": 0.73
+    },
+    {
+      "stock_code": "002065",
+      "stock_name": "东华软件",
+      "weight": 0.71
     },
     {
       "stock_code": "002152",
@@ -107,7 +172,7 @@
       "weight": 0.57
     }
   ],
-  "fetched_at": "2026-04-27 13:58:59",
+  "fetched_at": "2026-05-07 23:14:29",
   "data_source": "eastmoney",
   "original_fund_code": "012734",
   "etf_target": "159819",

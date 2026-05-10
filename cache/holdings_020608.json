@@ -3,8 +3,8 @@
   "fund_name": "南方中证机器人ETF发起联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.96,
-  "parsed_weight": 54.48,
-  "missing_weight": 45.48,
+  "parsed_weight": 56.31,
+  "missing_weight": 43.65,
   "positions": [
     {
       "stock_code": "002230",
@@ -57,6 +57,11 @@
       "weight": 2.46
     },
     {
+      "stock_code": "002031",
+      "stock_name": "巨轮智能",
+      "weight": 1.83
+    },
+    {
       "stock_code": "001280",
       "stock_name": "中国铀业",
       "weight": 0.01
@@ -67,7 +72,7 @@
       "weight": 0.01
     }
   ],
-  "fetched_at": "2026-04-27 13:57:31",
+  "fetched_at": "2026-05-07 23:14:24",
   "data_source": "eastmoney",
   "original_fund_code": "020608",
   "etf_target": "159258",

@@ -3,8 +3,8 @@
   "fund_name": "华宝创业板人工智能ETF发起式联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.47,
-  "parsed_weight": 61.63,
-  "missing_weight": 37.84,
+  "parsed_weight": 65.67,
+  "missing_weight": 33.8,
   "positions": [
     {
       "stock_code": "300502",
@@ -57,12 +57,37 @@
       "weight": 2.55
     },
     {
+      "stock_code": "300170",
+      "stock_name": "汉得信息",
+      "weight": 1.37
+    },
+    {
+      "stock_code": "300738",
+      "stock_name": "奥飞数据",
+      "weight": 1.18
+    },
+    {
+      "stock_code": "300624",
+      "stock_name": "万兴科技",
+      "weight": 0.68
+    },
+    {
       "stock_code": "300290",
       "stock_name": "荣科科技",
       "weight": 0.51
+    },
+    {
+      "stock_code": "300598",
+      "stock_name": "诚迈科技",
+      "weight": 0.42
+    },
+    {
+      "stock_code": "300287",
+      "stock_name": "飞利信",
+      "weight": 0.39
     }
   ],
-  "fetched_at": "2026-04-27 13:59:31",
+  "fetched_at": "2026-05-07 23:14:29",
   "data_source": "eastmoney",
   "original_fund_code": "023408",
   "etf_target": "159363",

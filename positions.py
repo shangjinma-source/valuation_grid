@@ -154,11 +154,15 @@ def _next_batch_id(batches: list, date_str: str) -> str:
 
 
 def add_batch(fund_code: str, amount: float, nav: float = None, note: str = "",
-              buy_date: str = None, is_supplement: bool = False) -> dict:
+              buy_date: str = None, is_supplement: bool = False,
+              is_rebuy: bool = False, pending_rebuy_id: str = None) -> dict:
     """
     新增一笔买入批次。
     - buy_date 格式 YYYY-MM-DD，默认今天
     - is_supplement: 是否为补仓买入（自动递增 supplement_count）
+    - is_rebuy: 是否为延迟回补触发的买入（与 backtest.py 的 is_rebuy 字段对齐）
+                用于在 _evaluate_stop_loss 中跳过回补仓位的 L2 止损保护期（<10天）
+    - pending_rebuy_id: 关联的延迟回补挂单 ID（自动调用 consume_pending_rebuy 标记 triggered）
     - 自动创建 fund entry（如果不存在）
     - 返回新增的 batch dict
     """
@@ -197,7 +201,11 @@ def add_batch(fund_code: str, amount: float, nav: float = None, note: str = "",
         "status": "holding",
         "note": note,
         "is_supplement": _is_supp,
+        # v5.X: 延迟回补标记（与 backtest.py 的 is_rebuy 字段对齐）
+        "is_rebuy": bool(is_rebuy),
     }
+    if pending_rebuy_id:
+        batch["from_pending_rebuy"] = pending_rebuy_id
     fund["batches"].append(batch)
 
     # 补仓计数递增
@@ -206,8 +214,20 @@ def add_batch(fund_code: str, amount: float, nav: float = None, note: str = "",
         print(f"[Position] 补仓计数 {fund_code}: {fund['supplement_count']}")
 
     save_positions(data)
+
+    # v5.X: 如果是延迟回补触发的买入，标记对应挂单为 triggered
+    # 注意：consume_pending_rebuy 内部会再次 load/save positions，
+    # 必须在本函数 save_positions(data) 之后调用，避免竞态覆盖
+    if pending_rebuy_id:
+        try:
+            from grid.pending_rebuy import consume_pending_rebuy
+            consume_pending_rebuy(fund_code, pending_rebuy_id, batch["id"])
+        except Exception as _e:
+            print(f"[Position] 标记挂单 {pending_rebuy_id} triggered 失败: {_e}")
+
     print(f"[Position] 新增批次 {fund_code} {batch['id']}: {amount}元 @ {_nav or '待确认'} ({date_str})"
-          f"{' [补仓]' if _is_supp else ''}")
+          f"{' [补仓]' if _is_supp else ''}"
+          f"{' [回补]' if is_rebuy else ''}")
     return batch
 
 

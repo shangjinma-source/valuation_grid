@@ -3,8 +3,8 @@
   "fund_name": "嘉实中证软件服务ETF联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.76,
-  "parsed_weight": 80.14,
-  "missing_weight": 19.62,
+  "parsed_weight": 94.7,
+  "missing_weight": 5.06,
   "positions": [
     {
       "stock_code": "002230",
@@ -57,6 +57,11 @@
       "weight": 3.18
     },
     {
+      "stock_code": "300383",
+      "stock_name": "光环新网",
+      "weight": 3.17
+    },
+    {
       "stock_code": "301236",
       "stock_name": "软通动力",
       "weight": 2.95
@@ -65,6 +70,11 @@
       "stock_code": "600588",
       "stock_name": "用友网络",
       "weight": 2.95
+    },
+    {
+      "stock_code": "002405",
+      "stock_name": "四维图新",
+      "weight": 2.83
     },
     {
       "stock_code": "300496",
@@ -82,9 +92,19 @@
       "weight": 2.54
     },
     {
+      "stock_code": "688343",
+      "stock_name": "云天励飞",
+      "weight": 2.41
+    },
+    {
       "stock_code": "002410",
       "stock_name": "广联达",
       "weight": 2.36
+    },
+    {
+      "stock_code": "002065",
+      "stock_name": "东华软件",
+      "weight": 2.29
     },
     {
       "stock_code": "300253",
@@ -92,9 +112,19 @@
       "weight": 1.91
     },
     {
+      "stock_code": "603613",
+      "stock_name": "国联股份",
+      "weight": 1.61
+    },
+    {
       "stock_code": "688692",
       "stock_name": "达梦数据",
       "weight": 1.55
+    },
+    {
+      "stock_code": "002439",
+      "stock_name": "启明星辰",
+      "weight": 1.2
     },
     {
       "stock_code": "688088",
@@ -102,12 +132,17 @@
       "weight": 1.19
     },
     {
+      "stock_code": "688318",
+      "stock_name": "财富趋势",
+      "weight": 1.05
+    },
+    {
       "stock_code": "688795",
       "stock_name": "摩尔线程",
       "weight": 0.05
     }
   ],
-  "fetched_at": "2026-04-27 13:55:34",
+  "fetched_at": "2026-05-07 23:14:20",
   "data_source": "eastmoney",
   "original_fund_code": "012620",
   "etf_target": "159852",

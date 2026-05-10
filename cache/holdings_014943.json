@@ -1,99 +1,99 @@
 {
   "fund_code": "014943",
   "fund_name": "鹏华中证细分化工产业主题ETF联接C",
-  "holdings_asof_date": "2025-12-31",
-  "stock_total_weight": 99.5,
-  "parsed_weight": 99.53,
-  "missing_weight": 0,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 99.64,
+  "parsed_weight": 95.68,
+  "missing_weight": 3.96,
   "positions": [
     {
       "stock_code": "600309",
       "stock_name": "万华化学",
-      "weight": 10.16
+      "weight": 9.98
     },
     {
       "stock_code": "000792",
       "stock_name": "盐湖股份",
-      "weight": 6.31
-    },
-    {
-      "stock_code": "000408",
-      "stock_name": "藏格矿业",
-      "weight": 4.68
+      "weight": 7.85
     },
     {
       "stock_code": "002709",
       "stock_name": "天赐材料",
-      "weight": 4.65
-    },
-    {
-      "stock_code": "600160",
-      "stock_name": "巨化股份",
-      "weight": 3.66
-    },
-    {
-      "stock_code": "600346",
-      "stock_name": "恒力石化",
-      "weight": 3.36
-    },
-    {
-      "stock_code": "600426",
-      "stock_name": "华鲁恒升",
-      "weight": 3.3
+      "weight": 4.38
     },
     {
       "stock_code": "600989",
       "stock_name": "宝丰能源",
-      "weight": 3.05
+      "weight": 4.28
     },
     {
-      "stock_code": "600096",
-      "stock_name": "云天化",
-      "weight": 3.01
+      "stock_code": "000408",
+      "stock_name": "藏格矿业",
+      "weight": 4.16
     },
     {
-      "stock_code": "600143",
-      "stock_name": "金发科技",
-      "weight": 2.91
-    },
-    {
-      "stock_code": "002407",
-      "stock_name": "多氟多",
-      "weight": 2.85
-    },
-    {
-      "stock_code": "002493",
-      "stock_name": "荣盛石化",
-      "weight": 2.48
-    },
-    {
-      "stock_code": "002812",
-      "stock_name": "恩捷股份",
-      "weight": 2.36
-    },
-    {
-      "stock_code": "002601",
-      "stock_name": "龙佰集团",
-      "weight": 2.31
+      "stock_code": "600426",
+      "stock_name": "华鲁恒升",
+      "weight": 3.6
     },
     {
       "stock_code": "002648",
       "stock_name": "卫星化学",
-      "weight": 2.1
+      "weight": 3.11
     },
     {
-      "stock_code": "000301",
-      "stock_name": "东方盛虹",
-      "weight": 2.03
+      "stock_code": "600160",
+      "stock_name": "巨化股份",
+      "weight": 3.08
+    },
+    {
+      "stock_code": "600346",
+      "stock_name": "恒力石化",
+      "weight": 3.06
+    },
+    {
+      "stock_code": "600096",
+      "stock_name": "云天化",
+      "weight": 2.85
+    },
+    {
+      "stock_code": "002812",
+      "stock_name": "恩捷股份",
+      "weight": 2.67
+    },
+    {
+      "stock_code": "002493",
+      "stock_name": "荣盛石化",
+      "weight": 2.4
+    },
+    {
+      "stock_code": "600143",
+      "stock_name": "金发科技",
+      "weight": 2.36
     },
     {
       "stock_code": "600352",
       "stock_name": "浙江龙盛",
-      "weight": 1.96
+      "weight": 2.26
+    },
+    {
+      "stock_code": "000893",
+      "stock_name": "亚钾国际",
+      "weight": 2.26
+    },
+    {
+      "stock_code": "002407",
+      "stock_name": "多氟多",
+      "weight": 2.21
     },
     {
       "stock_code": "300037",
       "stock_name": "新宙邦",
+      "weight": 1.97
+    },
+    {
+      "stock_code": "002601",
+      "stock_name": "龙佰集团",
       "weight": 1.94
     },
     {
@@ -102,79 +102,69 @@
       "weight": 1.88
     },
     {
-      "stock_code": "000893",
-      "stock_name": "亚钾国际",
-      "weight": 1.88
-    },
-    {
       "stock_code": "601233",
       "stock_name": "桐昆股份",
-      "weight": 1.75
-    },
-    {
-      "stock_code": "300699",
-      "stock_name": "光威复材",
-      "weight": 1.62
-    },
-    {
-      "stock_code": "002064",
-      "stock_name": "华峰化学",
-      "weight": 1.54
-    },
-    {
-      "stock_code": "002683",
-      "stock_name": "广东宏大",
-      "weight": 1.54
-    },
-    {
-      "stock_code": "300568",
-      "stock_name": "星源材质",
-      "weight": 1.45
+      "weight": 1.74
     },
     {
       "stock_code": "600331",
       "stock_name": "宏达股份",
-      "weight": 1.43
+      "weight": 1.56
     },
     {
       "stock_code": "000703",
       "stock_name": "恒逸石化",
-      "weight": 1.37
+      "weight": 1.47
     },
     {
       "stock_code": "000683",
       "stock_name": "博源化工",
-      "weight": 1.37
+      "weight": 1.46
+    },
+    {
+      "stock_code": "002064",
+      "stock_name": "华峰化学",
+      "weight": 1.36
+    },
+    {
+      "stock_code": "300699",
+      "stock_name": "光威复材",
+      "weight": 1.34
+    },
+    {
+      "stock_code": "300568",
+      "stock_name": "星源材质",
+      "weight": 1.33
     },
     {
       "stock_code": "605589",
       "stock_name": "圣泉集团",
-      "weight": 1.35
-    },
-    {
-      "stock_code": "000830",
-      "stock_name": "鲁西化工",
-      "weight": 1.34
-    },
-    {
-      "stock_code": "688065",
-      "stock_name": "凯赛生物",
-      "weight": 1.27
-    },
-    {
-      "stock_code": "600486",
-      "stock_name": "扬农化工",
-      "weight": 1.19
-    },
-    {
-      "stock_code": "600378",
-      "stock_name": "昊华科技",
-      "weight": 1.16
+      "weight": 1.31
     },
     {
       "stock_code": "601216",
       "stock_name": "君正集团",
-      "weight": 1.15
+      "weight": 1.24
+    },
+    {
+      "stock_code": "000830",
+      "stock_name": "鲁西化工",
+      "weight": 1.23
+    },
+    {
+      "stock_code": "600486",
+      "stock_name": "扬农化工",
+      "weight": 1.22
+    },
+    {
+      "stock_code": "002683",
+      "stock_name": "广东宏大",
+      "weight": 1.19
+    },
+    {
+      "stock_code": "603077",
+      "stock_name": "和邦生物",
+      "weight": 1.16
     },
     {
       "stock_code": "300487",
@@ -182,34 +172,29 @@
       "weight": 1.11
     },
     {
-      "stock_code": "603379",
-      "stock_name": "三美股份",
+      "stock_code": "600378",
+      "stock_name": "昊华科技",
       "weight": 1.05
     },
     {
-      "stock_code": "002430",
-      "stock_name": "杭氧股份",
-      "weight": 1.03
-    },
-    {
-      "stock_code": "300777",
-      "stock_name": "中简科技",
+      "stock_code": "603379",
+      "stock_name": "三美股份",
       "weight": 1.01
-    },
-    {
-      "stock_code": "603077",
-      "stock_name": "和邦生物",
-      "weight": 0.99
     },
     {
       "stock_code": "603737",
       "stock_name": "三棵树",
-      "weight": 0.96
+      "weight": 1.0
     },
     {
-      "stock_code": "002145",
-      "stock_name": "钛能化学",
-      "weight": 0.92
+      "stock_code": "603225",
+      "stock_name": "新凤鸣",
+      "weight": 0.94
+    },
+    {
+      "stock_code": "002430",
+      "stock_name": "杭氧股份",
+      "weight": 0.91
     },
     {
       "stock_code": "002312",
@@ -217,47 +202,42 @@
       "weight": 0.87
     },
     {
-      "stock_code": "603225",
-      "stock_name": "新凤鸣",
-      "weight": 0.84
+      "stock_code": "300777",
+      "stock_name": "中简科技",
+      "weight": 0.83
+    },
+    {
+      "stock_code": "002145",
+      "stock_name": "钛能化学",
+      "weight": 0.83
     },
     {
       "stock_code": "603650",
       "stock_name": "彤程新材",
-      "weight": 0.77
+      "weight": 0.81
     },
     {
       "stock_code": "000818",
       "stock_name": "航锦科技",
-      "weight": 0.72
+      "weight": 0.74
     },
     {
       "stock_code": "000902",
       "stock_name": "新洋丰",
-      "weight": 0.69
-    },
-    {
-      "stock_code": "300910",
-      "stock_name": "瑞丰新材",
-      "weight": 0.59
+      "weight": 0.66
     },
     {
       "stock_code": "003022",
       "stock_name": "联泓新科",
-      "weight": 0.56
+      "weight": 0.53
     },
     {
-      "stock_code": "002226",
-      "stock_name": "江南化工",
-      "weight": 0.54
-    },
-    {
-      "stock_code": "002096",
-      "stock_name": "易普力",
-      "weight": 0.47
+      "stock_code": "300910",
+      "stock_name": "瑞丰新材",
+      "weight": 0.48
     }
   ],
-  "fetched_at": "2026-04-13 01:09:05",
+  "fetched_at": "2026-05-07 23:14:42",
   "data_source": "eastmoney",
   "original_fund_code": "014943",
   "etf_target": "159870",

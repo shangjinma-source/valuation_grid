@@ -3,8 +3,8 @@
   "fund_name": "融通互联网传媒灵活配置混合",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 92.89,
-  "parsed_weight": 50.8,
-  "missing_weight": 42.09,
+  "parsed_weight": 52.29,
+  "missing_weight": 40.6,
   "positions": [
     {
       "stock_code": "688258",
@@ -55,8 +55,13 @@
       "stock_code": "603039",
       "stock_name": "泛微网络",
       "weight": 2.94
+    },
+    {
+      "stock_code": "920227",
+      "stock_name": "美登科技",
+      "weight": 1.49
     }
   ],
-  "fetched_at": "2026-04-27 13:54:50",
+  "fetched_at": "2026-05-07 23:14:17",
   "data_source": "eastmoney"
 }

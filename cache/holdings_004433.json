@@ -3,8 +3,8 @@
   "fund_name": "南方有色金属ETF联接C",
   "holdings_asof_date": "2026-03-31",
   "stock_total_weight": 99.96,
-  "parsed_weight": 61.36,
-  "missing_weight": 38.6,
+  "parsed_weight": 91.23,
+  "missing_weight": 8.73,
   "positions": [
     {
       "stock_code": "601899",
@@ -62,6 +62,21 @@
       "weight": 2.81
     },
     {
+      "stock_code": "002466",
+      "stock_name": "天齐锂业",
+      "weight": 2.61
+    },
+    {
+      "stock_code": "000426",
+      "stock_name": "兴业银锡",
+      "weight": 2.6
+    },
+    {
+      "stock_code": "002738",
+      "stock_name": "中矿资源",
+      "weight": 2.44
+    },
+    {
       "stock_code": "000975",
       "stock_name": "山金国际",
       "weight": 2.25
@@ -72,9 +87,34 @@
       "weight": 2.2
     },
     {
+      "stock_code": "000630",
+      "stock_name": "铜陵有色",
+      "weight": 2.12
+    },
+    {
+      "stock_code": "600362",
+      "stock_name": "江西铜业",
+      "weight": 2.03
+    },
+    {
       "stock_code": "000657",
       "stock_name": "中钨高新",
       "weight": 1.98
+    },
+    {
+      "stock_code": "600219",
+      "stock_name": "南山铝业",
+      "weight": 1.94
+    },
+    {
+      "stock_code": "601168",
+      "stock_name": "西部矿业",
+      "weight": 1.9
+    },
+    {
+      "stock_code": "000831",
+      "stock_name": "中国稀土",
+      "weight": 1.62
     },
     {
       "stock_code": "002155",
@@ -82,9 +122,49 @@
       "weight": 1.54
     },
     {
+      "stock_code": "600392",
+      "stock_name": "盛和资源",
+      "weight": 1.43
+    },
+    {
+      "stock_code": "000960",
+      "stock_name": "锡业股份",
+      "weight": 1.42
+    },
+    {
+      "stock_code": "002756",
+      "stock_name": "永兴材料",
+      "weight": 1.28
+    },
+    {
       "stock_code": "000878",
       "stock_name": "云南铜业",
       "weight": 1.19
+    },
+    {
+      "stock_code": "601212",
+      "stock_name": "白银有色",
+      "weight": 1.09
+    },
+    {
+      "stock_code": "600497",
+      "stock_name": "驰宏锌锗",
+      "weight": 1.08
+    },
+    {
+      "stock_code": "603979",
+      "stock_name": "金诚信",
+      "weight": 0.97
+    },
+    {
+      "stock_code": "300748",
+      "stock_name": "金力永磁",
+      "weight": 0.95
+    },
+    {
+      "stock_code": "000060",
+      "stock_name": "中金岭南",
+      "weight": 0.86
     },
     {
       "stock_code": "601677",
@@ -92,9 +172,29 @@
       "weight": 0.86
     },
     {
+      "stock_code": "600259",
+      "stock_name": "中稀有色",
+      "weight": 0.84
+    },
+    {
+      "stock_code": "601020",
+      "stock_name": "华钰矿业",
+      "weight": 0.84
+    },
+    {
+      "stock_code": "601958",
+      "stock_name": "金钼股份",
+      "weight": 0.82
+    },
+    {
       "stock_code": "300811",
       "stock_name": "铂科新材",
       "weight": 0.59
+    },
+    {
+      "stock_code": "000737",
+      "stock_name": "北方铜业",
+      "weight": 0.58
     },
     {
       "stock_code": "000970",
@@ -105,9 +205,14 @@
       "stock_code": "603688",
       "stock_name": "石英股份",
       "weight": 0.51
+    },
+    {
+      "stock_code": "601137",
+      "stock_name": "博威合金",
+      "weight": 0.45
     }
   ],
-  "fetched_at": "2026-04-27 13:50:28",
+  "fetched_at": "2026-05-07 23:11:03",
   "data_source": "eastmoney",
   "original_fund_code": "004433",
   "etf_target": "512400",
