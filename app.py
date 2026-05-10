@@ -28,7 +28,7 @@ from positions import (
     confirm_buy_nav,
     auto_fill_nav
 )
-from export_image import export_all_sector_images
+from skills.export_image import export_all_sector_images
 
 from grid import (
     generate_signal, generate_all_signals, get_signal_history,

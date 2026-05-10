@@ -7,7 +7,8 @@ from pathlib import Path
 
 # 获取今天的日期
 today = datetime.now().strftime("%Y-%m-%d")
-cache_file = Path(__file__).parent / "data" / "intraday_cache.json"
+# 脚本已移动到 tools/，data/ 在根目录
+cache_file = Path(__file__).parent.parent / "data" / "intraday_cache.json"
 
 # 读取缓存文件
 with open(cache_file, "r", encoding="utf-8") as f:
