@@ -1,0 +1,62 @@
+{
+  "fund_code": "018123",
+  "fund_name": "永赢数字经济智选混合发起C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 89.67,
+  "parsed_weight": 66.3,
+  "missing_weight": 23.37,
+  "positions": [
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 9.61
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 9.31
+    },
+    {
+      "stock_code": "688372",
+      "stock_name": "伟测科技",
+      "weight": 8.09
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 7.72
+    },
+    {
+      "stock_code": "688629",
+      "stock_name": "华丰科技",
+      "weight": 7.28
+    },
+    {
+      "stock_code": "688347",
+      "stock_name": "华虹公司",
+      "weight": 5.38
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 5.13
+    },
+    {
+      "stock_code": "002281",
+      "stock_name": "光迅科技",
+      "weight": 5.13
+    },
+    {
+      "stock_code": "688702",
+      "stock_name": "盛科通信",
+      "weight": 4.51
+    },
+    {
+      "stock_code": "600584",
+      "stock_name": "长电科技",
+      "weight": 4.14
+    }
+  ],
+  "fetched_at": "2026-05-26 00:20:43",
+  "data_source": "eastmoney"
+}

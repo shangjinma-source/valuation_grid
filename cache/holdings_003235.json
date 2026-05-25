@@ -1,0 +1,62 @@
+{
+  "fund_code": "003235",
+  "fund_name": "中信保诚至利混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 86.44,
+  "parsed_weight": 64.03,
+  "missing_weight": 22.41,
+  "positions": [
+    {
+      "stock_code": "300638",
+      "stock_name": "广和通",
+      "weight": 8.45
+    },
+    {
+      "stock_code": "688095",
+      "stock_name": "福昕软件",
+      "weight": 7.89
+    },
+    {
+      "stock_code": "002555",
+      "stock_name": "三七互娱",
+      "weight": 7.06
+    },
+    {
+      "stock_code": "603444",
+      "stock_name": "吉比特",
+      "weight": 6.83
+    },
+    {
+      "stock_code": "001309",
+      "stock_name": "德明利",
+      "weight": 6.44
+    },
+    {
+      "stock_code": "301338",
+      "stock_name": "凯格精机",
+      "weight": 6.36
+    },
+    {
+      "stock_code": "603083",
+      "stock_name": "剑桥科技",
+      "weight": 5.74
+    },
+    {
+      "stock_code": "301308",
+      "stock_name": "江波龙",
+      "weight": 5.6
+    },
+    {
+      "stock_code": "603529",
+      "stock_name": "爱玛科技",
+      "weight": 4.88
+    },
+    {
+      "stock_code": "601872",
+      "stock_name": "招商轮船",
+      "weight": 4.78
+    }
+  ],
+  "fetched_at": "2026-05-26 00:24:08",
+  "data_source": "eastmoney"
+}

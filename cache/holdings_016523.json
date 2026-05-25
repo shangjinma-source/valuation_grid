@@ -1,0 +1,62 @@
+{
+  "fund_code": "016523",
+  "fund_name": "华安科技创新混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.59,
+  "parsed_weight": 44.65,
+  "missing_weight": 47.94,
+  "positions": [
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 6.49
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 5.82
+    },
+    {
+      "stock_code": "002222",
+      "stock_name": "福晶科技",
+      "weight": 5.6
+    },
+    {
+      "stock_code": "688008",
+      "stock_name": "澜起科技",
+      "weight": 4.51
+    },
+    {
+      "stock_code": "688627",
+      "stock_name": "精智达",
+      "weight": 4.12
+    },
+    {
+      "stock_code": "002837",
+      "stock_name": "英维克",
+      "weight": 3.82
+    },
+    {
+      "stock_code": "300395",
+      "stock_name": "菲利华",
+      "weight": 3.69
+    },
+    {
+      "stock_code": "002028",
+      "stock_name": "思源电气",
+      "weight": 3.64
+    },
+    {
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 3.52
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 3.44
+    }
+  ],
+  "fetched_at": "2026-05-26 00:20:43",
+  "data_source": "eastmoney"
+}

@@ -180,8 +180,8 @@
           "status": "holding",
           "note": "建仓",
           "is_supplement": false,
-          "peak_nav": 2.4896,
-          "peak_date": "2026-05-22",
+          "peak_nav": 2.5682,
+          "peak_date": "2026-05-26",
           "original_amount": 5197.5,
           "original_shares": 3023.21
         },
@@ -195,8 +195,8 @@
           "note": "延迟回补",
           "is_supplement": false,
           "is_rebuy": false,
-          "peak_nav": 2.4896,
-          "peak_date": "2026-05-22"
+          "peak_nav": 2.5682,
+          "peak_date": "2026-05-26"
         }
       ],
       "supplement_count": 0,
@@ -283,8 +283,8 @@
           "status": "holding",
           "note": "低位建仓",
           "is_supplement": false,
-          "peak_nav": 3.3571,
-          "peak_date": "2026-05-20",
+          "peak_nav": 3.4577,
+          "peak_date": "2026-05-26",
           "original_amount": 2706.0,
           "original_shares": 1233.64
         }
@@ -403,8 +403,8 @@
           "status": "holding",
           "note": "温和回调建仓",
           "is_supplement": false,
-          "peak_nav": 2.4896,
-          "peak_date": "2026-05-22",
+          "peak_nav": 2.5682,
+          "peak_date": "2026-05-26",
           "original_amount": 2598.75,
           "original_shares": 1511.6
         },
@@ -418,8 +418,8 @@
           "note": "延迟回补",
           "is_supplement": false,
           "is_rebuy": false,
-          "peak_nav": 2.4896,
-          "peak_date": "2026-05-22"
+          "peak_nav": 2.5682,
+          "peak_date": "2026-05-26"
         }
       ],
       "supplement_count": 0,
@@ -495,7 +495,7 @@
     }
   },
   "cash_reserve_ratio": 0.3,
-  "updated_at": "2026-05-25 14:50:16",
+  "updated_at": "2026-05-26 00:15:03",
   "market_regime": "neutral",
   "regime_auto": true,
   "regime_auto_result": "neutral",

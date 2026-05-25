@@ -1,0 +1,62 @@
+{
+  "fund_code": "006271",
+  "fund_name": "汇安核心成长混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.83,
+  "parsed_weight": 79.04,
+  "missing_weight": 14.79,
+  "positions": [
+    {
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
+      "weight": 9.9
+    },
+    {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
+      "weight": 9.11
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 9.07
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 8.77
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 8.4
+    },
+    {
+      "stock_code": "688629",
+      "stock_name": "华丰科技",
+      "weight": 7.67
+    },
+    {
+      "stock_code": "688702",
+      "stock_name": "盛科通信",
+      "weight": 7.43
+    },
+    {
+      "stock_code": "688981",
+      "stock_name": "中芯国际",
+      "weight": 7.16
+    },
+    {
+      "stock_code": "688347",
+      "stock_name": "华虹公司",
+      "weight": 6.0
+    },
+    {
+      "stock_code": "688047",
+      "stock_name": "龙芯中科",
+      "weight": 5.53
+    }
+  ],
+  "fetched_at": "2026-05-26 00:16:22",
+  "data_source": "eastmoney"
+}

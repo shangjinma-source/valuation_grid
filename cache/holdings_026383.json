@@ -1,0 +1,62 @@
+{
+  "fund_code": "026383",
+  "fund_name": "中航洞见领航混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 90.16,
+  "parsed_weight": 82.64,
+  "missing_weight": 7.52,
+  "positions": [
+    {
+      "stock_code": "688629",
+      "stock_name": "华丰科技",
+      "weight": 9.6
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 9.39
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 9.32
+    },
+    {
+      "stock_code": "688981",
+      "stock_name": "中芯国际",
+      "weight": 9.13
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 9.12
+    },
+    {
+      "stock_code": "002371",
+      "stock_name": "北方华创",
+      "weight": 8.43
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 7.54
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 7.48
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 6.76
+    },
+    {
+      "stock_code": "688362",
+      "stock_name": "甬矽电子",
+      "weight": 5.87
+    }
+  ],
+  "fetched_at": "2026-05-26 00:15:12",
+  "data_source": "eastmoney"
+}

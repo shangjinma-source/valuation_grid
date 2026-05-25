@@ -5253,6 +5253,24 @@
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
+    },
+    {
+      "date": "2026-05-26",
+      "time": "00:29:25",
+      "source": "nav",
+      "signal_name": "扭亏止盈卖出",
+      "action": "sell",
+      "priority": 2,
+      "reason": "持有70天, 浮盈55.56%, 峰值58.4%, 综合评分66(盈利37+回撤17+动量0+流动性0+费率-0+扭亏12), 卖出70% → 延迟回补553元(净值≤3.4058时触发)",
+      "amount": null,
+      "sell_pct": 70,
+      "today_change": 6.63,
+      "total_profit_pct": 21.09,
+      "current_nav": 3.4577,
+      "nav_at_signal": 3.4577,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
     }
   ],
   "017811__老婆": [
@@ -8023,6 +8041,24 @@
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
+    },
+    {
+      "date": "2026-05-26",
+      "time": "00:29:25",
+      "source": "nav",
+      "signal_name": "持有等待",
+      "action": "hold",
+      "priority": 8,
+      "reason": "总浮盈21.76%, 今日4.23%, 趋势:偏强, 风险系数1.0×, 波动状态:high_vol, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": 4.23,
+      "total_profit_pct": 21.76,
+      "current_nav": 2.5682,
+      "nav_at_signal": 2.5682,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
     }
   ],
   "017560": [
@@ -9215,6 +9251,24 @@
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
+    },
+    {
+      "date": "2026-05-26",
+      "time": "00:29:25",
+      "source": "nav",
+      "signal_name": "持有等待",
+      "action": "hold",
+      "priority": 8,
+      "reason": "总浮盈57.62%, 今日6.63%, 趋势:偏强, 风险系数1.0×, 波动状态:extreme_vol, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": 6.63,
+      "total_profit_pct": 57.62,
+      "current_nav": 3.4577,
+      "nav_at_signal": 3.4577,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
     }
   ],
   "010524__老爸": [
@@ -10384,6 +10438,24 @@
       "total_profit_pct": 23.02,
       "current_nav": 2.5949277381000004,
       "nav_at_signal": 2.5949277381000004,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    },
+    {
+      "date": "2026-05-26",
+      "time": "00:29:25",
+      "source": "nav",
+      "signal_name": "持有等待",
+      "action": "hold",
+      "priority": 8,
+      "reason": "总浮盈21.76%, 今日4.23%, 趋势:偏强, 风险系数1.0×, 波动状态:high_vol, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": 4.23,
+      "total_profit_pct": 21.76,
+      "current_nav": 2.5682,
+      "nav_at_signal": 2.5682,
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null

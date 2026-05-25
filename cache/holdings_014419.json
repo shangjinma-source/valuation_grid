@@ -1,0 +1,87 @@
+{
+  "fund_code": "014419",
+  "fund_name": "西部利得CES芯片指数增强C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.62,
+  "parsed_weight": 54.53,
+  "missing_weight": 39.09,
+  "positions": [
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 7.76
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 6.27
+    },
+    {
+      "stock_code": "002371",
+      "stock_name": "北方华创",
+      "weight": 6.21
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 5.92
+    },
+    {
+      "stock_code": "00981",
+      "stock_name": "中芯国际",
+      "weight": 5.16
+    },
+    {
+      "stock_code": "688008",
+      "stock_name": "澜起科技",
+      "weight": 4.6
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 4.31
+    },
+    {
+      "stock_code": "603501",
+      "stock_name": "豪威集团",
+      "weight": 2.58
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 2.39
+    },
+    {
+      "stock_code": "688525",
+      "stock_name": "佰维存储",
+      "weight": 2.28
+    },
+    {
+      "stock_code": "688028",
+      "stock_name": "沃尔德",
+      "weight": 2.25
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 2.0
+    },
+    {
+      "stock_code": "688503",
+      "stock_name": "聚和材料",
+      "weight": 1.47
+    },
+    {
+      "stock_code": "600246",
+      "stock_name": "万通发展",
+      "weight": 0.88
+    },
+    {
+      "stock_code": "603031",
+      "stock_name": "安孚科技",
+      "weight": 0.45
+    }
+  ],
+  "fetched_at": "2026-05-26 00:22:33",
+  "data_source": "eastmoney"
+}

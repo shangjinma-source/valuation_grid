@@ -1,0 +1,62 @@
+{
+  "fund_code": "023045",
+  "fund_name": "太平科技先锋混合发起式C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.75,
+  "parsed_weight": 57.67,
+  "missing_weight": 36.08,
+  "positions": [
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 6.81
+    },
+    {
+      "stock_code": "01347",
+      "stock_name": "华虹半导体",
+      "weight": 6.56
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 5.99
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 5.94
+    },
+    {
+      "stock_code": "688385",
+      "stock_name": "复旦微电",
+      "weight": 5.5
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 5.47
+    },
+    {
+      "stock_code": "603019",
+      "stock_name": "中科曙光",
+      "weight": 5.47
+    },
+    {
+      "stock_code": "002156",
+      "stock_name": "通富微电",
+      "weight": 5.39
+    },
+    {
+      "stock_code": "00981",
+      "stock_name": "中芯国际",
+      "weight": 5.35
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 5.19
+    }
+  ],
+  "fetched_at": "2026-05-26 00:21:41",
+  "data_source": "eastmoney"
+}

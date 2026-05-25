@@ -1,0 +1,62 @@
+{
+  "fund_code": "006719",
+  "fund_name": "国融融盛龙头严选混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 80.41,
+  "parsed_weight": 56.91,
+  "missing_weight": 23.5,
+  "positions": [
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 9.47
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 9.02
+    },
+    {
+      "stock_code": "688981",
+      "stock_name": "中芯国际",
+      "weight": 6.08
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 5.92
+    },
+    {
+      "stock_code": "600673",
+      "stock_name": "东阳光",
+      "weight": 5.04
+    },
+    {
+      "stock_code": "603881",
+      "stock_name": "数据港",
+      "weight": 4.64
+    },
+    {
+      "stock_code": "300274",
+      "stock_name": "阳光电源",
+      "weight": 4.27
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 4.23
+    },
+    {
+      "stock_code": "002407",
+      "stock_name": "多氟多",
+      "weight": 4.22
+    },
+    {
+      "stock_code": "002843",
+      "stock_name": "泰嘉股份",
+      "weight": 4.02
+    }
+  ],
+  "fetched_at": "2026-05-26 00:20:26",
+  "data_source": "eastmoney"
+}

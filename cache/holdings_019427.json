@@ -1,0 +1,62 @@
+{
+  "fund_code": "019427",
+  "fund_name": "中银数字经济混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 88.67,
+  "parsed_weight": 56.87,
+  "missing_weight": 31.8,
+  "positions": [
+    {
+      "stock_code": "002222",
+      "stock_name": "福晶科技",
+      "weight": 9.29
+    },
+    {
+      "stock_code": "688200",
+      "stock_name": "华峰测控",
+      "weight": 8.44
+    },
+    {
+      "stock_code": "300442",
+      "stock_name": "润泽科技",
+      "weight": 6.23
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 6.1
+    },
+    {
+      "stock_code": "688629",
+      "stock_name": "华丰科技",
+      "weight": 5.33
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 5.31
+    },
+    {
+      "stock_code": "688702",
+      "stock_name": "盛科通信",
+      "weight": 5.02
+    },
+    {
+      "stock_code": "01347",
+      "stock_name": "华虹半导体",
+      "weight": 3.99
+    },
+    {
+      "stock_code": "603061",
+      "stock_name": "金海通",
+      "weight": 3.8
+    },
+    {
+      "stock_code": "002156",
+      "stock_name": "通富微电",
+      "weight": 3.36
+    }
+  ],
+  "fetched_at": "2026-05-26 00:22:57",
+  "data_source": "eastmoney"
+}

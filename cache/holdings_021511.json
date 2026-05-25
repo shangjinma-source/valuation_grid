@@ -1,0 +1,67 @@
+{
+  "fund_code": "021511",
+  "fund_name": "宏利半导体产业混合发起C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 89.86,
+  "parsed_weight": 65.66,
+  "missing_weight": 24.2,
+  "positions": [
+    {
+      "stock_code": "002371",
+      "stock_name": "北方华创",
+      "weight": 8.71
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 8.68
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 8.15
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 6.43
+    },
+    {
+      "stock_code": "688019",
+      "stock_name": "安集科技",
+      "weight": 6.13
+    },
+    {
+      "stock_code": "688981",
+      "stock_name": "中芯国际",
+      "weight": 6.08
+    },
+    {
+      "stock_code": "688099",
+      "stock_name": "晶晨股份",
+      "weight": 5.98
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 4.8
+    },
+    {
+      "stock_code": "688372",
+      "stock_name": "伟测科技",
+      "weight": 3.99
+    },
+    {
+      "stock_code": "002475",
+      "stock_name": "立讯精密",
+      "weight": 3.93
+    },
+    {
+      "stock_code": "00981",
+      "stock_name": "中芯国际",
+      "weight": 2.78
+    }
+  ],
+  "fetched_at": "2026-05-26 00:21:41",
+  "data_source": "eastmoney"
+}

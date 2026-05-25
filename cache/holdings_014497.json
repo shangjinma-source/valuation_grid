@@ -1,0 +1,62 @@
+{
+  "fund_code": "014497",
+  "fund_name": "诺安研究优选混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 91.22,
+  "parsed_weight": 57.52,
+  "missing_weight": 33.7,
+  "positions": [
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 8.05
+    },
+    {
+      "stock_code": "688702",
+      "stock_name": "盛科通信",
+      "weight": 8.03
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 7.0
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 6.99
+    },
+    {
+      "stock_code": "002025",
+      "stock_name": "航天电器",
+      "weight": 5.94
+    },
+    {
+      "stock_code": "688141",
+      "stock_name": "杰华特",
+      "weight": 5.61
+    },
+    {
+      "stock_code": "301095",
+      "stock_name": "广立微",
+      "weight": 4.39
+    },
+    {
+      "stock_code": "688052",
+      "stock_name": "纳芯微",
+      "weight": 4.08
+    },
+    {
+      "stock_code": "300782",
+      "stock_name": "卓胜微",
+      "weight": 3.73
+    },
+    {
+      "stock_code": "688205",
+      "stock_name": "德科立",
+      "weight": 3.7
+    }
+  ],
+  "fetched_at": "2026-05-26 00:22:15",
+  "data_source": "eastmoney"
+}
