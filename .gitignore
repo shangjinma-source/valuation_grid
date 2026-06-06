@@ -17,3 +17,6 @@ hs_err_pid*.log
 # OS
 .DS_Store
 Thumbs.db
+
+_commit.bat
+market_summary_log.txt
