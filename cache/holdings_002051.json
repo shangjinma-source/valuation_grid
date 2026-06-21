@@ -1,0 +1,62 @@
+{
+  "fund_code": "002051",
+  "fund_name": "诺安创新驱动混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 77.38,
+  "parsed_weight": 59.57,
+  "missing_weight": 17.81,
+  "positions": [
+    {
+      "stock_code": "688362",
+      "stock_name": "甬矽电子",
+      "weight": 9.01
+    },
+    {
+      "stock_code": "002938",
+      "stock_name": "鹏鼎控股",
+      "weight": 8.33
+    },
+    {
+      "stock_code": "688347",
+      "stock_name": "华虹公司",
+      "weight": 7.98
+    },
+    {
+      "stock_code": "688981",
+      "stock_name": "中芯国际",
+      "weight": 7.6
+    },
+    {
+      "stock_code": "688692",
+      "stock_name": "达梦数据",
+      "weight": 7.07
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 5.85
+    },
+    {
+      "stock_code": "688249",
+      "stock_name": "晶合集成",
+      "weight": 4.26
+    },
+    {
+      "stock_code": "688720",
+      "stock_name": "艾森股份",
+      "weight": 3.21
+    },
+    {
+      "stock_code": "688037",
+      "stock_name": "芯源微",
+      "weight": 3.18
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 3.08
+    }
+  ],
+  "fetched_at": "2026-06-22 00:40:30",
+  "data_source": "eastmoney"
+}

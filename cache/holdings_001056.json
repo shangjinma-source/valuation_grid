@@ -1,0 +1,62 @@
+{
+  "fund_code": "001056",
+  "fund_name": "华银健康生活主题灵活配置",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.52,
+  "parsed_weight": 45.28,
+  "missing_weight": 48.24,
+  "positions": [
+    {
+      "stock_code": "688301",
+      "stock_name": "奕瑞科技",
+      "weight": 6.85
+    },
+    {
+      "stock_code": "688351",
+      "stock_name": "微电生理",
+      "weight": 4.91
+    },
+    {
+      "stock_code": "688212",
+      "stock_name": "澳华内镜",
+      "weight": 4.7
+    },
+    {
+      "stock_code": "300760",
+      "stock_name": "迈瑞医疗",
+      "weight": 4.61
+    },
+    {
+      "stock_code": "301087",
+      "stock_name": "可孚医疗",
+      "weight": 4.14
+    },
+    {
+      "stock_code": "300003",
+      "stock_name": "乐普医疗",
+      "weight": 4.08
+    },
+    {
+      "stock_code": "002223",
+      "stock_name": "鱼跃医疗",
+      "weight": 4.03
+    },
+    {
+      "stock_code": "688277",
+      "stock_name": "天智航",
+      "weight": 4.0
+    },
+    {
+      "stock_code": "301363",
+      "stock_name": "美好医疗",
+      "weight": 3.98
+    },
+    {
+      "stock_code": "600763",
+      "stock_name": "通策医疗",
+      "weight": 3.98
+    }
+  ],
+  "fetched_at": "2026-06-22 00:48:41",
+  "data_source": "eastmoney"
+}

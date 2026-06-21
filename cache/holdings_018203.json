@@ -1,0 +1,62 @@
+{
+  "fund_code": "018203",
+  "fund_name": "信澳核心科技混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.14,
+  "parsed_weight": 57.77,
+  "missing_weight": 35.37,
+  "positions": [
+    {
+      "stock_code": "301169",
+      "stock_name": "零点有数",
+      "weight": 7.38
+    },
+    {
+      "stock_code": "00700",
+      "stock_name": "腾讯控股",
+      "weight": 6.44
+    },
+    {
+      "stock_code": "002230",
+      "stock_name": "科大讯飞",
+      "weight": 6.24
+    },
+    {
+      "stock_code": "301391",
+      "stock_name": "卡莱特",
+      "weight": 6.07
+    },
+    {
+      "stock_code": "09988",
+      "stock_name": "阿里巴巴-W",
+      "weight": 6.05
+    },
+    {
+      "stock_code": "688111",
+      "stock_name": "金山办公",
+      "weight": 5.9
+    },
+    {
+      "stock_code": "00268",
+      "stock_name": "金蝶国际",
+      "weight": 5.71
+    },
+    {
+      "stock_code": "301556",
+      "stock_name": "托普云农",
+      "weight": 5.04
+    },
+    {
+      "stock_code": "688225",
+      "stock_name": "亚信安全",
+      "weight": 4.74
+    },
+    {
+      "stock_code": "603171",
+      "stock_name": "税友股份",
+      "weight": 4.2
+    }
+  ],
+  "fetched_at": "2026-06-22 00:47:10",
+  "data_source": "eastmoney"
+}

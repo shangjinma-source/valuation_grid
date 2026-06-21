@@ -1,0 +1,62 @@
+{
+  "fund_code": "005542",
+  "fund_name": "前海开源盛鑫混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 88.57,
+  "parsed_weight": 50.21,
+  "missing_weight": 38.36,
+  "positions": [
+    {
+      "stock_code": "002645",
+      "stock_name": "华宏科技",
+      "weight": 6.61
+    },
+    {
+      "stock_code": "002965",
+      "stock_name": "祥鑫科技",
+      "weight": 6.15
+    },
+    {
+      "stock_code": "605488",
+      "stock_name": "福莱新材",
+      "weight": 5.78
+    },
+    {
+      "stock_code": "603319",
+      "stock_name": "美湖股份",
+      "weight": 5.55
+    },
+    {
+      "stock_code": "603166",
+      "stock_name": "福达股份",
+      "weight": 4.93
+    },
+    {
+      "stock_code": "603809",
+      "stock_name": "豪能股份",
+      "weight": 4.92
+    },
+    {
+      "stock_code": "301550",
+      "stock_name": "斯菱智驱",
+      "weight": 4.89
+    },
+    {
+      "stock_code": "300718",
+      "stock_name": "长盛轴承",
+      "weight": 3.87
+    },
+    {
+      "stock_code": "688698",
+      "stock_name": "伟创电气",
+      "weight": 3.76
+    },
+    {
+      "stock_code": "300100",
+      "stock_name": "双林股份",
+      "weight": 3.75
+    }
+  ],
+  "fetched_at": "2026-06-22 00:47:44",
+  "data_source": "eastmoney"
+}

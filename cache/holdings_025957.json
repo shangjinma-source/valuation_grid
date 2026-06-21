@@ -1,0 +1,62 @@
+{
+  "fund_code": "025957",
+  "fund_name": "新华科技优选混合发起C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 86.49,
+  "parsed_weight": 63.35,
+  "missing_weight": 23.14,
+  "positions": [
+    {
+      "stock_code": "688608",
+      "stock_name": "恒玄科技",
+      "weight": 9.39
+    },
+    {
+      "stock_code": "002241",
+      "stock_name": "歌尔股份",
+      "weight": 7.89
+    },
+    {
+      "stock_code": "03896",
+      "stock_name": "金山云",
+      "weight": 7.73
+    },
+    {
+      "stock_code": "601231",
+      "stock_name": "环旭电子",
+      "weight": 7.6
+    },
+    {
+      "stock_code": "002600",
+      "stock_name": "领益智造",
+      "weight": 6.61
+    },
+    {
+      "stock_code": "688213",
+      "stock_name": "思特威",
+      "weight": 6.43
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 5.49
+    },
+    {
+      "stock_code": "02038",
+      "stock_name": "富智康集团",
+      "weight": 4.73
+    },
+    {
+      "stock_code": "688593",
+      "stock_name": "新相微",
+      "weight": 3.8
+    },
+    {
+      "stock_code": "688127",
+      "stock_name": "蓝特光学",
+      "weight": 3.68
+    }
+  ],
+  "fetched_at": "2026-06-22 00:44:38",
+  "data_source": "eastmoney"
+}

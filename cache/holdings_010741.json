@@ -1,0 +1,62 @@
+{
+  "fund_code": "010741",
+  "fund_name": "汇安核心价值混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.44,
+  "parsed_weight": 58.73,
+  "missing_weight": 35.71,
+  "positions": [
+    {
+      "stock_code": "000768",
+      "stock_name": "中航西飞",
+      "weight": 7.67
+    },
+    {
+      "stock_code": "600893",
+      "stock_name": "航发动力",
+      "weight": 7.07
+    },
+    {
+      "stock_code": "600760",
+      "stock_name": "中航沈飞",
+      "weight": 7.03
+    },
+    {
+      "stock_code": "688002",
+      "stock_name": "睿创微纳",
+      "weight": 7.01
+    },
+    {
+      "stock_code": "300395",
+      "stock_name": "菲利华",
+      "weight": 5.61
+    },
+    {
+      "stock_code": "300775",
+      "stock_name": "三角防务",
+      "weight": 5.34
+    },
+    {
+      "stock_code": "688281",
+      "stock_name": "华秦科技",
+      "weight": 5.27
+    },
+    {
+      "stock_code": "002683",
+      "stock_name": "广东宏大",
+      "weight": 4.59
+    },
+    {
+      "stock_code": "002246",
+      "stock_name": "北化股份",
+      "weight": 4.59
+    },
+    {
+      "stock_code": "600316",
+      "stock_name": "洪都航空",
+      "weight": 4.55
+    }
+  ],
+  "fetched_at": "2026-06-22 00:47:12",
+  "data_source": "eastmoney"
+}

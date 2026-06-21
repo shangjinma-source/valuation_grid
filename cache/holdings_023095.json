@@ -1,0 +1,62 @@
+{
+  "fund_code": "023095",
+  "fund_name": "中邮新思路灵活配置混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 70.6,
+  "parsed_weight": 49.04,
+  "missing_weight": 21.56,
+  "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 8.38
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 7.37
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 7.05
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 6.17
+    },
+    {
+      "stock_code": "603876",
+      "stock_name": "鼎胜新材",
+      "weight": 3.91
+    },
+    {
+      "stock_code": "300953",
+      "stock_name": "震裕科技",
+      "weight": 3.37
+    },
+    {
+      "stock_code": "688313",
+      "stock_name": "仕佳光子",
+      "weight": 3.31
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 3.25
+    },
+    {
+      "stock_code": "002028",
+      "stock_name": "思源电气",
+      "weight": 3.14
+    },
+    {
+      "stock_code": "000807",
+      "stock_name": "云铝股份",
+      "weight": 3.09
+    }
+  ],
+  "fetched_at": "2026-06-22 00:41:13",
+  "data_source": "eastmoney"
+}

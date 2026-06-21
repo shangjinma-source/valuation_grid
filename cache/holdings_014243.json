@@ -1,0 +1,62 @@
+{
+  "fund_code": "014243",
+  "fund_name": "富国新材料新能源混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 87.01,
+  "parsed_weight": 56.56,
+  "missing_weight": 30.45,
+  "positions": [
+    {
+      "stock_code": "301550",
+      "stock_name": "斯菱智驱",
+      "weight": 9.6
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 8.41
+    },
+    {
+      "stock_code": "603009",
+      "stock_name": "北特科技",
+      "weight": 7.66
+    },
+    {
+      "stock_code": "603179",
+      "stock_name": "新泉股份",
+      "weight": 6.98
+    },
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "weight": 4.93
+    },
+    {
+      "stock_code": "688279",
+      "stock_name": "峰岹科技",
+      "weight": 4.14
+    },
+    {
+      "stock_code": "301529",
+      "stock_name": "福赛科技",
+      "weight": 4.09
+    },
+    {
+      "stock_code": "301225",
+      "stock_name": "恒勃股份",
+      "weight": 4.01
+    },
+    {
+      "stock_code": "002865",
+      "stock_name": "钧达股份",
+      "weight": 3.5
+    },
+    {
+      "stock_code": "688210",
+      "stock_name": "统联精密",
+      "weight": 3.24
+    }
+  ],
+  "fetched_at": "2026-06-22 00:48:07",
+  "data_source": "eastmoney"
+}

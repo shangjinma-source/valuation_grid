@@ -1,0 +1,32 @@
+{
+  "fund_code": "019156",
+  "fund_name": "易方达全球配置混合(QDII)C(人民币)",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 73.97,
+  "parsed_weight": 17.57,
+  "missing_weight": 56.4,
+  "positions": [
+    {
+      "stock_code": "00100",
+      "stock_name": "MINIMAX-W",
+      "weight": 6.27
+    },
+    {
+      "stock_code": "06869",
+      "stock_name": "长飞光纤光缆",
+      "weight": 4.57
+    },
+    {
+      "stock_code": "600498",
+      "stock_name": "烽火通信",
+      "weight": 3.48
+    },
+    {
+      "stock_code": "300604",
+      "stock_name": "长川科技",
+      "weight": 3.25
+    }
+  ],
+  "fetched_at": "2026-06-22 01:50:38",
+  "data_source": "eastmoney"
+}

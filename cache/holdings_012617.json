@@ -1,0 +1,62 @@
+{
+  "fund_code": "012617",
+  "fund_name": "东吴新经济混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.9,
+  "parsed_weight": 72.7,
+  "missing_weight": 20.2,
+  "positions": [
+    {
+      "stock_code": "002475",
+      "stock_name": "立讯精密",
+      "weight": 9.22
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.15
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.04
+    },
+    {
+      "stock_code": "300476",
+      "stock_name": "胜宏科技",
+      "weight": 8.62
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 8.52
+    },
+    {
+      "stock_code": "002920",
+      "stock_name": "德赛西威",
+      "weight": 6.07
+    },
+    {
+      "stock_code": "601138",
+      "stock_name": "工业富联",
+      "weight": 5.88
+    },
+    {
+      "stock_code": "300433",
+      "stock_name": "蓝思科技",
+      "weight": 5.66
+    },
+    {
+      "stock_code": "002938",
+      "stock_name": "鹏鼎控股",
+      "weight": 5.31
+    },
+    {
+      "stock_code": "600183",
+      "stock_name": "生益科技",
+      "weight": 5.23
+    }
+  ],
+  "fetched_at": "2026-06-22 00:44:27",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "015097",
+  "fund_name": "东财数字经济混合发起式C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 89.3,
+  "parsed_weight": 63.93,
+  "missing_weight": 25.37,
+  "positions": [
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 8.85
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 8.76
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 7.2
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 7.1
+    },
+    {
+      "stock_code": "300476",
+      "stock_name": "胜宏科技",
+      "weight": 6.15
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 6.08
+    },
+    {
+      "stock_code": "601138",
+      "stock_name": "工业富联",
+      "weight": 6.06
+    },
+    {
+      "stock_code": "002837",
+      "stock_name": "英维克",
+      "weight": 4.77
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 4.63
+    },
+    {
+      "stock_code": "300548",
+      "stock_name": "长芯博创",
+      "weight": 4.33
+    }
+  ],
+  "fetched_at": "2026-06-22 00:43:33",
+  "data_source": "eastmoney"
+}

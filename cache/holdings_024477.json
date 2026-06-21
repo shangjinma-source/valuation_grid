@@ -1,0 +1,62 @@
+{
+  "fund_code": "024477",
+  "fund_name": "南华科技创新混合发起C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 87.52,
+  "parsed_weight": 29.03,
+  "missing_weight": 58.49,
+  "positions": [
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 4.3
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 3.76
+    },
+    {
+      "stock_code": "000338",
+      "stock_name": "潍柴动力",
+      "weight": 3.07
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 2.89
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 2.83
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 2.56
+    },
+    {
+      "stock_code": "002851",
+      "stock_name": "麦格米特",
+      "weight": 2.48
+    },
+    {
+      "stock_code": "002222",
+      "stock_name": "福晶科技",
+      "weight": 2.44
+    },
+    {
+      "stock_code": "300604",
+      "stock_name": "长川科技",
+      "weight": 2.4
+    },
+    {
+      "stock_code": "688008",
+      "stock_name": "澜起科技",
+      "weight": 2.3
+    }
+  ],
+  "fetched_at": "2026-06-22 01:50:16",
+  "data_source": "eastmoney"
+}

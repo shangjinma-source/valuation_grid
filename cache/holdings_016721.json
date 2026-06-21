@@ -1,0 +1,62 @@
+{
+  "fund_code": "016721",
+  "fund_name": "前海开源高端装备制造混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.66,
+  "parsed_weight": 76.6,
+  "missing_weight": 16.06,
+  "positions": [
+    {
+      "stock_code": "002222",
+      "stock_name": "福晶科技",
+      "weight": 9.38
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 9.02
+    },
+    {
+      "stock_code": "688502",
+      "stock_name": "茂莱光学",
+      "weight": 8.46
+    },
+    {
+      "stock_code": "688120",
+      "stock_name": "华海清科",
+      "weight": 8.44
+    },
+    {
+      "stock_code": "688652",
+      "stock_name": "京仪装备",
+      "weight": 7.62
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 7.43
+    },
+    {
+      "stock_code": "300604",
+      "stock_name": "长川科技",
+      "weight": 7.14
+    },
+    {
+      "stock_code": "301392",
+      "stock_name": "汇成真空",
+      "weight": 6.9
+    },
+    {
+      "stock_code": "301421",
+      "stock_name": "波长光电",
+      "weight": 6.5
+    },
+    {
+      "stock_code": "688200",
+      "stock_name": "华峰测控",
+      "weight": 5.71
+    }
+  ],
+  "fetched_at": "2026-06-22 00:46:15",
+  "data_source": "eastmoney"
+}

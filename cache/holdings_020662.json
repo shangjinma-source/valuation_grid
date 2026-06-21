@@ -1,0 +1,62 @@
+{
+  "fund_code": "020662",
+  "fund_name": "中加科技创新混合发起式C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.67,
+  "parsed_weight": 56.63,
+  "missing_weight": 38.04,
+  "positions": [
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.39
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.37
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 5.65
+    },
+    {
+      "stock_code": "600105",
+      "stock_name": "永鼎股份",
+      "weight": 5.0
+    },
+    {
+      "stock_code": "688048",
+      "stock_name": "长光华芯",
+      "weight": 4.98
+    },
+    {
+      "stock_code": "301338",
+      "stock_name": "凯格精机",
+      "weight": 4.91
+    },
+    {
+      "stock_code": "02556",
+      "stock_name": "迈富时",
+      "weight": 4.86
+    },
+    {
+      "stock_code": "300757",
+      "stock_name": "罗博特科",
+      "weight": 4.28
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 4.19
+    },
+    {
+      "stock_code": "300620",
+      "stock_name": "光库科技",
+      "weight": 4.0
+    }
+  ],
+  "fetched_at": "2026-06-22 00:41:15",
+  "data_source": "eastmoney"
+}

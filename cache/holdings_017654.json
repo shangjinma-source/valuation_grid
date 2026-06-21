@@ -1,0 +1,27 @@
+{
+  "fund_code": "017654",
+  "fund_name": "创金合信全球芯片产业股票发起(QDII)C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 71.29,
+  "parsed_weight": 15.28,
+  "missing_weight": 56.01,
+  "positions": [
+    {
+      "stock_code": "00981",
+      "stock_name": "中芯国际",
+      "weight": 6.68
+    },
+    {
+      "stock_code": "01347",
+      "stock_name": "华虹半导体",
+      "weight": 4.87
+    },
+    {
+      "stock_code": "09988",
+      "stock_name": "阿里巴巴-W",
+      "weight": 3.73
+    }
+  ],
+  "fetched_at": "2026-06-22 01:50:37",
+  "data_source": "eastmoney"
+}

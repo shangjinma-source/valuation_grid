@@ -1,0 +1,62 @@
+{
+  "fund_code": "013073",
+  "fund_name": "泰信医疗服务混合发起式C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.02,
+  "parsed_weight": 62.7,
+  "missing_weight": 31.32,
+  "positions": [
+    {
+      "stock_code": "688336",
+      "stock_name": "三生国健",
+      "weight": 7.98
+    },
+    {
+      "stock_code": "688331",
+      "stock_name": "荣昌生物",
+      "weight": 7.45
+    },
+    {
+      "stock_code": "688235",
+      "stock_name": "百济神州",
+      "weight": 6.82
+    },
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 6.64
+    },
+    {
+      "stock_code": "300765",
+      "stock_name": "新诺威",
+      "weight": 6.55
+    },
+    {
+      "stock_code": "300049",
+      "stock_name": "福瑞医科",
+      "weight": 6.01
+    },
+    {
+      "stock_code": "300204",
+      "stock_name": "舒泰神",
+      "weight": 5.95
+    },
+    {
+      "stock_code": "688506",
+      "stock_name": "百利天恒",
+      "weight": 5.87
+    },
+    {
+      "stock_code": "002653",
+      "stock_name": "海思科",
+      "weight": 5.45
+    },
+    {
+      "stock_code": "688382",
+      "stock_name": "益方生物",
+      "weight": 3.98
+    }
+  ],
+  "fetched_at": "2026-06-22 00:45:01",
+  "data_source": "eastmoney"
+}

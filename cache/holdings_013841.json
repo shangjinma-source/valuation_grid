@@ -1,0 +1,72 @@
+{
+  "fund_code": "013841",
+  "fund_name": "银华集成电路混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.74,
+  "parsed_weight": 81.9,
+  "missing_weight": 12.84,
+  "positions": [
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 9.83
+    },
+    {
+      "stock_code": "002371",
+      "stock_name": "北方华创",
+      "weight": 9.28
+    },
+    {
+      "stock_code": "688037",
+      "stock_name": "芯源微",
+      "weight": 8.79
+    },
+    {
+      "stock_code": "688120",
+      "stock_name": "华海清科",
+      "weight": 8.7
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 8.67
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 8.61
+    },
+    {
+      "stock_code": "300567",
+      "stock_name": "精测电子",
+      "weight": 8.34
+    },
+    {
+      "stock_code": "688409",
+      "stock_name": "富创精密",
+      "weight": 7.57
+    },
+    {
+      "stock_code": "688347",
+      "stock_name": "华虹公司",
+      "weight": 3.38
+    },
+    {
+      "stock_code": "00981",
+      "stock_name": "中芯国际",
+      "weight": 3.19
+    },
+    {
+      "stock_code": "01347",
+      "stock_name": "华虹半导体",
+      "weight": 3.18
+    },
+    {
+      "stock_code": "688981",
+      "stock_name": "中芯国际",
+      "weight": 2.36
+    }
+  ],
+  "fetched_at": "2026-06-22 00:46:02",
+  "data_source": "eastmoney"
+}

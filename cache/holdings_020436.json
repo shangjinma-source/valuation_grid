@@ -1,0 +1,62 @@
+{
+  "fund_code": "020436",
+  "fund_name": "金信稳健策略混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 89.87,
+  "parsed_weight": 81.91,
+  "missing_weight": 7.96,
+  "positions": [
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 9.96
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 9.9
+    },
+    {
+      "stock_code": "688037",
+      "stock_name": "芯源微",
+      "weight": 9.85
+    },
+    {
+      "stock_code": "002222",
+      "stock_name": "福晶科技",
+      "weight": 9.73
+    },
+    {
+      "stock_code": "688502",
+      "stock_name": "茂莱光学",
+      "weight": 9.73
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 9.53
+    },
+    {
+      "stock_code": "688809",
+      "stock_name": "强一股份",
+      "weight": 8.14
+    },
+    {
+      "stock_code": "300331",
+      "stock_name": "苏大维格",
+      "weight": 5.37
+    },
+    {
+      "stock_code": "301021",
+      "stock_name": "英诺激光",
+      "weight": 4.88
+    },
+    {
+      "stock_code": "688172",
+      "stock_name": "燕东微",
+      "weight": 4.82
+    }
+  ],
+  "fetched_at": "2026-06-22 00:40:49",
+  "data_source": "eastmoney"
+}

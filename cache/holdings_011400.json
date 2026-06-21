@@ -1,0 +1,62 @@
+{
+  "fund_code": "011400",
+  "fund_name": "汇添富数字未来混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.75,
+  "parsed_weight": 63.66,
+  "missing_weight": 29.09,
+  "positions": [
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.26
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.13
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 8.26
+    },
+    {
+      "stock_code": "002008",
+      "stock_name": "大族激光",
+      "weight": 6.71
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 6.57
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 6.05
+    },
+    {
+      "stock_code": "002028",
+      "stock_name": "思源电气",
+      "weight": 4.82
+    },
+    {
+      "stock_code": "06869",
+      "stock_name": "长飞光纤光缆",
+      "weight": 4.73
+    },
+    {
+      "stock_code": "002916",
+      "stock_name": "深南电路",
+      "weight": 4.19
+    },
+    {
+      "stock_code": "002837",
+      "stock_name": "英维克",
+      "weight": 3.94
+    }
+  ],
+  "fetched_at": "2026-06-22 00:43:04",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "013050",
+  "fund_name": "兴业能源革新股票C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 88.1,
+  "parsed_weight": 65.14,
+  "missing_weight": 22.96,
+  "positions": [
+    {
+      "stock_code": "301150",
+      "stock_name": "中一科技",
+      "weight": 9.3
+    },
+    {
+      "stock_code": "688778",
+      "stock_name": "厦钨新能",
+      "weight": 7.54
+    },
+    {
+      "stock_code": "688155",
+      "stock_name": "先惠技术",
+      "weight": 7.42
+    },
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "weight": 7.32
+    },
+    {
+      "stock_code": "300490",
+      "stock_name": "华自科技",
+      "weight": 6.76
+    },
+    {
+      "stock_code": "688518",
+      "stock_name": "联赢激光",
+      "weight": 5.94
+    },
+    {
+      "stock_code": "301662",
+      "stock_name": "宏工科技",
+      "weight": 5.9
+    },
+    {
+      "stock_code": "002203",
+      "stock_name": "海亮股份",
+      "weight": 5.26
+    },
+    {
+      "stock_code": "603200",
+      "stock_name": "上海洗霸",
+      "weight": 4.88
+    },
+    {
+      "stock_code": "601615",
+      "stock_name": "明阳智能",
+      "weight": 4.82
+    }
+  ],
+  "fetched_at": "2026-06-22 00:49:01",
+  "data_source": "eastmoney"
+}

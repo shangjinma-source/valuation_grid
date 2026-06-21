@@ -1,0 +1,62 @@
+{
+  "fund_code": "002938",
+  "fund_name": "中银证券健康产业混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.05,
+  "parsed_weight": 56.27,
+  "missing_weight": 37.78,
+  "positions": [
+    {
+      "stock_code": "688062",
+      "stock_name": "迈威生物",
+      "weight": 8.63
+    },
+    {
+      "stock_code": "688796",
+      "stock_name": "百奥赛图",
+      "weight": 7.83
+    },
+    {
+      "stock_code": "688382",
+      "stock_name": "益方生物",
+      "weight": 6.88
+    },
+    {
+      "stock_code": "688192",
+      "stock_name": "迪哲医药",
+      "weight": 6.38
+    },
+    {
+      "stock_code": "688513",
+      "stock_name": "苑东生物",
+      "weight": 6.12
+    },
+    {
+      "stock_code": "002294",
+      "stock_name": "信立泰",
+      "weight": 4.64
+    },
+    {
+      "stock_code": "688331",
+      "stock_name": "荣昌生物",
+      "weight": 4.3
+    },
+    {
+      "stock_code": "688266",
+      "stock_name": "泽璟制药",
+      "weight": 4.24
+    },
+    {
+      "stock_code": "688197",
+      "stock_name": "首药控股",
+      "weight": 3.73
+    },
+    {
+      "stock_code": "688180",
+      "stock_name": "君实生物",
+      "weight": 3.52
+    }
+  ],
+  "fetched_at": "2026-06-22 00:45:21",
+  "data_source": "eastmoney"
+}

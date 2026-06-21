@@ -1,0 +1,17 @@
+{
+  "fund_code": "026478",
+  "fund_name": "招商中证有色金属矿业主题ETF发起式联接C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 0.01,
+  "parsed_weight": 0.01,
+  "missing_weight": 0,
+  "positions": [
+    {
+      "stock_code": "603459",
+      "stock_name": "红板科技",
+      "weight": 0.01
+    }
+  ],
+  "fetched_at": "2026-06-22 01:50:34",
+  "data_source": "eastmoney"
+}

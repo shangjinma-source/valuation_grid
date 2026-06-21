@@ -1,0 +1,62 @@
+{
+  "fund_code": "012546",
+  "fund_name": "富荣福银混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 90.83,
+  "parsed_weight": 55.28,
+  "missing_weight": 35.55,
+  "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 7.19
+    },
+    {
+      "stock_code": "601869",
+      "stock_name": "长飞光纤",
+      "weight": 6.7
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 6.53
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 6.17
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 6.15
+    },
+    {
+      "stock_code": "688630",
+      "stock_name": "芯碁微装",
+      "weight": 5.24
+    },
+    {
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 4.56
+    },
+    {
+      "stock_code": "002222",
+      "stock_name": "福晶科技",
+      "weight": 4.42
+    },
+    {
+      "stock_code": "600522",
+      "stock_name": "中天科技",
+      "weight": 4.24
+    },
+    {
+      "stock_code": "300476",
+      "stock_name": "胜宏科技",
+      "weight": 4.08
+    }
+  ],
+  "fetched_at": "2026-06-22 00:43:02",
+  "data_source": "eastmoney"
+}

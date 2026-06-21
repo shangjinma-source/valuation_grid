@@ -1,0 +1,62 @@
+{
+  "fund_code": "026825",
+  "fund_name": "中银健康生活混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 88.32,
+  "parsed_weight": 60.73,
+  "missing_weight": 27.59,
+  "positions": [
+    {
+      "stock_code": "301363",
+      "stock_name": "美好医疗",
+      "weight": 8.3
+    },
+    {
+      "stock_code": "688261",
+      "stock_name": "东微半导",
+      "weight": 7.98
+    },
+    {
+      "stock_code": "301087",
+      "stock_name": "可孚医疗",
+      "weight": 6.3
+    },
+    {
+      "stock_code": "300003",
+      "stock_name": "乐普医疗",
+      "weight": 6.15
+    },
+    {
+      "stock_code": "300430",
+      "stock_name": "诚益通",
+      "weight": 6.11
+    },
+    {
+      "stock_code": "300753",
+      "stock_name": "爱朋医疗",
+      "weight": 6.09
+    },
+    {
+      "stock_code": "688273",
+      "stock_name": "麦澜德",
+      "weight": 5.82
+    },
+    {
+      "stock_code": "603920",
+      "stock_name": "世运电路",
+      "weight": 5.42
+    },
+    {
+      "stock_code": "688626",
+      "stock_name": "翔宇医疗",
+      "weight": 4.34
+    },
+    {
+      "stock_code": "002324",
+      "stock_name": "普利特",
+      "weight": 4.22
+    }
+  ],
+  "fetched_at": "2026-06-22 00:48:34",
+  "data_source": "eastmoney"
+}

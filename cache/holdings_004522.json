@@ -1,0 +1,62 @@
+{
+  "fund_code": "004522",
+  "fund_name": "安信工业4.0灵活配置混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.29,
+  "parsed_weight": 39.06,
+  "missing_weight": 55.23,
+  "positions": [
+    {
+      "stock_code": "601100",
+      "stock_name": "恒立液压",
+      "weight": 5.54
+    },
+    {
+      "stock_code": "002050",
+      "stock_name": "三花智控",
+      "weight": 5.44
+    },
+    {
+      "stock_code": "601689",
+      "stock_name": "拓普集团",
+      "weight": 5.19
+    },
+    {
+      "stock_code": "002850",
+      "stock_name": "科达利",
+      "weight": 4.73
+    },
+    {
+      "stock_code": "603766",
+      "stock_name": "隆鑫通用",
+      "weight": 4.24
+    },
+    {
+      "stock_code": "603119",
+      "stock_name": "浙江荣泰",
+      "weight": 3.1
+    },
+    {
+      "stock_code": "300433",
+      "stock_name": "蓝思科技",
+      "weight": 2.96
+    },
+    {
+      "stock_code": "688698",
+      "stock_name": "伟创电气",
+      "weight": 2.74
+    },
+    {
+      "stock_code": "002472",
+      "stock_name": "双环传动",
+      "weight": 2.57
+    },
+    {
+      "stock_code": "301345",
+      "stock_name": "涛涛车业",
+      "weight": 2.55
+    }
+  ],
+  "fetched_at": "2026-06-22 00:47:48",
+  "data_source": "eastmoney"
+}

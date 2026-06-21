@@ -1,0 +1,62 @@
+{
+  "fund_code": "008989",
+  "fund_name": "大成科技创新混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.61,
+  "parsed_weight": 67.42,
+  "missing_weight": 25.19,
+  "positions": [
+    {
+      "stock_code": "06869",
+      "stock_name": "长飞光纤光缆",
+      "weight": 10.74
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.4
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 8.95
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 6.48
+    },
+    {
+      "stock_code": "601872",
+      "stock_name": "招商轮船",
+      "weight": 6.26
+    },
+    {
+      "stock_code": "600176",
+      "stock_name": "中国巨石",
+      "weight": 6.04
+    },
+    {
+      "stock_code": "002028",
+      "stock_name": "思源电气",
+      "weight": 5.35
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 5.24
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 5.17
+    },
+    {
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 3.79
+    }
+  ],
+  "fetched_at": "2026-06-22 00:41:27",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "017628",
+  "fund_name": "华商计算机行业量化股票发起式C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.23,
+  "parsed_weight": 38.14,
+  "missing_weight": 55.09,
+  "positions": [
+    {
+      "stock_code": "601138",
+      "stock_name": "工业富联",
+      "weight": 6.89
+    },
+    {
+      "stock_code": "300442",
+      "stock_name": "润泽科技",
+      "weight": 5.53
+    },
+    {
+      "stock_code": "300454",
+      "stock_name": "深信服",
+      "weight": 3.53
+    },
+    {
+      "stock_code": "002230",
+      "stock_name": "科大讯飞",
+      "weight": 3.44
+    },
+    {
+      "stock_code": "300378",
+      "stock_name": "鼎捷数智",
+      "weight": 3.42
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 3.27
+    },
+    {
+      "stock_code": "301308",
+      "stock_name": "江波龙",
+      "weight": 3.22
+    },
+    {
+      "stock_code": "600602",
+      "stock_name": "云赛智联",
+      "weight": 3.09
+    },
+    {
+      "stock_code": "600673",
+      "stock_name": "东阳光",
+      "weight": 2.95
+    },
+    {
+      "stock_code": "603881",
+      "stock_name": "数据港",
+      "weight": 2.8
+    }
+  ],
+  "fetched_at": "2026-06-22 00:46:54",
+  "data_source": "eastmoney"
+}

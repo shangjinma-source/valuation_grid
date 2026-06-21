@@ -1,0 +1,62 @@
+{
+  "fund_code": "013883",
+  "fund_name": "交银启明混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.95,
+  "parsed_weight": 60.01,
+  "missing_weight": 33.94,
+  "positions": [
+    {
+      "stock_code": "06869",
+      "stock_name": "长飞光纤光缆",
+      "weight": 10.92
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.91
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.8
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 8.65
+    },
+    {
+      "stock_code": "688002",
+      "stock_name": "睿创微纳",
+      "weight": 4.76
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 4.23
+    },
+    {
+      "stock_code": "002851",
+      "stock_name": "麦格米特",
+      "weight": 3.59
+    },
+    {
+      "stock_code": "300274",
+      "stock_name": "阳光电源",
+      "weight": 2.81
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 2.76
+    },
+    {
+      "stock_code": "002916",
+      "stock_name": "深南电路",
+      "weight": 2.58
+    }
+  ],
+  "fetched_at": "2026-06-22 00:43:24",
+  "data_source": "eastmoney"
+}

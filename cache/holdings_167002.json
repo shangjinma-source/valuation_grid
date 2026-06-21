@@ -1,0 +1,62 @@
+{
+  "fund_code": "167002",
+  "fund_name": "平安鼎越混合(LOF)",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 85.28,
+  "parsed_weight": 60.59,
+  "missing_weight": 24.69,
+  "positions": [
+    {
+      "stock_code": "600482",
+      "stock_name": "中国动力",
+      "weight": 7.92
+    },
+    {
+      "stock_code": "600875",
+      "stock_name": "东方电气",
+      "weight": 7.43
+    },
+    {
+      "stock_code": "002353",
+      "stock_name": "杰瑞股份",
+      "weight": 7.07
+    },
+    {
+      "stock_code": "300274",
+      "stock_name": "阳光电源",
+      "weight": 6.79
+    },
+    {
+      "stock_code": "603308",
+      "stock_name": "应流股份",
+      "weight": 6.35
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 5.74
+    },
+    {
+      "stock_code": "000534",
+      "stock_name": "万泽股份",
+      "weight": 5.66
+    },
+    {
+      "stock_code": "600183",
+      "stock_name": "生益科技",
+      "weight": 4.62
+    },
+    {
+      "stock_code": "688390",
+      "stock_name": "固德威",
+      "weight": 4.54
+    },
+    {
+      "stock_code": "002028",
+      "stock_name": "思源电气",
+      "weight": 4.47
+    }
+  ],
+  "fetched_at": "2026-06-22 00:45:35",
+  "data_source": "eastmoney"
+}

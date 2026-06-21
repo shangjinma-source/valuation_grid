@@ -1,0 +1,62 @@
+{
+  "fund_code": "460007",
+  "fund_name": "华泰柏瑞行业领先混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.94,
+  "parsed_weight": 65.16,
+  "missing_weight": 28.78,
+  "positions": [
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 8.88
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 8.86
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 8.85
+    },
+    {
+      "stock_code": "688205",
+      "stock_name": "德科立",
+      "weight": 8.58
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 7.86
+    },
+    {
+      "stock_code": "688313",
+      "stock_name": "仕佳光子",
+      "weight": 6.62
+    },
+    {
+      "stock_code": "001267",
+      "stock_name": "汇绿生态",
+      "weight": 4.17
+    },
+    {
+      "stock_code": "603083",
+      "stock_name": "剑桥科技",
+      "weight": 3.82
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 3.81
+    },
+    {
+      "stock_code": "601869",
+      "stock_name": "长飞光纤",
+      "weight": 3.71
+    }
+  ],
+  "fetched_at": "2026-06-22 00:42:08",
+  "data_source": "eastmoney"
+}

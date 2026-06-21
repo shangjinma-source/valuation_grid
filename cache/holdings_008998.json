@@ -1,0 +1,62 @@
+{
+  "fund_code": "008998",
+  "fund_name": "同泰竞争优势混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.89,
+  "parsed_weight": 62.18,
+  "missing_weight": 32.71,
+  "positions": [
+    {
+      "stock_code": "300486",
+      "stock_name": "东杰智能",
+      "weight": 9.59
+    },
+    {
+      "stock_code": "301550",
+      "stock_name": "斯菱智驱",
+      "weight": 6.76
+    },
+    {
+      "stock_code": "603009",
+      "stock_name": "北特科技",
+      "weight": 6.63
+    },
+    {
+      "stock_code": "603286",
+      "stock_name": "日盈电子",
+      "weight": 6.32
+    },
+    {
+      "stock_code": "300953",
+      "stock_name": "震裕科技",
+      "weight": 5.58
+    },
+    {
+      "stock_code": "688109",
+      "stock_name": "品茗科技",
+      "weight": 5.51
+    },
+    {
+      "stock_code": "688711",
+      "stock_name": "宏微科技",
+      "weight": 5.48
+    },
+    {
+      "stock_code": "301225",
+      "stock_name": "恒勃股份",
+      "weight": 5.47
+    },
+    {
+      "stock_code": "603179",
+      "stock_name": "新泉股份",
+      "weight": 5.45
+    },
+    {
+      "stock_code": "300115",
+      "stock_name": "长盈精密",
+      "weight": 5.39
+    }
+  ],
+  "fetched_at": "2026-06-22 00:48:18",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "008555",
+  "fund_name": "华商龙头优势混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 85.95,
+  "parsed_weight": 60.92,
+  "missing_weight": 25.03,
+  "positions": [
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 8.81
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 8.65
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 8.52
+    },
+    {
+      "stock_code": "06869",
+      "stock_name": "长飞光纤光缆",
+      "weight": 7.72
+    },
+    {
+      "stock_code": "688766",
+      "stock_name": "普冉股份",
+      "weight": 6.55
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 5.49
+    },
+    {
+      "stock_code": "603618",
+      "stock_name": "杭电股份",
+      "weight": 4.75
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 4.02
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 3.21
+    },
+    {
+      "stock_code": "001389",
+      "stock_name": "广合科技",
+      "weight": 3.2
+    }
+  ],
+  "fetched_at": "2026-06-22 00:42:50",
+  "data_source": "eastmoney"
+}

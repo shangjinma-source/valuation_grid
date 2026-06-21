@@ -1,0 +1,62 @@
+{
+  "fund_code": "026155",
+  "fund_name": "红土创新新科技股票C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.02,
+  "parsed_weight": 44.55,
+  "missing_weight": 48.47,
+  "positions": [
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 8.54
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 8.36
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 6.21
+    },
+    {
+      "stock_code": "688630",
+      "stock_name": "芯碁微装",
+      "weight": 3.33
+    },
+    {
+      "stock_code": "300207",
+      "stock_name": "欣旺达",
+      "weight": 3.29
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 3.08
+    },
+    {
+      "stock_code": "688777",
+      "stock_name": "中控技术",
+      "weight": 2.98
+    },
+    {
+      "stock_code": "300438",
+      "stock_name": "鹏辉能源",
+      "weight": 2.93
+    },
+    {
+      "stock_code": "000973",
+      "stock_name": "佛塑科技",
+      "weight": 2.92
+    },
+    {
+      "stock_code": "600522",
+      "stock_name": "中天科技",
+      "weight": 2.91
+    }
+  ],
+  "fetched_at": "2026-06-22 00:42:10",
+  "data_source": "eastmoney"
+}

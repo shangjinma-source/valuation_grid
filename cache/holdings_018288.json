@@ -1,0 +1,62 @@
+{
+  "fund_code": "018288",
+  "fund_name": "信澳优势产业混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.03,
+  "parsed_weight": 84.46,
+  "missing_weight": 7.57,
+  "positions": [
+    {
+      "stock_code": "301338",
+      "stock_name": "凯格精机",
+      "weight": 9.93
+    },
+    {
+      "stock_code": "301128",
+      "stock_name": "强瑞技术",
+      "weight": 9.89
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 9.63
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.5
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.49
+    },
+    {
+      "stock_code": "002837",
+      "stock_name": "英维克",
+      "weight": 9.36
+    },
+    {
+      "stock_code": "301086",
+      "stock_name": "鸿富瀚",
+      "weight": 8.96
+    },
+    {
+      "stock_code": "688668",
+      "stock_name": "鼎通科技",
+      "weight": 8.74
+    },
+    {
+      "stock_code": "300857",
+      "stock_name": "协创数据",
+      "weight": 4.99
+    },
+    {
+      "stock_code": "688766",
+      "stock_name": "普冉股份",
+      "weight": 3.97
+    }
+  ],
+  "fetched_at": "2026-06-22 00:42:35",
+  "data_source": "eastmoney"
+}

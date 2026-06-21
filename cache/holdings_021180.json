@@ -1,0 +1,62 @@
+{
+  "fund_code": "021180",
+  "fund_name": "易方达产业机遇混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.14,
+  "parsed_weight": 59.56,
+  "missing_weight": 32.58,
+  "positions": [
+    {
+      "stock_code": "688200",
+      "stock_name": "华峰测控",
+      "weight": 7.91
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 7.68
+    },
+    {
+      "stock_code": "00175",
+      "stock_name": "吉利汽车",
+      "weight": 7.23
+    },
+    {
+      "stock_code": "301018",
+      "stock_name": "申菱环境",
+      "weight": 6.17
+    },
+    {
+      "stock_code": "300604",
+      "stock_name": "长川科技",
+      "weight": 5.79
+    },
+    {
+      "stock_code": "300666",
+      "stock_name": "江丰电子",
+      "weight": 5.26
+    },
+    {
+      "stock_code": "688372",
+      "stock_name": "伟测科技",
+      "weight": 5.26
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 4.86
+    },
+    {
+      "stock_code": "688409",
+      "stock_name": "富创精密",
+      "weight": 4.71
+    },
+    {
+      "stock_code": "688233",
+      "stock_name": "神工股份",
+      "weight": 4.69
+    }
+  ],
+  "fetched_at": "2026-06-22 00:46:24",
+  "data_source": "eastmoney"
+}

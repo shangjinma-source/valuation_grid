@@ -1,0 +1,62 @@
+{
+  "fund_code": "003231",
+  "fund_name": "创金合信医疗保健股票C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.57,
+  "parsed_weight": 70.17,
+  "missing_weight": 23.4,
+  "positions": [
+    {
+      "stock_code": "688266",
+      "stock_name": "泽璟制药",
+      "weight": 9.98
+    },
+    {
+      "stock_code": "002653",
+      "stock_name": "海思科",
+      "weight": 9.64
+    },
+    {
+      "stock_code": "688198",
+      "stock_name": "佰仁医疗",
+      "weight": 7.46
+    },
+    {
+      "stock_code": "688192",
+      "stock_name": "迪哲医药",
+      "weight": 7.11
+    },
+    {
+      "stock_code": "688068",
+      "stock_name": "热景生物",
+      "weight": 6.38
+    },
+    {
+      "stock_code": "002422",
+      "stock_name": "科伦药业",
+      "weight": 6.36
+    },
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 6.03
+    },
+    {
+      "stock_code": "300633",
+      "stock_name": "开立医疗",
+      "weight": 5.91
+    },
+    {
+      "stock_code": "688062",
+      "stock_name": "迈威生物",
+      "weight": 5.68
+    },
+    {
+      "stock_code": "688356",
+      "stock_name": "键凯科技",
+      "weight": 5.62
+    }
+  ],
+  "fetched_at": "2026-06-22 00:45:28",
+  "data_source": "eastmoney"
+}

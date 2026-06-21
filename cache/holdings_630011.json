@@ -1,0 +1,62 @@
+{
+  "fund_code": "630011",
+  "fund_name": "华商主题精选混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.6,
+  "parsed_weight": 40.56,
+  "missing_weight": 52.04,
+  "positions": [
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 7.85
+    },
+    {
+      "stock_code": "000688",
+      "stock_name": "国城矿业",
+      "weight": 5.27
+    },
+    {
+      "stock_code": "002532",
+      "stock_name": "天山铝业",
+      "weight": 3.77
+    },
+    {
+      "stock_code": "000408",
+      "stock_name": "藏格矿业",
+      "weight": 3.77
+    },
+    {
+      "stock_code": "001203",
+      "stock_name": "大中矿业",
+      "weight": 3.45
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 3.44
+    },
+    {
+      "stock_code": "600489",
+      "stock_name": "中金黄金",
+      "weight": 3.39
+    },
+    {
+      "stock_code": "601899",
+      "stock_name": "紫金矿业",
+      "weight": 3.33
+    },
+    {
+      "stock_code": "600188",
+      "stock_name": "兖矿能源",
+      "weight": 3.18
+    },
+    {
+      "stock_code": "000807",
+      "stock_name": "云铝股份",
+      "weight": 3.11
+    }
+  ],
+  "fetched_at": "2026-06-22 00:50:15",
+  "data_source": "eastmoney"
+}

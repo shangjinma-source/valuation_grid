@@ -1,0 +1,62 @@
+{
+  "fund_code": "001416",
+  "fund_name": "嘉实事件驱动股票",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 90.95,
+  "parsed_weight": 66.44,
+  "missing_weight": 24.51,
+  "positions": [
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.48
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 9.42
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 8.34
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 7.69
+    },
+    {
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 7.56
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 7.03
+    },
+    {
+      "stock_code": "600522",
+      "stock_name": "中天科技",
+      "weight": 5.75
+    },
+    {
+      "stock_code": "300570",
+      "stock_name": "太辰光",
+      "weight": 4.39
+    },
+    {
+      "stock_code": "601869",
+      "stock_name": "长飞光纤",
+      "weight": 3.8
+    },
+    {
+      "stock_code": "601231",
+      "stock_name": "环旭电子",
+      "weight": 2.98
+    }
+  ],
+  "fetched_at": "2026-06-22 00:44:25",
+  "data_source": "eastmoney"
+}

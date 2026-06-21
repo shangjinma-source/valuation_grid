@@ -1,0 +1,62 @@
+{
+  "fund_code": "016635",
+  "fund_name": "国联安气候变化混合A",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.12,
+  "parsed_weight": 83.25,
+  "missing_weight": 8.87,
+  "positions": [
+    {
+      "stock_code": "301550",
+      "stock_name": "斯菱智驱",
+      "weight": 9.62
+    },
+    {
+      "stock_code": "300953",
+      "stock_name": "震裕科技",
+      "weight": 9.54
+    },
+    {
+      "stock_code": "002126",
+      "stock_name": "银轮股份",
+      "weight": 8.94
+    },
+    {
+      "stock_code": "603728",
+      "stock_name": "鸣志电器",
+      "weight": 8.8
+    },
+    {
+      "stock_code": "002050",
+      "stock_name": "三花智控",
+      "weight": 8.7
+    },
+    {
+      "stock_code": "300007",
+      "stock_name": "汉威科技",
+      "weight": 8.69
+    },
+    {
+      "stock_code": "002028",
+      "stock_name": "思源电气",
+      "weight": 8.32
+    },
+    {
+      "stock_code": "09880",
+      "stock_name": "优必选",
+      "weight": 7.96
+    },
+    {
+      "stock_code": "00179",
+      "stock_name": "德昌电机控股",
+      "weight": 6.76
+    },
+    {
+      "stock_code": "300718",
+      "stock_name": "长盛轴承",
+      "weight": 5.92
+    }
+  ],
+  "fetched_at": "2026-06-22 00:48:14",
+  "data_source": "eastmoney"
+}

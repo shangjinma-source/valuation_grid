@@ -1,0 +1,67 @@
+{
+  "fund_code": "012651",
+  "fund_name": "博时半导体主题混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.77,
+  "parsed_weight": 59.14,
+  "missing_weight": 33.63,
+  "positions": [
+    {
+      "stock_code": "01347",
+      "stock_name": "华虹半导体",
+      "weight": 8.2
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 7.94
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 7.11
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 6.55
+    },
+    {
+      "stock_code": "002371",
+      "stock_name": "北方华创",
+      "weight": 6.55
+    },
+    {
+      "stock_code": "688008",
+      "stock_name": "澜起科技",
+      "weight": 6.18
+    },
+    {
+      "stock_code": "00981",
+      "stock_name": "中芯国际",
+      "weight": 5.73
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 3.23
+    },
+    {
+      "stock_code": "688630",
+      "stock_name": "芯碁微装",
+      "weight": 3.12
+    },
+    {
+      "stock_code": "688037",
+      "stock_name": "芯源微",
+      "weight": 2.96
+    },
+    {
+      "stock_code": "688981",
+      "stock_name": "中芯国际",
+      "weight": 1.57
+    }
+  ],
+  "fetched_at": "2026-06-22 00:40:08",
+  "data_source": "eastmoney"
+}

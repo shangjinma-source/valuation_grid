@@ -1,0 +1,62 @@
+{
+  "fund_code": "022868",
+  "fund_name": "英大国企改革C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 91.02,
+  "parsed_weight": 38.71,
+  "missing_weight": 52.31,
+  "positions": [
+    {
+      "stock_code": "601899",
+      "stock_name": "紫金矿业",
+      "weight": 6.16
+    },
+    {
+      "stock_code": "300395",
+      "stock_name": "菲利华",
+      "weight": 4.17
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 3.99
+    },
+    {
+      "stock_code": "688008",
+      "stock_name": "澜起科技",
+      "weight": 3.92
+    },
+    {
+      "stock_code": "688048",
+      "stock_name": "长光华芯",
+      "weight": 3.89
+    },
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 3.76
+    },
+    {
+      "stock_code": "002484",
+      "stock_name": "江海股份",
+      "weight": 3.73
+    },
+    {
+      "stock_code": "300408",
+      "stock_name": "三环集团",
+      "weight": 3.24
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 3.09
+    },
+    {
+      "stock_code": "600498",
+      "stock_name": "烽火通信",
+      "weight": 2.76
+    }
+  ],
+  "fetched_at": "2026-06-22 00:40:42",
+  "data_source": "eastmoney"
+}

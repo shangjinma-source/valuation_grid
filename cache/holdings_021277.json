@@ -1,0 +1,17 @@
+{
+  "fund_code": "021277",
+  "fund_name": "广发全球精选股票(QDII)人民币C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 87.14,
+  "parsed_weight": 5.1,
+  "missing_weight": 82.04,
+  "positions": [
+    {
+      "stock_code": "02513",
+      "stock_name": "智谱",
+      "weight": 5.1
+    }
+  ],
+  "fetched_at": "2026-06-22 01:50:38",
+  "data_source": "eastmoney"
+}

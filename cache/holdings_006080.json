@@ -1,0 +1,62 @@
+{
+  "fund_code": "006080",
+  "fund_name": "海富通电子传媒股票C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.23,
+  "parsed_weight": 45.66,
+  "missing_weight": 47.57,
+  "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.57
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.48
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 6.16
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 3.49
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 3.39
+    },
+    {
+      "stock_code": "600183",
+      "stock_name": "生益科技",
+      "weight": 3.17
+    },
+    {
+      "stock_code": "002916",
+      "stock_name": "深南电路",
+      "weight": 2.96
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 2.72
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 2.4
+    },
+    {
+      "stock_code": "300475",
+      "stock_name": "香农芯创",
+      "weight": 2.32
+    }
+  ],
+  "fetched_at": "2026-06-22 00:43:18",
+  "data_source": "eastmoney"
+}

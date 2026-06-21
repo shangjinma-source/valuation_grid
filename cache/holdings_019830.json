@@ -1,0 +1,62 @@
+{
+  "fund_code": "019830",
+  "fund_name": "华夏数字产业混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.5,
+  "parsed_weight": 69.82,
+  "missing_weight": 23.68,
+  "positions": [
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 10.22
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.58
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 8.66
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 6.49
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 6.29
+    },
+    {
+      "stock_code": "002916",
+      "stock_name": "深南电路",
+      "weight": 6.24
+    },
+    {
+      "stock_code": "688048",
+      "stock_name": "长光华芯",
+      "weight": 6.19
+    },
+    {
+      "stock_code": "688195",
+      "stock_name": "腾景科技",
+      "weight": 6.08
+    },
+    {
+      "stock_code": "03393",
+      "stock_name": "威胜控股",
+      "weight": 5.61
+    },
+    {
+      "stock_code": "06869",
+      "stock_name": "长飞光纤光缆",
+      "weight": 4.46
+    }
+  ],
+  "fetched_at": "2026-06-22 00:41:40",
+  "data_source": "eastmoney"
+}

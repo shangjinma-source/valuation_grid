@@ -1,0 +1,62 @@
+{
+  "fund_code": "162214",
+  "fund_name": "宏利领先中小盘混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.38,
+  "parsed_weight": 79.58,
+  "missing_weight": 13.8,
+  "positions": [
+    {
+      "stock_code": "688019",
+      "stock_name": "安集科技",
+      "weight": 9.89
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 9.75
+    },
+    {
+      "stock_code": "688120",
+      "stock_name": "华海清科",
+      "weight": 9.75
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 9.65
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 9.06
+    },
+    {
+      "stock_code": "300604",
+      "stock_name": "长川科技",
+      "weight": 8.7
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 8.6
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 5.33
+    },
+    {
+      "stock_code": "300567",
+      "stock_name": "精测电子",
+      "weight": 4.66
+    },
+    {
+      "stock_code": "688147",
+      "stock_name": "微导纳米",
+      "weight": 4.19
+    }
+  ],
+  "fetched_at": "2026-06-22 00:46:26",
+  "data_source": "eastmoney"
+}

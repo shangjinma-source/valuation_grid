@@ -1,0 +1,62 @@
+{
+  "fund_code": "501096",
+  "fund_name": "国联安科创混合(LOF)",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 90.61,
+  "parsed_weight": 65.14,
+  "missing_weight": 25.47,
+  "positions": [
+    {
+      "stock_code": "001309",
+      "stock_name": "德明利",
+      "weight": 9.93
+    },
+    {
+      "stock_code": "688525",
+      "stock_name": "佰维存储",
+      "weight": 8.28
+    },
+    {
+      "stock_code": "688766",
+      "stock_name": "普冉股份",
+      "weight": 6.97
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 6.54
+    },
+    {
+      "stock_code": "301308",
+      "stock_name": "江波龙",
+      "weight": 6.21
+    },
+    {
+      "stock_code": "300054",
+      "stock_name": "鼎龙股份",
+      "weight": 5.85
+    },
+    {
+      "stock_code": "301611",
+      "stock_name": "珂玛科技",
+      "weight": 5.56
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 5.4
+    },
+    {
+      "stock_code": "688008",
+      "stock_name": "澜起科技",
+      "weight": 5.28
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 5.12
+    }
+  ],
+  "fetched_at": "2026-06-22 00:44:41",
+  "data_source": "eastmoney"
+}

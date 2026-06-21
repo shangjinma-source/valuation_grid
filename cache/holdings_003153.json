@@ -1,0 +1,62 @@
+{
+  "fund_code": "003153",
+  "fund_name": "华富天鑫灵活配置混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.85,
+  "parsed_weight": 58.38,
+  "missing_weight": 35.47,
+  "positions": [
+    {
+      "stock_code": "600105",
+      "stock_name": "永鼎股份",
+      "weight": 9.64
+    },
+    {
+      "stock_code": "603011",
+      "stock_name": "合锻智能",
+      "weight": 9.3
+    },
+    {
+      "stock_code": "000969",
+      "stock_name": "安泰科技",
+      "weight": 7.41
+    },
+    {
+      "stock_code": "000962",
+      "stock_name": "东方钽业",
+      "weight": 6.28
+    },
+    {
+      "stock_code": "688663",
+      "stock_name": "新风光",
+      "weight": 5.2
+    },
+    {
+      "stock_code": "688776",
+      "stock_name": "国光电气",
+      "weight": 4.7
+    },
+    {
+      "stock_code": "688122",
+      "stock_name": "西部超导",
+      "weight": 4.57
+    },
+    {
+      "stock_code": "601611",
+      "stock_name": "中国核建",
+      "weight": 3.92
+    },
+    {
+      "stock_code": "605167",
+      "stock_name": "利柏特",
+      "weight": 3.87
+    },
+    {
+      "stock_code": "002430",
+      "stock_name": "杭氧股份",
+      "weight": 3.49
+    }
+  ],
+  "fetched_at": "2026-06-22 00:46:42",
+  "data_source": "eastmoney"
+}

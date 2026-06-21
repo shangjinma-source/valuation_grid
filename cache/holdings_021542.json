@@ -1,0 +1,62 @@
+{
+  "fund_code": "021542",
+  "fund_name": "国投瑞银信息消费混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.74,
+  "parsed_weight": 61.06,
+  "missing_weight": 33.68,
+  "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.95
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.52
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 7.43
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 7.02
+    },
+    {
+      "stock_code": "688629",
+      "stock_name": "华丰科技",
+      "weight": 6.98
+    },
+    {
+      "stock_code": "002851",
+      "stock_name": "麦格米特",
+      "weight": 4.82
+    },
+    {
+      "stock_code": "002916",
+      "stock_name": "深南电路",
+      "weight": 4.63
+    },
+    {
+      "stock_code": "002837",
+      "stock_name": "英维克",
+      "weight": 3.95
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 3.52
+    },
+    {
+      "stock_code": "300408",
+      "stock_name": "三环集团",
+      "weight": 3.24
+    }
+  ],
+  "fetched_at": "2026-06-22 00:43:06",
+  "data_source": "eastmoney"
+}

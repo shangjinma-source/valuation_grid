@@ -1,0 +1,62 @@
+{
+  "fund_code": "006122",
+  "fund_name": "华安低碳生活混合A",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.69,
+  "parsed_weight": 56.15,
+  "missing_weight": 36.54,
+  "positions": [
+    {
+      "stock_code": "688388",
+      "stock_name": "嘉元科技",
+      "weight": 8.98
+    },
+    {
+      "stock_code": "09988",
+      "stock_name": "阿里巴巴-W",
+      "weight": 6.74
+    },
+    {
+      "stock_code": "002353",
+      "stock_name": "杰瑞股份",
+      "weight": 6.58
+    },
+    {
+      "stock_code": "301150",
+      "stock_name": "中一科技",
+      "weight": 5.83
+    },
+    {
+      "stock_code": "603659",
+      "stock_name": "璞泰来",
+      "weight": 5.54
+    },
+    {
+      "stock_code": "002709",
+      "stock_name": "天赐材料",
+      "weight": 5.46
+    },
+    {
+      "stock_code": "300990",
+      "stock_name": "同飞股份",
+      "weight": 5.06
+    },
+    {
+      "stock_code": "09863",
+      "stock_name": "零跑汽车",
+      "weight": 4.22
+    },
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "weight": 3.92
+    },
+    {
+      "stock_code": "000973",
+      "stock_name": "佛塑科技",
+      "weight": 3.82
+    }
+  ],
+  "fetched_at": "2026-06-22 00:49:06",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,32 @@
+{
+  "fund_code": "100055",
+  "fund_name": "富国全球科技互联网股票(QDII)A",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 69.64,
+  "parsed_weight": 21.9,
+  "missing_weight": 47.74,
+  "positions": [
+    {
+      "stock_code": "09899",
+      "stock_name": "网易云音乐",
+      "weight": 8.17
+    },
+    {
+      "stock_code": "00522",
+      "stock_name": "ASMPT",
+      "weight": 6.29
+    },
+    {
+      "stock_code": "000660",
+      "stock_name": "SK海力士",
+      "weight": 4.11
+    },
+    {
+      "stock_code": "005930",
+      "stock_name": "三星电子",
+      "weight": 3.33
+    }
+  ],
+  "fetched_at": "2026-06-22 01:50:37",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "024692",
+  "fund_name": "鑫元新兴产业睿选混合发起式C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 87.19,
+  "parsed_weight": 63.6,
+  "missing_weight": 23.59,
+  "positions": [
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 9.06
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 8.54
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 8.49
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 8.43
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 7.14
+    },
+    {
+      "stock_code": "600183",
+      "stock_name": "生益科技",
+      "weight": 5.85
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 5.72
+    },
+    {
+      "stock_code": "600330",
+      "stock_name": "天通股份",
+      "weight": 4.91
+    },
+    {
+      "stock_code": "688785",
+      "stock_name": "恒运昌",
+      "weight": 2.76
+    },
+    {
+      "stock_code": "300570",
+      "stock_name": "太辰光",
+      "weight": 2.7
+    }
+  ],
+  "fetched_at": "2026-06-22 00:44:05",
+  "data_source": "eastmoney"
+}

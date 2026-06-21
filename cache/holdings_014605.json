@@ -1,0 +1,42 @@
+{
+  "fund_code": "014605",
+  "fund_name": "嘉实中证光伏产业ETF发起联接C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 0.22,
+  "parsed_weight": 0.2,
+  "missing_weight": 0.02,
+  "positions": [
+    {
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
+      "weight": 0.12
+    },
+    {
+      "stock_code": "688790",
+      "stock_name": "昂瑞微",
+      "weight": 0.03
+    },
+    {
+      "stock_code": "001280",
+      "stock_name": "中国铀业",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "688809",
+      "stock_name": "强一股份",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301638",
+      "stock_name": "南网数字",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "688796",
+      "stock_name": "百奥赛图",
+      "weight": 0.01
+    }
+  ],
+  "fetched_at": "2026-06-22 01:50:32",
+  "data_source": "eastmoney"
+}

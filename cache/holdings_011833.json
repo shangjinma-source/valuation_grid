@@ -1,0 +1,87 @@
+{
+  "fund_code": "011833",
+  "fund_name": "西部利得人工智能主题指数增强C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.18,
+  "parsed_weight": 54.89,
+  "missing_weight": 37.29,
+  "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 10.0
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.64
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 6.7
+    },
+    {
+      "stock_code": "688008",
+      "stock_name": "澜起科技",
+      "weight": 5.0
+    },
+    {
+      "stock_code": "002415",
+      "stock_name": "海康威视",
+      "weight": 3.81
+    },
+    {
+      "stock_code": "002230",
+      "stock_name": "科大讯飞",
+      "weight": 3.6
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 3.43
+    },
+    {
+      "stock_code": "603019",
+      "stock_name": "中科曙光",
+      "weight": 3.27
+    },
+    {
+      "stock_code": "300442",
+      "stock_name": "润泽科技",
+      "weight": 2.3
+    },
+    {
+      "stock_code": "603501",
+      "stock_name": "豪威集团",
+      "weight": 2.2
+    },
+    {
+      "stock_code": "688503",
+      "stock_name": "聚和材料",
+      "weight": 1.45
+    },
+    {
+      "stock_code": "600246",
+      "stock_name": "万通发展",
+      "weight": 0.97
+    },
+    {
+      "stock_code": "688279",
+      "stock_name": "峰岹科技",
+      "weight": 0.9
+    },
+    {
+      "stock_code": "688220",
+      "stock_name": "翱捷科技",
+      "weight": 0.87
+    },
+    {
+      "stock_code": "688337",
+      "stock_name": "普源精电",
+      "weight": 0.75
+    }
+  ],
+  "fetched_at": "2026-06-22 00:39:08",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,120 @@
+{
+  "fund_code": "015994",
+  "fund_name": "博时中证光伏产业ETF联接C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.92,
+  "parsed_weight": 59.75,
+  "missing_weight": 35.17,
+  "positions": [
+    {
+      "stock_code": "600089",
+      "stock_name": "特变电工",
+      "weight": 10.34
+    },
+    {
+      "stock_code": "601012",
+      "stock_name": "隆基绿能",
+      "weight": 8.21
+    },
+    {
+      "stock_code": "300274",
+      "stock_name": "阳光电源",
+      "weight": 7.16
+    },
+    {
+      "stock_code": "000100",
+      "stock_name": "TCL科技",
+      "weight": 6.86
+    },
+    {
+      "stock_code": "605117",
+      "stock_name": "德业股份",
+      "weight": 3.69
+    },
+    {
+      "stock_code": "600438",
+      "stock_name": "通威股份",
+      "weight": 3.45
+    },
+    {
+      "stock_code": "300751",
+      "stock_name": "迈为股份",
+      "weight": 2.96
+    },
+    {
+      "stock_code": "300757",
+      "stock_name": "罗博特科",
+      "weight": 2.96
+    },
+    {
+      "stock_code": "601877",
+      "stock_name": "正泰电器",
+      "weight": 2.71
+    },
+    {
+      "stock_code": "300724",
+      "stock_name": "捷佳伟创",
+      "weight": 2.27
+    },
+    {
+      "stock_code": "002506",
+      "stock_name": "协鑫集成",
+      "weight": 1.72
+    },
+    {
+      "stock_code": "600930",
+      "stock_name": "华电新能",
+      "weight": 1.42
+    },
+    {
+      "stock_code": "000591",
+      "stock_name": "太阳能",
+      "weight": 1.16
+    },
+    {
+      "stock_code": "300118",
+      "stock_name": "东方日升",
+      "weight": 1.13
+    },
+    {
+      "stock_code": "002617",
+      "stock_name": "露笑科技",
+      "weight": 1.08
+    },
+    {
+      "stock_code": "601778",
+      "stock_name": "晶科科技",
+      "weight": 1.08
+    },
+    {
+      "stock_code": "601222",
+      "stock_name": "林洋能源",
+      "weight": 0.68
+    },
+    {
+      "stock_code": "003035",
+      "stock_name": "南网能源",
+      "weight": 0.66
+    },
+    {
+      "stock_code": "301658",
+      "stock_name": "首航新能",
+      "weight": 0.15
+    },
+    {
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
+      "weight": 0.05
+    },
+    {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
+      "weight": 0.01
+    }
+  ],
+  "fetched_at": "2026-06-22 01:23:47",
+  "data_source": "eastmoney",
+  "original_fund_code": "015994",
+  "etf_target": "011102",
+  "is_etf_link": true
+}

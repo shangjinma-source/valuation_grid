@@ -1,0 +1,62 @@
+{
+  "fund_code": "011003",
+  "fund_name": "同泰大健康主题混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 91.06,
+  "parsed_weight": 72.29,
+  "missing_weight": 18.77,
+  "positions": [
+    {
+      "stock_code": "301363",
+      "stock_name": "美好医疗",
+      "weight": 8.11
+    },
+    {
+      "stock_code": "688621",
+      "stock_name": "阳光诺和",
+      "weight": 7.89
+    },
+    {
+      "stock_code": "300753",
+      "stock_name": "爱朋医疗",
+      "weight": 7.85
+    },
+    {
+      "stock_code": "301293",
+      "stock_name": "三博脑科",
+      "weight": 7.5
+    },
+    {
+      "stock_code": "002173",
+      "stock_name": "创新医疗",
+      "weight": 7.42
+    },
+    {
+      "stock_code": "300409",
+      "stock_name": "道氏技术",
+      "weight": 7.15
+    },
+    {
+      "stock_code": "688626",
+      "stock_name": "翔宇医疗",
+      "weight": 7.14
+    },
+    {
+      "stock_code": "300430",
+      "stock_name": "诚益通",
+      "weight": 7.03
+    },
+    {
+      "stock_code": "688273",
+      "stock_name": "麦澜德",
+      "weight": 6.38
+    },
+    {
+      "stock_code": "301330",
+      "stock_name": "熵基科技",
+      "weight": 5.82
+    }
+  ],
+  "fetched_at": "2026-06-22 00:48:29",
+  "data_source": "eastmoney"
+}

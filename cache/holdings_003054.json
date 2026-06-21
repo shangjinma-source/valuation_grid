@@ -1,0 +1,62 @@
+{
+  "fund_code": "003054",
+  "fund_name": "嘉实文体娱乐股票C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.41,
+  "parsed_weight": 75.39,
+  "missing_weight": 18.02,
+  "positions": [
+    {
+      "stock_code": "002027",
+      "stock_name": "分众传媒",
+      "weight": 10.02
+    },
+    {
+      "stock_code": "002475",
+      "stock_name": "立讯精密",
+      "weight": 9.67
+    },
+    {
+      "stock_code": "300251",
+      "stock_name": "光线传媒",
+      "weight": 9.21
+    },
+    {
+      "stock_code": "002624",
+      "stock_name": "完美世界",
+      "weight": 9.08
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 7.97
+    },
+    {
+      "stock_code": "601595",
+      "stock_name": "上海电影",
+      "weight": 7.8
+    },
+    {
+      "stock_code": "688052",
+      "stock_name": "纳芯微",
+      "weight": 7.47
+    },
+    {
+      "stock_code": "002602",
+      "stock_name": "世纪华通",
+      "weight": 5.3
+    },
+    {
+      "stock_code": "601098",
+      "stock_name": "中南传媒",
+      "weight": 4.45
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 4.42
+    }
+  ],
+  "fetched_at": "2026-06-22 00:48:50",
+  "data_source": "eastmoney"
+}

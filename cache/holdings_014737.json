@@ -1,0 +1,62 @@
+{
+  "fund_code": "014737",
+  "fund_name": "创金合信专精特新股票发起C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 88.8,
+  "parsed_weight": 62.05,
+  "missing_weight": 26.75,
+  "positions": [
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 9.84
+    },
+    {
+      "stock_code": "688630",
+      "stock_name": "芯碁微装",
+      "weight": 9.78
+    },
+    {
+      "stock_code": "688652",
+      "stock_name": "京仪装备",
+      "weight": 8.4
+    },
+    {
+      "stock_code": "688019",
+      "stock_name": "安集科技",
+      "weight": 5.13
+    },
+    {
+      "stock_code": "688120",
+      "stock_name": "华海清科",
+      "weight": 5.03
+    },
+    {
+      "stock_code": "920640",
+      "stock_name": "富士达",
+      "weight": 4.97
+    },
+    {
+      "stock_code": "688141",
+      "stock_name": "杰华特",
+      "weight": 4.89
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 4.79
+    },
+    {
+      "stock_code": "688627",
+      "stock_name": "精智达",
+      "weight": 4.63
+    },
+    {
+      "stock_code": "688536",
+      "stock_name": "思瑞浦",
+      "weight": 4.59
+    }
+  ],
+  "fetched_at": "2026-06-22 00:41:03",
+  "data_source": "eastmoney"
+}

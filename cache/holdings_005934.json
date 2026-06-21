@@ -1,0 +1,62 @@
+{
+  "fund_code": "005934",
+  "fund_name": "前海联合先进制造混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.46,
+  "parsed_weight": 74.72,
+  "missing_weight": 18.74,
+  "positions": [
+    {
+      "stock_code": "600111",
+      "stock_name": "北方稀土",
+      "weight": 7.95
+    },
+    {
+      "stock_code": "000831",
+      "stock_name": "中国稀土",
+      "weight": 7.85
+    },
+    {
+      "stock_code": "600392",
+      "stock_name": "盛和资源",
+      "weight": 7.81
+    },
+    {
+      "stock_code": "600259",
+      "stock_name": "中稀有色",
+      "weight": 7.76
+    },
+    {
+      "stock_code": "600010",
+      "stock_name": "包钢股份",
+      "weight": 7.75
+    },
+    {
+      "stock_code": "600366",
+      "stock_name": "宁波韵升",
+      "weight": 7.72
+    },
+    {
+      "stock_code": "300224",
+      "stock_name": "正海磁材",
+      "weight": 7.7
+    },
+    {
+      "stock_code": "000970",
+      "stock_name": "中科三环",
+      "weight": 7.69
+    },
+    {
+      "stock_code": "300748",
+      "stock_name": "金力永磁",
+      "weight": 7.58
+    },
+    {
+      "stock_code": "000795",
+      "stock_name": "英洛华",
+      "weight": 4.91
+    }
+  ],
+  "fetched_at": "2026-06-22 00:44:58",
+  "data_source": "eastmoney"
+}

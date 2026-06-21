@@ -1,0 +1,62 @@
+{
+  "fund_code": "025783",
+  "fund_name": "兴证资管金麒麟兴享优选混合D",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 89.27,
+  "parsed_weight": 62.83,
+  "missing_weight": 26.44,
+  "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.78
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.6
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 9.54
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 8.28
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 5.65
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 5.44
+    },
+    {
+      "stock_code": "600183",
+      "stock_name": "生益科技",
+      "weight": 3.99
+    },
+    {
+      "stock_code": "688195",
+      "stock_name": "腾景科技",
+      "weight": 3.93
+    },
+    {
+      "stock_code": "601869",
+      "stock_name": "长飞光纤",
+      "weight": 3.54
+    },
+    {
+      "stock_code": "688257",
+      "stock_name": "新锐股份",
+      "weight": 3.08
+    }
+  ],
+  "fetched_at": "2026-06-22 00:42:33",
+  "data_source": "eastmoney"
+}

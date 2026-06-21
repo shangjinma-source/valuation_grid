@@ -1,0 +1,62 @@
+{
+  "fund_code": "010685",
+  "fund_name": "工银前沿医疗股票C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 86.48,
+  "parsed_weight": 65.95,
+  "missing_weight": 20.53,
+  "positions": [
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 9.41
+    },
+    {
+      "stock_code": "002294",
+      "stock_name": "信立泰",
+      "weight": 9.35
+    },
+    {
+      "stock_code": "002653",
+      "stock_name": "海思科",
+      "weight": 9.06
+    },
+    {
+      "stock_code": "002422",
+      "stock_name": "科伦药业",
+      "weight": 8.27
+    },
+    {
+      "stock_code": "603259",
+      "stock_name": "药明康德",
+      "weight": 5.85
+    },
+    {
+      "stock_code": "688331",
+      "stock_name": "荣昌生物",
+      "weight": 5.37
+    },
+    {
+      "stock_code": "300765",
+      "stock_name": "新诺威",
+      "weight": 5.3
+    },
+    {
+      "stock_code": "688235",
+      "stock_name": "百济神州",
+      "weight": 5.01
+    },
+    {
+      "stock_code": "000963",
+      "stock_name": "华东医药",
+      "weight": 4.21
+    },
+    {
+      "stock_code": "688266",
+      "stock_name": "泽璟制药",
+      "weight": 4.12
+    }
+  ],
+  "fetched_at": "2026-06-22 00:45:19",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "017461",
+  "fund_name": "长城久鑫混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 85.28,
+  "parsed_weight": 42.12,
+  "missing_weight": 43.16,
+  "positions": [
+    {
+      "stock_code": "688322",
+      "stock_name": "奥比中光",
+      "weight": 6.2
+    },
+    {
+      "stock_code": "601100",
+      "stock_name": "恒立液压",
+      "weight": 5.94
+    },
+    {
+      "stock_code": "300115",
+      "stock_name": "长盈精密",
+      "weight": 4.46
+    },
+    {
+      "stock_code": "301413",
+      "stock_name": "安培龙",
+      "weight": 4.2
+    },
+    {
+      "stock_code": "300953",
+      "stock_name": "震裕科技",
+      "weight": 4.18
+    },
+    {
+      "stock_code": "000700",
+      "stock_name": "模塑科技",
+      "weight": 3.74
+    },
+    {
+      "stock_code": "301550",
+      "stock_name": "斯菱智驱",
+      "weight": 3.72
+    },
+    {
+      "stock_code": "603667",
+      "stock_name": "五洲新春",
+      "weight": 3.68
+    },
+    {
+      "stock_code": "002850",
+      "stock_name": "科达利",
+      "weight": 3.45
+    },
+    {
+      "stock_code": "300952",
+      "stock_name": "恒辉安防",
+      "weight": 2.55
+    }
+  ],
+  "fetched_at": "2026-06-22 00:47:57",
+  "data_source": "eastmoney"
+}

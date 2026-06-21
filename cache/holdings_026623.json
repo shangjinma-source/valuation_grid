@@ -1,0 +1,62 @@
+{
+  "fund_code": "026623",
+  "fund_name": "招商上证科创板芯片设计主题指数发起式C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.25,
+  "parsed_weight": 55.23,
+  "missing_weight": 38.02,
+  "positions": [
+    {
+      "stock_code": "688008",
+      "stock_name": "澜起科技",
+      "weight": 9.5
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 8.64
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 7.87
+    },
+    {
+      "stock_code": "688525",
+      "stock_name": "佰维存储",
+      "weight": 7.65
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 6.26
+    },
+    {
+      "stock_code": "688002",
+      "stock_name": "睿创微纳",
+      "weight": 3.83
+    },
+    {
+      "stock_code": "688110",
+      "stock_name": "东芯股份",
+      "weight": 3.5
+    },
+    {
+      "stock_code": "688099",
+      "stock_name": "晶晨股份",
+      "weight": 2.74
+    },
+    {
+      "stock_code": "688047",
+      "stock_name": "龙芯中科",
+      "weight": 2.69
+    },
+    {
+      "stock_code": "688385",
+      "stock_name": "复旦微电",
+      "weight": 2.55
+    }
+  ],
+  "fetched_at": "2026-06-22 00:40:10",
+  "data_source": "eastmoney"
+}

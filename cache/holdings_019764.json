@@ -1,0 +1,62 @@
+{
+  "fund_code": "019764",
+  "fund_name": "中欧半导体产业股票发起C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 90.71,
+  "parsed_weight": 41.78,
+  "missing_weight": 48.93,
+  "positions": [
+    {
+      "stock_code": "301306",
+      "stock_name": "西测测试",
+      "weight": 6.66
+    },
+    {
+      "stock_code": "688270",
+      "stock_name": "ST臻镭",
+      "weight": 6.28
+    },
+    {
+      "stock_code": "300751",
+      "stock_name": "迈为股份",
+      "weight": 4.84
+    },
+    {
+      "stock_code": "688375",
+      "stock_name": "国博电子",
+      "weight": 3.92
+    },
+    {
+      "stock_code": "688385",
+      "stock_name": "复旦微电",
+      "weight": 3.53
+    },
+    {
+      "stock_code": "688709",
+      "stock_name": "成都华微",
+      "weight": 3.47
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 3.35
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 3.27
+    },
+    {
+      "stock_code": "688593",
+      "stock_name": "新相微",
+      "weight": 3.24
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 3.22
+    }
+  ],
+  "fetched_at": "2026-06-22 00:40:51",
+  "data_source": "eastmoney"
+}

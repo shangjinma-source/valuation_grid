@@ -1,0 +1,62 @@
+{
+  "fund_code": "019395",
+  "fund_name": "浦银安盛策略优选混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.76,
+  "parsed_weight": 28.25,
+  "missing_weight": 65.51,
+  "positions": [
+    {
+      "stock_code": "01093",
+      "stock_name": "石药集团",
+      "weight": 3.13
+    },
+    {
+      "stock_code": "920021",
+      "stock_name": "流金科技",
+      "weight": 3.08
+    },
+    {
+      "stock_code": "300058",
+      "stock_name": "蓝色光标",
+      "weight": 2.91
+    },
+    {
+      "stock_code": "920227",
+      "stock_name": "美登科技",
+      "weight": 2.9
+    },
+    {
+      "stock_code": "688607",
+      "stock_name": "康众医疗",
+      "weight": 2.86
+    },
+    {
+      "stock_code": "301171",
+      "stock_name": "易点天下",
+      "weight": 2.76
+    },
+    {
+      "stock_code": "300785",
+      "stock_name": "值得买",
+      "weight": 2.69
+    },
+    {
+      "stock_code": "300624",
+      "stock_name": "万兴科技",
+      "weight": 2.65
+    },
+    {
+      "stock_code": "300291",
+      "stock_name": "百纳千成",
+      "weight": 2.65
+    },
+    {
+      "stock_code": "300229",
+      "stock_name": "拓尔思",
+      "weight": 2.62
+    }
+  ],
+  "fetched_at": "2026-06-22 01:50:25",
+  "data_source": "eastmoney"
+}

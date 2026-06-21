@@ -1,0 +1,62 @@
+{
+  "fund_code": "024593",
+  "fund_name": "圆信永丰科技驱动混合发起C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.5,
+  "parsed_weight": 62.34,
+  "missing_weight": 30.16,
+  "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.98
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.81
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 7.11
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 6.88
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 5.75
+    },
+    {
+      "stock_code": "600183",
+      "stock_name": "生益科技",
+      "weight": 5.27
+    },
+    {
+      "stock_code": "300548",
+      "stock_name": "长芯博创",
+      "weight": 4.67
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 4.66
+    },
+    {
+      "stock_code": "600105",
+      "stock_name": "永鼎股份",
+      "weight": 4.11
+    },
+    {
+      "stock_code": "300476",
+      "stock_name": "胜宏科技",
+      "weight": 4.1
+    }
+  ],
+  "fetched_at": "2026-06-22 00:44:21",
+  "data_source": "eastmoney"
+}

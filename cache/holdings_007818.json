@@ -1,17 +1,90 @@
 {
   "fund_code": "007818",
   "fund_name": "国泰中证全指通信设备ETF联接C",
-  "holdings_asof_date": "2025-09-30",
-  "stock_total_weight": 0.0,
-  "parsed_weight": 0.03,
-  "missing_weight": 0,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.9,
+  "parsed_weight": 66.1,
+  "missing_weight": 28.8,
   "positions": [
     {
-      "stock_code": "603496",
-      "stock_name": "恒为科技",
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 14.3
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 13.09
+    },
+    {
+      "stock_code": "601138",
+      "stock_name": "工业富联",
+      "weight": 9.86
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 6.92
+    },
+    {
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 5.37
+    },
+    {
+      "stock_code": "000063",
+      "stock_name": "中兴通讯",
+      "weight": 5.04
+    },
+    {
+      "stock_code": "600522",
+      "stock_name": "中天科技",
+      "weight": 4.18
+    },
+    {
+      "stock_code": "300136",
+      "stock_name": "信维通信",
+      "weight": 2.97
+    },
+    {
+      "stock_code": "600498",
+      "stock_name": "烽火通信",
+      "weight": 2.34
+    },
+    {
+      "stock_code": "002281",
+      "stock_name": "光迅科技",
+      "weight": 1.93
+    },
+    {
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
       "weight": 0.03
+    },
+    {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "688783",
+      "stock_name": "西安奕材",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "688781",
+      "stock_name": "视涯科技",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "001280",
+      "stock_name": "中国铀业",
+      "weight": 0.01
     }
   ],
-  "fetched_at": "2026-06-17 01:41:26",
-  "data_source": "eastmoney"
+  "fetched_at": "2026-06-22 01:23:30",
+  "data_source": "eastmoney",
+  "original_fund_code": "007818",
+  "etf_target": "020899",
+  "is_etf_link": true
 }

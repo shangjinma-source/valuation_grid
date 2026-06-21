@@ -1,0 +1,62 @@
+{
+  "fund_code": "007639",
+  "fund_name": "汇添富竞争优势灵活配置混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 77.51,
+  "parsed_weight": 70.63,
+  "missing_weight": 6.88,
+  "positions": [
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 10.79
+    },
+    {
+      "stock_code": "002371",
+      "stock_name": "北方华创",
+      "weight": 8.93
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 8.43
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 8.25
+    },
+    {
+      "stock_code": "688627",
+      "stock_name": "精智达",
+      "weight": 7.8
+    },
+    {
+      "stock_code": "688037",
+      "stock_name": "芯源微",
+      "weight": 6.61
+    },
+    {
+      "stock_code": "688120",
+      "stock_name": "华海清科",
+      "weight": 5.67
+    },
+    {
+      "stock_code": "300604",
+      "stock_name": "长川科技",
+      "weight": 5.44
+    },
+    {
+      "stock_code": "688200",
+      "stock_name": "华峰测控",
+      "weight": 4.46
+    },
+    {
+      "stock_code": "688147",
+      "stock_name": "微导纳米",
+      "weight": 4.25
+    }
+  ],
+  "fetched_at": "2026-06-22 00:46:22",
+  "data_source": "eastmoney"
+}

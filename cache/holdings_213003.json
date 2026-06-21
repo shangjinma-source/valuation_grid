@@ -1,0 +1,62 @@
+{
+  "fund_code": "213003",
+  "fund_name": "宝盈策略增长混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.55,
+  "parsed_weight": 56.87,
+  "missing_weight": 36.68,
+  "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.06
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 7.56
+    },
+    {
+      "stock_code": "300953",
+      "stock_name": "震裕科技",
+      "weight": 5.91
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 5.7
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 5.27
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 5.2
+    },
+    {
+      "stock_code": "601689",
+      "stock_name": "拓普集团",
+      "weight": 4.88
+    },
+    {
+      "stock_code": "300476",
+      "stock_name": "胜宏科技",
+      "weight": 4.81
+    },
+    {
+      "stock_code": "688676",
+      "stock_name": "金盘科技",
+      "weight": 4.51
+    },
+    {
+      "stock_code": "002837",
+      "stock_name": "英维克",
+      "weight": 3.97
+    }
+  ],
+  "fetched_at": "2026-06-22 00:42:55",
+  "data_source": "eastmoney"
+}

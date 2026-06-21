@@ -1,0 +1,62 @@
+{
+  "fund_code": "017133",
+  "fund_name": "中银新能源产业股票C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.32,
+  "parsed_weight": 55.07,
+  "missing_weight": 37.25,
+  "positions": [
+    {
+      "stock_code": "603308",
+      "stock_name": "应流股份",
+      "weight": 8.14
+    },
+    {
+      "stock_code": "002028",
+      "stock_name": "思源电气",
+      "weight": 7.92
+    },
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "weight": 7.58
+    },
+    {
+      "stock_code": "300274",
+      "stock_name": "阳光电源",
+      "weight": 6.71
+    },
+    {
+      "stock_code": "02338",
+      "stock_name": "潍柴动力",
+      "weight": 5.23
+    },
+    {
+      "stock_code": "002922",
+      "stock_name": "伊戈尔",
+      "weight": 4.75
+    },
+    {
+      "stock_code": "000534",
+      "stock_name": "万泽股份",
+      "weight": 4.12
+    },
+    {
+      "stock_code": "002353",
+      "stock_name": "杰瑞股份",
+      "weight": 3.6
+    },
+    {
+      "stock_code": "601126",
+      "stock_name": "四方股份",
+      "weight": 3.52
+    },
+    {
+      "stock_code": "01164",
+      "stock_name": "中广核矿业",
+      "weight": 3.5
+    }
+  ],
+  "fetched_at": "2026-06-22 00:45:41",
+  "data_source": "eastmoney"
+}

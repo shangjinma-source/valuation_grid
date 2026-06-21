@@ -1,0 +1,62 @@
+{
+  "fund_code": "010031",
+  "fund_name": "华泰柏瑞生物医药混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.09,
+  "parsed_weight": 69.2,
+  "missing_weight": 23.89,
+  "positions": [
+    {
+      "stock_code": "688266",
+      "stock_name": "泽璟制药",
+      "weight": 9.31
+    },
+    {
+      "stock_code": "002653",
+      "stock_name": "海思科",
+      "weight": 8.99
+    },
+    {
+      "stock_code": "002294",
+      "stock_name": "信立泰",
+      "weight": 8.76
+    },
+    {
+      "stock_code": "688331",
+      "stock_name": "荣昌生物",
+      "weight": 8.59
+    },
+    {
+      "stock_code": "688506",
+      "stock_name": "百利天恒",
+      "weight": 8.38
+    },
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 5.75
+    },
+    {
+      "stock_code": "603259",
+      "stock_name": "药明康德",
+      "weight": 5.51
+    },
+    {
+      "stock_code": "688578",
+      "stock_name": "艾力斯",
+      "weight": 4.72
+    },
+    {
+      "stock_code": "300765",
+      "stock_name": "新诺威",
+      "weight": 4.65
+    },
+    {
+      "stock_code": "688617",
+      "stock_name": "惠泰医疗",
+      "weight": 4.54
+    }
+  ],
+  "fetched_at": "2026-06-22 00:45:07",
+  "data_source": "eastmoney"
+}

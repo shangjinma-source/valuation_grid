@@ -1,0 +1,62 @@
+{
+  "fund_code": "002771",
+  "fund_name": "安信新回报混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 91.82,
+  "parsed_weight": 64.42,
+  "missing_weight": 27.4,
+  "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.92
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.86
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 7.89
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 6.77
+    },
+    {
+      "stock_code": "688630",
+      "stock_name": "芯碁微装",
+      "weight": 6.3
+    },
+    {
+      "stock_code": "300757",
+      "stock_name": "罗博特科",
+      "weight": 6.01
+    },
+    {
+      "stock_code": "300476",
+      "stock_name": "胜宏科技",
+      "weight": 5.62
+    },
+    {
+      "stock_code": "002222",
+      "stock_name": "福晶科技",
+      "weight": 4.85
+    },
+    {
+      "stock_code": "300604",
+      "stock_name": "长川科技",
+      "weight": 3.7
+    },
+    {
+      "stock_code": "688799",
+      "stock_name": "华纳药厂",
+      "weight": 3.5
+    }
+  ],
+  "fetched_at": "2026-06-22 00:43:29",
+  "data_source": "eastmoney"
+}

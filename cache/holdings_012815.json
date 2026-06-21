@@ -1,0 +1,62 @@
+{
+  "fund_code": "012815",
+  "fund_name": "宝盈新兴产业混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.69,
+  "parsed_weight": 78.54,
+  "missing_weight": 15.15,
+  "positions": [
+    {
+      "stock_code": "002545",
+      "stock_name": "东方铁塔",
+      "weight": 9.69
+    },
+    {
+      "stock_code": "603699",
+      "stock_name": "纽威股份",
+      "weight": 9.65
+    },
+    {
+      "stock_code": "000893",
+      "stock_name": "亚钾国际",
+      "weight": 9.61
+    },
+    {
+      "stock_code": "300596",
+      "stock_name": "利安隆",
+      "weight": 9.23
+    },
+    {
+      "stock_code": "300850",
+      "stock_name": "新强联",
+      "weight": 9.04
+    },
+    {
+      "stock_code": "301061",
+      "stock_name": "匠心家居",
+      "weight": 8.47
+    },
+    {
+      "stock_code": "601058",
+      "stock_name": "赛轮轮胎",
+      "weight": 7.29
+    },
+    {
+      "stock_code": "603379",
+      "stock_name": "三美股份",
+      "weight": 6.19
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 4.69
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 4.68
+    }
+  ],
+  "fetched_at": "2026-06-22 00:50:57",
+  "data_source": "eastmoney"
+}

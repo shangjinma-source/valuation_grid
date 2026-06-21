@@ -1,0 +1,62 @@
+{
+  "fund_code": "019593",
+  "fund_name": "嘉实中证国新央企现代能源ETF联接C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 0.3,
+  "parsed_weight": 0.15,
+  "missing_weight": 0.15,
+  "positions": [
+    {
+      "stock_code": "600900",
+      "stock_name": "长江电力",
+      "weight": 0.03
+    },
+    {
+      "stock_code": "600406",
+      "stock_name": "国电南瑞",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "601600",
+      "stock_name": "中国铝业",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "601985",
+      "stock_name": "中国核电",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "000807",
+      "stock_name": "云铝股份",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "600905",
+      "stock_name": "三峡能源",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "601669",
+      "stock_name": "中国电建",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "601088",
+      "stock_name": "中国神华",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "600795",
+      "stock_name": "国电电力",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "600875",
+      "stock_name": "东方电气",
+      "weight": 0.01
+    }
+  ],
+  "fetched_at": "2026-06-22 01:50:37",
+  "data_source": "eastmoney"
+}

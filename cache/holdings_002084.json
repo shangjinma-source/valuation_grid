@@ -1,0 +1,62 @@
+{
+  "fund_code": "002084",
+  "fund_name": "新华鑫动力灵活配置混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.28,
+  "parsed_weight": 44.14,
+  "missing_weight": 48.14,
+  "positions": [
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "weight": 8.94
+    },
+    {
+      "stock_code": "300274",
+      "stock_name": "阳光电源",
+      "weight": 8.39
+    },
+    {
+      "stock_code": "603799",
+      "stock_name": "华友钴业",
+      "weight": 5.88
+    },
+    {
+      "stock_code": "601126",
+      "stock_name": "四方股份",
+      "weight": 4.79
+    },
+    {
+      "stock_code": "688223",
+      "stock_name": "晶科能源",
+      "weight": 3.62
+    },
+    {
+      "stock_code": "688726",
+      "stock_name": "拉普拉斯",
+      "weight": 3.05
+    },
+    {
+      "stock_code": "002738",
+      "stock_name": "中矿资源",
+      "weight": 2.48
+    },
+    {
+      "stock_code": "000973",
+      "stock_name": "佛塑科技",
+      "weight": 2.44
+    },
+    {
+      "stock_code": "300316",
+      "stock_name": "晶盛机电",
+      "weight": 2.29
+    },
+    {
+      "stock_code": "920368",
+      "stock_name": "连城数控",
+      "weight": 2.26
+    }
+  ],
+  "fetched_at": "2026-06-22 00:49:18",
+  "data_source": "eastmoney"
+}

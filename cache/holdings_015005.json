@@ -1,0 +1,62 @@
+{
+  "fund_code": "015005",
+  "fund_name": "中邮能源革新混合型发起C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 89.47,
+  "parsed_weight": 72.35,
+  "missing_weight": 17.12,
+  "positions": [
+    {
+      "stock_code": "300450",
+      "stock_name": "先导智能",
+      "weight": 8.94
+    },
+    {
+      "stock_code": "300490",
+      "stock_name": "华自科技",
+      "weight": 8.56
+    },
+    {
+      "stock_code": "688155",
+      "stock_name": "先惠技术",
+      "weight": 8.55
+    },
+    {
+      "stock_code": "301662",
+      "stock_name": "宏工科技",
+      "weight": 8.04
+    },
+    {
+      "stock_code": "920284",
+      "stock_name": "灵鸽科技",
+      "weight": 7.41
+    },
+    {
+      "stock_code": "920522",
+      "stock_name": "纳科诺尔",
+      "weight": 7.34
+    },
+    {
+      "stock_code": "301150",
+      "stock_name": "中一科技",
+      "weight": 6.4
+    },
+    {
+      "stock_code": "688170",
+      "stock_name": "德龙激光",
+      "weight": 5.98
+    },
+    {
+      "stock_code": "688559",
+      "stock_name": "海目星",
+      "weight": 5.69
+    },
+    {
+      "stock_code": "688778",
+      "stock_name": "厦钨新能",
+      "weight": 5.44
+    }
+  ],
+  "fetched_at": "2026-06-22 00:48:59",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "020682",
+  "fund_name": "建信环保产业股票C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 91.1,
+  "parsed_weight": 51.95,
+  "missing_weight": 39.15,
+  "positions": [
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "weight": 9.66
+    },
+    {
+      "stock_code": "300274",
+      "stock_name": "阳光电源",
+      "weight": 6.77
+    },
+    {
+      "stock_code": "001203",
+      "stock_name": "大中矿业",
+      "weight": 5.79
+    },
+    {
+      "stock_code": "002028",
+      "stock_name": "思源电气",
+      "weight": 5.0
+    },
+    {
+      "stock_code": "605117",
+      "stock_name": "德业股份",
+      "weight": 4.67
+    },
+    {
+      "stock_code": "002812",
+      "stock_name": "恩捷股份",
+      "weight": 4.21
+    },
+    {
+      "stock_code": "002709",
+      "stock_name": "天赐材料",
+      "weight": 4.17
+    },
+    {
+      "stock_code": "600660",
+      "stock_name": "福耀玻璃",
+      "weight": 4.06
+    },
+    {
+      "stock_code": "002487",
+      "stock_name": "大金重工",
+      "weight": 3.82
+    },
+    {
+      "stock_code": "001301",
+      "stock_name": "尚太科技",
+      "weight": 3.8
+    }
+  ],
+  "fetched_at": "2026-06-22 00:49:20",
+  "data_source": "eastmoney"
+}

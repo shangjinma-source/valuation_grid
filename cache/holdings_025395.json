@@ -1,0 +1,62 @@
+{
+  "fund_code": "025395",
+  "fund_name": "圆信永丰高端制造C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 91.86,
+  "parsed_weight": 48.84,
+  "missing_weight": 43.02,
+  "positions": [
+    {
+      "stock_code": "002756",
+      "stock_name": "永兴材料",
+      "weight": 7.19
+    },
+    {
+      "stock_code": "301358",
+      "stock_name": "湖南裕能",
+      "weight": 5.1
+    },
+    {
+      "stock_code": "301150",
+      "stock_name": "中一科技",
+      "weight": 5.07
+    },
+    {
+      "stock_code": "002240",
+      "stock_name": "盛新锂能",
+      "weight": 4.98
+    },
+    {
+      "stock_code": "002709",
+      "stock_name": "天赐材料",
+      "weight": 4.97
+    },
+    {
+      "stock_code": "300450",
+      "stock_name": "先导智能",
+      "weight": 4.84
+    },
+    {
+      "stock_code": "001301",
+      "stock_name": "尚太科技",
+      "weight": 4.4
+    },
+    {
+      "stock_code": "002812",
+      "stock_name": "恩捷股份",
+      "weight": 4.32
+    },
+    {
+      "stock_code": "300037",
+      "stock_name": "新宙邦",
+      "weight": 4.05
+    },
+    {
+      "stock_code": "000762",
+      "stock_name": "西藏矿业",
+      "weight": 3.92
+    }
+  ],
+  "fetched_at": "2026-06-22 00:49:08",
+  "data_source": "eastmoney"
+}

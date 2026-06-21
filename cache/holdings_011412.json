@@ -1,0 +1,62 @@
+{
+  "fund_code": "011412",
+  "fund_name": "易方达远见成长混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.47,
+  "parsed_weight": 73.65,
+  "missing_weight": 20.82,
+  "positions": [
+    {
+      "stock_code": "300548",
+      "stock_name": "长芯博创",
+      "weight": 9.87
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.86
+    },
+    {
+      "stock_code": "06869",
+      "stock_name": "长飞光纤光缆",
+      "weight": 9.82
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.63
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 9.08
+    },
+    {
+      "stock_code": "002837",
+      "stock_name": "英维克",
+      "weight": 6.4
+    },
+    {
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 6.09
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 5.22
+    },
+    {
+      "stock_code": "688008",
+      "stock_name": "澜起科技",
+      "weight": 4.0
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 3.68
+    }
+  ],
+  "fetched_at": "2026-06-22 00:43:31",
+  "data_source": "eastmoney"
+}

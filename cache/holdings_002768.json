@@ -1,0 +1,62 @@
+{
+  "fund_code": "002768",
+  "fund_name": "华安安进灵活配置混合发起式A",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 68.63,
+  "parsed_weight": 44.71,
+  "missing_weight": 23.92,
+  "positions": [
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 8.41
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 7.3
+    },
+    {
+      "stock_code": "301338",
+      "stock_name": "凯格精机",
+      "weight": 4.71
+    },
+    {
+      "stock_code": "002028",
+      "stock_name": "思源电气",
+      "weight": 4.5
+    },
+    {
+      "stock_code": "600105",
+      "stock_name": "永鼎股份",
+      "weight": 3.61
+    },
+    {
+      "stock_code": "301486",
+      "stock_name": "致尚科技",
+      "weight": 3.6
+    },
+    {
+      "stock_code": "300179",
+      "stock_name": "四方达",
+      "weight": 3.51
+    },
+    {
+      "stock_code": "002008",
+      "stock_name": "大族激光",
+      "weight": 3.22
+    },
+    {
+      "stock_code": "688205",
+      "stock_name": "德科立",
+      "weight": 2.98
+    },
+    {
+      "stock_code": "603929",
+      "stock_name": "亚翔集成",
+      "weight": 2.87
+    }
+  ],
+  "fetched_at": "2026-06-22 00:44:18",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "026137",
+  "fund_name": "山证资管策略精选混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.42,
+  "parsed_weight": 63.72,
+  "missing_weight": 29.7,
+  "positions": [
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 7.73
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 7.6
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 7.57
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 6.75
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 6.74
+    },
+    {
+      "stock_code": "301183",
+      "stock_name": "东田微",
+      "weight": 6.41
+    },
+    {
+      "stock_code": "688205",
+      "stock_name": "德科立",
+      "weight": 6.05
+    },
+    {
+      "stock_code": "601869",
+      "stock_name": "长飞光纤",
+      "weight": 5.27
+    },
+    {
+      "stock_code": "688195",
+      "stock_name": "腾景科技",
+      "weight": 5.1
+    },
+    {
+      "stock_code": "300757",
+      "stock_name": "罗博特科",
+      "weight": 4.5
+    }
+  ],
+  "fetched_at": "2026-06-22 00:43:35",
+  "data_source": "eastmoney"
+}

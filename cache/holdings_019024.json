@@ -1,0 +1,67 @@
+{
+  "fund_code": "019024",
+  "fund_name": "易方达信息行业精选股票C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 85.05,
+  "parsed_weight": 49.84,
+  "missing_weight": 35.21,
+  "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 8.84
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 8.11
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 8.01
+    },
+    {
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 4.27
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 3.93
+    },
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "weight": 3.93
+    },
+    {
+      "stock_code": "301377",
+      "stock_name": "鼎泰高科",
+      "weight": 3.32
+    },
+    {
+      "stock_code": "300620",
+      "stock_name": "光库科技",
+      "weight": 3.25
+    },
+    {
+      "stock_code": "600522",
+      "stock_name": "中天科技",
+      "weight": 3.13
+    },
+    {
+      "stock_code": "06869",
+      "stock_name": "长飞光纤光缆",
+      "weight": 2.68
+    },
+    {
+      "stock_code": "601869",
+      "stock_name": "长飞光纤",
+      "weight": 0.37
+    }
+  ],
+  "fetched_at": "2026-06-22 00:42:37",
+  "data_source": "eastmoney"
+}

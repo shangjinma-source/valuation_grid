@@ -1,0 +1,62 @@
+{
+  "fund_code": "010159",
+  "fund_name": "中银医疗保健混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.96,
+  "parsed_weight": 72.65,
+  "missing_weight": 20.31,
+  "positions": [
+    {
+      "stock_code": "688331",
+      "stock_name": "荣昌生物",
+      "weight": 9.83
+    },
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 9.04
+    },
+    {
+      "stock_code": "688336",
+      "stock_name": "三生国健",
+      "weight": 7.33
+    },
+    {
+      "stock_code": "300765",
+      "stock_name": "新诺威",
+      "weight": 6.98
+    },
+    {
+      "stock_code": "002422",
+      "stock_name": "科伦药业",
+      "weight": 6.98
+    },
+    {
+      "stock_code": "002294",
+      "stock_name": "信立泰",
+      "weight": 6.97
+    },
+    {
+      "stock_code": "688235",
+      "stock_name": "百济神州",
+      "weight": 6.89
+    },
+    {
+      "stock_code": "002653",
+      "stock_name": "海思科",
+      "weight": 6.66
+    },
+    {
+      "stock_code": "688266",
+      "stock_name": "泽璟制药",
+      "weight": 5.99
+    },
+    {
+      "stock_code": "688506",
+      "stock_name": "百利天恒",
+      "weight": 5.98
+    }
+  ],
+  "fetched_at": "2026-06-22 00:45:12",
+  "data_source": "eastmoney"
+}

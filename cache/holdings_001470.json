@@ -1,0 +1,62 @@
+{
+  "fund_code": "001470",
+  "fund_name": "融通通鑫灵活配置混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 11.17,
+  "parsed_weight": 6.94,
+  "missing_weight": 4.23,
+  "positions": [
+    {
+      "stock_code": "301039",
+      "stock_name": "中集车辆",
+      "weight": 0.99
+    },
+    {
+      "stock_code": "601816",
+      "stock_name": "京沪高铁",
+      "weight": 0.87
+    },
+    {
+      "stock_code": "600009",
+      "stock_name": "上海机场",
+      "weight": 0.86
+    },
+    {
+      "stock_code": "600941",
+      "stock_name": "中国移动",
+      "weight": 0.84
+    },
+    {
+      "stock_code": "300979",
+      "stock_name": "华利集团",
+      "weight": 0.82
+    },
+    {
+      "stock_code": "601088",
+      "stock_name": "中国神华",
+      "weight": 0.58
+    },
+    {
+      "stock_code": "688981",
+      "stock_name": "中芯国际",
+      "weight": 0.53
+    },
+    {
+      "stock_code": "002003",
+      "stock_name": "伟星股份",
+      "weight": 0.52
+    },
+    {
+      "stock_code": "601799",
+      "stock_name": "星宇股份",
+      "weight": 0.47
+    },
+    {
+      "stock_code": "300850",
+      "stock_name": "新强联",
+      "weight": 0.46
+    }
+  ],
+  "fetched_at": "2026-06-22 01:50:15",
+  "data_source": "eastmoney"
+}

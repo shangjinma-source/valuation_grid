@@ -1,0 +1,62 @@
+{
+  "fund_code": "001252",
+  "fund_name": "中海进取收益混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 85.7,
+  "parsed_weight": 54.83,
+  "missing_weight": 30.87,
+  "positions": [
+    {
+      "stock_code": "300170",
+      "stock_name": "汉得信息",
+      "weight": 8.4
+    },
+    {
+      "stock_code": "300454",
+      "stock_name": "深信服",
+      "weight": 7.0
+    },
+    {
+      "stock_code": "688258",
+      "stock_name": "卓易信息",
+      "weight": 6.4
+    },
+    {
+      "stock_code": "300418",
+      "stock_name": "昆仑万维",
+      "weight": 6.35
+    },
+    {
+      "stock_code": "603171",
+      "stock_name": "税友股份",
+      "weight": 5.55
+    },
+    {
+      "stock_code": "300017",
+      "stock_name": "网宿科技",
+      "weight": 5.38
+    },
+    {
+      "stock_code": "301171",
+      "stock_name": "易点天下",
+      "weight": 4.68
+    },
+    {
+      "stock_code": "300792",
+      "stock_name": "壹网壹创",
+      "weight": 3.95
+    },
+    {
+      "stock_code": "688365",
+      "stock_name": "光云科技",
+      "weight": 3.92
+    },
+    {
+      "stock_code": "300846",
+      "stock_name": "首都在线",
+      "weight": 3.2
+    }
+  ],
+  "fetched_at": "2026-06-22 00:46:52",
+  "data_source": "eastmoney"
+}

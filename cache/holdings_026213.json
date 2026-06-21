@@ -1,0 +1,62 @@
+{
+  "fund_code": "026213",
+  "fund_name": "工银科技智选混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 33.38,
+  "parsed_weight": 25.17,
+  "missing_weight": 8.21,
+  "positions": [
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 3.47
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 3.45
+    },
+    {
+      "stock_code": "688037",
+      "stock_name": "芯源微",
+      "weight": 2.88
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 2.46
+    },
+    {
+      "stock_code": "00700",
+      "stock_name": "腾讯控股",
+      "weight": 2.45
+    },
+    {
+      "stock_code": "688200",
+      "stock_name": "华峰测控",
+      "weight": 2.44
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 2.35
+    },
+    {
+      "stock_code": "002475",
+      "stock_name": "立讯精密",
+      "weight": 1.96
+    },
+    {
+      "stock_code": "688809",
+      "stock_name": "强一股份",
+      "weight": 1.89
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 1.82
+    }
+  ],
+  "fetched_at": "2026-06-22 01:50:14",
+  "data_source": "eastmoney"
+}

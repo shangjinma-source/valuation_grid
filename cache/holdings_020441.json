@@ -1,0 +1,62 @@
+{
+  "fund_code": "020441",
+  "fund_name": "东兴数字经济混合发起C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 97.44,
+  "parsed_weight": 62.18,
+  "missing_weight": 35.26,
+  "positions": [
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 6.55
+    },
+    {
+      "stock_code": "600105",
+      "stock_name": "永鼎股份",
+      "weight": 6.27
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 6.24
+    },
+    {
+      "stock_code": "002222",
+      "stock_name": "福晶科技",
+      "weight": 6.2
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 6.17
+    },
+    {
+      "stock_code": "688519",
+      "stock_name": "南亚新材",
+      "weight": 6.17
+    },
+    {
+      "stock_code": "600522",
+      "stock_name": "中天科技",
+      "weight": 6.16
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 6.15
+    },
+    {
+      "stock_code": "688183",
+      "stock_name": "生益电子",
+      "weight": 6.14
+    },
+    {
+      "stock_code": "300476",
+      "stock_name": "胜宏科技",
+      "weight": 6.13
+    }
+  ],
+  "fetched_at": "2026-06-22 00:44:32",
+  "data_source": "eastmoney"
+}

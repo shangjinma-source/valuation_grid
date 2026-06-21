@@ -1,0 +1,62 @@
+{
+  "fund_code": "025348",
+  "fund_name": "华商优势行业混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 87.24,
+  "parsed_weight": 46.86,
+  "missing_weight": 40.38,
+  "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 7.97
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 7.37
+    },
+    {
+      "stock_code": "601869",
+      "stock_name": "长飞光纤",
+      "weight": 6.65
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 5.73
+    },
+    {
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 4.1
+    },
+    {
+      "stock_code": "688048",
+      "stock_name": "长光华芯",
+      "weight": 3.23
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 3.22
+    },
+    {
+      "stock_code": "603256",
+      "stock_name": "宏和科技",
+      "weight": 3.17
+    },
+    {
+      "stock_code": "300548",
+      "stock_name": "长芯博创",
+      "weight": 2.81
+    },
+    {
+      "stock_code": "300476",
+      "stock_name": "胜宏科技",
+      "weight": 2.61
+    }
+  ],
+  "fetched_at": "2026-06-22 00:43:15",
+  "data_source": "eastmoney"
+}

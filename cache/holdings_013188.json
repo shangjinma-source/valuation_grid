@@ -1,0 +1,62 @@
+{
+  "fund_code": "013188",
+  "fund_name": "华夏能源革新股票C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.83,
+  "parsed_weight": 59.2,
+  "missing_weight": 34.63,
+  "positions": [
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "weight": 10.05
+    },
+    {
+      "stock_code": "300274",
+      "stock_name": "阳光电源",
+      "weight": 8.64
+    },
+    {
+      "stock_code": "002028",
+      "stock_name": "思源电气",
+      "weight": 8.46
+    },
+    {
+      "stock_code": "002850",
+      "stock_name": "科达利",
+      "weight": 7.42
+    },
+    {
+      "stock_code": "603659",
+      "stock_name": "璞泰来",
+      "weight": 6.97
+    },
+    {
+      "stock_code": "600522",
+      "stock_name": "中天科技",
+      "weight": 4.89
+    },
+    {
+      "stock_code": "600066",
+      "stock_name": "宇通客车",
+      "weight": 3.83
+    },
+    {
+      "stock_code": "002202",
+      "stock_name": "金风科技",
+      "weight": 3.26
+    },
+    {
+      "stock_code": "603806",
+      "stock_name": "福斯特",
+      "weight": 2.87
+    },
+    {
+      "stock_code": "002487",
+      "stock_name": "大金重工",
+      "weight": 2.81
+    }
+  ],
+  "fetched_at": "2026-06-22 00:49:27",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "002017",
+  "fund_name": "招商瑞丰灵活配置混合发起式C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.62,
+  "parsed_weight": 54.77,
+  "missing_weight": 38.85,
+  "positions": [
+    {
+      "stock_code": "600482",
+      "stock_name": "中国动力",
+      "weight": 6.76
+    },
+    {
+      "stock_code": "002246",
+      "stock_name": "北化股份",
+      "weight": 5.99
+    },
+    {
+      "stock_code": "600316",
+      "stock_name": "洪都航空",
+      "weight": 5.76
+    },
+    {
+      "stock_code": "300699",
+      "stock_name": "光威复材",
+      "weight": 5.4
+    },
+    {
+      "stock_code": "600893",
+      "stock_name": "航发动力",
+      "weight": 5.3
+    },
+    {
+      "stock_code": "600562",
+      "stock_name": "国睿科技",
+      "weight": 5.26
+    },
+    {
+      "stock_code": "601058",
+      "stock_name": "赛轮轮胎",
+      "weight": 5.22
+    },
+    {
+      "stock_code": "603613",
+      "stock_name": "国联股份",
+      "weight": 5.13
+    },
+    {
+      "stock_code": "600760",
+      "stock_name": "中航沈飞",
+      "weight": 5.02
+    },
+    {
+      "stock_code": "002465",
+      "stock_name": "海格通信",
+      "weight": 4.93
+    }
+  ],
+  "fetched_at": "2026-06-22 00:47:39",
+  "data_source": "eastmoney"
+}

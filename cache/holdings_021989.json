@@ -1,0 +1,62 @@
+{
+  "fund_code": "021989",
+  "fund_name": "银河中证通信设备主题指数发起式C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.47,
+  "parsed_weight": 59.07,
+  "missing_weight": 35.4,
+  "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 14.99
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 13.49
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 8.22
+    },
+    {
+      "stock_code": "000063",
+      "stock_name": "中兴通讯",
+      "weight": 6.05
+    },
+    {
+      "stock_code": "600879",
+      "stock_name": "航天电子",
+      "weight": 3.39
+    },
+    {
+      "stock_code": "000938",
+      "stock_name": "紫光股份",
+      "weight": 2.88
+    },
+    {
+      "stock_code": "600118",
+      "stock_name": "中国卫星",
+      "weight": 2.77
+    },
+    {
+      "stock_code": "002179",
+      "stock_name": "中航光电",
+      "weight": 2.47
+    },
+    {
+      "stock_code": "002281",
+      "stock_name": "光迅科技",
+      "weight": 2.41
+    },
+    {
+      "stock_code": "600498",
+      "stock_name": "烽火通信",
+      "weight": 2.4
+    }
+  ],
+  "fetched_at": "2026-06-22 00:41:38",
+  "data_source": "eastmoney"
+}

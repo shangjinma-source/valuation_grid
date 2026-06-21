@@ -1,0 +1,62 @@
+{
+  "fund_code": "022124",
+  "fund_name": "国寿安保策略精选混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 88.4,
+  "parsed_weight": 83.77,
+  "missing_weight": 4.63,
+  "positions": [
+    {
+      "stock_code": "600522",
+      "stock_name": "中天科技",
+      "weight": 9.7
+    },
+    {
+      "stock_code": "600345",
+      "stock_name": "长江通信",
+      "weight": 9.28
+    },
+    {
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 9.2
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.1
+    },
+    {
+      "stock_code": "06869",
+      "stock_name": "长飞光纤光缆",
+      "weight": 8.92
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 8.87
+    },
+    {
+      "stock_code": "00700",
+      "stock_name": "腾讯控股",
+      "weight": 8.45
+    },
+    {
+      "stock_code": "000070",
+      "stock_name": "特发信息",
+      "weight": 7.57
+    },
+    {
+      "stock_code": "01860",
+      "stock_name": "汇量科技",
+      "weight": 7.29
+    },
+    {
+      "stock_code": "600498",
+      "stock_name": "烽火通信",
+      "weight": 5.39
+    }
+  ],
+  "fetched_at": "2026-06-22 00:44:34",
+  "data_source": "eastmoney"
+}

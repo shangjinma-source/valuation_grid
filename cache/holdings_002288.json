@@ -1,0 +1,62 @@
+{
+  "fund_code": "002288",
+  "fund_name": "中银稳进策略混合A",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.34,
+  "parsed_weight": 36.18,
+  "missing_weight": 56.16,
+  "positions": [
+    {
+      "stock_code": "601899",
+      "stock_name": "紫金矿业",
+      "weight": 5.73
+    },
+    {
+      "stock_code": "603993",
+      "stock_name": "洛阳钼业",
+      "weight": 5.56
+    },
+    {
+      "stock_code": "601168",
+      "stock_name": "西部矿业",
+      "weight": 3.86
+    },
+    {
+      "stock_code": "601872",
+      "stock_name": "招商轮船",
+      "weight": 3.54
+    },
+    {
+      "stock_code": "000807",
+      "stock_name": "云铝股份",
+      "weight": 3.45
+    },
+    {
+      "stock_code": "000792",
+      "stock_name": "盐湖股份",
+      "weight": 3.36
+    },
+    {
+      "stock_code": "002379",
+      "stock_name": "宏桥控股",
+      "weight": 2.81
+    },
+    {
+      "stock_code": "002532",
+      "stock_name": "天山铝业",
+      "weight": 2.77
+    },
+    {
+      "stock_code": "600362",
+      "stock_name": "江西铜业",
+      "weight": 2.56
+    },
+    {
+      "stock_code": "600219",
+      "stock_name": "南山铝业",
+      "weight": 2.54
+    }
+  ],
+  "fetched_at": "2026-06-22 00:50:22",
+  "data_source": "eastmoney"
+}

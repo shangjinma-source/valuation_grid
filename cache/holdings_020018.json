@@ -1,0 +1,62 @@
+{
+  "fund_code": "020018",
+  "fund_name": "国泰金鹿混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.97,
+  "parsed_weight": 71.25,
+  "missing_weight": 22.72,
+  "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.33
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 8.72
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 8.26
+    },
+    {
+      "stock_code": "601869",
+      "stock_name": "长飞光纤",
+      "weight": 7.79
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 7.68
+    },
+    {
+      "stock_code": "688331",
+      "stock_name": "荣昌生物",
+      "weight": 6.42
+    },
+    {
+      "stock_code": "688710",
+      "stock_name": "益诺思",
+      "weight": 6.17
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 5.95
+    },
+    {
+      "stock_code": "688519",
+      "stock_name": "南亚新材",
+      "weight": 5.86
+    },
+    {
+      "stock_code": "001267",
+      "stock_name": "汇绿生态",
+      "weight": 5.07
+    }
+  ],
+  "fetched_at": "2026-06-22 00:43:38",
+  "data_source": "eastmoney"
+}

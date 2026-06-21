@@ -1,0 +1,62 @@
+{
+  "fund_code": "540010",
+  "fund_name": "汇丰晋信科技先锋股票",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.39,
+  "parsed_weight": 76.37,
+  "missing_weight": 18.02,
+  "positions": [
+    {
+      "stock_code": "688195",
+      "stock_name": "腾景科技",
+      "weight": 9.97
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 9.33
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.1
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 9.06
+    },
+    {
+      "stock_code": "688167",
+      "stock_name": "炬光科技",
+      "weight": 9.06
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 8.88
+    },
+    {
+      "stock_code": "300570",
+      "stock_name": "太辰光",
+      "weight": 5.94
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 5.58
+    },
+    {
+      "stock_code": "688270",
+      "stock_name": "ST臻镭",
+      "weight": 4.93
+    },
+    {
+      "stock_code": "002475",
+      "stock_name": "立讯精密",
+      "weight": 4.52
+    }
+  ],
+  "fetched_at": "2026-06-22 00:44:14",
+  "data_source": "eastmoney"
+}

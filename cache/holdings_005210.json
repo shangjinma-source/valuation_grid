@@ -1,0 +1,62 @@
+{
+  "fund_code": "005210",
+  "fund_name": "东吴双三角股票C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 89.54,
+  "parsed_weight": 53.99,
+  "missing_weight": 35.55,
+  "positions": [
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "weight": 7.98
+    },
+    {
+      "stock_code": "002709",
+      "stock_name": "天赐材料",
+      "weight": 7.16
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 6.83
+    },
+    {
+      "stock_code": "002759",
+      "stock_name": "天际股份",
+      "weight": 6.04
+    },
+    {
+      "stock_code": "002353",
+      "stock_name": "杰瑞股份",
+      "weight": 5.71
+    },
+    {
+      "stock_code": "002837",
+      "stock_name": "英维克",
+      "weight": 5.29
+    },
+    {
+      "stock_code": "000973",
+      "stock_name": "佛塑科技",
+      "weight": 4.34
+    },
+    {
+      "stock_code": "301292",
+      "stock_name": "海科新源",
+      "weight": 4.09
+    },
+    {
+      "stock_code": "688353",
+      "stock_name": "华盛锂电",
+      "weight": 3.44
+    },
+    {
+      "stock_code": "002812",
+      "stock_name": "恩捷股份",
+      "weight": 3.11
+    }
+  ],
+  "fetched_at": "2026-06-22 00:49:16",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "019411",
+  "fund_name": "南方数字经济混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 91.41,
+  "parsed_weight": 52.69,
+  "missing_weight": 38.72,
+  "positions": [
+    {
+      "stock_code": "002851",
+      "stock_name": "麦格米特",
+      "weight": 7.54
+    },
+    {
+      "stock_code": "002028",
+      "stock_name": "思源电气",
+      "weight": 7.03
+    },
+    {
+      "stock_code": "002126",
+      "stock_name": "银轮股份",
+      "weight": 5.95
+    },
+    {
+      "stock_code": "002837",
+      "stock_name": "英维克",
+      "weight": 5.59
+    },
+    {
+      "stock_code": "600875",
+      "stock_name": "东方电气",
+      "weight": 5.11
+    },
+    {
+      "stock_code": "301018",
+      "stock_name": "申菱环境",
+      "weight": 5.02
+    },
+    {
+      "stock_code": "603269",
+      "stock_name": "海鸥股份",
+      "weight": 4.83
+    },
+    {
+      "stock_code": "002970",
+      "stock_name": "锐明技术",
+      "weight": 4.43
+    },
+    {
+      "stock_code": "002353",
+      "stock_name": "杰瑞股份",
+      "weight": 3.7
+    },
+    {
+      "stock_code": "300593",
+      "stock_name": "新雷能",
+      "weight": 3.49
+    }
+  ],
+  "fetched_at": "2026-06-22 00:45:43",
+  "data_source": "eastmoney"
+}

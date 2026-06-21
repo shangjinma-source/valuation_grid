@@ -1,0 +1,62 @@
+{
+  "fund_code": "011829",
+  "fund_name": "平安睿享成长混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 90.73,
+  "parsed_weight": 51.61,
+  "missing_weight": 39.12,
+  "positions": [
+    {
+      "stock_code": "06869",
+      "stock_name": "长飞光纤光缆",
+      "weight": 7.73
+    },
+    {
+      "stock_code": "688536",
+      "stock_name": "思瑞浦",
+      "weight": 7.44
+    },
+    {
+      "stock_code": "03668",
+      "stock_name": "兖煤澳大利亚",
+      "weight": 5.53
+    },
+    {
+      "stock_code": "600176",
+      "stock_name": "中国巨石",
+      "weight": 5.26
+    },
+    {
+      "stock_code": "600482",
+      "stock_name": "中国动力",
+      "weight": 4.86
+    },
+    {
+      "stock_code": "300666",
+      "stock_name": "江丰电子",
+      "weight": 4.4
+    },
+    {
+      "stock_code": "300395",
+      "stock_name": "菲利华",
+      "weight": 4.13
+    },
+    {
+      "stock_code": "688150",
+      "stock_name": "莱特光电",
+      "weight": 4.1
+    },
+    {
+      "stock_code": "688300",
+      "stock_name": "联瑞新材",
+      "weight": 4.09
+    },
+    {
+      "stock_code": "000510",
+      "stock_name": "新金路",
+      "weight": 4.07
+    }
+  ],
+  "fetched_at": "2026-06-22 00:44:49",
+  "data_source": "eastmoney"
+}

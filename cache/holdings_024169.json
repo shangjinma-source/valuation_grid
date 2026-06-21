@@ -1,0 +1,62 @@
+{
+  "fund_code": "024169",
+  "fund_name": "信澳先进智造股票型C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.26,
+  "parsed_weight": 60.36,
+  "missing_weight": 33.9,
+  "positions": [
+    {
+      "stock_code": "688458",
+      "stock_name": "美芯晟",
+      "weight": 8.8
+    },
+    {
+      "stock_code": "688213",
+      "stock_name": "思特威",
+      "weight": 8.06
+    },
+    {
+      "stock_code": "688286",
+      "stock_name": "敏芯股份",
+      "weight": 7.54
+    },
+    {
+      "stock_code": "301536",
+      "stock_name": "星宸科技",
+      "weight": 6.91
+    },
+    {
+      "stock_code": "01347",
+      "stock_name": "华虹半导体",
+      "weight": 6.13
+    },
+    {
+      "stock_code": "688049",
+      "stock_name": "炬芯科技",
+      "weight": 6.04
+    },
+    {
+      "stock_code": "688608",
+      "stock_name": "恒玄科技",
+      "weight": 5.6
+    },
+    {
+      "stock_code": "301629",
+      "stock_name": "矽电股份",
+      "weight": 5.25
+    },
+    {
+      "stock_code": "600316",
+      "stock_name": "洪都航空",
+      "weight": 3.03
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 3.0
+    }
+  ],
+  "fetched_at": "2026-06-22 00:40:56",
+  "data_source": "eastmoney"
+}

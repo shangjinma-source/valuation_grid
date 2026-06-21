@@ -1,0 +1,62 @@
+{
+  "fund_code": "016387",
+  "fund_name": "永赢低碳环保智选混合发起C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.34,
+  "parsed_weight": 62.6,
+  "missing_weight": 29.74,
+  "positions": [
+    {
+      "stock_code": "603308",
+      "stock_name": "应流股份",
+      "weight": 9.96
+    },
+    {
+      "stock_code": "603950",
+      "stock_name": "长源东谷",
+      "weight": 9.16
+    },
+    {
+      "stock_code": "000534",
+      "stock_name": "万泽股份",
+      "weight": 9.0
+    },
+    {
+      "stock_code": "600875",
+      "stock_name": "东方电气",
+      "weight": 7.42
+    },
+    {
+      "stock_code": "002478",
+      "stock_name": "常宝股份",
+      "weight": 6.02
+    },
+    {
+      "stock_code": "000338",
+      "stock_name": "潍柴动力",
+      "weight": 5.14
+    },
+    {
+      "stock_code": "605060",
+      "stock_name": "联德股份",
+      "weight": 4.82
+    },
+    {
+      "stock_code": "300617",
+      "stock_name": "安靠智电",
+      "weight": 4.58
+    },
+    {
+      "stock_code": "002028",
+      "stock_name": "思源电气",
+      "weight": 3.36
+    },
+    {
+      "stock_code": "000811",
+      "stock_name": "冰轮环境",
+      "weight": 3.14
+    }
+  ],
+  "fetched_at": "2026-06-22 00:45:32",
+  "data_source": "eastmoney"
+}

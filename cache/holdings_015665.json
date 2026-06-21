@@ -1,0 +1,62 @@
+{
+  "fund_code": "015665",
+  "fund_name": "银河和美生活混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 90.86,
+  "parsed_weight": 62.66,
+  "missing_weight": 28.2,
+  "positions": [
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 8.86
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 8.72
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 8.23
+    },
+    {
+      "stock_code": "688048",
+      "stock_name": "长光华芯",
+      "weight": 5.95
+    },
+    {
+      "stock_code": "600498",
+      "stock_name": "烽火通信",
+      "weight": 5.4
+    },
+    {
+      "stock_code": "002222",
+      "stock_name": "福晶科技",
+      "weight": 5.31
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 5.3
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 5.08
+    },
+    {
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 5.02
+    },
+    {
+      "stock_code": "688167",
+      "stock_name": "炬光科技",
+      "weight": 4.79
+    }
+  ],
+  "fetched_at": "2026-06-22 00:42:26",
+  "data_source": "eastmoney"
+}

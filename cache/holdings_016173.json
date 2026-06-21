@@ -1,0 +1,62 @@
+{
+  "fund_code": "016173",
+  "fund_name": "汇添富优势企业精选混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 83.59,
+  "parsed_weight": 56.55,
+  "missing_weight": 27.04,
+  "positions": [
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 7.07
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 6.97
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 6.86
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 6.23
+    },
+    {
+      "stock_code": "06869",
+      "stock_name": "长飞光纤光缆",
+      "weight": 6.04
+    },
+    {
+      "stock_code": "600105",
+      "stock_name": "永鼎股份",
+      "weight": 5.12
+    },
+    {
+      "stock_code": "300548",
+      "stock_name": "长芯博创",
+      "weight": 4.77
+    },
+    {
+      "stock_code": "300620",
+      "stock_name": "光库科技",
+      "weight": 4.57
+    },
+    {
+      "stock_code": "688205",
+      "stock_name": "德科立",
+      "weight": 4.5
+    },
+    {
+      "stock_code": "688313",
+      "stock_name": "仕佳光子",
+      "weight": 4.42
+    }
+  ],
+  "fetched_at": "2026-06-22 00:43:45",
+  "data_source": "eastmoney"
+}

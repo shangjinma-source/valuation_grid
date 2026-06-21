@@ -1,0 +1,17 @@
+{
+  "fund_code": "002365",
+  "fund_name": "国联安鑫禧灵活配置混合A",
+  "holdings_asof_date": "2018-03-31",
+  "stock_total_weight": 0.0,
+  "parsed_weight": 15.31,
+  "missing_weight": 0,
+  "positions": [
+    {
+      "stock_code": "600309",
+      "stock_name": "万华化学",
+      "weight": 15.31
+    }
+  ],
+  "fetched_at": "2026-06-22 01:50:22",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "026681",
+  "fund_name": "永赢产业机遇智选混合发起C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.59,
+  "parsed_weight": 82.16,
+  "missing_weight": 10.43,
+  "positions": [
+    {
+      "stock_code": "603308",
+      "stock_name": "应流股份",
+      "weight": 10.21
+    },
+    {
+      "stock_code": "002028",
+      "stock_name": "思源电气",
+      "weight": 9.46
+    },
+    {
+      "stock_code": "000534",
+      "stock_name": "万泽股份",
+      "weight": 9.29
+    },
+    {
+      "stock_code": "603530",
+      "stock_name": "神马电力",
+      "weight": 9.04
+    },
+    {
+      "stock_code": "600875",
+      "stock_name": "东方电气",
+      "weight": 8.9
+    },
+    {
+      "stock_code": "300617",
+      "stock_name": "安靠智电",
+      "weight": 8.15
+    },
+    {
+      "stock_code": "605060",
+      "stock_name": "联德股份",
+      "weight": 7.73
+    },
+    {
+      "stock_code": "000338",
+      "stock_name": "潍柴动力",
+      "weight": 7.69
+    },
+    {
+      "stock_code": "002922",
+      "stock_name": "伊戈尔",
+      "weight": 6.57
+    },
+    {
+      "stock_code": "002353",
+      "stock_name": "杰瑞股份",
+      "weight": 5.12
+    }
+  ],
+  "fetched_at": "2026-06-22 00:45:37",
+  "data_source": "eastmoney"
+}

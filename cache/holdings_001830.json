@@ -1,0 +1,62 @@
+{
+  "fund_code": "001830",
+  "fund_name": "融通跨界成长灵活配置混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.48,
+  "parsed_weight": 64.07,
+  "missing_weight": 28.41,
+  "positions": [
+    {
+      "stock_code": "301538",
+      "stock_name": "骏鼎达",
+      "weight": 9.4
+    },
+    {
+      "stock_code": "301413",
+      "stock_name": "安培龙",
+      "weight": 8.08
+    },
+    {
+      "stock_code": "300953",
+      "stock_name": "震裕科技",
+      "weight": 7.07
+    },
+    {
+      "stock_code": "603319",
+      "stock_name": "美湖股份",
+      "weight": 6.95
+    },
+    {
+      "stock_code": "688698",
+      "stock_name": "伟创电气",
+      "weight": 6.59
+    },
+    {
+      "stock_code": "002850",
+      "stock_name": "科达利",
+      "weight": 6.2
+    },
+    {
+      "stock_code": "601689",
+      "stock_name": "拓普集团",
+      "weight": 5.61
+    },
+    {
+      "stock_code": "688322",
+      "stock_name": "奥比中光",
+      "weight": 5.06
+    },
+    {
+      "stock_code": "601799",
+      "stock_name": "星宇股份",
+      "weight": 4.84
+    },
+    {
+      "stock_code": "300115",
+      "stock_name": "长盈精密",
+      "weight": 4.27
+    }
+  ],
+  "fetched_at": "2026-06-22 00:48:00",
+  "data_source": "eastmoney"
+}

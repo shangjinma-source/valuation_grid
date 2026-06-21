@@ -1,0 +1,62 @@
+{
+  "fund_code": "023840",
+  "fund_name": "银华甄选价值回报混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 90.16,
+  "parsed_weight": 66.02,
+  "missing_weight": 24.14,
+  "positions": [
+    {
+      "stock_code": "601898",
+      "stock_name": "中煤能源",
+      "weight": 9.12
+    },
+    {
+      "stock_code": "601699",
+      "stock_name": "潞安环能",
+      "weight": 9.11
+    },
+    {
+      "stock_code": "601001",
+      "stock_name": "晋控煤业",
+      "weight": 8.89
+    },
+    {
+      "stock_code": "600346",
+      "stock_name": "恒力石化",
+      "weight": 8.67
+    },
+    {
+      "stock_code": "01171",
+      "stock_name": "兖矿能源",
+      "weight": 6.25
+    },
+    {
+      "stock_code": "600546",
+      "stock_name": "山煤国际",
+      "weight": 6.09
+    },
+    {
+      "stock_code": "000933",
+      "stock_name": "神火股份",
+      "weight": 5.81
+    },
+    {
+      "stock_code": "03668",
+      "stock_name": "兖煤澳大利亚",
+      "weight": 5.06
+    },
+    {
+      "stock_code": "00975",
+      "stock_name": "MONGOL MINING",
+      "weight": 3.73
+    },
+    {
+      "stock_code": "00700",
+      "stock_name": "腾讯控股",
+      "weight": 3.29
+    }
+  ],
+  "fetched_at": "2026-06-22 00:51:33",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,67 @@
+{
+  "fund_code": "015455",
+  "fund_name": "信澳周期动力混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 87.54,
+  "parsed_weight": 63.48,
+  "missing_weight": 24.06,
+  "positions": [
+    {
+      "stock_code": "605020",
+      "stock_name": "永和股份",
+      "weight": 9.03
+    },
+    {
+      "stock_code": "603379",
+      "stock_name": "三美股份",
+      "weight": 9.02
+    },
+    {
+      "stock_code": "600160",
+      "stock_name": "巨化股份",
+      "weight": 9.02
+    },
+    {
+      "stock_code": "00189",
+      "stock_name": "东岳集团",
+      "weight": 9.0
+    },
+    {
+      "stock_code": "600378",
+      "stock_name": "昊华科技",
+      "weight": 8.97
+    },
+    {
+      "stock_code": "600585",
+      "stock_name": "海螺水泥",
+      "weight": 4.98
+    },
+    {
+      "stock_code": "002683",
+      "stock_name": "广东宏大",
+      "weight": 4.93
+    },
+    {
+      "stock_code": "688196",
+      "stock_name": "卓越新能",
+      "weight": 3.02
+    },
+    {
+      "stock_code": "000708",
+      "stock_name": "中信特钢",
+      "weight": 2.52
+    },
+    {
+      "stock_code": "000803",
+      "stock_name": "山高环能",
+      "weight": 2.0
+    },
+    {
+      "stock_code": "00914",
+      "stock_name": "海螺水泥",
+      "weight": 0.99
+    }
+  ],
+  "fetched_at": "2026-06-22 00:51:19",
+  "data_source": "eastmoney"
+}

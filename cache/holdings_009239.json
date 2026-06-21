@@ -1,0 +1,87 @@
+{
+  "fund_code": "009239",
+  "fund_name": "融通人工智能指数(LOF)C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.28,
+  "parsed_weight": 54.26,
+  "missing_weight": 40.02,
+  "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 10.86
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.91
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 6.87
+    },
+    {
+      "stock_code": "688008",
+      "stock_name": "澜起科技",
+      "weight": 5.4
+    },
+    {
+      "stock_code": "603019",
+      "stock_name": "中科曙光",
+      "weight": 4.34
+    },
+    {
+      "stock_code": "002415",
+      "stock_name": "海康威视",
+      "weight": 4.19
+    },
+    {
+      "stock_code": "002230",
+      "stock_name": "科大讯飞",
+      "weight": 3.96
+    },
+    {
+      "stock_code": "603501",
+      "stock_name": "豪威集团",
+      "weight": 3.03
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 2.81
+    },
+    {
+      "stock_code": "300442",
+      "stock_name": "润泽科技",
+      "weight": 2.47
+    },
+    {
+      "stock_code": "688795",
+      "stock_name": "摩尔线程",
+      "weight": 0.15
+    },
+    {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
+      "weight": 0.12
+    },
+    {
+      "stock_code": "688765",
+      "stock_name": "禾元生物",
+      "weight": 0.1
+    },
+    {
+      "stock_code": "688783",
+      "stock_name": "西安奕材",
+      "weight": 0.03
+    },
+    {
+      "stock_code": "688790",
+      "stock_name": "昂瑞微",
+      "weight": 0.02
+    }
+  ],
+  "fetched_at": "2026-06-22 00:39:11",
+  "data_source": "eastmoney"
+}

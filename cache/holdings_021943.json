@@ -1,0 +1,62 @@
+{
+  "fund_code": "021943",
+  "fund_name": "国联新机遇混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 78.1,
+  "parsed_weight": 63.11,
+  "missing_weight": 14.99,
+  "positions": [
+    {
+      "stock_code": "601727",
+      "stock_name": "上海电气",
+      "weight": 9.49
+    },
+    {
+      "stock_code": "601858",
+      "stock_name": "中国科传",
+      "weight": 8.76
+    },
+    {
+      "stock_code": "000920",
+      "stock_name": "沃顿科技",
+      "weight": 8.2
+    },
+    {
+      "stock_code": "002318",
+      "stock_name": "久立特材",
+      "weight": 7.99
+    },
+    {
+      "stock_code": "300747",
+      "stock_name": "锐科激光",
+      "weight": 5.81
+    },
+    {
+      "stock_code": "688122",
+      "stock_name": "西部超导",
+      "weight": 5.66
+    },
+    {
+      "stock_code": "603011",
+      "stock_name": "合锻智能",
+      "weight": 4.68
+    },
+    {
+      "stock_code": "000777",
+      "stock_name": "中核科技",
+      "weight": 4.33
+    },
+    {
+      "stock_code": "600353",
+      "stock_name": "旭光电子",
+      "weight": 4.12
+    },
+    {
+      "stock_code": "601985",
+      "stock_name": "中国核电",
+      "weight": 4.07
+    }
+  ],
+  "fetched_at": "2026-06-22 00:46:50",
+  "data_source": "eastmoney"
+}

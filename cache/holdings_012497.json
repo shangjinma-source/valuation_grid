@@ -1,0 +1,62 @@
+{
+  "fund_code": "012497",
+  "fund_name": "同泰行业优选股票C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 90.26,
+  "parsed_weight": 67.99,
+  "missing_weight": 22.27,
+  "positions": [
+    {
+      "stock_code": "688195",
+      "stock_name": "腾景科技",
+      "weight": 11.42
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 7.91
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 7.64
+    },
+    {
+      "stock_code": "688205",
+      "stock_name": "德科立",
+      "weight": 6.49
+    },
+    {
+      "stock_code": "300757",
+      "stock_name": "罗博特科",
+      "weight": 6.27
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 6.22
+    },
+    {
+      "stock_code": "002222",
+      "stock_name": "福晶科技",
+      "weight": 5.69
+    },
+    {
+      "stock_code": "688668",
+      "stock_name": "鼎通科技",
+      "weight": 5.5
+    },
+    {
+      "stock_code": "01810",
+      "stock_name": "小米集团-W",
+      "weight": 5.43
+    },
+    {
+      "stock_code": "300499",
+      "stock_name": "高澜股份",
+      "weight": 5.42
+    }
+  ],
+  "fetched_at": "2026-06-22 00:42:48",
+  "data_source": "eastmoney"
+}

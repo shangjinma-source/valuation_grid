@@ -1,0 +1,62 @@
+{
+  "fund_code": "013349",
+  "fund_name": "创金合信大健康混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 90.89,
+  "parsed_weight": 42.59,
+  "missing_weight": 48.3,
+  "positions": [
+    {
+      "stock_code": "300143",
+      "stock_name": "盈康生命",
+      "weight": 4.39
+    },
+    {
+      "stock_code": "02162",
+      "stock_name": "康诺亚-B",
+      "weight": 4.35
+    },
+    {
+      "stock_code": "688261",
+      "stock_name": "东微半导",
+      "weight": 4.32
+    },
+    {
+      "stock_code": "688626",
+      "stock_name": "翔宇医疗",
+      "weight": 4.3
+    },
+    {
+      "stock_code": "301363",
+      "stock_name": "美好医疗",
+      "weight": 4.29
+    },
+    {
+      "stock_code": "301087",
+      "stock_name": "可孚医疗",
+      "weight": 4.27
+    },
+    {
+      "stock_code": "688767",
+      "stock_name": "博拓生物",
+      "weight": 4.26
+    },
+    {
+      "stock_code": "301293",
+      "stock_name": "三博脑科",
+      "weight": 4.26
+    },
+    {
+      "stock_code": "688580",
+      "stock_name": "伟思医疗",
+      "weight": 4.1
+    },
+    {
+      "stock_code": "300753",
+      "stock_name": "爱朋医疗",
+      "weight": 4.05
+    }
+  ],
+  "fetched_at": "2026-06-22 00:48:27",
+  "data_source": "eastmoney"
+}

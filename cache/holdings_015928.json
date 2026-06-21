@@ -1,0 +1,62 @@
+{
+  "fund_code": "015928",
+  "fund_name": "西部利得绿色能源混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 63.14,
+  "parsed_weight": 60.25,
+  "missing_weight": 2.89,
+  "positions": [
+    {
+      "stock_code": "300751",
+      "stock_name": "迈为股份",
+      "weight": 9.39
+    },
+    {
+      "stock_code": "688516",
+      "stock_name": "奥特维",
+      "weight": 7.4
+    },
+    {
+      "stock_code": "300118",
+      "stock_name": "东方日升",
+      "weight": 7.05
+    },
+    {
+      "stock_code": "002865",
+      "stock_name": "钧达股份",
+      "weight": 6.25
+    },
+    {
+      "stock_code": "688556",
+      "stock_name": "高测股份",
+      "weight": 6.19
+    },
+    {
+      "stock_code": "300316",
+      "stock_name": "晶盛机电",
+      "weight": 6.03
+    },
+    {
+      "stock_code": "688726",
+      "stock_name": "拉普拉斯",
+      "weight": 5.84
+    },
+    {
+      "stock_code": "688223",
+      "stock_name": "晶科能源",
+      "weight": 5.59
+    },
+    {
+      "stock_code": "603381",
+      "stock_name": "永臻股份",
+      "weight": 3.35
+    },
+    {
+      "stock_code": "688503",
+      "stock_name": "聚和材料",
+      "weight": 3.16
+    }
+  ],
+  "fetched_at": "2026-06-22 00:49:36",
+  "data_source": "eastmoney"
+}

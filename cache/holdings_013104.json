@@ -1,0 +1,67 @@
+{
+  "fund_code": "013104",
+  "fund_name": "博时新能源主题混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 86.12,
+  "parsed_weight": 33.23,
+  "missing_weight": 52.89,
+  "positions": [
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "weight": 5.91
+    },
+    {
+      "stock_code": "002709",
+      "stock_name": "天赐材料",
+      "weight": 4.13
+    },
+    {
+      "stock_code": "920522",
+      "stock_name": "纳科诺尔",
+      "weight": 3.27
+    },
+    {
+      "stock_code": "002759",
+      "stock_name": "天际股份",
+      "weight": 3.07
+    },
+    {
+      "stock_code": "300274",
+      "stock_name": "阳光电源",
+      "weight": 2.87
+    },
+    {
+      "stock_code": "002353",
+      "stock_name": "杰瑞股份",
+      "weight": 2.81
+    },
+    {
+      "stock_code": "300751",
+      "stock_name": "迈为股份",
+      "weight": 2.81
+    },
+    {
+      "stock_code": "688726",
+      "stock_name": "拉普拉斯",
+      "weight": 2.69
+    },
+    {
+      "stock_code": "301662",
+      "stock_name": "宏工科技",
+      "weight": 2.55
+    },
+    {
+      "stock_code": "01211",
+      "stock_name": "比亚迪股份",
+      "weight": 1.6
+    },
+    {
+      "stock_code": "002594",
+      "stock_name": "比亚迪",
+      "weight": 1.52
+    }
+  ],
+  "fetched_at": "2026-06-22 00:49:13",
+  "data_source": "eastmoney"
+}

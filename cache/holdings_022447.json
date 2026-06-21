@@ -1,0 +1,62 @@
+{
+  "fund_code": "022447",
+  "fund_name": "前海开源周期精选混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 87.89,
+  "parsed_weight": 75.23,
+  "missing_weight": 12.66,
+  "positions": [
+    {
+      "stock_code": "002756",
+      "stock_name": "永兴材料",
+      "weight": 8.01
+    },
+    {
+      "stock_code": "000688",
+      "stock_name": "国城矿业",
+      "weight": 7.91
+    },
+    {
+      "stock_code": "002460",
+      "stock_name": "赣锋锂业",
+      "weight": 7.83
+    },
+    {
+      "stock_code": "002192",
+      "stock_name": "融捷股份",
+      "weight": 7.56
+    },
+    {
+      "stock_code": "001203",
+      "stock_name": "大中矿业",
+      "weight": 7.52
+    },
+    {
+      "stock_code": "300390",
+      "stock_name": "天华新能",
+      "weight": 7.45
+    },
+    {
+      "stock_code": "002738",
+      "stock_name": "中矿资源",
+      "weight": 7.36
+    },
+    {
+      "stock_code": "002240",
+      "stock_name": "盛新锂能",
+      "weight": 7.26
+    },
+    {
+      "stock_code": "000792",
+      "stock_name": "盐湖股份",
+      "weight": 7.17
+    },
+    {
+      "stock_code": "000408",
+      "stock_name": "藏格矿业",
+      "weight": 7.16
+    }
+  ],
+  "fetched_at": "2026-06-22 00:51:29",
+  "data_source": "eastmoney"
+}

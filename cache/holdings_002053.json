@@ -1,0 +1,62 @@
+{
+  "fund_code": "002053",
+  "fund_name": "诺安优势行业混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 90.85,
+  "parsed_weight": 40.27,
+  "missing_weight": 50.58,
+  "positions": [
+    {
+      "stock_code": "688698",
+      "stock_name": "伟创电气",
+      "weight": 5.61
+    },
+    {
+      "stock_code": "002050",
+      "stock_name": "三花智控",
+      "weight": 5.01
+    },
+    {
+      "stock_code": "301413",
+      "stock_name": "安培龙",
+      "weight": 4.33
+    },
+    {
+      "stock_code": "601799",
+      "stock_name": "星宇股份",
+      "weight": 4.11
+    },
+    {
+      "stock_code": "688279",
+      "stock_name": "峰岹科技",
+      "weight": 3.89
+    },
+    {
+      "stock_code": "601100",
+      "stock_name": "恒立液压",
+      "weight": 3.89
+    },
+    {
+      "stock_code": "603119",
+      "stock_name": "浙江荣泰",
+      "weight": 3.54
+    },
+    {
+      "stock_code": "300952",
+      "stock_name": "恒辉安防",
+      "weight": 3.42
+    },
+    {
+      "stock_code": "003033",
+      "stock_name": "征和工业",
+      "weight": 3.26
+    },
+    {
+      "stock_code": "000559",
+      "stock_name": "万向钱潮",
+      "weight": 3.21
+    }
+  ],
+  "fetched_at": "2026-06-22 00:48:02",
+  "data_source": "eastmoney"
+}

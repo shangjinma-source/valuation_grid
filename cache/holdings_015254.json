@@ -1,0 +1,62 @@
+{
+  "fund_code": "015254",
+  "fund_name": "申万菱信消费增长混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 90.52,
+  "parsed_weight": 76.13,
+  "missing_weight": 14.39,
+  "positions": [
+    {
+      "stock_code": "06181",
+      "stock_name": "老铺黄金",
+      "weight": 11.22
+    },
+    {
+      "stock_code": "688696",
+      "stock_name": "极米科技",
+      "weight": 10.94
+    },
+    {
+      "stock_code": "09992",
+      "stock_name": "泡泡玛特",
+      "weight": 8.21
+    },
+    {
+      "stock_code": "300972",
+      "stock_name": "万辰集团",
+      "weight": 8.18
+    },
+    {
+      "stock_code": "002345",
+      "stock_name": "潮宏基",
+      "weight": 8.12
+    },
+    {
+      "stock_code": "301061",
+      "stock_name": "匠心家居",
+      "weight": 7.91
+    },
+    {
+      "stock_code": "603129",
+      "stock_name": "春风动力",
+      "weight": 6.04
+    },
+    {
+      "stock_code": "01357",
+      "stock_name": "美图公司",
+      "weight": 5.45
+    },
+    {
+      "stock_code": "00325",
+      "stock_name": "布鲁可",
+      "weight": 5.05
+    },
+    {
+      "stock_code": "002027",
+      "stock_name": "分众传媒",
+      "weight": 5.01
+    }
+  ],
+  "fetched_at": "2026-06-22 00:48:47",
+  "data_source": "eastmoney"
+}

@@ -1,27 +1,90 @@
 {
   "fund_code": "017854",
   "fund_name": "易方达云计算ETF联接C",
-  "holdings_asof_date": "2025-09-30",
-  "stock_total_weight": 0.0,
-  "parsed_weight": 0.03,
-  "missing_weight": 0,
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.89,
+  "parsed_weight": 48.58,
+  "missing_weight": 46.31,
   "positions": [
     {
-      "stock_code": "603019",
-      "stock_name": "中科曙光",
-      "weight": 0.01
+      "stock_code": "002230",
+      "stock_name": "科大讯飞",
+      "weight": 8.13
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 5.82
+    },
+    {
+      "stock_code": "300442",
+      "stock_name": "润泽科技",
+      "weight": 5.61
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 5.24
     },
     {
       "stock_code": "688111",
       "stock_name": "金山办公",
-      "weight": 0.01
+      "weight": 4.66
     },
     {
-      "stock_code": "600570",
-      "stock_name": "恒生电子",
-      "weight": 0.01
+      "stock_code": "000977",
+      "stock_name": "浪潮信息",
+      "weight": 3.8
+    },
+    {
+      "stock_code": "000938",
+      "stock_name": "紫光股份",
+      "weight": 3.76
+    },
+    {
+      "stock_code": "603019",
+      "stock_name": "中科曙光",
+      "weight": 3.55
+    },
+    {
+      "stock_code": "300017",
+      "stock_name": "网宿科技",
+      "weight": 3.13
+    },
+    {
+      "stock_code": "002261",
+      "stock_name": "拓维信息",
+      "weight": 3.08
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 0.5
+    },
+    {
+      "stock_code": "300634",
+      "stock_name": "彩讯股份",
+      "weight": 0.39
+    },
+    {
+      "stock_code": "300113",
+      "stock_name": "顺网科技",
+      "weight": 0.34
+    },
+    {
+      "stock_code": "002777",
+      "stock_name": "久远银海",
+      "weight": 0.3
+    },
+    {
+      "stock_code": "300496",
+      "stock_name": "中科创达",
+      "weight": 0.27
     }
   ],
-  "fetched_at": "2026-06-17 01:41:30",
-  "data_source": "eastmoney"
+  "fetched_at": "2026-06-22 01:23:38",
+  "data_source": "eastmoney",
+  "original_fund_code": "017854",
+  "etf_target": "012321",
+  "is_etf_link": true
 }

@@ -1,0 +1,62 @@
+{
+  "fund_code": "020487",
+  "fund_name": "华富成长企业精选股票C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 86.46,
+  "parsed_weight": 46.15,
+  "missing_weight": 40.31,
+  "positions": [
+    {
+      "stock_code": "000973",
+      "stock_name": "佛塑科技",
+      "weight": 7.78
+    },
+    {
+      "stock_code": "000792",
+      "stock_name": "盐湖股份",
+      "weight": 5.93
+    },
+    {
+      "stock_code": "600309",
+      "stock_name": "万华化学",
+      "weight": 5.3
+    },
+    {
+      "stock_code": "002092",
+      "stock_name": "中泰化学",
+      "weight": 5.19
+    },
+    {
+      "stock_code": "002648",
+      "stock_name": "卫星化学",
+      "weight": 4.89
+    },
+    {
+      "stock_code": "600075",
+      "stock_name": "新疆天业",
+      "weight": 4.06
+    },
+    {
+      "stock_code": "600141",
+      "stock_name": "兴发集团",
+      "weight": 3.49
+    },
+    {
+      "stock_code": "300285",
+      "stock_name": "国瓷材料",
+      "weight": 3.26
+    },
+    {
+      "stock_code": "000833",
+      "stock_name": "粤桂股份",
+      "weight": 3.14
+    },
+    {
+      "stock_code": "000830",
+      "stock_name": "鲁西化工",
+      "weight": 3.11
+    }
+  ],
+  "fetched_at": "2026-06-22 00:51:04",
+  "data_source": "eastmoney"
+}

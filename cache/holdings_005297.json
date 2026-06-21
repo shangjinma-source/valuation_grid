@@ -1,0 +1,62 @@
+{
+  "fund_code": "005297",
+  "fund_name": "南华丰淳混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 83.25,
+  "parsed_weight": 62.46,
+  "missing_weight": 20.79,
+  "positions": [
+    {
+      "stock_code": "002850",
+      "stock_name": "科达利",
+      "weight": 9.81
+    },
+    {
+      "stock_code": "688188",
+      "stock_name": "柏楚电子",
+      "weight": 7.89
+    },
+    {
+      "stock_code": "300953",
+      "stock_name": "震裕科技",
+      "weight": 7.81
+    },
+    {
+      "stock_code": "688322",
+      "stock_name": "奥比中光",
+      "weight": 6.5
+    },
+    {
+      "stock_code": "301550",
+      "stock_name": "斯菱智驱",
+      "weight": 5.77
+    },
+    {
+      "stock_code": "603119",
+      "stock_name": "浙江荣泰",
+      "weight": 5.43
+    },
+    {
+      "stock_code": "603319",
+      "stock_name": "美湖股份",
+      "weight": 5.09
+    },
+    {
+      "stock_code": "601799",
+      "stock_name": "星宇股份",
+      "weight": 4.85
+    },
+    {
+      "stock_code": "603179",
+      "stock_name": "新泉股份",
+      "weight": 4.71
+    },
+    {
+      "stock_code": "688279",
+      "stock_name": "峰岹科技",
+      "weight": 4.6
+    }
+  ],
+  "fetched_at": "2026-06-22 00:48:09",
+  "data_source": "eastmoney"
+}

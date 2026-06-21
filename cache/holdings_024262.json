@@ -1,0 +1,62 @@
+{
+  "fund_code": "024262",
+  "fund_name": "中邮先进制造混合发起式C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 78.8,
+  "parsed_weight": 45.47,
+  "missing_weight": 33.33,
+  "positions": [
+    {
+      "stock_code": "601100",
+      "stock_name": "恒立液压",
+      "weight": 7.32
+    },
+    {
+      "stock_code": "601689",
+      "stock_name": "拓普集团",
+      "weight": 6.06
+    },
+    {
+      "stock_code": "603730",
+      "stock_name": "岱美股份",
+      "weight": 5.0
+    },
+    {
+      "stock_code": "301345",
+      "stock_name": "涛涛车业",
+      "weight": 4.67
+    },
+    {
+      "stock_code": "603179",
+      "stock_name": "新泉股份",
+      "weight": 4.29
+    },
+    {
+      "stock_code": "300952",
+      "stock_name": "恒辉安防",
+      "weight": 3.69
+    },
+    {
+      "stock_code": "000700",
+      "stock_name": "模塑科技",
+      "weight": 3.65
+    },
+    {
+      "stock_code": "002048",
+      "stock_name": "宁波华翔",
+      "weight": 3.64
+    },
+    {
+      "stock_code": "603920",
+      "stock_name": "世运电路",
+      "weight": 3.6
+    },
+    {
+      "stock_code": "688585",
+      "stock_name": "上纬新材",
+      "weight": 3.55
+    }
+  ],
+  "fetched_at": "2026-06-22 00:48:25",
+  "data_source": "eastmoney"
+}

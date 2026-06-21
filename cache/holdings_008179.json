@@ -1,0 +1,62 @@
+{
+  "fund_code": "008179",
+  "fund_name": "同泰慧盈混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 95.0,
+  "parsed_weight": 74.64,
+  "missing_weight": 20.36,
+  "positions": [
+    {
+      "stock_code": "000426",
+      "stock_name": "兴业银锡",
+      "weight": 9.0
+    },
+    {
+      "stock_code": "000603",
+      "stock_name": "盛达资源",
+      "weight": 8.78
+    },
+    {
+      "stock_code": "600988",
+      "stock_name": "赤峰黄金",
+      "weight": 8.11
+    },
+    {
+      "stock_code": "000506",
+      "stock_name": "招金黄金",
+      "weight": 7.98
+    },
+    {
+      "stock_code": "601069",
+      "stock_name": "西部黄金",
+      "weight": 7.75
+    },
+    {
+      "stock_code": "600111",
+      "stock_name": "北方稀土",
+      "weight": 7.08
+    },
+    {
+      "stock_code": "000831",
+      "stock_name": "中国稀土",
+      "weight": 7.04
+    },
+    {
+      "stock_code": "600259",
+      "stock_name": "中稀有色",
+      "weight": 6.49
+    },
+    {
+      "stock_code": "002428",
+      "stock_name": "云南锗业",
+      "weight": 6.4
+    },
+    {
+      "stock_code": "000975",
+      "stock_name": "山金国际",
+      "weight": 6.01
+    }
+  ],
+  "fetched_at": "2026-06-22 00:50:17",
+  "data_source": "eastmoney"
+}

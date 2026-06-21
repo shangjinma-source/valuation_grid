@@ -1,0 +1,67 @@
+{
+  "fund_code": "017042",
+  "fund_name": "富国碳中和混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 90.07,
+  "parsed_weight": 53.76,
+  "missing_weight": 36.31,
+  "positions": [
+    {
+      "stock_code": "603308",
+      "stock_name": "应流股份",
+      "weight": 8.76
+    },
+    {
+      "stock_code": "002028",
+      "stock_name": "思源电气",
+      "weight": 8.27
+    },
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "weight": 5.29
+    },
+    {
+      "stock_code": "600875",
+      "stock_name": "东方电气",
+      "weight": 4.85
+    },
+    {
+      "stock_code": "002353",
+      "stock_name": "杰瑞股份",
+      "weight": 4.81
+    },
+    {
+      "stock_code": "000338",
+      "stock_name": "潍柴动力",
+      "weight": 4.3
+    },
+    {
+      "stock_code": "605117",
+      "stock_name": "德业股份",
+      "weight": 4.27
+    },
+    {
+      "stock_code": "688676",
+      "stock_name": "金盘科技",
+      "weight": 3.65
+    },
+    {
+      "stock_code": "601126",
+      "stock_name": "四方股份",
+      "weight": 3.42
+    },
+    {
+      "stock_code": "000534",
+      "stock_name": "万泽股份",
+      "weight": 3.23
+    },
+    {
+      "stock_code": "01072",
+      "stock_name": "东方电气",
+      "weight": 2.91
+    }
+  ],
+  "fetched_at": "2026-06-22 00:45:39",
+  "data_source": "eastmoney"
+}

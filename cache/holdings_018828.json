@@ -1,0 +1,62 @@
+{
+  "fund_code": "018828",
+  "fund_name": "鑫元科技创新混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 85.1,
+  "parsed_weight": 67.38,
+  "missing_weight": 17.72,
+  "positions": [
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 9.16
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 8.96
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 8.88
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 8.6
+    },
+    {
+      "stock_code": "600330",
+      "stock_name": "天通股份",
+      "weight": 5.99
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 5.86
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 5.64
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 5.39
+    },
+    {
+      "stock_code": "09868",
+      "stock_name": "小鹏集团-W",
+      "weight": 4.8
+    },
+    {
+      "stock_code": "300476",
+      "stock_name": "胜宏科技",
+      "weight": 4.1
+    }
+  ],
+  "fetched_at": "2026-06-22 00:42:39",
+  "data_source": "eastmoney"
+}

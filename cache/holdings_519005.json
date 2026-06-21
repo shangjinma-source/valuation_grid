@@ -1,0 +1,62 @@
+{
+  "fund_code": "519005",
+  "fund_name": "海富通股票混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.13,
+  "parsed_weight": 47.27,
+  "missing_weight": 46.86,
+  "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.77
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.69
+    },
+    {
+      "stock_code": "601208",
+      "stock_name": "东材科技",
+      "weight": 4.14
+    },
+    {
+      "stock_code": "000534",
+      "stock_name": "万泽股份",
+      "weight": 4.08
+    },
+    {
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 3.87
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 3.39
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 3.32
+    },
+    {
+      "stock_code": "002283",
+      "stock_name": "天润工业",
+      "weight": 3.27
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 3.01
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 2.73
+    }
+  ],
+  "fetched_at": "2026-06-22 00:43:00",
+  "data_source": "eastmoney"
+}

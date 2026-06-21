@@ -1,0 +1,62 @@
+{
+  "fund_code": "007553",
+  "fund_name": "中信建投医改混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 91.87,
+  "parsed_weight": 69.56,
+  "missing_weight": 22.31,
+  "positions": [
+    {
+      "stock_code": "688331",
+      "stock_name": "荣昌生物",
+      "weight": 9.55
+    },
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 9.45
+    },
+    {
+      "stock_code": "688235",
+      "stock_name": "百济神州",
+      "weight": 8.0
+    },
+    {
+      "stock_code": "688266",
+      "stock_name": "泽璟制药",
+      "weight": 6.37
+    },
+    {
+      "stock_code": "002294",
+      "stock_name": "信立泰",
+      "weight": 6.1
+    },
+    {
+      "stock_code": "688336",
+      "stock_name": "三生国健",
+      "weight": 6.04
+    },
+    {
+      "stock_code": "688506",
+      "stock_name": "百利天恒",
+      "weight": 6.03
+    },
+    {
+      "stock_code": "688428",
+      "stock_name": "诺诚健华",
+      "weight": 6.01
+    },
+    {
+      "stock_code": "002653",
+      "stock_name": "海思科",
+      "weight": 6.01
+    },
+    {
+      "stock_code": "688192",
+      "stock_name": "迪哲医药",
+      "weight": 6.0
+    }
+  ],
+  "fetched_at": "2026-06-22 00:45:05",
+  "data_source": "eastmoney"
+}

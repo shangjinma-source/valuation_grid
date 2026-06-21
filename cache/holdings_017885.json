@@ -1,0 +1,62 @@
+{
+  "fund_code": "017885",
+  "fund_name": "长城久润混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.48,
+  "parsed_weight": 53.9,
+  "missing_weight": 39.58,
+  "positions": [
+    {
+      "stock_code": "002001",
+      "stock_name": "新和成",
+      "weight": 9.46
+    },
+    {
+      "stock_code": "600426",
+      "stock_name": "华鲁恒升",
+      "weight": 8.32
+    },
+    {
+      "stock_code": "603067",
+      "stock_name": "振华股份",
+      "weight": 5.93
+    },
+    {
+      "stock_code": "002064",
+      "stock_name": "华峰化学",
+      "weight": 5.46
+    },
+    {
+      "stock_code": "600160",
+      "stock_name": "巨化股份",
+      "weight": 4.6
+    },
+    {
+      "stock_code": "600309",
+      "stock_name": "万华化学",
+      "weight": 4.2
+    },
+    {
+      "stock_code": "600389",
+      "stock_name": "江山股份",
+      "weight": 4.15
+    },
+    {
+      "stock_code": "000792",
+      "stock_name": "盐湖股份",
+      "weight": 4.05
+    },
+    {
+      "stock_code": "688257",
+      "stock_name": "新锐股份",
+      "weight": 3.96
+    },
+    {
+      "stock_code": "002092",
+      "stock_name": "中泰化学",
+      "weight": 3.77
+    }
+  ],
+  "fetched_at": "2026-06-22 00:51:01",
+  "data_source": "eastmoney"
+}

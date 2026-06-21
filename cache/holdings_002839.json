@@ -1,0 +1,62 @@
+{
+  "fund_code": "002839",
+  "fund_name": "华夏新锦程混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 89.49,
+  "parsed_weight": 57.85,
+  "missing_weight": 31.64,
+  "positions": [
+    {
+      "stock_code": "600105",
+      "stock_name": "永鼎股份",
+      "weight": 8.73
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 6.04
+    },
+    {
+      "stock_code": "603083",
+      "stock_name": "剑桥科技",
+      "weight": 5.93
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 5.7
+    },
+    {
+      "stock_code": "301183",
+      "stock_name": "东田微",
+      "weight": 5.55
+    },
+    {
+      "stock_code": "301217",
+      "stock_name": "铜冠铜箔",
+      "weight": 5.46
+    },
+    {
+      "stock_code": "002916",
+      "stock_name": "深南电路",
+      "weight": 5.37
+    },
+    {
+      "stock_code": "688800",
+      "stock_name": "瑞可达",
+      "weight": 5.21
+    },
+    {
+      "stock_code": "688388",
+      "stock_name": "嘉元科技",
+      "weight": 4.94
+    },
+    {
+      "stock_code": "301526",
+      "stock_name": "国际复材",
+      "weight": 4.92
+    }
+  ],
+  "fetched_at": "2026-06-22 00:44:52",
+  "data_source": "eastmoney"
+}

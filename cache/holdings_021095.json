@@ -1,0 +1,62 @@
+{
+  "fund_code": "021095",
+  "fund_name": "东方低碳经济混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.89,
+  "parsed_weight": 72.36,
+  "missing_weight": 21.53,
+  "positions": [
+    {
+      "stock_code": "000969",
+      "stock_name": "安泰科技",
+      "weight": 8.58
+    },
+    {
+      "stock_code": "000962",
+      "stock_name": "东方钽业",
+      "weight": 8.55
+    },
+    {
+      "stock_code": "605167",
+      "stock_name": "利柏特",
+      "weight": 7.92
+    },
+    {
+      "stock_code": "002318",
+      "stock_name": "久立特材",
+      "weight": 7.76
+    },
+    {
+      "stock_code": "600105",
+      "stock_name": "永鼎股份",
+      "weight": 7.73
+    },
+    {
+      "stock_code": "603011",
+      "stock_name": "合锻智能",
+      "weight": 7.33
+    },
+    {
+      "stock_code": "600577",
+      "stock_name": "精达股份",
+      "weight": 7.1
+    },
+    {
+      "stock_code": "002735",
+      "stock_name": "王子新材",
+      "weight": 7.08
+    },
+    {
+      "stock_code": "601611",
+      "stock_name": "中国核建",
+      "weight": 6.75
+    },
+    {
+      "stock_code": "002438",
+      "stock_name": "江苏神通",
+      "weight": 3.56
+    }
+  ],
+  "fetched_at": "2026-06-22 00:46:48",
+  "data_source": "eastmoney"
+}

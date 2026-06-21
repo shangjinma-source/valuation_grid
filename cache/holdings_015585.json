@@ -1,0 +1,62 @@
+{
+  "fund_code": "015585",
+  "fund_name": "国泰优势行业混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.78,
+  "parsed_weight": 70.24,
+  "missing_weight": 23.54,
+  "positions": [
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 9.75
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 9.6
+    },
+    {
+      "stock_code": "002371",
+      "stock_name": "北方华创",
+      "weight": 9.4
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 9.01
+    },
+    {
+      "stock_code": "688347",
+      "stock_name": "华虹公司",
+      "weight": 8.26
+    },
+    {
+      "stock_code": "688766",
+      "stock_name": "普冉股份",
+      "weight": 6.29
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 5.94
+    },
+    {
+      "stock_code": "300223",
+      "stock_name": "北京君正",
+      "weight": 5.85
+    },
+    {
+      "stock_code": "688120",
+      "stock_name": "华海清科",
+      "weight": 3.07
+    },
+    {
+      "stock_code": "300236",
+      "stock_name": "上海新阳",
+      "weight": 3.07
+    }
+  ],
+  "fetched_at": "2026-06-22 00:45:50",
+  "data_source": "eastmoney"
+}

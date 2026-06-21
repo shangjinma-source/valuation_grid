@@ -1,0 +1,62 @@
+{
+  "fund_code": "019213",
+  "fund_name": "华富物联世界灵活配置混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 86.52,
+  "parsed_weight": 53.11,
+  "missing_weight": 33.41,
+  "positions": [
+    {
+      "stock_code": "600498",
+      "stock_name": "烽火通信",
+      "weight": 7.99
+    },
+    {
+      "stock_code": "600893",
+      "stock_name": "航发动力",
+      "weight": 6.21
+    },
+    {
+      "stock_code": "002465",
+      "stock_name": "海格通信",
+      "weight": 5.52
+    },
+    {
+      "stock_code": "600879",
+      "stock_name": "航天电子",
+      "weight": 5.28
+    },
+    {
+      "stock_code": "688387",
+      "stock_name": "信科移动",
+      "weight": 5.1
+    },
+    {
+      "stock_code": "688270",
+      "stock_name": "ST臻镭",
+      "weight": 5.09
+    },
+    {
+      "stock_code": "688102",
+      "stock_name": "斯瑞新材",
+      "weight": 4.67
+    },
+    {
+      "stock_code": "688281",
+      "stock_name": "华秦科技",
+      "weight": 4.64
+    },
+    {
+      "stock_code": "300900",
+      "stock_name": "广联航空",
+      "weight": 4.32
+    },
+    {
+      "stock_code": "300136",
+      "stock_name": "信维通信",
+      "weight": 4.29
+    }
+  ],
+  "fetched_at": "2026-06-22 00:46:35",
+  "data_source": "eastmoney"
+}

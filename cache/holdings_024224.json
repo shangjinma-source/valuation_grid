@@ -1,0 +1,62 @@
+{
+  "fund_code": "024224",
+  "fund_name": "国新国证新锐C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.22,
+  "parsed_weight": 76.2,
+  "missing_weight": 18.02,
+  "positions": [
+    {
+      "stock_code": "688095",
+      "stock_name": "福昕软件",
+      "weight": 9.37
+    },
+    {
+      "stock_code": "688489",
+      "stock_name": "三未信安",
+      "weight": 9.31
+    },
+    {
+      "stock_code": "688083",
+      "stock_name": "中望软件",
+      "weight": 9.16
+    },
+    {
+      "stock_code": "688111",
+      "stock_name": "金山办公",
+      "weight": 8.95
+    },
+    {
+      "stock_code": "688507",
+      "stock_name": "索辰科技",
+      "weight": 8.91
+    },
+    {
+      "stock_code": "688088",
+      "stock_name": "虹软科技",
+      "weight": 8.83
+    },
+    {
+      "stock_code": "688158",
+      "stock_name": "优刻得",
+      "weight": 8.47
+    },
+    {
+      "stock_code": "688225",
+      "stock_name": "亚信安全",
+      "weight": 7.29
+    },
+    {
+      "stock_code": "688615",
+      "stock_name": "合合信息",
+      "weight": 3.25
+    },
+    {
+      "stock_code": "688316",
+      "stock_name": "青云科技",
+      "weight": 2.66
+    }
+  ],
+  "fetched_at": "2026-06-22 00:47:01",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,67 @@
+{
+  "fund_code": "019029",
+  "fund_name": "华宝医药生物混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 89.32,
+  "parsed_weight": 55.95,
+  "missing_weight": 33.37,
+  "positions": [
+    {
+      "stock_code": "688331",
+      "stock_name": "荣昌生物",
+      "weight": 8.32
+    },
+    {
+      "stock_code": "002653",
+      "stock_name": "海思科",
+      "weight": 7.88
+    },
+    {
+      "stock_code": "002294",
+      "stock_name": "信立泰",
+      "weight": 7.76
+    },
+    {
+      "stock_code": "688192",
+      "stock_name": "迪哲医药",
+      "weight": 5.53
+    },
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 5.35
+    },
+    {
+      "stock_code": "688506",
+      "stock_name": "百利天恒",
+      "weight": 4.48
+    },
+    {
+      "stock_code": "688513",
+      "stock_name": "苑东生物",
+      "weight": 4.25
+    },
+    {
+      "stock_code": "06990",
+      "stock_name": "科伦博泰生物",
+      "weight": 3.92
+    },
+    {
+      "stock_code": "300765",
+      "stock_name": "新诺威",
+      "weight": 3.49
+    },
+    {
+      "stock_code": "603259",
+      "stock_name": "药明康德",
+      "weight": 3.47
+    },
+    {
+      "stock_code": "01276",
+      "stock_name": "恒瑞医药",
+      "weight": 1.5
+    }
+  ],
+  "fetched_at": "2026-06-22 00:45:09",
+  "data_source": "eastmoney"
+}

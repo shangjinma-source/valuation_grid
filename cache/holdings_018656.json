@@ -1,0 +1,62 @@
+{
+  "fund_code": "018656",
+  "fund_name": "新华行业周期轮换混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 68.38,
+  "parsed_weight": 34.78,
+  "missing_weight": 33.6,
+  "positions": [
+    {
+      "stock_code": "002379",
+      "stock_name": "宏桥控股",
+      "weight": 5.54
+    },
+    {
+      "stock_code": "601001",
+      "stock_name": "晋控煤业",
+      "weight": 4.34
+    },
+    {
+      "stock_code": "600989",
+      "stock_name": "宝丰能源",
+      "weight": 3.96
+    },
+    {
+      "stock_code": "000975",
+      "stock_name": "山金国际",
+      "weight": 3.84
+    },
+    {
+      "stock_code": "601899",
+      "stock_name": "紫金矿业",
+      "weight": 3.23
+    },
+    {
+      "stock_code": "600938",
+      "stock_name": "中国海油",
+      "weight": 3.01
+    },
+    {
+      "stock_code": "000962",
+      "stock_name": "东方钽业",
+      "weight": 2.97
+    },
+    {
+      "stock_code": "002532",
+      "stock_name": "天山铝业",
+      "weight": 2.97
+    },
+    {
+      "stock_code": "603799",
+      "stock_name": "华友钴业",
+      "weight": 2.84
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 2.08
+    }
+  ],
+  "fetched_at": "2026-06-22 00:50:06",
+  "data_source": "eastmoney"
+}

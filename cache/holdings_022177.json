@@ -1,0 +1,87 @@
+{
+  "fund_code": "022177",
+  "fund_name": "东财消费电子指数增强E",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.51,
+  "parsed_weight": 53.45,
+  "missing_weight": 41.06,
+  "positions": [
+    {
+      "stock_code": "002475",
+      "stock_name": "立讯精密",
+      "weight": 8.26
+    },
+    {
+      "stock_code": "300476",
+      "stock_name": "胜宏科技",
+      "weight": 6.92
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 6.78
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 6.65
+    },
+    {
+      "stock_code": "000725",
+      "stock_name": "京东方A",
+      "weight": 6.39
+    },
+    {
+      "stock_code": "000100",
+      "stock_name": "TCL科技",
+      "weight": 4.33
+    },
+    {
+      "stock_code": "600584",
+      "stock_name": "长电科技",
+      "weight": 3.12
+    },
+    {
+      "stock_code": "688525",
+      "stock_name": "佰维存储",
+      "weight": 3.06
+    },
+    {
+      "stock_code": "300408",
+      "stock_name": "三环集团",
+      "weight": 2.73
+    },
+    {
+      "stock_code": "603501",
+      "stock_name": "豪威集团",
+      "weight": 2.71
+    },
+    {
+      "stock_code": "688049",
+      "stock_name": "炬芯科技",
+      "weight": 0.56
+    },
+    {
+      "stock_code": "600183",
+      "stock_name": "生益科技",
+      "weight": 0.56
+    },
+    {
+      "stock_code": "688183",
+      "stock_name": "生益电子",
+      "weight": 0.51
+    },
+    {
+      "stock_code": "688536",
+      "stock_name": "思瑞浦",
+      "weight": 0.46
+    },
+    {
+      "stock_code": "002156",
+      "stock_name": "通富微电",
+      "weight": 0.41
+    }
+  ],
+  "fetched_at": "2026-06-22 00:44:36",
+  "data_source": "eastmoney"
+}

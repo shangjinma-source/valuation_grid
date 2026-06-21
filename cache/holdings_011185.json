@@ -1,0 +1,62 @@
+{
+  "fund_code": "011185",
+  "fund_name": "东方阿尔法招阳混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.84,
+  "parsed_weight": 68.73,
+  "missing_weight": 26.11,
+  "positions": [
+    {
+      "stock_code": "600316",
+      "stock_name": "洪都航空",
+      "weight": 8.9
+    },
+    {
+      "stock_code": "688297",
+      "stock_name": "中无人机",
+      "weight": 8.67
+    },
+    {
+      "stock_code": "688552",
+      "stock_name": "航天南湖",
+      "weight": 7.94
+    },
+    {
+      "stock_code": "600893",
+      "stock_name": "航发动力",
+      "weight": 7.73
+    },
+    {
+      "stock_code": "603067",
+      "stock_name": "振华股份",
+      "weight": 7.37
+    },
+    {
+      "stock_code": "600562",
+      "stock_name": "国睿科技",
+      "weight": 6.68
+    },
+    {
+      "stock_code": "002389",
+      "stock_name": "航天彩虹",
+      "weight": 6.66
+    },
+    {
+      "stock_code": "002025",
+      "stock_name": "航天电器",
+      "weight": 5.78
+    },
+    {
+      "stock_code": "002246",
+      "stock_name": "北化股份",
+      "weight": 4.84
+    },
+    {
+      "stock_code": "688543",
+      "stock_name": "国科军工",
+      "weight": 4.16
+    }
+  ],
+  "fetched_at": "2026-06-22 00:47:31",
+  "data_source": "eastmoney"
+}

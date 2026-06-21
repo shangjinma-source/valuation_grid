@@ -1,0 +1,62 @@
+{
+  "fund_code": "016579",
+  "fund_name": "长安宏观策略混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.1,
+  "parsed_weight": 63.45,
+  "missing_weight": 30.65,
+  "positions": [
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.55
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.31
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 8.45
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 7.78
+    },
+    {
+      "stock_code": "601869",
+      "stock_name": "长飞光纤",
+      "weight": 5.96
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 5.64
+    },
+    {
+      "stock_code": "603618",
+      "stock_name": "杭电股份",
+      "weight": 5.6
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 4.14
+    },
+    {
+      "stock_code": "688702",
+      "stock_name": "盛科通信",
+      "weight": 3.58
+    },
+    {
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 3.44
+    }
+  ],
+  "fetched_at": "2026-06-22 00:41:52",
+  "data_source": "eastmoney"
+}

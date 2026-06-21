@@ -1,0 +1,62 @@
+{
+  "fund_code": "162201",
+  "fund_name": "宏利成长混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 88.9,
+  "parsed_weight": 62.56,
+  "missing_weight": 26.34,
+  "positions": [
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 9.96
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.82
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.78
+    },
+    {
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 7.06
+    },
+    {
+      "stock_code": "600183",
+      "stock_name": "生益科技",
+      "weight": 6.68
+    },
+    {
+      "stock_code": "301377",
+      "stock_name": "鼎泰高科",
+      "weight": 4.89
+    },
+    {
+      "stock_code": "600105",
+      "stock_name": "永鼎股份",
+      "weight": 4.05
+    },
+    {
+      "stock_code": "603124",
+      "stock_name": "江南新材",
+      "weight": 3.92
+    },
+    {
+      "stock_code": "300548",
+      "stock_name": "长芯博创",
+      "weight": 3.87
+    },
+    {
+      "stock_code": "002432",
+      "stock_name": "九安医疗",
+      "weight": 2.53
+    }
+  ],
+  "fetched_at": "2026-06-22 00:43:49",
+  "data_source": "eastmoney"
+}

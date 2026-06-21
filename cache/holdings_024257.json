@@ -1,0 +1,62 @@
+{
+  "fund_code": "024257",
+  "fund_name": "宏利新起点混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 18.69,
+  "parsed_weight": 15.64,
+  "missing_weight": 3.05,
+  "positions": [
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "weight": 2.36
+    },
+    {
+      "stock_code": "688778",
+      "stock_name": "厦钨新能",
+      "weight": 1.99
+    },
+    {
+      "stock_code": "300450",
+      "stock_name": "先导智能",
+      "weight": 1.96
+    },
+    {
+      "stock_code": "301662",
+      "stock_name": "宏工科技",
+      "weight": 1.95
+    },
+    {
+      "stock_code": "002460",
+      "stock_name": "赣锋锂业",
+      "weight": 1.47
+    },
+    {
+      "stock_code": "300584",
+      "stock_name": "海辰药业",
+      "weight": 1.47
+    },
+    {
+      "stock_code": "603200",
+      "stock_name": "上海洗霸",
+      "weight": 1.47
+    },
+    {
+      "stock_code": "688388",
+      "stock_name": "嘉元科技",
+      "weight": 0.99
+    },
+    {
+      "stock_code": "300073",
+      "stock_name": "当升科技",
+      "weight": 0.99
+    },
+    {
+      "stock_code": "603659",
+      "stock_name": "璞泰来",
+      "weight": 0.99
+    }
+  ],
+  "fetched_at": "2026-06-22 01:50:29",
+  "data_source": "eastmoney"
+}

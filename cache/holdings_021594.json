@@ -1,0 +1,62 @@
+{
+  "fund_code": "021594",
+  "fund_name": "上银数字经济混合发起式C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 86.5,
+  "parsed_weight": 61.79,
+  "missing_weight": 24.71,
+  "positions": [
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 10.78
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 10.41
+    },
+    {
+      "stock_code": "002409",
+      "stock_name": "雅克科技",
+      "weight": 7.29
+    },
+    {
+      "stock_code": "002371",
+      "stock_name": "北方华创",
+      "weight": 6.13
+    },
+    {
+      "stock_code": "688037",
+      "stock_name": "芯源微",
+      "weight": 5.39
+    },
+    {
+      "stock_code": "688409",
+      "stock_name": "富创精密",
+      "weight": 4.84
+    },
+    {
+      "stock_code": "688019",
+      "stock_name": "安集科技",
+      "weight": 4.79
+    },
+    {
+      "stock_code": "688120",
+      "stock_name": "华海清科",
+      "weight": 4.58
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 4.01
+    },
+    {
+      "stock_code": "688008",
+      "stock_name": "澜起科技",
+      "weight": 3.57
+    }
+  ],
+  "fetched_at": "2026-06-22 00:46:19",
+  "data_source": "eastmoney"
+}

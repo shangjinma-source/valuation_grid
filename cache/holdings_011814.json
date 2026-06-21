@@ -1,0 +1,62 @@
+{
+  "fund_code": "011814",
+  "fund_name": "融通创新动力混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.44,
+  "parsed_weight": 49.1,
+  "missing_weight": 43.34,
+  "positions": [
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 8.27
+    },
+    {
+      "stock_code": "600875",
+      "stock_name": "东方电气",
+      "weight": 7.89
+    },
+    {
+      "stock_code": "002851",
+      "stock_name": "麦格米特",
+      "weight": 5.06
+    },
+    {
+      "stock_code": "03896",
+      "stock_name": "金山云",
+      "weight": 4.9
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 4.89
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 4.6
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 3.95
+    },
+    {
+      "stock_code": "300666",
+      "stock_name": "江丰电子",
+      "weight": 3.32
+    },
+    {
+      "stock_code": "09988",
+      "stock_name": "阿里巴巴-W",
+      "weight": 3.13
+    },
+    {
+      "stock_code": "688545",
+      "stock_name": "兴福电子",
+      "weight": 3.09
+    }
+  ],
+  "fetched_at": "2026-06-22 00:41:59",
+  "data_source": "eastmoney"
+}

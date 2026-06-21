@@ -1,0 +1,62 @@
+{
+  "fund_code": "013312",
+  "fund_name": "工银主题策略混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 87.46,
+  "parsed_weight": 62.01,
+  "missing_weight": 25.45,
+  "positions": [
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 8.51
+    },
+    {
+      "stock_code": "688037",
+      "stock_name": "芯源微",
+      "weight": 8.33
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 8.11
+    },
+    {
+      "stock_code": "300567",
+      "stock_name": "精测电子",
+      "weight": 6.42
+    },
+    {
+      "stock_code": "002371",
+      "stock_name": "北方华创",
+      "weight": 5.95
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 5.84
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 5.22
+    },
+    {
+      "stock_code": "688172",
+      "stock_name": "燕东微",
+      "weight": 5.18
+    },
+    {
+      "stock_code": "688120",
+      "stock_name": "华海清科",
+      "weight": 4.83
+    },
+    {
+      "stock_code": "688347",
+      "stock_name": "华虹公司",
+      "weight": 3.62
+    }
+  ],
+  "fetched_at": "2026-06-22 00:40:33",
+  "data_source": "eastmoney"
+}

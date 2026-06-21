@@ -1,0 +1,67 @@
+{
+  "fund_code": "026069",
+  "fund_name": "新华低碳经济混合发起C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.2,
+  "parsed_weight": 71.94,
+  "missing_weight": 21.26,
+  "positions": [
+    {
+      "stock_code": "920167",
+      "stock_name": "同享科技",
+      "weight": 9.58
+    },
+    {
+      "stock_code": "300118",
+      "stock_name": "东方日升",
+      "weight": 8.42
+    },
+    {
+      "stock_code": "688503",
+      "stock_name": "聚和材料",
+      "weight": 8.18
+    },
+    {
+      "stock_code": "02865",
+      "stock_name": "钧达股份",
+      "weight": 7.91
+    },
+    {
+      "stock_code": "002623",
+      "stock_name": "亚玛顿",
+      "weight": 7.72
+    },
+    {
+      "stock_code": "300776",
+      "stock_name": "帝尔激光",
+      "weight": 7.06
+    },
+    {
+      "stock_code": "002129",
+      "stock_name": "TCL中环",
+      "weight": 6.4
+    },
+    {
+      "stock_code": "002079",
+      "stock_name": "苏州固锝",
+      "weight": 5.94
+    },
+    {
+      "stock_code": "688223",
+      "stock_name": "晶科能源",
+      "weight": 5.77
+    },
+    {
+      "stock_code": "688516",
+      "stock_name": "奥特维",
+      "weight": 4.27
+    },
+    {
+      "stock_code": "002865",
+      "stock_name": "钧达股份",
+      "weight": 0.69
+    }
+  ],
+  "fetched_at": "2026-06-22 00:49:41",
+  "data_source": "eastmoney"
+}

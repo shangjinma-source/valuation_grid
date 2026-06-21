@@ -1,0 +1,62 @@
+{
+  "fund_code": "018195",
+  "fund_name": "建信新材料精选股票发起C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 84.65,
+  "parsed_weight": 38.23,
+  "missing_weight": 46.42,
+  "positions": [
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "weight": 6.75
+    },
+    {
+      "stock_code": "000973",
+      "stock_name": "佛塑科技",
+      "weight": 5.46
+    },
+    {
+      "stock_code": "002812",
+      "stock_name": "恩捷股份",
+      "weight": 4.85
+    },
+    {
+      "stock_code": "600486",
+      "stock_name": "扬农化工",
+      "weight": 3.65
+    },
+    {
+      "stock_code": "002756",
+      "stock_name": "永兴材料",
+      "weight": 3.43
+    },
+    {
+      "stock_code": "00883",
+      "stock_name": "中国海洋石油",
+      "weight": 3.36
+    },
+    {
+      "stock_code": "603619",
+      "stock_name": "中曼石油",
+      "weight": 3.1
+    },
+    {
+      "stock_code": "001203",
+      "stock_name": "大中矿业",
+      "weight": 2.74
+    },
+    {
+      "stock_code": "600309",
+      "stock_name": "万华化学",
+      "weight": 2.52
+    },
+    {
+      "stock_code": "300677",
+      "stock_name": "英科医疗",
+      "weight": 2.37
+    }
+  ],
+  "fetched_at": "2026-06-22 00:51:06",
+  "data_source": "eastmoney"
+}

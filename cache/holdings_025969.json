@@ -1,0 +1,62 @@
+{
+  "fund_code": "025969",
+  "fund_name": "建信科技智选股票型发起C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.93,
+  "parsed_weight": 50.37,
+  "missing_weight": 42.56,
+  "positions": [
+    {
+      "stock_code": "300604",
+      "stock_name": "长川科技",
+      "weight": 7.07
+    },
+    {
+      "stock_code": "300567",
+      "stock_name": "精测电子",
+      "weight": 6.91
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 6.11
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 4.71
+    },
+    {
+      "stock_code": "688409",
+      "stock_name": "富创精密",
+      "weight": 4.45
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 4.45
+    },
+    {
+      "stock_code": "688200",
+      "stock_name": "华峰测控",
+      "weight": 4.42
+    },
+    {
+      "stock_code": "688120",
+      "stock_name": "华海清科",
+      "weight": 4.18
+    },
+    {
+      "stock_code": "300666",
+      "stock_name": "江丰电子",
+      "weight": 4.04
+    },
+    {
+      "stock_code": "300054",
+      "stock_name": "鼎龙股份",
+      "weight": 4.03
+    }
+  ],
+  "fetched_at": "2026-06-22 00:46:13",
+  "data_source": "eastmoney"
+}

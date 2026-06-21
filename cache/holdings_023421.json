@@ -1,0 +1,62 @@
+{
+  "fund_code": "023421",
+  "fund_name": "永赢锐见先锋混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.69,
+  "parsed_weight": 51.84,
+  "missing_weight": 40.85,
+  "positions": [
+    {
+      "stock_code": "001309",
+      "stock_name": "德明利",
+      "weight": 9.32
+    },
+    {
+      "stock_code": "300475",
+      "stock_name": "香农芯创",
+      "weight": 6.74
+    },
+    {
+      "stock_code": "301308",
+      "stock_name": "江波龙",
+      "weight": 6.21
+    },
+    {
+      "stock_code": "688525",
+      "stock_name": "佰维存储",
+      "weight": 5.84
+    },
+    {
+      "stock_code": "002028",
+      "stock_name": "思源电气",
+      "weight": 4.98
+    },
+    {
+      "stock_code": "300223",
+      "stock_name": "北京君正",
+      "weight": 4.95
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 4.82
+    },
+    {
+      "stock_code": "300617",
+      "stock_name": "安靠智电",
+      "weight": 3.37
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 2.91
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 2.7
+    }
+  ],
+  "fetched_at": "2026-06-22 00:44:43",
+  "data_source": "eastmoney"
+}

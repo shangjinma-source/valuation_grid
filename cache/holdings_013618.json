@@ -1,0 +1,62 @@
+{
+  "fund_code": "013618",
+  "fund_name": "华安大安全主题混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 83.06,
+  "parsed_weight": 38.96,
+  "missing_weight": 44.1,
+  "positions": [
+    {
+      "stock_code": "600893",
+      "stock_name": "航发动力",
+      "weight": 7.04
+    },
+    {
+      "stock_code": "002025",
+      "stock_name": "航天电器",
+      "weight": 4.53
+    },
+    {
+      "stock_code": "300395",
+      "stock_name": "菲利华",
+      "weight": 4.37
+    },
+    {
+      "stock_code": "000768",
+      "stock_name": "中航西飞",
+      "weight": 3.65
+    },
+    {
+      "stock_code": "603678",
+      "stock_name": "火炬电子",
+      "weight": 3.62
+    },
+    {
+      "stock_code": "600760",
+      "stock_name": "中航沈飞",
+      "weight": 3.46
+    },
+    {
+      "stock_code": "600391",
+      "stock_name": "航发科技",
+      "weight": 3.39
+    },
+    {
+      "stock_code": "600372",
+      "stock_name": "中航机载",
+      "weight": 3.32
+    },
+    {
+      "stock_code": "600316",
+      "stock_name": "洪都航空",
+      "weight": 2.82
+    },
+    {
+      "stock_code": "600862",
+      "stock_name": "中航高科",
+      "weight": 2.76
+    }
+  ],
+  "fetched_at": "2026-06-22 00:47:29",
+  "data_source": "eastmoney"
+}

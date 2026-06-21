@@ -1,0 +1,62 @@
+{
+  "fund_code": "016501",
+  "fund_name": "华夏半导体龙头混合发起C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.73,
+  "parsed_weight": 74.33,
+  "missing_weight": 19.4,
+  "positions": [
+    {
+      "stock_code": "688019",
+      "stock_name": "安集科技",
+      "weight": 9.75
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 9.11
+    },
+    {
+      "stock_code": "300054",
+      "stock_name": "鼎龙股份",
+      "weight": 8.29
+    },
+    {
+      "stock_code": "002371",
+      "stock_name": "北方华创",
+      "weight": 7.85
+    },
+    {
+      "stock_code": "688702",
+      "stock_name": "盛科通信",
+      "weight": 7.35
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 6.63
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 6.58
+    },
+    {
+      "stock_code": "00981",
+      "stock_name": "中芯国际",
+      "weight": 6.5
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 6.27
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 6.0
+    }
+  ],
+  "fetched_at": "2026-06-22 00:40:24",
+  "data_source": "eastmoney"
+}

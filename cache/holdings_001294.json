@@ -1,0 +1,62 @@
+{
+  "fund_code": "001294",
+  "fund_name": "新华战略新兴产业灵活配置混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.7,
+  "parsed_weight": 54.33,
+  "missing_weight": 40.37,
+  "positions": [
+    {
+      "stock_code": "300454",
+      "stock_name": "深信服",
+      "weight": 6.57
+    },
+    {
+      "stock_code": "600673",
+      "stock_name": "东阳光",
+      "weight": 6.33
+    },
+    {
+      "stock_code": "300418",
+      "stock_name": "昆仑万维",
+      "weight": 6.24
+    },
+    {
+      "stock_code": "300846",
+      "stock_name": "首都在线",
+      "weight": 6.05
+    },
+    {
+      "stock_code": "300166",
+      "stock_name": "东方国信",
+      "weight": 6.05
+    },
+    {
+      "stock_code": "001896",
+      "stock_name": "豫能控股",
+      "weight": 5.96
+    },
+    {
+      "stock_code": "300017",
+      "stock_name": "网宿科技",
+      "weight": 5.83
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 4.48
+    },
+    {
+      "stock_code": "920493",
+      "stock_name": "并行科技",
+      "weight": 3.63
+    },
+    {
+      "stock_code": "300364",
+      "stock_name": "中文在线",
+      "weight": 3.19
+    }
+  ],
+  "fetched_at": "2026-06-22 00:46:59",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "016341",
+  "fund_name": "银河价值成长混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.73,
+  "parsed_weight": 60.98,
+  "missing_weight": 31.75,
+  "positions": [
+    {
+      "stock_code": "000408",
+      "stock_name": "藏格矿业",
+      "weight": 9.06
+    },
+    {
+      "stock_code": "600426",
+      "stock_name": "华鲁恒升",
+      "weight": 9.01
+    },
+    {
+      "stock_code": "601899",
+      "stock_name": "紫金矿业",
+      "weight": 8.56
+    },
+    {
+      "stock_code": "00358",
+      "stock_name": "江西铜业股份",
+      "weight": 6.31
+    },
+    {
+      "stock_code": "600309",
+      "stock_name": "万华化学",
+      "weight": 5.14
+    },
+    {
+      "stock_code": "000792",
+      "stock_name": "盐湖股份",
+      "weight": 5.04
+    },
+    {
+      "stock_code": "00883",
+      "stock_name": "中国海洋石油",
+      "weight": 5.04
+    },
+    {
+      "stock_code": "01818",
+      "stock_name": "招金矿业",
+      "weight": 4.37
+    },
+    {
+      "stock_code": "601168",
+      "stock_name": "西部矿业",
+      "weight": 4.25
+    },
+    {
+      "stock_code": "002648",
+      "stock_name": "卫星化学",
+      "weight": 4.2
+    }
+  ],
+  "fetched_at": "2026-06-22 00:50:13",
+  "data_source": "eastmoney"
+}

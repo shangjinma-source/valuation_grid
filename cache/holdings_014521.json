@@ -1,0 +1,62 @@
+{
+  "fund_code": "014521",
+  "fund_name": "诺安利鑫灵活配置混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 81.18,
+  "parsed_weight": 30.6,
+  "missing_weight": 50.58,
+  "positions": [
+    {
+      "stock_code": "000893",
+      "stock_name": "亚钾国际",
+      "weight": 4.28
+    },
+    {
+      "stock_code": "002895",
+      "stock_name": "川恒股份",
+      "weight": 4.23
+    },
+    {
+      "stock_code": "002001",
+      "stock_name": "新和成",
+      "weight": 3.94
+    },
+    {
+      "stock_code": "600309",
+      "stock_name": "万华化学",
+      "weight": 2.95
+    },
+    {
+      "stock_code": "600938",
+      "stock_name": "中国海油",
+      "weight": 2.73
+    },
+    {
+      "stock_code": "603379",
+      "stock_name": "三美股份",
+      "weight": 2.52
+    },
+    {
+      "stock_code": "000949",
+      "stock_name": "新乡化纤",
+      "weight": 2.51
+    },
+    {
+      "stock_code": "600426",
+      "stock_name": "华鲁恒升",
+      "weight": 2.5
+    },
+    {
+      "stock_code": "600096",
+      "stock_name": "云天化",
+      "weight": 2.5
+    },
+    {
+      "stock_code": "603225",
+      "stock_name": "新凤鸣",
+      "weight": 2.44
+    }
+  ],
+  "fetched_at": "2026-06-22 00:51:10",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "006616",
+  "fund_name": "工银战略新兴产业混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.61,
+  "parsed_weight": 70.15,
+  "missing_weight": 23.46,
+  "positions": [
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 9.94
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 9.92
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.75
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 8.85
+    },
+    {
+      "stock_code": "688025",
+      "stock_name": "杰普特",
+      "weight": 8.3
+    },
+    {
+      "stock_code": "688205",
+      "stock_name": "德科立",
+      "weight": 7.31
+    },
+    {
+      "stock_code": "300570",
+      "stock_name": "太辰光",
+      "weight": 5.55
+    },
+    {
+      "stock_code": "000962",
+      "stock_name": "东方钽业",
+      "weight": 3.71
+    },
+    {
+      "stock_code": "06869",
+      "stock_name": "长飞光纤光缆",
+      "weight": 3.57
+    },
+    {
+      "stock_code": "00700",
+      "stock_name": "腾讯控股",
+      "weight": 3.25
+    }
+  ],
+  "fetched_at": "2026-06-22 00:43:40",
+  "data_source": "eastmoney"
+}

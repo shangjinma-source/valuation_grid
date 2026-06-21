@@ -1,0 +1,62 @@
+{
+  "fund_code": "018933",
+  "fund_name": "长盛城镇化主题混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.32,
+  "parsed_weight": 67.53,
+  "missing_weight": 26.79,
+  "positions": [
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 9.64
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.28
+    },
+    {
+      "stock_code": "300757",
+      "stock_name": "罗博特科",
+      "weight": 8.89
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 7.86
+    },
+    {
+      "stock_code": "605289",
+      "stock_name": "罗曼股份",
+      "weight": 6.53
+    },
+    {
+      "stock_code": "688048",
+      "stock_name": "长光华芯",
+      "weight": 5.38
+    },
+    {
+      "stock_code": "601869",
+      "stock_name": "长飞光纤",
+      "weight": 5.17
+    },
+    {
+      "stock_code": "300684",
+      "stock_name": "中石科技",
+      "weight": 4.99
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 4.96
+    },
+    {
+      "stock_code": "601231",
+      "stock_name": "环旭电子",
+      "weight": 4.83
+    }
+  ],
+  "fetched_at": "2026-06-22 00:44:09",
+  "data_source": "eastmoney"
+}

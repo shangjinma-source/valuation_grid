@@ -1,0 +1,62 @@
+{
+  "fund_code": "001606",
+  "fund_name": "农银工业4.0混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 81.77,
+  "parsed_weight": 32.08,
+  "missing_weight": 49.69,
+  "positions": [
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 4.86
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 3.97
+    },
+    {
+      "stock_code": "002558",
+      "stock_name": "巨人网络",
+      "weight": 3.63
+    },
+    {
+      "stock_code": "002371",
+      "stock_name": "北方华创",
+      "weight": 3.36
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 3.27
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 3.07
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 2.9
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 2.41
+    },
+    {
+      "stock_code": "688347",
+      "stock_name": "华虹公司",
+      "weight": 2.33
+    },
+    {
+      "stock_code": "300661",
+      "stock_name": "圣邦股份",
+      "weight": 2.28
+    }
+  ],
+  "fetched_at": "2026-06-22 00:39:54",
+  "data_source": "eastmoney"
+}

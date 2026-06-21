@@ -1,0 +1,62 @@
+{
+  "fund_code": "026834",
+  "fund_name": "诺安精选回报混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.43,
+  "parsed_weight": 43.39,
+  "missing_weight": 50.04,
+  "positions": [
+    {
+      "stock_code": "002025",
+      "stock_name": "航天电器",
+      "weight": 6.04
+    },
+    {
+      "stock_code": "600879",
+      "stock_name": "航天电子",
+      "weight": 5.4
+    },
+    {
+      "stock_code": "688270",
+      "stock_name": "ST臻镭",
+      "weight": 4.44
+    },
+    {
+      "stock_code": "301005",
+      "stock_name": "超捷股份",
+      "weight": 4.44
+    },
+    {
+      "stock_code": "600498",
+      "stock_name": "烽火通信",
+      "weight": 4.34
+    },
+    {
+      "stock_code": "600118",
+      "stock_name": "中国卫星",
+      "weight": 4.27
+    },
+    {
+      "stock_code": "688818",
+      "stock_name": "电科蓝天",
+      "weight": 3.99
+    },
+    {
+      "stock_code": "300751",
+      "stock_name": "迈为股份",
+      "weight": 3.75
+    },
+    {
+      "stock_code": "300900",
+      "stock_name": "广联航空",
+      "weight": 3.51
+    },
+    {
+      "stock_code": "688387",
+      "stock_name": "信科移动",
+      "weight": 3.21
+    }
+  ],
+  "fetched_at": "2026-06-22 00:46:29",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "013044",
+  "fund_name": "富国国家安全主题混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.57,
+  "parsed_weight": 43.48,
+  "missing_weight": 51.09,
+  "positions": [
+    {
+      "stock_code": "300762",
+      "stock_name": "上海瀚讯",
+      "weight": 5.12
+    },
+    {
+      "stock_code": "688630",
+      "stock_name": "芯碁微装",
+      "weight": 5.07
+    },
+    {
+      "stock_code": "688387",
+      "stock_name": "信科移动",
+      "weight": 4.96
+    },
+    {
+      "stock_code": "600498",
+      "stock_name": "烽火通信",
+      "weight": 4.95
+    },
+    {
+      "stock_code": "002353",
+      "stock_name": "杰瑞股份",
+      "weight": 4.94
+    },
+    {
+      "stock_code": "300900",
+      "stock_name": "广联航空",
+      "weight": 4.74
+    },
+    {
+      "stock_code": "688002",
+      "stock_name": "睿创微纳",
+      "weight": 3.94
+    },
+    {
+      "stock_code": "688548",
+      "stock_name": "广钢气体",
+      "weight": 3.26
+    },
+    {
+      "stock_code": "301517",
+      "stock_name": "陕西华达",
+      "weight": 3.25
+    },
+    {
+      "stock_code": "688270",
+      "stock_name": "ST臻镭",
+      "weight": 3.25
+    }
+  ],
+  "fetched_at": "2026-06-22 00:46:33",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "015770",
+  "fund_name": "天弘低碳经济混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 91.32,
+  "parsed_weight": 58.03,
+  "missing_weight": 33.29,
+  "positions": [
+    {
+      "stock_code": "600388",
+      "stock_name": "龙净环保",
+      "weight": 7.32
+    },
+    {
+      "stock_code": "000803",
+      "stock_name": "山高环能",
+      "weight": 7.18
+    },
+    {
+      "stock_code": "300443",
+      "stock_name": "金雷股份",
+      "weight": 6.82
+    },
+    {
+      "stock_code": "002487",
+      "stock_name": "大金重工",
+      "weight": 6.66
+    },
+    {
+      "stock_code": "603606",
+      "stock_name": "东方电缆",
+      "weight": 6.07
+    },
+    {
+      "stock_code": "002683",
+      "stock_name": "广东宏大",
+      "weight": 5.26
+    },
+    {
+      "stock_code": "688196",
+      "stock_name": "卓越新能",
+      "weight": 4.86
+    },
+    {
+      "stock_code": "600955",
+      "stock_name": "维远股份",
+      "weight": 4.74
+    },
+    {
+      "stock_code": "603162",
+      "stock_name": "海通发展",
+      "weight": 4.58
+    },
+    {
+      "stock_code": "603568",
+      "stock_name": "伟明环保",
+      "weight": 4.54
+    }
+  ],
+  "fetched_at": "2026-06-22 00:51:13",
+  "data_source": "eastmoney"
+}

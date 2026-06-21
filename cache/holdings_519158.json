@@ -1,0 +1,62 @@
+{
+  "fund_code": "519158",
+  "fund_name": "新华趋势领航混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.28,
+  "parsed_weight": 67.13,
+  "missing_weight": 27.15,
+  "positions": [
+    {
+      "stock_code": "688205",
+      "stock_name": "德科立",
+      "weight": 9.5
+    },
+    {
+      "stock_code": "688200",
+      "stock_name": "华峰测控",
+      "weight": 8.4
+    },
+    {
+      "stock_code": "300731",
+      "stock_name": "科创新源",
+      "weight": 8.32
+    },
+    {
+      "stock_code": "688668",
+      "stock_name": "鼎通科技",
+      "weight": 8.05
+    },
+    {
+      "stock_code": "688025",
+      "stock_name": "杰普特",
+      "weight": 7.98
+    },
+    {
+      "stock_code": "003010",
+      "stock_name": "若羽臣",
+      "weight": 6.61
+    },
+    {
+      "stock_code": "605060",
+      "stock_name": "联德股份",
+      "weight": 5.43
+    },
+    {
+      "stock_code": "301251",
+      "stock_name": "威尔高",
+      "weight": 4.61
+    },
+    {
+      "stock_code": "300684",
+      "stock_name": "中石科技",
+      "weight": 4.22
+    },
+    {
+      "stock_code": "300814",
+      "stock_name": "中富电路",
+      "weight": 4.01
+    }
+  ],
+  "fetched_at": "2026-06-22 00:41:36",
+  "data_source": "eastmoney"
+}

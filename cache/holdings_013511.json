@@ -1,0 +1,62 @@
+{
+  "fund_code": "013511",
+  "fund_name": "汇丰晋信低碳先锋股票C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.52,
+  "parsed_weight": 79.79,
+  "missing_weight": 14.73,
+  "positions": [
+    {
+      "stock_code": "600438",
+      "stock_name": "通威股份",
+      "weight": 9.81
+    },
+    {
+      "stock_code": "601012",
+      "stock_name": "隆基绿能",
+      "weight": 9.65
+    },
+    {
+      "stock_code": "002129",
+      "stock_name": "TCL中环",
+      "weight": 9.34
+    },
+    {
+      "stock_code": "002459",
+      "stock_name": "晶澳科技",
+      "weight": 9.27
+    },
+    {
+      "stock_code": "688599",
+      "stock_name": "天合光能",
+      "weight": 8.98
+    },
+    {
+      "stock_code": "601865",
+      "stock_name": "福莱特",
+      "weight": 8.82
+    },
+    {
+      "stock_code": "600732",
+      "stock_name": "爱旭股份",
+      "weight": 7.03
+    },
+    {
+      "stock_code": "300014",
+      "stock_name": "亿纬锂能",
+      "weight": 6.53
+    },
+    {
+      "stock_code": "688798",
+      "stock_name": "艾为电子",
+      "weight": 5.91
+    },
+    {
+      "stock_code": "688006",
+      "stock_name": "杭可科技",
+      "weight": 4.45
+    }
+  ],
+  "fetched_at": "2026-06-22 00:49:57",
+  "data_source": "eastmoney"
+}

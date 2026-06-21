@@ -1,0 +1,62 @@
+{
+  "fund_code": "519191",
+  "fund_name": "万家新利灵活配置混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.48,
+  "parsed_weight": 73.64,
+  "missing_weight": 20.84,
+  "positions": [
+    {
+      "stock_code": "600546",
+      "stock_name": "山煤国际",
+      "weight": 9.47
+    },
+    {
+      "stock_code": "600985",
+      "stock_name": "淮北矿业",
+      "weight": 9.0
+    },
+    {
+      "stock_code": "601699",
+      "stock_name": "潞安环能",
+      "weight": 8.98
+    },
+    {
+      "stock_code": "601101",
+      "stock_name": "昊华能源",
+      "weight": 8.66
+    },
+    {
+      "stock_code": "601225",
+      "stock_name": "陕西煤业",
+      "weight": 7.58
+    },
+    {
+      "stock_code": "601001",
+      "stock_name": "晋控煤业",
+      "weight": 7.5
+    },
+    {
+      "stock_code": "688503",
+      "stock_name": "聚和材料",
+      "weight": 7.26
+    },
+    {
+      "stock_code": "601666",
+      "stock_name": "平煤股份",
+      "weight": 7.2
+    },
+    {
+      "stock_code": "000983",
+      "stock_name": "山西焦煤",
+      "weight": 4.24
+    },
+    {
+      "stock_code": "002847",
+      "stock_name": "盐津铺子",
+      "weight": 3.75
+    }
+  ],
+  "fetched_at": "2026-06-22 00:51:31",
+  "data_source": "eastmoney"
+}

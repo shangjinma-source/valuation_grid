@@ -1,0 +1,62 @@
+{
+  "fund_code": "011426",
+  "fund_name": "广发优势成长股票C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.67,
+  "parsed_weight": 29.24,
+  "missing_weight": 64.43,
+  "positions": [
+    {
+      "stock_code": "600309",
+      "stock_name": "万华化学",
+      "weight": 4.06
+    },
+    {
+      "stock_code": "600346",
+      "stock_name": "恒力石化",
+      "weight": 3.64
+    },
+    {
+      "stock_code": "000301",
+      "stock_name": "东方盛虹",
+      "weight": 3.37
+    },
+    {
+      "stock_code": "002064",
+      "stock_name": "华峰化学",
+      "weight": 3.0
+    },
+    {
+      "stock_code": "002493",
+      "stock_name": "荣盛石化",
+      "weight": 2.91
+    },
+    {
+      "stock_code": "600596",
+      "stock_name": "新安股份",
+      "weight": 2.9
+    },
+    {
+      "stock_code": "600963",
+      "stock_name": "岳阳林纸",
+      "weight": 2.6
+    },
+    {
+      "stock_code": "600409",
+      "stock_name": "三友化工",
+      "weight": 2.39
+    },
+    {
+      "stock_code": "603979",
+      "stock_name": "金诚信",
+      "weight": 2.27
+    },
+    {
+      "stock_code": "000949",
+      "stock_name": "新乡化纤",
+      "weight": 2.1
+    }
+  ],
+  "fetched_at": "2026-06-22 01:50:36",
+  "data_source": "eastmoney"
+}

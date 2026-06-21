@@ -1,0 +1,62 @@
+{
+  "fund_code": "024831",
+  "fund_name": "西部利得资源鑫选混合发起C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 90.84,
+  "parsed_weight": 53.26,
+  "missing_weight": 37.58,
+  "positions": [
+    {
+      "stock_code": "605196",
+      "stock_name": "华通线缆",
+      "weight": 8.52
+    },
+    {
+      "stock_code": "001203",
+      "stock_name": "大中矿业",
+      "weight": 6.76
+    },
+    {
+      "stock_code": "601899",
+      "stock_name": "紫金矿业",
+      "weight": 5.08
+    },
+    {
+      "stock_code": "02788",
+      "stock_name": "创新实业",
+      "weight": 5.0
+    },
+    {
+      "stock_code": "603612",
+      "stock_name": "索通发展",
+      "weight": 4.86
+    },
+    {
+      "stock_code": "02259",
+      "stock_name": "紫金黄金国际",
+      "weight": 4.76
+    },
+    {
+      "stock_code": "002240",
+      "stock_name": "盛新锂能",
+      "weight": 4.72
+    },
+    {
+      "stock_code": "00883",
+      "stock_name": "中国海洋石油",
+      "weight": 4.68
+    },
+    {
+      "stock_code": "01818",
+      "stock_name": "招金矿业",
+      "weight": 4.61
+    },
+    {
+      "stock_code": "000688",
+      "stock_name": "国城矿业",
+      "weight": 4.27
+    }
+  ],
+  "fetched_at": "2026-06-22 00:50:20",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "018211",
+  "fund_name": "红土创新景气回报混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 86.83,
+  "parsed_weight": 44.46,
+  "missing_weight": 42.37,
+  "positions": [
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 8.17
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 7.4
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 5.75
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 4.48
+    },
+    {
+      "stock_code": "301358",
+      "stock_name": "湖南裕能",
+      "weight": 3.47
+    },
+    {
+      "stock_code": "688630",
+      "stock_name": "芯碁微装",
+      "weight": 3.37
+    },
+    {
+      "stock_code": "300207",
+      "stock_name": "欣旺达",
+      "weight": 3.33
+    },
+    {
+      "stock_code": "000973",
+      "stock_name": "佛塑科技",
+      "weight": 2.9
+    },
+    {
+      "stock_code": "300438",
+      "stock_name": "鹏辉能源",
+      "weight": 2.83
+    },
+    {
+      "stock_code": "688025",
+      "stock_name": "杰普特",
+      "weight": 2.76
+    }
+  ],
+  "fetched_at": "2026-06-22 00:42:17",
+  "data_source": "eastmoney"
+}

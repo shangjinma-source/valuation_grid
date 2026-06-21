@@ -1,0 +1,62 @@
+{
+  "fund_code": "014422",
+  "fund_name": "弘毅远方消费升级混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.51,
+  "parsed_weight": 48.92,
+  "missing_weight": 43.59,
+  "positions": [
+    {
+      "stock_code": "688365",
+      "stock_name": "光云科技",
+      "weight": 6.39
+    },
+    {
+      "stock_code": "300454",
+      "stock_name": "深信服",
+      "weight": 6.12
+    },
+    {
+      "stock_code": "300662",
+      "stock_name": "科锐国际",
+      "weight": 5.18
+    },
+    {
+      "stock_code": "688692",
+      "stock_name": "达梦数据",
+      "weight": 4.92
+    },
+    {
+      "stock_code": "688095",
+      "stock_name": "福昕软件",
+      "weight": 4.87
+    },
+    {
+      "stock_code": "01024",
+      "stock_name": "快手-W",
+      "weight": 4.81
+    },
+    {
+      "stock_code": "00268",
+      "stock_name": "金蝶国际",
+      "weight": 4.38
+    },
+    {
+      "stock_code": "603859",
+      "stock_name": "能科科技",
+      "weight": 4.29
+    },
+    {
+      "stock_code": "06682",
+      "stock_name": "范式智能",
+      "weight": 3.99
+    },
+    {
+      "stock_code": "09988",
+      "stock_name": "阿里巴巴-W",
+      "weight": 3.97
+    }
+  ],
+  "fetched_at": "2026-06-22 00:47:03",
+  "data_source": "eastmoney"
+}

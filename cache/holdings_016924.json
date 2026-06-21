@@ -1,0 +1,62 @@
+{
+  "fund_code": "016924",
+  "fund_name": "广发百发大数据价值混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 91.81,
+  "parsed_weight": 34.89,
+  "missing_weight": 56.92,
+  "positions": [
+    {
+      "stock_code": "002025",
+      "stock_name": "航天电器",
+      "weight": 6.35
+    },
+    {
+      "stock_code": "600893",
+      "stock_name": "航发动力",
+      "weight": 4.12
+    },
+    {
+      "stock_code": "301571",
+      "stock_name": "国科天成",
+      "weight": 3.69
+    },
+    {
+      "stock_code": "688002",
+      "stock_name": "睿创微纳",
+      "weight": 3.32
+    },
+    {
+      "stock_code": "002179",
+      "stock_name": "中航光电",
+      "weight": 3.29
+    },
+    {
+      "stock_code": "600316",
+      "stock_name": "洪都航空",
+      "weight": 3.12
+    },
+    {
+      "stock_code": "603678",
+      "stock_name": "火炬电子",
+      "weight": 2.86
+    },
+    {
+      "stock_code": "300395",
+      "stock_name": "菲利华",
+      "weight": 2.85
+    },
+    {
+      "stock_code": "600879",
+      "stock_name": "航天电子",
+      "weight": 2.65
+    },
+    {
+      "stock_code": "002246",
+      "stock_name": "北化股份",
+      "weight": 2.64
+    }
+  ],
+  "fetched_at": "2026-06-22 00:47:24",
+  "data_source": "eastmoney"
+}

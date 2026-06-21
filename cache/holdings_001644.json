@@ -1,0 +1,62 @@
+{
+  "fund_code": "001644",
+  "fund_name": "汇丰晋信智造先锋股票C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.55,
+  "parsed_weight": 79.52,
+  "missing_weight": 15.03,
+  "positions": [
+    {
+      "stock_code": "600438",
+      "stock_name": "通威股份",
+      "weight": 9.85
+    },
+    {
+      "stock_code": "601012",
+      "stock_name": "隆基绿能",
+      "weight": 9.72
+    },
+    {
+      "stock_code": "002459",
+      "stock_name": "晶澳科技",
+      "weight": 9.25
+    },
+    {
+      "stock_code": "688599",
+      "stock_name": "天合光能",
+      "weight": 9.22
+    },
+    {
+      "stock_code": "601865",
+      "stock_name": "福莱特",
+      "weight": 9.08
+    },
+    {
+      "stock_code": "600732",
+      "stock_name": "爱旭股份",
+      "weight": 7.28
+    },
+    {
+      "stock_code": "688223",
+      "stock_name": "晶科能源",
+      "weight": 6.74
+    },
+    {
+      "stock_code": "601615",
+      "stock_name": "明阳智能",
+      "weight": 6.29
+    },
+    {
+      "stock_code": "688303",
+      "stock_name": "大全能源",
+      "weight": 6.16
+    },
+    {
+      "stock_code": "688798",
+      "stock_name": "艾为电子",
+      "weight": 5.93
+    }
+  ],
+  "fetched_at": "2026-06-22 00:49:52",
+  "data_source": "eastmoney"
+}

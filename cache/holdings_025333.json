@@ -1,0 +1,62 @@
+{
+  "fund_code": "025333",
+  "fund_name": "诺安成长混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 88.77,
+  "parsed_weight": 57.21,
+  "missing_weight": 31.56,
+  "positions": [
+    {
+      "stock_code": "002371",
+      "stock_name": "北方华创",
+      "weight": 8.34
+    },
+    {
+      "stock_code": "300661",
+      "stock_name": "圣邦股份",
+      "weight": 7.61
+    },
+    {
+      "stock_code": "301269",
+      "stock_name": "华大九天",
+      "weight": 7.44
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 7.27
+    },
+    {
+      "stock_code": "688981",
+      "stock_name": "中芯国际",
+      "weight": 6.59
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 6.57
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 3.77
+    },
+    {
+      "stock_code": "688036",
+      "stock_name": "传音控股",
+      "weight": 3.75
+    },
+    {
+      "stock_code": "688692",
+      "stock_name": "达梦数据",
+      "weight": 3.04
+    },
+    {
+      "stock_code": "002594",
+      "stock_name": "比亚迪",
+      "weight": 2.83
+    }
+  ],
+  "fetched_at": "2026-06-22 00:41:00",
+  "data_source": "eastmoney"
+}

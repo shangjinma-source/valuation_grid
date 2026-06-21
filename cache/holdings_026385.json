@@ -1,0 +1,62 @@
+{
+  "fund_code": "026385",
+  "fund_name": "中航甄选领航混合发起C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.34,
+  "parsed_weight": 69.2,
+  "missing_weight": 23.14,
+  "positions": [
+    {
+      "stock_code": "600118",
+      "stock_name": "中国卫星",
+      "weight": 9.03
+    },
+    {
+      "stock_code": "688270",
+      "stock_name": "ST臻镭",
+      "weight": 8.86
+    },
+    {
+      "stock_code": "300762",
+      "stock_name": "上海瀚讯",
+      "weight": 8.81
+    },
+    {
+      "stock_code": "600879",
+      "stock_name": "航天电子",
+      "weight": 8.72
+    },
+    {
+      "stock_code": "301005",
+      "stock_name": "超捷股份",
+      "weight": 6.85
+    },
+    {
+      "stock_code": "688523",
+      "stock_name": "航天环宇",
+      "weight": 5.57
+    },
+    {
+      "stock_code": "300455",
+      "stock_name": "航天智装",
+      "weight": 5.41
+    },
+    {
+      "stock_code": "688375",
+      "stock_name": "国博电子",
+      "weight": 5.4
+    },
+    {
+      "stock_code": "688102",
+      "stock_name": "斯瑞新材",
+      "weight": 5.36
+    },
+    {
+      "stock_code": "601698",
+      "stock_name": "中国卫通",
+      "weight": 5.19
+    }
+  ],
+  "fetched_at": "2026-06-22 00:46:31",
+  "data_source": "eastmoney"
+}

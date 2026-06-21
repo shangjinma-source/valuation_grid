@@ -1,0 +1,62 @@
+{
+  "fund_code": "519172",
+  "fund_name": "浦银安盛睿智精选混合A",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 91.23,
+  "parsed_weight": 61.41,
+  "missing_weight": 29.82,
+  "positions": [
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 8.46
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 7.91
+    },
+    {
+      "stock_code": "002371",
+      "stock_name": "北方华创",
+      "weight": 6.75
+    },
+    {
+      "stock_code": "688347",
+      "stock_name": "华虹公司",
+      "weight": 6.61
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 5.92
+    },
+    {
+      "stock_code": "001309",
+      "stock_name": "德明利",
+      "weight": 5.74
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 5.68
+    },
+    {
+      "stock_code": "688802",
+      "stock_name": "沐曦股份",
+      "weight": 4.85
+    },
+    {
+      "stock_code": "688525",
+      "stock_name": "佰维存储",
+      "weight": 4.75
+    },
+    {
+      "stock_code": "688702",
+      "stock_name": "盛科通信",
+      "weight": 4.74
+    }
+  ],
+  "fetched_at": "2026-06-22 00:40:06",
+  "data_source": "eastmoney"
+}

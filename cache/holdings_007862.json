@@ -1,0 +1,62 @@
+{
+  "fund_code": "007862",
+  "fund_name": "金元顺安医疗健康混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 90.0,
+  "parsed_weight": 30.85,
+  "missing_weight": 59.15,
+  "positions": [
+    {
+      "stock_code": "688336",
+      "stock_name": "三生国健",
+      "weight": 3.93
+    },
+    {
+      "stock_code": "002422",
+      "stock_name": "科伦药业",
+      "weight": 3.32
+    },
+    {
+      "stock_code": "688506",
+      "stock_name": "百利天恒",
+      "weight": 3.19
+    },
+    {
+      "stock_code": "688578",
+      "stock_name": "艾力斯",
+      "weight": 3.03
+    },
+    {
+      "stock_code": "603456",
+      "stock_name": "九洲药业",
+      "weight": 3.01
+    },
+    {
+      "stock_code": "688166",
+      "stock_name": "博瑞医药",
+      "weight": 2.96
+    },
+    {
+      "stock_code": "688180",
+      "stock_name": "君实生物",
+      "weight": 2.93
+    },
+    {
+      "stock_code": "300759",
+      "stock_name": "康龙化成",
+      "weight": 2.85
+    },
+    {
+      "stock_code": "688062",
+      "stock_name": "迈威生物",
+      "weight": 2.82
+    },
+    {
+      "stock_code": "688321",
+      "stock_name": "微芯生物",
+      "weight": 2.81
+    }
+  ],
+  "fetched_at": "2026-06-22 00:45:30",
+  "data_source": "eastmoney"
+}

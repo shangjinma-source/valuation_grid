@@ -1,0 +1,62 @@
+{
+  "fund_code": "180031",
+  "fund_name": "银华中小盘混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 91.02,
+  "parsed_weight": 57.56,
+  "missing_weight": 33.46,
+  "positions": [
+    {
+      "stock_code": "603019",
+      "stock_name": "中科曙光",
+      "weight": 8.55
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 6.77
+    },
+    {
+      "stock_code": "603296",
+      "stock_name": "华勤技术",
+      "weight": 5.63
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 5.46
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 5.44
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 5.38
+    },
+    {
+      "stock_code": "600673",
+      "stock_name": "东阳光",
+      "weight": 5.19
+    },
+    {
+      "stock_code": "688521",
+      "stock_name": "芯原股份",
+      "weight": 5.16
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 5.11
+    },
+    {
+      "stock_code": "688691",
+      "stock_name": "灿芯股份",
+      "weight": 4.87
+    }
+  ],
+  "fetched_at": "2026-06-22 00:44:03",
+  "data_source": "eastmoney"
+}

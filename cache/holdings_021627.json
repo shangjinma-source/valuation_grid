@@ -1,0 +1,62 @@
+{
+  "fund_code": "021627",
+  "fund_name": "华富半导体产业混合发起式C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 89.66,
+  "parsed_weight": 41.13,
+  "missing_weight": 48.53,
+  "positions": [
+    {
+      "stock_code": "688347",
+      "stock_name": "华虹公司",
+      "weight": 5.07
+    },
+    {
+      "stock_code": "688141",
+      "stock_name": "杰华特",
+      "weight": 4.54
+    },
+    {
+      "stock_code": "300666",
+      "stock_name": "江丰电子",
+      "weight": 4.43
+    },
+    {
+      "stock_code": "688536",
+      "stock_name": "思瑞浦",
+      "weight": 4.26
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 4.19
+    },
+    {
+      "stock_code": "688172",
+      "stock_name": "燕东微",
+      "weight": 4.02
+    },
+    {
+      "stock_code": "688531",
+      "stock_name": "日联科技",
+      "weight": 3.95
+    },
+    {
+      "stock_code": "301308",
+      "stock_name": "江波龙",
+      "weight": 3.68
+    },
+    {
+      "stock_code": "688037",
+      "stock_name": "芯源微",
+      "weight": 3.6
+    },
+    {
+      "stock_code": "688661",
+      "stock_name": "和林微纳",
+      "weight": 3.39
+    }
+  ],
+  "fetched_at": "2026-06-22 00:40:28",
+  "data_source": "eastmoney"
+}

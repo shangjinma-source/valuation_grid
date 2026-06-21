@@ -1,0 +1,62 @@
+{
+  "fund_code": "025637",
+  "fund_name": "泰信互联网+主题混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 91.74,
+  "parsed_weight": 74.26,
+  "missing_weight": 17.48,
+  "positions": [
+    {
+      "stock_code": "301363",
+      "stock_name": "美好医疗",
+      "weight": 9.6
+    },
+    {
+      "stock_code": "688626",
+      "stock_name": "翔宇医疗",
+      "weight": 9.57
+    },
+    {
+      "stock_code": "002173",
+      "stock_name": "创新医疗",
+      "weight": 8.12
+    },
+    {
+      "stock_code": "301293",
+      "stock_name": "三博脑科",
+      "weight": 7.97
+    },
+    {
+      "stock_code": "300753",
+      "stock_name": "爱朋医疗",
+      "weight": 7.96
+    },
+    {
+      "stock_code": "300430",
+      "stock_name": "诚益通",
+      "weight": 7.83
+    },
+    {
+      "stock_code": "688273",
+      "stock_name": "麦澜德",
+      "weight": 6.76
+    },
+    {
+      "stock_code": "688261",
+      "stock_name": "东微半导",
+      "weight": 5.85
+    },
+    {
+      "stock_code": "688580",
+      "stock_name": "伟思医疗",
+      "weight": 5.75
+    },
+    {
+      "stock_code": "002195",
+      "stock_name": "岩山科技",
+      "weight": 4.85
+    }
+  ],
+  "fetched_at": "2026-06-22 00:48:32",
+  "data_source": "eastmoney"
+}

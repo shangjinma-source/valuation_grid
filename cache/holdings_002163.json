@@ -1,0 +1,62 @@
+{
+  "fund_code": "002163",
+  "fund_name": "东方惠新灵活配置混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.44,
+  "parsed_weight": 74.81,
+  "missing_weight": 19.63,
+  "positions": [
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 8.98
+    },
+    {
+      "stock_code": "300567",
+      "stock_name": "精测电子",
+      "weight": 8.82
+    },
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 8.77
+    },
+    {
+      "stock_code": "688123",
+      "stock_name": "聚辰股份",
+      "weight": 7.94
+    },
+    {
+      "stock_code": "002371",
+      "stock_name": "北方华创",
+      "weight": 7.91
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 7.42
+    },
+    {
+      "stock_code": "688766",
+      "stock_name": "普冉股份",
+      "weight": 7.29
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 6.25
+    },
+    {
+      "stock_code": "688120",
+      "stock_name": "华海清科",
+      "weight": 5.84
+    },
+    {
+      "stock_code": "688409",
+      "stock_name": "富创精密",
+      "weight": 5.59
+    }
+  ],
+  "fetched_at": "2026-06-22 00:40:01",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,77 @@
+{
+  "fund_code": "001040",
+  "fund_name": "新华策略精选股票A",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.62,
+  "parsed_weight": 78.23,
+  "missing_weight": 16.39,
+  "positions": [
+    {
+      "stock_code": "688205",
+      "stock_name": "德科立",
+      "weight": 9.4
+    },
+    {
+      "stock_code": "688200",
+      "stock_name": "华峰测控",
+      "weight": 8.68
+    },
+    {
+      "stock_code": "688025",
+      "stock_name": "杰普特",
+      "weight": 8.31
+    },
+    {
+      "stock_code": "688668",
+      "stock_name": "鼎通科技",
+      "weight": 7.54
+    },
+    {
+      "stock_code": "300731",
+      "stock_name": "科创新源",
+      "weight": 7.48
+    },
+    {
+      "stock_code": "003010",
+      "stock_name": "若羽臣",
+      "weight": 7.33
+    },
+    {
+      "stock_code": "605060",
+      "stock_name": "联德股份",
+      "weight": 5.3
+    },
+    {
+      "stock_code": "300684",
+      "stock_name": "中石科技",
+      "weight": 4.68
+    },
+    {
+      "stock_code": "300814",
+      "stock_name": "中富电路",
+      "weight": 4.6
+    },
+    {
+      "stock_code": "688531",
+      "stock_name": "日联科技",
+      "weight": 4.29
+    },
+    {
+      "stock_code": "688478",
+      "stock_name": "晶升股份",
+      "weight": 3.85
+    },
+    {
+      "stock_code": "301251",
+      "stock_name": "威尔高",
+      "weight": 3.78
+    },
+    {
+      "stock_code": "301120",
+      "stock_name": "新特电气",
+      "weight": 2.99
+    }
+  ],
+  "fetched_at": "2026-06-22 00:41:43",
+  "data_source": "eastmoney"
+}

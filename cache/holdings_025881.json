@@ -1,0 +1,62 @@
+{
+  "fund_code": "025881",
+  "fund_name": "汇添富科技领先混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 91.88,
+  "parsed_weight": 63.07,
+  "missing_weight": 28.81,
+  "positions": [
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 8.77
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 8.7
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 8.59
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 7.05
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 6.18
+    },
+    {
+      "stock_code": "002008",
+      "stock_name": "大族激光",
+      "weight": 5.9
+    },
+    {
+      "stock_code": "06869",
+      "stock_name": "长飞光纤光缆",
+      "weight": 5.75
+    },
+    {
+      "stock_code": "300757",
+      "stock_name": "罗博特科",
+      "weight": 4.15
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 4.14
+    },
+    {
+      "stock_code": "002028",
+      "stock_name": "思源电气",
+      "weight": 3.84
+    }
+  ],
+  "fetched_at": "2026-06-22 00:44:00",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "018089",
+  "fund_name": "东财远见成长混合发起式C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.42,
+  "parsed_weight": 67.76,
+  "missing_weight": 26.66,
+  "positions": [
+    {
+      "stock_code": "00853",
+      "stock_name": "微创医疗",
+      "weight": 9.77
+    },
+    {
+      "stock_code": "02252",
+      "stock_name": "微创机器人-B",
+      "weight": 7.5
+    },
+    {
+      "stock_code": "02228",
+      "stock_name": "晶泰控股",
+      "weight": 7.45
+    },
+    {
+      "stock_code": "688114",
+      "stock_name": "华大智造",
+      "weight": 7.31
+    },
+    {
+      "stock_code": "603108",
+      "stock_name": "润达医疗",
+      "weight": 6.82
+    },
+    {
+      "stock_code": "02172",
+      "stock_name": "微创脑科学",
+      "weight": 6.05
+    },
+    {
+      "stock_code": "688085",
+      "stock_name": "三友医疗",
+      "weight": 6.01
+    },
+    {
+      "stock_code": "301230",
+      "stock_name": "泓博医药",
+      "weight": 5.62
+    },
+    {
+      "stock_code": "688222",
+      "stock_name": "成都先导",
+      "weight": 5.62
+    },
+    {
+      "stock_code": "300676",
+      "stock_name": "华大基因",
+      "weight": 5.61
+    }
+  ],
+  "fetched_at": "2026-06-22 00:48:45",
+  "data_source": "eastmoney"
+}

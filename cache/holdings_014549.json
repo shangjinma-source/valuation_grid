@@ -1,0 +1,62 @@
+{
+  "fund_code": "014549",
+  "fund_name": "交银数据产业灵活配置混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.05,
+  "parsed_weight": 50.52,
+  "missing_weight": 42.53,
+  "positions": [
+    {
+      "stock_code": "002371",
+      "stock_name": "北方华创",
+      "weight": 8.35
+    },
+    {
+      "stock_code": "688002",
+      "stock_name": "睿创微纳",
+      "weight": 6.38
+    },
+    {
+      "stock_code": "688120",
+      "stock_name": "华海清科",
+      "weight": 5.35
+    },
+    {
+      "stock_code": "688037",
+      "stock_name": "芯源微",
+      "weight": 4.89
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 4.64
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 4.55
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 4.34
+    },
+    {
+      "stock_code": "688766",
+      "stock_name": "普冉股份",
+      "weight": 4.12
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 4.12
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 3.78
+    }
+  ],
+  "fetched_at": "2026-06-22 00:40:37",
+  "data_source": "eastmoney"
+}

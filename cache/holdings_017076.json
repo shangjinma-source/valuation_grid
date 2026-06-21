@@ -1,0 +1,62 @@
+{
+  "fund_code": "017076",
+  "fund_name": "宝盈半导体产业混合发起式C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 87.56,
+  "parsed_weight": 54.59,
+  "missing_weight": 32.97,
+  "positions": [
+    {
+      "stock_code": "001309",
+      "stock_name": "德明利",
+      "weight": 9.92
+    },
+    {
+      "stock_code": "301308",
+      "stock_name": "江波龙",
+      "weight": 8.36
+    },
+    {
+      "stock_code": "688372",
+      "stock_name": "伟测科技",
+      "weight": 5.43
+    },
+    {
+      "stock_code": "301216",
+      "stock_name": "万凯新材",
+      "weight": 5.32
+    },
+    {
+      "stock_code": "688002",
+      "stock_name": "睿创微纳",
+      "weight": 5.04
+    },
+    {
+      "stock_code": "688766",
+      "stock_name": "普冉股份",
+      "weight": 4.94
+    },
+    {
+      "stock_code": "002080",
+      "stock_name": "中材科技",
+      "weight": 4.31
+    },
+    {
+      "stock_code": "688041",
+      "stock_name": "海光信息",
+      "weight": 4.22
+    },
+    {
+      "stock_code": "300857",
+      "stock_name": "协创数据",
+      "weight": 3.59
+    },
+    {
+      "stock_code": "688328",
+      "stock_name": "深科达",
+      "weight": 3.46
+    }
+  ],
+  "fetched_at": "2026-06-22 00:40:40",
+  "data_source": "eastmoney"
+}

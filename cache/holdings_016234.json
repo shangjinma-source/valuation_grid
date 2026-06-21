@@ -1,0 +1,62 @@
+{
+  "fund_code": "016234",
+  "fund_name": "财通景气行业混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.87,
+  "parsed_weight": 67.96,
+  "missing_weight": 26.91,
+  "positions": [
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 8.74
+    },
+    {
+      "stock_code": "688037",
+      "stock_name": "芯源微",
+      "weight": 8.53
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 7.29
+    },
+    {
+      "stock_code": "688372",
+      "stock_name": "伟测科技",
+      "weight": 6.7
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 6.63
+    },
+    {
+      "stock_code": "600105",
+      "stock_name": "永鼎股份",
+      "weight": 6.3
+    },
+    {
+      "stock_code": "300658",
+      "stock_name": "延江股份",
+      "weight": 6.19
+    },
+    {
+      "stock_code": "300548",
+      "stock_name": "长芯博创",
+      "weight": 6.08
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 5.77
+    },
+    {
+      "stock_code": "601208",
+      "stock_name": "东材科技",
+      "weight": 5.73
+    }
+  ],
+  "fetched_at": "2026-06-22 00:40:46",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "004041",
+  "fund_name": "金鹰医疗健康产业C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.53,
+  "parsed_weight": 65.22,
+  "missing_weight": 29.31,
+  "positions": [
+    {
+      "stock_code": "688331",
+      "stock_name": "荣昌生物",
+      "weight": 9.73
+    },
+    {
+      "stock_code": "688266",
+      "stock_name": "泽璟制药",
+      "weight": 9.01
+    },
+    {
+      "stock_code": "688506",
+      "stock_name": "百利天恒",
+      "weight": 8.93
+    },
+    {
+      "stock_code": "688235",
+      "stock_name": "百济神州",
+      "weight": 8.79
+    },
+    {
+      "stock_code": "002294",
+      "stock_name": "信立泰",
+      "weight": 5.48
+    },
+    {
+      "stock_code": "002653",
+      "stock_name": "海思科",
+      "weight": 4.8
+    },
+    {
+      "stock_code": "002432",
+      "stock_name": "九安医疗",
+      "weight": 4.77
+    },
+    {
+      "stock_code": "300765",
+      "stock_name": "新诺威",
+      "weight": 4.72
+    },
+    {
+      "stock_code": "688180",
+      "stock_name": "君实生物",
+      "weight": 4.54
+    },
+    {
+      "stock_code": "688553",
+      "stock_name": "汇宇制药",
+      "weight": 4.45
+    }
+  ],
+  "fetched_at": "2026-06-22 00:45:23",
+  "data_source": "eastmoney"
+}

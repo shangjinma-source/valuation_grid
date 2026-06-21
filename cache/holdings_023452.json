@@ -1,0 +1,62 @@
+{
+  "fund_code": "023452",
+  "fund_name": "中欧信息科技混合发起C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.43,
+  "parsed_weight": 60.54,
+  "missing_weight": 33.89,
+  "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.76
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 8.97
+    },
+    {
+      "stock_code": "06869",
+      "stock_name": "长飞光纤光缆",
+      "weight": 7.58
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 6.81
+    },
+    {
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 5.6
+    },
+    {
+      "stock_code": "601138",
+      "stock_name": "工业富联",
+      "weight": 5.57
+    },
+    {
+      "stock_code": "301128",
+      "stock_name": "强瑞技术",
+      "weight": 4.3
+    },
+    {
+      "stock_code": "600522",
+      "stock_name": "中天科技",
+      "weight": 4.2
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 3.94
+    },
+    {
+      "stock_code": "00700",
+      "stock_name": "腾讯控股",
+      "weight": 3.81
+    }
+  ],
+  "fetched_at": "2026-06-22 00:41:11",
+  "data_source": "eastmoney"
+}

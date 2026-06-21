@@ -1,0 +1,62 @@
+{
+  "fund_code": "017612",
+  "fund_name": "宏利复兴混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 90.54,
+  "parsed_weight": 63.21,
+  "missing_weight": 27.33,
+  "positions": [
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 9.92
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.81
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.2
+    },
+    {
+      "stock_code": "600487",
+      "stock_name": "亨通光电",
+      "weight": 7.42
+    },
+    {
+      "stock_code": "301377",
+      "stock_name": "鼎泰高科",
+      "weight": 6.26
+    },
+    {
+      "stock_code": "600183",
+      "stock_name": "生益科技",
+      "weight": 5.42
+    },
+    {
+      "stock_code": "300548",
+      "stock_name": "长芯博创",
+      "weight": 5.13
+    },
+    {
+      "stock_code": "600105",
+      "stock_name": "永鼎股份",
+      "weight": 3.83
+    },
+    {
+      "stock_code": "603124",
+      "stock_name": "江南新材",
+      "weight": 3.14
+    },
+    {
+      "stock_code": "603256",
+      "stock_name": "宏和科技",
+      "weight": 3.08
+    }
+  ],
+  "fetched_at": "2026-06-22 00:44:07",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "026633",
+  "fund_name": "平安半导体领航精选混合发起式C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.0,
+  "parsed_weight": 55.49,
+  "missing_weight": 36.51,
+  "positions": [
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 7.07
+    },
+    {
+      "stock_code": "603061",
+      "stock_name": "金海通",
+      "weight": 6.91
+    },
+    {
+      "stock_code": "300567",
+      "stock_name": "精测电子",
+      "weight": 6.78
+    },
+    {
+      "stock_code": "688627",
+      "stock_name": "精智达",
+      "weight": 5.28
+    },
+    {
+      "stock_code": "300604",
+      "stock_name": "长川科技",
+      "weight": 5.17
+    },
+    {
+      "stock_code": "688037",
+      "stock_name": "芯源微",
+      "weight": 5.15
+    },
+    {
+      "stock_code": "688120",
+      "stock_name": "华海清科",
+      "weight": 5.0
+    },
+    {
+      "stock_code": "300666",
+      "stock_name": "江丰电子",
+      "weight": 4.85
+    },
+    {
+      "stock_code": "688652",
+      "stock_name": "京仪装备",
+      "weight": 4.83
+    },
+    {
+      "stock_code": "688200",
+      "stock_name": "华峰测控",
+      "weight": 4.45
+    }
+  ],
+  "fetched_at": "2026-06-22 00:45:53",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "011113",
+  "fund_name": "富国军工主题混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 88.38,
+  "parsed_weight": 46.08,
+  "missing_weight": 42.3,
+  "positions": [
+    {
+      "stock_code": "688543",
+      "stock_name": "国科军工",
+      "weight": 6.01
+    },
+    {
+      "stock_code": "688002",
+      "stock_name": "睿创微纳",
+      "weight": 5.65
+    },
+    {
+      "stock_code": "301571",
+      "stock_name": "国科天成",
+      "weight": 5.35
+    },
+    {
+      "stock_code": "603678",
+      "stock_name": "火炬电子",
+      "weight": 5.14
+    },
+    {
+      "stock_code": "002025",
+      "stock_name": "航天电器",
+      "weight": 4.65
+    },
+    {
+      "stock_code": "600150",
+      "stock_name": "中国船舶",
+      "weight": 4.35
+    },
+    {
+      "stock_code": "600482",
+      "stock_name": "中国动力",
+      "weight": 4.23
+    },
+    {
+      "stock_code": "300395",
+      "stock_name": "菲利华",
+      "weight": 3.98
+    },
+    {
+      "stock_code": "603308",
+      "stock_name": "应流股份",
+      "weight": 3.52
+    },
+    {
+      "stock_code": "600498",
+      "stock_name": "烽火通信",
+      "weight": 3.2
+    }
+  ],
+  "fetched_at": "2026-06-22 00:47:36",
+  "data_source": "eastmoney"
+}

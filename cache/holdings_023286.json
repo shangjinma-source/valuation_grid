@@ -1,0 +1,62 @@
+{
+  "fund_code": "023286",
+  "fund_name": "前海开源人工智能主题混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 93.07,
+  "parsed_weight": 76.97,
+  "missing_weight": 16.1,
+  "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.3
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 8.63
+    },
+    {
+      "stock_code": "002222",
+      "stock_name": "福晶科技",
+      "weight": 8.57
+    },
+    {
+      "stock_code": "603052",
+      "stock_name": "可川科技",
+      "weight": 8.39
+    },
+    {
+      "stock_code": "300757",
+      "stock_name": "罗博特科",
+      "weight": 8.04
+    },
+    {
+      "stock_code": "603306",
+      "stock_name": "华懋科技",
+      "weight": 7.47
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 7.14
+    },
+    {
+      "stock_code": "603083",
+      "stock_name": "剑桥科技",
+      "weight": 7.01
+    },
+    {
+      "stock_code": "002837",
+      "stock_name": "英维克",
+      "weight": 6.72
+    },
+    {
+      "stock_code": "603031",
+      "stock_name": "安孚科技",
+      "weight": 5.7
+    }
+  ],
+  "fetched_at": "2026-06-22 00:39:25",
+  "data_source": "eastmoney"
+}

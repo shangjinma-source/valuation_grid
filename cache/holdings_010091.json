@@ -1,0 +1,62 @@
+{
+  "fund_code": "010091",
+  "fund_name": "中信建投医药健康C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 90.38,
+  "parsed_weight": 67.17,
+  "missing_weight": 23.21,
+  "positions": [
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 9.28
+    },
+    {
+      "stock_code": "688331",
+      "stock_name": "荣昌生物",
+      "weight": 8.11
+    },
+    {
+      "stock_code": "688266",
+      "stock_name": "泽璟制药",
+      "weight": 6.64
+    },
+    {
+      "stock_code": "688428",
+      "stock_name": "诺诚健华",
+      "weight": 6.35
+    },
+    {
+      "stock_code": "002653",
+      "stock_name": "海思科",
+      "weight": 6.27
+    },
+    {
+      "stock_code": "688192",
+      "stock_name": "迪哲医药",
+      "weight": 6.26
+    },
+    {
+      "stock_code": "688336",
+      "stock_name": "三生国健",
+      "weight": 6.19
+    },
+    {
+      "stock_code": "688506",
+      "stock_name": "百利天恒",
+      "weight": 6.07
+    },
+    {
+      "stock_code": "002294",
+      "stock_name": "信立泰",
+      "weight": 6.05
+    },
+    {
+      "stock_code": "688578",
+      "stock_name": "艾力斯",
+      "weight": 5.95
+    }
+  ],
+  "fetched_at": "2026-06-22 00:45:03",
+  "data_source": "eastmoney"
+}

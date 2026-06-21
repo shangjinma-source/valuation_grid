@@ -1,0 +1,67 @@
+{
+  "fund_code": "025191",
+  "fund_name": "富国成长策略混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 87.47,
+  "parsed_weight": 65.7,
+  "missing_weight": 21.77,
+  "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.42
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 8.85
+    },
+    {
+      "stock_code": "002463",
+      "stock_name": "沪电股份",
+      "weight": 8.01
+    },
+    {
+      "stock_code": "06869",
+      "stock_name": "长飞光纤光缆",
+      "weight": 7.61
+    },
+    {
+      "stock_code": "002916",
+      "stock_name": "深南电路",
+      "weight": 6.6
+    },
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 6.16
+    },
+    {
+      "stock_code": "300394",
+      "stock_name": "天孚通信",
+      "weight": 5.06
+    },
+    {
+      "stock_code": "688019",
+      "stock_name": "安集科技",
+      "weight": 4.35
+    },
+    {
+      "stock_code": "601899",
+      "stock_name": "紫金矿业",
+      "weight": 4.17
+    },
+    {
+      "stock_code": "603308",
+      "stock_name": "应流股份",
+      "weight": 4.02
+    },
+    {
+      "stock_code": "601869",
+      "stock_name": "长飞光纤",
+      "weight": 1.45
+    }
+  ],
+  "fetched_at": "2026-06-22 00:43:47",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "015562",
+  "fund_name": "长城医疗保健混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 83.21,
+  "parsed_weight": 54.25,
+  "missing_weight": 28.96,
+  "positions": [
+    {
+      "stock_code": "002294",
+      "stock_name": "信立泰",
+      "weight": 9.4
+    },
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "weight": 7.26
+    },
+    {
+      "stock_code": "688506",
+      "stock_name": "百利天恒",
+      "weight": 7.04
+    },
+    {
+      "stock_code": "688235",
+      "stock_name": "百济神州",
+      "weight": 5.53
+    },
+    {
+      "stock_code": "688382",
+      "stock_name": "益方生物",
+      "weight": 4.64
+    },
+    {
+      "stock_code": "603259",
+      "stock_name": "药明康德",
+      "weight": 4.44
+    },
+    {
+      "stock_code": "300765",
+      "stock_name": "新诺威",
+      "weight": 4.36
+    },
+    {
+      "stock_code": "688513",
+      "stock_name": "苑东生物",
+      "weight": 4.35
+    },
+    {
+      "stock_code": "002422",
+      "stock_name": "科伦药业",
+      "weight": 4.01
+    },
+    {
+      "stock_code": "000963",
+      "stock_name": "华东医药",
+      "weight": 3.22
+    }
+  ],
+  "fetched_at": "2026-06-22 00:45:26",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "024641",
+  "fund_name": "中欧化工产业混合发起C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.47,
+  "parsed_weight": 50.94,
+  "missing_weight": 43.53,
+  "positions": [
+    {
+      "stock_code": "600426",
+      "stock_name": "华鲁恒升",
+      "weight": 7.05
+    },
+    {
+      "stock_code": "600309",
+      "stock_name": "万华化学",
+      "weight": 6.5
+    },
+    {
+      "stock_code": "603067",
+      "stock_name": "振华股份",
+      "weight": 6.1
+    },
+    {
+      "stock_code": "600989",
+      "stock_name": "宝丰能源",
+      "weight": 4.98
+    },
+    {
+      "stock_code": "000792",
+      "stock_name": "盐湖股份",
+      "weight": 4.79
+    },
+    {
+      "stock_code": "600075",
+      "stock_name": "新疆天业",
+      "weight": 4.56
+    },
+    {
+      "stock_code": "000703",
+      "stock_name": "恒逸石化",
+      "weight": 4.52
+    },
+    {
+      "stock_code": "001203",
+      "stock_name": "大中矿业",
+      "weight": 4.32
+    },
+    {
+      "stock_code": "000688",
+      "stock_name": "国城矿业",
+      "weight": 4.29
+    },
+    {
+      "stock_code": "00883",
+      "stock_name": "中国海洋石油",
+      "weight": 3.83
+    }
+  ],
+  "fetched_at": "2026-06-22 00:50:59",
+  "data_source": "eastmoney"
+}

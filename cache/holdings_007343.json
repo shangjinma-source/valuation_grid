@@ -1,0 +1,72 @@
+{
+  "fund_code": "007343",
+  "fund_name": "嘉实科技创新混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 91.55,
+  "parsed_weight": 78.09,
+  "missing_weight": 13.46,
+  "positions": [
+    {
+      "stock_code": "002475",
+      "stock_name": "立讯精密",
+      "weight": 9.84
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 9.18
+    },
+    {
+      "stock_code": "603986",
+      "stock_name": "兆易创新",
+      "weight": 9.02
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 8.95
+    },
+    {
+      "stock_code": "300223",
+      "stock_name": "北京君正",
+      "weight": 8.93
+    },
+    {
+      "stock_code": "688766",
+      "stock_name": "普冉股份",
+      "weight": 7.47
+    },
+    {
+      "stock_code": "605117",
+      "stock_name": "德业股份",
+      "weight": 5.9
+    },
+    {
+      "stock_code": "300054",
+      "stock_name": "鼎龙股份",
+      "weight": 5.36
+    },
+    {
+      "stock_code": "300236",
+      "stock_name": "上海新阳",
+      "weight": 4.96
+    },
+    {
+      "stock_code": "688052",
+      "stock_name": "纳芯微",
+      "weight": 4.94
+    },
+    {
+      "stock_code": "02676",
+      "stock_name": "纳芯微",
+      "weight": 1.8
+    },
+    {
+      "stock_code": "688368",
+      "stock_name": "晶丰明源",
+      "weight": 1.74
+    }
+  ],
+  "fetched_at": "2026-06-22 00:46:08",
+  "data_source": "eastmoney"
+}

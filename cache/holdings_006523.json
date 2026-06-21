@@ -1,0 +1,62 @@
+{
+  "fund_code": "006523",
+  "fund_name": "财通新兴蓝筹混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 92.84,
+  "parsed_weight": 69.3,
+  "missing_weight": 23.54,
+  "positions": [
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.42
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 8.99
+    },
+    {
+      "stock_code": "301377",
+      "stock_name": "鼎泰高科",
+      "weight": 8.6
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 7.99
+    },
+    {
+      "stock_code": "600183",
+      "stock_name": "生益科技",
+      "weight": 7.41
+    },
+    {
+      "stock_code": "688195",
+      "stock_name": "腾景科技",
+      "weight": 7.15
+    },
+    {
+      "stock_code": "600105",
+      "stock_name": "永鼎股份",
+      "weight": 5.9
+    },
+    {
+      "stock_code": "001376",
+      "stock_name": "百通能源",
+      "weight": 5.56
+    },
+    {
+      "stock_code": "002627",
+      "stock_name": "三峡旅游",
+      "weight": 4.57
+    },
+    {
+      "stock_code": "600026",
+      "stock_name": "中远海能",
+      "weight": 3.71
+    }
+  ],
+  "fetched_at": "2026-06-22 00:44:12",
+  "data_source": "eastmoney"
+}

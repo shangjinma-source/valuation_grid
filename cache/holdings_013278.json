@@ -1,0 +1,82 @@
+{
+  "fund_code": "013278",
+  "fund_name": "富国中证体育产业指数(LOF)C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.22,
+  "parsed_weight": 44.93,
+  "missing_weight": 49.29,
+  "positions": [
+    {
+      "stock_code": "603444",
+      "stock_name": "吉比特",
+      "weight": 4.69
+    },
+    {
+      "stock_code": "689009",
+      "stock_name": "九号公司",
+      "weight": 4.68
+    },
+    {
+      "stock_code": "002555",
+      "stock_name": "三七互娱",
+      "weight": 4.59
+    },
+    {
+      "stock_code": "002558",
+      "stock_name": "巨人网络",
+      "weight": 4.55
+    },
+    {
+      "stock_code": "300315",
+      "stock_name": "掌趣科技",
+      "weight": 4.55
+    },
+    {
+      "stock_code": "300113",
+      "stock_name": "顺网科技",
+      "weight": 4.46
+    },
+    {
+      "stock_code": "300146",
+      "stock_name": "汤臣倍健",
+      "weight": 4.44
+    },
+    {
+      "stock_code": "300418",
+      "stock_name": "昆仑万维",
+      "weight": 4.41
+    },
+    {
+      "stock_code": "002624",
+      "stock_name": "完美世界",
+      "weight": 4.3
+    },
+    {
+      "stock_code": "300005",
+      "stock_name": "探路者",
+      "weight": 4.2
+    },
+    {
+      "stock_code": "301683",
+      "stock_name": "慧谷新材",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "301696",
+      "stock_name": "三瑞智能",
+      "weight": 0.02
+    },
+    {
+      "stock_code": "301638",
+      "stock_name": "南网数字",
+      "weight": 0.01
+    },
+    {
+      "stock_code": "301667",
+      "stock_name": "纳百川",
+      "weight": 0.01
+    }
+  ],
+  "fetched_at": "2026-06-22 00:48:52",
+  "data_source": "eastmoney"
+}

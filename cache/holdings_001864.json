@@ -1,0 +1,62 @@
+{
+  "fund_code": "001864",
+  "fund_name": "中海魅力长三角混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 89.21,
+  "parsed_weight": 54.59,
+  "missing_weight": 34.62,
+  "positions": [
+    {
+      "stock_code": "301550",
+      "stock_name": "斯菱智驱",
+      "weight": 7.63
+    },
+    {
+      "stock_code": "002126",
+      "stock_name": "银轮股份",
+      "weight": 6.49
+    },
+    {
+      "stock_code": "300953",
+      "stock_name": "震裕科技",
+      "weight": 5.9
+    },
+    {
+      "stock_code": "301413",
+      "stock_name": "安培龙",
+      "weight": 5.51
+    },
+    {
+      "stock_code": "603179",
+      "stock_name": "新泉股份",
+      "weight": 5.51
+    },
+    {
+      "stock_code": "688017",
+      "stock_name": "绿的谐波",
+      "weight": 5.4
+    },
+    {
+      "stock_code": "603667",
+      "stock_name": "五洲新春",
+      "weight": 5.35
+    },
+    {
+      "stock_code": "603119",
+      "stock_name": "浙江荣泰",
+      "weight": 5.32
+    },
+    {
+      "stock_code": "603009",
+      "stock_name": "北特科技",
+      "weight": 4.33
+    },
+    {
+      "stock_code": "603286",
+      "stock_name": "日盈电子",
+      "weight": 3.15
+    }
+  ],
+  "fetched_at": "2026-06-22 00:47:51",
+  "data_source": "eastmoney"
+}

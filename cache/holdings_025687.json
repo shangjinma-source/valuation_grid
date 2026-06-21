@@ -1,0 +1,67 @@
+{
+  "fund_code": "025687",
+  "fund_name": "国泰半导体制造精选混合发起C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.24,
+  "parsed_weight": 74.09,
+  "missing_weight": 20.15,
+  "positions": [
+    {
+      "stock_code": "688072",
+      "stock_name": "拓荆科技",
+      "weight": 9.77
+    },
+    {
+      "stock_code": "002371",
+      "stock_name": "北方华创",
+      "weight": 9.35
+    },
+    {
+      "stock_code": "688012",
+      "stock_name": "中微公司",
+      "weight": 9.0
+    },
+    {
+      "stock_code": "688361",
+      "stock_name": "中科飞测",
+      "weight": 8.85
+    },
+    {
+      "stock_code": "688019",
+      "stock_name": "安集科技",
+      "weight": 6.53
+    },
+    {
+      "stock_code": "688120",
+      "stock_name": "华海清科",
+      "weight": 6.29
+    },
+    {
+      "stock_code": "688409",
+      "stock_name": "富创精密",
+      "weight": 6.22
+    },
+    {
+      "stock_code": "688347",
+      "stock_name": "华虹公司",
+      "weight": 5.99
+    },
+    {
+      "stock_code": "688037",
+      "stock_name": "芯源微",
+      "weight": 5.92
+    },
+    {
+      "stock_code": "300236",
+      "stock_name": "上海新阳",
+      "weight": 4.16
+    },
+    {
+      "stock_code": "01347",
+      "stock_name": "华虹半导体",
+      "weight": 2.01
+    }
+  ],
+  "fetched_at": "2026-06-22 00:46:11",
+  "data_source": "eastmoney"
+}

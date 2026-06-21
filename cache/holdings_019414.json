@@ -1,0 +1,62 @@
+{
+  "fund_code": "019414",
+  "fund_name": "长城消费增值混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 91.88,
+  "parsed_weight": 56.76,
+  "missing_weight": 35.12,
+  "positions": [
+    {
+      "stock_code": "301363",
+      "stock_name": "美好医疗",
+      "weight": 9.08
+    },
+    {
+      "stock_code": "688607",
+      "stock_name": "康众医疗",
+      "weight": 8.05
+    },
+    {
+      "stock_code": "688277",
+      "stock_name": "天智航",
+      "weight": 7.38
+    },
+    {
+      "stock_code": "300003",
+      "stock_name": "乐普医疗",
+      "weight": 6.82
+    },
+    {
+      "stock_code": "300049",
+      "stock_name": "福瑞医科",
+      "weight": 5.22
+    },
+    {
+      "stock_code": "688626",
+      "stock_name": "翔宇医疗",
+      "weight": 4.55
+    },
+    {
+      "stock_code": "301230",
+      "stock_name": "泓博医药",
+      "weight": 4.28
+    },
+    {
+      "stock_code": "301293",
+      "stock_name": "三博脑科",
+      "weight": 3.93
+    },
+    {
+      "stock_code": "688221",
+      "stock_name": "前沿生物",
+      "weight": 3.85
+    },
+    {
+      "stock_code": "002044",
+      "stock_name": "美年健康",
+      "weight": 3.6
+    }
+  ],
+  "fetched_at": "2026-06-22 00:48:36",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,62 @@
+{
+  "fund_code": "018419",
+  "fund_name": "广发碳中和主题混合发起式C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 76.61,
+  "parsed_weight": 49.68,
+  "missing_weight": 26.93,
+  "positions": [
+    {
+      "stock_code": "600875",
+      "stock_name": "东方电气",
+      "weight": 6.98
+    },
+    {
+      "stock_code": "603806",
+      "stock_name": "福斯特",
+      "weight": 5.93
+    },
+    {
+      "stock_code": "603606",
+      "stock_name": "东方电缆",
+      "weight": 5.36
+    },
+    {
+      "stock_code": "603308",
+      "stock_name": "应流股份",
+      "weight": 5.31
+    },
+    {
+      "stock_code": "000534",
+      "stock_name": "万泽股份",
+      "weight": 4.76
+    },
+    {
+      "stock_code": "603067",
+      "stock_name": "振华股份",
+      "weight": 4.75
+    },
+    {
+      "stock_code": "000338",
+      "stock_name": "潍柴动力",
+      "weight": 4.4
+    },
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "weight": 4.33
+    },
+    {
+      "stock_code": "002738",
+      "stock_name": "中矿资源",
+      "weight": 4.14
+    },
+    {
+      "stock_code": "600988",
+      "stock_name": "赤峰黄金",
+      "weight": 3.72
+    }
+  ],
+  "fetched_at": "2026-06-22 00:49:22",
+  "data_source": "eastmoney"
+}

@@ -1,0 +1,22 @@
+{
+  "fund_code": "017731",
+  "fund_name": "嘉实全球产业升级股票发起式(QDII)C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 83.25,
+  "parsed_weight": 7.91,
+  "missing_weight": 75.34,
+  "positions": [
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 4.25
+    },
+    {
+      "stock_code": "688256",
+      "stock_name": "寒武纪",
+      "weight": 3.66
+    }
+  ],
+  "fetched_at": "2026-06-22 01:50:37",
+  "data_source": "eastmoney"
+}

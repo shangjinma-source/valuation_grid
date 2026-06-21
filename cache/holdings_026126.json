@@ -1,0 +1,62 @@
+{
+  "fund_code": "026126",
+  "fund_name": "山证资管改革精选混合C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 89.75,
+  "parsed_weight": 54.2,
+  "missing_weight": 35.55,
+  "positions": [
+    {
+      "stock_code": "301550",
+      "stock_name": "斯菱智驱",
+      "weight": 7.05
+    },
+    {
+      "stock_code": "603667",
+      "stock_name": "五洲新春",
+      "weight": 6.72
+    },
+    {
+      "stock_code": "688017",
+      "stock_name": "绿的谐波",
+      "weight": 6.65
+    },
+    {
+      "stock_code": "601100",
+      "stock_name": "恒立液压",
+      "weight": 6.63
+    },
+    {
+      "stock_code": "300953",
+      "stock_name": "震裕科技",
+      "weight": 5.63
+    },
+    {
+      "stock_code": "000559",
+      "stock_name": "万向钱潮",
+      "weight": 4.87
+    },
+    {
+      "stock_code": "002050",
+      "stock_name": "三花智控",
+      "weight": 4.46
+    },
+    {
+      "stock_code": "300421",
+      "stock_name": "力星股份",
+      "weight": 4.44
+    },
+    {
+      "stock_code": "002850",
+      "stock_name": "科达利",
+      "weight": 3.97
+    },
+    {
+      "stock_code": "002472",
+      "stock_name": "双环传动",
+      "weight": 3.78
+    }
+  ],
+  "fetched_at": "2026-06-22 00:47:46",
+  "data_source": "eastmoney"
+}

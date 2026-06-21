@@ -1,0 +1,67 @@
+{
+  "fund_code": "018495",
+  "fund_name": "融通产业趋势臻选股票C",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 91.89,
+  "parsed_weight": 70.22,
+  "missing_weight": 21.67,
+  "positions": [
+    {
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "weight": 9.99
+    },
+    {
+      "stock_code": "300308",
+      "stock_name": "中际旭创",
+      "weight": 9.9
+    },
+    {
+      "stock_code": "300502",
+      "stock_name": "新易盛",
+      "weight": 9.26
+    },
+    {
+      "stock_code": "06869",
+      "stock_name": "长飞光纤光缆",
+      "weight": 9.23
+    },
+    {
+      "stock_code": "688498",
+      "stock_name": "源杰科技",
+      "weight": 6.37
+    },
+    {
+      "stock_code": "600105",
+      "stock_name": "永鼎股份",
+      "weight": 5.05
+    },
+    {
+      "stock_code": "002080",
+      "stock_name": "中材科技",
+      "weight": 5.02
+    },
+    {
+      "stock_code": "00700",
+      "stock_name": "腾讯控股",
+      "weight": 4.82
+    },
+    {
+      "stock_code": "600875",
+      "stock_name": "东方电气",
+      "weight": 4.68
+    },
+    {
+      "stock_code": "06166",
+      "stock_name": "剑桥科技",
+      "weight": 3.96
+    },
+    {
+      "stock_code": "603083",
+      "stock_name": "剑桥科技",
+      "weight": 1.94
+    }
+  ],
+  "fetched_at": "2026-06-22 00:41:54",
+  "data_source": "eastmoney"
+}

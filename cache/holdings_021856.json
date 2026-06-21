@@ -1,0 +1,62 @@
+{
+  "fund_code": "021856",
+  "fund_name": "博时中证油气资源ETF发起式联接C",
+  "holdings_asof_date": "2025-03-31",
+  "stock_total_weight": 0.0,
+  "parsed_weight": 2.05,
+  "missing_weight": 0,
+  "positions": [
+    {
+      "stock_code": "601857",
+      "stock_name": "中国石油",
+      "weight": 0.34
+    },
+    {
+      "stock_code": "600028",
+      "stock_name": "中国石化",
+      "weight": 0.34
+    },
+    {
+      "stock_code": "600938",
+      "stock_name": "中国海油",
+      "weight": 0.31
+    },
+    {
+      "stock_code": "600256",
+      "stock_name": "广汇能源",
+      "weight": 0.23
+    },
+    {
+      "stock_code": "601872",
+      "stock_name": "招商轮船",
+      "weight": 0.19
+    },
+    {
+      "stock_code": "600026",
+      "stock_name": "中远海能",
+      "weight": 0.16
+    },
+    {
+      "stock_code": "600095",
+      "stock_name": "湘财股份",
+      "weight": 0.15
+    },
+    {
+      "stock_code": "603393",
+      "stock_name": "新天然气",
+      "weight": 0.12
+    },
+    {
+      "stock_code": "601808",
+      "stock_name": "中海油服",
+      "weight": 0.11
+    },
+    {
+      "stock_code": "002094",
+      "stock_name": "青岛金王",
+      "weight": 0.1
+    }
+  ],
+  "fetched_at": "2026-06-22 01:50:31",
+  "data_source": "eastmoney"
+}

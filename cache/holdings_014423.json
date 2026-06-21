@@ -1,0 +1,67 @@
+{
+  "fund_code": "014423",
+  "fund_name": "汇丰晋信研究精选混合",
+  "holdings_asof_date": "2026-03-31",
+  "stock_total_weight": 94.52,
+  "parsed_weight": 83.5,
+  "missing_weight": 11.02,
+  "positions": [
+    {
+      "stock_code": "600438",
+      "stock_name": "通威股份",
+      "weight": 9.88
+    },
+    {
+      "stock_code": "03800",
+      "stock_name": "协鑫科技",
+      "weight": 9.87
+    },
+    {
+      "stock_code": "601012",
+      "stock_name": "隆基绿能",
+      "weight": 9.62
+    },
+    {
+      "stock_code": "00968",
+      "stock_name": "信义光能",
+      "weight": 9.42
+    },
+    {
+      "stock_code": "002459",
+      "stock_name": "晶澳科技",
+      "weight": 9.33
+    },
+    {
+      "stock_code": "600732",
+      "stock_name": "爱旭股份",
+      "weight": 9.23
+    },
+    {
+      "stock_code": "300014",
+      "stock_name": "亿纬锂能",
+      "weight": 7.47
+    },
+    {
+      "stock_code": "601865",
+      "stock_name": "福莱特",
+      "weight": 5.62
+    },
+    {
+      "stock_code": "688599",
+      "stock_name": "天合光能",
+      "weight": 5.59
+    },
+    {
+      "stock_code": "601615",
+      "stock_name": "明阳智能",
+      "weight": 3.82
+    },
+    {
+      "stock_code": "06865",
+      "stock_name": "福莱特玻璃",
+      "weight": 3.65
+    }
+  ],
+  "fetched_at": "2026-06-22 00:49:50",
+  "data_source": "eastmoney"
+}
