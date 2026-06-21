@@ -113,7 +113,20 @@ def render_sector_image(
     head_h = 36
     th_h = 22
     W = 560
-    H = head_h + th_h + len(sorted_funds) * row_h + P
+
+    # 超过 50 只基金时自动分两列
+    TWO_COL_THRESHOLD = 50
+    use_two_cols = len(sorted_funds) > TWO_COL_THRESHOLD
+
+    if use_two_cols:
+        # 两列布局：宽度加倍 + 列间距
+        COL_GAP = 24
+        WW = W * 2 + COL_GAP
+        rows_per_col = (len(sorted_funds) + 1) // 2  # 向上取整
+        H = head_h + th_h + rows_per_col * row_h + P
+    else:
+        WW = W
+        H = head_h + th_h + len(sorted_funds) * row_h + P
 
     col_code_l  = P
     col_name_l  = P + 58
@@ -122,7 +135,7 @@ def render_sector_image(
     col_20day_r  = W - P
 
     # --- 创建高清画布 ---
-    img = Image.new("RGB", (W * scale, H * scale), COLOR_BG)
+    img = Image.new("RGB", (WW * scale, H * scale), COLOR_BG)
     draw = ImageDraw.Draw(img)
 
     # 字体（按 scale 缩放）
@@ -136,73 +149,88 @@ def render_sector_image(
 
     S = scale  # 简写
 
-    # --- 标题行 ---
-    draw.text((P * S, P * S), sector_name, fill=COLOR_TITLE, font=font_title)
-
-    time_str = datetime.now().strftime("%m/%d %H:%M")
-    tw_time = draw.textlength(time_str, font=font_time)
-    draw.text(((W - P) * S - tw_time, P * S), time_str, fill=COLOR_TIME, font=font_time)
-
-    # --- 表头背景 ---
-    draw.rectangle(
-        [0, head_h * S, W * S, (head_h + th_h) * S],
-        fill=COLOR_HEAD_BG,
-    )
-
-    # 表头文字
-    th_y = (head_h + 4) * S  # 微调垂直居中
-    draw.text((col_code_l * S, th_y), "代码", fill=COLOR_TH, font=font_th)
-    draw.text((col_name_l * S, th_y), "基金名称", fill=COLOR_TH, font=font_th)
-
-    # 第一列表头根据模式切换：盘中=估值涨幅，收盘=收盘净值
-    change_label = "收盘净值" if mode == "nav" else "估值涨幅"
-    for label, right_x in [(change_label, col_change_r), ("近5日", col_5day_r), ("近20日", col_20day_r)]:
-        tw = draw.textlength(label, font=font_th)
-        draw.text((right_x * S - tw, th_y), label, fill=COLOR_TH, font=font_th)
-
-    # --- 数据行 ---
+    # --- 工具函数：渲染一列数据 ---
     today_str = datetime.now().strftime("%Y-%m-%d")
 
-    for i, fund in enumerate(sorted_funds):
-        code = fund["code"]
-        val = valuations.get(code, {})
-        y = head_h + th_h + i * row_h
-        text_y = (y + 6) * S  # 行内文字基线（微调）
+    def _draw_column(x_offset: int, fund_list: list, start_index: int):
+        """在 x_offset 处绘制一列基金数据，start_index 用于斑马纹连续"""
+        # 表头背景
+        draw.rectangle(
+            [x_offset * S, head_h * S, (x_offset + W) * S, (head_h + th_h) * S],
+            fill=COLOR_HEAD_BG,
+        )
+        # 表头文字
+        th_y_pos = (head_h + 4) * S
+        draw.text(((x_offset + col_code_l) * S, th_y_pos), "代码", fill=COLOR_TH, font=font_th)
+        draw.text(((x_offset + col_name_l) * S, th_y_pos), "基金名称", fill=COLOR_TH, font=font_th)
 
-        # 斑马纹
-        if i % 2 == 1:
-            draw.rectangle([0, y * S, W * S, (y + row_h) * S], fill=COLOR_ROW_ALT)
+        change_label = "收盘净值" if mode == "nav" else "估值涨幅"
+        for label, right_x in [(change_label, col_change_r), ("近5日", col_5day_r), ("近20日", col_20day_r)]:
+            tw = draw.textlength(label, font=font_th)
+            draw.text(((x_offset + right_x) * S - tw, th_y_pos), label, fill=COLOR_TH, font=font_th)
 
-        # 代码
-        draw.text((col_code_l * S, text_y), code, fill=COLOR_CODE, font=font_code)
+        # 数据行
+        for j, fund in enumerate(fund_list):
+            code = fund["code"]
+            val = valuations.get(code, {})
+            y = head_h + th_h + j * row_h
+            text_y = (y + 6) * S
 
-        # 名称（截断）
-        name = fund.get("alias") or val.get("fund_name") or ""
-        if len(name) > 14:
-            name = name[:14] + "..."
-        draw.text((col_name_l * S, text_y), name, fill=COLOR_NAME, font=font_name)
+            global_i = start_index + j
 
-        # 估值涨幅（右对齐）
-        chg_txt, chg_clr = _change_text(val.get("estimation_change"))
-        tw = draw.textlength(chg_txt, font=font_val)
-        draw.text((col_change_r * S - tw, text_y), chg_txt, fill=chg_clr, font=font_val)
+            # 斑马纹
+            if global_i % 2 == 1:
+                draw.rectangle([x_offset * S, y * S, (x_offset + W) * S, (y + row_h) * S], fill=COLOR_ROW_ALT)
 
-        # 净值日期标注
-        if val.get("_source") == "nav" and val.get("_nav_date"):
-            nav_date = val["_nav_date"]
-            if nav_date != today_str:
-                md = nav_date[5:].lstrip("0").replace("-0", "/").replace("-", "/")
-                draw.text(((col_change_r + 2) * S, text_y), md, fill=COLOR_NAV_DATE, font=font_navdt)
+            # 代码
+            draw.text(((x_offset + col_code_l) * S, text_y), code, fill=COLOR_CODE, font=font_code)
 
-        # 近5日（右对齐）
-        w_txt, w_clr = _change_text(val.get("week_change"))
-        tw = draw.textlength(w_txt, font=font_val)
-        draw.text((col_5day_r * S - tw, text_y), w_txt, fill=w_clr, font=font_val)
+            # 名称（截断）
+            name = fund.get("alias") or val.get("fund_name") or ""
+            if len(name) > 14:
+                name = name[:14] + "..."
+            draw.text(((x_offset + col_name_l) * S, text_y), name, fill=COLOR_NAME, font=font_name)
 
-        # 近20日（右对齐）
-        m_txt, m_clr = _change_text(val.get("month_change"))
-        tw = draw.textlength(m_txt, font=font_val)
-        draw.text((col_20day_r * S - tw, text_y), m_txt, fill=m_clr, font=font_val)
+            # 估值涨幅（右对齐）
+            chg_txt, chg_clr = _change_text(val.get("estimation_change"))
+            tw = draw.textlength(chg_txt, font=font_val)
+            draw.text(((x_offset + col_change_r) * S - tw, text_y), chg_txt, fill=chg_clr, font=font_val)
+
+            # 净值日期标注
+            if val.get("_source") == "nav" and val.get("_nav_date"):
+                nav_date = val["_nav_date"]
+                if nav_date != today_str:
+                    md = nav_date[5:].lstrip("0").replace("-0", "/").replace("-", "/")
+                    draw.text(((x_offset + col_change_r + 2) * S, text_y), md, fill=COLOR_NAV_DATE, font=font_navdt)
+
+            # 近5日（右对齐）
+            w_txt, w_clr = _change_text(val.get("week_change"))
+            tw = draw.textlength(w_txt, font=font_val)
+            draw.text(((x_offset + col_5day_r) * S - tw, text_y), w_txt, fill=w_clr, font=font_val)
+
+            # 近20日（右对齐）
+            m_txt, m_clr = _change_text(val.get("month_change"))
+            tw = draw.textlength(m_txt, font=font_val)
+            draw.text(((x_offset + col_20day_r) * S - tw, text_y), m_txt, fill=m_clr, font=font_val)
+
+    # --- 标题行（横跨整个宽度）---
+    draw.text((P * S, P * S), sector_name, fill=COLOR_TITLE, font=font_title)
+
+    if use_two_cols:
+        time_str = f"{datetime.now().strftime('%m/%d %H:%M')}  ({len(sorted_funds)}只)"
+    else:
+        time_str = datetime.now().strftime("%m/%d %H:%M")
+    tw_time = draw.textlength(time_str, font=font_time)
+    draw.text(((WW - P) * S - tw_time, P * S), time_str, fill=COLOR_TIME, font=font_time)
+
+    # --- 渲染数据 ---
+    if use_two_cols:
+        # 分两列渲染
+        mid = (len(sorted_funds) + 1) // 2
+        _draw_column(0, sorted_funds[:mid], 0)
+        _draw_column(W + COL_GAP, sorted_funds[mid:], mid)
+    else:
+        _draw_column(0, sorted_funds, 0)
 
     # --- 导出 PNG ---
     buf = io.BytesIO()

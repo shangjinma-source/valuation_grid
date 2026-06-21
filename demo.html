@@ -3132,7 +3132,19 @@
             const ctx = canvas.getContext('2d');
 
             const P = 16, rowH = 26, headH = 36, thH = 22, W = 560;
-            const H = headH + thH + sortedFunds.length * rowH + P;
+            const TWO_COL_THRESHOLD = 50;
+            const useTwoCols = sortedFunds.length > TWO_COL_THRESHOLD;
+
+            let WW, H, rowsPerCol;
+            if (useTwoCols) {
+                const COL_GAP = 24;
+                rowsPerCol = Math.ceil(sortedFunds.length / 2);
+                WW = W * 2 + COL_GAP;
+                H = headH + thH + rowsPerCol * rowH + P;
+            } else {
+                WW = W;
+                H = headH + thH + sortedFunds.length * rowH + P;
+            }
 
             // 列位置（右对齐基准点）
             const colCodeL = P;
@@ -3141,14 +3153,14 @@
             const col5dayR = W - P - 78;     // 近5日右边界
             const col20dayR = W - P;          // 近20日右边界
 
-            canvas.width = W * 2;
+            canvas.width = WW * 2;
             canvas.height = H * 2;
             ctx.scale(2, 2);
 
             ctx.fillStyle = '#ffffff';
-            ctx.fillRect(0, 0, W, H);
+            ctx.fillRect(0, 0, WW, H);
 
-            // 标题
+            // 标题（横跨整个宽度）
             ctx.fillStyle = '#1e293b';
             ctx.font = 'bold 14px -apple-system, BlinkMacSystemFont, sans-serif';
             ctx.fillText(sector.name, P, P + 14);
@@ -3156,87 +3168,101 @@
             ctx.fillStyle = '#9ca3af';
             ctx.font = '11px -apple-system, BlinkMacSystemFont, sans-serif';
             const timeStr = new Date().toLocaleString('zh-CN', {month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit'});
-            ctx.fillText(timeStr, W - P - ctx.measureText(timeStr).width, P + 14);
+            const timeLabel = useTwoCols ? timeStr + '  (' + sortedFunds.length + '只)' : timeStr;
+            ctx.fillText(timeLabel, WW - P - ctx.measureText(timeLabel).width, P + 14);
 
-            // 表头
-            ctx.fillStyle = '#f1f5f9';
-            ctx.fillRect(0, headH, W, thH);
-            ctx.fillStyle = '#64748b';
-            ctx.font = '10px -apple-system, BlinkMacSystemFont, sans-serif';
-            ctx.fillText('代码', colCodeL, headH + 15);
-            ctx.fillText('基金名称', colNameL, headH + 15);
-            let tw;
-            tw = ctx.measureText('估值涨幅').width;
-            ctx.fillText('估值涨幅', colChangeR - tw, headH + 15);
-            tw = ctx.measureText('近5日').width;
-            ctx.fillText('近5日', col5dayR - tw, headH + 15);
-            tw = ctx.measureText('近20日').width;
-            ctx.fillText('近20日', col20dayR - tw, headH + 15);
+            // 辅助函数：绘制一列
+            function drawColumn(xOff, fundList, startIdx) {
+                // 表头背景
+                ctx.fillStyle = '#f1f5f9';
+                ctx.fillRect(xOff, headH, W, thH);
+                ctx.fillStyle = '#64748b';
+                ctx.font = '10px -apple-system, BlinkMacSystemFont, sans-serif';
+                ctx.fillText('代码', xOff + colCodeL, headH + 15);
+                ctx.fillText('基金名称', xOff + colNameL, headH + 15);
+                let tw;
+                tw = ctx.measureText('估值涨幅').width;
+                ctx.fillText('估值涨幅', xOff + colChangeR - tw, headH + 15);
+                tw = ctx.measureText('近5日').width;
+                ctx.fillText('近5日', xOff + col5dayR - tw, headH + 15);
+                tw = ctx.measureText('近20日').width;
+                ctx.fillText('近20日', xOff + col20dayR - tw, headH + 15);
 
-            // 数据行
-            sortedFunds.forEach((fund, i) => {
-                const y = headH + thH + i * rowH;
-                const val = valuations[fund.code];
-                const textY = y + 17;
+                // 数据行
+                fundList.forEach((fund, j) => {
+                    const y = headH + thH + j * rowH;
+                    const val = valuations[fund.code];
+                    const textY = y + 17;
+                    const globalI = startIdx + j;
 
-                if (i % 2 === 1) { ctx.fillStyle = '#f8fafc'; ctx.fillRect(0, y, W, rowH); }
+                    if (globalI % 2 === 1) { ctx.fillStyle = '#f8fafc'; ctx.fillRect(xOff, y, W, rowH); }
 
-                // 代码
-                ctx.fillStyle = '#6366f1';
-                ctx.font = '11px -apple-system, BlinkMacSystemFont, sans-serif';
-                ctx.fillText(fund.code, colCodeL, textY);
+                    // 代码
+                    ctx.fillStyle = '#6366f1';
+                    ctx.font = '11px -apple-system, BlinkMacSystemFont, sans-serif';
+                    ctx.fillText(fund.code, xOff + colCodeL, textY);
 
-                // 名称
-                ctx.fillStyle = '#334155';
-                ctx.font = '11px -apple-system, BlinkMacSystemFont, sans-serif';
-                let name = fund.alias || val?.fund_name || '';
-                if (name.length > 14) name = name.slice(0, 14) + '...';
-                ctx.fillText(name, colNameL, textY);
+                    // 名称
+                    ctx.fillStyle = '#334155';
+                    ctx.font = '11px -apple-system, BlinkMacSystemFont, sans-serif';
+                    let name = fund.alias || val?.fund_name || '';
+                    if (name.length > 14) name = name.slice(0, 14) + '...';
+                    ctx.fillText(name, xOff + colNameL, textY);
 
-                // 估值涨幅（右对齐）
-                let chgTxt = '--', chgClr = '#64748b';
-                if (val?.estimation_change != null) {
-                    const c = val.estimation_change;
-                    chgTxt = (c >= 0 ? '+' : '') + c.toFixed(2) + '%';
-                    chgClr = c > 0 ? '#ef4444' : c < 0 ? '#22c55e' : '#64748b';
-                }
-                ctx.fillStyle = chgClr;
-                ctx.font = 'bold 12px -apple-system, BlinkMacSystemFont, sans-serif';
-                ctx.fillText(chgTxt, colChangeR - ctx.measureText(chgTxt).width, textY);
-
-                // 净值日期标注（非今天的历史净值时显示日期）
-                if (val?._source === 'nav' && val?._nav_date) {
-                    const todayCheck = new Date().toISOString().slice(0, 10);
-                    if (val._nav_date !== todayCheck) {
-                        const md = val._nav_date.slice(5).replace(/^0/, '').replace(/-0?/, '/');
-                        ctx.fillStyle = '#f59e0b';
-                        ctx.font = '9px -apple-system, BlinkMacSystemFont, sans-serif';
-                        ctx.fillText(md, colChangeR + 2, textY);
+                    // 估值涨幅（右对齐）
+                    let chgTxt = '--', chgClr = '#64748b';
+                    if (val?.estimation_change != null) {
+                        const c = val.estimation_change;
+                        chgTxt = (c >= 0 ? '+' : '') + c.toFixed(2) + '%';
+                        chgClr = c > 0 ? '#ef4444' : c < 0 ? '#22c55e' : '#64748b';
                     }
-                }
+                    ctx.fillStyle = chgClr;
+                    ctx.font = 'bold 12px -apple-system, BlinkMacSystemFont, sans-serif';
+                    ctx.fillText(chgTxt, xOff + colChangeR - ctx.measureText(chgTxt).width, textY);
 
-                // 近5日（右对齐）
-                let wTxt = '--', wClr = '#64748b';
-                if (val?.week_change != null) {
-                    const w = val.week_change;
-                    wTxt = (w >= 0 ? '+' : '') + w.toFixed(2) + '%';
-                    wClr = w > 0 ? '#ef4444' : w < 0 ? '#22c55e' : '#64748b';
-                }
-                ctx.fillStyle = wClr;
-                ctx.font = 'bold 12px -apple-system, BlinkMacSystemFont, sans-serif';
-                ctx.fillText(wTxt, col5dayR - ctx.measureText(wTxt).width, textY);
+                    // 净值日期标注（非今天的历史净值时显示日期）
+                    if (val?._source === 'nav' && val?._nav_date) {
+                        const todayCheck = new Date().toISOString().slice(0, 10);
+                        if (val._nav_date !== todayCheck) {
+                            const md = val._nav_date.slice(5).replace(/^0/, '').replace(/-0?/, '/');
+                            ctx.fillStyle = '#f59e0b';
+                            ctx.font = '9px -apple-system, BlinkMacSystemFont, sans-serif';
+                            ctx.fillText(md, xOff + colChangeR + 2, textY);
+                        }
+                    }
 
-                // 近20日（右对齐）
-                let mTxt = '--', mClr = '#64748b';
-                if (val?.month_change != null) {
-                    const m = val.month_change;
-                    mTxt = (m >= 0 ? '+' : '') + m.toFixed(2) + '%';
-                    mClr = m > 0 ? '#ef4444' : m < 0 ? '#22c55e' : '#64748b';
-                }
-                ctx.fillStyle = mClr;
-                ctx.font = 'bold 12px -apple-system, BlinkMacSystemFont, sans-serif';
-                ctx.fillText(mTxt, col20dayR - ctx.measureText(mTxt).width, textY);
-            });
+                    // 近5日（右对齐）
+                    let wTxt = '--', wClr = '#64748b';
+                    if (val?.week_change != null) {
+                        const w = val.week_change;
+                        wTxt = (w >= 0 ? '+' : '') + w.toFixed(2) + '%';
+                        wClr = w > 0 ? '#ef4444' : w < 0 ? '#22c55e' : '#64748b';
+                    }
+                    ctx.fillStyle = wClr;
+                    ctx.font = 'bold 12px -apple-system, BlinkMacSystemFont, sans-serif';
+                    ctx.fillText(wTxt, xOff + col5dayR - ctx.measureText(wTxt).width, textY);
+
+                    // 近20日（右对齐）
+                    let mTxt = '--', mClr = '#64748b';
+                    if (val?.month_change != null) {
+                        const m = val.month_change;
+                        mTxt = (m >= 0 ? '+' : '') + m.toFixed(2) + '%';
+                        mClr = m > 0 ? '#ef4444' : m < 0 ? '#22c55e' : '#64748b';
+                    }
+                    ctx.fillStyle = mClr;
+                    ctx.font = 'bold 12px -apple-system, BlinkMacSystemFont, sans-serif';
+                    ctx.fillText(mTxt, xOff + col20dayR - ctx.measureText(mTxt).width, textY);
+                });
+            }
+
+            // 渲染
+            if (useTwoCols) {
+                const mid = Math.ceil(sortedFunds.length / 2);
+                drawColumn(0, sortedFunds.slice(0, mid), 0);
+                drawColumn(W + 24, sortedFunds.slice(mid), mid);
+            } else {
+                drawColumn(0, sortedFunds, 0);
+            }
 
             const link = document.createElement('a');
             link.download = `${sector.name}_${timeStr.replace(/[\/\s:]/g, '')}.png`;

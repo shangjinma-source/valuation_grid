@@ -179,8 +179,8 @@ def post_valuation_batch(req: BatchRequest):
     """批量估值"""
     if not req.fund_codes:
         return {"items": []}
-    if len(req.fund_codes) > 500:
-        raise HTTPException(status_code=400, detail="单次最多500只基金")
+    if len(req.fund_codes) > 2000:
+        raise HTTPException(status_code=400, detail="单次最多2000只基金")
     return {"items": calculate_valuation_batch(req.fund_codes)}
 
 @app.get("/v1/valuation/state")

@@ -48,8 +48,8 @@
           "note": "延迟回补",
           "is_supplement": false,
           "is_rebuy": false,
-          "peak_nav": 3.5203,
-          "peak_date": "2026-05-25"
+          "peak_nav": 3.7095,
+          "peak_date": "2026-06-18"
         },
         {
           "id": "b20260608a",
@@ -62,8 +62,8 @@
           "is_supplement": false,
           "is_rebuy": true,
           "from_pending_rebuy": "rb20260515a",
-          "peak_nav": 3.3208,
-          "peak_date": "2026-06-16"
+          "peak_nav": 3.7095,
+          "peak_date": "2026-06-18"
         }
       ],
       "supplement_count": 1,
@@ -236,8 +236,8 @@
           "note": "延迟回补",
           "is_supplement": false,
           "is_rebuy": false,
-          "peak_nav": 2.7631,
-          "peak_date": "2026-06-16"
+          "peak_nav": 2.9592,
+          "peak_date": "2026-06-18"
         },
         {
           "id": "b20260610a",
@@ -250,8 +250,8 @@
           "is_supplement": false,
           "is_rebuy": true,
           "from_pending_rebuy": "rb20260605a",
-          "peak_nav": 2.7631,
-          "peak_date": "2026-06-16"
+          "peak_nav": 2.9592,
+          "peak_date": "2026-06-18"
         }
       ],
       "supplement_count": 0,
@@ -379,7 +379,7 @@
     }
   },
   "cash_reserve_ratio": 0.3,
-  "updated_at": "2026-06-17 01:42:43",
+  "updated_at": "2026-06-18 14:57:04",
   "market_regime": "neutral",
   "regime_auto": true,
   "regime_auto_result": "neutral",
