@@ -6,6 +6,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from typing import List, Optional
 import uvicorn
@@ -622,6 +623,18 @@ def cleanup_pending_rebuys_api():
     from grid.pending_rebuy import cleanup_expired_pending_rebuys
     n = cleanup_expired_pending_rebuys()
     return {"cleaned": n}
+
+
+@app.get("/")
+async def serve_index():
+    import os
+    return FileResponse(os.path.join(os.path.dirname(__file__), "demo.html"))
+
+
+@app.get("/favicon.ico")
+async def favicon():
+    from fastapi.responses import Response
+    return Response(content="", media_type="image/x-icon")
 
 
 if __name__ == "__main__":
