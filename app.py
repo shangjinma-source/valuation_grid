@@ -711,6 +711,7 @@ if __name__ == "__main__":
         print("[Startup] valuation-grid app.py 已在运行，拒绝启动第二个实例")
         raise SystemExit(2)
     try:
-        uvicorn.run(app, host="0.0.0.0", port=8000)
+        port = int(os.environ.get("APP_PORT", "8000"))
+        uvicorn.run(app, host="0.0.0.0", port=port)
     finally:
         _release_app_instance_lock(_instance_lock)

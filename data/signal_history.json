@@ -3707,24 +3707,6 @@
   ],
   "017560__自选": [
     {
-      "date": "2026-04-21",
-      "time": "14:50:08",
-      "source": "estimation",
-      "signal_name": "持有等待",
-      "action": "hold",
-      "priority": 8,
-      "reason": "总浮盈5.71%, 今日-2.0943%, 趋势:中期走强, 风险系数1.0×, 无触发条件",
-      "amount": null,
-      "sell_pct": null,
-      "today_change": -2.0943,
-      "total_profit_pct": 5.71,
-      "current_nav": 2.4282571714,
-      "nav_at_signal": 2.4282571714,
-      "outcome_t3": null,
-      "outcome_t5": null,
-      "outcome_t10": null
-    },
-    {
       "date": "2026-04-22",
       "time": "14:50:16",
       "source": "estimation",
@@ -5322,6 +5304,24 @@
       "total_profit_pct": null,
       "current_nav": 3.644034044,
       "nav_at_signal": 3.644034044,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    },
+    {
+      "date": "2026-07-21",
+      "time": "23:31:47",
+      "source": "nav",
+      "signal_name": "持有等待",
+      "action": "hold",
+      "priority": 8,
+      "reason": "总浮盈-6.83%, 今日12.58%, 趋势:中期走弱, 风险系数1.5×, 波动状态:extreme_vol, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": 12.58,
+      "total_profit_pct": -6.83,
+      "current_nav": 3.5485,
+      "nav_at_signal": 3.5485,
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
@@ -6923,27 +6923,27 @@
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
-    }
-  ],
-  "010524__自选": [
+    },
     {
-      "date": "2026-04-21",
-      "time": "14:50:08",
-      "source": "estimation",
-      "signal_name": "持有等待",
-      "action": "hold",
-      "priority": 8,
-      "reason": "总浮盈23.36%, 今日0.5148%, 趋势:连涨, 风险系数1.0×, 波动状态:high_vol, 无触发条件",
+      "date": "2026-07-21",
+      "time": "22:24:43",
+      "source": "nav",
+      "signal_name": "灾难保底减仓",
+      "action": "sell",
+      "priority": 1,
+      "reason": "总浮亏-100.0% ≤ -15%灾难线, 最老批次减仓70%",
       "amount": null,
-      "sell_pct": null,
-      "today_change": 0.5148,
-      "total_profit_pct": 23.36,
-      "current_nav": 2.1207617652,
-      "nav_at_signal": 2.1207617652,
+      "sell_pct": 70,
+      "today_change": 7.5,
+      "total_profit_pct": -100.0,
+      "current_nav": 2.3867,
+      "nav_at_signal": 2.3867,
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
-    },
+    }
+  ],
+  "010524__自选": [
     {
       "date": "2026-04-22",
       "time": "14:50:15",
@@ -8542,6 +8542,24 @@
       "total_profit_pct": -2.33,
       "current_nav": 2.5719006456,
       "nav_at_signal": 2.5719006456,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    },
+    {
+      "date": "2026-07-21",
+      "time": "23:31:46",
+      "source": "nav",
+      "signal_name": "常规止损(L2)",
+      "action": "sell",
+      "priority": 1,
+      "reason": "常规止损: 浮亏-16.33% ≤ 止损线-16.2%, 减仓35%(已补仓0次, 保留反弹仓位)",
+      "amount": null,
+      "sell_pct": 35,
+      "today_change": 7.5,
+      "total_profit_pct": -16.33,
+      "current_nav": 2.3867,
+      "nav_at_signal": 2.3867,
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
@@ -13033,6 +13051,24 @@
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
+    },
+    {
+      "date": "2026-07-21",
+      "time": "23:31:47",
+      "source": "nav",
+      "signal_name": "扭亏强势止盈",
+      "action": "sell",
+      "priority": 2,
+      "reason": "持有126天, 浮盈107.49%, 峰值137.3%, 综合评分89(盈利40+回撤30+动量7+流动性0+费率-0+扭亏12), 卖出100%",
+      "amount": null,
+      "sell_pct": 100,
+      "today_change": 12.45,
+      "total_profit_pct": 85.52,
+      "current_nav": 13.8483,
+      "nav_at_signal": 13.8483,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
     }
   ],
   "025500": [
@@ -13142,6 +13178,24 @@
       "total_profit_pct": -17.52,
       "current_nav": 2.1087850128,
       "nav_at_signal": 2.1087850128,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    },
+    {
+      "date": "2026-07-21",
+      "time": "23:31:47",
+      "source": "nav",
+      "signal_name": "极端止损(L3)",
+      "action": "sell",
+      "priority": 1,
+      "reason": "极端止损: 浮亏-28.4%, 持仓19天(<25天)+今日跌12.71%(>-4%), 减仓70%保留观察仓",
+      "amount": null,
+      "sell_pct": 70,
+      "today_change": 12.71,
+      "total_profit_pct": -29.21,
+      "current_nav": 1.81,
+      "nav_at_signal": 1.81,
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
@@ -13257,6 +13311,24 @@
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
+    },
+    {
+      "date": "2026-07-21",
+      "time": "23:31:47",
+      "source": "nav",
+      "signal_name": "极端止损(L3)",
+      "action": "sell",
+      "priority": 1,
+      "reason": "极端止损: 浮亏-20.74%, 持仓28天, 清仓100%",
+      "amount": null,
+      "sell_pct": 100,
+      "today_change": 7.71,
+      "total_profit_pct": -83.53,
+      "current_nav": 3.8535,
+      "nav_at_signal": 3.8535,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
     }
   ],
   "006503": [
@@ -13366,6 +13438,24 @@
       "total_profit_pct": -14.84,
       "current_nav": 7.8053089414,
       "nav_at_signal": 7.8053089414,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    },
+    {
+      "date": "2026-07-21",
+      "time": "23:31:47",
+      "source": "nav",
+      "signal_name": "极端止损(L3)",
+      "action": "sell",
+      "priority": 1,
+      "reason": "极端止损: 浮亏-29.19%, 持仓34天, 清仓100%",
+      "amount": null,
+      "sell_pct": 100,
+      "today_change": 9.44,
+      "total_profit_pct": -27.67,
+      "current_nav": 6.6299,
+      "nav_at_signal": 6.6299,
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
@@ -13521,6 +13611,24 @@
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
+    },
+    {
+      "date": "2026-07-21",
+      "time": "23:31:47",
+      "source": "nav",
+      "signal_name": "极端止损(L3)",
+      "action": "sell",
+      "priority": 1,
+      "reason": "极端止损: 浮亏-28.77%, 持仓25天, 清仓100%",
+      "amount": null,
+      "sell_pct": 100,
+      "today_change": 9.37,
+      "total_profit_pct": -23.8,
+      "current_nav": 3.4476,
+      "nav_at_signal": 3.4476,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
     }
   ],
   "013841__柯": [
@@ -13613,6 +13721,24 @@
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
+    },
+    {
+      "date": "2026-07-21",
+      "time": "23:31:47",
+      "source": "nav",
+      "signal_name": "趋势转弱",
+      "action": "sell",
+      "priority": 3,
+      "reason": "持有28天, 浮盈11.24%, 总浮盈-7.26%, 趋势确认转弱, 减仓70%",
+      "amount": null,
+      "sell_pct": 70,
+      "today_change": 16.56,
+      "total_profit_pct": -7.26,
+      "current_nav": 3.415,
+      "nav_at_signal": 3.415,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
     }
   ],
   "017560__柯": [
@@ -13702,6 +13828,24 @@
       "total_profit_pct": -7.93,
       "current_nav": 3.644034044,
       "nav_at_signal": 3.644034044,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    },
+    {
+      "date": "2026-07-21",
+      "time": "23:31:47",
+      "source": "nav",
+      "signal_name": "持有等待",
+      "action": "hold",
+      "priority": 8,
+      "reason": "总浮盈-10.34%, 今日12.58%, 趋势:中期走弱, 风险系数1.5×, 波动状态:extreme_vol, 无触发条件",
+      "amount": null,
+      "sell_pct": null,
+      "today_change": 12.58,
+      "total_profit_pct": -10.34,
+      "current_nav": 3.5485,
+      "nav_at_signal": 3.5485,
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
@@ -13817,6 +13961,24 @@
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
+    },
+    {
+      "date": "2026-07-21",
+      "time": "23:31:46",
+      "source": "nav",
+      "signal_name": "极端止损(L3)",
+      "action": "sell",
+      "priority": 1,
+      "reason": "极端止损: 浮亏-25.04%, 持仓22天(<25天)+今日跌6.02%(>-4%), 减仓70%保留观察仓",
+      "amount": null,
+      "sell_pct": 70,
+      "today_change": 6.02,
+      "total_profit_pct": -19.69,
+      "current_nav": 4.9308,
+      "nav_at_signal": 4.9308,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
     }
   ],
   "011452": [
@@ -13926,6 +14088,24 @@
       "total_profit_pct": -8.01,
       "current_nav": 3.3638518589999995,
       "nav_at_signal": 3.3638518589999995,
+      "outcome_t3": null,
+      "outcome_t5": null,
+      "outcome_t10": null
+    },
+    {
+      "date": "2026-07-21",
+      "time": "23:31:47",
+      "source": "nav",
+      "signal_name": "极端止损(L3)",
+      "action": "sell",
+      "priority": 1,
+      "reason": "极端止损: 浮亏-25.9%, 持仓25天, 清仓100%",
+      "amount": null,
+      "sell_pct": 100,
+      "today_change": 9.56,
+      "total_profit_pct": -18.74,
+      "current_nav": 2.9714,
+      "nav_at_signal": 2.9714,
       "outcome_t3": null,
       "outcome_t5": null,
       "outcome_t10": null
