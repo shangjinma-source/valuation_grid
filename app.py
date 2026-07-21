@@ -25,7 +25,7 @@ from valuation.providers import (
 )
 from positions import (
     add_batch, sell_batch, delete_batch, update_fund_config,
-    get_fund_position, get_all_positions, remove_fund, update_sell_nav,
+    get_fund_position, get_all_positions, remove_fund, restore_archived_fund, update_sell_nav,
     delete_sell_record, update_fee_schedule, sell_fifo,
     get_groups, add_group, update_group, delete_group,
     make_fund_key, parse_fund_key, rename_fund_key,
@@ -357,12 +357,22 @@ def delete_fund_batch(fund_code: str, batch_id: str):
 
 
 @app.delete("/v1/position/{fund_code}")
-def remove_fund_position(fund_code: str):
+def remove_fund_position(fund_code: str, confirm: str = ""):
     """从策略面板完全移除一只基金"""
+    if confirm != fund_code:
+        raise HTTPException(status_code=400, detail="删除确认不匹配，已拒绝删除持仓")
     if remove_fund(fund_code):
         return {"success": True, "message": f"已移除 {fund_code}"}
     else:
         raise HTTPException(status_code=404, detail=f"基金 {fund_code} 不存在")
+
+
+@app.post("/v1/position/{fund_code}/restore")
+def restore_fund_position(fund_code: str):
+    """Restore the most recently archived copy of a removed position."""
+    if restore_archived_fund(fund_code):
+        return {"success": True, "message": f"已恢复 {fund_code}"}
+    raise HTTPException(status_code=404, detail=f"没有可恢复的归档，或 {fund_code} 已存在")
 
 
 class RenameFundKeyRequest(BaseModel):
@@ -711,6 +721,7 @@ if __name__ == "__main__":
         print("[Startup] valuation-grid app.py 已在运行，拒绝启动第二个实例")
         raise SystemExit(2)
     try:
-        uvicorn.run(app, host="0.0.0.0", port=8000)
+        port = int(os.environ.get("APP_PORT", "8000"))
+        uvicorn.run(app, host="0.0.0.0", port=port)
     finally:
         _release_app_instance_lock(_instance_lock)

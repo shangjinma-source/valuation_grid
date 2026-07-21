@@ -1653,9 +1653,13 @@
         // ============ 从策略面板移除基金 ============
         async function removeFromStrategy(fundCode) {
             const displayCode = fundCode.includes('__') ? fundCode.replace('__', ' [') + ']' : fundCode;
-            if (!confirm(`确定将 ${displayCode} 从低频网格移除？（会删除所有持仓记录）`)) return;
+            const confirmation = prompt(`危险操作：将 ${displayCode} 从低频网格移除。\n持仓会进入可恢复归档。请输入完整持仓键确认：\n${fundCode}`);
+            if (confirmation !== fundCode) {
+                if (confirmation !== null) showStatus('输入不匹配，已取消移除', 'warning');
+                return;
+            }
             try {
-                await fetchJson(`${API_BASE}/v1/position/${encodeURIComponent(fundCode)}`, { method: 'DELETE' }, '移除持仓');
+                await fetchJson(`${API_BASE}/v1/position/${encodeURIComponent(fundCode)}?confirm=${encodeURIComponent(confirmation)}`, { method: 'DELETE' }, '移除持仓');
                 showStatus(`已移除 ${displayCode}`, 'success');
                 loadStrategyPanel();
             } catch (e) {

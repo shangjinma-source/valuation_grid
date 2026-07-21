@@ -191,6 +191,7 @@ Stop-ValuationGridProcesses
 $python = (Get-Command python.exe -ErrorAction Stop).Source
 $npx = (Get-Command npx.cmd -ErrorAction Stop).Source
 $env:PYTHONPATH = $ProjectRoot
+$env:APP_PORT = $Port
 
 $appProcess = Start-Process -FilePath $python `
     -ArgumentList @('-u', ('"{0}"' -f $AppPath)) `

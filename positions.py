@@ -14,7 +14,9 @@ from pathlib import Path
 DATA_DIR = Path(__file__).parent / "data"
 POS_FILE = DATA_DIR / "positions.json"
 POS_BACKUP_FILE = DATA_DIR / "positions.backup.json"
+POS_HISTORY_DIR = DATA_DIR / "positions_history"
 POS_LOCK_FILE = DATA_DIR / ".positions.lock"
+POS_HISTORY_LIMIT = 500
 _MISSING_REVISION = "<missing>"
 _pos_lock = threading.RLock()
 _pos_lock_state = threading.local()
@@ -232,6 +234,7 @@ def load_positions() -> dict:
 
 
 def _atomic_write_bytes(target: Path, raw: bytes):
+    target.parent.mkdir(parents=True, exist_ok=True)
     tmp_file = target.with_name(
         f".{target.name}.{os.getpid()}.{threading.get_ident()}.tmp"
     )
@@ -254,6 +257,21 @@ def _atomic_write_bytes(target: Path, raw: bytes):
         try:
             tmp_file.unlink()
         except FileNotFoundError:
+            pass
+
+
+def _save_position_history(raw: bytes):
+    """Save a durable pre-write snapshot and keep a bounded local history."""
+    digest = hashlib.sha256(raw).hexdigest()[:12]
+    timestamp = datetime.now().strftime("%Y%m%d-%H%M%S-%f")
+    snapshot = POS_HISTORY_DIR / f"positions-{timestamp}-{digest}.json"
+    _atomic_write_bytes(snapshot, raw)
+
+    snapshots = sorted(POS_HISTORY_DIR.glob("positions-*.json"))
+    for old_snapshot in snapshots[:-POS_HISTORY_LIMIT]:
+        try:
+            old_snapshot.unlink()
+        except OSError:
             pass
 
 
@@ -280,6 +298,7 @@ def save_positions(data: dict, *, allow_empty: bool = False) -> bool:
 
         if POS_FILE.exists():
             current_raw = POS_FILE.read_bytes()
+            _save_position_history(current_raw)
             _atomic_write_bytes(POS_BACKUP_FILE, current_raw)
         _atomic_write_bytes(POS_FILE, raw)
 
@@ -785,10 +804,35 @@ def remove_fund(fund_code: str) -> bool:
     funds = data.get("funds", {})
     if fund_code not in funds:
         return False
-    del funds[fund_code]
+    archived_funds = data.setdefault("archived_funds", [])
+    archived_funds.append({
+        "fund_key": fund_code,
+        "deleted_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "fund": funds.pop(fund_code),
+    })
     save_positions(data, allow_empty=True)
     print(f"[Position] 移除基金 {fund_code}")
     return True
+
+
+@position_write
+def restore_archived_fund(fund_code: str) -> bool:
+    """Restore the most recently archived copy without overwriting live data."""
+    data = load_positions()
+    funds = data.setdefault("funds", {})
+    if fund_code in funds:
+        return False
+
+    archived_funds = data.get("archived_funds", [])
+    for index in range(len(archived_funds) - 1, -1, -1):
+        archived = archived_funds[index]
+        if archived.get("fund_key") == fund_code and isinstance(archived.get("fund"), dict):
+            funds[fund_code] = archived["fund"]
+            del archived_funds[index]
+            save_positions(data)
+            print(f"[Position] restored fund {fund_code}")
+            return True
+    return False
 
 
 @position_write
